@@ -1,0 +1,26 @@
+{
+  "name": "hq-design-services",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node node_modules/vite/bin/vite.js",
+    "build": "node node_modules/vite/bin/vite.js build",
+    "preview": "node node_modules/vite/bin/vite.js preview",
+    "lint": "eslint . --ext .vue,.js,.jsx --fix"
+  },
+  "dependencies": {
+    "@vueuse/head": "^2.0.0",
+    "gsap": "^3.12.5",
+    "install": "^0.13.0",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.2.0"
+  }
+}
