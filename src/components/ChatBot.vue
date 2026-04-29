@@ -102,7 +102,7 @@ const scrollToBottom = async () => {
 }
 
 const sendMessage = async () => {
-  if (!userInput.trim()) return
+  if (!userInput.value.trim()) return
 
   const userText = userInput.value
   messages.value.push({ role: 'user', text: userText })
@@ -116,24 +116,28 @@ const sendMessage = async () => {
     let botResponse = ''
     const input = userText.toLowerCase()
 
-    if (input.includes('service') || input.includes('what do you do')) {
+    if (input.includes('service') || input.includes('what do you do') || input.includes('work')) {
       botResponse = 'We offer premium architecture design, interior design, 3D visualization, space planning, furniture design, and renovation services for both residential and commercial projects in Pakistan. Which one would you like to know more about?'
-    } else if (input.includes('location') || input.includes('office') || input.includes('where')) {
+    } else if (input.includes('location') || input.includes('office') || input.includes('where') || input.includes('address')) {
       botResponse = 'Our main office is located in Parkview City, Lahore. We serve clients across major cities in Pakistan including DHA, Gulberg, and Cantt. You can find our exact location on the Contact page.'
-    } else if (input.includes('zameen') || input.includes('affiliation')) {
+    } else if (input.includes('zameen') || input.includes('affiliation') || input.includes('partner')) {
       botResponse = 'Yes! H&Q Design Services is an official partner affiliated with Zameen.com, Pakistan\'s leading real estate portal. This partnership ensures we stay at the forefront of the property market.'
-    } else if (input.includes('parkview')) {
+    } else if (input.includes('parkview') || input.includes('lahore')) {
       botResponse = 'We have a strong presence in Parkview City, Lahore, and have completed numerous architecture and interior projects there. Our lead office is also located within the society.'
-    } else if (input.includes('contact') || input.includes('phone') || input.includes('whatsapp') || input.includes('call')) {
+    } else if (input.includes('contact') || input.includes('phone') || input.includes('whatsapp') || input.includes('call') || input.includes('number')) {
       botResponse = 'You can reach us at 0313-4487315 via call or WhatsApp. We also respond to emails at asadrogi@rocketmail.com. Would you like to go to our contact page?'
-    } else if (input.includes('price') || input.includes('cost') || input.includes('quote')) {
+    } else if (input.includes('price') || input.includes('cost') || input.includes('quote') || input.includes('how much')) {
       botResponse = 'Project costs vary depending on the scope and materials. We offer free initial consultations to provide accurate quotes. Please visit our Contact page to book yours!'
-    } else if (input.includes('blog') || input.includes('articles')) {
+    } else if (input.includes('portfolio') || input.includes('projects') || input.includes('designs')) {
+      botResponse = 'We have a diverse portfolio of residential and commercial projects. You can view our latest work in the Portfolio section of our website.'
+    } else if (input.includes('blog') || input.includes('articles') || input.includes('read')) {
       botResponse = 'We have over 50 blogs on our website covering architecture trends, interior design tips, and sustainable building materials. Check out our Blog section!'
-    } else if (input.includes('hi') || input.includes('hello') || input.includes('hey')) {
+    } else if (input.includes('hi') || input.includes('hello') || input.includes('hey') || input.includes('salaam')) {
       botResponse = 'Hello! How can I assist you today? I can help you with information about our services, location, or how to get a quote.'
+    } else if (input.includes('thanks') || input.includes('thank you')) {
+      botResponse = 'You\'re very welcome! If you have any more questions, feel free to ask. Have a great day!'
     } else {
-      botResponse = 'That\'s a great question! For specific details about your project, I recommend booking a free consultation with our lead designer. You can find our contact details on the Contact page.'
+      botResponse = 'I\'m sorry, I didn\'t quite catch that. Could you please rephrase your question? You can ask about our services, location, portfolio, or how to contact us.'
     }
 
     messages.value.push({ role: 'bot', text: botResponse })
