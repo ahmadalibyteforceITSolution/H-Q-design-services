@@ -183,8 +183,11 @@
                     </svg>
                   </div>
                   <div>
-                    <h4 class="font-bold text-gray-900 text-lg mb-1">Email Address</h4>
-                    <a href="mailto:asadrogi@rocketmail.com" class="text-zameen-green hover:underline text-lg font-medium">asadrogi@rocketmail.com</a>
+                    <h4 class="font-bold text-gray-900 text-lg mb-1">Email Addresses</h4>
+                    <div class="flex flex-col space-y-1">
+                      <a href="mailto:asadrogi@rocketmail.com" class="text-zameen-green hover:underline text-lg font-medium">asadrogi@rocketmail.com</a>
+                      <a href="mailto:asadali2899@gmail.com" class="text-zameen-green hover:underline text-lg font-medium">asadali2899@gmail.com</a>
+                    </div>
                     <p class="text-gray-500 text-sm mt-1">We'll get back to you within 24h</p>
                   </div>
                 </div>
@@ -309,7 +312,7 @@ const route = useRoute()
 useHead({
   title: 'Contact H&Q Design Services | Architecture & Interior Design Lahore',
   meta: [
-    { name: 'description', content: 'Contact H&Q Design Services for architecture and interior design in Lahore. Call 0313-4487315 or email asadrogi@rocketmail.com. Parkview City affiliated, Zameen.com partner.' },
+    { name: 'description', content: 'Contact H&Q Design Services for architecture and interior design in Lahore. Call 0313-4487315 or email asadrogi@rocketmail.com / asadali2899@gmail.com. Parkview City affiliated, Zameen.com partner.' },
     { name: 'keywords', content: 'contact architecture firm Lahore, interior design contact, H&Q Design Services, Parkview City, Zameen.com partner' },
     { property: 'og:title', content: 'Contact H&Q Design Services - Architecture & Interior Design' },
     { property: 'og:description', content: 'Get in touch for architecture and interior design services in Lahore.' },

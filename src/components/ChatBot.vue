@@ -137,7 +137,7 @@ const sendMessage = async () => {
     } else if (input.includes('parkview') || input.includes('lahore')) {
       botResponse = 'We have a strong presence in Parkview City, Lahore, and have completed numerous architecture and interior projects there. Our lead office is also located within the society.'
     } else if (input.includes('contact') || input.includes('phone') || input.includes('whatsapp') || input.includes('call') || input.includes('number')) {
-      botResponse = 'You can reach us at 0313-4487315 via call or WhatsApp. We also respond to emails at asadrogi@rocketmail.com. Would you like to go to our contact page?'
+      botResponse = 'You can reach us at 0313-4487315 via call or WhatsApp. We also respond to emails at asadrogi@rocketmail.com and asadali2899@gmail.com. Would you like to go to our contact page?'
     } else if (input.includes('price') || input.includes('cost') || input.includes('quote') || input.includes('how much')) {
       botResponse = 'Project costs vary depending on the scope and materials. We offer free initial consultations to provide accurate quotes. Please visit our Contact page to book yours!'
     } else if (input.includes('portfolio') || input.includes('projects') || input.includes('designs')) {

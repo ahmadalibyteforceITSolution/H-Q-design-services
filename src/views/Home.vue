@@ -190,7 +190,7 @@ useHead({
         "@id": "https://h-q-design-services.vercel.app/",
         "url": "https://h-q-design-services.vercel.app/",
         "telephone": ["0313-4487315", "+966 50 714 3124"],
-        "email": "asadrogi@rocketmail.com",
+        "email": ["asadrogi@rocketmail.com", "asadali2899@gmail.com"],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Parkview City",

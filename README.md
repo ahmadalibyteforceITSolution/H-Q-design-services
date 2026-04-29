@@ -21,7 +21,7 @@ Premier Architecture & Interior Design Studio in Lahore, Pakistan. Affiliated wi
 ## Contact Information
 
 - **Phone**: 0313-4487315
-- **Email**: asadrogi@rocketmail.com
+- **Email**: asadrogi@rocketmail.com, asadali2899@gmail.com
 - **Instagram**: https://www.instagram.com/chasad_ali/
 - **Location**: Parkview City, Lahore, Pakistan
 
