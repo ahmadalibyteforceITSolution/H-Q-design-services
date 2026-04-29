@@ -173,7 +173,7 @@ useHead({
   meta: [
     { name: 'description', content: 'H&Q Design Services offers premium architecture and interior design in Lahore. Specializing in residential and commercial projects in Parkview City and DHA.' },
     { name: 'keywords', content: 'architecture Lahore, interior design Pakistan, H&Q Design Services, house design Lahore, office interior Lahore, Parkview City architecture' },
-    { name: 'google-site-verification', content: 'google-site-verification-placeholder' },
+    { name: 'google-site-verification', content: 'YOUR_GOOGLE_VERIFICATION_CODE_HERE' },
     { property: 'og:title', content: 'H&Q Design Services - Architecture & Interior Design' },
     { property: 'og:description', content: 'Premium design services for your dream home or office.' },
     { property: 'og:image', content: '/favicon.png' },
