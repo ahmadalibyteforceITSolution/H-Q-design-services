@@ -1,3 +1,6 @@
+import dbConnect from './dbConnect';
+import Contact from './models/Contact';
+
 export default async function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -18,26 +21,25 @@ export default async function handler(req, res) {
   }
 
   try {
+    await dbConnect();
     const { name, email, phone, service, location, message } = req.body;
 
     if (!name || !email || !message) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
-    // Log the submission (in production, this would go to a database or email)
-    console.log('Contact Form Submission:', {
+    // Save to MongoDB
+    const contact = await Contact.create({
       name,
       email,
       phone,
       service,
       location,
-      message,
-      timestamp: new Date().toISOString()
+      message
     });
 
-    // In a real scenario, you'd use nodemailer or a service like SendGrid here.
-    // Since we don't have API keys/SMTP setup, we return success.
-    
+    console.log('Contact Saved to DB:', contact._id);
+
     return res.status(200).json({ 
       success: true, 
       message: 'Thank you! Your message has been received. Our team will contact you within 24 hours.' 
