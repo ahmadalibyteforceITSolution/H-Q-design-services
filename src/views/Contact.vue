@@ -350,19 +350,38 @@ const submitForm = async () => {
   isSubmitting.value = true
   submitSuccess.value = false
   
+  // Keep a copy of the form data for WhatsApp
+  const formData = { ...form.value }
+  
   try {
     const response = await fetch('/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(form.value)
+      body: JSON.stringify(formData)
     })
 
     const data = await response.json()
 
     if (response.ok) {
       submitSuccess.value = true
+      
+      // WhatsApp Redirection Logic
+      const whatsappNumber = '923134487315'
+      const message = `*New Query from H&Q Design Services*%0A%0A` +
+                      `*Name:* ${formData.name}%0A` +
+                      `*Phone:* ${formData.phone}%0A` +
+                      `*Email:* ${formData.email}%0A` +
+                      `*Service:* ${formData.service || 'Not specified'}%0A` +
+                      `*Location:* ${formData.location || 'Not specified'}%0A` +
+                      `*Message:* ${formData.message}`
+      
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`
+      
+      // Open WhatsApp in a new tab
+      window.open(whatsappUrl, '_blank')
+      
       form.value = { name: '', phone: '', email: '', service: '', location: '', message: '' }
     } else {
       alert(data.error || 'Something went wrong. Please try again.')
@@ -373,6 +392,19 @@ const submitForm = async () => {
     if (import.meta.env.DEV) {
       await new Promise(resolve => setTimeout(resolve, 1500))
       submitSuccess.value = true
+      
+      // WhatsApp Redirection for Dev mode too
+      const whatsappNumber = '923134487315'
+      const message = `*New Query from H&Q Design Services (Dev)*%0A%0A` +
+                      `*Name:* ${formData.name}%0A` +
+                      `*Phone:* ${formData.phone}%0A` +
+                      `*Email:* ${formData.email}%0A` +
+                      `*Service:* ${formData.service || 'Not specified'}%0A` +
+                      `*Location:* ${formData.location || 'Not specified'}%0A` +
+                      `*Message:* ${formData.message}`
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`
+      window.open(whatsappUrl, '_blank')
+      
       form.value = { name: '', phone: '', email: '', service: '', location: '', message: '' }
     } else {
       alert('Network error. Please check your connection and try again.')
