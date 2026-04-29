@@ -159,9 +159,20 @@
                     </svg>
                   </div>
                   <div>
-                    <h4 class="font-bold text-gray-900 text-lg mb-1">Phone Number</h4>
+                    <h4 class="font-bold text-gray-900 text-lg mb-1">Phone Number (Pakistan)</h4>
                     <a href="tel:03134487315" class="text-zameen-green hover:underline text-xl font-bold">0313-4487315</a>
                     <p class="text-gray-500 text-sm mt-1">Available on WhatsApp & Call</p>
+                  </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 flex items-start space-x-4 border border-gray-100 hover:border-zameen-green transition-colors group">
+                  <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-zameen-green transition-colors">
+                    <span class="text-2xl group-hover:scale-110 transition-transform">🇸🇦</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 text-lg mb-1">Phone Number (KSA)</h4>
+                    <a href="tel:+966507143124" class="text-zameen-green hover:underline text-xl font-bold">+966 50 714 3124</a>
+                    <p class="text-gray-500 text-sm mt-1">International Support</p>
                   </div>
                 </div>
 

@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hq-design-services.vercel.app/</loc>
+    <loc>https://h-q-design-services.vercel.app/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://hq-design-services.vercel.app/about</loc>
+    <loc>https://h-q-design-services.vercel.app/about</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hq-design-services.vercel.app/portfolio</loc>
+    <loc>https://h-q-design-services.vercel.app/portfolio</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hq-design-services.vercel.app/blog</loc>
+    <loc>https://h-q-design-services.vercel.app/blog</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hq-design-services.vercel.app/contact</loc>
+    <loc>https://h-q-design-services.vercel.app/contact</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Blog Posts -->
-  <url><loc>https://hq-design-services.vercel.app/blog/1</loc><priority>0.6</priority></url>
-  <url><loc>https://hq-design-services.vercel.app/blog/2</loc><priority>0.6</priority></url>
-  <url><loc>https://hq-design-services.vercel.app/blog/3</loc><priority>0.6</priority></url>
-  <url><loc>https://hq-design-services.vercel.app/blog/4</loc><priority>0.6</priority></url>
-  <url><loc>https://hq-design-services.vercel.app/blog/5</loc><priority>0.6</priority></url>
-  <url><loc>https://hq-design-services.vercel.app/blog/6</loc><priority>0.6</priority></url>
-  <url><loc>https://hq-design-services.vercel.app/blog/7</loc><priority>0.6</priority></url>
-  <url><loc>https://hq-design-services.vercel.app/blog/8</loc><priority>0.6</priority></url>
-  <url><loc>https://hq-design-services.vercel.app/blog/9</loc><priority>0.6</priority></url>
-  <url><loc>https://hq-design-services.vercel.app/blog/10</loc><priority>0.6</priority></url>
+  <url><loc>https://h-q-design-services.vercel.app/blog/1</loc><priority>0.6</priority></url>
+  <url><loc>https://h-q-design-services.vercel.app/blog/2</loc><priority>0.6</priority></url>
+  <url><loc>https://h-q-design-services.vercel.app/blog/3</loc><priority>0.6</priority></url>
+  <url><loc>https://h-q-design-services.vercel.app/blog/4</loc><priority>0.6</priority></url>
+  <url><loc>https://h-q-design-services.vercel.app/blog/5</loc><priority>0.6</priority></url>
+  <url><loc>https://h-q-design-services.vercel.app/blog/6</loc><priority>0.6</priority></url>
+  <url><loc>https://h-q-design-services.vercel.app/blog/7</loc><priority>0.6</priority></url>
+  <url><loc>https://h-q-design-services.vercel.app/blog/8</loc><priority>0.6</priority></url>
+  <url><loc>https://h-q-design-services.vercel.app/blog/9</loc><priority>0.6</priority></url>
+  <url><loc>https://h-q-design-services.vercel.app/blog/10</loc><priority>0.6</priority></url>
 </urlset>

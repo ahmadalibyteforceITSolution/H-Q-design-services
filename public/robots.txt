@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hq-design-services.vercel.app/sitemap.xml
+Sitemap: https://h-q-design-services.vercel.app/sitemap.xml

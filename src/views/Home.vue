@@ -176,7 +176,7 @@ useHead({
     { name: 'google-site-verification', content: 'google-site-verification-placeholder' },
     { property: 'og:title', content: 'H&Q Design Services - Architecture & Interior Design' },
     { property: 'og:description', content: 'Premium design services for your dream home or office.' },
-    { property: 'og:image', content: '/favicon.svg' },
+    { property: 'og:image', content: '/favicon.png' },
     { name: 'twitter:card', content: 'summary_large_image' }
   ],
   script: [
@@ -186,10 +186,10 @@ useHead({
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "H&Q Design Services",
-        "image": "https://hq-design-services.vercel.app/favicon.svg",
-        "@id": "https://hq-design-services.vercel.app/",
-        "url": "https://hq-design-services.vercel.app/",
-        "telephone": "0313-4487315",
+        "image": "https://h-q-design-services.vercel.app/favicon.png",
+        "@id": "https://h-q-design-services.vercel.app/",
+        "url": "https://h-q-design-services.vercel.app/",
+        "telephone": ["0313-4487315", "+966 50 714 3124"],
         "email": "asadrogi@rocketmail.com",
         "address": {
           "@type": "PostalAddress",
