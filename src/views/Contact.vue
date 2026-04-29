@@ -428,7 +428,7 @@ const submitForm = async () => {
       
       form.value = { name: '', phone: '', email: '', service: '', location: '', message: '' }
     } else {
-      alert('Network error. Please check your connection and try again.')
+      alert(`Error: ${error.message || 'Network error'}. Please check your connection or try again later.`)
     }
   } finally {
     isSubmitting.value = false

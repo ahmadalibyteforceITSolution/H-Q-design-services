@@ -5,8 +5,8 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/api/contact",
-      "destination": "/api/contact.js"
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
     },
     {
       "source": "/sitemap.xml",
@@ -17,7 +17,7 @@
       "destination": "/robots.txt"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
   ],

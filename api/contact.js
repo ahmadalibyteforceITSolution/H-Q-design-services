@@ -1,5 +1,5 @@
-import dbConnect from './dbConnect';
-import Contact from './models/Contact';
+import dbConnect from './dbConnect.js';
+import Contact from './models/Contact.js';
 
 export default async function handler(req, res) {
   // Set CORS headers
@@ -21,14 +21,20 @@ export default async function handler(req, res) {
   }
 
   try {
+    console.log('Connecting to DB...');
     await dbConnect();
+    console.log('DB Connected successfully');
+    
     const { name, email, phone, service, location, message } = req.body;
+    console.log('Received data:', { name, email, phone, service, location, message });
 
     if (!name || !email || !message) {
+      console.log('Missing fields');
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
     // Save to MongoDB
+    console.log('Saving to MongoDB...');
     const contact = await Contact.create({
       name,
       email,
