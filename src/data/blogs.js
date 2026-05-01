@@ -1,4 +1,13 @@
-export const featuredPost = {
+const createSlug = (title) => {
+  return title
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/--+/g, '-')
+    .trim()
+}
+
+const featuredPostData = {
   title: 'Top 10 Interior Design Trends to Watch in 2024 - Pakistani Edition',
   excerpt: 'Discover the latest interior design trends shaping homes across Pakistan. From sustainable materials to smart home integration, explore what defines modern living in Lahore and beyond.',
   category: 'Interior Design',
@@ -23,7 +32,7 @@ export const featuredPost = {
   `
 }
 
-export const blogPosts = [
+const blogPostsData = [
   { id: 1, title: 'Modern Architecture: Blending Tradition with Contemporary Design', excerpt: 'Explore how modern architectural designs in Lahore incorporate traditional Pakistani elements.', category: 'Architecture', date: 'January 10, 2026', author: 'Hassan Qureshi', authorImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80', readTime: '6 min read', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80' },
   { id: 2, title: 'Small Space Solutions: Maximizing Your Home Interior', excerpt: 'Smart design tricks to make the most of compact living spaces without compromising on style.', category: 'Interior Design', date: 'January 8, 2026', author: 'Ayesha Khan', authorImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80', readTime: '5 min read', image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80' },
   { id: 3, title: 'Sustainable Materials: The Future of Home Construction', excerpt: 'Eco-friendly building materials gaining popularity in Pakistani construction industry.', category: 'Sustainability', date: 'January 5, 2026', author: 'Ali Hassan', authorImage: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80', readTime: '7 min read', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80' },
@@ -74,8 +83,16 @@ export const blogPosts = [
   { id: 48, title: 'Rent-Friendly Home Design Ideas', excerpt: 'Design tips for tenants who cannot make permanent changes.', category: 'Tips & Tricks', date: 'September 10, 2023', author: 'Ayesha Khan', authorImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80', readTime: '4 min read', image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80' },
   { id: 49, title: 'Luxury Bathroom Design Trends in Pakistan', excerpt: 'Spa-like bathroom designs for modern Pakistani homes.', category: 'Interior Design', date: 'September 8, 2023', author: 'Ali Hassan', authorImage: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80', readTime: '6 min read', image: 'https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=600&q=80' },
   { id: 50, title: 'Complete Guide to Home Construction in Lahore', excerpt: 'From foundation to finishing - everything about building in Lahore.', category: 'Architecture', date: 'September 5, 2023', author: 'Hassan Qureshi', authorImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80', readTime: '10 min read', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80' }
-].map(post => ({
+]
+
+export const featuredPost = {
+  ...featuredPostData,
+  slug: createSlug(featuredPostData.title)
+}
+
+export const blogPosts = blogPostsData.map(post => ({
   ...post,
+  slug: createSlug(post.title),
   content: `
     <p>This is a detailed view of the blog post "${post.title}".</p>
     <p>${post.excerpt}</p>

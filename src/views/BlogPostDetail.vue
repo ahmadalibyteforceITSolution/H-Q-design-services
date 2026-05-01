@@ -29,6 +29,15 @@
           
           <div class="prose prose-lg max-w-none text-gray-600" v-html="post.content"></div>
           
+          <!-- AdSense Autorelaxed Ad -->
+          <div class="mt-12">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="autorelaxed"
+                 data-ad-client="ca-pub-1888138480311828"
+                 data-ad-slot="2951340854"></ins>
+          </div>
+          
           <div class="mt-16 pt-8 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-6">
             <div class="flex items-center space-x-4">
               <span class="font-bold text-gray-900">Share this post:</span>
@@ -65,7 +74,7 @@
             <div class="p-6">
               <span class="text-zameen-green text-sm font-bold mb-2 block">{{ related.category }}</span>
               <h3 class="text-xl font-bold text-gray-900 mb-4 line-clamp-2">{{ related.title }}</h3>
-              <router-link :to="'/blog/' + related.id" class="text-gray-900 font-bold hover:text-zameen-green inline-flex items-center">
+              <router-link :to="'/blog/' + related.slug" class="text-gray-900 font-bold hover:text-zameen-green inline-flex items-center">
                 Read More
                 <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -97,11 +106,11 @@ const post = ref(null)
 const allPosts = [featuredPost, ...blogPosts]
 
 const loadPost = () => {
-  const id = parseInt(route.params.id)
-  if (id === 0) {
+  const slug = route.params.slug
+  if (slug === featuredPost.slug) {
     post.value = featuredPost
   } else {
-    post.value = blogPosts.find(p => p.id === id)
+    post.value = blogPosts.find(p => p.slug === slug)
   }
 
   if (post.value) {
@@ -125,8 +134,22 @@ const relatedPosts = computed(() => {
     .slice(0, 3)
 })
 
-onMounted(loadPost)
-watch(() => route.params.id, loadPost)
+onMounted(() => {
+  loadPost()
+  try {
+    (window.adsbygoogle = window.adsbygoogle || []).push({})
+  } catch (err) {
+    console.error('AdSense error:', err)
+  }
+})
+watch(() => route.params.slug, () => {
+  loadPost()
+  try {
+    (window.adsbygoogle = window.adsbygoogle || []).push({})
+  } catch (err) {
+    console.error('AdSense error:', err)
+  }
+})
 </script>
 
 <style scoped>

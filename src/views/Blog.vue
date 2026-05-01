@@ -36,7 +36,7 @@
                   <p class="text-sm text-gray-500">{{ featuredPost.readTime }}</p>
                 </div>
               </div>
-              <router-link :to="'/blog/0'" class="text-zameen-green font-medium hover:text-zameen-green-dark inline-flex items-center">
+              <router-link :to="'/blog/' + featuredPost.slug" class="text-zameen-green font-medium hover:text-zameen-green-dark inline-flex items-center">
                 Read More
                 <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -47,6 +47,15 @@
         </div>
       </div>
     </section>
+    
+    <!-- AdSense Autorelaxed Ad -->
+    <div class="container mx-auto px-4 mb-20">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-format="autorelaxed"
+           data-ad-client="ca-pub-1888138480311828"
+           data-ad-slot="2951340854"></ins>
+    </div>
 
     <section id="blog-grid" class="py-20 lg:py-28 bg-gray-50">
       <div class="container mx-auto px-4">
@@ -89,7 +98,7 @@
                     <span class="text-gray-300">|</span>
                     <span class="text-gray-500 text-sm">{{ post.readTime }}</span>
                   </div>
-                  <router-link :to="'/blog/' + post.id">
+                  <router-link :to="'/blog/' + post.slug">
                     <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-zameen-green transition-colors cursor-pointer">
                       {{ post.title }}
                     </h3>
@@ -100,7 +109,7 @@
                       <img :src="post.authorImage" :alt="post.author" class="w-10 h-10 rounded-full">
                       <span class="text-gray-700 font-medium">{{ post.author }}</span>
                     </div>
-                    <router-link :to="'/blog/' + post.id" class="text-zameen-green font-medium hover:text-zameen-green-dark">
+                    <router-link :to="'/blog/' + post.slug" class="text-zameen-green font-medium hover:text-zameen-green-dark">
                       Read More
                     </router-link>
                   </div>
@@ -158,7 +167,7 @@
           <div v-for="(post, index) in popularPosts" :key="post.id" class="popular-card bg-white rounded-xl p-4 shadow-lg flex gap-4">
             <div class="text-3xl font-bold text-zameen-green/30">{{ index + 1 }}</div>
             <div>
-              <router-link :to="'/blog/' + post.id">
+              <router-link :to="'/blog/' + post.slug">
                 <h4 class="font-bold text-gray-900 mb-2 hover:text-zameen-green transition-colors cursor-pointer">{{ post.title }}</h4>
               </router-link>
               <p class="text-sm text-gray-500">{{ post.category }} | {{ post.readTime }}</p>
@@ -262,6 +271,12 @@ const subscribeNewsletter = () => {
 }
 
 onMounted(() => {
+  try {
+    (window.adsbygoogle = window.adsbygoogle || []).push({})
+  } catch (err) {
+    console.error('AdSense error:', err)
+  }
+  
   gsap.from('.blog-title', {
     scrollTrigger: { trigger: '.blog-title', start: 'top 80%' },
     opacity: 0, y: 50, duration: 1

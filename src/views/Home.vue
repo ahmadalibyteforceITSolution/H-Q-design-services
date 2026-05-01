@@ -53,6 +53,15 @@
       </div>
     </section>
 
+    <!-- AdSense Autorelaxed Ad -->
+    <div class="container mx-auto px-4 py-12">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-format="autorelaxed"
+           data-ad-client="ca-pub-1888138480311828"
+           data-ad-slot="2951340854"></ins>
+    </div>
+
     <section id="services" class="py-20 lg:py-28 bg-gray-50">
       <div class="container mx-auto px-4">
         <div class="text-center max-w-3xl mx-auto mb-16">
@@ -309,6 +318,12 @@ const featuredProjects = ref([
 ])
 
 onMounted(() => {
+  try {
+    (window.adsbygoogle = window.adsbygoogle || []).push({})
+  } catch (err) {
+    console.error('AdSense error:', err)
+  }
+  
   const tl = gsap.timeline()
 
   tl.from('.hero-badge', { opacity: 0, y: 30, duration: 0.8 })
