@@ -2,7 +2,7 @@
   <div class="space-y-16">
     
     <!-- Edge-to-Edge Full-Width Hero Section (0 Padding Left/Right/Top) -->
-    <section class="w-full relative overflow-hidden min-h-[660px] flex flex-col justify-between p-6 sm:p-12 lg:p-16 border-b border-slate-800/80 shadow-2xl group">
+    <section class="w-full relative overflow-hidden min-h-[660px] flex flex-col justify-between py-12 lg:py-16 border-b border-slate-800/80 shadow-2xl group">
       
       <!-- High-Resolution Architectural Design Background Image (100% Full Cover) -->
       <img 
@@ -18,7 +18,7 @@
       <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
       <!-- Max-Width Inner Container for Text & Elements -->
-      <div class="max-w-[1440px] mx-auto w-full relative z-10 space-y-8">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 space-y-8">
         
         <!-- Top Luxury Badges -->
         <div class="flex flex-wrap items-center gap-3">
@@ -119,7 +119,7 @@
       </div>
 
       <!-- Floating Stats Footbar Inside Full Hero -->
-      <div class="max-w-[1440px] mx-auto w-full relative z-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-bold text-slate-300">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-bold text-slate-300 mt-6">
         <div class="flex items-center gap-6 flex-wrap">
           <span class="flex items-center gap-2"><i class="fa-solid fa-building-user text-amber-400 text-base"></i> 500+ Villas Designed</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-cube text-emerald-400 text-base"></i> Photorealistic 4K 3D Engine</span>
@@ -348,15 +348,15 @@
       </div>
     </section>
 
-    <!-- Bottom Lead CTA Banner (Zameen Style) -->
-    <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="relative rounded-3xl bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 p-8 sm:p-14 text-white overflow-hidden border border-slate-800 text-center space-y-6">
-        <div class="absolute -top-20 -right-20 w-64 h-64 bg-[#088C7E]/20 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- Perfectly Aligned Full-Width Bottom Lead CTA Banner (Flowing Seamlessly into Footer) -->
+    <section class="w-full bg-slate-950 text-white border-t border-slate-800/80 pt-16 pb-12 relative overflow-hidden">
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#088C7E]/20 rounded-full blur-3xl pointer-events-none"></div>
 
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-center relative z-10">
         <h2 class="text-3xl sm:text-5xl font-black tracking-tight">
           Ready to Build Your <span class="text-gradient-zameen">Dream Villa?</span>
         </h2>
-        <p class="text-slate-300 max-w-2xl mx-auto text-base sm:text-lg">
+        <p class="text-slate-300 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
           Visit our flagship architectural studio in Parkview City, Lahore or book a free 3D design consultation today.
         </p>
 
