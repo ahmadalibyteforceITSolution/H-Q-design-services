@@ -1,200 +1,111 @@
 <template>
-  <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-xl relative overflow-hidden">
-    <div class="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-8">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-3">
-          <i class="fa-solid fa-bolt text-xs"></i>
-          Interactive Design Estimator
-        </span>
-        <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Estimate Your Architecture & Interior Cost</h3>
-        <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Instant preliminary budget & design timeline for your Parkview City, DHA, or Lahore property.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-        <!-- Input Options -->
-        <div class="md:col-span-7 space-y-6">
-          <!-- Plot Size Choice -->
-          <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">1. Select Plot Size / Scale</label>
-            <div class="grid grid-cols-2 gap-2.5">
-              <button 
-                v-for="p in plotSizes" 
-                :key="p.id"
-                @click="selectedPlot = p.id"
-                type="button"
-                :class="[
-                  'p-3 rounded-xl text-left border transition-all text-xs font-semibold flex items-center justify-between',
-                  selectedPlot === p.id 
-                    ? 'border-emerald-500 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 ring-2 ring-emerald-500/20' 
-                    : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 bg-slate-50/50 dark:bg-slate-900/50'
-                ]"
-              >
-                <span class="flex items-center gap-1.5">
-                  <i :class="p.icon + ' text-emerald-500'"></i>
-                  {{ p.name }}
-                </span>
-                <span class="text-[10px] text-slate-400">{{ p.sqft }} sq.ft</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Services Selection -->
-          <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">2. Select Scope & Deliverables</label>
-            <div class="grid grid-cols-2 gap-2">
-              <button 
-                v-for="s in servicesList" 
-                :key="s.id"
-                @click="toggleService(s.id)"
-                type="button"
-                :class="[
-                  'p-2.5 rounded-xl border text-left text-xs transition-all flex items-center justify-between',
-                  selectedServices.includes(s.id) 
-                    ? 'border-amber-500 bg-amber-500/10 text-amber-600 dark:text-amber-400 font-semibold' 
-                    : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 bg-slate-50/50 dark:bg-slate-900/50'
-                ]"
-              >
-                <span class="flex items-center gap-1.5">
-                  <i :class="s.icon"></i>
-                  {{ s.name }}
-                </span>
-                <i :class="selectedServices.includes(s.id) ? 'fa-solid fa-check text-amber-500' : 'fa-solid fa-plus text-slate-400'"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Quality Finish -->
-          <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">3. Finish & Material Quality</label>
-            <div class="grid grid-cols-3 gap-2">
-              <button 
-                v-for="q in finishLevels" 
-                :key="q.id"
-                @click="selectedFinish = q.id"
-                type="button"
-                :class="[
-                  'p-2.5 rounded-xl border text-center text-xs transition-all font-medium flex items-center justify-center gap-1.5',
-                  selectedFinish === q.id 
-                    ? 'border-teal-500 bg-teal-500/10 text-teal-600 dark:text-teal-400 font-semibold' 
-                    : 'border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50'
-                ]"
-              >
-                <i :class="q.icon"></i>
-                <span>{{ q.name }}</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Output Summary Card -->
-        <div class="md:col-span-5 bg-gradient-to-br from-slate-900 to-slate-950 text-white rounded-2xl p-6 border border-slate-800 shadow-2xl relative">
-          <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Estimated Design Investment</div>
-          <div class="text-3xl font-extrabold text-gradient-cyan mb-2">
-            PKR {{ estimatedMin.toLocaleString() }} - {{ estimatedMax.toLocaleString() }}
-          </div>
-          
-          <div class="flex items-center gap-2 text-xs text-slate-400 mb-6 border-b border-slate-800 pb-4">
-            <i class="fa-solid fa-clock text-emerald-400"></i>
-            <span>Complete Design Delivery:</span>
-            <span class="font-bold text-white">{{ estimatedWeeks }} Weeks</span>
-          </div>
-
-          <div class="space-y-2 mb-6 text-xs text-slate-300">
-            <div class="flex justify-between">
-              <span class="text-slate-400">Architectural Drawings:</span>
-              <span class="font-mono text-emerald-400">Included</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-slate-400">3D Photorealistic Views:</span>
-              <span class="font-mono text-emerald-400">HD Walkthrough</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-slate-400">Parkview City Approval:</span>
-              <span class="font-mono text-emerald-400">Full Support</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-slate-400">Zameen.com Assurance:</span>
-              <span class="font-mono text-amber-400">Verified Partner</span>
-            </div>
-          </div>
-
-          <button 
-            @click="$emit('request-quote')"
-            class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-bold tracking-wide uppercase shadow-lg shadow-emerald-500/30 transition-all text-center flex items-center justify-center gap-2"
-          >
-            <i class="fa-solid fa-calendar-check"></i>
-            <span>Lock In Estimate & Request Call</span>
-          </button>
-          
-          <p class="text-[10px] text-slate-500 text-center mt-3">Free initial consultation at our Parkview City Studio.</p>
-        </div>
-      </div>
+  <div class="p-8 sm:p-12 rounded-3xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shadow-xl space-y-8">
+    <div class="text-center max-w-2xl mx-auto space-y-2">
+      <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-[#088C7E]/10 text-[#088C7E] uppercase tracking-wider border border-[#088C7E]/20">
+        Interactive 3D Design Estimator
+      </span>
+      <h3 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">Calculate Your Architectural Package</h3>
+      <p class="text-xs text-slate-500 dark:text-slate-400">Get an instant estimated quote for floor plans, 3D renders, and municipal submission maps.</p>
     </div>
+
+    <!-- Estimator Selectors Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Property Type -->
+      <div class="space-y-2">
+        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Property Type</label>
+        <select 
+          v-model="propertyType" 
+          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:border-[#088C7E]"
+        >
+          <option value="Residential Villa">Residential Villa</option>
+          <option value="Commercial Plaza">Commercial Plaza</option>
+          <option value="Luxury Interior Only">Luxury Interior Only</option>
+        </select>
+      </div>
+
+      <!-- Plot Scale -->
+      <div class="space-y-2">
+        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Plot Scale</label>
+        <select 
+          v-model="plotScale" 
+          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:border-[#088C7E]"
+        >
+          <option value="5 Marla">5 Marla (25x45)</option>
+          <option value="10 Marla">10 Marla (35x70)</option>
+          <option value="1 Kanal">1 Kanal (50x90)</option>
+          <option value="2 Kanal+">2 Kanal+ Estate</option>
+        </select>
+      </div>
+
+      <!-- Package Tier -->
+      <div class="space-y-2">
+        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Design Tier</label>
+        <select 
+          v-model="packageTier" 
+          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:border-[#088C7E]"
+        >
+          <option value="Standard (2D Floor Plans + Submission)">Standard (2D Maps + Submission)</option>
+          <option value="Premium (2D Plans + 4K 3D Exterior)">Premium (2D Maps + 4K 3D Elevation)</option>
+          <option value="Royal (Turnkey 3D + Full Luxury Interior)">Royal (Turnkey 3D + Full Interiors)</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- Calculated Result Card & WhatsApp Direct Send -->
+    <div class="p-6 sm:p-8 rounded-2xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-6 border border-slate-800">
+      <div class="space-y-1 text-center sm:text-left">
+        <span class="text-xs text-slate-400 font-medium">Estimated Investment Quote</span>
+        <div class="text-3xl sm:text-4xl font-black text-emerald-400 font-mono">
+          PKR {{ estimatedPrice.toLocaleString() }} <span class="text-xs text-slate-400 font-normal">Lac approx</span>
+        </div>
+        <p class="text-[11px] text-slate-400">Includes municipal submission drawing guarantee & 4K photorealistic 3D render files.</p>
+      </div>
+
+      <button 
+        @click="sendEstimateToWhatsApp"
+        class="w-full sm:w-auto px-8 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-2 shrink-0 cursor-pointer"
+      >
+        <i class="fa-brands fa-whatsapp text-lg"></i>
+        <span>Send Quote to WhatsApp (03416887454)</span>
+      </button>
+    </div>
+
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
 
-defineEmits(['request-quote'])
+const emit = defineEmits(['request-quote'])
 
-const selectedPlot = ref('10-marla')
-const selectedServices = ref(['arch-drawings', '3d-elevation', 'interior-plan'])
-const selectedFinish = ref('premium')
+const propertyType = ref('Residential Villa')
+const plotScale = ref('10 Marla')
+const packageTier = ref('Premium (2D Plans + 4K 3D Exterior)')
 
-const plotSizes = [
-  { id: '5-marla', name: '5 Marla Villa', sqft: '1,250', basePrice: 150000, baseWeeks: 2, icon: 'fa-solid fa-house-chimney' },
-  { id: '10-marla', name: '10 Marla Luxury', sqft: '2,500', basePrice: 280000, baseWeeks: 3, icon: 'fa-solid fa-house-user' },
-  { id: '1-kanal', name: '1 Kanal Estate', sqft: '4,500', basePrice: 480000, baseWeeks: 4, icon: 'fa-solid fa-landmark' },
-  { id: 'commercial', name: 'Commercial Plaza', sqft: '6,000+', basePrice: 650000, baseWeeks: 5, icon: 'fa-solid fa-building' }
-]
+const estimatedPrice = computed(() => {
+  let base = 1.8 // Lacs
 
-const servicesList = [
-  { id: 'arch-drawings', name: 'Architectural Floor Plans', price: 80000, weeks: 1, icon: 'fa-solid fa-compass-drafting' },
-  { id: '3d-elevation', name: '3D Elevation Views', price: 60000, weeks: 1, icon: 'fa-solid fa-cube' },
-  { id: 'interior-plan', name: 'Luxury Interior Layout', price: 90000, weeks: 1, icon: 'fa-solid fa-couch' },
-  { id: 'structure', name: 'Structural Engineering', price: 50000, weeks: 0.5, icon: 'fa-solid fa-hard-hat' },
-  { id: 'landscape', name: 'Lawn & Landscape', price: 40000, weeks: 0.5, icon: 'fa-solid fa-tree' },
-  { id: 'lighting-mep', name: 'MEP & Lighting Plan', price: 45000, weeks: 0.5, icon: 'fa-solid fa-lightbulb' }
-]
+  if (plotScale.value === '10 Marla') base = 2.8
+  if (plotScale.value === '1 Kanal') base = 4.8
+  if (plotScale.value === '2 Kanal+') base = 7.5
 
-const finishLevels = [
-  { id: 'standard', name: 'Standard Modern', multiplier: 1, icon: 'fa-solid fa-layer-group' },
-  { id: 'premium', name: 'Luxury Premium', multiplier: 1.25, icon: 'fa-solid fa-crown' },
-  { id: 'royal', name: 'Royal Classic', multiplier: 1.5, icon: 'fa-solid fa-gem' }
-]
+  if (packageTier.value.includes('Royal')) base *= 1.4
+  if (propertyType.value === 'Commercial Plaza') base *= 1.3
 
-const toggleService = (id) => {
-  if (selectedServices.value.includes(id)) {
-    selectedServices.value = selectedServices.value.filter(item => item !== id)
-  } else {
-    selectedServices.value.push(id)
-  }
+  return Math.round(base * 100) / 100
+})
+
+const sendEstimateToWhatsApp = () => {
+  const waText = `*H&Q Design Services - Instant Estimate Inquiry* 🏛️\n\n` +
+    `🏠 *Property Type:* ${propertyType.value}\n` +
+    `📐 *Plot Scale:* ${plotScale.value}\n` +
+    `💎 *Package:* ${packageTier.value}\n` +
+    `💰 *Estimated Quote:* PKR ${estimatedPrice.value} Lac approx\n\n` +
+    `Hi H&Q Architects! I would like to book a 3D floor plan review for this plot estimate.`
+
+  const targetUrl = `https://wa.me/923416887454?text=${encodeURIComponent(waText)}`
+  window.open(targetUrl, '_blank')
 }
-
-const rawTotal = computed(() => {
-  const plot = plotSizes.find(p => p.id === selectedPlot.value) || plotSizes[0]
-  const base = plot.basePrice
-  const servCost = selectedServices.value.reduce((acc, sId) => {
-    const s = servicesList.find(item => item.id === sId)
-    return acc + (s ? s.price : 0)
-  }, 0)
-  const mult = (finishLevels.find(f => f.id === selectedFinish.value) || finishLevels[0]).multiplier
-  return (base + servCost) * mult
-})
-
-const estimatedMin = computed(() => Math.round(rawTotal.value * 0.9 / 5000) * 5000)
-const estimatedMax = computed(() => Math.round(rawTotal.value * 1.2 / 5000) * 5000)
-
-const estimatedWeeks = computed(() => {
-  const plot = plotSizes.find(p => p.id === selectedPlot.value) || plotSizes[0]
-  let weeks = plot.baseWeeks
-  selectedServices.value.forEach(sId => {
-    const s = servicesList.find(item => item.id === sId)
-    if (s) weeks += s.weeks
-  })
-  return Math.ceil(weeks)
-})
 </script>

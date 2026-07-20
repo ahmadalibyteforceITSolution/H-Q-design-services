@@ -38,21 +38,19 @@
 
           <!-- Form Content -->
           <div class="p-6 sm:p-8">
-            <div v-if="submitted" class="text-center py-8">
-              <div class="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mx-auto mb-4 animate-bounce">
-                <svg class="w-8 h-8 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
+            <div v-if="submitted" class="text-center py-8 space-y-4">
+              <div class="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mx-auto mb-2 animate-bounce">
+                <i class="fa-brands fa-whatsapp text-3xl"></i>
               </div>
-              <h3 class="text-2xl font-bold mb-2">Consultation Request Received!</h3>
-              <p class="text-slate-600 dark:text-slate-400 max-w-md mx-auto text-sm mb-6">
-                Thank you, <span class="font-semibold text-slate-900 dark:text-white">{{ form.name }}</span>! Our lead architect will contact you via WhatsApp/phone (<span class="text-emerald-500 font-semibold">{{ form.phone || form.email }}</span>) within <span class="text-emerald-500 font-semibold">24 hours</span> to discuss your plot layout & 3D designs.
+              <h3 class="text-2xl font-bold">Opening WhatsApp Chat...</h3>
+              <p class="text-slate-600 dark:text-slate-400 max-w-md mx-auto text-sm">
+                Thank you, <span class="font-semibold text-slate-900 dark:text-white">{{ form.name }}</span>! We have formatted your project inquiry details and are opening WhatsApp to connect with <strong class="text-emerald-500">03416887454</strong>.
               </p>
               <button 
                 @click="resetAndClose"
-                class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-all shadow-lg shadow-emerald-500/20"
+                class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-all shadow-lg shadow-emerald-500/20 cursor-pointer"
               >
-                Close
+                Close Window
               </button>
             </div>
 
@@ -65,10 +63,10 @@
                 <div 
                   v-for="service in services" 
                   :key="service.id"
-                  @click="form.service = service.id"
+                  @click="form.service = service.title"
                   :class="[
                     'p-4 rounded-2xl border cursor-pointer transition-all flex items-center gap-3.5',
-                    form.service === service.id 
+                    form.service === service.title 
                       ? 'border-emerald-500 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 ring-2 ring-emerald-500/30' 
                       : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 bg-slate-50/50 dark:bg-slate-900/40'
                   ]"
@@ -154,10 +152,10 @@
               </div>
             </div>
 
-            <!-- Step 3: Contact Information -->
+            <!-- Step 3: Contact Information & Direct WhatsApp Send -->
             <div v-else-if="currentStep === 3">
               <h4 class="text-xl font-bold mb-2">Where should we send your initial designs?</h4>
-              <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Enter your contact details for a free 3D estimate & consultation.</p>
+              <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Submitting will automatically send all details directly to WhatsApp (03416887454).</p>
 
               <form @submit.prevent="submitForm" class="space-y-4 mb-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -227,10 +225,10 @@
                   <button 
                     type="submit"
                     :disabled="loading"
-                    class="px-8 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-semibold transition-all shadow-lg shadow-emerald-500/25 flex items-center gap-2"
+                    class="px-8 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-all shadow-lg shadow-emerald-500/25 flex items-center gap-2 cursor-pointer"
                   >
-                    <span v-if="loading" class="animate-spin">🌀</span>
-                    <span>Submit Consultation Request</span>
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Send Inquiry to WhatsApp</span>
                   </button>
                 </div>
               </form>
@@ -268,7 +266,7 @@ const plotSizes = ['5 Marla', '10 Marla', '1 Kanal', '2+ Kanal / Commercial']
 const locationOptions = ['Parkview City', 'DHA Lahore', 'Gulberg', 'Bahria Town', 'Other Lahore', 'Overseas Client']
 
 const form = reactive({
-  service: 'arch-design',
+  service: 'Architecture Design',
   plotSize: '10 Marla',
   location: 'Parkview City',
   name: '',
@@ -283,11 +281,27 @@ const close = () => {
 }
 
 const submitForm = () => {
+  if (!form.name || !form.phone) return
+
   loading.value = true
+
+  const waText = `*H&Q Design Services - Consultation Request* 🏛️\n\n` +
+    `👤 *Client Name:* ${form.name}\n` +
+    `📞 *Phone / WhatsApp:* ${form.phone}\n` +
+    `✉️ *Email:* ${form.email || 'N/A'}\n` +
+    `🏗️ *Service Required:* ${form.service}\n` +
+    `📐 *Plot Scale:* ${form.plotSize}\n` +
+    `📍 *Location:* ${form.location}\n` +
+    `⏰ *Contact Time:* ${form.time}\n` +
+    `📝 *Vision / Notes:* ${form.description || '3D consultation requested.'}`
+
+  const targetUrl = `https://wa.me/923416887454?text=${encodeURIComponent(waText)}`
+
   setTimeout(() => {
     loading.value = false
     submitted.value = true
-  }, 1000)
+    window.open(targetUrl, '_blank')
+  }, 600)
 }
 
 const resetAndClose = () => {

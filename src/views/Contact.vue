@@ -35,16 +35,16 @@
         <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl">
           <i class="fa-brands fa-whatsapp"></i>
         </div>
-        <h3 class="text-lg font-bold text-slate-900 dark:text-white">WhatsApp Chat</h3>
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">WhatsApp Direct Desk</h3>
         <p class="text-xs text-slate-500 dark:text-slate-400">Send plot dimensions or architectural sketches directly via WhatsApp.</p>
         <div class="pt-2">
           <a 
             href="https://wa.me/923416887454" 
             target="_blank" 
-            class="px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold inline-flex items-center gap-2 shadow"
+            class="px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold inline-flex items-center gap-2 shadow hover:bg-emerald-500 transition-colors"
           >
             <i class="fa-brands fa-whatsapp"></i>
-            <span>Chat on WhatsApp</span>
+            <span>Chat on WhatsApp (0341-6887454)</span>
           </a>
         </div>
       </div>
@@ -66,11 +66,11 @@
     <!-- Contact Form & Map Section -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       
-      <!-- Inquiry Form -->
+      <!-- Inquiry Form with Automatic WhatsApp Redirect -->
       <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
         <div class="space-y-1">
           <h3 class="text-2xl font-black text-slate-900 dark:text-white">Send Us Your Plot Details</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Fill out this form and our chief architect will reach out within 2 hours.</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Submitting will open WhatsApp with your full project inquiry details for 03416887454.</p>
         </div>
 
         <form @submit.prevent="submitForm" class="space-y-4 text-xs">
@@ -139,13 +139,14 @@
 
           <button 
             type="submit" 
-            class="w-full py-4 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg shadow-[#088C7E]/30 cursor-pointer"
+            class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/20 cursor-pointer flex items-center justify-center gap-2"
           >
-            Submit Inquiry to Chief Architect
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>Send Details to WhatsApp (0341-6887454)</span>
           </button>
           
-          <p v-if="submitted" class="text-xs text-center text-[#088C7E] font-bold">
-            ✓ Inquiry received! Our team will contact you shortly at {{ form.phone }}.
+          <p v-if="submitted" class="text-xs text-center text-[#088C7E] font-bold flex items-center justify-center gap-1">
+            <i class="fa-solid fa-circle-check"></i> Redirecting to WhatsApp with inquiry details...
           </p>
         </form>
       </div>
@@ -172,7 +173,7 @@ import { ref } from 'vue'
 
 const form = ref({
   name: '',
-  phone: '03416887454',
+  phone: '',
   location: 'Parkview City Lahore',
   plotSize: '10 Marla',
   message: ''
@@ -181,11 +182,23 @@ const form = ref({
 const submitted = ref(false)
 
 const submitForm = () => {
+  if (!form.value.name || !form.value.phone) return
+
   submitted.value = true
+
+  // Format professional WhatsApp message with all submitted data
+  const waText = `*H&Q Design Services - New Website Inquiry* 🏛️\n\n` +
+    `👤 *Client Name:* ${form.value.name}\n` +
+    `📞 *Phone / WhatsApp:* ${form.value.phone}\n` +
+    `📍 *Location:* ${form.value.location}\n` +
+    `📐 *Plot Scale:* ${form.value.plotSize}\n` +
+    `📝 *Details & Vision:* ${form.value.message || 'Floor plan & 3D render consultation requested.'}`
+
+  const targetUrl = `https://wa.me/923416887454?text=${encodeURIComponent(waText)}`
+
   setTimeout(() => {
+    window.open(targetUrl, '_blank')
     submitted.value = false
-    form.value.name = ''
-    form.value.message = ''
-  }, 4000)
+  }, 600)
 }
 </script>
