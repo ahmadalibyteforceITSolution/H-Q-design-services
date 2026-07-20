@@ -187,7 +187,7 @@
                     <input 
                       v-model="form.email" 
                       type="email" 
-                      placeholder="asadali2899@gmail.com"
+                      placeholder="asadali28997@gmail.com"
                       class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:border-emerald-500 text-sm"
                     />
                   </div>

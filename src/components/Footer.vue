@@ -30,7 +30,7 @@
             </span>
           </div>
 
-          <!-- Contact Snippet -->
+          <!-- Contact Snippet with Direct Gmail Compose Link -->
           <div class="text-xs text-slate-300 space-y-2 pt-2">
             <p class="flex items-center gap-2">
               <i class="fa-solid fa-location-dot text-[#088C7E] text-xs"></i>
@@ -42,7 +42,16 @@
             </p>
             <p class="flex items-center gap-2">
               <i class="fa-solid fa-envelope text-[#088C7E] text-xs"></i>
-              <span>asadali2899@gmail.com</span>
+              <a 
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=asadali28997@gmail.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="hover:underline hover:text-emerald-400 font-bold transition-colors flex items-center gap-1"
+                title="Open Gmail Compose"
+              >
+                <span>asadali28997@gmail.com</span>
+                <i class="fa-solid fa-[#088C7E] fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
             </p>
           </div>
         </div>
@@ -84,7 +93,7 @@
                 v-model="email" 
                 type="email" 
                 required
-                placeholder="your.email@gmail.com" 
+                placeholder="asadali28997@gmail.com" 
                 class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#088C7E] transition-colors"
               />
               <button 
@@ -130,9 +139,9 @@
           <a href="https://www.instagram.com/chasad_ali/" target="_blank" rel="noopener" class="hover:text-white transition-colors text-base" title="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
-          <router-link to="/about" class="hover:text-amber-400 transition-colors text-base" title="H&Q Partner Studio">
-            <i class="fa-solid fa-award"></i>
-          </router-link>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=asadali28997@gmail.com" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors text-base" title="Email via Gmail">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
         </div>
       </div>
 

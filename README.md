@@ -1,62 +1,19 @@
-# H&Q Design Services Website
+# H&Q Design Services | Architecture & Interior Studio Lahore
 
-Premier Architecture & Interior Design Studio in Lahore, Pakistan. Affiliated with **Zameen.com** and **Parkview City**.
+Official architectural design platform for **H&Q Design Services**, an engineering & 3D visualization studio located in **Parkview City, Lahore, Pakistan**, affiliated with **Zameen.com**.
 
-## Features
+## 🌟 Key Features
 
-- 🏠 **Home Page** - Hero section with GSAP animations, services overview, featured projects
-- 👥 **About Us** - Company story, team, values, and partnerships
-- 🖼️ **Portfolio** - Architecture & Interior Design projects with filtering
-- 📝 **Blog** - 50+ articles on architecture, interior design, and real estate
-- 📞 **Contact Us** - Contact form, WhatsApp integration, FAQ section
+- **SEO & Canonical System**: Automated dynamic canonical URLs and JSON-LD Schema on all route transitions.
+- **Multilingual Support**: English, Urdu (PK), and Arabic (SA) with instant RTL/LTR switching.
+- **WhatsApp Consultation Integration**: Instant 1-click submission directly to WhatsApp KSA (+966507143124).
+- **Zameen Partner Directory**: 100% internal site routing (no external traffic redirects).
+- **Interactive 3D Estimator**: Real-time Pakistan architectural price calculator (PKR 50-150 / sq. ft).
 
-## Technology Stack
+## 📞 Contact Information
 
-- Vue.js 3 (Composition API)
-- Vue Router
-- Tailwind CSS (Zameen.com inspired design)
-- GSAP Animation
-- Vercel Deployment
-
-## Contact Information
-
-- **Phone**: 0313-4487315
-- **Email**: asadali2899@gmail.com
-- **Instagram**: https://www.instagram.com/chasad_ali/
-- **Location**: Parkview City, Lahore, Pakistan
-
-## Deployment to Vercel
-
-1. Install dependencies:
-   ```bash
-   cd hq-design-services
-   npm install
-   ```
-
-2. Run development server:
-   ```bash
-   npm run dev
-   ```
-
-3. Build for production:
-   ```bash
-   npm run build
-   ```
-
-4. Deploy to Vercel:
-   - Push to GitHub repository
-   - Connect repository to Vercel
-   - Vercel will automatically detect Vue.js and deploy
-
-## SEO Optimizations
-
-- Meta tags (title, description, keywords)
-- Open Graph tags for social sharing
-- Canonical URL
-- Semantic HTML structure
-- Alt tags for all images
-- Mobile-responsive design
-
-## License
-
-© 2026 H&Q Design Services. All rights reserved.
+- **Studio Address**: Parkview City, Multan Road, Lahore, Punjab, Pakistan
+- **Pakistan Phone / WhatsApp**: 0341-6887454
+- **Saudi Arabia Desk**: +966 50 714 3124
+- **Email**: asadali28997@gmail.com
+- **Website**: [hq-design-services.com](https://hq-design-services.com)

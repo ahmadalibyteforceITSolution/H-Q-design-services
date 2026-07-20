@@ -10,7 +10,7 @@
         Connect with Our <span class="text-gradient-zameen">Senior Architects</span>
       </h1>
       <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
-        Visit our studio in Parkview City, Lahore, or connect with our Saudi Arabia WhatsApp desk.
+        Visit our studio in Parkview City, Lahore, or connect with our Saudi Arabia WhatsApp desk and direct Gmail desk.
       </p>
     </div>
 
@@ -49,15 +49,23 @@
         </div>
       </div>
 
-      <!-- Studio Location -->
+      <!-- Email Direct via Gmail -->
       <div class="p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 hover:border-amber-500 transition-all">
         <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl">
-          <i class="fa-solid fa-location-dot"></i>
+          <i class="fa-solid fa-envelope"></i>
         </div>
-        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Parkview Studio</h3>
-        <p class="text-xs text-slate-500 dark:text-slate-400">Parkview City, Multan Road, Lahore, Punjab, Pakistan.</p>
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Official Gmail Inbox</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400">Send blueprints, CAD files, or project RFPs directly to our Gmail inbox.</p>
         <div class="pt-2">
-          <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Mon - Sat: 9:00 AM - 7:00 PM</span>
+          <a 
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=asadali28997@gmail.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="px-4 py-2.5 rounded-xl bg-amber-600 text-white text-xs font-bold inline-flex items-center gap-2 shadow hover:bg-amber-500 transition-colors"
+          >
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Open in Gmail (asadali28997@gmail.com)</span>
+          </a>
         </div>
       </div>
 
