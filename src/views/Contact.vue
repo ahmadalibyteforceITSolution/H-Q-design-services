@@ -74,14 +74,14 @@
     <!-- Contact Form & Map Section -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       
-      <!-- Inquiry Form with Both WhatsApp Direct Destinations -->
+      <!-- Inquiry Form with ONE SINGLE BUTTON to send to BOTH Pakistan & KSA -->
       <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
         <div class="space-y-1">
           <h3 class="text-2xl font-black text-slate-900 dark:text-white">Send Us Your Plot Details</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Select whether to send details to Pakistan or Saudi Arabia WhatsApp desk.</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Submitting will send your details to both Pakistan (03416887454) & KSA (+966507143124) WhatsApp desks.</p>
         </div>
 
-        <form @submit.prevent="submitForm('pk')" class="space-y-4 text-xs">
+        <form @submit.prevent="submitToBothNumbers" class="space-y-4 text-xs">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Your Full Name *</label>
@@ -145,28 +145,17 @@
             ></textarea>
           </div>
 
-          <!-- Action Buttons for Both PK and KSA WhatsApp -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-            <button 
-              type="button"
-              @click="submitForm('pk')" 
-              class="py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg cursor-pointer flex items-center justify-center gap-2"
-            >
-              <i class="fa-brands fa-whatsapp text-base"></i>
-              <span>🇵🇰 Send to Pakistan (03416887454)</span>
-            </button>
-            <button 
-              type="button"
-              @click="submitForm('ksa')" 
-              class="py-3.5 px-4 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg cursor-pointer flex items-center justify-center gap-2"
-            >
-              <i class="fa-brands fa-whatsapp text-base"></i>
-              <span>🇸🇦 Send to KSA (+966507143124)</span>
-            </button>
-          </div>
+          <!-- ONE SINGLE BUTTON -->
+          <button 
+            type="submit" 
+            class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/20 cursor-pointer flex items-center justify-center gap-2"
+          >
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>Send Details to WhatsApp (PK & KSA)</span>
+          </button>
           
           <p v-if="submitted" class="text-xs text-center text-[#088C7E] font-bold flex items-center justify-center gap-1">
-            <i class="fa-solid fa-circle-check"></i> Redirecting to WhatsApp with inquiry details...
+            <i class="fa-solid fa-circle-check"></i> Sending inquiry to both 03416887454 & +966507143124...
           </p>
         </form>
       </div>
@@ -201,7 +190,7 @@ const form = ref({
 
 const submitted = ref(false)
 
-const submitForm = (destination = 'pk') => {
+const submitToBothNumbers = () => {
   if (!form.value.name || !form.value.phone) return
 
   submitted.value = true
@@ -213,12 +202,14 @@ const submitForm = (destination = 'pk') => {
     `📐 *Plot Scale:* ${form.value.plotSize}\n` +
     `📝 *Details & Vision:* ${form.value.message || 'Floor plan & 3D render consultation requested.'}`
 
-  const targetNumber = destination === 'ksa' ? '966507143124' : '923416887454'
-  const targetUrl = `https://wa.me/${targetNumber}?text=${encodeURIComponent(waText)}`
+  const pkUrl = `https://wa.me/923416887454?text=${encodeURIComponent(waText)}`
+  const ksaUrl = `https://wa.me/966507143124?text=${encodeURIComponent(waText)}`
 
+  // Single click opens WhatsApp for both Pakistan and Saudi Arabia desks
   setTimeout(() => {
-    window.open(targetUrl, '_blank')
+    window.open(pkUrl, '_blank')
+    window.open(ksaUrl, '_blank')
     submitted.value = false
-  }, 600)
+  }, 400)
 }
 </script>

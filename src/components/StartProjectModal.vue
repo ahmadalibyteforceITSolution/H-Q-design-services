@@ -42,9 +42,9 @@
               <div class="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mx-auto mb-2 animate-bounce">
                 <i class="fa-brands fa-whatsapp text-3xl"></i>
               </div>
-              <h3 class="text-2xl font-bold">Opening WhatsApp Chat...</h3>
+              <h3 class="text-2xl font-bold">Sending to WhatsApp Desks...</h3>
               <p class="text-slate-600 dark:text-slate-400 max-w-md mx-auto text-sm">
-                Thank you, <span class="font-semibold text-slate-900 dark:text-white">{{ form.name }}</span>! We have formatted your project inquiry details and are opening WhatsApp to connect with our senior architect desk.
+                Thank you, <span class="font-semibold text-slate-900 dark:text-white">{{ form.name }}</span>! Opening WhatsApp for both Pakistan (03416887454) and Saudi Arabia (+966507143124).
               </p>
               <button 
                 @click="resetAndClose"
@@ -152,12 +152,12 @@
               </div>
             </div>
 
-            <!-- Step 3: Contact Information & Dual WhatsApp Buttons -->
+            <!-- Step 3: Contact Information & ONE SINGLE BUTTON -->
             <div v-else-if="currentStep === 3">
               <h4 class="text-xl font-bold mb-2">Where should we send your initial designs?</h4>
-              <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Choose to send all project details to Pakistan or Saudi Arabia WhatsApp desk.</p>
+              <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Submitting will send all details to both Pakistan (03416887454) & KSA (+966507143124) WhatsApp desks.</p>
 
-              <form @submit.prevent="submitForm('pk')" class="space-y-4 mb-6">
+              <form @submit.prevent="submitToBothNumbers" class="space-y-4 mb-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label class="block text-xs font-medium mb-1 text-slate-600 dark:text-slate-400">Full Name *</label>
@@ -214,35 +214,23 @@
                   ></textarea>
                 </div>
 
-                <div class="flex flex-col sm:flex-row justify-between items-center gap-3 pt-2">
+                <div class="flex justify-between items-center pt-2">
                   <button 
                     type="button"
                     @click="currentStep = 2"
-                    class="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium text-xs transition-colors"
+                    class="px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium text-sm transition-colors"
                   >
                     ← Back
                   </button>
 
-                  <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
-                    <button 
-                      type="button"
-                      @click="submitForm('pk')"
-                      :disabled="loading"
-                      class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-all shadow-lg flex items-center justify-center gap-1.5 cursor-pointer"
-                    >
-                      <i class="fa-brands fa-whatsapp text-base"></i>
-                      <span>🇵🇰 PK (03416887454)</span>
-                    </button>
-                    <button 
-                      type="button"
-                      @click="submitForm('ksa')"
-                      :disabled="loading"
-                      class="px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs transition-all shadow-lg flex items-center justify-center gap-1.5 cursor-pointer"
-                    >
-                      <i class="fa-brands fa-whatsapp text-base"></i>
-                      <span>🇸🇦 KSA (+966507143124)</span>
-                    </button>
-                  </div>
+                  <button 
+                    type="submit"
+                    :disabled="loading"
+                    class="px-8 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-all shadow-lg shadow-emerald-500/25 flex items-center gap-2 cursor-pointer"
+                  >
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Send Inquiry to WhatsApp (PK & KSA)</span>
+                  </button>
                 </div>
               </form>
             </div>
@@ -293,7 +281,7 @@ const close = () => {
   emit('close')
 }
 
-const submitForm = (destination = 'pk') => {
+const submitToBothNumbers = () => {
   if (!form.name || !form.phone) return
 
   loading.value = true
@@ -308,14 +296,15 @@ const submitForm = (destination = 'pk') => {
     `⏰ *Contact Time:* ${form.time}\n` +
     `📝 *Vision / Notes:* ${form.description || '3D consultation requested.'}`
 
-  const targetNumber = destination === 'ksa' ? '966507143124' : '923416887454'
-  const targetUrl = `https://wa.me/${targetNumber}?text=${encodeURIComponent(waText)}`
+  const pkUrl = `https://wa.me/923416887454?text=${encodeURIComponent(waText)}`
+  const ksaUrl = `https://wa.me/966507143124?text=${encodeURIComponent(waText)}`
 
   setTimeout(() => {
     loading.value = false
     submitted.value = true
-    window.open(targetUrl, '_blank')
-  }, 600)
+    window.open(pkUrl, '_blank')
+    window.open(ksaUrl, '_blank')
+  }, 400)
 }
 
 const resetAndClose = () => {
