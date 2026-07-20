@@ -1,137 +1,135 @@
 <template>
-  <div class="space-y-16 py-8">
+  <div class="space-y-16">
     
-    <!-- Hero Banner with Luxury Background Image & Glassmorphic Search -->
-    <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="relative rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl min-h-[620px] flex flex-col justify-between p-6 sm:p-12 lg:p-14 group">
+    <!-- Edge-to-Edge Full-Width Hero Section (0 Padding Left/Right/Top) -->
+    <section class="w-full relative overflow-hidden min-h-[660px] flex flex-col justify-between p-6 sm:p-12 lg:p-16 border-b border-slate-800/80 shadow-2xl group">
+      
+      <!-- High-Resolution Architectural Design Background Image (100% Full Cover) -->
+      <img 
+        src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=85" 
+        alt="H&Q Luxury Villa Architectural Elevation Render" 
+        class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
+      />
+
+      <!-- Cinematic Multi-Layer Dark Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/45 pointer-events-none"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/60 pointer-events-none"></div>
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-[#088C7E]/25 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- Max-Width Inner Container for Text & Elements -->
+      <div class="max-w-[1440px] mx-auto w-full relative z-10 space-y-8">
         
-        <!-- High-Resolution Architectural Design Background Image -->
-        <img 
-          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=85" 
-          alt="H&Q Luxury Villa Architectural Elevation Render" 
-          class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
-        />
+        <!-- Top Luxury Badges -->
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="px-4 py-1.5 rounded-full text-xs font-black bg-[#088C7E] text-white tracking-wider uppercase shadow-xl flex items-center gap-2 border border-emerald-400/30">
+            <i class="fa-solid fa-award text-amber-300 text-sm"></i>
+            <span>Zameen Verified Architectural Partner</span>
+          </span>
+          <span class="px-4 py-1.5 rounded-full text-xs font-extrabold bg-slate-900/90 text-amber-300 backdrop-blur-md border border-amber-500/30 flex items-center gap-1.5 shadow-lg">
+            <i class="fa-solid fa-location-dot text-[#088C7E]"></i>
+            <span>Parkview City Studio · Lahore</span>
+          </span>
+          <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-950/80 text-emerald-300 backdrop-blur-md border border-emerald-500/30 hidden sm:flex items-center gap-1.5 shadow-lg">
+            <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+            <span>CDA & DHA Bylaws Compliant</span>
+          </span>
+        </div>
 
-        <!-- Cinematic Multi-Layer Dark Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/40 pointer-events-none"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/60 pointer-events-none"></div>
-        <div class="absolute -top-32 -right-32 w-96 h-96 bg-[#088C7E]/25 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- Main Heading & Subtitle -->
+        <div class="max-w-4xl space-y-4">
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight drop-shadow-2xl">
+            Pakistan's Premier <span class="text-gradient-zameen">Architecture & 3D Design</span> Studio
+          </h1>
+          <p class="text-slate-200 text-base sm:text-lg lg:text-xl font-medium leading-relaxed max-w-2xl drop-shadow-md">
+            Transforming raw plot dimensions into photorealistic 4K 3D elevation renders, submission maps, and luxury turnkey interiors across Parkview City, DHA, and Gulberg Lahore.
+          </p>
+        </div>
 
-        <!-- Content Overlay Container -->
-        <div class="relative z-10 space-y-8">
+        <!-- Zameen Property Search Filter Glassmorphic Widget -->
+        <div class="p-5 sm:p-7 rounded-3xl bg-slate-950/75 backdrop-blur-2xl border border-slate-700/60 shadow-2xl space-y-5 max-w-5xl">
           
-          <!-- Top Luxury Badges -->
-          <div class="flex flex-wrap items-center gap-3">
-            <span class="px-4 py-1.5 rounded-full text-xs font-black bg-[#088C7E] text-white tracking-wider uppercase shadow-xl flex items-center gap-2 border border-emerald-400/30">
-              <i class="fa-solid fa-award text-amber-300 text-sm"></i>
-              <span>Zameen Verified Architectural Partner</span>
-            </span>
-            <span class="px-4 py-1.5 rounded-full text-xs font-extrabold bg-slate-900/90 text-amber-300 backdrop-blur-md border border-amber-500/30 flex items-center gap-1.5 shadow-lg">
-              <i class="fa-solid fa-location-dot text-[#088C7E]"></i>
-              <span>Parkview City Studio · Lahore</span>
-            </span>
-            <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-950/80 text-emerald-300 backdrop-blur-md border border-emerald-500/30 hidden sm:flex items-center gap-1.5 shadow-lg">
-              <i class="fa-solid fa-shield-halved text-emerald-400"></i>
-              <span>CDA & DHA Bylaws Compliant</span>
-            </span>
+          <!-- Category Tabs -->
+          <div class="flex flex-wrap items-center gap-2 border-b border-slate-700/60 pb-3 text-xs font-extrabold">
+            <button 
+              v-for="tab in zameenTabs" 
+              :key="tab"
+              @click="activeZameenTab = tab"
+              :class="[
+                'px-4 py-2 rounded-xl transition-all cursor-pointer tracking-wider',
+                activeZameenTab === tab ? 'bg-[#088C7E] text-white shadow-lg shadow-[#088C7E]/40' : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+              ]"
+            >
+              {{ tab }}
+            </button>
           </div>
 
-          <!-- Main Heading & Subtitle -->
-          <div class="max-w-4xl space-y-4">
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight drop-shadow-2xl">
-              Pakistan's Premier <span class="text-gradient-zameen">Architecture & 3D Design</span> Studio
-            </h1>
-            <p class="text-slate-200 text-base sm:text-lg lg:text-xl font-medium leading-relaxed max-w-2xl drop-shadow-md">
-              Transforming raw plot dimensions into photorealistic 4K 3D elevation renders, submission maps, and luxury turnkey interiors across Parkview City, DHA, and Gulberg Lahore.
-            </p>
-          </div>
-
-          <!-- Zameen Property Search Filter Glassmorphic Widget -->
-          <div class="p-5 sm:p-7 rounded-3xl bg-slate-950/75 backdrop-blur-2xl border border-slate-700/60 shadow-2xl space-y-5 max-w-5xl">
+          <!-- Dropdown Selectors Row -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-bold">
             
-            <!-- Category Tabs -->
-            <div class="flex flex-wrap items-center gap-2 border-b border-slate-700/60 pb-3 text-xs font-extrabold">
+            <!-- City / Location Selector -->
+            <div class="space-y-1.5">
+              <label class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">City / Housing Society</label>
+              <select v-model="searchLocation" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 text-white border border-slate-700 focus:outline-none focus:border-[#088C7E] shadow-inner font-semibold">
+                <option value="Parkview City">Parkview City, Lahore</option>
+                <option value="DHA Lahore">DHA Phase 1-9, Lahore</option>
+                <option value="Gulberg Lahore">Gulberg III, Lahore</option>
+                <option value="Bahria Town">Bahria Town, Lahore</option>
+                <option value="Overseas Client">Overseas (Saudi Arabia / KSA)</option>
+              </select>
+            </div>
+
+            <!-- Service Category -->
+            <div class="space-y-1.5">
+              <label class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">Design Deliverable</label>
+              <select v-model="searchCategory" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 text-white border border-slate-700 focus:outline-none focus:border-[#088C7E] shadow-inner font-semibold">
+                <option value="Architectural Floor Plans">Architectural Floor Plans</option>
+                <option value="4K 3D Exterior Elevation">4K 3D Exterior Elevation</option>
+                <option value="Luxury Interior Styling">Luxury Interior Styling</option>
+                <option value="Commercial Plaza Map">Commercial Plaza Blueprint</option>
+              </select>
+            </div>
+
+            <!-- Plot Size Selector -->
+            <div class="space-y-1.5">
+              <label class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">Plot Dimension</label>
+              <select v-model="searchPlot" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 text-white border border-slate-700 focus:outline-none focus:border-[#088C7E] shadow-inner font-semibold">
+                <option value="5 Marla">5 Marla (25x45)</option>
+                <option value="10 Marla">10 Marla (35x70)</option>
+                <option value="1 Kanal">1 Kanal (50x90)</option>
+                <option value="Commercial">Commercial Plaza</option>
+              </select>
+            </div>
+
+            <!-- Search Button -->
+            <div class="flex items-end">
               <button 
-                v-for="tab in zameenTabs" 
-                :key="tab"
-                @click="activeZameenTab = tab"
-                :class="[
-                  'px-4 py-2 rounded-xl transition-all cursor-pointer tracking-wider',
-                  activeZameenTab === tab ? 'bg-[#088C7E] text-white shadow-lg shadow-[#088C7E]/40' : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
-                ]"
+                @click="performZameenSearch"
+                class="w-full py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white font-black text-xs uppercase tracking-wider transition-all shadow-xl shadow-[#088C7E]/40 flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.02]"
               >
-                {{ tab }}
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Find Floor Plans</span>
               </button>
             </div>
 
-            <!-- Dropdown Selectors Row -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-bold">
-              
-              <!-- City / Location Selector -->
-              <div class="space-y-1.5">
-                <label class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">City / Housing Society</label>
-                <select v-model="searchLocation" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 text-white border border-slate-700 focus:outline-none focus:border-[#088C7E] shadow-inner font-semibold">
-                  <option value="Parkview City">Parkview City, Lahore</option>
-                  <option value="DHA Lahore">DHA Phase 1-9, Lahore</option>
-                  <option value="Gulberg Lahore">Gulberg III, Lahore</option>
-                  <option value="Bahria Town">Bahria Town, Lahore</option>
-                  <option value="Overseas Client">Overseas (Saudi Arabia / KSA)</option>
-                </select>
-              </div>
-
-              <!-- Service Category -->
-              <div class="space-y-1.5">
-                <label class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">Design Deliverable</label>
-                <select v-model="searchCategory" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 text-white border border-slate-700 focus:outline-none focus:border-[#088C7E] shadow-inner font-semibold">
-                  <option value="Architectural Floor Plans">Architectural Floor Plans</option>
-                  <option value="4K 3D Exterior Elevation">4K 3D Exterior Elevation</option>
-                  <option value="Luxury Interior Styling">Luxury Interior Styling</option>
-                  <option value="Commercial Plaza Map">Commercial Plaza Blueprint</option>
-                </select>
-              </div>
-
-              <!-- Plot Size Selector -->
-              <div class="space-y-1.5">
-                <label class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">Plot Dimension</label>
-                <select v-model="searchPlot" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 text-white border border-slate-700 focus:outline-none focus:border-[#088C7E] shadow-inner font-semibold">
-                  <option value="5 Marla">5 Marla (25x45)</option>
-                  <option value="10 Marla">10 Marla (35x70)</option>
-                  <option value="1 Kanal">1 Kanal (50x90)</option>
-                  <option value="Commercial">Commercial Plaza</option>
-                </select>
-              </div>
-
-              <!-- Search Button -->
-              <div class="flex items-end">
-                <button 
-                  @click="performZameenSearch"
-                  class="w-full py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white font-black text-xs uppercase tracking-wider transition-all shadow-xl shadow-[#088C7E]/40 flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.02]"
-                >
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                  <span>Find Floor Plans</span>
-                </button>
-              </div>
-
-            </div>
-
           </div>
 
-        </div>
-
-        <!-- Floating Stats Footbar Inside Hero -->
-        <div class="relative z-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-bold text-slate-300">
-          <div class="flex items-center gap-6 flex-wrap">
-            <span class="flex items-center gap-2"><i class="fa-solid fa-building-user text-amber-400 text-base"></i> 500+ Villas Designed</span>
-            <span class="flex items-center gap-2"><i class="fa-solid fa-cube text-emerald-400 text-base"></i> Photorealistic 4K 3D Engine</span>
-            <span class="flex items-center gap-2"><i class="fa-solid fa-file-signature text-cyan-400 text-base"></i> Submission Approval Guarantee</span>
-          </div>
-          <a href="https://wa.me/966507143124" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 font-extrabold">
-            <i class="fa-brands fa-whatsapp text-sm"></i> Direct WhatsApp Desk: +966 50 714 3124 →
-          </a>
         </div>
 
       </div>
+
+      <!-- Floating Stats Footbar Inside Full Hero -->
+      <div class="max-w-[1440px] mx-auto w-full relative z-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-bold text-slate-300">
+        <div class="flex items-center gap-6 flex-wrap">
+          <span class="flex items-center gap-2"><i class="fa-solid fa-building-user text-amber-400 text-base"></i> 500+ Villas Designed</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-cube text-emerald-400 text-base"></i> Photorealistic 4K 3D Engine</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-file-signature text-cyan-400 text-base"></i> Submission Approval Guarantee</span>
+        </div>
+        <a href="https://wa.me/966507143124" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 font-extrabold">
+          <i class="fa-brands fa-whatsapp text-sm"></i> Direct WhatsApp Desk: +966 50 714 3124 →
+        </a>
+      </div>
+
     </section>
 
     <!-- Infinite Auto-Scrolling Announcement Marquee Ticker -->
