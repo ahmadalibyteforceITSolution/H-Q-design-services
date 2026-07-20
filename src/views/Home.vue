@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-16 pb-20">
     
-    <!-- Hero Section (Zameen.com Style) -->
+    <!-- Hero Section (Zameen.com Style Layout) -->
     <section class="relative min-h-[92vh] flex flex-col justify-center pt-8 pb-16 overflow-hidden bg-slate-950 text-white">
       <!-- Glow Gradients -->
       <div class="absolute -top-30 -right-20 w-[500px] h-[500px] bg-[#088C7E]/25 rounded-full blur-[120px] pointer-events-none"></div>
@@ -175,7 +175,7 @@
           <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-[#088C7E]"></i> Parkview City Studio Lahore</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-compass-drafting text-[#088C7E]"></i> 500+ Villas Designed</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-cube text-amber-500"></i> 4K 3D Render Engine</span>
-          <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-[#088C7E]"></i> Call 0313-4487315</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-[#088C7E]"></i> Call 0341-6887454</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-globe text-[#088C7E]"></i> KSA +966 50 714 3124</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-handshake text-amber-500"></i> Affiliated with Zameen.com</span>
         </div>
@@ -185,7 +185,7 @@
           <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-[#088C7E]"></i> Parkview City Studio Lahore</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-compass-drafting text-[#088C7E]"></i> 500+ Villas Designed</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-cube text-amber-500"></i> 4K 3D Render Engine</span>
-          <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-[#088C7E]"></i> Call 0313-4487315</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-[#088C7E]"></i> Call 0341-6887454</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-globe text-[#088C7E]"></i> KSA +966 50 714 3124</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-handshake text-amber-500"></i> Affiliated with Zameen.com</span>
         </div>
@@ -356,7 +356,7 @@
       </div>
     </section>
 
-    <!-- Zameen Popular Locations Directory Section -->
+    <!-- Zameen Popular Locations Directory Section (100% Internal Website Links) -->
     <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8 pt-4">
       <div class="border-t border-slate-200 dark:border-slate-800 pt-10 space-y-6">
         
@@ -387,92 +387,92 @@
             <!-- Lahore Column -->
             <div class="space-y-2.5">
               <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-3">Lahore</h4>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots & Designs in DHA Defence</span>
                 <span class="text-slate-400 font-mono">(11,830)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots & Designs on Raiwind Road</span>
                 <span class="text-slate-400 font-mono">(2,783)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots & Designs in Bahria Town</span>
                 <span class="text-slate-400 font-mono">(2,047)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-[#088C7E] font-bold flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-[#088C7E] font-bold flex items-center justify-between">
                 <span>↗ Villa Designs in Park View City</span>
                 <span class="text-[#088C7E] font-mono">(1,925)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots for sale in Bahria Orchard</span>
                 <span class="text-slate-400 font-mono">(1,621)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots for sale on LDA Road</span>
                 <span class="text-slate-400 font-mono">(1,415)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots in Central Park Housing</span>
                 <span class="text-slate-400 font-mono">(995)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots in DHA 11 Rahbar</span>
                 <span class="text-slate-400 font-mono">(899)</span>
-              </a>
+              </router-link>
             </div>
 
             <!-- Karachi Column -->
             <div class="space-y-2.5">
               <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-3">Karachi</h4>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots for sale in Scheme 33</span>
                 <span class="text-slate-400 font-mono">(3,244)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots for sale in DHA Defence</span>
                 <span class="text-slate-400 font-mono">(1,995)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots for sale in Gadap Town</span>
                 <span class="text-slate-400 font-mono">(1,665)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots for sale in DHA City Karachi</span>
                 <span class="text-slate-400 font-mono">(1,624)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots in Bahria Town Karachi</span>
                 <span class="text-slate-400 font-mono">(1,063)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots in Naya Nazimabad</span>
                 <span class="text-slate-400 font-mono">(958)</span>
-              </a>
+              </router-link>
             </div>
 
             <!-- Islamabad Column -->
             <div class="space-y-2.5">
               <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-3">Islamabad</h4>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots for sale in DHA Defence</span>
                 <span class="text-slate-400 font-mono">(6,340)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots for sale in Gulberg</span>
                 <span class="text-slate-400 font-mono">(2,411)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots for sale in B-17</span>
                 <span class="text-slate-400 font-mono">(1,963)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots in Bahria Town</span>
                 <span class="text-slate-400 font-mono">(1,759)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Plots in Faisal Hills</span>
                 <span class="text-slate-400 font-mono">(1,603)</span>
-              </a>
+              </router-link>
             </div>
           </div>
         </div>
@@ -484,42 +484,42 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-xs">
             <div class="space-y-2.5">
               <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-2">Lahore</h4>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Flats & Interiors in Bahria Town</span>
                 <span class="text-slate-400 font-mono">(910)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Luxury Interiors in Askari</span>
                 <span class="text-slate-400 font-mono">(806)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Modern Apartments in Gulberg</span>
                 <span class="text-slate-400 font-mono">(374)</span>
-              </a>
+              </router-link>
             </div>
 
             <div class="space-y-2.5">
               <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-2">Karachi</h4>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Luxury Apartments in DHA Defence</span>
                 <span class="text-slate-400 font-mono">(2,314)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Flats in Gulshan-e-Iqbal Town</span>
                 <span class="text-slate-400 font-mono">(1,395)</span>
-              </a>
+              </router-link>
             </div>
 
             <div class="space-y-2.5">
               <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-2">Islamabad</h4>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Luxury Apartments in DHA Defence</span>
                 <span class="text-slate-400 font-mono">(794)</span>
-              </a>
-              <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
+              </router-link>
+              <router-link to="/portfolio" class="text-slate-700 dark:text-slate-300 hover:text-[#088C7E] transition-colors flex items-center justify-between">
                 <span>↗ Flats & Interiors in E-11</span>
                 <span class="text-slate-400 font-mono">(266)</span>
-              </a>
+              </router-link>
             </div>
           </div>
         </div>
@@ -573,12 +573,12 @@
             <span>Get Free Consultation</span>
           </button>
           <a 
-            href="https://wa.me/923134487315" 
+            href="https://wa.me/923416887454" 
             target="_blank"
             class="px-8 py-4 rounded-2xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 border border-emerald-500/40 font-bold text-base transition-all hover:scale-105 flex items-center gap-2"
           >
             <i class="fa-brands fa-whatsapp text-lg"></i>
-            <span>WhatsApp 0313-4487315</span>
+            <span>WhatsApp 0341-6887454</span>
           </a>
         </div>
       </div>

@@ -38,7 +38,7 @@
             </p>
             <p class="flex items-center gap-2">
               <i class="fa-solid fa-phone text-[#088C7E] text-xs"></i>
-              <span>0313-4487315 | 🇸🇦 +966 50 714 3124</span>
+              <span>0341-6887454 | 🇸🇦 +966 50 714 3124</span>
             </p>
             <p class="flex items-center gap-2">
               <i class="fa-solid fa-envelope text-[#088C7E] text-xs"></i>
@@ -47,20 +47,20 @@
           </div>
         </div>
 
-        <!-- Zameen Popular Searches Column -->
+        <!-- Popular Searches Column (All Internal Website Links) -->
         <div class="space-y-4">
           <h4 class="text-xs font-bold uppercase tracking-wider text-white">{{ t.popularSearches }}</h4>
           <ul class="space-y-2 text-xs">
-            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-house-chimney text-[10px] text-[#088C7E]"></i> 5 Marla Villa Designs</a></li>
-            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-house-user text-[10px] text-[#088C7E]"></i> 10 Marla Spanish House Maps</a></li>
-            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-landmark text-[10px] text-[#088C7E]"></i> 1 Kanal Luxury Elevation</a></li>
-            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-building text-[10px] text-[#088C7E]"></i> Commercial Plazas Gulberg</a></li>
-            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-couch text-[10px] text-[#088C7E]"></i> DHA Interior Design Pkg</a></li>
-            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-hammer text-[10px] text-[#088C7E]"></i> Turnkey Villa Renovation</a></li>
+            <li><router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-house-chimney text-[10px] text-[#088C7E]"></i> 5 Marla Villa Designs</router-link></li>
+            <li><router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-house-user text-[10px] text-[#088C7E]"></i> 10 Marla Spanish House Maps</router-link></li>
+            <li><router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-landmark text-[10px] text-[#088C7E]"></i> 1 Kanal Luxury Elevation</router-link></li>
+            <li><router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-building text-[10px] text-[#088C7E]"></i> Commercial Plazas Gulberg</router-link></li>
+            <li><router-link to="/services" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-couch text-[10px] text-[#088C7E]"></i> DHA Interior Design Pkg</router-link></li>
+            <li><router-link to="/services" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-hammer text-[10px] text-[#088C7E]"></i> Turnkey Villa Renovation</router-link></li>
           </ul>
         </div>
 
-        <!-- Zameen Area Guides & Cities -->
+        <!-- Area Guides & Cities (All Internal Website Links) -->
         <div class="space-y-4">
           <h4 class="text-xs font-bold uppercase tracking-wider text-white">{{ t.areaGuides }}</h4>
           <ul class="space-y-2 text-xs">
@@ -68,12 +68,12 @@
             <li><router-link to="/about" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-city text-[10px] text-slate-500"></i> DHA Lahore (Ph 1-9)</router-link></li>
             <li><router-link to="/about" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-city text-[10px] text-slate-500"></i> Gulberg 3 Commercial</router-link></li>
             <li><router-link to="/about" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-city text-[10px] text-slate-500"></i> Bahria Town Lahore</router-link></li>
-            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-globe text-[10px] text-[#088C7E]"></i> Islamabad & DHA Phase 2</a></li>
-            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-globe text-[10px] text-[#088C7E]"></i> Karachi & Scheme 33</a></li>
+            <li><router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-globe text-[10px] text-[#088C7E]"></i> Islamabad & DHA Phase 2</router-link></li>
+            <li><router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-globe text-[10px] text-[#088C7E]"></i> Karachi & Scheme 33</router-link></li>
           </ul>
         </div>
 
-        <!-- Newsletter & Zameen Apps Download -->
+        <!-- Newsletter & Mobile Apps (Internal Action Handlers) -->
         <div class="space-y-4">
           <h4 class="text-xs font-bold uppercase tracking-wider text-white">{{ t.zameenAppUpdates }}</h4>
           <p class="text-xs text-slate-400">Get instant floor plan estimates and 3D design updates right on your phone.</p>
@@ -99,16 +99,16 @@
             </p>
           </form>
 
-          <!-- Mobile Apps Badge -->
+          <!-- Mobile Apps Badge (Internal Consultation Trigger) -->
           <div class="pt-2 flex items-center gap-2">
-            <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-[#088C7E] text-white text-[10px] font-bold flex items-center gap-1.5">
+            <button @click="$emit('open-start-project')" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-[#088C7E] text-white text-[10px] font-bold flex items-center gap-1.5 cursor-pointer">
               <i class="fa-brands fa-google-play text-xs text-[#088C7E]"></i>
               <span>Google Play</span>
-            </a>
-            <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-[#088C7E] text-white text-[10px] font-bold flex items-center gap-1.5">
+            </button>
+            <button @click="$emit('open-start-project')" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-[#088C7E] text-white text-[10px] font-bold flex items-center gap-1.5 cursor-pointer">
               <i class="fa-brands fa-apple text-xs text-amber-400"></i>
               <span>App Store</span>
-            </a>
+            </button>
           </div>
         </div>
 
@@ -122,7 +122,7 @@
           <span class="hover:text-slate-300 cursor-pointer">Parkview City Studio, Lahore</span>
         </div>
 
-        <!-- Social Icons & Zameen Links -->
+        <!-- Social Icons & H&Q Links -->
         <div class="flex items-center gap-4 text-slate-400">
           <a href="https://www.facebook.com/share/1JFuAoDXzr/" target="_blank" rel="noopener" class="hover:text-white transition-colors text-base" title="Facebook">
             <i class="fa-brands fa-facebook"></i>
@@ -130,9 +130,9 @@
           <a href="https://www.instagram.com/chasad_ali/" target="_blank" rel="noopener" class="hover:text-white transition-colors text-base" title="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
-          <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-amber-400 transition-colors text-base" title="Zameen.com Partner">
+          <router-link to="/about" class="hover:text-amber-400 transition-colors text-base" title="H&Q Partner Studio">
             <i class="fa-solid fa-award"></i>
-          </a>
+          </router-link>
         </div>
       </div>
 
@@ -143,6 +143,8 @@
 <script setup>
 import { ref } from 'vue'
 import { useI18n } from '../composables/useI18n.js'
+
+defineEmits(['open-start-project'])
 
 const { t } = useI18n()
 

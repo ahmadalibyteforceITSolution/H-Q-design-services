@@ -232,9 +232,9 @@
 
           <!-- Contact Snippet on Right of Bottom Bar -->
           <div class="hidden xl:flex items-center gap-4 text-xs font-semibold text-slate-600 dark:text-slate-300 shrink-0">
-            <a href="tel:03134487315" class="hover:text-[#088C7E] flex items-center gap-1.5">
+            <a href="tel:03416887454" class="hover:text-[#088C7E] flex items-center gap-1.5">
               <i class="fa-solid fa-phone text-[#088C7E]"></i>
-              <span>0313-4487315</span>
+              <span>0341-6887454</span>
             </a>
           </div>
 
@@ -279,7 +279,7 @@
 
         <div class="text-xs text-slate-500 dark:text-slate-400 space-y-1 text-center pt-2">
           <p><i class="fa-solid fa-location-dot text-amber-500 mr-1"></i> Parkview City Studio, Lahore</p>
-          <p><i class="fa-solid fa-phone text-[#088C7E] mr-1"></i> 0313-4487315 | +966 50 714 3124</p>
+          <p><i class="fa-solid fa-phone text-[#088C7E] mr-1"></i> 0341-6887454 | +966 50 714 3124</p>
         </div>
       </div>
     </div>

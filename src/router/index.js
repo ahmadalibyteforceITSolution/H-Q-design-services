@@ -78,7 +78,7 @@ const routes = [
     component: Contact,
     meta: {
       title: 'Contact H&Q Studio | Parkview City Lahore Architect Desk',
-      description: 'Connect with senior architects at Parkview City, Lahore. Call 0313-4487315 or WhatsApp for instant 3D design quotes.'
+      description: 'Connect with senior architects at Parkview City, Lahore. Call 0341-6887454 or WhatsApp for instant 3D design quotes.'
     }
   }
 ]

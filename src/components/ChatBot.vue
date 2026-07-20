@@ -155,7 +155,7 @@ const sendMessage = () => {
 
   setTimeout(() => {
     isTyping.value = false
-    let reply = "Thank you for reaching out! You can call us directly at 0313-4487315 or +966 50 714 3124, or click 'Get Free Quote' at the top to book an architect consultation."
+    let reply = "Thank you for reaching out! You can call us directly at 0341-6887454 or +966 50 714 3124, or click 'Get Free Quote' at the top to book an architect consultation."
 
     const lower = q.toLowerCase()
     if (lower.includes('service') || lower.includes('offer')) {
@@ -165,7 +165,7 @@ const sendMessage = () => {
     } else if (lower.includes('cost') || lower.includes('pricing') || lower.includes('10 marla') || lower.includes('3d')) {
       reply = "Architectural drawing and 3D rendering packages depend on plot size (5 Marla, 10 Marla, 1 Kanal). Check out our interactive Design Estimator tool on the homepage!"
     } else if (lower.includes('whatsapp') || lower.includes('call') || lower.includes('phone')) {
-      reply = "You can chat with us instantly on WhatsApp at 0313-4487315 (or +966 50 714 3124). Click the green WhatsApp button at the bottom left!"
+      reply = "You can chat with us instantly on WhatsApp at 0341-6887454 (or +966 50 714 3124). Click the green WhatsApp button at the bottom left!"
     }
 
     messages.value.push({ sender: 'bot', text: reply })
