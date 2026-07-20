@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
 
-Sitemap: https://h-q-design-services.vercel.app/sitemap.xml
+# Sitemaps
+Sitemap: https://hq-design-services.com/sitemap.xml

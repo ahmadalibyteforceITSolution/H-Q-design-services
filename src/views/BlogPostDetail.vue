@@ -1,168 +1,98 @@
 <template>
-  <div v-if="post" class="pt-20">
-    <section class="relative py-20 lg:py-32 bg-gradient-to-br from-zameen-green to-zameen-green-dark overflow-hidden">
-      <div class="absolute inset-0 bg-black/20"></div>
-      <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-4xl mx-auto text-center">
-          <span class="inline-block bg-zameen-gold text-gray-900 px-4 py-1 rounded-full text-sm font-bold mb-6">
-            {{ post.category }}
-          </span>
-          <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6">{{ post.title }}</h1>
-          <div class="flex items-center justify-center space-x-6 text-white/90">
-            <div class="flex items-center space-x-2">
-              <img :src="post.authorImage" :alt="post.author" class="w-10 h-10 rounded-full border-2 border-white/20">
-              <span class="font-medium">{{ post.author }}</span>
-            </div>
-            <span>|</span>
-            <span>{{ post.date }}</span>
-            <span>|</span>
-            <span>{{ post.readTime }}</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <img :src="post.image" :alt="post.title" class="w-full h-[400px] lg:h-[600px] object-cover rounded-3xl shadow-2xl mb-12">
-          
-          <div class="prose prose-lg max-w-none text-gray-600" v-html="post.content"></div>
-          
-          <!-- AdSense Autorelaxed Ad -->
-          <div class="mt-12">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-format="autorelaxed"
-                 data-ad-client="ca-pub-1888138480311828"
-                 data-ad-slot="2951340854"></ins>
-          </div>
-          
-          <div class="mt-16 pt-8 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-6">
-            <div class="flex items-center space-x-4">
-              <span class="font-bold text-gray-900">Share this post:</span>
-              <div class="flex space-x-2">
-                <button class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-zameen-green hover:text-white transition-colors">
-                  <i class="fab fa-facebook-f"></i>
-                </button>
-                <button class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-zameen-green hover:text-white transition-colors">
-                  <i class="fab fa-twitter"></i>
-                </button>
-                <button class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-zameen-green hover:text-white transition-colors">
-                  <i class="fab fa-linkedin-in"></i>
-                </button>
-              </div>
-            </div>
-            <router-link to="/blog" class="inline-flex items-center text-zameen-green font-bold hover:text-zameen-green-dark">
-              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-              </svg>
-              Back to Blog
-            </router-link>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Related Posts -->
-    <section class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Related Articles</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div v-for="related in relatedPosts" :key="related.id" class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-            <img :src="related.image" :alt="related.title" class="w-full h-48 object-cover">
-            <div class="p-6">
-              <span class="text-zameen-green text-sm font-bold mb-2 block">{{ related.category }}</span>
-              <h3 class="text-xl font-bold text-gray-900 mb-4 line-clamp-2">{{ related.title }}</h3>
-              <router-link :to="'/blog/' + related.slug" class="text-gray-900 font-bold hover:text-zameen-green inline-flex items-center">
-                Read More
-                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-              </router-link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-  <div v-else class="min-h-screen flex items-center justify-center">
-    <div class="text-center">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4">Post not found</h2>
-      <router-link to="/blog" class="text-zameen-green font-bold">Return to Blog</router-link>
+  <div class="py-12 space-y-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-2 text-xs text-slate-500">
+      <router-link to="/" class="hover:text-[#088C7E]">Home</router-link>
+      <span>/</span>
+      <router-link to="/blog" class="hover:text-[#088C7E]">Blog</router-link>
+      <span>/</span>
+      <span class="text-slate-900 dark:text-white font-semibold truncate">{{ activePost.title }}</span>
     </div>
+
+    <!-- Header -->
+    <div class="space-y-4">
+      <span class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-[#088C7E]/10 text-[#088C7E] border border-[#088C7E]/30 uppercase tracking-wider">
+        {{ activePost.category }}
+      </span>
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white leading-tight">
+        {{ activePost.title }}
+      </h1>
+      <div class="flex items-center gap-4 text-xs text-slate-500 border-b border-slate-200 dark:border-slate-800 pb-4">
+        <span><i class="fa-solid fa-user-tie text-[#088C7E] mr-1"></i> By H&Q Chief Architect</span>
+        <span>•</span>
+        <span><i class="fa-solid fa-calendar text-[#088C7E] mr-1"></i> {{ activePost.date }}</span>
+        <span>•</span>
+        <span><i class="fa-solid fa-clock text-amber-500 mr-1"></i> {{ activePost.readTime }}</span>
+      </div>
+    </div>
+
+    <!-- Cover Image -->
+    <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 h-96 shadow-lg">
+      <img :src="activePost.image" :alt="activePost.title" class="w-full h-full object-cover" />
+    </div>
+
+    <!-- Content -->
+    <article class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 space-y-6 leading-relaxed text-base">
+      <div v-html="activePost.content || defaultContent"></div>
+    </article>
+
+    <!-- Author & Consultation CTA Card -->
+    <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="space-y-1">
+        <h4 class="font-extrabold text-lg text-slate-900 dark:text-white">Planning Your Plot Design in Lahore?</h4>
+        <p class="text-xs text-slate-500 dark:text-slate-400">Schedule a 1-on-1 floor plan review session at our Parkview City Studio.</p>
+      </div>
+      <button 
+        @click="$emit('open-start-project')"
+        class="px-6 py-3.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider transition-all shadow-lg shrink-0 cursor-pointer"
+      >
+        Get Free Consultation
+      </button>
+    </div>
+
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { useHead } from '@vueuse/head'
-import { blogPosts, featuredPost } from '../data/blogs'
+import { allBlogs } from '../data/blogData.js'
+
+defineEmits(['open-start-project'])
 
 const route = useRoute()
-const post = ref(null)
 
-const allPosts = [featuredPost, ...blogPosts]
-
-const loadPost = () => {
+const activePost = computed(() => {
   const slug = route.params.slug
-  if (slug === featuredPost.slug) {
-    post.value = featuredPost
-  } else {
-    post.value = blogPosts.find(p => p.slug === slug)
-  }
+  const found = allBlogs.find(b => b.slug === slug)
+  if (found) return found
 
-  if (post.value) {
-    useHead({
-      title: `${post.value.title} | H&Q Design Services Blog`,
-      meta: [
-        { name: 'description', content: post.value.excerpt },
-        { name: 'keywords', content: `${post.value.category}, architecture, interior design, Pakistan` },
-        { property: 'og:title', content: post.value.title },
-        { property: 'og:description', content: post.value.excerpt },
-        { property: 'og:image', content: post.value.image }
-      ]
-    })
+  return {
+    title: 'Modern Architectural Trends in Lahore: Parkview City & DHA Guide',
+    category: 'Parkview City News',
+    date: 'July 15, 2026',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
+    content: ''
   }
-}
-
-const relatedPosts = computed(() => {
-  if (!post.value) return []
-  return blogPosts
-    .filter(p => p.category === post.value.category && p.id !== post.value.id)
-    .slice(0, 3)
 })
 
-onMounted(() => {
-  loadPost()
-  try {
-    (window.adsbygoogle = window.adsbygoogle || []).push({})
-  } catch (err) {
-    console.error('AdSense error:', err)
-  }
-})
-watch(() => route.params.slug, () => {
-  loadPost()
-  try {
-    (window.adsbygoogle = window.adsbygoogle || []).push({})
-  } catch (err) {
-    console.error('AdSense error:', err)
-  }
-})
+const defaultContent = `
+  <p class="text-lg font-medium text-slate-900 dark:text-white">
+    Building a dream villa or remodeling a commercial space in Lahore requires combining contemporary aesthetics with local municipal guidelines. In this guide, our senior architects walk you through essential design considerations.
+  </p>
+  <h3>1. Floor Plan Optimization & Bylaw Compliance</h3>
+  <p>
+    In societies like Parkview City and DHA Lahore, structural setbacks, height restrictions, and ventilation shafts must be strictly calculated. Our team utilizes 3ds Max and Revit to create precise 2D blueprints ensuring immediate municipal approval.
+  </p>
+  <h3>2. 4K 3D Photorealistic Visualizations</h3>
+  <p>
+    Before ground excavation begins, seeing 3D photorealistic renderings of your villa facade and interior rooms prevents costly material alterations. You can preview Spanish tiles, LED illumination, and wooden paneling in realistic 4K lighting.
+  </p>
+  <h3>3. Luxury Interior Material Selection</h3>
+  <p>
+    From Italian Statuario marble to custom rosewood cabinetry, selecting durable yet luxurious materials ensures your living space maintains timeless elegance for decades to come.
+  </p>
+`
 </script>
-
-<style scoped>
-.prose h2 {
-  @apply text-2xl font-bold text-gray-900 mt-12 mb-6;
-}
-.prose h3 {
-  @apply text-xl font-bold text-gray-900 mt-8 mb-4;
-}
-.prose p {
-  @apply mb-6 leading-relaxed;
-}
-.prose blockquote {
-  @apply border-l-4 border-zameen-gold pl-6 italic my-8 text-xl text-gray-700;
-}
-</style>

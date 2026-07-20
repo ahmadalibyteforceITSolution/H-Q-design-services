@@ -1,106 +1,346 @@
 <template>
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-    <!-- Top Bar -->
-    <div class="bg-gray-900 text-white py-2 hidden sm:block">
-      <div class="container mx-auto px-4 flex justify-between items-center text-xs sm:text-sm">
-        <div class="flex items-center space-x-6">
-          <div class="flex items-center space-x-4">
-            <a href="tel:03134487315" class="flex items-center hover:text-zameen-green transition-colors">
-              <svg class="w-4 h-4 mr-2 text-zameen-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-              </svg>
-              0313-4487315
-            </a>
-            <a href="tel:+966507143124" class="flex items-center hover:text-zameen-green transition-colors">
-              <span class="text-zameen-green mr-1">🇸🇦</span>
-              +966 50 714 3124
-            </a>
+  <header class="sticky top-0 left-0 right-0 z-50 transition-colors duration-300 shadow-md">
+    
+    <!-- TOP GREEN TIER (Zameen.com Style Header Tier 1) -->
+    <div class="bg-[#088C7E] text-white py-2 px-4 text-xs">
+      <div class="max-w-[1440px] mx-auto flex items-center justify-between gap-4">
+        
+        <!-- Left Nav Links in Top Green Bar -->
+        <div class="hidden lg:flex items-center gap-5 font-bold uppercase tracking-wider text-[11px]">
+          <router-link to="/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5" active-class="text-amber-300 font-black">
+            <i class="fa-solid fa-house text-xs"></i>
+            <span>{{ t.properties }}</span>
+          </router-link>
+          
+          <router-link to="/portfolio" class="hover:text-amber-300 transition-colors flex items-center gap-1.5 relative">
+            <span>{{ t.propertyBlocks }}</span>
+            <span class="bg-red-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-md uppercase tracking-tight animate-pulse">NEW</span>
+          </router-link>
+
+          <router-link to="/about" class="hover:text-amber-300 transition-colors">
+            {{ t.parkviewGuides }}
+          </router-link>
+
+          <router-link to="/blog" class="hover:text-amber-300 transition-colors">
+            {{ t.blog }}
+          </router-link>
+
+          <router-link to="/contact" class="hover:text-amber-300 transition-colors">
+            {{ t.maps }}
+          </router-link>
+
+          <!-- Tools Dropdown (Static on Hover, Removed on Click) -->
+          <div 
+            class="relative cursor-pointer hover:text-amber-300 transition-colors" 
+            @mouseenter="toolsHovered = true" 
+            @mouseleave="toolsHovered = false"
+          >
+            <div class="flex items-center gap-1 py-1">
+              <span>{{ t.tools }}</span>
+              <i class="fa-solid fa-caret-down text-[10px]"></i>
+            </div>
+            <!-- Dropdown Menu -->
+            <div v-if="toolsHovered" class="absolute left-0 top-full mt-1 w-48 bg-white text-slate-900 rounded-xl shadow-2xl py-2 border border-slate-200 z-50 text-xs normal-case tracking-normal">
+              <a href="#results" @click="toolsHovered = false" class="block px-4 py-2 hover:bg-emerald-50 hover:text-[#088C7E]">Design Estimator</a>
+              <router-link to="/services" @click="toolsHovered = false" class="block px-4 py-2 hover:bg-emerald-50 hover:text-[#088C7E]">3D Render Calculator</router-link>
+              <router-link to="/case-studies" @click="toolsHovered = false" class="block px-4 py-2 hover:bg-emerald-50 hover:text-[#088C7E]">Bylaw Checker</router-link>
+            </div>
           </div>
-          <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
-            <a href="mailto:asadali2899@gmail.com" class="flex items-center hover:text-zameen-green transition-colors">
-              <svg class="w-4 h-4 mr-2 text-zameen-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-              </svg>
-              asadali2899@gmail.com
-            </a>
+
+          <!-- More Dropdown (Static on Hover, Removed on Click) -->
+          <div 
+            class="relative cursor-pointer hover:text-amber-300 transition-colors" 
+            @mouseenter="moreHovered = true" 
+            @mouseleave="moreHovered = false"
+          >
+            <div class="flex items-center gap-1 py-1">
+              <span>{{ t.more }}</span>
+              <i class="fa-solid fa-caret-down text-[10px]"></i>
+            </div>
+            <div v-if="moreHovered" class="absolute left-0 top-full mt-1 w-48 bg-white text-slate-900 rounded-xl shadow-xl py-2 border border-slate-200 z-50 text-xs normal-case tracking-normal">
+              <router-link to="/about" @click="moreHovered = false" class="block px-4 py-2 hover:bg-emerald-50 hover:text-[#088C7E]">About H&Q Studio</router-link>
+              <router-link to="/case-studies" @click="moreHovered = false" class="block px-4 py-2 hover:bg-emerald-50 hover:text-[#088C7E]">Case Studies</router-link>
+              <router-link to="/contact" @click="moreHovered = false" class="block px-4 py-2 hover:bg-emerald-50 hover:text-[#088C7E]">Contact & Support</router-link>
+            </div>
           </div>
         </div>
-        <div class="hidden md:flex items-center space-x-4">
-          <span class="text-gray-400">Parkview City, Lahore</span>
+
+        <!-- Right Side Controls in Top Green Bar -->
+        <div class="flex items-center gap-3 shrink-0 ml-auto lg:ml-0">
+          
+          <!-- Property ID Search Box -->
+          <div class="hidden sm:flex items-center bg-white/10 border border-white/30 rounded-lg px-2.5 py-1 text-xs">
+            <input 
+              type="text" 
+              placeholder="Property / Design ID" 
+              class="bg-transparent text-white placeholder-white/70 w-28 focus:outline-none text-[11px]"
+            />
+            <i class="fa-solid fa-magnifying-glass text-white/80 text-[10px] cursor-pointer"></i>
+          </div>
+
+          <!-- Add Property / Get Quote White Button -->
+          <button 
+            @click="$emit('open-start-project')"
+            class="px-3.5 py-1.5 rounded-lg bg-white text-[#088C7E] hover:bg-slate-100 text-xs font-black tracking-tight shadow transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap"
+          >
+            <i class="fa-solid fa-plus text-xs"></i>
+            <span>{{ t.addProject }}</span>
+          </button>
+
+          <!-- Language Selector Dropdown (Static on Hover, Removed on Click) -->
+          <div 
+            class="relative cursor-pointer font-bold text-xs px-1" 
+            @mouseenter="langHovered = true" 
+            @mouseleave="langHovered = false"
+          >
+            <button 
+              class="flex items-center gap-1.5 hover:text-amber-300 bg-white/10 px-2.5 py-1 rounded-lg border border-white/20"
+            >
+              <i class="fa-solid fa-globe text-xs"></i>
+              <span>{{ activeLangLabel }}</span>
+              <i class="fa-solid fa-caret-down text-[10px]"></i>
+            </button>
+
+            <!-- Language Dropdown Menu -->
+            <div 
+              v-if="langHovered" 
+              class="absolute right-0 top-full mt-1.5 w-44 bg-white text-slate-900 rounded-xl shadow-2xl py-2 border border-slate-200 z-50 text-xs font-bold"
+            >
+              <button 
+                @click="selectLang('EN')" 
+                :class="['w-full px-3.5 py-2 text-left flex items-center gap-2 hover:bg-emerald-50 hover:text-[#088C7E]', currentLang === 'EN' ? 'text-[#088C7E] bg-emerald-50' : '']"
+              >
+                <span>GB English</span>
+              </button>
+              <button 
+                @click="selectLang('UR')" 
+                :class="['w-full px-3.5 py-2 text-left flex items-center gap-2 hover:bg-emerald-50 hover:text-[#088C7E]', currentLang === 'UR' ? 'text-[#088C7E] bg-emerald-50' : '']"
+              >
+                <span>PK اردو</span>
+              </button>
+              <button 
+                @click="selectLang('AR')" 
+                :class="['w-full px-3.5 py-2 text-left flex items-center gap-2 hover:bg-emerald-50 hover:text-[#088C7E]', currentLang === 'AR' ? 'text-[#088C7E] bg-emerald-50' : '']"
+              >
+                <span>SA العربية</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Settings Theme Switcher -->
+          <button 
+            @click="toggleTheme" 
+            aria-label="Settings Theme Toggle"
+            class="hover:text-amber-300 text-xs p-1 cursor-pointer"
+            title="Toggle Light/Dark Theme"
+          >
+            <i v-if="isDark" class="fa-solid fa-sun text-amber-300"></i>
+            <i v-else class="fa-solid fa-gear text-white"></i>
+          </button>
+
+          <!-- User Icon -->
+          <button @click="$emit('open-start-project')" class="hover:text-amber-300 text-xs p-1">
+            <i class="fa-solid fa-user"></i>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button 
+            @click="mobileMenuOpen = !mobileMenuOpen"
+            class="lg:hidden ml-2 text-white text-base focus:outline-none"
+          >
+            <i v-if="!mobileMenuOpen" class="fa-solid fa-bars"></i>
+            <i v-else class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MAIN BOTTOM TIER (Zameen.com White Bar Tier 2) -->
+    <div class="bg-white dark:bg-slate-950 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-14 gap-6">
+          
+          <!-- Single Logo: H&Q ONLY -->
+          <router-link to="/" class="flex items-center group focus:outline-none shrink-0">
+            <span class="font-black text-2xl tracking-tight text-slate-900 dark:text-white flex items-center gap-1">
+              H&Q
+              <span class="w-2.5 h-2.5 rounded-full bg-[#088C7E]"></span>
+            </span>
+          </router-link>
+
+          <!-- Secondary Navigation Links (Zameen Bottom Bar Layout) -->
+          <nav class="hidden lg:flex items-center gap-4 text-xs font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wide">
+            <span class="text-slate-400 font-normal flex items-center gap-1">
+              DESIGNS <i class="fa-solid fa-chevron-right text-[9px] text-[#088C7E]"></i>
+            </span>
+
+            <router-link 
+              to="/" 
+              class="hover:text-[#088C7E] transition-colors py-1 px-2 border-b-2"
+              active-class="border-[#088C7E] text-[#088C7E] font-black"
+            >
+              {{ t.homesVillas }}
+            </router-link>
+
+            <router-link 
+              to="/services" 
+              class="hover:text-[#088C7E] transition-colors py-1 px-2 border-b-2 border-transparent"
+              active-class="border-[#088C7E] text-[#088C7E] font-black"
+            >
+              {{ t.plotsRenders }}
+            </router-link>
+
+            <router-link 
+              to="/portfolio" 
+              class="hover:text-[#088C7E] transition-colors py-1 px-2 border-b-2 border-transparent"
+              active-class="border-[#088C7E] text-[#088C7E] font-black"
+            >
+              {{ t.commercialPlazas }}
+            </router-link>
+
+            <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
+
+            <router-link 
+              to="/services" 
+              class="hover:text-[#088C7E] transition-colors py-1 px-2 border-b-2 border-transparent"
+              active-class="border-[#088C7E] text-[#088C7E] font-black"
+            >
+              {{ t.luxuryInteriors }}
+            </router-link>
+
+            <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
+
+            <router-link 
+              to="/about" 
+              class="hover:text-[#088C7E] transition-colors py-1 px-2 border-b-2 border-transparent"
+              active-class="border-[#088C7E] text-[#088C7E] font-black"
+            >
+              {{ t.agentsArchitects }}
+            </router-link>
+
+            <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
+
+            <router-link 
+              to="/case-studies" 
+              class="hover:text-[#088C7E] transition-colors py-1 px-2 border-b-2 border-transparent"
+              active-class="border-[#088C7E] text-[#088C7E] font-black"
+            >
+              {{ t.newProjects }}
+            </router-link>
+          </nav>
+
+          <!-- Contact Snippet on Right of Bottom Bar -->
+          <div class="hidden xl:flex items-center gap-4 text-xs font-semibold text-slate-600 dark:text-slate-300 shrink-0">
+            <a href="tel:03134487315" class="hover:text-[#088C7E] flex items-center gap-1.5">
+              <i class="fa-solid fa-phone text-[#088C7E]"></i>
+              <span>0313-4487315</span>
+            </a>
+          </div>
+
         </div>
       </div>
     </div>
 
-    <nav class="container mx-auto px-4">
-      <div class="flex items-center justify-between h-16 lg:h-20">
-        <router-link to="/" class="flex items-center space-x-2">
-          <img src="@/assets/logo.png" alt="H&Q Logo" class="w-10 h-10 lg:w-12 lg:h-12 object-contain" />
-          <div class="hidden xs:block">
-            <h1 class="text-sm sm:text-lg lg:text-xl font-bold text-gray-800">H&Q Design Services</h1>
-            <p class="text-[10px] sm:text-xs text-zameen-green font-medium">Architecture & Interior Design</p>
-          </div>
-        </router-link>
+    <!-- Mobile Navigation Drawer -->
+    <div 
+      v-if="mobileMenuOpen"
+      class="lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-slate-900 dark:text-white px-4 pt-4 pb-6 space-y-3 shadow-2xl"
+    >
+      <router-link 
+        v-for="item in mobileNavLinks" 
+        :key="item.path" 
+        :to="item.path"
+        @click="mobileMenuOpen = false"
+        class="block px-4 py-3 rounded-xl text-sm font-bold text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-slate-900 transition-colors flex items-center gap-3"
+        active-class="bg-emerald-500/10 text-[#088C7E] font-black"
+      >
+        <i :class="item.iconClass + ' text-[#088C7E]'"></i>
+        <span>{{ item.name }}</span>
+      </router-link>
 
-        <div class="hidden lg:flex items-center space-x-8">
-          <router-link to="/" class="nav-link">Home</router-link>
-          <router-link to="/about" class="nav-link">About Us</router-link>
-          <router-link to="/portfolio" class="nav-link">Portfolio</router-link>
-          <router-link to="/blog" class="nav-link">Blog</router-link>
-          <router-link to="/contact" class="nav-link">Contact Us</router-link>
-        </div>
-
-        <div class="hidden lg:flex items-center space-x-4">
-          <a href="https://zameen.com" target="_blank" class="text-xs text-gray-600 hover:text-zameen-green transition-colors">
-            Powered by Zameen.com
-          </a>
-          <router-link to="/contact" class="bg-zameen-green text-white px-6 py-2 rounded-lg hover:bg-zameen-green-dark transition-colors font-medium">
-            Get Quote
-          </router-link>
-        </div>
-
-        <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden p-2">
-          <svg v-if="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-          <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
+      <div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-3">
+        <button 
+          @click="openProjectFromMobile"
+          class="w-full py-3 rounded-xl bg-[#088C7E] text-white font-black text-xs uppercase tracking-wider text-center shadow-lg shadow-[#088C7E]/20 flex items-center justify-center gap-2"
+        >
+          <i class="fa-solid fa-plus text-xs"></i>
+          <span>{{ t.addProject }}</span>
         </button>
-      </div>
 
-      <div v-if="mobileMenuOpen" class="lg:hidden pb-4">
-        <div class="flex flex-col space-y-3">
-          <router-link to="/" @click="mobileMenuOpen = false" class="text-gray-700 hover:text-zameen-green py-2">Home</router-link>
-          <router-link to="/about" @click="mobileMenuOpen = false" class="text-gray-700 hover:text-zameen-green py-2">About Us</router-link>
-          <router-link to="/portfolio" @click="mobileMenuOpen = false" class="text-gray-700 hover:text-zameen-green py-2">Portfolio</router-link>
-          <router-link to="/blog" @click="mobileMenuOpen = false" class="text-gray-700 hover:text-zameen-green py-2">Blog</router-link>
-          <router-link to="/contact" @click="mobileMenuOpen = false" class="text-gray-700 hover:text-zameen-green py-2">Contact Us</router-link>
-          <router-link to="/contact" @click="mobileMenuOpen = false" class="bg-zameen-green text-white px-6 py-3 rounded-lg text-center font-medium">
-            Get Quote
-          </router-link>
+        <!-- Mobile Language Selector -->
+        <div class="flex justify-center items-center gap-4 pt-2 text-xs font-bold">
+          <button @click="selectLang('EN')" :class="currentLang === 'EN' ? 'text-[#088C7E]' : 'text-slate-400'">GB English</button>
+          <span>|</span>
+          <button @click="selectLang('UR')" :class="currentLang === 'UR' ? 'text-[#088C7E]' : 'text-slate-400'">PK اردو</button>
+          <span>|</span>
+          <button @click="selectLang('AR')" :class="currentLang === 'AR' ? 'text-[#088C7E]' : 'text-slate-400'">SA العربية</button>
+        </div>
+
+        <div class="text-xs text-slate-500 dark:text-slate-400 space-y-1 text-center pt-2">
+          <p><i class="fa-solid fa-location-dot text-amber-500 mr-1"></i> Parkview City Studio, Lahore</p>
+          <p><i class="fa-solid fa-phone text-[#088C7E] mr-1"></i> 0313-4487315 | +966 50 714 3124</p>
         </div>
       </div>
-    </nav>
+    </div>
+
   </header>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import { useI18n } from '../composables/useI18n.js'
+
+const emit = defineEmits(['open-start-project'])
+
+const { currentLang, setLanguage, initI18n, t } = useI18n()
 
 const mobileMenuOpen = ref(false)
+const isDark = ref(true)
+
+const toolsHovered = ref(false)
+const moreHovered = ref(false)
+const langHovered = ref(false)
+
+const activeLangLabel = computed(() => {
+  if (currentLang.value === 'UR') return 'PK اردو'
+  if (currentLang.value === 'AR') return 'SA العربية'
+  return 'GB English'
+})
+
+const selectLang = (langCode) => {
+  setLanguage(langCode)
+  langHovered.value = false
+}
+
+const mobileNavLinks = [
+  { name: 'PROPERTIES / HOME', path: '/', iconClass: 'fa-solid fa-house' },
+  { name: 'ABOUT H&Q STUDIO', path: '/about', iconClass: 'fa-solid fa-building-user' },
+  { name: 'SERVICES & DELIVERABLES', path: '/services', iconClass: 'fa-solid fa-compass-drafting' },
+  { name: 'FEATURED PORTFOLIO', path: '/portfolio', iconClass: 'fa-solid fa-images' },
+  { name: 'CASE STUDIES', path: '/case-studies', iconClass: 'fa-solid fa-file-contract' },
+  { name: 'BLOG & NEWS', path: '/blog', iconClass: 'fa-solid fa-newspaper' },
+  { name: 'CONTACT & MAPS', path: '/contact', iconClass: 'fa-solid fa-headset' }
+]
+
+const toggleTheme = () => {
+  isDark.value = !isDark.value
+  if (isDark.value) {
+    document.documentElement.classList.add('dark')
+    localStorage.setItem('hq-theme', 'dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+    localStorage.setItem('hq-theme', 'light')
+  }
+}
+
+const openProjectFromMobile = () => {
+  mobileMenuOpen.value = false
+  emit('open-start-project')
+}
+
+onMounted(() => {
+  initI18n()
+  isDark.value = document.documentElement.classList.contains('dark')
+})
 </script>
-
-<style scoped>
-.nav-link {
-  @apply text-gray-700 hover:text-zameen-green font-medium transition-colors relative;
-}
-
-.nav-link.router-link-exact-active {
-  @apply text-zameen-green;
-}
-
-.nav-link.router-link-exact-active::after {
-  content: '';
-  @apply absolute bottom-0 left-0 right-0 h-0.5 bg-zameen-green;
-}
-</style>

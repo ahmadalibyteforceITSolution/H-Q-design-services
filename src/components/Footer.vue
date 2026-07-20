@@ -1,100 +1,159 @@
 <template>
-  <footer class="bg-gray-900 text-white">
-    <div class="container mx-auto px-4 py-12 lg:py-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-        <div>
-          <div class="flex items-center space-x-2 mb-4">
-            <img src="@/assets/logo.png" alt="H&Q Logo" class="w-10 h-10 object-contain" />
-            <div>
-              <h3 class="font-bold text-lg">H&Q Design Services</h3>
+  <footer class="bg-slate-950 text-slate-400 border-t border-slate-800/80 pt-16 pb-12 relative overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1440px] h-px bg-gradient-to-r from-transparent via-[#088C7E]/50 to-transparent"></div>
+    
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top 5-Column Zameen Footer Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Brand Info (Zameen Partner Studio) -->
+        <div class="lg:col-span-2 space-y-5">
+          <router-link to="/" class="flex items-center gap-3">
+            <span class="font-black text-2xl text-white tracking-tight">H&Q</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#088C7E]"></span>
+          </router-link>
+
+          <p class="text-xs leading-relaxed text-slate-400 max-w-sm">
+            Pakistan's Premier Architecture & Interior Design Studio. Official partner affiliated with <strong class="text-white">Zameen.com</strong>. Transforming spaces into luxury homes, offices, and commercial landmarks in Parkview City, DHA, and Gulberg, Lahore.
+          </p>
+
+          <!-- Status Indicator -->
+          <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span class="text-slate-300 font-mono text-[11px] flex items-center gap-1.5">
+              <i class="fa-solid fa-handshake text-[#088C7E] text-xs"></i>
+              {{ t.officialZameenPartner }} · {{ t.parkviewStudioLahore }}
+            </span>
+          </div>
+
+          <!-- Contact Snippet -->
+          <div class="text-xs text-slate-300 space-y-2 pt-2">
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-[#088C7E] text-xs"></i>
+              <span>Parkview City, Lahore, Punjab, Pakistan</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-[#088C7E] text-xs"></i>
+              <span>0313-4487315 | 🇸🇦 +966 50 714 3124</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-[#088C7E] text-xs"></i>
+              <span>asadali2899@gmail.com</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Zameen Popular Searches Column -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">{{ t.popularSearches }}</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-house-chimney text-[10px] text-[#088C7E]"></i> 5 Marla Villa Designs</a></li>
+            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-house-user text-[10px] text-[#088C7E]"></i> 10 Marla Spanish House Maps</a></li>
+            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-landmark text-[10px] text-[#088C7E]"></i> 1 Kanal Luxury Elevation</a></li>
+            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-building text-[10px] text-[#088C7E]"></i> Commercial Plazas Gulberg</a></li>
+            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-couch text-[10px] text-[#088C7E]"></i> DHA Interior Design Pkg</a></li>
+            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-hammer text-[10px] text-[#088C7E]"></i> Turnkey Villa Renovation</a></li>
+          </ul>
+        </div>
+
+        <!-- Zameen Area Guides & Cities -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">{{ t.areaGuides }}</h4>
+          <ul class="space-y-2 text-xs">
+            <li><router-link to="/about" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-[10px] text-amber-500"></i> Parkview City Lahore</router-link></li>
+            <li><router-link to="/about" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-city text-[10px] text-slate-500"></i> DHA Lahore (Ph 1-9)</router-link></li>
+            <li><router-link to="/about" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-city text-[10px] text-slate-500"></i> Gulberg 3 Commercial</router-link></li>
+            <li><router-link to="/about" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-city text-[10px] text-slate-500"></i> Bahria Town Lahore</router-link></li>
+            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-globe text-[10px] text-[#088C7E]"></i> Islamabad & DHA Phase 2</a></li>
+            <li><a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-globe text-[10px] text-[#088C7E]"></i> Karachi & Scheme 33</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter & Zameen Apps Download -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">{{ t.zameenAppUpdates }}</h4>
+          <p class="text-xs text-slate-400">Get instant floor plan estimates and 3D design updates right on your phone.</p>
+          
+          <form @submit.prevent="subscribe" class="space-y-2">
+            <div class="relative">
+              <input 
+                v-model="email" 
+                type="email" 
+                required
+                placeholder="your.email@gmail.com" 
+                class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#088C7E] transition-colors"
+              />
+              <button 
+                type="submit"
+                class="absolute right-1 top-1 bottom-1 px-3 bg-[#088C7E] hover:bg-[#066D62] text-white rounded-lg text-xs font-semibold transition-colors cursor-pointer"
+              >
+                Join
+              </button>
             </div>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-4">
-            Premium architecture and interior design services. Affiliated with Zameen.com and Parkview City, Lahore.
-          </p>
-          <div class="flex items-center space-x-2 text-sm">
-            <span class="bg-zameen-gold text-gray-900 px-2 py-1 rounded font-medium">Parkview City</span>
-            <span class="text-gray-400">Lahore</span>
+            <p v-if="subscribed" class="text-[11px] text-[#088C7E] flex items-center gap-1">
+              <i class="fa-solid fa-circle-check"></i> Subscribed successfully!
+            </p>
+          </form>
+
+          <!-- Mobile Apps Badge -->
+          <div class="pt-2 flex items-center gap-2">
+            <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-[#088C7E] text-white text-[10px] font-bold flex items-center gap-1.5">
+              <i class="fa-brands fa-google-play text-xs text-[#088C7E]"></i>
+              <span>Google Play</span>
+            </a>
+            <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-[#088C7E] text-white text-[10px] font-bold flex items-center gap-1.5">
+              <i class="fa-brands fa-apple text-xs text-amber-400"></i>
+              <span>App Store</span>
+            </a>
           </div>
         </div>
 
-        <div>
-          <h4 class="font-bold text-lg mb-4">Quick Links</h4>
-          <ul class="space-y-2">
-            <li><router-link to="/" class="text-gray-400 hover:text-white transition-colors">Home</router-link></li>
-            <li><router-link to="/about" class="text-gray-400 hover:text-white transition-colors">About Us</router-link></li>
-            <li><router-link to="/portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</router-link></li>
-            <li><router-link to="/blog" class="text-gray-400 hover:text-white transition-colors">Blog</router-link></li>
-            <li><router-link to="/contact" class="text-gray-400 hover:text-white transition-colors">Contact</router-link></li>
-          </ul>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <div class="flex items-center gap-6">
+          <span>{{ t.copyright }}</span>
+          <span class="hidden sm:inline text-slate-700">|</span>
+          <span class="hover:text-slate-300 cursor-pointer">Parkview City Studio, Lahore</span>
         </div>
 
-        <div>
-          <h4 class="font-bold text-lg mb-4">Services</h4>
-          <ul class="space-y-2">
-            <li><router-link :to="{ path: '/contact', query: { service: 'architecture' }}" class="text-gray-400 hover:text-white transition-colors">Architecture Design</router-link></li>
-            <li><router-link :to="{ path: '/contact', query: { service: 'interior' }}" class="text-gray-400 hover:text-white transition-colors">Interior Design</router-link></li>
-            <li><router-link :to="{ path: '/contact', query: { service: 'renovation' }}" class="text-gray-400 hover:text-white transition-colors">Renovation</router-link></li>
-            <li><router-link :to="{ path: '/contact', query: { service: 'commercial' }}" class="text-gray-400 hover:text-white transition-colors">Commercial Design</router-link></li>
-            <li><router-link :to="{ path: '/contact', query: { service: 'consultation' }}" class="text-gray-400 hover:text-white transition-colors">Free Consultation</router-link></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-bold text-lg mb-4">Contact Us</h4>
-          <ul class="space-y-3 text-gray-400">
-            <li class="flex items-start space-x-3">
-              <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-              </svg>
-              <span>Parkview City, Lahore, Pakistan</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-              </svg>
-              <div class="flex flex-col">
-                <span>0313-4487315</span>
-                <span>+966 50 714 3124 (KSA)</span>
-              </div>
-            </li>
-            <li class="flex items-start space-x-3">
-              <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-              </svg>
-              <div class="flex flex-col">
-                <a href="mailto:asadali2899@gmail.com" class="hover:text-white transition-colors">asadali2899@gmail.com</a>
-              </div>
-            </li>
-          </ul>
-          <div class="flex items-center space-x-3 mt-4">
-            <a href="https://www.facebook.com/share/1JFuAoDXzr/" target="_blank" class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/chasad_ali/" target="_blank" class="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center text-white hover:bg-pink-700 transition-colors">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-            <a href="https://wa.me/923134487315" target="_blank" class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center text-white hover:bg-green-600 transition-colors">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </a>
-          </div>
+        <!-- Social Icons & Zameen Links -->
+        <div class="flex items-center gap-4 text-slate-400">
+          <a href="https://www.facebook.com/share/1JFuAoDXzr/" target="_blank" rel="noopener" class="hover:text-white transition-colors text-base" title="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/chasad_ali/" target="_blank" rel="noopener" class="hover:text-white transition-colors text-base" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.zameen.com/" target="_blank" rel="noopener" class="hover:text-amber-400 transition-colors text-base" title="Zameen.com Partner">
+            <i class="fa-solid fa-award"></i>
+          </a>
         </div>
       </div>
 
-      <div class="border-t border-gray-800 mt-12 pt-8">
-        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p class="text-gray-400 text-sm">
-            &copy; 2026 H&Q Design Services. All rights reserved. Affiliated with <a href="https://zameen.com" target="_blank" class="text-zameen-green hover:underline">Zameen.com</a>
-          </p>
-          <div class="flex items-center space-x-4">
-            <span class="text-sm text-gray-500">Parkview City, Lahore</span>
-          </div>
-        </div>
-      </div>
     </div>
   </footer>
 </template>
 
 <script setup>
+import { ref } from 'vue'
+import { useI18n } from '../composables/useI18n.js'
+
+const { t } = useI18n()
+
+const email = ref('')
+const subscribed = ref(false)
+
+const subscribe = () => {
+  if (!email.value) return
+  subscribed.value = true
+  setTimeout(() => {
+    email.value = ''
+  }, 2000)
+}
 </script>
