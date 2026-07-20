@@ -17,7 +17,7 @@
               </div>
               <div>
                 <h3 class="text-lg font-bold tracking-tight">Request Free Architectural Consultation</h3>
-                <p class="text-xs text-slate-500 dark:text-slate-400">Step {{ currentStep }} of 3 — Parkview City Studio, Lahore</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Step {{ currentStep }} of 3 — Parkview City Studio, Lahore & KSA</p>
               </div>
             </div>
             <button 
@@ -44,7 +44,7 @@
               </div>
               <h3 class="text-2xl font-bold">Opening WhatsApp Chat...</h3>
               <p class="text-slate-600 dark:text-slate-400 max-w-md mx-auto text-sm">
-                Thank you, <span class="font-semibold text-slate-900 dark:text-white">{{ form.name }}</span>! We have formatted your project inquiry details and are opening WhatsApp to connect with <strong class="text-emerald-500">03416887454</strong>.
+                Thank you, <span class="font-semibold text-slate-900 dark:text-white">{{ form.name }}</span>! We have formatted your project inquiry details and are opening WhatsApp to connect with our senior architect desk.
               </p>
               <button 
                 @click="resetAndClose"
@@ -95,7 +95,7 @@
             <!-- Step 2: Plot Size & Budget -->
             <div v-else-if="currentStep === 2">
               <h4 class="text-xl font-bold mb-2">Plot Size & Project Location</h4>
-              <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Select your plot scale and society location in Lahore.</p>
+              <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Select your plot scale and society location in Lahore or Overseas.</p>
 
               <!-- Plot Size Options -->
               <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Plot Scale</label>
@@ -152,12 +152,12 @@
               </div>
             </div>
 
-            <!-- Step 3: Contact Information & Direct WhatsApp Send -->
+            <!-- Step 3: Contact Information & Dual WhatsApp Buttons -->
             <div v-else-if="currentStep === 3">
               <h4 class="text-xl font-bold mb-2">Where should we send your initial designs?</h4>
-              <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Submitting will automatically send all details directly to WhatsApp (03416887454).</p>
+              <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Choose to send all project details to Pakistan or Saudi Arabia WhatsApp desk.</p>
 
-              <form @submit.prevent="submitForm" class="space-y-4 mb-6">
+              <form @submit.prevent="submitForm('pk')" class="space-y-4 mb-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label class="block text-xs font-medium mb-1 text-slate-600 dark:text-slate-400">Full Name *</label>
@@ -214,22 +214,35 @@
                   ></textarea>
                 </div>
 
-                <div class="flex justify-between items-center pt-2">
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-3 pt-2">
                   <button 
                     type="button"
                     @click="currentStep = 2"
-                    class="px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium text-sm transition-colors"
+                    class="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium text-xs transition-colors"
                   >
                     ← Back
                   </button>
-                  <button 
-                    type="submit"
-                    :disabled="loading"
-                    class="px-8 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-all shadow-lg shadow-emerald-500/25 flex items-center gap-2 cursor-pointer"
-                  >
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Send Inquiry to WhatsApp</span>
-                  </button>
+
+                  <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+                    <button 
+                      type="button"
+                      @click="submitForm('pk')"
+                      :disabled="loading"
+                      class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-all shadow-lg flex items-center justify-center gap-1.5 cursor-pointer"
+                    >
+                      <i class="fa-brands fa-whatsapp text-base"></i>
+                      <span>🇵🇰 PK (03416887454)</span>
+                    </button>
+                    <button 
+                      type="button"
+                      @click="submitForm('ksa')"
+                      :disabled="loading"
+                      class="px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs transition-all shadow-lg flex items-center justify-center gap-1.5 cursor-pointer"
+                    >
+                      <i class="fa-brands fa-whatsapp text-base"></i>
+                      <span>🇸🇦 KSA (+966507143124)</span>
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
@@ -263,7 +276,7 @@ const services = [
 ]
 
 const plotSizes = ['5 Marla', '10 Marla', '1 Kanal', '2+ Kanal / Commercial']
-const locationOptions = ['Parkview City', 'DHA Lahore', 'Gulberg', 'Bahria Town', 'Other Lahore', 'Overseas Client']
+const locationOptions = ['Parkview City', 'DHA Lahore', 'Gulberg', 'Bahria Town', 'Other Lahore', 'Saudi Arabia / Overseas']
 
 const form = reactive({
   service: 'Architecture Design',
@@ -280,7 +293,7 @@ const close = () => {
   emit('close')
 }
 
-const submitForm = () => {
+const submitForm = (destination = 'pk') => {
   if (!form.name || !form.phone) return
 
   loading.value = true
@@ -295,7 +308,8 @@ const submitForm = () => {
     `⏰ *Contact Time:* ${form.time}\n` +
     `📝 *Vision / Notes:* ${form.description || '3D consultation requested.'}`
 
-  const targetUrl = `https://wa.me/923416887454?text=${encodeURIComponent(waText)}`
+  const targetNumber = destination === 'ksa' ? '966507143124' : '923416887454'
+  const targetUrl = `https://wa.me/${targetNumber}?text=${encodeURIComponent(waText)}`
 
   setTimeout(() => {
     loading.value = false

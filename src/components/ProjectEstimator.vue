@@ -53,9 +53,9 @@
 
     </div>
 
-    <!-- Calculated Result Card & WhatsApp Direct Send -->
-    <div class="p-6 sm:p-8 rounded-2xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-6 border border-slate-800">
-      <div class="space-y-1 text-center sm:text-left">
+    <!-- Calculated Result Card & Dual WhatsApp Direct Buttons -->
+    <div class="p-6 sm:p-8 rounded-2xl bg-slate-900 text-white flex flex-col lg:flex-row items-center justify-between gap-6 border border-slate-800">
+      <div class="space-y-1 text-center lg:text-left">
         <span class="text-xs text-slate-400 font-medium">Estimated Investment Quote</span>
         <div class="text-3xl sm:text-4xl font-black text-emerald-400 font-mono">
           PKR {{ estimatedPrice.toLocaleString() }} <span class="text-xs text-slate-400 font-normal">Lac approx</span>
@@ -63,13 +63,22 @@
         <p class="text-[11px] text-slate-400">Includes municipal submission drawing guarantee & 4K photorealistic 3D render files.</p>
       </div>
 
-      <button 
-        @click="sendEstimateToWhatsApp"
-        class="w-full sm:w-auto px-8 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-2 shrink-0 cursor-pointer"
-      >
-        <i class="fa-brands fa-whatsapp text-lg"></i>
-        <span>Send Quote to WhatsApp (03416887454)</span>
-      </button>
+      <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0">
+        <button 
+          @click="sendEstimateToWhatsApp('pk')"
+          class="px-5 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-xl flex items-center justify-center gap-2 cursor-pointer"
+        >
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>🇵🇰 PK (03416887454)</span>
+        </button>
+        <button 
+          @click="sendEstimateToWhatsApp('ksa')"
+          class="px-5 py-3.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-xl flex items-center justify-center gap-2 cursor-pointer"
+        >
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>🇸🇦 KSA (+966507143124)</span>
+        </button>
+      </div>
     </div>
 
   </div>
@@ -97,7 +106,7 @@ const estimatedPrice = computed(() => {
   return Math.round(base * 100) / 100
 })
 
-const sendEstimateToWhatsApp = () => {
+const sendEstimateToWhatsApp = (destination = 'pk') => {
   const waText = `*H&Q Design Services - Instant Estimate Inquiry* 🏛️\n\n` +
     `🏠 *Property Type:* ${propertyType.value}\n` +
     `📐 *Plot Scale:* ${plotScale.value}\n` +
@@ -105,7 +114,8 @@ const sendEstimateToWhatsApp = () => {
     `💰 *Estimated Quote:* PKR ${estimatedPrice.value} Lac approx\n\n` +
     `Hi H&Q Architects! I would like to book a 3D floor plan review for this plot estimate.`
 
-  const targetUrl = `https://wa.me/923416887454?text=${encodeURIComponent(waText)}`
+  const targetNumber = destination === 'ksa' ? '966507143124' : '923416887454'
+  const targetUrl = `https://wa.me/${targetNumber}?text=${encodeURIComponent(waText)}`
   window.open(targetUrl, '_blank')
 }
 </script>
