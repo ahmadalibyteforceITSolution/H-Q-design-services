@@ -2,13 +2,13 @@
 
 const images = [
   'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80', // Glass Commercial Tower
   'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
-  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+  'https://images.unsplash.com/photo-1577495508048-b635879837f1?w=800&q=80', // Commercial Arcade
   'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800&q=80',
   'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80',
   'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80',
-  'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
-  'https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=800&q=80'
+  'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80'
 ]
 
 const categoriesList = [
@@ -76,7 +76,7 @@ export const generate100Blogs = () => {
 
         <h4>Why Choose H&Q Design Services & Zameen.com Network</h4>
         <p>As an official partner affiliated with Zameen.com, H&Q Design Services offers verified engineering standards, guaranteed project timelines, and cost-effective design packages for 5 Marla, 10 Marla, 1 Kanal, and Commercial Plazas.</p>
-        <p>Contact our studio at Parkview City, Lahore by calling <strong>0313-4487315</strong> or <strong>+966 50 714 3124</strong> for a free consultation.</p>
+        <p>Contact our studio at Parkview City, Lahore by calling <strong>0341-6887454</strong> or <strong>+966 50 714 3124</strong> for a free consultation.</p>
       `
     })
   }

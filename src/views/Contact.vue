@@ -4,13 +4,13 @@
     <!-- Hero Header -->
     <div class="text-center max-w-3xl mx-auto space-y-4">
       <span class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-[#088C7E]/10 text-[#088C7E] uppercase tracking-wider border border-[#088C7E]/20">
-        Parkview City Studio & KSA Desk
+        Saudi Arabia & Parkview Studio Desk
       </span>
       <h1 class="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
         Connect with Our <span class="text-gradient-zameen">Senior Architects</span>
       </h1>
       <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
-        Visit our studio in Parkview City, Lahore, or connect with our Pakistan & Saudi Arabia WhatsApp desks.
+        Visit our studio in Parkview City, Lahore, or connect with our Saudi Arabia WhatsApp desk.
       </p>
     </div>
 
@@ -25,8 +25,8 @@
         <h3 class="text-lg font-bold text-slate-900 dark:text-white">Call Chief Architect</h3>
         <p class="text-xs text-slate-500 dark:text-slate-400">Direct phone line for quick plot inquiries & 3D render consultations.</p>
         <div class="pt-2 space-y-1">
-          <a href="tel:03416887454" class="text-sm font-black text-[#088C7E] hover:underline block">🇵🇰 0341-6887454</a>
-          <a href="tel:+966507143124" class="text-xs font-semibold text-slate-600 dark:text-slate-400 hover:underline block">🇸🇦 +966 50 714 3124</a>
+          <a href="tel:+966507143124" class="text-sm font-black text-[#088C7E] hover:underline block">🇸🇦 +966 50 714 3124</a>
+          <a href="tel:03416887454" class="text-xs font-semibold text-slate-600 dark:text-slate-400 hover:underline block">🇵🇰 0341-6887454</a>
         </div>
       </div>
 
@@ -35,24 +35,16 @@
         <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl">
           <i class="fa-brands fa-whatsapp"></i>
         </div>
-        <h3 class="text-lg font-bold text-slate-900 dark:text-white">WhatsApp Direct Desks</h3>
-        <p class="text-xs text-slate-500 dark:text-slate-400">Send plot dimensions or architectural sketches to Pakistan or KSA.</p>
-        <div class="pt-2 flex flex-col gap-2">
-          <a 
-            href="https://wa.me/923416887454" 
-            target="_blank" 
-            class="px-3.5 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold inline-flex items-center justify-center gap-2 shadow hover:bg-emerald-500 transition-colors"
-          >
-            <i class="fa-brands fa-whatsapp"></i>
-            <span>🇵🇰 Pakistan (03416887454)</span>
-          </a>
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">WhatsApp Direct Desk</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400">Send plot dimensions or architectural sketches directly to our Saudi Arabia desk.</p>
+        <div class="pt-2">
           <a 
             href="https://wa.me/966507143124" 
             target="_blank" 
-            class="px-3.5 py-2 rounded-xl bg-emerald-700 text-white text-xs font-bold inline-flex items-center justify-center gap-2 shadow hover:bg-emerald-600 transition-colors"
+            class="px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold inline-flex items-center gap-2 shadow hover:bg-emerald-500 transition-colors"
           >
             <i class="fa-brands fa-whatsapp"></i>
-            <span>🇸🇦 Saudi Arabia (+966 50 714 3124)</span>
+            <span>Chat on WhatsApp (+966 50 714 3124)</span>
           </a>
         </div>
       </div>
@@ -74,14 +66,14 @@
     <!-- Contact Form & Map Section -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       
-      <!-- Inquiry Form with ONE SINGLE BUTTON to send to BOTH Pakistan & KSA -->
+      <!-- Inquiry Form Sending ONLY to Saudi Arabia Number (+966507143124) -->
       <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
         <div class="space-y-1">
           <h3 class="text-2xl font-black text-slate-900 dark:text-white">Send Us Your Plot Details</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Submitting will send your details to both Pakistan (03416887454) & KSA (+966507143124) WhatsApp desks.</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Submitting will send all project inquiry details directly to Saudi Arabia WhatsApp (+966507143124).</p>
         </div>
 
-        <form @submit.prevent="submitToBothNumbers" class="space-y-4 text-xs">
+        <form @submit.prevent="submitForm" class="space-y-4 text-xs">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Your Full Name *</label>
@@ -145,17 +137,16 @@
             ></textarea>
           </div>
 
-          <!-- ONE SINGLE BUTTON -->
           <button 
             type="submit" 
             class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/20 cursor-pointer flex items-center justify-center gap-2"
           >
             <i class="fa-brands fa-whatsapp text-base"></i>
-            <span>Send Details to WhatsApp (PK & KSA)</span>
+            <span>Send Details to WhatsApp (+966 50 714 3124)</span>
           </button>
           
           <p v-if="submitted" class="text-xs text-center text-[#088C7E] font-bold flex items-center justify-center gap-1">
-            <i class="fa-solid fa-circle-check"></i> Sending inquiry to both 03416887454 & +966507143124...
+            <i class="fa-solid fa-circle-check"></i> Redirecting to WhatsApp (+966507143124)...
           </p>
         </form>
       </div>
@@ -190,7 +181,7 @@ const form = ref({
 
 const submitted = ref(false)
 
-const submitToBothNumbers = () => {
+const submitForm = () => {
   if (!form.value.name || !form.value.phone) return
 
   submitted.value = true
@@ -202,13 +193,10 @@ const submitToBothNumbers = () => {
     `📐 *Plot Scale:* ${form.value.plotSize}\n` +
     `📝 *Details & Vision:* ${form.value.message || 'Floor plan & 3D render consultation requested.'}`
 
-  const pkUrl = `https://wa.me/923416887454?text=${encodeURIComponent(waText)}`
-  const ksaUrl = `https://wa.me/966507143124?text=${encodeURIComponent(waText)}`
+  const targetUrl = `https://wa.me/966507143124?text=${encodeURIComponent(waText)}`
 
-  // Single click opens WhatsApp for both Pakistan and Saudi Arabia desks
   setTimeout(() => {
-    window.open(pkUrl, '_blank')
-    window.open(ksaUrl, '_blank')
+    window.open(targetUrl, '_blank')
     submitted.value = false
   }, 400)
 }

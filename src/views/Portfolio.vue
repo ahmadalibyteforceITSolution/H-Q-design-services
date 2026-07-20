@@ -72,10 +72,18 @@
               {{ project.description }}
             </p>
 
-            <div class="flex items-center gap-4 text-xs text-slate-600 dark:text-slate-400 pt-3 border-t border-slate-200 dark:border-slate-800">
-              <span class="flex items-center gap-1"><i class="fa-solid fa-bed text-[#088C7E]"></i> {{ project.beds }}</span>
-              <span class="flex items-center gap-1"><i class="fa-solid fa-bath text-[#088C7E]"></i> {{ project.baths }}</span>
-              <span class="flex items-center gap-1"><i class="fa-solid fa-layer-group text-[#088C7E]"></i> {{ project.floors }}</span>
+            <!-- Specification Badges (Residential vs Commercial) -->
+            <div class="flex flex-wrap items-center gap-3 text-xs text-slate-600 dark:text-slate-400 pt-3 border-t border-slate-200 dark:border-slate-800">
+              <template v-if="project.isCommercial">
+                <span class="flex items-center gap-1"><i class="fa-solid fa-building text-[#088C7E]"></i> {{ project.type }}</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-layer-group text-[#088C7E]"></i> {{ project.floors }}</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-square-parking text-[#088C7E]"></i> {{ project.parking }}</span>
+              </template>
+              <template v-else>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-bed text-[#088C7E]"></i> {{ project.beds }}</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-bath text-[#088C7E]"></i> {{ project.baths }}</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-layer-group text-[#088C7E]"></i> {{ project.floors }}</span>
+              </template>
             </div>
           </div>
         </div>
@@ -90,7 +98,7 @@
             <span>View 3D Plan</span>
           </button>
           <a 
-            href="https://wa.me/923416887454" 
+            href="https://wa.me/966507143124" 
             target="_blank" 
             class="p-3 rounded-xl bg-emerald-600/20 text-emerald-400 hover:bg-emerald-600/30 transition-all text-sm"
             title="Chat on WhatsApp"
@@ -140,8 +148,8 @@
               <span>{{ selectedProject.plotSize }}</span>
             </div>
             <div>
-              <span class="text-slate-400 block text-[10px]">BEDS & BATHS</span>
-              <span>{{ selectedProject.beds }} / {{ selectedProject.baths }}</span>
+              <span class="text-slate-400 block text-[10px]">PROJECT TYPE</span>
+              <span>{{ selectedProject.isCommercial ? selectedProject.type : selectedProject.beds + ' / ' + selectedProject.baths }}</span>
             </div>
             <div>
               <span class="text-slate-400 block text-[10px]">FLOORS</span>
@@ -152,7 +160,7 @@
           <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
             <div class="text-xs text-slate-500">
               <span>Direct Architect Desk: </span>
-              <strong class="text-slate-900 dark:text-white">0341-6887454</strong>
+              <strong class="text-slate-900 dark:text-white">+966 50 714 3124</strong>
             </div>
             <button 
               @click="requestThisProject"
@@ -181,8 +189,37 @@ const selectedProject = ref(null)
 const projects = ref([
   {
     id: 1,
+    title: 'Gulberg 3 Corporate Commercial Glass Plaza',
+    category: 'Commercial Plazas',
+    isCommercial: true,
+    location: 'Gulberg 3, Lahore',
+    plotSize: '8 Marla Commercial (6,000 sq.ft)',
+    price: 'PKR 6.5 Lac Design Fee',
+    type: 'Glass High-Rise Plaza',
+    floors: 'Basement + G + 5 Floors',
+    parking: 'Basement Parking',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
+    description: 'Modern curtain-wall glass facade commercial plaza design engineered for corporate headquarters, IT office suites, and ground-floor retail outlets in Gulberg 3 Lahore.'
+  },
+  {
+    id: 2,
+    title: 'DHA Phase 8 Commercial Arcade & Retail Complex',
+    category: 'Commercial Plazas',
+    isCommercial: true,
+    location: 'DHA Phase 8, Lahore',
+    plotSize: '12 Marla Commercial',
+    price: 'PKR 8.2 Lac Design Fee',
+    type: 'Retail & Corporate Plaza',
+    floors: 'G + 4 Commercial Floors',
+    parking: 'Dedicated Parking Bay',
+    image: 'https://images.unsplash.com/photo-1577495508048-b635879837f1?w=800&q=80',
+    description: 'High-visibility commercial arcade architectural plan featuring double-glazed glass front, modern showroom layouts, and DHA municipal approved elevator shaft plans.'
+  },
+  {
+    id: 3,
     title: 'Modern 10 Marla Spanish Villa Floor Plan',
     category: '10 Marla Luxury',
+    isCommercial: false,
     location: 'Parkview City, Lahore',
     plotSize: '10 Marla (35x70)',
     price: 'PKR 2.8 Lac',
@@ -193,9 +230,10 @@ const projects = ref([
     description: 'Spanish architectural villa design featuring double-height ceiling lounge, underground basement entertainment room, and open terrace.'
   },
   {
-    id: 2,
+    id: 4,
     title: 'Executive DHA Phase 6 Interior Package',
     category: 'Luxury Interiors',
+    isCommercial: false,
     location: 'DHA Phase 6, Lahore',
     plotSize: '1 Kanal (50x90)',
     price: 'PKR 4.8 Lac',
@@ -206,22 +244,10 @@ const projects = ref([
     description: 'Custom interior styling with Italian Statuario marble floors, rosewood wall paneling, LED cove illumination, and modular kitchen.'
   },
   {
-    id: 3,
-    title: 'Gulberg 3 Corporate Commercial Plaza',
-    category: 'Commercial Plazas',
-    location: 'Gulberg 3, Lahore',
-    plotSize: '6,000 sq.ft',
-    price: 'PKR 6.5 Lac',
-    beds: '8 Office Pods',
-    baths: '4 Baths',
-    floors: 'G+5 Floors',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-    description: 'Curtain-wall glass facade commercial plaza design optimized for corporate headquarters and retail stores in Gulberg Lahore.'
-  },
-  {
-    id: 4,
+    id: 5,
     title: '5 Marla Minimalist Modern House Map',
     category: '5 Marla Villas',
+    isCommercial: false,
     location: 'Parkview City, Lahore',
     plotSize: '5 Marla (25x45)',
     price: 'PKR 1.8 Lac',
@@ -232,9 +258,10 @@ const projects = ref([
     description: 'Compact 5 Marla floor plan engineered for max ventilation, natural light, Car Porch, and modern 3D elevation.'
   },
   {
-    id: 5,
+    id: 6,
     title: '1 Kanal Royal Mansion Architectural Blueprint',
     category: '1 Kanal Estates',
+    isCommercial: false,
     location: 'Bahria Town, Lahore',
     plotSize: '1 Kanal (50x90)',
     price: 'PKR 5.5 Lac',

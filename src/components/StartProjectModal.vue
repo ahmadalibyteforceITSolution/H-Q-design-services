@@ -17,7 +17,7 @@
               </div>
               <div>
                 <h3 class="text-lg font-bold tracking-tight">Request Free Architectural Consultation</h3>
-                <p class="text-xs text-slate-500 dark:text-slate-400">Step {{ currentStep }} of 3 — Parkview City Studio, Lahore & KSA</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Step {{ currentStep }} of 3 — Saudi Arabia & Lahore Studio</p>
               </div>
             </div>
             <button 
@@ -42,9 +42,9 @@
               <div class="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mx-auto mb-2 animate-bounce">
                 <i class="fa-brands fa-whatsapp text-3xl"></i>
               </div>
-              <h3 class="text-2xl font-bold">Sending to WhatsApp Desks...</h3>
+              <h3 class="text-2xl font-bold">Opening WhatsApp Chat...</h3>
               <p class="text-slate-600 dark:text-slate-400 max-w-md mx-auto text-sm">
-                Thank you, <span class="font-semibold text-slate-900 dark:text-white">{{ form.name }}</span>! Opening WhatsApp for both Pakistan (03416887454) and Saudi Arabia (+966507143124).
+                Thank you, <span class="font-semibold text-slate-900 dark:text-white">{{ form.name }}</span>! Opening WhatsApp to send your project details to <strong class="text-emerald-500">+966 50 714 3124</strong>.
               </p>
               <button 
                 @click="resetAndClose"
@@ -152,12 +152,12 @@
               </div>
             </div>
 
-            <!-- Step 3: Contact Information & ONE SINGLE BUTTON -->
+            <!-- Step 3: Contact Information -->
             <div v-else-if="currentStep === 3">
               <h4 class="text-xl font-bold mb-2">Where should we send your initial designs?</h4>
-              <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Submitting will send all details to both Pakistan (03416887454) & KSA (+966507143124) WhatsApp desks.</p>
+              <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Submitting will send all project details to Saudi Arabia WhatsApp desk (+966507143124).</p>
 
-              <form @submit.prevent="submitToBothNumbers" class="space-y-4 mb-6">
+              <form @submit.prevent="submitForm" class="space-y-4 mb-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label class="block text-xs font-medium mb-1 text-slate-600 dark:text-slate-400">Full Name *</label>
@@ -229,7 +229,7 @@
                     class="px-8 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-all shadow-lg shadow-emerald-500/25 flex items-center gap-2 cursor-pointer"
                   >
                     <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Send Inquiry to WhatsApp (PK & KSA)</span>
+                    <span>Send Inquiry to WhatsApp (+966507143124)</span>
                   </button>
                 </div>
               </form>
@@ -281,7 +281,7 @@ const close = () => {
   emit('close')
 }
 
-const submitToBothNumbers = () => {
+const submitForm = () => {
   if (!form.name || !form.phone) return
 
   loading.value = true
@@ -296,14 +296,12 @@ const submitToBothNumbers = () => {
     `⏰ *Contact Time:* ${form.time}\n` +
     `📝 *Vision / Notes:* ${form.description || '3D consultation requested.'}`
 
-  const pkUrl = `https://wa.me/923416887454?text=${encodeURIComponent(waText)}`
-  const ksaUrl = `https://wa.me/966507143124?text=${encodeURIComponent(waText)}`
+  const targetUrl = `https://wa.me/966507143124?text=${encodeURIComponent(waText)}`
 
   setTimeout(() => {
     loading.value = false
     submitted.value = true
-    window.open(pkUrl, '_blank')
-    window.open(ksaUrl, '_blank')
+    window.open(targetUrl, '_blank')
   }, 400)
 }
 
