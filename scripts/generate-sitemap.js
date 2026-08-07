@@ -7,7 +7,18 @@ import { generate100Blogs } from '../src/data/blogData.js'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const baseUrl = 'https://hq-design-services.com'
+// Setup dynamic baseUrl from environment variables for cross-domain flexibility
+const getBaseUrl = () => {
+  if (process.env.SITE_URL) {
+    return process.env.SITE_URL.replace(/\/$/, '')
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`
+  }
+  return 'https://hq-design-services.com'
+}
+
+const baseUrl = getBaseUrl()
 const staticPages = [
   { url: '', changefreq: 'daily', priority: '1.0' },
   { url: 'about', changefreq: 'weekly', priority: '0.9' },
