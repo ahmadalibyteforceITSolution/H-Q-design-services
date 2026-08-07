@@ -55,7 +55,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, watchEffect, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { allBlogs } from '../data/blogData.js'
 
@@ -74,7 +74,100 @@ const activePost = computed(() => {
     date: 'July 15, 2026',
     readTime: '5 min read',
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
+    excerpt: 'Detailed architectural analysis and house layout recommendations from H&Q chief architects in Parkview City Lahore.',
     content: ''
+  }
+})
+
+// Dynamic SEO and Schema.org JSON-LD Updates for Individual Blog Posts
+watchEffect(() => {
+  if (activePost.value) {
+    const pageTitle = `${activePost.value.title} | H&Q Design Services Studio Lahore`
+    const pageDesc = activePost.value.excerpt || `Read our guide on ${activePost.value.title}`
+    const pageImage = activePost.value.image
+    const pageUrl = window.location.href
+
+    // Document Title
+    document.title = pageTitle
+
+    // Meta Description
+    const descMeta = document.querySelector('meta[name="description"]')
+    if (descMeta) {
+      descMeta.setAttribute('content', pageDesc)
+    }
+
+    // Open Graph Tags
+    const ogTitle = document.querySelector('meta[property="og:title"]')
+    if (ogTitle) ogTitle.setAttribute('content', pageTitle)
+
+    const ogDesc = document.querySelector('meta[property="og:description"]')
+    if (ogDesc) ogDesc.setAttribute('content', pageDesc)
+
+    const ogImage = document.querySelector('meta[property="og:image"]')
+    if (ogImage) ogImage.setAttribute('content', pageImage)
+
+    const ogUrl = document.querySelector('meta[property="og:url"]')
+    if (ogUrl) ogUrl.setAttribute('content', pageUrl)
+
+    // Twitter Card Tags
+    const twTitle = document.querySelector('meta[name="twitter:title"]')
+    if (twTitle) twTitle.setAttribute('content', pageTitle)
+
+    const twDesc = document.querySelector('meta[name="twitter:description"]')
+    if (twDesc) twDesc.setAttribute('content', pageDesc)
+
+    const twImage = document.querySelector('meta[name="twitter:image"]')
+    if (twImage) twImage.setAttribute('content', pageImage)
+
+    const twUrl = document.querySelector('meta[name="twitter:url"]')
+    if (twUrl) twUrl.setAttribute('content', pageUrl)
+
+    // Dynamic Schema.org JSON-LD injection
+    const schemaId = 'blog-post-schema'
+    let schemaScript = document.getElementById(schemaId)
+    if (!schemaScript) {
+      schemaScript = document.createElement('script')
+      schemaScript.setAttribute('id', schemaId)
+      schemaScript.setAttribute('type', 'application/ld+json')
+      document.head.appendChild(schemaScript)
+    }
+
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": activePost.value.title,
+      "image": [activePost.value.image],
+      "datePublished": "2026-07-20T08:00:00+05:00",
+      "dateModified": new Date().toISOString(),
+      "author": [{
+        "@type": "Organization",
+        "name": "H&Q Design Services",
+        "url": "https://hq-design-services.com/"
+      }],
+      "publisher": {
+        "@type": "Organization",
+        "name": "H&Q Design Services",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hq-design-services.com/favicon.png"
+        }
+      },
+      "description": pageDesc,
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": pageUrl
+      }
+    }
+
+    schemaScript.textContent = JSON.stringify(schemaData, null, 2)
+  }
+})
+
+// Cleanup schema on unmount to prevent DOM pollution
+onUnmounted(() => {
+  const schemaScript = document.getElementById('blog-post-schema')
+  if (schemaScript) {
+    schemaScript.remove()
   }
 })
 

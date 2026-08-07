@@ -7,11 +7,16 @@
       <!-- Top 5-Column Zameen Footer Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
         
-        <!-- Brand Info (Zameen Partner Studio) -->
+        <!-- Brand Info with Official Image Logo -->
         <div class="lg:col-span-2 space-y-5">
-          <router-link to="/" class="flex items-center gap-3">
-            <span class="font-black text-2xl text-white tracking-tight">H&Q</span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#088C7E]"></span>
+          
+          <!-- Official H&Q Design Services Image Logo -->
+          <router-link to="/" class="inline-block group">
+            <img 
+              :src="logoImg" 
+              alt="H&Q Design Services Logo" 
+              class="h-24 sm:h-28 w-auto object-contain hover:scale-105 transition-transform"
+            />
           </router-link>
 
           <p class="text-xs leading-relaxed text-slate-400 max-w-sm">
@@ -50,7 +55,7 @@
                 title="Open Gmail Compose"
               >
                 <span>asadali28997@gmail.com</span>
-                <i class="fa-solid fa-[#088C7E] fa-arrow-up-right-from-square text-[10px]"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-[#088C7E]"></i>
               </a>
             </p>
           </div>
@@ -152,6 +157,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useI18n } from '../composables/useI18n.js'
+import logoImg from '../assets/logo.jpg'
 
 defineEmits(['open-start-project'])
 

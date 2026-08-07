@@ -113,6 +113,50 @@ router.afterEach((to) => {
     }
   }
 
+  // Update Meta Keywords
+  if (to.meta && to.meta.keywords) {
+    let keywordsMeta = document.querySelector('meta[name="keywords"]')
+    if (keywordsMeta) {
+      keywordsMeta.setAttribute('content', to.meta.keywords)
+    }
+  }
+
+  // Update Open Graph (og:title, og:description, og:url, og:image)
+  if (to.meta && to.meta.title) {
+    let ogTitle = document.querySelector('meta[property="og:title"]')
+    if (ogTitle) ogTitle.setAttribute('content', to.meta.title)
+  }
+  if (to.meta && to.meta.description) {
+    let ogDesc = document.querySelector('meta[property="og:description"]')
+    if (ogDesc) ogDesc.setAttribute('content', to.meta.description)
+  }
+  let ogUrl = document.querySelector('meta[property="og:url"]')
+  if (ogUrl) {
+    ogUrl.setAttribute('content', canonicalUrl)
+  }
+  let ogImage = document.querySelector('meta[property="og:image"]')
+  if (ogImage) {
+    ogImage.setAttribute('content', `${baseUrl}/logo.jpg`)
+  }
+
+  // Update Twitter Cards (twitter:title, twitter:description, twitter:url, twitter:image)
+  if (to.meta && to.meta.title) {
+    let twTitle = document.querySelector('meta[name="twitter:title"]')
+    if (twTitle) twTitle.setAttribute('content', to.meta.title)
+  }
+  if (to.meta && to.meta.description) {
+    let twDesc = document.querySelector('meta[name="twitter:description"]')
+    if (twDesc) twDesc.setAttribute('content', to.meta.description)
+  }
+  let twUrl = document.querySelector('meta[name="twitter:url"]')
+  if (twUrl) {
+    twUrl.setAttribute('content', canonicalUrl)
+  }
+  let twImage = document.querySelector('meta[name="twitter:image"]')
+  if (twImage) {
+    twImage.setAttribute('content', `${baseUrl}/logo.jpg`)
+  }
+
   // Update or Create Link Canonical Tag
   let canonicalLink = document.querySelector('link[rel="canonical"]')
   if (!canonicalLink) {

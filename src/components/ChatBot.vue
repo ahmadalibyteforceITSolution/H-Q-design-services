@@ -9,10 +9,8 @@
         <!-- Header -->
         <div class="p-4 bg-gradient-to-r from-slate-900 to-slate-950 text-white flex items-center justify-between border-b border-slate-800">
           <div class="flex items-center gap-3">
-            <div class="relative w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-amber-500 p-0.5">
-              <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-bold text-xs">
-                H&Q
-              </div>
+            <div class="relative">
+              <img :src="logoImg" alt="H&Q Logo" class="h-12 w-auto object-contain" />
               <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 rounded-full border-2 border-slate-950"></span>
             </div>
             <div>
@@ -113,6 +111,7 @@
 
 <script setup>
 import { ref, nextTick } from 'vue'
+import logoImg from '../assets/logo.jpg'
 
 const isOpen = ref(false)
 const inputQuery = ref('')

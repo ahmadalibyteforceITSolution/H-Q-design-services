@@ -159,14 +159,15 @@
     <!-- MAIN BOTTOM TIER (Zameen.com White Bar Tier 2) -->
     <div class="bg-white dark:bg-slate-950 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-14 gap-6">
+        <div class="flex items-center justify-between h-20 gap-6">
           
-          <!-- Single Logo: H&Q ONLY -->
-          <router-link to="/" class="flex items-center group focus:outline-none shrink-0">
-            <span class="font-black text-2xl tracking-tight text-slate-900 dark:text-white flex items-center gap-1">
-              H&Q
-              <span class="w-2.5 h-2.5 rounded-full bg-[#088C7E]"></span>
-            </span>
+          <!-- Official H&Q DESIGN SERVICES Image Logo -->
+          <router-link to="/" class="flex items-center group focus:outline-none shrink-0 py-1">
+            <img 
+              :src="logoImg" 
+              alt="H&Q Design Services Logo" 
+              class="h-14 sm:h-16 w-auto object-contain hover:scale-105 transition-transform"
+            />
           </router-link>
 
           <!-- Secondary Navigation Links (Zameen Bottom Bar Layout) -->
@@ -290,6 +291,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useI18n } from '../composables/useI18n.js'
+import logoImg from '../assets/logo.jpg'
 
 const emit = defineEmits(['open-start-project'])
 

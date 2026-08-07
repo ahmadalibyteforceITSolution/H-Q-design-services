@@ -12,9 +12,7 @@
           <!-- Top Bar -->
           <div class="px-6 py-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/50">
             <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-xs">
-                H&Q
-              </div>
+              <img :src="logoImg" alt="H&Q Logo" class="h-12 w-auto object-contain" />
               <div>
                 <h3 class="text-lg font-bold tracking-tight">Request Free Architectural Consultation</h3>
                 <p class="text-xs text-slate-500 dark:text-slate-400">Step {{ currentStep }} of 3 — Saudi Arabia & Lahore Studio</p>
@@ -243,6 +241,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
+import logoImg from '../assets/logo.jpg'
 
 const props = defineProps({
   isOpen: Boolean
