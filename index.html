@@ -162,6 +162,25 @@
         }
       })();
     </script>
+
+    <!-- Google Tag (gtag.js) - Google Analytics -->
+    <!-- Replace "G-YOUR-ID-HERE" with your actual Google Analytics Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR-ID-HERE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YOUR-ID-HERE');
+    </script>
+
+    <!-- Microsoft Clarity Tracking Code -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xyjsk12es6");
+    </script>
   </head>
   <body class="bg-slate-50 text-slate-900 dark:bg-[#090D16] dark:text-slate-100 transition-colors duration-300 font-sans min-h-full flex flex-col selection:bg-[#088C7E] selection:text-white">
 
