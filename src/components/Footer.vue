@@ -128,6 +128,32 @@
 
       </div>
 
+      <!-- Trending Architecture & Construction Keywords (100k Traffic SEO Footer Links) -->
+      <div class="mt-12 pt-8 border-t border-slate-800/80">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Trending Architecture & Construction Keywords</h4>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-400">
+          <router-link to="/services" class="hover:text-[#088C7E] transition-colors">Best Architects in Lahore</router-link>
+          <span>·</span>
+          <router-link to="/case-studies" class="hover:text-[#088C7E] transition-colors">House Construction Cost in Pakistan 2026</router-link>
+          <span>·</span>
+          <router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors">5 Marla House Design & Elevation</router-link>
+          <span>·</span>
+          <router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors">10 Marla Spanish Villa Map</router-link>
+          <span>·</span>
+          <router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors">1 Kanal Luxury House Plan</router-link>
+          <span>·</span>
+          <router-link to="/services" class="hover:text-[#088C7E] transition-colors">Top Interior Designers in Lahore</router-link>
+          <span>·</span>
+          <router-link to="/blog" class="hover:text-[#088C7E] transition-colors">DHA Lahore Building Bylaws</router-link>
+          <span>·</span>
+          <router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors">Modern Front Elevation Renders 4K</router-link>
+          <span>·</span>
+          <router-link to="/about" class="hover:text-[#088C7E] transition-colors">Parkview City Lahore Map & Layout</router-link>
+          <span>·</span>
+          <router-link to="/services" class="hover:text-[#088C7E] transition-colors">3D House Design Elevation Lahore</router-link>
+        </div>
+      </div>
+
       <!-- Bottom Bar -->
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
         <div class="flex items-center gap-6">
@@ -138,10 +164,10 @@
 
         <!-- Social Icons & H&Q Links -->
         <div class="flex items-center gap-4 text-slate-400">
-          <a href="https://www.facebook.com/share/1JFuAoDXzr/" target="_blank" rel="noopener" class="hover:text-white transition-colors text-base" title="Facebook">
+          <a href="https://www.facebook.com/profile.php?id=100063665456115" target="_blank" rel="noopener" class="hover:text-white transition-colors text-base" title="Facebook">
             <i class="fa-brands fa-facebook"></i>
           </a>
-          <a href="https://www.instagram.com/chasad_ali/" target="_blank" rel="noopener" class="hover:text-white transition-colors text-base" title="Instagram">
+          <a href="https://www.instagram.com/hq_design_services/?hl=en" target="_blank" rel="noopener" class="hover:text-white transition-colors text-base" title="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=asadali28997@gmail.com" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors text-base" title="Email via Gmail">

@@ -15,7 +15,8 @@ const routes = [
     component: Home,
     meta: {
       title: 'H&Q Design Services | Architecture & Interior Design Studio Lahore',
-      description: "H&Q Design Services is Pakistan's premier architecture & interior design studio in Parkview City, Lahore. Affiliated with Zameen.com. 500+ completed villas."
+      description: "H&Q Design Services is Pakistan's premier architecture & interior design studio in Parkview City, Lahore. Affiliated with Zameen.com. 500+ completed villas.",
+      keywords: 'Best Architects in Lahore, House Construction Cost in Pakistan, 5 Marla House Design, 10 Marla Spanish Villa, 1 Kanal House Plan, Interior Designer in Lahore, DHA Lahore Bylaws, Modern Front Elevation, 3D House Design Lahore, Pakistan Construction Costs'
     }
   },
   {
@@ -24,7 +25,8 @@ const routes = [
     component: About,
     meta: {
       title: 'About Us | H&Q Design Services Studio Parkview City Lahore',
-      description: 'Learn about H&Q Design Services heritage, senior architects, and engineering partnership with Zameen.com in Parkview City, Lahore.'
+      description: 'Learn about H&Q Design Services heritage, senior architects, and engineering partnership with Zameen.com in Parkview City, Lahore.',
+      keywords: 'Architecture Studio Lahore, Professional Architects Pakistan, H&Q Design Services, Zameen.com Partner Studio, Parkview City Lahore Architects, DHA Lahore approved developers, Luxury villa engineering'
     }
   },
   {
@@ -33,7 +35,8 @@ const routes = [
     component: Services,
     meta: {
       title: 'Architectural & Interior Design Services | H&Q Lahore',
-      description: 'Explore our architectural deliverables: floor planning, submission maps, photorealistic 4K 3D renders, space planning, and luxury interior design.'
+      description: 'Explore our architectural deliverables: floor planning, submission maps, photorealistic 4K 3D renders, space planning, and luxury interior design.',
+      keywords: '3D House Design Elevation, Architectural Layout Lahore, Interior Decoration Packages, Floor Planning Services, 4K Elevation Rendering, Villa Renovation Pakistan, Construction Mapping, Structural Layout Blueprint'
     }
   },
   {
@@ -42,7 +45,8 @@ const routes = [
     component: Portfolio,
     meta: {
       title: 'Zameen Verified Portfolio & 3D Projects | H&Q Design Services',
-      description: 'Browse completed 5 Marla, 10 Marla, 1 Kanal villas, and commercial plazas in Parkview City, DHA, and Gulberg Lahore.'
+      description: 'Browse completed 5 Marla, 10 Marla, 1 Kanal villas, and commercial plazas in Parkview City, DHA, and Gulberg Lahore.',
+      keywords: '5 Marla Villa Design, 10 Marla House elevation, 1 Kanal Modern House Map, Commercial Plaza architecture, DHA Phase 6 House Designs, Parkview City Villa project, Completed elevations Lahore'
     }
   },
   {
@@ -51,7 +55,8 @@ const routes = [
     component: CaseStudies,
     meta: {
       title: 'Architectural Case Studies & Project Metrics | H&Q Studio',
-      description: 'In-depth case studies showing architectural solutions, engineering compliance, and client satisfaction metrics.'
+      description: 'In-depth case studies showing architectural solutions, engineering compliance, and client satisfaction metrics.',
+      keywords: 'Architectural Case Studies Pakistan, Structural Calculations Lahore, Material cost savings design, Municipal Map approval rate, DHA Lahore engineering clearance, Project metrics H&Q'
     }
   },
   {
@@ -60,7 +65,8 @@ const routes = [
     component: Blog,
     meta: {
       title: '100+ Architecture & Real Estate Blogs | H&Q Design Services',
-      description: 'Read 100+ articles on Parkview City guidelines, DHA Lahore bylaws, 3D visualization trends, and luxury interior styling.'
+      description: 'Read 100+ articles on Parkview City guidelines, DHA Lahore bylaws, 3D visualization trends, and luxury interior styling.',
+      keywords: 'Architecture blogs Pakistan, Real Estate design guidelines, DHA Lahore house bylaws, Parkview City construction rules, 3D render benefits, house design ideas 2026'
     }
   },
   {
@@ -69,7 +75,8 @@ const routes = [
     component: BlogPostDetail,
     meta: {
       title: 'Architectural Design Guide & Real Estate Insight | H&Q Blog',
-      description: 'Detailed architectural analysis and house layout recommendations from H&Q chief architects.'
+      description: 'Detailed architectural analysis and house layout recommendations from H&Q chief architects.',
+      keywords: 'Architectural design advice, house construction guide, Pakistan real estate layouts, chief architect recommendations'
     }
   },
   {
@@ -78,7 +85,8 @@ const routes = [
     component: Contact,
     meta: {
       title: 'Contact H&Q Studio | Parkview City Lahore Architect Desk',
-      description: 'Connect with senior architects at Parkview City, Lahore. Call 0341-6887454 or WhatsApp for instant 3D design quotes.'
+      description: 'Connect with senior architects at Parkview City, Lahore. Call 0341-6887454 or WhatsApp for instant 3D design quotes.',
+      keywords: 'Architect contact number Lahore, Parkview City studio location, WhatsApp architect consultation, DHA Lahore layout quote'
     }
   }
 ]
