@@ -105,7 +105,7 @@ const router = createRouter({
 
 // Dynamic Canonical Tag & Meta Management Guard for 100% SEO Indexing
 router.afterEach((to) => {
-  const baseUrl = 'https://hq-design-services.com'
+  const baseUrl = 'https://h-q-design-services.vercel.app'
   const canonicalUrl = `${baseUrl}${to.path}`
 
   // Update Page Title
@@ -173,6 +173,121 @@ router.afterEach((to) => {
     document.head.appendChild(canonicalLink)
   }
   canonicalLink.setAttribute('href', canonicalUrl)
+
+  // Dynamic Schema.org JSON-LD injection for On-Page SEO Rich Snippets
+  const schemaId = 'dynamic-page-schema'
+  let schemaScript = document.getElementById(schemaId)
+  if (!schemaScript) {
+    schemaScript = document.createElement('script')
+    schemaScript.setAttribute('id', schemaId)
+    schemaScript.setAttribute('type', 'application/ld+json')
+    document.head.appendChild(schemaScript)
+  }
+
+  let schemaData = null
+  const routeName = to.name
+
+  if (routeName === 'Home') {
+    schemaData = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "H&Q Design Services",
+      "url": `${baseUrl}/`,
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": `${baseUrl}/blog?q={search_term_string}`,
+        "query-input": "required name=search_term_string"
+      }
+    }
+  } else if (routeName === 'About') {
+    schemaData = {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "ArchitecturalService",
+        "name": "H&Q Design Services",
+        "description": "Founded with a vision to redefine modern living and workspace design in Lahore, H&Q Design Services is Pakistan's premier architecture and luxury interior studio based in Parkview City, Lahore.",
+        "url": `${baseUrl}/`
+      }
+    }
+  } else if (routeName === 'Services') {
+    schemaData = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "provider": {
+        "@type": "ArchitecturalService",
+        "name": "H&Q Design Services",
+        "url": `${baseUrl}/`
+      },
+      "serviceType": "Architectural & Interior Design Services",
+      "areaServed": "Lahore, Pakistan",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Architectural Deliverables",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Architectural Floor Planning & Layout Design"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "4K 3D Exterior Elevation Renders"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Luxury Interior Space Styling"
+            }
+          }
+        ]
+      }
+    }
+  } else if (routeName === 'Portfolio') {
+    schemaData = {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Featured 3D Elevation Renders & Projects Portfolio",
+      "description": "Browse 500+ completed residential villas and commercial plazas in Lahore designed by H&Q Design Services.",
+      "url": `${baseUrl}/portfolio`
+    }
+  } else if (routeName === 'CaseStudies') {
+    schemaData = {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Architectural Case Studies & Project Metrics",
+      "description": "Detailed case studies showing structural solutions, engineering compliance, and client satisfaction metrics.",
+      "url": `${baseUrl}/case-studies`
+    }
+  } else if (routeName === 'Blog') {
+    schemaData = {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "H&Q Architecture & Real Estate Blog",
+      "description": "Read our latest articles on Parkview City guidelines, DHA Lahore bylaws, 3D visualization, and interior styling.",
+      "url": `${baseUrl}/blog`
+    }
+  } else if (routeName === 'Contact') {
+    schemaData = {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact H&Q Design Services Studio Lahore",
+      "description": "Get a free consultation for your plot design in Lahore. Call 0341-6887454 or WhatsApp.",
+      "url": `${baseUrl}/contact`
+    }
+  }
+
+  if (schemaData) {
+    schemaScript.textContent = JSON.stringify(schemaData, null, 2)
+  } else {
+    schemaScript.textContent = ''
+  }
 })
 
 export default router

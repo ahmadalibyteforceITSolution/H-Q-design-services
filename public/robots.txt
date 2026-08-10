@@ -5,4 +5,4 @@ Disallow: /admin/
 Disallow: /private/
 
 # Sitemaps
-Sitemap: https://hq-design-services.com/sitemap.xml
+Sitemap: https://h-q-design-services.vercel.app/sitemap.xml

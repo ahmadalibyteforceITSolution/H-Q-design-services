@@ -32,6 +32,77 @@
       <img :src="activePost.image" :alt="activePost.title" class="w-full h-full object-cover" />
     </div>
 
+    <!-- Social Sharing Bar (Off-Page SEO & Virality) -->
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-3xl bg-white/40 dark:bg-slate-900/40 backdrop-blur-md border border-slate-200/80 dark:border-slate-800/80 shadow-md">
+      <div class="space-y-1">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 flex items-center gap-2">
+          <i class="fa-solid fa-share-nodes text-[#088C7E]"></i> Share Design Guide
+        </h4>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400">Share this guide with friends or clients to help them plan layouts.</p>
+      </div>
+      <div class="flex items-center gap-2 flex-wrap">
+        <!-- WhatsApp -->
+        <a 
+          :href="'https://api.whatsapp.com/send?text=' + encodeURIComponent(activePost.title + ' - ' + currentUrl)" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm"
+          title="Share on WhatsApp"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <!-- LinkedIn -->
+        <a 
+          :href="'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(currentUrl)" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-blue-700 hover:bg-blue-600 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm"
+          title="Share on LinkedIn"
+        >
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <!-- Facebook -->
+        <a 
+          :href="'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(currentUrl)" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-blue-600 hover:bg-blue-500 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm"
+          title="Share on Facebook"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <!-- Twitter/X -->
+        <a 
+          :href="'https://twitter.com/intent/tweet?url=' + encodeURIComponent(currentUrl) + '&text=' + encodeURIComponent(activePost.title)" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-900 dark:bg-black hover:scale-105 active:scale-95 border border-slate-200 dark:border-slate-800 transition-all text-slate-700 dark:text-white text-base shadow-sm"
+          title="Share on X"
+        >
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <!-- Pinterest -->
+        <a 
+          :href="'https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(currentUrl) + '&media=' + encodeURIComponent(activePost.image) + '&description=' + encodeURIComponent(activePost.title)" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-red-600 hover:bg-red-500 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm"
+          title="Pin on Pinterest"
+        >
+          <i class="fa-brands fa-pinterest-p"></i>
+        </a>
+        <!-- Copy Link -->
+        <button 
+          @click="copyLink"
+          class="h-10 px-4 rounded-2xl flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 hover:scale-105 active:scale-95 transition-all text-slate-700 dark:text-slate-300 text-xs font-bold shadow-sm border border-slate-200 dark:border-slate-800/60 cursor-pointer"
+          :title="copied ? 'Link Copied!' : 'Copy Link'"
+        >
+          <i class="fa-solid" :class="copied ? 'fa-circle-check text-emerald-500 animate-bounce' : 'fa-link'"></i>
+          <span>{{ copied ? 'Link Copied!' : 'Copy Link' }}</span>
+        </button>
+      </div>
+    </div>
+
     <!-- Content -->
     <article class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 space-y-6 leading-relaxed text-base">
       <div v-html="activePost.content || defaultContent"></div>
@@ -55,13 +126,28 @@
 </template>
 
 <script setup>
-import { computed, watchEffect, onUnmounted } from 'vue'
+import { ref, computed, watchEffect, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { allBlogs } from '../data/blogData.js'
 
 defineEmits(['open-start-project'])
 
 const route = useRoute()
+const copied = ref(false)
+
+const currentUrl = computed(() => {
+  return typeof window !== 'undefined' ? window.location.href : 'https://hq-design-services.com'
+})
+
+const copyLink = () => {
+  if (typeof navigator !== 'undefined' && navigator.clipboard) {
+    navigator.clipboard.writeText(currentUrl.value)
+    copied.value = true
+    setTimeout(() => {
+      copied.value = false
+    }, 2000)
+  }
+}
 
 const activePost = computed(() => {
   const slug = route.params.slug

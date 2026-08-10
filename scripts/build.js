@@ -14,6 +14,14 @@ try {
   process.exit(1)
 }
 
+console.log('Generating RSS feed...')
+try {
+  execSync('node scripts/generate-feed.js', { stdio: 'inherit', cwd: projectRoot })
+} catch (error) {
+  console.error('RSS feed generation failed:', error)
+  process.exit(1)
+}
+
 console.log('Compiling Vite production build...')
 try {
   execSync('node node_modules/vite/bin/vite.js build', { stdio: 'inherit', cwd: projectRoot })
