@@ -81,7 +81,7 @@
           <!-- Add Property / Get Quote White Button -->
           <button 
             @click="$emit('open-start-project')"
-            class="px-3.5 py-1.5 rounded-lg bg-white text-[#088C7E] hover:bg-slate-100 text-xs font-black tracking-tight shadow transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap"
+            class="hidden sm:flex px-3.5 py-1.5 rounded-lg bg-white text-[#088C7E] hover:bg-slate-100 text-xs font-black tracking-tight shadow transition-all cursor-pointer items-center gap-1.5 whitespace-nowrap"
           >
             <i class="fa-solid fa-plus text-xs"></i>
             <span>{{ t.addProject }}</span>
@@ -97,7 +97,7 @@
               class="flex items-center gap-1.5 hover:text-amber-300 bg-white/10 px-2.5 py-1 rounded-lg border border-white/20"
             >
               <i class="fa-solid fa-globe text-xs"></i>
-              <span>{{ activeLangLabel }}</span>
+              <span class="hidden sm:inline">{{ activeLangLabel }}</span>
               <i class="fa-solid fa-caret-down text-[10px]"></i>
             </button>
 
