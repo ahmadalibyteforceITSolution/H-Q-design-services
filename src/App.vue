@@ -1,25 +1,38 @@
 <template>
   <div class="min-h-screen flex flex-col bg-slate-50 text-slate-900 dark:bg-[#090D16] dark:text-slate-100 transition-colors duration-300 font-sans selection:bg-[#088C7E] selection:text-white">
     <!-- Main Top Navigation -->
-    <Navbar @open-start-project="showModal = true" />
+    <Navbar 
+      @open-start-project="showModal = true" 
+      @open-add-property="showAddPropertyModal = true" 
+    />
 
     <!-- Page Content Container with Smooth Router View Transitions -->
     <main class="flex-1 w-full">
       <router-view v-slot="{ Component }">
         <transition name="page-fade" mode="out-in">
-          <component :is="Component" @open-start-project="showModal = true" />
+          <component 
+            :is="Component" 
+            @open-start-project="showModal = true" 
+            @open-add-property="showAddPropertyModal = true" 
+          />
         </transition>
       </router-view>
     </main>
 
     <!-- Main Footer -->
-    <Footer @open-start-project="showModal = true" />
+    <Footer 
+      @open-start-project="showModal = true" 
+      @open-add-property="showAddPropertyModal = true" 
+    />
 
     <!-- Interactive AI Advisor Chatbot Widget -->
     <ChatBot />
 
     <!-- Multi-step Lead Consultation Modal -->
     <StartProjectModal :isOpen="showModal" @close="showModal = false" />
+
+    <!-- Add Property / Post Project Modal -->
+    <AddPropertyModal :isOpen="showAddPropertyModal" @close="showAddPropertyModal = false" />
 
     <!-- Floating Direct WhatsApp Button to Saudi Arabia Desk (+966 50 714 3124) -->
     <a 
@@ -43,8 +56,10 @@ import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import ChatBot from './components/ChatBot.vue'
 import StartProjectModal from './components/StartProjectModal.vue'
+import AddPropertyModal from './components/AddPropertyModal.vue'
 
 const showModal = ref(false)
+const showAddPropertyModal = ref(false)
 </script>
 
 <style>

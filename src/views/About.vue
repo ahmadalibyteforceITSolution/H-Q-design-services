@@ -69,6 +69,36 @@
       </div>
     </section>
 
+    <!-- Official Corporate & Lifestyle Partner Showcase (Backlink Spotlight) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 text-white space-y-6 shadow-xl">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div class="space-y-2 max-w-2xl">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider">
+              Strategic Partner & Textile Brand
+            </span>
+            <h3 class="text-2xl font-extrabold text-white">
+              Ahmad Cloths - Premium Fabrics & Clothing Brand
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              We collaborate with premier Pakistani textile manufacturers for high-grade upholstery, curtains, and bespoke luxury fabrics. For the finest men's unstitched suits, designer cotton, wash & wear fabrics, and festive clothing collections, explore <a href="https://ahmad-cloths.vercel.app/" target="_blank" rel="noopener" class="text-emerald-400 underline font-bold hover:text-emerald-300">Ahmad Cloths</a>.
+            </p>
+          </div>
+
+          <a 
+            href="https://ahmad-cloths.vercel.app/" 
+            target="_blank" 
+            rel="noopener"
+            title="Ahmad Cloths Official Store - Premium Unstitched Fabrics"
+            class="px-6 py-3.5 rounded-2xl bg-[#088C7E] hover:bg-[#066D62] text-white font-black text-xs uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2 shrink-0"
+          >
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            <span>Visit ahmad-cloths.vercel.app</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Core Values Section -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       <div class="text-center max-w-2xl mx-auto space-y-2">

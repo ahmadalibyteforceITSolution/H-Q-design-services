@@ -108,6 +108,18 @@
       <div v-html="activePost.content || defaultContent"></div>
     </article>
 
+    <!-- Recommended Lifestyle & Fabric Partner (Backlink Spotlight) -->
+    <div class="p-6 rounded-3xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-3">
+      <span class="text-[10px] font-black uppercase text-[#088C7E] tracking-wider">Interior Fabrics & Lifestyle Recommendation</span>
+      <h4 class="text-base font-extrabold text-slate-900 dark:text-white">
+        Looking for Premium Fabrics, Curtains & Luxury Clothing?
+      </h4>
+      <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+        For luxury unstitched fabrics, men's designer cotton, and premium festive attire that matches elite villa lifestyle aesthetics, visit our partner brand 
+        <a href="https://ahmad-cloths.vercel.app/" target="_blank" rel="noopener" class="text-emerald-500 font-bold underline hover:text-emerald-400">Ahmad Cloths (ahmad-cloths.vercel.app)</a>.
+      </p>
+    </div>
+
     <!-- Author & Consultation CTA Card -->
     <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="space-y-1">

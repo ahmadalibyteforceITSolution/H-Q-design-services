@@ -2,7 +2,7 @@
   <footer class="bg-slate-950 text-slate-400 border-t border-slate-800/80 pt-16 pb-12 relative overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1440px] h-px bg-gradient-to-r from-transparent via-[#088C7E]/50 to-transparent"></div>
     
-    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
       <!-- Top 5-Column Zameen Footer Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
@@ -20,7 +20,7 @@
           </router-link>
 
           <p class="text-xs leading-relaxed text-slate-400 max-w-sm">
-            Pakistan's Premier Architecture & Interior Design Studio. Official partner affiliated with <strong class="text-white">Zameen.com</strong>. Transforming spaces into luxury homes, offices, and commercial landmarks in Parkview City, DHA, and Gulberg, Lahore.
+            Pakistan's Premier Architecture & Interior Design Studio. Official partner affiliated with <strong class="text-white">Zameen.com</strong>. Transforming spaces into luxury homes, offices, and commercial landmarks across Parkview City, DHA, and Gulberg Lahore.
           </p>
 
           <!-- Status Indicator -->
@@ -31,11 +31,11 @@
             </span>
             <span class="text-slate-300 font-mono text-[11px] flex items-center gap-1.5">
               <i class="fa-solid fa-handshake text-[#088C7E] text-xs"></i>
-              {{ t.officialZameenPartner }} · {{ t.parkviewStudioLahore }}
+              Official Zameen Partner · Parkview City Studio Lahore
             </span>
           </div>
 
-          <!-- Contact Snippet with Direct Gmail Compose Link -->
+          <!-- Contact Snippet -->
           <div class="text-xs text-slate-300 space-y-2 pt-2">
             <p class="flex items-center gap-2">
               <i class="fa-solid fa-location-dot text-[#088C7E] text-xs"></i>
@@ -61,36 +61,36 @@
           </div>
         </div>
 
-        <!-- Popular Searches Column (All Internal Website Links) -->
+        <!-- Popular Real Estate Searches (Internal Links) -->
         <div class="space-y-4">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-white">{{ t.popularSearches }}</h4>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Properties & Portals</h4>
           <ul class="space-y-2 text-xs">
-            <li><router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-house-chimney text-[10px] text-[#088C7E]"></i> 5 Marla Villa Designs</router-link></li>
-            <li><router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-house-user text-[10px] text-[#088C7E]"></i> 10 Marla Spanish House Maps</router-link></li>
-            <li><router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-landmark text-[10px] text-[#088C7E]"></i> 1 Kanal Luxury Elevation</router-link></li>
-            <li><router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-building text-[10px] text-[#088C7E]"></i> Commercial Plazas Gulberg</router-link></li>
-            <li><router-link to="/services" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-couch text-[10px] text-[#088C7E]"></i> DHA Interior Design Pkg</router-link></li>
-            <li><router-link to="/services" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-hammer text-[10px] text-[#088C7E]"></i> Turnkey Villa Renovation</router-link></li>
+            <li><router-link to="/properties" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-house text-[10px] text-[#088C7E]"></i> Homes for Sale in Lahore</router-link></li>
+            <li><router-link to="/properties" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-map-location-dot text-[10px] text-[#088C7E]"></i> Plots in Parkview City</router-link></li>
+            <li><router-link to="/projects" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-city text-[10px] text-[#088C7E]"></i> New Housing Projects 2026</router-link></li>
+            <li><router-link to="/properties" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-building text-[10px] text-[#088C7E]"></i> Commercial Plazas Gulberg</router-link></li>
+            <li><router-link to="/agents" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-users-gear text-[10px] text-[#088C7E]"></i> Certified Agents & Architects</router-link></li>
+            <li><router-link to="/forum" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-comments text-[10px] text-[#088C7E]"></i> Real Estate Forum Q&A</router-link></li>
           </ul>
         </div>
 
-        <!-- Area Guides & Cities (All Internal Website Links) -->
+        <!-- Zameen Tools & Area Guides (Internal Links) -->
         <div class="space-y-4">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-white">{{ t.areaGuides }}</h4>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Tools & Area Guides</h4>
           <ul class="space-y-2 text-xs">
-            <li><router-link to="/about" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-[10px] text-amber-500"></i> Parkview City Lahore</router-link></li>
-            <li><router-link to="/about" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-city text-[10px] text-slate-500"></i> DHA Lahore (Ph 1-9)</router-link></li>
-            <li><router-link to="/about" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-city text-[10px] text-slate-500"></i> Gulberg 3 Commercial</router-link></li>
-            <li><router-link to="/about" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-city text-[10px] text-slate-500"></i> Bahria Town Lahore</router-link></li>
-            <li><router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-globe text-[10px] text-[#088C7E]"></i> Islamabad & DHA Phase 2</router-link></li>
-            <li><router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-globe text-[10px] text-[#088C7E]"></i> Karachi & Scheme 33</router-link></li>
+            <li><router-link to="/tools" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-calculator text-[10px] text-[#088C7E]"></i> Construction Cost Calculator</router-link></li>
+            <li><router-link to="/tools" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-map text-[10px] text-[#088C7E]"></i> Plot Finder & Master Maps</router-link></li>
+            <li><router-link to="/tools" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-ruler-combined text-[10px] text-[#088C7E]"></i> Area Unit Converter</router-link></li>
+            <li><router-link to="/tools" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-landmark text-[10px] text-[#088C7E]"></i> Mortgage EMI Calculator</router-link></li>
+            <li><router-link to="/area-guides" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-[10px] text-amber-500"></i> Parkview City Guide</router-link></li>
+            <li><router-link to="/trends" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-arrow-trend-up text-[10px] text-emerald-400"></i> Price Index & Trends</router-link></li>
           </ul>
         </div>
 
-        <!-- Newsletter & Mobile Apps (Internal Action Handlers) -->
+        <!-- Newsletter & Mobile Apps -->
         <div class="space-y-4">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-white">{{ t.zameenAppUpdates }}</h4>
-          <p class="text-xs text-slate-400">Get instant floor plan estimates and 3D design updates right on your phone.</p>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Zameen App & Alerts</h4>
+          <p class="text-xs text-slate-400">Get instant plot price alerts, 3D design releases, and verified listings.</p>
           
           <form @submit.prevent="subscribe" class="space-y-2">
             <div class="relative">
@@ -113,7 +113,7 @@
             </p>
           </form>
 
-          <!-- Mobile Apps Badge (Internal Consultation Trigger) -->
+          <!-- Mobile Apps Badge -->
           <div class="pt-2 flex items-center gap-2">
             <button @click="$emit('open-start-project')" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-[#088C7E] text-white text-[10px] font-bold flex items-center gap-1.5 cursor-pointer">
               <i class="fa-brands fa-google-play text-xs text-[#088C7E]"></i>
@@ -128,41 +128,105 @@
 
       </div>
 
-      <!-- Trending Architecture & Construction Keywords (100k Traffic SEO Footer Links) -->
-      <div class="mt-12 pt-8 border-t border-slate-800/80">
-        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Trending Architecture & Construction Keywords</h4>
+      <!-- HIGH AUTHORITY PARTNER NETWORK & FEATURED BACKLINK SPOTLIGHT -->
+      <div class="p-6 rounded-3xl bg-gradient-to-r from-slate-900 via-emerald-950/40 to-slate-900 border border-slate-800 text-xs space-y-4">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <span class="px-2.5 py-0.5 rounded-full bg-[#088C7E]/20 text-[#088C7E] text-[10px] font-black uppercase tracking-wider">
+              Featured Partner Network & Textile Sponsor
+            </span>
+            <h4 class="text-sm font-extrabold text-white">
+              Official Collaboration & Premium Fashion Fabric Partner
+            </h4>
+            <p class="text-xs text-slate-400 max-w-2xl">
+              H&Q Design Services partners with leading lifestyle and luxury brands in Pakistan. For premium unstitched fabrics, men's luxury shalwar kameez, wash & wear suits, and designer festive wear, explore our partner brand:
+            </p>
+          </div>
+
+          <!-- Direct Authority Backlink Card with Targeted Anchor Text -->
+          <a 
+            href="https://ahmad-cloths.vercel.app/" 
+            target="_blank" 
+            rel="noopener"
+            title="Ahmad Cloths - Buy Premium Unstitched Fabrics & Men's Luxury Suits Online"
+            class="px-5 py-3 rounded-2xl bg-[#088C7E] hover:bg-[#066D62] text-white font-black text-xs uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2.5 shrink-0"
+          >
+            <i class="fa-solid fa-shirt text-sm"></i>
+            <span>Visit Ahmad Cloths Official →</span>
+          </a>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2 border-t border-slate-800/80 text-[11px] text-slate-400">
+          <span class="font-bold text-slate-300">Partner Links:</span>
+          <a 
+            href="https://ahmad-cloths.vercel.app/" 
+            target="_blank" 
+            rel="noopener"
+            class="text-emerald-400 hover:text-emerald-300 hover:underline font-bold transition-colors"
+          >
+            Ahmad Cloths (ahmad-cloths.vercel.app)
+          </a>
+          <span>·</span>
+          <a 
+            href="https://ahmad-cloths.vercel.app/" 
+            target="_blank" 
+            rel="noopener"
+            class="hover:text-white transition-colors"
+          >
+            Men's Luxury Unstitched Fabric Collection
+          </a>
+          <span>·</span>
+          <a 
+            href="https://ahmad-cloths.vercel.app/" 
+            target="_blank" 
+            rel="noopener"
+            class="hover:text-white transition-colors"
+          >
+            Designer Summer Wash & Wear & Cotton Suits
+          </a>
+          <span>·</span>
+          <a 
+            href="https://www.zameen.com/" 
+            target="_blank" 
+            rel="noopener"
+            class="hover:text-white transition-colors"
+          >
+            Zameen.com Real Estate Portal
+          </a>
+        </div>
+      </div>
+
+      <!-- Trending Keywords -->
+      <div class="pt-4 border-t border-slate-800/80">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Trending Real Estate & Architecture Searches</h4>
         <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-400">
-          <router-link to="/services" class="hover:text-[#088C7E] transition-colors">Best Architects in Lahore</router-link>
+          <router-link to="/properties" class="hover:text-[#088C7E] transition-colors">Properties for Sale in Lahore</router-link>
           <span>·</span>
-          <router-link to="/case-studies" class="hover:text-[#088C7E] transition-colors">House Construction Cost in Pakistan 2026</router-link>
+          <router-link to="/tools" class="hover:text-[#088C7E] transition-colors">House Construction Cost in Pakistan 2026</router-link>
           <span>·</span>
-          <router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors">5 Marla House Design & Elevation</router-link>
+          <router-link to="/projects" class="hover:text-[#088C7E] transition-colors">Park View City Installment Plans</router-link>
           <span>·</span>
-          <router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors">10 Marla Spanish Villa Map</router-link>
+          <router-link to="/properties" class="hover:text-[#088C7E] transition-colors">5 Marla House Design & Elevation</router-link>
           <span>·</span>
-          <router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors">1 Kanal Luxury House Plan</router-link>
+          <router-link to="/area-guides" class="hover:text-[#088C7E] transition-colors">DHA Lahore Phase 6 Reviews</router-link>
           <span>·</span>
-          <router-link to="/services" class="hover:text-[#088C7E] transition-colors">Top Interior Designers in Lahore</router-link>
+          <router-link to="/trends" class="hover:text-[#088C7E] transition-colors">Pakistan Property Price Index 2026</router-link>
           <span>·</span>
-          <router-link to="/blog" class="hover:text-[#088C7E] transition-colors">DHA Lahore Building Bylaws</router-link>
+          <router-link to="/agents" class="hover:text-[#088C7E] transition-colors">Best Architects in Lahore</router-link>
           <span>·</span>
-          <router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors">Modern Front Elevation Renders 4K</router-link>
-          <span>·</span>
-          <router-link to="/about" class="hover:text-[#088C7E] transition-colors">Parkview City Lahore Map & Layout</router-link>
-          <span>·</span>
-          <router-link to="/services" class="hover:text-[#088C7E] transition-colors">3D House Design Elevation Lahore</router-link>
+          <router-link to="/forum" class="hover:text-[#088C7E] transition-colors">LDA Building Bylaws Forum</router-link>
         </div>
       </div>
 
       <!-- Bottom Bar -->
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
         <div class="flex items-center gap-6">
-          <span>{{ t.copyright }}</span>
+          <span>© 2026 H&Q Design Services · Official Zameen.com Partner. All rights reserved.</span>
           <span class="hidden sm:inline text-slate-700">|</span>
-          <span class="hover:text-slate-300 cursor-pointer">Parkview City Studio, Lahore</span>
+          <span class="hover:text-slate-300">Parkview City Studio, Lahore</span>
         </div>
 
-        <!-- Social Icons & H&Q Links -->
+        <!-- Social Icons -->
         <div class="flex items-center gap-4 text-slate-400">
           <a href="https://www.facebook.com/profile.php?id=100063665456115" target="_blank" rel="noopener" class="hover:text-white transition-colors text-base" title="Facebook">
             <i class="fa-brands fa-facebook"></i>
@@ -182,12 +246,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useI18n } from '../composables/useI18n.js'
 import logoImg from '../assets/logo.jpg'
 
 defineEmits(['open-start-project'])
-
-const { t } = useI18n()
 
 const email = ref('')
 const subscribed = ref(false)
