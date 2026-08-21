@@ -148,7 +148,7 @@ const route = useRoute()
 const copied = ref(false)
 
 const currentUrl = computed(() => {
-  return typeof window !== 'undefined' ? window.location.href : 'https://hq-design-services.com'
+  return typeof window !== 'undefined' ? window.location.href : 'https://h-q-design-services.vercel.app'
 })
 
 const copyLink = () => {
@@ -240,14 +240,14 @@ watchEffect(() => {
       "author": [{
         "@type": "Organization",
         "name": "H&Q Design Services",
-        "url": "https://hq-design-services.com/"
+        "url": "https://h-q-design-services.vercel.app/"
       }],
       "publisher": {
         "@type": "Organization",
         "name": "H&Q Design Services",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://hq-design-services.com/favicon.png"
+          "url": "https://h-q-design-services.vercel.app/favicon.png"
         }
       },
       "description": pageDesc,

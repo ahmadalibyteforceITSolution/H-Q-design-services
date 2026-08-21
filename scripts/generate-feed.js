@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { generate100Blogs } from '../src/data/blogData.js'
+import { allBlogs } from '../src/data/blogData.js'
 
 // Setup path equivalents in ES Modules
 const __filename = fileURLToPath(import.meta.url)
@@ -19,7 +19,7 @@ const getBaseUrl = () => {
 }
 
 const baseUrl = getBaseUrl()
-const blogs = generate100Blogs()
+const feedBlogs = allBlogs.slice(0, 100) // Top 100 latest items in standard RSS feed
 
 const escapeXml = (unsafe) => {
   if (!unsafe) return ''
@@ -52,13 +52,13 @@ let xml = `<?xml version="1.0" encoding="UTF-8" ?>
 <channel>
   <title>${escapeXml('H&Q Design Services | Architecture & Interior Design Studio Lahore')}</title>
   <link>${baseUrl}</link>
-  <description>${escapeXml("Pakistan's premier architecture & interior design studio in Parkview City, Lahore. Affiliated with Zameen.com. 500+ completed villas, 3D elevation renders, and floor plans in DHA, Gulberg, & Bahria Town.")}</description>
+  <description>${escapeXml("Pakistan's premier architecture & interior design studio in Parkview City, Lahore. Affiliated with Zameen.com. 1,000+ architectural guides, 3D elevation renders, and floor plans in DHA, Gulberg, & Bahria Town.")}</description>
   <language>en</language>
   <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
   <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml" />
 `
 
-blogs.forEach(b => {
+feedBlogs.forEach(b => {
   const itemLink = `${baseUrl}/blog/${b.slug}`
   const pubDate = formatRfc822(b.date)
   
@@ -79,4 +79,4 @@ xml += `</channel>
 
 const outputPath = path.join(projectRoot, 'public/feed.xml')
 fs.writeFileSync(outputPath, xml, 'utf8')
-console.log(`Successfully generated RSS feed with ${blogs.length} items in public/feed.xml.`)
+console.log(`Successfully generated RSS feed with ${feedBlogs.length} items in public/feed.xml.`)

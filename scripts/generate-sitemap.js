@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { generate100Blogs } from '../src/data/blogData.js'
+import { allBlogs } from '../src/data/blogData.js'
 
 // Setup path equivalents in ES Modules
 const __filename = fileURLToPath(import.meta.url)
@@ -36,8 +36,6 @@ const staticPages = [
   { url: 'contact', changefreq: 'monthly', priority: '0.8' }
 ]
 
-const blogs = generate100Blogs()
-
 let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 `
@@ -56,13 +54,13 @@ staticPages.forEach(p => {
 `
 })
 
-// Add dynamic blog posts
-blogs.forEach(b => {
+// Add dynamic 1,000+ architectural & interior design pages
+allBlogs.forEach(b => {
   xml += `  <url>
     <loc>${baseUrl}/blog/${b.slug}</loc>
     <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 `
 })
@@ -71,4 +69,4 @@ xml += '</urlset>\n'
 
 const outputPath = path.join(__dirname, '../public/sitemap.xml')
 fs.writeFileSync(outputPath, xml, 'utf8')
-console.log(`Successfully generated sitemap with ${staticPages.length + blogs.length} URLs in public/sitemap.xml.`)
+console.log(`Successfully generated sitemap with ${staticPages.length + allBlogs.length} URLs in public/sitemap.xml.`)

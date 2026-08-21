@@ -1,8 +1,26 @@
+# Robots.txt for H&Q Design Services (https://h-q-design-services.vercel.app)
+# Architecture, Luxury Interior Design & Real Estate Engineering Studio
+
 User-agent: *
 Allow: /
+Allow: /blog/
+Allow: /properties/
+Allow: /projects/
+Allow: /services/
+Allow: /portfolio/
+Allow: /area-guides/
+Allow: /tools/
+Allow: /trends/
 Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
+Disallow: /draft/
 
-# Sitemaps
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap and RSS Index
 Sitemap: https://h-q-design-services.vercel.app/sitemap.xml
