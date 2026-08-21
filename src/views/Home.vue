@@ -8,6 +8,8 @@
       <img 
         src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=85" 
         alt="H&Q Luxury Villa Architectural Elevation Render" 
+        width="1920"
+        height="1080"
         class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
       />
 
@@ -256,7 +258,7 @@
         >
           <!-- Image Banner -->
           <div class="relative h-60 overflow-hidden bg-slate-950 cursor-pointer" @click="selectedProperty = item">
-            <img :src="item.image" :alt="item.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img :src="item.image" :alt="item.title" width="600" height="400" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             <div class="absolute top-3 left-3 flex gap-1.5">
               <span class="px-2.5 py-1 rounded-lg bg-[#088C7E] text-white text-[10px] font-black uppercase tracking-wider shadow flex items-center gap-1">
                 <i class="fa-solid fa-circle-check text-amber-300"></i>
@@ -350,7 +352,7 @@
           class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all space-y-6 flex flex-col justify-between"
         >
           <div class="relative h-64 overflow-hidden bg-slate-950">
-            <img :src="proj.image" :alt="proj.title" class="w-full h-full object-cover" />
+            <img :src="proj.image" :alt="proj.title" width="800" height="500" loading="lazy" class="w-full h-full object-cover" />
             <div class="absolute top-4 left-4 flex gap-2">
               <span class="px-3 py-1 rounded-full bg-[#088C7E] text-white text-[10px] font-black uppercase">
                 {{ proj.nocStatus.split(' ')[0] }} Approved
@@ -405,7 +407,7 @@
           class="p-5 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#088C7E] transition-all shadow-sm group space-y-3"
         >
           <div class="h-36 rounded-2xl overflow-hidden bg-slate-950">
-            <img :src="guide.image" :alt="guide.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+            <img :src="guide.image" :alt="guide.name" width="400" height="300" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
           </div>
           <div>
             <span class="text-[10px] font-bold text-amber-500 flex items-center gap-1">
@@ -417,6 +419,136 @@
             <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">5M: {{ guide.avgPrice5Marla }}</p>
           </div>
         </router-link>
+      </div>
+
+    </section>
+
+    <!-- 1,000+ TOP KEYWORDS & TRENDING ARCHITECTURE / REAL ESTATE SEARCH DIRECTORY -->
+    <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <!-- Section Header -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-slate-800 text-white shadow-xl space-y-6">
+        
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-6">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase bg-[#088C7E] text-white tracking-wider flex items-center gap-1.5">
+                <i class="fa-solid fa-magnifying-glass text-amber-300"></i>
+                <span>Top Ranked SEO Keyword Hub</span>
+              </span>
+              <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                1,008+ Keywords Indexed
+              </span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-black text-white">
+              Trending Real Estate, Architecture & Construction Searches
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-400 max-w-3xl">
+              Explore 1,000+ top search topics across Pakistan covering 3 Marla to 4 Kanal floor plans, modern 3D front elevations, luxury interior aesthetics, LDA/DHA building bylaws, and 2026 itemized construction cost calculators.
+            </p>
+          </div>
+
+          <!-- Quick Keyword Live Filter Search Input -->
+          <div class="w-full md:w-80 shrink-0">
+            <div class="relative">
+              <i class="fa-solid fa-filter absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+              <input 
+                v-model="keywordSearchQuery" 
+                type="text" 
+                placeholder="Filter 1,000+ keywords (e.g. 5 Marla, DHA)..." 
+                class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#088C7E] shadow-inner transition-colors"
+              />
+              <button 
+                v-if="keywordSearchQuery" 
+                @click="keywordSearchQuery = ''" 
+                class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-xs"
+              >
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button 
+            @click="selectedCategoryIndex = -1"
+            :class="[
+              'px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5',
+              selectedCategoryIndex === -1 ? 'bg-[#088C7E] text-white shadow-lg shadow-[#088C7E]/40' : 'bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-800'
+            ]"
+          >
+            <i class="fa-solid fa-layer-group"></i>
+            <span>All Categories ({{ allFlatKeywords.length }})</span>
+          </button>
+
+          <button 
+            v-for="(cat, idx) in topKeywordsData" 
+            :key="idx"
+            @click="selectedCategoryIndex = idx"
+            :class="[
+              'px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5',
+              selectedCategoryIndex === idx ? 'bg-[#088C7E] text-white shadow-lg shadow-[#088C7E]/40' : 'bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-800'
+            ]"
+          >
+            <i :class="cat.icon"></i>
+            <span>{{ cat.category.split('(')[0].trim() }} ({{ cat.keywords.length }})</span>
+          </button>
+        </div>
+
+        <!-- Categorized Keyword Chips Container -->
+        <div class="space-y-6 pt-2">
+          
+          <div 
+            v-for="(cat, idx) in filteredCategories" 
+            :key="idx" 
+            class="space-y-3 p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80"
+          >
+            <!-- Category Title & Description -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/60 pb-3">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-[#088C7E]/20 text-[#088C7E] flex items-center justify-center text-sm font-black">
+                  <i :class="cat.icon"></i>
+                </div>
+                <div>
+                  <h3 class="text-sm font-extrabold text-white">{{ cat.category }}</h3>
+                  <p class="text-[11px] text-slate-400">{{ cat.description }}</p>
+                </div>
+              </div>
+              <span class="text-[11px] font-mono text-emerald-400 font-bold self-start sm:self-auto">
+                {{ cat.displayedKeywords.length }} Keywords
+              </span>
+            </div>
+
+            <!-- Keyword Tags Pill Cloud -->
+            <div class="flex flex-wrap gap-2 pt-1 max-h-[380px] overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
+              <router-link 
+                v-for="kw in (expandedCategories[idx] ? cat.displayedKeywords : cat.displayedKeywords.slice(0, 45))" 
+                :key="kw"
+                :to="getKeywordTargetLink(kw)"
+                class="px-3 py-1.5 rounded-lg bg-slate-800/70 hover:bg-[#088C7E] text-slate-300 hover:text-white text-xs font-semibold border border-slate-700/50 hover:border-emerald-400/40 transition-all hover:scale-105 shadow-sm inline-flex items-center gap-1.5"
+                :title="'Explore ' + kw"
+              >
+                <i class="fa-solid fa-tag text-[9px] text-[#088C7E] group-hover:text-white"></i>
+                <span>{{ kw }}</span>
+              </router-link>
+            </div>
+
+            <!-- View More / Collapse Toggle for Category -->
+            <div v-if="cat.displayedKeywords.length > 45" class="pt-2 text-right">
+              <button 
+                @click="toggleExpandCategory(idx)" 
+                class="text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-1 cursor-pointer"
+              >
+                <span>{{ expandedCategories[idx] ? 'Show Less' : `View All ${cat.displayedKeywords.length} Keywords →` }}</span>
+                <i :class="expandedCategories[idx] ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevron-down'" class="text-[10px]"></i>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
     </section>
@@ -454,11 +586,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { propertiesData } from '../data/propertiesData.js'
 import { projectsData } from '../data/projectsData.js'
 import { areaGuidesData } from '../data/areaGuidesData.js'
+import { topKeywordsData, allFlatKeywords } from '../data/keywordsData.js'
 import PropertyDetailModal from '../components/PropertyDetailModal.vue'
 
 const router = useRouter()
@@ -469,6 +602,54 @@ const searchType = ref('All')
 const searchPlot = ref('All')
 
 const selectedProperty = ref(null)
+
+const keywordSearchQuery = ref('')
+const selectedCategoryIndex = ref(-1)
+const expandedCategories = ref({})
+
+const toggleExpandCategory = (idx) => {
+  expandedCategories.value[idx] = !expandedCategories.value[idx]
+}
+
+const filteredCategories = computed(() => {
+  const q = keywordSearchQuery.value.trim().toLowerCase()
+  let list = topKeywordsData
+
+  if (selectedCategoryIndex.value !== -1) {
+    list = [topKeywordsData[selectedCategoryIndex.value]]
+  }
+
+  return list.map((cat, origIdx) => {
+    const matched = q 
+      ? cat.keywords.filter(k => k.toLowerCase().includes(q))
+      : cat.keywords
+    return {
+      ...cat,
+      originalIndex: origIdx,
+      displayedKeywords: matched
+    }
+  }).filter(cat => cat.displayedKeywords.length > 0)
+})
+
+const getKeywordTargetLink = (kw) => {
+  const lower = kw.toLowerCase()
+  if (lower.includes('cost') || lower.includes('calculator') || lower.includes('rate') || lower.includes('price') || lower.includes('material') || lower.includes('bylaw') || lower.includes('estimate')) {
+    return '/tools'
+  }
+  if (lower.includes('elevation') || lower.includes('render') || lower.includes('3d') || lower.includes('portfolio') || lower.includes('villa') || lower.includes('design')) {
+    return '/portfolio'
+  }
+  if (lower.includes('interior') || lower.includes('kitchen') || lower.includes('bedroom') || lower.includes('ceiling') || lower.includes('living')) {
+    return '/services'
+  }
+  if (lower.includes('parkview') || lower.includes('dha') || lower.includes('bahria') || lower.includes('guide') || lower.includes('city') || lower.includes('sector')) {
+    return '/area-guides'
+  }
+  if (lower.includes('project') || lower.includes('plaza') || lower.includes('commercial') || lower.includes('installment')) {
+    return '/projects'
+  }
+  return '/properties'
+}
 
 const goToProperties = () => {
   router.push('/properties')

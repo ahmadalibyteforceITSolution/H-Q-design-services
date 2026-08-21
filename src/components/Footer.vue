@@ -15,6 +15,8 @@
             <img 
               :src="logoImg" 
               alt="H&Q Design Services Logo" 
+              width="280"
+              height="112"
               class="h-24 sm:h-28 w-auto object-contain hover:scale-105 transition-transform"
             />
           </router-link>
