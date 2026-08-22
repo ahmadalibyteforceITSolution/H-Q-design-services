@@ -34,9 +34,12 @@
     <!-- Add Property / Post Project Modal -->
     <AddPropertyModal :isOpen="showAddPropertyModal" @close="showAddPropertyModal = false" />
 
+    <!-- Floating Quick Contact & Social Sidebar (All Pages) -->
+    <FloatingSideBar @open-start-project="showModal = true" />
+
     <!-- Floating Direct WhatsApp Button to Saudi Arabia Desk (+966 50 714 3124) -->
     <a 
-      href="https://wa.me/966507143124" 
+      href="https://api.whatsapp.com/send/?phone=966507143124&text=Hello%20H%26Q%20Design%20Services,%20I%20want%20to%20inquire%20about%20architectural%20and%20interior%20design%20services.&type=phone_number&app_absent=0" 
       target="_blank" 
       rel="noopener noreferrer"
       aria-label="Direct WhatsApp Chat with Chief Architect"
@@ -57,6 +60,7 @@ import Footer from './components/Footer.vue'
 import ChatBot from './components/ChatBot.vue'
 import StartProjectModal from './components/StartProjectModal.vue'
 import AddPropertyModal from './components/AddPropertyModal.vue'
+import FloatingSideBar from './components/FloatingSideBar.vue'
 
 const showModal = ref(false)
 const showAddPropertyModal = ref(false)
