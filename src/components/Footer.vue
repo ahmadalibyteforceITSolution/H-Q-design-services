@@ -223,7 +223,7 @@
       <!-- Bottom Bar -->
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
         <div class="flex items-center gap-6">
-          <span>© 2026 H&Q Design Services · Official Zameen.com Partner. All rights reserved.</span>
+          <span>© 2026 H&amp;Q Design Services · Official Zameen.com Partner. All rights reserved.</span>
           <span class="hidden sm:inline text-slate-700">|</span>
           <span class="hover:text-slate-300">Parkview City Studio, Lahore</span>
         </div>
@@ -236,7 +236,13 @@
           <a href="https://www.instagram.com/hq_design_services/?hl=en" target="_blank" rel="noopener" class="hover:text-white transition-colors text-base" title="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=asadali28997@gmail.com" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors text-base" title="Email via Gmail">
+          <a href="https://www.youtube.com/@HQDesignservices" target="_blank" rel="noopener" class="hover:text-red-500 transition-colors text-base" title="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://www.tiktok.com/@hqdesignservices?lang=en" target="_blank" rel="noopener" class="hover:text-white transition-colors text-base" title="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=asadali28997@gmail.com" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors text-base" title="Email via Gmail">
             <i class="fa-solid fa-envelope"></i>
           </a>
         </div>
