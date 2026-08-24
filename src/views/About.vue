@@ -8,13 +8,13 @@
 
         <div class="max-w-3xl space-y-4">
           <span class="px-3.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider flex items-center gap-1.5 w-fit">
-            <i class="fa-solid fa-building-user"></i> About H&Q Design Services
+            <i class="fa-solid fa-building-user"></i> About HANDQ (H&Q Design Services)
           </span>
           <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
             Crafting Timeless <span class="text-gradient">Architectural Landmarks</span>
           </h1>
           <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-            Founded with a vision to redefine modern living and workspace design in Lahore, H&Q Design Services is Pakistan's premier architecture and luxury interior studio based in Parkview City, Lahore.
+            Founded with a vision to redefine modern living and workspace design in Lahore, <strong>HANDQ (H&Q Design Services)</strong> is Pakistan's premier architecture and luxury interior studio based in Parkview City, Lahore.
           </p>
         </div>
       </div>

@@ -30,7 +30,7 @@
             <input 
               v-model="searchQuery" 
               type="text" 
-              placeholder="Search 1,000+ topics (e.g., 5 Marla, DHA Phase 6, Travertine, Italian Marble)..."
+              placeholder="Search 1,000+ topics (e.g., HANDQ, 5 Marla, DHA Phase 6, Travertine, Italian Marble)..."
               class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-[#088C7E]"
             />
             <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-xs"></i>
@@ -204,13 +204,21 @@ const goToPage = (page) => {
 }
 
 const filteredPosts = computed(() => {
-  const query = searchQuery.value.toLowerCase().trim()
+  const rawQuery = searchQuery.value.toLowerCase().trim()
+  const normalizedQuery = rawQuery.replace(/h&q/g, 'handq').replace(/h\s*and\s*q/g, 'handq').replace(/h\s*q/g, 'handq')
+  const isBrandSearch = ['handq', 'hand q', 'h and q', 'h&q', 'hq'].includes(rawQuery) || normalizedQuery.includes('handq')
+
   return allBlogs.filter(p => {
     const matchesCat = selectedCat.value === 'All' || p.category === selectedCat.value
-    const matchesSearch = !query || 
-                          p.title.toLowerCase().includes(query) || 
-                          p.excerpt.toLowerCase().includes(query) ||
-                          (p.keyword && p.keyword.toLowerCase().includes(query))
+    if (!rawQuery) return matchesCat
+
+    if (isBrandSearch) {
+      return matchesCat
+    }
+
+    const matchesSearch = p.title.toLowerCase().includes(rawQuery) || 
+                          p.excerpt.toLowerCase().includes(rawQuery) ||
+                          (p.keyword && p.keyword.toLowerCase().includes(rawQuery))
     return matchesCat && matchesSearch
   })
 })

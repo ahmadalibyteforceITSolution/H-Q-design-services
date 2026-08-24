@@ -141,7 +141,9 @@ const architecturalStylesAndVisuals = [
   'Shadow Analysis for Residential Design', 'Zero Carbon House Architecture Pakistan', 'Smart Ventilation System House Plan', 'Greywater Recycling Plumbing Blueprint',
   'Basement Waterproofing Structural Detail', 'Foundation Raft Rebar Detail Drawing', 'Column Lap Length Structural Schedule', 'Beam Rebar Bending Schedule BBS',
   'Architectural Site Supervision Lahore', 'Project Management Real Estate PK', 'Quantity Surveying & Estimation Drawings', 'Bill of Quantities BOQ Preparation Architecture',
-  '3D Isometric Floor Plan Render', 'Exterior Lighting Plan 3D', 'Residential Landscape 3D Master Plan', 'Commercial Front Facade 3D Video'
+  '3D Isometric Floor Plan Render', 'Exterior Lighting Plan 3D', 'Residential Landscape 3D Master Plan', 'Commercial Front Facade 3D Video',
+  'HANDQ Design Services', 'HANDQ Architects Lahore', 'HANDQ 3D Elevation Lahore', 'HANDQ Interior Design Pakistan',
+  'HANDQ Luxury Villa Architecture', 'HANDQ Parkview City Architects', 'HANDQ Construction Cost 2026', 'HANDQ Floor Plans 5 Marla 10 Marla 1 Kanal'
 ]
 
 const luxuryInteriorAndAesthetics = [
