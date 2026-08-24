@@ -43,7 +43,7 @@
         href="https://www.facebook.com/profile.php?id=100063665456115" 
         target="_blank" 
         rel="noopener noreferrer"
-        aria-label="Visit H&Q Design Services on Facebook"
+        aria-label="Visit H&amp;Q Design Services on Facebook"
         class="group relative w-full h-11 sm:h-12 bg-[#1877F2] hover:bg-[#1565C0] text-white flex items-center justify-center transition-colors text-base sm:text-lg cursor-pointer"
       >
         <i class="fa-brands fa-facebook-f group-hover:scale-110 transition-transform"></i>
@@ -54,15 +54,15 @@
 
       <!-- 3. YouTube -->
       <a 
-        href="https://www.youtube.com/@hqdesignservices" 
+        href="https://www.youtube.com/@HQDesignservices" 
         target="_blank" 
         rel="noopener noreferrer"
-        aria-label="Visit H&Q Design Services on YouTube"
+        aria-label="Visit H&amp;Q Design Services on YouTube"
         class="group relative w-full h-11 sm:h-12 bg-[#FF0000] hover:bg-[#CC0000] text-white flex items-center justify-center transition-colors text-base sm:text-lg cursor-pointer"
       >
         <i class="fa-brands fa-youtube group-hover:scale-110 transition-transform"></i>
         <div class="absolute right-full mr-3 px-3 py-1.5 rounded-xl bg-slate-950 text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl border border-slate-800">
-          YouTube Channel & 3D Tours
+          YouTube Channel &amp; 3D Tours
         </div>
       </a>
 
@@ -71,7 +71,7 @@
         href="https://www.instagram.com/hq_design_services/?hl=en" 
         target="_blank" 
         rel="noopener noreferrer"
-        aria-label="Visit H&Q Design Services on Instagram"
+        aria-label="Visit H&amp;Q Design Services on Instagram"
         class="group relative w-full h-11 sm:h-12 bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] hover:opacity-90 text-white flex items-center justify-center transition-all text-base sm:text-lg cursor-pointer"
       >
         <i class="fa-brands fa-instagram group-hover:scale-110 transition-transform"></i>
@@ -82,7 +82,7 @@
 
       <!-- 5. WhatsApp Click to Chat -->
       <a 
-        href="https://api.whatsapp.com/send/?phone=966507143124&text=Hello%20H%26Q%20Design%20Services,%20I%20want%20to%20inquire%20about%20architectural%20and%20interior%20design%20services.&type=phone_number&app_absent=0" 
+        href="https://api.whatsapp.com/send/?phone=966507143124&amp;text=Hello%20H%26Q%20Design%20Services,%20I%20want%20to%20inquire%20about%20architectural%20and%20interior%20design%20services.&amp;type=phone_number&amp;app_absent=0" 
         target="_blank" 
         rel="noopener noreferrer"
         aria-label="Chat directly on WhatsApp"
@@ -97,10 +97,10 @@
 
       <!-- 6. TikTok -->
       <a 
-        href="https://www.tiktok.com/@hqdesignservices" 
+        href="https://www.tiktok.com/@hqdesignservices?lang=en" 
         target="_blank" 
         rel="noopener noreferrer"
-        aria-label="Visit H&Q Design Services on TikTok"
+        aria-label="Visit H&amp;Q Design Services on TikTok"
         class="group relative w-full h-11 sm:h-12 bg-black hover:bg-slate-900 text-white flex items-center justify-center transition-colors text-base sm:text-lg cursor-pointer"
       >
         <i class="fa-brands fa-tiktok group-hover:scale-110 transition-transform"></i>
