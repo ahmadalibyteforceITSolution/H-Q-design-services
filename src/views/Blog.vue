@@ -11,10 +11,10 @@
             <i class="fa-solid fa-compass-drafting text-amber-300"></i> H&Q Architecture & Design Knowledge Base
           </span>
           <h1 class="text-4xl sm:text-5xl font-black tracking-tight">
-            Explore 1,000+ Architectural & <span class="text-gradient-zameen">Interior Guides</span>
+            Explore 2,000+ Architectural & <span class="text-[#088C7E] bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-200">Interior Guides</span>
           </h1>
           <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-            The most extensive architectural library in Pakistan. In-depth analysis on 3 Marla to 4 Kanal floor plans, DHA/Parkview City bylaws, 4K 3D visualization, turnkey interior finishes, and 2026 construction rates.
+            Pakistan's most comprehensive architectural library. In-depth analysis on 2 Marla to 4 Kanal floor plans, DHA/Parkview City bylaws, 4K 3D elevation renders, luxury turnkey interiors, and 2026 construction cost benchmarks.
           </p>
         </div>
       </div>
@@ -30,7 +30,7 @@
             <input 
               v-model="searchQuery" 
               type="text" 
-              placeholder="Search 1,000+ topics (e.g., HANDQ, 5 Marla, DHA Phase 6, Travertine, Italian Marble)..."
+              placeholder="Search 2,000+ topics (e.g., 5 Marla, DHA Phase 6, Travertine, Italian Marble, Cost)..."
               class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-[#088C7E]"
             />
             <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-xs"></i>
@@ -62,7 +62,7 @@
       </div>
     </section>
 
-    <!-- 1,000+ Articles Grid -->
+    <!-- 2,000+ Articles Grid -->
     <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
       <div v-if="paginatedPosts.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <article 
@@ -104,13 +104,13 @@
         <i class="fa-solid fa-magnifying-glass text-4xl text-slate-400 mb-3"></i>
         <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200">No architecture guides found matching "{{ searchQuery }}"</h3>
         <p class="text-xs text-slate-500 mt-1">Try searching for keywords like "5 Marla", "10 Marla Spanish", "DHA", "Interior", "Bylaws", or reset filter.</p>
-        <button @click="searchQuery = ''; selectedCat = 'All'" class="mt-4 px-4 py-2 bg-[#088C7E] text-white text-xs font-bold rounded-xl">
+        <button @click="searchQuery = ''; selectedCat = 'All'" class="mt-4 px-4 py-2 bg-[#088C7E] text-white text-xs font-bold rounded-xl cursor-pointer">
           Reset All Filters
         </button>
       </div>
     </section>
 
-    <!-- Smart Sliding Pagination Bar for 1,000+ Articles -->
+    <!-- Smart Sliding Pagination Bar for 2,000+ Articles -->
     <section v-if="totalPages > 1" class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-center items-center gap-2">
       <!-- First Page -->
       <button 
@@ -184,11 +184,11 @@ const itemsPerPage = 12
 
 const categories = [
   'All', 
-  'House Plans & Sizes', 
+  'House Sizes & Layout Plans', 
   'Architectural Styles & 3D', 
   'Luxury Interior Design', 
   'Housing Societies & Bylaws', 
-  'Construction & Engineering'
+  '2026 Construction Rates & Costs'
 ]
 
 const selectCategory = (cat) => {
@@ -205,7 +205,7 @@ const goToPage = (page) => {
 
 const filteredPosts = computed(() => {
   const rawQuery = searchQuery.value.toLowerCase().trim()
-  const normalizedQuery = rawQuery.replace(/h&q/g, 'handq').replace(/h\s*and\s*q/g, 'handq').replace(/h\s*q/g, 'handq')
+  const normalizedQuery = rawQuery.replace(/h&q/g, 'handq').replace(/hs*ands*q/g, 'handq').replace(/hs*q/g, 'handq')
   const isBrandSearch = ['handq', 'hand q', 'h and q', 'h&q', 'hq'].includes(rawQuery) || normalizedQuery.includes('handq')
 
   return allBlogs.filter(p => {
@@ -232,7 +232,7 @@ const paginatedPosts = computed(() => {
   return filteredPosts.value.slice(start, start + itemsPerPage)
 })
 
-// Smart sliding window pagination generator (e.g. 1 ... 4 5 [6] 7 8 ... 84)
+// Smart sliding window pagination generator
 const visiblePages = computed(() => {
   const total = totalPages.value
   const current = currentPage.value

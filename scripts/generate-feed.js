@@ -19,7 +19,7 @@ const getBaseUrl = () => {
 }
 
 const baseUrl = getBaseUrl()
-const feedBlogs = allBlogs.slice(0, 100) // Top 100 latest items in standard RSS feed
+const feedBlogs = allBlogs.slice(0, 200) // Top 200 latest items in standard RSS feed
 
 const escapeXml = (unsafe) => {
   if (!unsafe) return ''
@@ -52,7 +52,7 @@ let xml = `<?xml version="1.0" encoding="UTF-8" ?>
 <channel>
   <title>${escapeXml('H&Q Design Services | Architecture & Interior Design Studio Lahore')}</title>
   <link>${baseUrl}</link>
-  <description>${escapeXml("Pakistan's premier architecture & interior design studio in Parkview City, Lahore. Affiliated with Zameen.com. 1,000+ architectural guides, 3D elevation renders, and floor plans in DHA, Gulberg, & Bahria Town.")}</description>
+  <description>${escapeXml("Pakistan's premier architecture & interior design studio in Parkview City, Lahore. Affiliated with Zameen.com. 2,000+ architectural guides, 3D elevation renders, and floor plans in DHA, Gulberg, & Bahria Town.")}</description>
   <language>en</language>
   <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
   <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml" />

@@ -2,43 +2,55 @@
   <div class="py-12 space-y-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Breadcrumb -->
-    <div class="flex items-center gap-2 text-xs text-slate-500">
-      <router-link to="/" class="hover:text-[#088C7E]">Home</router-link>
+    <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-slate-500">
+      <router-link to="/" class="hover:text-[#088C7E] flex items-center gap-1">
+        <i class="fa-solid fa-house text-[10px]"></i> Home
+      </router-link>
       <span>/</span>
-      <router-link to="/blog" class="hover:text-[#088C7E]">Blog</router-link>
+      <router-link to="/blog" class="hover:text-[#088C7E]">Architectural Guides</router-link>
       <span>/</span>
       <span class="text-slate-900 dark:text-white font-semibold truncate">{{ activePost.title }}</span>
-    </div>
+    </nav>
 
     <!-- Header -->
     <div class="space-y-4">
-      <span class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-[#088C7E]/10 text-[#088C7E] border border-[#088C7E]/30 uppercase tracking-wider">
-        {{ activePost.category }}
-      </span>
-      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white leading-tight">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-[#088C7E]/10 text-[#088C7E] border border-[#088C7E]/30 uppercase tracking-wider">
+          {{ activePost.category }}
+        </span>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+          <i class="fa-solid fa-circle-check mr-1 text-[10px]"></i> PCATP Verified
+        </span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white leading-tight">
         {{ activePost.title }}
       </h1>
-      <div class="flex items-center gap-4 text-xs text-slate-500 border-b border-slate-200 dark:border-slate-800 pb-4">
+      <div class="flex flex-wrap items-center gap-4 text-xs text-slate-500 border-b border-slate-200 dark:border-slate-800 pb-4">
         <span><i class="fa-solid fa-user-tie text-[#088C7E] mr-1"></i> By H&Q Chief Architect</span>
         <span>•</span>
         <span><i class="fa-solid fa-calendar text-[#088C7E] mr-1"></i> {{ activePost.date }}</span>
         <span>•</span>
         <span><i class="fa-solid fa-clock text-amber-500 mr-1"></i> {{ activePost.readTime }}</span>
+        <span>•</span>
+        <span><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> Parkview City Studio, Lahore</span>
       </div>
     </div>
 
     <!-- Cover Image -->
-    <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 h-96 shadow-lg">
-      <img :src="activePost.image" :alt="activePost.title" class="w-full h-full object-cover" />
+    <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 h-80 sm:h-96 shadow-lg relative group">
+      <img :src="activePost.image" :alt="activePost.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+      <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-white text-xs font-medium border border-white/20 flex items-center gap-1.5">
+        <i class="fa-solid fa-camera text-amber-400"></i> H&Q 4K Architectural Visualization
+      </div>
     </div>
 
     <!-- Social Sharing Bar (Off-Page SEO & Virality) -->
-    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-3xl bg-white/40 dark:bg-slate-900/40 backdrop-blur-md border border-slate-200/80 dark:border-slate-800/80 shadow-md">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-slate-200/80 dark:border-slate-800/80 shadow-md">
       <div class="space-y-1">
-        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 flex items-center gap-2">
-          <i class="fa-solid fa-share-nodes text-[#088C7E]"></i> Share Design Guide
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
+          <i class="fa-solid fa-share-nodes text-[#088C7E]"></i> Share Design Blueprint
         </h4>
-        <p class="text-[11px] text-slate-500 dark:text-slate-400">Share this guide with friends or clients to help them plan layouts.</p>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400">Share this guide with friends, clients, or contractors.</p>
       </div>
       <div class="flex items-center gap-2 flex-wrap">
         <!-- WhatsApp -->
@@ -76,7 +88,7 @@
           :href="'https://twitter.com/intent/tweet?url=' + encodeURIComponent(currentUrl) + '&text=' + encodeURIComponent(activePost.title)" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-900 dark:bg-black hover:scale-105 active:scale-95 border border-slate-200 dark:border-slate-800 transition-all text-slate-700 dark:text-white text-base shadow-sm"
+          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-900 dark:bg-black hover:scale-105 active:scale-95 border border-slate-700 transition-all text-white text-base shadow-sm"
           title="Share on X"
         >
           <i class="fa-brands fa-x-twitter"></i>
@@ -108,23 +120,45 @@
       <div v-html="activePost.content || defaultContent"></div>
     </article>
 
-    <!-- Recommended Lifestyle & Fabric Partner (Backlink Spotlight) -->
-    <div class="p-6 rounded-3xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-3">
-      <span class="text-[10px] font-black uppercase text-[#088C7E] tracking-wider">Interior Fabrics & Lifestyle Recommendation</span>
-      <h4 class="text-base font-extrabold text-slate-900 dark:text-white">
-        Looking for Premium Fabrics, Curtains & Luxury Clothing?
-      </h4>
-      <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-        For luxury unstitched fabrics, men's designer cotton, and premium festive attire that matches elite villa lifestyle aesthetics, visit our partner brand 
-        <a href="https://ahmad-cloths.vercel.app/" target="_blank" rel="noopener" class="text-emerald-500 font-bold underline hover:text-emerald-400">Ahmad Cloths (ahmad-cloths.vercel.app)</a>.
-      </p>
+    <!-- Related Articles Section (Internal Link Juice Distribution) -->
+    <div class="space-y-6 pt-6 border-t border-slate-200 dark:border-slate-800">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
+          <i class="fa-solid fa-newspaper text-[#088C7E]"></i> Related Architectural Guides
+        </h3>
+        <router-link to="/blog" class="text-xs font-bold text-[#088C7E] hover:underline flex items-center gap-1">
+          View All 2,000+ Guides <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </router-link>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <router-link 
+          v-for="rel in relatedPosts" 
+          :key="rel.id" 
+          :to="'/blog/' + rel.slug"
+          class="group p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#088C7E] hover:shadow-lg transition-all flex flex-col justify-between space-y-3"
+        >
+          <div class="space-y-2">
+            <div class="rounded-xl overflow-hidden h-32 w-full">
+              <img :src="rel.image" :alt="rel.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            </div>
+            <span class="text-[10px] font-bold text-[#088C7E] uppercase tracking-wider block">{{ rel.category }}</span>
+            <h4 class="text-xs font-black text-slate-900 dark:text-white line-clamp-2 group-hover:text-[#088C7E] transition-colors">
+              {{ rel.title }}
+            </h4>
+          </div>
+          <div class="flex items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-800">
+            <span>{{ rel.date }}</span>
+            <span class="text-[#088C7E] font-bold flex items-center gap-1">Read <i class="fa-solid fa-chevron-right text-[8px]"></i></span>
+          </div>
+        </router-link>
+      </div>
     </div>
 
-    <!-- Author & Consultation CTA Card -->
-    <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="space-y-1">
-        <h4 class="font-extrabold text-lg text-slate-900 dark:text-white">Planning Your Plot Design in Lahore?</h4>
-        <p class="text-xs text-slate-500 dark:text-slate-400">Schedule a 1-on-1 floor plan review session at our Parkview City Studio.</p>
+    <!-- Consultation CTA Card -->
+    <div class="p-8 rounded-3xl bg-gradient-to-r from-slate-900 to-slate-800 text-white border border-slate-700 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="space-y-1 text-center sm:text-left">
+        <h4 class="font-extrabold text-lg text-white">Planning Your Plot Design or Construction in Lahore?</h4>
+        <p class="text-xs text-slate-300">Schedule a 1-on-1 floor plan review session at our Parkview City Studio.</p>
       </div>
       <button 
         @click="$emit('open-start-project')"
@@ -148,12 +182,13 @@ const route = useRoute()
 const copied = ref(false)
 
 const currentUrl = computed(() => {
-  return typeof window !== 'undefined' ? window.location.href : 'https://h-q-design-services.vercel.app'
+  const slug = route.params.slug || ''
+  return `https://h-q-design-services.vercel.app/blog/${slug}`
 })
 
 const copyLink = () => {
   if (typeof navigator !== 'undefined' && navigator.clipboard) {
-    navigator.clipboard.writeText(currentUrl.value)
+    navigator.clipboard.writeText(typeof window !== 'undefined' ? window.location.href : currentUrl.value)
     copied.value = true
     setTimeout(() => {
       copied.value = false
@@ -167,75 +202,109 @@ const activePost = computed(() => {
   if (found) return found
 
   return {
-    title: 'Modern Architectural Trends in Lahore: Parkview City & DHA Guide',
-    category: 'Parkview City News',
-    date: 'July 15, 2026',
-    readTime: '5 min read',
+    id: 1,
+    slug: 'article-1-5-marla-house-design',
+    title: '5 Marla Modern House Design & Construction Guide 2026',
+    category: 'House Sizes & Layout Plans',
+    date: 'August 15, 2026',
+    readTime: '6 min read',
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
     excerpt: 'Detailed architectural analysis and house layout recommendations from H&Q chief architects in Parkview City Lahore.',
     content: ''
   }
 })
 
-// Dynamic SEO and Schema.org JSON-LD Updates for Individual Blog Posts
+const relatedPosts = computed(() => {
+  if (!activePost.value) return []
+  const cat = activePost.value.category
+  const sameCat = allBlogs.filter(b => b.category === cat && b.slug !== activePost.value.slug)
+  if (sameCat.length >= 3) {
+    const startIdx = (activePost.value.id * 3) % (sameCat.length - 3)
+    return sameCat.slice(startIdx, startIdx + 3)
+  }
+  return allBlogs.slice(0, 3)
+})
+
+// Dynamic SEO, Canonical Link, and Schema.org JSON-LD Updates
 watchEffect(() => {
-  if (activePost.value) {
-    const pageTitle = `${activePost.value.title} | H&Q Design Services Studio Lahore`
-    const pageDesc = activePost.value.excerpt || `Read our guide on ${activePost.value.title}`
-    const pageImage = activePost.value.image
-    const pageUrl = window.location.href
+  if (activePost.value && typeof document !== 'undefined') {
+    const post = activePost.value
+    const pageTitle = `${post.title} | H&Q Design Services Studio Lahore`
+    const pageDesc = post.excerpt || `Comprehensive architectural design, floor plans, and 2026 construction cost analysis for ${post.title}.`
+    const pageImage = post.image
+    const canonicalUrl = `https://h-q-design-services.vercel.app/blog/${post.slug}`
 
     // Document Title
     document.title = pageTitle
 
-    // Meta Description
-    const descMeta = document.querySelector('meta[name="description"]')
-    if (descMeta) {
-      descMeta.setAttribute('content', pageDesc)
+    // Canonical Tag
+    let canonicalLink = document.querySelector('link[rel="canonical"]')
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link')
+      canonicalLink.setAttribute('rel', 'canonical')
+      document.head.appendChild(canonicalLink)
     }
+    canonicalLink.setAttribute('href', canonicalUrl)
+
+    // Meta Description
+    let descMeta = document.querySelector('meta[name="description"]')
+    if (!descMeta) {
+      descMeta = document.createElement('meta')
+      descMeta.setAttribute('name', 'description')
+      document.head.appendChild(descMeta)
+    }
+    descMeta.setAttribute('content', pageDesc)
 
     // Open Graph Tags
-    const ogTitle = document.querySelector('meta[property="og:title"]')
-    if (ogTitle) ogTitle.setAttribute('content', pageTitle)
-
-    const ogDesc = document.querySelector('meta[property="og:description"]')
-    if (ogDesc) ogDesc.setAttribute('content', pageDesc)
-
-    const ogImage = document.querySelector('meta[property="og:image"]')
-    if (ogImage) ogImage.setAttribute('content', pageImage)
-
-    const ogUrl = document.querySelector('meta[property="og:url"]')
-    if (ogUrl) ogUrl.setAttribute('content', pageUrl)
-
-    // Twitter Card Tags
-    const twTitle = document.querySelector('meta[name="twitter:title"]')
-    if (twTitle) twTitle.setAttribute('content', pageTitle)
-
-    const twDesc = document.querySelector('meta[name="twitter:description"]')
-    if (twDesc) twDesc.setAttribute('content', pageDesc)
-
-    const twImage = document.querySelector('meta[name="twitter:image"]')
-    if (twImage) twImage.setAttribute('content', pageImage)
-
-    const twUrl = document.querySelector('meta[name="twitter:url"]')
-    if (twUrl) twUrl.setAttribute('content', pageUrl)
-
-    // Dynamic Schema.org JSON-LD injection
-    const schemaId = 'blog-post-schema'
-    let schemaScript = document.getElementById(schemaId)
-    if (!schemaScript) {
-      schemaScript = document.createElement('script')
-      schemaScript.setAttribute('id', schemaId)
-      schemaScript.setAttribute('type', 'application/ld+json')
-      document.head.appendChild(schemaScript)
+    const setMetaProp = (prop, content) => {
+      let tag = document.querySelector(`meta[property="${prop}"]`)
+      if (!tag) {
+        tag = document.createElement('meta')
+        tag.setAttribute('property', prop)
+        document.head.appendChild(tag)
+      }
+      tag.setAttribute('content', content)
     }
 
-    const schemaData = {
+    setMetaProp('og:title', pageTitle)
+    setMetaProp('og:description', pageDesc)
+    setMetaProp('og:image', pageImage)
+    setMetaProp('og:url', canonicalUrl)
+    setMetaProp('og:type', 'article')
+
+    // Twitter Card Tags
+    const setMetaName = (name, content) => {
+      let tag = document.querySelector(`meta[name="${name}"]`)
+      if (!tag) {
+        tag = document.createElement('meta')
+        tag.setAttribute('name', name)
+        document.head.appendChild(tag)
+      }
+      tag.setAttribute('content', content)
+    }
+
+    setMetaName('twitter:title', pageTitle)
+    setMetaName('twitter:description', pageDesc)
+    setMetaName('twitter:image', pageImage)
+    setMetaName('twitter:url', canonicalUrl)
+    setMetaName('twitter:card', 'summary_large_image')
+
+    // 1. Dynamic Schema.org JSON-LD (BlogPosting / Article)
+    const blogSchemaId = 'blog-post-schema'
+    let blogSchemaScript = document.getElementById(blogSchemaId)
+    if (!blogSchemaScript) {
+      blogSchemaScript = document.createElement('script')
+      blogSchemaScript.setAttribute('id', blogSchemaId)
+      blogSchemaScript.setAttribute('type', 'application/ld+json')
+      document.head.appendChild(blogSchemaScript)
+    }
+
+    const blogSchemaData = {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": activePost.value.title,
-      "image": [activePost.value.image],
-      "datePublished": "2026-07-20T08:00:00+05:00",
+      "headline": post.title,
+      "image": [post.image],
+      "datePublished": "2026-08-01T08:00:00+05:00",
       "dateModified": new Date().toISOString(),
       "author": [{
         "@type": "Organization",
@@ -253,37 +322,102 @@ watchEffect(() => {
       "description": pageDesc,
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": pageUrl
+        "@id": canonicalUrl
       }
     }
+    blogSchemaScript.textContent = JSON.stringify(blogSchemaData, null, 2)
 
-    schemaScript.textContent = JSON.stringify(schemaData, null, 2)
+    // 2. Dynamic Schema.org JSON-LD (BreadcrumbList)
+    const breadcrumbSchemaId = 'breadcrumb-schema'
+    let breadcrumbScript = document.getElementById(breadcrumbSchemaId)
+    if (!breadcrumbScript) {
+      breadcrumbScript = document.createElement('script')
+      breadcrumbScript.setAttribute('id', breadcrumbSchemaId)
+      breadcrumbScript.setAttribute('type', 'application/ld+json')
+      document.head.appendChild(breadcrumbScript)
+    }
+
+    const breadcrumbData = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://h-q-design-services.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Architectural Guides",
+          "item": "https://h-q-design-services.vercel.app/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": post.title,
+          "item": canonicalUrl
+        }
+      ]
+    }
+    breadcrumbScript.textContent = JSON.stringify(breadcrumbData, null, 2)
+
+    // 3. Dynamic Schema.org JSON-LD (FAQPage)
+    const faqSchemaId = 'faq-schema'
+    let faqScript = document.getElementById(faqSchemaId)
+    if (!faqScript) {
+      faqScript = document.createElement('script')
+      faqScript.setAttribute('id', faqSchemaId)
+      faqScript.setAttribute('type', 'application/ld+json')
+      document.head.appendChild(faqScript)
+    }
+
+    const faqData = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": `How long does it take to complete architectural drawings for ${post.keyword || post.title}?`,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard 2D architectural blueprints and submission drawings take 7 to 10 working days. A complete turnkey package with 4K 3D elevations, structural vetting, and MEP layouts takes approximately 2 to 3 weeks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": `Will H&Q Design Services manage municipal map approval with DHA / LDA?`,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our PCATP registered architects handle the full submission documentation, structural stability certificate, and liaison with building control authorities to guarantee NOC clearance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": `Can the layout of ${post.keyword || post.title} be customized for a rental upper portion?`,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we design flexible double-unit layouts with separate exterior staircase access, individual electricity/gas meter provisions, and independent kitchen setups to maximize rental yields."
+          }
+        }
+      ]
+    }
+    faqScript.textContent = JSON.stringify(faqData, null, 2)
   }
 })
 
-// Cleanup schema on unmount to prevent DOM pollution
+// Cleanup schemas on unmount
 onUnmounted(() => {
-  const schemaScript = document.getElementById('blog-post-schema')
-  if (schemaScript) {
-    schemaScript.remove()
-  }
+  ['blog-post-schema', 'breadcrumb-schema', 'faq-schema'].forEach(id => {
+    const el = document.getElementById(id)
+    if (el) el.remove()
+  })
 })
 
 const defaultContent = `
   <p class="text-lg font-medium text-slate-900 dark:text-white">
     Building a dream villa or remodeling a commercial space in Lahore requires combining contemporary aesthetics with local municipal guidelines. In this guide, our senior architects walk you through essential design considerations.
-  </p>
-  <h3>1. Floor Plan Optimization & Bylaw Compliance</h3>
-  <p>
-    In societies like Parkview City and DHA Lahore, structural setbacks, height restrictions, and ventilation shafts must be strictly calculated. Our team utilizes 3ds Max and Revit to create precise 2D blueprints ensuring immediate municipal approval.
-  </p>
-  <h3>2. 4K 3D Photorealistic Visualizations</h3>
-  <p>
-    Before ground excavation begins, seeing 3D photorealistic renderings of your villa facade and interior rooms prevents costly material alterations. You can preview Spanish tiles, LED illumination, and wooden paneling in realistic 4K lighting.
-  </p>
-  <h3>3. Luxury Interior Material Selection</h3>
-  <p>
-    From Italian Statuario marble to custom rosewood cabinetry, selecting durable yet luxurious materials ensures your living space maintains timeless elegance for decades to come.
   </p>
 `
 </script>
