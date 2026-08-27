@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>H&Q Design Services - 4K Luxury Architectural Commercial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #020617;
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .player-wrapper {
+      width: 100%;
+      max-width: 1200px;
+      background: #090d16;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 25px 80px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(8, 140, 126, 0.2);
+    }
+
+    /* Top Bar */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      background: rgba(15, 23, 42, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+    }
+    .brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .badge-live {
+      background: #088C7E;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Video Screen 16:9 */
+    .video-viewport {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .scene-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1);
+      transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 7s ease-out;
+    }
+    .scene-img.active {
+      opacity: 1;
+      transform: scale(1.12) translate(-1%, -1%);
+    }
+
+    /* Dark Cinematic Gradients & Vignette */
+    .vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.75) 100%);
+      pointer-events: none;
+    }
+    .bottom-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.4) 30%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Lower Third Typography Overlay */
+    .lower-third {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 3rem;
+      right: 3rem;
+      z-index: 10;
+      pointer-events: none;
+      transition: all 0.5s ease;
+    }
+    .scene-tag {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: rgba(8, 140, 126, 0.9);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .scene-heading {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #ffffff;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .scene-vo {
+      font-size: 1rem;
+      color: #e2e8f0;
+      font-style: italic;
+      max-width: 700px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Timeline Bar */
+    .timeline-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      z-index: 20;
+    }
+    .timeline-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #088C7E, #10b981, #f59e0b);
+      transition: width 0.1s linear;
+    }
+
+    /* Bottom Control Bar */
+    .controls-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      background: #090e1a;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .ctrl-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #f8fafc;
+      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+    .ctrl-btn:hover {
+      background: #088C7E;
+      border-color: #088C7E;
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: #088C7E;
+      border-color: #088C7E;
+    }
+    .btn-primary:hover {
+      background: #066d62;
+    }
+
+    .scene-pills {
+      display: flex;
+      gap: 0.4rem;
+      overflow-x: auto;
+    }
+    .scene-pill {
+      width: 36px;
+      height: 24px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: all 0.2s;
+    }
+    .scene-pill.active {
+      opacity: 1;
+      border-color: #f59e0b;
+      transform: scale(1.15);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="player-wrapper">
+    <!-- Top Header -->
+    <div class="top-bar">
+      <div class="brand-title">
+        <i class="fa-solid fa-compass-drafting text-[#088C7E]"></i>
+        <span>H&Q DESIGN SERVICES</span>
+        <span class="badge-live">4K Commercial</span>
+      </div>
+      <div style="display: flex; gap: 0.5rem;">
+        <button class="ctrl-btn" id="audioToggle" onclick="toggleAudio()">
+          <i class="fa-solid fa-volume-high" id="audioIcon"></i> Audio & VO
+        </button>
+        <button class="ctrl-btn" onclick="toggleFullscreen()">
+          <i class="fa-solid fa-expand"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- 16:9 Viewport -->
+    <div class="video-viewport" id="viewport">
+      <div id="imageContainer"></div>
+      <div class="vignette"></div>
+      <div class="bottom-gradient"></div>
+
+      <!-- Lower Third Subtitles -->
+      <div class="lower-third" id="lowerThird">
+        <div class="scene-tag" id="sceneTag">SCENE 1 · OPENING</div>
+        <h1 class="scene-heading" id="sceneHeading">H&Q DESIGN SERVICES</h1>
+        <p class="scene-vo" id="sceneVO">"Every extraordinary space begins with a vision."</p>
+      </div>
+
+      <!-- Timeline Bar -->
+      <div class="timeline-container" id="timelineBar" onclick="seek(event)">
+        <div class="timeline-fill" id="timelineFill"></div>
+      </div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button class="ctrl-btn btn-primary" id="playBtn" onclick="togglePlay()">
+          <i class="fa-solid fa-pause" id="playIcon"></i> <span id="playText">Pause</span>
+        </button>
+        <button class="ctrl-btn" onclick="prevScene()">
+          <i class="fa-solid fa-backward-step"></i>
+        </button>
+        <button class="ctrl-btn" onclick="nextScene()">
+          <i class="fa-solid fa-forward-step"></i>
+        </button>
+        <span style="font-size: 0.8rem; color: #94a3b8; font-family: monospace;" id="timeCounter">
+          0:00 / 0:54
+        </span>
+      </div>
+
+      <!-- Thumbnails -->
+      <div class="scene-pills" id="scenePills"></div>
+
+      <!-- CTA -->
+      <a href="https://wa.me/966507143124" target="_blank" class="ctrl-btn btn-primary" style="text-decoration: none;">
+        <i class="fa-brands fa-whatsapp"></i> Book Consultation
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const scenes = [
+      {
+        tag: 'SCENE 1 · ARCHITECTURAL FACADE',
+        heading: 'H&Q DESIGN SERVICES',
+        vo: 'Every extraordinary space begins with a vision.',
+        image: '/images/scene1_villa.jpg'
+      },
+      {
+        tag: 'SCENE 2 · CONCEPT & PLANNING',
+        heading: 'Architectural Design',
+        vo: 'At H&Q Design Services, we transform ideas into thoughtful architectural and interior design concepts.',
+        image: '/images/scene2_studio.jpg'
+      },
+      {
+        tag: 'SCENE 3 · LUXURY LIVING',
+        heading: 'Modern Interior Design',
+        vo: 'From elegant living spaces to carefully crafted details, every element is designed with purpose.',
+        image: '/images/scene3_living.jpg'
+      },
+      {
+        tag: 'SCENE 4 · MASTER SUITE',
+        heading: 'Luxury Bedroom Design',
+        vo: 'We create bedrooms that feel peaceful, luxurious, and truly personal.',
+        image: '/images/scene4_bedroom.jpg'
+      },
+      {
+        tag: 'SCENE 5 · DINING SALON',
+        heading: 'Elegant. Functional. Timeless.',
+        vo: 'Beautiful design should not only look impressive. It should work beautifully for the way you live.',
+        image: '/images/scene5_dining.jpg'
+      },
+      {
+        tag: 'SCENE 6 · CHEF KITCHEN',
+        heading: 'Functional Kitchen Design',
+        vo: 'Combining aesthetics, functionality, and intelligent space planning...',
+        image: '/images/scene6_kitchen.jpg'
+      },
+      {
+        tag: 'SCENE 7 · 3D VISUALIZATION',
+        heading: '3D Visualization & Planning',
+        vo: '...we help you see your space before it becomes reality.',
+        image: '/images/scene7_3d.jpg'
+      },
+      {
+        tag: 'SCENE 8 · TRANSFORMATION',
+        heading: 'Your Space → Our Vision',
+        vo: 'From concept to completion, we turn ordinary spaces into extraordinary experiences.',
+        image: '/images/scene8_transformation.jpg'
+      },
+      {
+        tag: 'SCENE 9 · GRAND PENTHOUSE',
+        heading: 'A Space Designed For You',
+        vo: 'Choose H&Q Design Services. Let’s design something extraordinary together.',
+        image: '/images/scene9_hero.jpg'
+      }
+    ];
+
+    let currentScene = 0;
+    let isPlaying = true;
+    let audioEnabled = true;
+    let sceneProgress = 0;
+    const SCENE_DURATION_MS = 6000;
+    let intervalTimer = null;
+
+    // Render image elements & pills
+    const imgContainer = document.getElementById('imageContainer');
+    const pillsContainer = document.getElementById('scenePills');
+
+    scenes.forEach((s, idx) => {
+      const img = document.createElement('img');
+      img.src = s.image;
+      img.className = 'scene-img' + (idx === 0 ? ' active' : '');
+      img.id = 'scene-img-' + idx;
+      imgContainer.appendChild(img);
+
+      const pill = document.createElement('div');
+      pill.className = 'scene-pill' + (idx === 0 ? ' active' : '');
+      pill.style.backgroundImage = `url(${s.image})`;
+      pill.onclick = () => jumpToScene(idx);
+      pillsContainer.appendChild(pill);
+    });
+
+    function updateUI() {
+      const s = scenes[currentScene];
+      document.getElementById('sceneTag').textContent = s.tag;
+      document.getElementById('sceneHeading').textContent = s.heading;
+      document.getElementById('sceneVO').textContent = `"${s.vo}"`;
+
+      scenes.forEach((_, idx) => {
+        const img = document.getElementById('scene-img-' + idx);
+        const pill = pillsContainer.children[idx];
+        if (img) img.className = 'scene-img' + (idx === currentScene ? ' active' : '');
+        if (pill) pill.className = 'scene-pill' + (idx === currentScene ? ' active' : '');
+      });
+
+      speakVoiceover(s.vo);
+    }
+
+    function speakVoiceover(text) {
+      if (!audioEnabled || !('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.rate = 0.92;
+      u.pitch = 1.0;
+      window.speechSynthesis.speak(u);
+    }
+
+    function playLoop() {
+      if (!isPlaying) return;
+      sceneProgress += 50 / SCENE_DURATION_MS;
+      if (sceneProgress >= 1) {
+        sceneProgress = 0;
+        currentScene = (currentScene + 1) % scenes.length;
+        updateUI();
+      }
+
+      const totalPct = ((currentScene + sceneProgress) / scenes.length) * 100;
+      document.getElementById('timelineFill').style.width = totalPct + '%';
+
+      const totalSec = Math.floor((currentScene * 6) + (sceneProgress * 6));
+      const m = Math.floor(totalSec / 60);
+      const sec = totalSec % 60;
+      document.getElementById('timeCounter').textContent = `${m}:${sec < 10 ? '0' : ''}${sec} / 0:54`;
+    }
+
+    function startTimer() {
+      clearInterval(intervalTimer);
+      intervalTimer = setInterval(playLoop, 50);
+    }
+
+    function togglePlay() {
+      isPlaying = !isPlaying;
+      document.getElementById('playIcon').className = isPlaying ? 'fa-solid fa-pause' : 'fa-solid fa-play';
+      document.getElementById('playText').textContent = isPlaying ? 'Pause' : 'Play';
+      if (isPlaying) {
+        startTimer();
+        speakVoiceover(scenes[currentScene].vo);
+      } else {
+        clearInterval(intervalTimer);
+        window.speechSynthesis?.cancel();
+      }
+    }
+
+    function jumpToScene(idx) {
+      currentScene = idx;
+      sceneProgress = 0;
+      updateUI();
+    }
+
+    function nextScene() {
+      jumpToScene((currentScene + 1) % scenes.length);
+    }
+
+    function prevScene() {
+      jumpToScene((currentScene - 1 + scenes.length) % scenes.length);
+    }
+
+    function toggleAudio() {
+      audioEnabled = !audioEnabled;
+      document.getElementById('audioIcon').className = audioEnabled ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
+      if (audioEnabled) {
+        speakVoiceover(scenes[currentScene].vo);
+      } else {
+        window.speechSynthesis?.cancel();
+      }
+    }
+
+    function toggleFullscreen() {
+      const el = document.getElementById('viewport');
+      if (!document.fullscreenElement) {
+        el.requestFullscreen?.();
+      } else {
+        document.exitFullscreen?.();
+      }
+    }
+
+    function seek(e) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const ratio = clickX / rect.width;
+      const targetVal = ratio * scenes.length;
+      currentScene = Math.min(scenes.length - 1, Math.floor(targetVal));
+      sceneProgress = targetVal - currentScene;
+      updateUI();
+    }
+
+    // Initialize
+    updateUI();
+    startTimer();
+  </script>
+</body>
+</html>

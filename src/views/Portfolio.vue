@@ -14,6 +14,20 @@
       </p>
     </div>
 
+    <!-- 4K Cinematic Commercial Showcase -->
+    <div class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
+          <i class="fa-solid fa-play-circle text-[#088C7E]"></i>
+          <span>Official 4K Cinematic Showcase</span>
+        </h2>
+        <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+          60-Second Full Tour
+        </span>
+      </div>
+      <CinematicShowreel />
+    </div>
+
     <!-- Filter Category Pills -->
     <div class="flex flex-wrap items-center justify-center gap-2">
       <button 
@@ -178,6 +192,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import CinematicShowreel from '../components/CinematicShowreel.vue'
 
 const emit = defineEmits(['open-start-project'])
 
@@ -187,6 +202,118 @@ const activeCategory = ref('All Projects')
 const selectedProject = ref(null)
 
 const projects = ref([
+  {
+    id: 101,
+    title: 'Modern Luxury Villa Architectural Masterpiece',
+    category: '1 Kanal Estates',
+    isCommercial: false,
+    location: 'Parkview City Golf Estate, Lahore',
+    plotSize: '1 Kanal (50x90)',
+    price: 'PKR 6.5 Lac Design Package',
+    beds: '5 Beds',
+    baths: '6 Baths',
+    floors: 'Double Story + Pool',
+    image: '/images/scene1_villa.jpg',
+    description: 'Contemporary geometric villa exterior featuring cantilevered limestone slabs, floor-to-ceiling thermal glass facades, infinity reflection pool, and warm integrated architectural LED illumination.'
+  },
+  {
+    id: 102,
+    title: 'Double-Height Royal Penthouse Suite',
+    category: 'Luxury Interiors',
+    isCommercial: false,
+    location: 'DHA Phase 6 Main Boulevard, Lahore',
+    plotSize: '3,800 sq.ft Penthouse',
+    price: 'PKR 8.5 Lac Interior Fee',
+    beds: '4 Master Suites',
+    baths: '5 Baths',
+    floors: 'Duplex Penthouse',
+    image: '/images/scene9_hero.jpg',
+    description: 'Sculptural floating illuminated spiral staircase, double-height panoramic skyline windows, Italian bookmatched Calacatta marble flooring, and custom cascading blown-glass chandelier.'
+  },
+  {
+    id: 103,
+    title: 'Open-Concept Calacatta Living Room & Lounge',
+    category: 'Luxury Interiors',
+    isCommercial: false,
+    location: 'Parkview City Executive Block, Lahore',
+    plotSize: '10 Marla Luxury',
+    price: 'PKR 4.2 Lac',
+    beds: 'Lounge Suite',
+    baths: 'Powder Room',
+    floors: 'Ground Floor Lounge',
+    image: '/images/scene3_living.jpg',
+    description: 'Bespoke curved Italian bouclé sofa arrangement, full-height bookmatched Calacatta marble fireplace wall, acoustic fluted timber panels, and panoramic garden terrace access.'
+  },
+  {
+    id: 104,
+    title: '3D BIM CAD Blueprint to Photorealistic Visualization',
+    category: '10 Marla Luxury',
+    isCommercial: false,
+    location: 'DHA Phase 8, Lahore',
+    plotSize: '10 Marla (35x70)',
+    price: 'PKR 3.5 Lac',
+    beds: '4 Beds',
+    baths: '5 Baths',
+    floors: 'Double Story',
+    image: '/images/scene7_3d.jpg',
+    description: 'Complete 3D structural BIM modeling transforming 2D municipal architectural blueprints into hyper-realistic 4K interior renderings before construction begins.'
+  },
+  {
+    id: 105,
+    title: 'Master Bedroom Suite with Fluted Acoustic Headboard',
+    category: 'Luxury Interiors',
+    isCommercial: false,
+    location: 'Bahria Town, Lahore',
+    plotSize: '1 Kanal Luxury Suite',
+    price: 'PKR 3.8 Lac',
+    beds: 'Master Suite',
+    baths: 'En-Suite Spa Bath',
+    floors: 'Upper Floor Suite',
+    image: '/images/scene4_bedroom.jpg',
+    description: 'Serene modern master suite with custom fluted timber feature wall, ambient bedside pendant lighting, imported linen bedding, and private balcony overlooking landscaped grounds.'
+  },
+  {
+    id: 106,
+    title: 'Monolithic Waterfall Quartz Chef Kitchen',
+    category: 'Luxury Interiors',
+    isCommercial: false,
+    location: 'Gulberg 3, Lahore',
+    plotSize: 'Luxury Villa Kitchen',
+    price: 'PKR 4.5 Lac',
+    beds: 'Kitchen Suite',
+    baths: 'Pantry Room',
+    floors: 'Ground Floor',
+    image: '/images/scene6_kitchen.jpg',
+    description: 'High-end contemporary kitchen featuring massive waterfall marble central island, matte charcoal handleless cabinetry, built-in Miele appliances, and champagne brass accents.'
+  },
+  {
+    id: 107,
+    title: 'Grey Structure to Turnkey Luxury Transformation',
+    category: '5 Marla Villas',
+    isCommercial: false,
+    location: 'Parkview City, Lahore',
+    plotSize: '5 Marla (25x45)',
+    price: 'PKR 2.2 Lac',
+    beds: '3 Beds',
+    baths: '4 Baths',
+    floors: 'Double Story',
+    image: '/images/scene8_transformation.jpg',
+    description: 'Complete before-and-after construction execution converting raw grey-structure concrete into an opulent, turnkey luxury residence with modern Venetian plaster and LED cove lighting.'
+  },
+  {
+    id: 108,
+    title: 'Contemporary Marble & Walnut Dining Salon',
+    category: 'Luxury Interiors',
+    isCommercial: false,
+    location: 'DHA Phase 5, Lahore',
+    plotSize: '1 Kanal Dining Salon',
+    price: 'PKR 3.2 Lac',
+    beds: 'Dining Salon',
+    baths: 'Powder Room',
+    floors: 'Ground Floor',
+    image: '/images/scene5_dining.jpg',
+    description: 'Monolithic Calacatta marble dining table seating 10, designer sculptural chairs, custom bronze halo pendant, and full-height glass sliders opening onto lush courtyard gardens.'
+  },
   {
     id: 1,
     title: 'Gulberg 3 Corporate Commercial Glass Plaza',
@@ -214,62 +341,6 @@ const projects = ref([
     parking: 'Dedicated Parking Bay',
     image: 'https://images.unsplash.com/photo-1577495508048-b635879837f1?w=800&q=80',
     description: 'High-visibility commercial arcade architectural plan featuring double-glazed glass front, modern showroom layouts, and DHA municipal approved elevator shaft plans.'
-  },
-  {
-    id: 3,
-    title: 'Modern 10 Marla Spanish Villa Floor Plan',
-    category: '10 Marla Luxury',
-    isCommercial: false,
-    location: 'Parkview City, Lahore',
-    plotSize: '10 Marla (35x70)',
-    price: 'PKR 2.8 Lac',
-    beds: '5 Beds',
-    baths: '6 Baths',
-    floors: 'Triple Story',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
-    description: 'Spanish architectural villa design featuring double-height ceiling lounge, underground basement entertainment room, and open terrace.'
-  },
-  {
-    id: 4,
-    title: 'Executive DHA Phase 6 Interior Package',
-    category: 'Luxury Interiors',
-    isCommercial: false,
-    location: 'DHA Phase 6, Lahore',
-    plotSize: '1 Kanal (50x90)',
-    price: 'PKR 4.8 Lac',
-    beds: '4 Beds',
-    baths: '5 Baths',
-    floors: 'Double Story',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
-    description: 'Custom interior styling with Italian Statuario marble floors, rosewood wall paneling, LED cove illumination, and modular kitchen.'
-  },
-  {
-    id: 5,
-    title: '5 Marla Minimalist Modern House Map',
-    category: '5 Marla Villas',
-    isCommercial: false,
-    location: 'Parkview City, Lahore',
-    plotSize: '5 Marla (25x45)',
-    price: 'PKR 1.8 Lac',
-    beds: '3 Beds',
-    baths: '4 Baths',
-    floors: 'Double Story',
-    image: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800&q=80',
-    description: 'Compact 5 Marla floor plan engineered for max ventilation, natural light, Car Porch, and modern 3D elevation.'
-  },
-  {
-    id: 6,
-    title: '1 Kanal Royal Mansion Architectural Blueprint',
-    category: '1 Kanal Estates',
-    isCommercial: false,
-    location: 'Bahria Town, Lahore',
-    plotSize: '1 Kanal (50x90)',
-    price: 'PKR 5.5 Lac',
-    beds: '6 Beds',
-    baths: '7 Baths',
-    floors: 'Triple Story + Basement',
-    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
-    description: 'Royal classical mansion elevation complete with swimming pool layout, servant quarters, and municipal approval blueprint.'
   }
 ])
 

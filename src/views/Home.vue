@@ -162,6 +162,35 @@
       </div>
     </section>
 
+    <!-- 4K CINEMATIC COMMERCIAL SHOWREEL SECTION -->
+    <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/30">
+              <i class="fa-solid fa-clapperboard mr-1"></i> Official Brand Film
+            </span>
+            <span class="text-xs font-bold text-slate-400">4K Ultra-Realistic Commercial</span>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white font-serif tracking-tight">
+            Experience <span class="text-gradient-zameen">H&Q Luxury Architecture</span> in Motion
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-2xl">
+            Watch our complete 60-second architectural showcase featuring luxury villas, master bedroom suites, open-concept living, and complete before-and-after space transformations.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-bold">
+          <router-link to="/portfolio" class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-[#088C7E] hover:text-white transition-all flex items-center gap-1.5 shadow-sm">
+            <i class="fa-solid fa-images"></i>
+            <span>View Full Gallery</span>
+          </router-link>
+        </div>
+      </div>
+
+      <!-- Video Showreel Player Component -->
+      <CinematicShowreel />
+    </section>
+
     <!-- ZAMEEN CORE TOOLS HUB SHORTCUTS SECTION -->
     <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -593,6 +622,7 @@ import { projectsData } from '../data/projectsData.js'
 import { areaGuidesData } from '../data/areaGuidesData.js'
 import { topKeywordsData, allFlatKeywords } from '../data/keywordsData.js'
 import PropertyDetailModal from '../components/PropertyDetailModal.vue'
+import CinematicShowreel from '../components/CinematicShowreel.vue'
 
 const router = useRouter()
 
