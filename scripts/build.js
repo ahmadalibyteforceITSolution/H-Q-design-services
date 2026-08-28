@@ -30,4 +30,12 @@ try {
   process.exit(1)
 }
 
+console.log('Pre-rendering static HTML pages for SEO & Google indexing...')
+try {
+  execSync('node scripts/prerender.js', { stdio: 'inherit', cwd: projectRoot })
+} catch (error) {
+  console.error('Pre-rendering failed:', error)
+  process.exit(1)
+}
+
 console.log('Build completed successfully!')

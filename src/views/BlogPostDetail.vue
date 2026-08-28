@@ -198,20 +198,22 @@ const copyLink = () => {
 
 const activePost = computed(() => {
   const slug = route.params.slug
+  if (!slug) return allBlogs[0]
+
+  // 1. Exact match by slug
   const found = allBlogs.find(b => b.slug === slug)
   if (found) return found
 
-  return {
-    id: 1,
-    slug: 'article-1-5-marla-house-design',
-    title: '5 Marla Modern House Design & Construction Guide 2026',
-    category: 'House Sizes & Layout Plans',
-    date: 'August 15, 2026',
-    readTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
-    excerpt: 'Detailed architectural analysis and house layout recommendations from H&Q chief architects in Parkview City Lahore.',
-    content: ''
+  // 2. Fallback match by article ID (e.g. article-963-...)
+  const matchId = slug.match(/^article-(\d+)-/i)
+  if (matchId) {
+    const id = parseInt(matchId[1], 10)
+    const foundById = allBlogs.find(b => b.id === id)
+    if (foundById) return foundById
   }
+
+  // 3. Default fallback to first blog post
+  return allBlogs[0]
 })
 
 const relatedPosts = computed(() => {

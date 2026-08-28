@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { allBlogs } from '../src/data/blogData.js'
+import { userGscSlugs } from './gsc-urls.js'
 
 // Setup path equivalents in ES Modules
 const __filename = fileURLToPath(import.meta.url)
@@ -54,8 +55,11 @@ staticPages.forEach(p => {
 `
 })
 
-// Add dynamic 1,000+ architectural & interior design pages
+// Add dynamic 2,000+ architectural & interior design pages
+const addedSlugs = new Set()
+
 allBlogs.forEach(b => {
+  addedSlugs.add(b.slug)
   xml += `  <url>
     <loc>${baseUrl}/blog/${b.slug}</loc>
     <lastmod>${today}</lastmod>
@@ -63,6 +67,20 @@ allBlogs.forEach(b => {
     <priority>0.80</priority>
   </url>
 `
+})
+
+// Add explicit high-priority GSC target URLs requested for indexing
+userGscSlugs.forEach(slug => {
+  if (!addedSlugs.has(slug)) {
+    addedSlugs.add(slug)
+    xml += `  <url>
+    <loc>${baseUrl}/blog/${slug}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+`
+  }
 })
 
 xml += '</urlset>\n'
