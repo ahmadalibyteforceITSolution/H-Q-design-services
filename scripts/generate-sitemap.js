@@ -34,6 +34,7 @@ const staticPages = [
   { url: 'case-studies', changefreq: 'monthly', priority: '0.8' },
   { url: 'blog', changefreq: 'daily', priority: '0.85' },
   { url: 'about', changefreq: 'weekly', priority: '0.8' },
+  { url: 'partners', changefreq: 'daily', priority: '0.90' },
   { url: 'contact', changefreq: 'monthly', priority: '0.8' }
 ]
 

@@ -14,6 +14,7 @@ import AreaGuides from '../views/AreaGuides.vue'
 import MarketTrends from '../views/MarketTrends.vue'
 import Agents from '../views/Agents.vue'
 import Forum from '../views/Forum.vue'
+import BacklinksHub from '../views/BacklinksHub.vue'
 
 const routes = [
   {
@@ -164,6 +165,16 @@ const routes = [
       title: 'Contact HANDQ Studio | Parkview City Lahore',
       description: 'Connect with senior architects at HANDQ (H&Q Design Services) in Parkview City, Lahore. Call 0341-6887454 or WhatsApp for instant 3D design quotes and plot consultations.',
       keywords: 'HANDQ Contact, Architect contact number Lahore, Parkview City studio location, WhatsApp architect consultation'
+    }
+  },
+  {
+    path: '/partners',
+    name: 'Partners',
+    component: BacklinksHub,
+    meta: {
+      title: 'H&Q Partners & Backlinks Network | Zameen Partner Studio',
+      description: 'Official link exchange, high-authority domain directory, and brand entity stacked backlinks for H&Q Design Services Lahore.',
+      keywords: 'H&Q backlinks, link exchange Lahore, real estate guest posts, architecture partner links, Zameen partner backlinks, high authority backlinks Pakistan'
     }
   }
 ]

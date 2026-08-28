@@ -73,6 +73,7 @@
             <li><router-link to="/properties" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-building text-[10px] text-[#088C7E]"></i> Commercial Plazas Gulberg</router-link></li>
             <li><router-link to="/agents" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-users-gear text-[10px] text-[#088C7E]"></i> Certified Agents & Architects</router-link></li>
             <li><router-link to="/forum" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-comments text-[10px] text-[#088C7E]"></i> Real Estate Forum Q&A</router-link></li>
+            <li><router-link to="/partners" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-link text-[10px] text-[#088C7E]"></i> Backlink Exchange & Partner Hub</router-link></li>
           </ul>
         </div>
 
@@ -195,6 +196,13 @@
           >
             Zameen.com Real Estate Portal
           </a>
+          <span>·</span>
+          <router-link 
+            to="/partners" 
+            class="text-[#088C7E] hover:underline font-bold transition-colors"
+          >
+            H&Q Backlinks Exchange Hub
+          </router-link>
         </div>
       </div>
 

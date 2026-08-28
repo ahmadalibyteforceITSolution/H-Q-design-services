@@ -79,6 +79,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://h-q-design-services.vercel.app/partners</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://h-q-design-services.vercel.app/contact</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>

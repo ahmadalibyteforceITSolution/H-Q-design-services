@@ -38,6 +38,11 @@
             BLOG
           </router-link>
 
+          <router-link to="/partners" class="hover:text-amber-300 transition-colors flex items-center gap-1" active-class="text-amber-300 font-black">
+            <i class="fa-solid fa-link text-[10px] text-amber-300"></i>
+            <span>PARTNERS & BACKLINKS</span>
+          </router-link>
+
           <!-- Tools Dropdown (Cost Calc, Maps, Unit Converter, Mortgage) -->
           <div 
             class="relative cursor-pointer hover:text-amber-300 transition-colors" 
@@ -317,6 +322,7 @@ const mobileNavLinks = [
   { name: 'FEATURED 3D PORTFOLIO', path: '/portfolio', iconClass: 'fa-solid fa-images' },
   { name: 'SERVICES & DELIVERABLES', path: '/services', iconClass: 'fa-solid fa-compass-drafting' },
   { name: 'BLOG & NEWS', path: '/blog', iconClass: 'fa-solid fa-newspaper' },
+  { name: 'PARTNERS & BACKLINKS HUB', path: '/partners', iconClass: 'fa-solid fa-link' },
   { name: 'CONTACT & STUDIO LOCATION', path: '/contact', iconClass: 'fa-solid fa-headset' }
 ]
 
