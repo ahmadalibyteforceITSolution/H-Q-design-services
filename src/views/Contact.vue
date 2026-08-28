@@ -15,15 +15,17 @@
     </div>
 
     <!-- Contact Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       
       <!-- Call Direct -->
-      <div class="p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 hover:border-[#088C7E] transition-all">
-        <div class="w-12 h-12 rounded-2xl bg-[#088C7E]/10 text-[#088C7E] flex items-center justify-center text-xl">
-          <i class="fa-solid fa-phone"></i>
+      <div class="p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 hover:border-[#088C7E] transition-all flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-[#088C7E]/10 text-[#088C7E] flex items-center justify-center text-xl">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Call Chief Architect</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Direct phone line for quick plot inquiries & 3D render consultations.</p>
         </div>
-        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Call Chief Architect</h3>
-        <p class="text-xs text-slate-500 dark:text-slate-400">Direct phone line for quick plot inquiries & 3D render consultations.</p>
         <div class="pt-2 space-y-1">
           <a href="tel:+966507143124" class="text-sm font-black text-[#088C7E] hover:underline block">🇸🇦 +966 50 714 3124</a>
           <a href="tel:03416887454" class="text-xs font-semibold text-slate-600 dark:text-slate-400 hover:underline block">🇵🇰 0341-6887454</a>
@@ -31,40 +33,66 @@
       </div>
 
       <!-- WhatsApp Direct -->
-      <div class="p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 hover:border-emerald-500 transition-all">
-        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl">
-          <i class="fa-brands fa-whatsapp"></i>
+      <div class="p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 hover:border-emerald-500 transition-all flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">WhatsApp Direct Desk</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Send plot dimensions or architectural sketches directly to our Saudi Arabia desk.</p>
         </div>
-        <h3 class="text-lg font-bold text-slate-900 dark:text-white">WhatsApp Direct Desk</h3>
-        <p class="text-xs text-slate-500 dark:text-slate-400">Send plot dimensions or architectural sketches directly to our Saudi Arabia desk.</p>
         <div class="pt-2">
           <a 
             href="https://wa.me/966507143124" 
             target="_blank" 
-            class="px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold inline-flex items-center gap-2 shadow hover:bg-emerald-500 transition-colors"
+            class="px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold inline-flex items-center gap-2 shadow hover:bg-emerald-500 transition-colors w-full justify-center"
           >
             <i class="fa-brands fa-whatsapp"></i>
-            <span>Chat on WhatsApp (+966 50 714 3124)</span>
+            <span>Chat on WhatsApp</span>
           </a>
         </div>
       </div>
 
       <!-- Email Direct via Gmail -->
-      <div class="p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 hover:border-amber-500 transition-all">
-        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl">
-          <i class="fa-solid fa-envelope"></i>
+      <div class="p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 hover:border-amber-500 transition-all flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Official Gmail Inbox</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Send blueprints, CAD files, or project RFPs directly to our Gmail inbox.</p>
         </div>
-        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Official Gmail Inbox</h3>
-        <p class="text-xs text-slate-500 dark:text-slate-400">Send blueprints, CAD files, or project RFPs directly to our Gmail inbox.</p>
         <div class="pt-2">
           <a 
             href="https://mail.google.com/mail/?view=cm&fs=1&to=asadali28997@gmail.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="px-4 py-2.5 rounded-xl bg-amber-600 text-white text-xs font-bold inline-flex items-center gap-2 shadow hover:bg-amber-500 transition-colors"
+            class="px-4 py-2.5 rounded-xl bg-amber-600 text-white text-xs font-bold inline-flex items-center gap-2 shadow hover:bg-amber-500 transition-colors w-full justify-center"
           >
             <i class="fa-solid fa-paper-plane"></i>
-            <span>Open in Gmail (asadali28997@gmail.com)</span>
+            <span>Open in Gmail</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Official LinkedIn Company Page -->
+      <div class="p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 hover:border-[#0A66C2] transition-all flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-[#0A66C2]/10 text-[#0A66C2] flex items-center justify-center text-xl">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Official LinkedIn</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Follow our corporate profile, architectural updates, and career opportunities.</p>
+        </div>
+        <div class="pt-2">
+          <a 
+            href="https://www.linkedin.com/company/h-q-design-services/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="px-4 py-2.5 rounded-xl bg-[#0A66C2] text-white text-xs font-bold inline-flex items-center gap-2 shadow hover:bg-[#084E96] transition-colors w-full justify-center"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+            <span>Visit LinkedIn Page</span>
           </a>
         </div>
       </div>

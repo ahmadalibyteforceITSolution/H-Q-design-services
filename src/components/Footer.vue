@@ -236,6 +236,9 @@
           <a href="https://www.instagram.com/hq_design_services/?hl=en" target="_blank" rel="noopener" class="hover:text-white transition-colors text-base" title="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
+          <a href="https://www.linkedin.com/company/h-q-design-services/" target="_blank" rel="noopener" class="hover:text-[#0A66C2] transition-colors text-base" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
           <a href="https://www.youtube.com/@HQDesignservices" target="_blank" rel="noopener" class="hover:text-red-500 transition-colors text-base" title="YouTube">
             <i class="fa-brands fa-youtube"></i>
           </a>

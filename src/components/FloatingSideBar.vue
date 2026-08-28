@@ -80,6 +80,20 @@
         </div>
       </a>
 
+      <!-- LinkedIn -->
+      <a 
+        href="https://www.linkedin.com/company/h-q-design-services/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="Visit H&amp;Q Design Services on LinkedIn"
+        class="group relative w-full h-11 sm:h-12 bg-[#0A66C2] hover:bg-[#084E96] text-white flex items-center justify-center transition-colors text-base sm:text-lg cursor-pointer"
+      >
+        <i class="fa-brands fa-linkedin-in group-hover:scale-110 transition-transform"></i>
+        <div class="absolute right-full mr-3 px-3 py-1.5 rounded-xl bg-slate-950 text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl border border-slate-800">
+          LinkedIn Company Page
+        </div>
+      </a>
+
       <!-- 5. WhatsApp Click to Chat -->
       <a 
         href="https://api.whatsapp.com/send/?phone=966507143124&amp;text=Hello%20H%26Q%20Design%20Services,%20I%20want%20to%20inquire%20about%20architectural%20and%20interior%20design%20services.&amp;type=phone_number&amp;app_absent=0" 
