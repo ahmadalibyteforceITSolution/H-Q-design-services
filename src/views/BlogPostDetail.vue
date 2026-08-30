@@ -32,7 +32,7 @@
         <span>•</span>
         <span><i class="fa-solid fa-clock text-amber-500 mr-1"></i> {{ activePost.readTime }}</span>
         <span>•</span>
-        <span><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> Parkview City Studio, Lahore</span>
+        <span><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> DHA Studio, Lahore</span>
       </div>
     </div>
 
@@ -154,11 +154,11 @@
       </div>
     </div>
 
-    <!-- Consultation CTA Card -->
-    <div class="p-8 rounded-3xl bg-gradient-to-r from-slate-900 to-slate-800 text-white border border-slate-700 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="space-y-1 text-center sm:text-left">
-        <h4 class="font-extrabold text-lg text-white">Planning Your Plot Design or Construction in Lahore?</h4>
-        <p class="text-xs text-slate-300">Schedule a 1-on-1 floor plan review session at our Parkview City Studio.</p>
+    <!-- Author & Consultation CTA Card -->
+    <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="space-y-1">
+        <h4 class="font-extrabold text-lg text-slate-900 dark:text-white">Planning Your Plot Design in Lahore?</h4>
+        <p class="text-xs text-slate-500 dark:text-slate-400">Schedule a 1-on-1 floor plan review session at our Lahore Studio.</p>
       </div>
       <button 
         @click="$emit('open-start-project')"
@@ -212,8 +212,15 @@ const activePost = computed(() => {
     if (foundById) return foundById
   }
 
-  // 3. Default fallback to first blog post
-  return allBlogs[0]
+  return {
+    title: 'Modern Architectural Trends in Lahore: DHA & Bahria Town Guide',
+    category: 'Society News',
+    date: 'July 15, 2026',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
+    excerpt: 'Detailed architectural analysis and house layout recommendations from H&Q chief architects in Lahore, Pakistan.',
+    content: ''
+  }
 })
 
 const relatedPosts = computed(() => {
@@ -420,6 +427,18 @@ onUnmounted(() => {
 const defaultContent = `
   <p class="text-lg font-medium text-slate-900 dark:text-white">
     Building a dream villa or remodeling a commercial space in Lahore requires combining contemporary aesthetics with local municipal guidelines. In this guide, our senior architects walk you through essential design considerations.
+  </p>
+  <h3>1. Floor Plan Optimization & Bylaw Compliance</h3>
+  <p>
+    In societies like DHA and Bahria Town Lahore, structural setbacks, height restrictions, and ventilation shafts must be strictly calculated. Our team utilizes 3ds Max and Revit to create precise 2D blueprints ensuring immediate municipal approval.
+  </p>
+  <h3>2. 4K 3D Photorealistic Visualizations</h3>
+  <p>
+    Before ground excavation begins, seeing 3D photorealistic renderings of your villa facade and interior rooms prevents costly material alterations. You can preview Spanish tiles, LED illumination, and wooden paneling in realistic 4K lighting.
+  </p>
+  <h3>3. Luxury Interior Material Selection</h3>
+  <p>
+    From Italian Statuario marble to custom rosewood cabinetry, selecting durable yet luxurious materials ensures your living space maintains timeless elegance for decades to come.
   </p>
 `
 </script>

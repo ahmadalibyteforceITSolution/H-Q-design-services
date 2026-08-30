@@ -4,13 +4,13 @@
     <!-- Hero Header -->
     <div class="text-center max-w-3xl mx-auto space-y-4">
       <span class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-[#088C7E]/10 text-[#088C7E] uppercase tracking-wider border border-[#088C7E]/20">
-        Saudi Arabia & Parkview Studio Desk
+        Saudi Arabia & Lahore Studio Desk
       </span>
       <h1 class="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
-        Connect with Our <span class="text-gradient-zameen">Senior Architects</span>
+        Connect with Our <span class="text-gradient-hq">Senior Architects</span>
       </h1>
       <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
-        Visit our studio in Parkview City, Lahore, or connect with our Saudi Arabia WhatsApp desk and direct Gmail desk.
+        Visit our studio in Lahore, Pakistan, or connect with our Saudi Arabia WhatsApp desk and direct Gmail desk.
       </p>
     </div>
 
@@ -141,7 +141,6 @@
                 v-model="form.location"
                 class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-[#088C7E]"
               >
-                <option value="Parkview City Lahore">Parkview City, Lahore</option>
                 <option value="DHA Lahore">DHA Lahore</option>
                 <option value="Gulberg Lahore">Gulberg 3, Lahore</option>
                 <option value="Bahria Town">Bahria Town, Lahore</option>
@@ -190,8 +189,8 @@
       <!-- Studio Google Maps Placeholder -->
       <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900 h-full min-h-[400px] relative">
         <iframe 
-          title="Parkview City Studio Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13617.653494793796!2d74.19543169999999!3d31.43022245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3918ffdfa9edab41%3A0x6b4fb6c81350ef9!2sPark%20View%20City%2C%20Lahore!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk" 
+          title="DHA Lahore Studio Location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54455.0645607317!2d74.32688849999999!3d31.4807455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190603c7c61725%3A0xf3db69fecf1450a2!2sDHA%20Phase%206%20Lahore!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk" 
           class="w-full h-full border-0 min-h-[400px]" 
           allowfullscreen="" 
           loading="lazy" 
@@ -210,7 +209,7 @@ import { ref } from 'vue'
 const form = ref({
   name: '',
   phone: '',
-  location: 'Parkview City Lahore',
+  location: 'DHA Lahore',
   plotSize: '10 Marla',
   message: ''
 })

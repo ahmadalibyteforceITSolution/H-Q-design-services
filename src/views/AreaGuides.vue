@@ -13,10 +13,10 @@
 
         <div class="max-w-3xl space-y-2">
           <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
-            Comprehensive <span class="text-gradient-zameen">Society & Neighborhood</span> Guides
+            Comprehensive <span class="text-gradient-hq">Society & Neighborhood</span> Guides
           </h1>
           <p class="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
-            In-depth analysis of Pakistan's premier housing societies: Parkview City, DHA Lahore, Bahria Town, and Gulberg. Compare average plot rates, schools, hospitals, and municipal bylaws.
+            In-depth analysis of Pakistan's premier housing societies: Lake City, DHA Lahore, Bahria Town, and Gulberg. Compare average plot rates, schools, hospitals, and municipal bylaws.
           </p>
         </div>
 

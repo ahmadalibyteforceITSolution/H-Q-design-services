@@ -78,10 +78,10 @@ defineEmits(['open-start-project'])
 const caseStudies = ref([
   {
     id: 1,
-    title: 'Parkview City 1 Kanal Luxury Modern Villa',
-    location: 'Parkview City, Lahore',
+    title: 'Lake City 1 Kanal Luxury Modern Villa',
+    location: 'Lake City, Lahore',
     scale: '1 Kanal (4,500 sq.ft)',
-    challenge: 'The client required a contemporary open-plan floor design with maximum natural light while adhering strictly to Parkview City structural setback bylaws.',
+    challenge: 'The client required a contemporary open-plan floor design with maximum natural light while adhering strictly to Lake City structural setback bylaws.',
     solution: 'Designed a double-height central atrium with smart glass curtain walls, rainwater harvesting integration, and 4K VR walkthroughs prior to kickoff.',
     metrics: [
       { val: '100%', label: 'Approval Speed' },

@@ -16,31 +16,31 @@
   }
 }
 
-/* Zameen.com Design Tokens & Custom Aesthetics */
+/* Custom Aesthetics & Design Tokens */
 :root {
-  --zameen-green: #088C7E;
-  --zameen-green-dark: #066D62;
-  --zameen-green-light: #E6F4F2;
-  --zameen-gold: #D4AF37;
+  --hq-emerald: #088C7E;
+  --hq-emerald-dark: #066D62;
+  --hq-emerald-light: #E6F4F2;
+  --hq-gold: #D4AF37;
 }
 
-.text-zameen-green {
+.text-hq-emerald {
   color: #088C7E;
 }
 
-.bg-zameen-green {
+.bg-hq-emerald {
   background-color: #088C7E;
 }
 
-.bg-zameen-green-dark {
+.bg-hq-emerald-dark {
   background-color: #066D62;
 }
 
-.border-zameen-green {
+.border-hq-emerald {
   border-color: #088C7E;
 }
 
-.text-gradient-zameen {
+.text-gradient-hq {
   background: linear-gradient(135deg, #088C7E 0%, #10B981 50%, #F59E0B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -105,4 +105,28 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #10B981;
+}
+
+/* Hide Google Translate top bar, widget, banner, and popups */
+.skiptranslate, iframe.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+.goog-te-banner-frame {
+  display: none !important;
+}
+.goog-te-balloon-frame {
+  display: none !important;
+}
+.goog-tooltip {
+  display: none !important;
+}
+.goog-tooltip:hover {
+  display: none !important;
+}
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
 }

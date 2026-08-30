@@ -13,7 +13,7 @@
 
         <div class="max-w-3xl space-y-2">
           <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
-            Verified <span class="text-gradient-zameen">New Housing & Commercial</span> Developments
+            Verified <span class="text-gradient-hq">New Housing & Commercial</span> Developments
           </h1>
           <p class="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
             Discover LDA, CDA & SBCA approved residential master communities, corporate towers, and off-plan high-rise apartments with 1 to 5 years easy installment plans.

@@ -22,9 +22,9 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: 'HANDQ Design Services | H&Q Best Architects in Lahore',
-      description: 'Premier architecture studio in Parkview City Lahore. HANDQ (H&Q Design Services) - 500+ luxury villas, 3D elevation renders, floor plans & construction cost estimates. Call 0341-6887454.',
-      keywords: 'HANDQ, HANDQ Design Services, HAND Q, H AND Q, HANDQ Architects Lahore, H&Q Design Services, Best Architects in Lahore, House Construction Cost in Pakistan, 5 Marla House Design, 10 Marla Spanish Villa, 1 Kanal House Plan, DHA Lahore Bylaws, Parkview City Lahore, 3D Elevation Lahore'
+      title: 'H&Q Design Services | Best Architects in Lahore',
+      description: 'Premier architecture studio in Lahore. 500+ luxury villas, 3D elevation renders, floor plans & construction cost estimates. Call 0341-6887454.',
+      keywords: 'H&Q Design Services, Best Architects in Lahore, House Construction Cost in Pakistan, 5 Marla House Design, 10 Marla Spanish Villa, 1 Kanal House Plan, DHA Lahore Bylaws, 3D Elevation Lahore'
     }
   },
   {
@@ -34,7 +34,7 @@ const routes = [
     meta: {
       title: 'Properties for Sale in Pakistan | H&Q Design Services',
       description: 'Search 100% verified houses, residential plots, commercial plazas, and luxury apartments for sale in Lahore, Islamabad & Karachi with 3D plans.',
-      keywords: 'Properties for sale Lahore, Plots in Parkview City, DHA Lahore houses for sale, Commercial plazas Gulberg, Bahria Town Karachi plots, Zameen verified properties, Luxury villa for sale Pakistan'
+      keywords: 'Properties for sale Lahore, Plots in DHA Lahore, DHA Lahore houses for sale, Commercial plazas Gulberg, Bahria Town Karachi plots, verified properties, Luxury villa for sale Pakistan'
     }
   },
   {
@@ -44,7 +44,7 @@ const routes = [
     meta: {
       title: 'House Construction Cost Calculator 2026 | H&Q Studio',
       description: 'Instant 2026 House Construction Cost Calculator, Society Master Maps, Plot Finder, Area Unit Converter and Home Loan Mortgage EMI Calculator.',
-      keywords: 'Construction cost calculator Pakistan 2026, House building cost 5 Marla, Plot finder map Parkview City, Area unit converter Marla to Sqft, Mortgage EMI calculator Pakistan, Grey structure cost per sqft'
+      keywords: 'Construction cost calculator Pakistan 2026, House building cost 5 Marla, Plot finder map DHA Lahore, Area unit converter Marla to Sqft, Mortgage EMI calculator Pakistan, Grey structure cost per sqft'
     }
   },
   {
@@ -54,7 +54,7 @@ const routes = [
     meta: {
       title: 'New Housing Projects in Pakistan | H&Q Design Studio',
       description: 'Explore LDA, CDA & SBCA approved residential master communities, corporate high-rises, and luxury off-plan apartments with installment plans.',
-      keywords: 'New housing societies Lahore, Park View City installments, DHA luxury apartments, Zameen Opal flats, Islamabad new projects 2026, Off plan property booking Pakistan'
+      keywords: 'New housing societies Lahore, DHA Lahore installments, DHA luxury apartments, Opal Residency flats, Islamabad new projects 2026, Off plan property booking Pakistan'
     }
   },
   {
@@ -63,8 +63,8 @@ const routes = [
     component: AreaGuides,
     meta: {
       title: 'Pakistan Real Estate Area Guides | H&Q Design Studio',
-      description: 'In-depth neighborhood reviews, average plot prices, lifestyle scores, and building bylaws for Parkview City, DHA Lahore, and Bahria Town.',
-      keywords: 'Parkview City Lahore area guide, DHA Lahore phase reviews, Bahria Town Lahore lifestyle score, Gulberg commercial rates, society price benchmarks, Lahore residential guides'
+      description: 'In-depth neighborhood reviews, average plot prices, lifestyle scores, and building bylaws for DHA Lahore and Bahria Town.',
+      keywords: 'DHA Lahore area guide, DHA Lahore phase reviews, Bahria Town Lahore lifestyle score, Gulberg commercial rates, society price benchmarks, Lahore residential guides'
     }
   },
   {
@@ -83,8 +83,8 @@ const routes = [
     component: Agents,
     meta: {
       title: 'Find Top Architects & Real Estate Agents | H&Q Studio',
-      description: 'Connect directly with licensed architectural engineers, luxury interior designers, and DHA/Parkview City verified real estate advisors.',
-      keywords: 'Architects in Lahore, Registered PEC engineers, Real estate agents Parkview City, Luxury interior designers Lahore, DHA authorized consultants, Verified property dealers'
+      description: 'Connect directly with licensed architectural engineers, luxury interior designers, and DHA/Bahria Town verified real estate advisors.',
+      keywords: 'Architects in Lahore, Registered PEC engineers, Real estate agents DHA Lahore, Luxury interior designers Lahore, DHA authorized consultants, Verified property dealers'
     }
   },
   {
@@ -102,9 +102,9 @@ const routes = [
     name: 'About',
     component: About,
     meta: {
-      title: 'About HANDQ Design Services | H&Q Architecture Studio Lahore',
-      description: 'Learn about HANDQ (H&Q Design Services) heritage, senior architects, and engineering partnership with Zameen.com in Parkview City, Lahore.',
-      keywords: 'HANDQ, HANDQ Design Services, HAND Q, H AND Q, Architecture Studio Lahore, Professional Architects Pakistan, H&Q Design Services, Zameen.com Partner Studio, Parkview City Lahore Architects'
+      title: 'About Us | H&Q Design Services Studio Lahore',
+      description: 'Learn about H&Q Design Services heritage, senior architects, and engineering team in Lahore, Pakistan.',
+      keywords: 'Architecture Studio Lahore, Professional Architects Pakistan, H&Q Design Services, Top Design Studio, Lahore Architects'
     }
   },
   {
@@ -122,9 +122,9 @@ const routes = [
     name: 'Portfolio',
     component: Portfolio,
     meta: {
-      title: 'Architectural Portfolio & 3D Projects | HANDQ Studio',
-      description: 'Browse completed 5 Marla, 10 Marla, 1 Kanal villas, and commercial plazas in Parkview City, DHA, and Gulberg Lahore designed by HANDQ.',
-      keywords: 'HANDQ Portfolio, 5 Marla Villa Design, 10 Marla House elevation, 1 Kanal Modern House Map, Commercial Plaza architecture, DHA Phase 6 House Designs'
+      title: 'Architectural Portfolio & 3D Projects | H&Q Studio',
+      description: 'Browse completed 5 Marla, 10 Marla, 1 Kanal villas, and commercial plazas in DHA, Gulberg, and Bahria Town Lahore with 3D elevation renders.',
+      keywords: '5 Marla Villa Design, 10 Marla House elevation, 1 Kanal Modern House Map, Commercial Plaza architecture, DHA Phase 6 House Designs'
     }
   },
   {
@@ -142,9 +142,9 @@ const routes = [
     name: 'Blog',
     component: Blog,
     meta: {
-      title: 'Architecture & Real Estate Blogs | HANDQ Knowledge Base',
-      description: 'Read 1,000+ articles on Parkview City guidelines, DHA Lahore bylaws, 3D visualization trends, and luxury interior design styling tips by HANDQ.',
-      keywords: 'HANDQ Blog, Architecture blogs Pakistan, Real Estate design guidelines, DHA Lahore house bylaws, Parkview City construction rules'
+      title: 'Architecture & Real Estate Blogs | H&Q Studio',
+      description: 'Read 100+ articles on DHA Lahore bylaws, 3D visualization trends, and luxury interior design styling tips.',
+      keywords: 'Architecture blogs Pakistan, Real Estate design guidelines, DHA Lahore house bylaws, Bahria Town construction rules'
     }
   },
   {
@@ -152,9 +152,9 @@ const routes = [
     name: 'BlogPostDetail',
     component: BlogPostDetail,
     meta: {
-      title: 'Architectural Design Guide & Real Estate | HANDQ',
-      description: 'Detailed architectural analysis and house layout recommendations from HANDQ senior architects in Parkview City, Lahore.',
-      keywords: 'HANDQ Guide, Architectural design advice, house construction guide, Pakistan real estate layouts'
+      title: 'Architectural Design Guide & Real Estate | H&Q',
+      description: 'Detailed architectural analysis and house layout recommendations from H&Q chief architects in Lahore, Pakistan.',
+      keywords: 'Architectural design advice, house construction guide, Pakistan real estate layouts'
     }
   },
   {
@@ -162,9 +162,9 @@ const routes = [
     name: 'Contact',
     component: Contact,
     meta: {
-      title: 'Contact HANDQ Studio | Parkview City Lahore',
-      description: 'Connect with senior architects at HANDQ (H&Q Design Services) in Parkview City, Lahore. Call 0341-6887454 or WhatsApp for instant 3D design quotes and plot consultations.',
-      keywords: 'HANDQ Contact, Architect contact number Lahore, Parkview City studio location, WhatsApp architect consultation'
+      title: 'Contact H&Q Studio | Lahore, Pakistan',
+      description: 'Connect with senior architects in Lahore, Pakistan. Call 0341-6887454 or WhatsApp for instant 3D design quotes and plot consultations.',
+      keywords: 'Architect contact number Lahore, DHA studio location, WhatsApp architect consultation'
     }
   },
   {
@@ -172,9 +172,9 @@ const routes = [
     name: 'Partners',
     component: BacklinksHub,
     meta: {
-      title: 'H&Q Partners & Backlinks Network | Zameen Partner Studio',
+      title: 'H&Q Partners & Backlinks Network | Professional Design Partners',
       description: 'Official link exchange, high-authority domain directory, and brand entity stacked backlinks for H&Q Design Services Lahore.',
-      keywords: 'H&Q backlinks, link exchange Lahore, real estate guest posts, architecture partner links, Zameen partner backlinks, high authority backlinks Pakistan'
+      keywords: 'H&Q backlinks, link exchange Lahore, real estate guest posts, architecture partner links, high authority backlinks Pakistan'
     }
   }
 ]
@@ -262,8 +262,7 @@ router.afterEach((to) => {
     "url": canonicalUrl,
     "isPartOf": {
       "@type": "WebSite",
-      "name": "HANDQ Design Services & Zameen Real Estate Portal",
-      "alternateName": ["HANDQ", "HAND Q", "H AND Q", "H&Q Design Services"],
+      "name": "H&Q Design Services",
       "url": `${baseUrl}/`
     }
   }

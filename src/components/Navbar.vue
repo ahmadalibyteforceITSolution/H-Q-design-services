@@ -1,7 +1,7 @@
 <template>
   <header class="sticky top-0 left-0 right-0 z-50 transition-colors duration-300 shadow-md">
     
-    <!-- TOP GREEN TIER (Zameen.com Style Header Tier 1) -->
+    <!-- TOP GREEN TIER (Style Header Tier 1) -->
     <div class="bg-[#088C7E] text-white py-2 px-4 text-xs">
       <div class="max-w-[1440px] mx-auto flex items-center justify-between gap-4">
         
@@ -89,11 +89,11 @@
 
           <!-- Language Selector Dropdown -->
           <div 
+            ref="langDropdownRef"
             class="relative cursor-pointer font-bold text-xs px-1" 
-            @mouseenter="langHovered = true" 
-            @mouseleave="langHovered = false"
           >
             <button 
+              @click="toggleLangDropdown"
               class="flex items-center gap-1.5 hover:text-amber-300 bg-white/10 px-2.5 py-1 rounded-lg border border-white/20"
             >
               <i class="fa-solid fa-globe text-xs"></i>
@@ -156,7 +156,7 @@
       </div>
     </div>
 
-    <!-- MAIN BOTTOM TIER (Zameen.com White Bar Tier 2) -->
+    <!-- MAIN BOTTOM TIER (White Bar Tier 2) -->
     <div class="bg-white dark:bg-slate-950 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20 gap-6">
@@ -172,7 +172,7 @@
             />
           </router-link>
 
-          <!-- Secondary Navigation Links (Zameen Bottom Bar Layout) -->
+          <!-- Secondary Navigation Links (Bottom Bar Layout) -->
           <nav class="hidden lg:flex items-center gap-4 text-xs font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wide">
             
             <router-link 
@@ -286,7 +286,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from '../composables/useI18n.js'
 import logoImg from '../assets/logo.jpg'
 
@@ -299,6 +299,18 @@ const isDark = ref(true)
 
 const toolsHovered = ref(false)
 const langHovered = ref(false)
+const langDropdownRef = ref(null)
+
+const toggleLangDropdown = (event) => {
+  event.stopPropagation()
+  langHovered.value = !langHovered.value
+}
+
+const handleClickOutside = (event) => {
+  if (langDropdownRef.value && !langDropdownRef.value.contains(event.target)) {
+    langHovered.value = false
+  }
+}
 
 const activeLangLabel = computed(() => {
   if (currentLang.value === 'UR') return 'PK اردو'
@@ -345,5 +357,10 @@ const openAddPropertyFromMobile = () => {
 onMounted(() => {
   initI18n()
   isDark.value = document.documentElement.classList.contains('dark')
+  document.addEventListener('click', handleClickOutside)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside)
 })
 </script>

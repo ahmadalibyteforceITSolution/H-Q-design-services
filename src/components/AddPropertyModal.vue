@@ -7,7 +7,7 @@
         <div class="space-y-1">
           <div class="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-emerald-200">
             <i class="fa-solid fa-cloud-arrow-up"></i>
-            <span>Zameen Partner Portal</span>
+            <span>Property Management Portal</span>
           </div>
           <h2 class="text-xl sm:text-2xl font-black">Add Property / Post Project Requirement</h2>
         </div>
@@ -100,7 +100,7 @@
                 v-model="form.location" 
                 type="text" 
                 required 
-                placeholder="e.g. Parkview City, Overseas Block" 
+                placeholder="e.g. DHA Phase 6, Overseas Block" 
                 class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-[#088C7E]"
               />
             </div>

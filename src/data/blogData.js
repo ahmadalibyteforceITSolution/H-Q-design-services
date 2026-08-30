@@ -37,7 +37,7 @@ export const getCategoryForKeyword = (keyword) => {
   if (kw.includes('elevation') || kw.includes('3d') || kw.includes('facade') || kw.includes('render') || kw.includes('bim') || kw.includes('cad') || kw.includes('architect') || kw.includes('style') || kw.includes('visual')) {
     return 'Architectural Styles & 3D'
   }
-  if (kw.includes('dha') || kw.includes('parkview') || kw.includes('bahria') || kw.includes('lda') || kw.includes('society') || kw.includes('gulberg') || kw.includes('islamabad') || kw.includes('karachi') || kw.includes('lahore') || kw.includes('multan') || kw.includes('gujranwala') || kw.includes('peshawar') || kw.includes('faisal town') || kw.includes('smart city')) {
+  if (kw.includes('dha') || kw.includes('bahria') || kw.includes('lda') || kw.includes('society') || kw.includes('gulberg') || kw.includes('islamabad') || kw.includes('karachi')) {
     return 'Housing Societies & Bylaws'
   }
   return '2026 Construction Rates & Costs'
@@ -51,18 +51,13 @@ export const generateArticleContent = (topic, category, id) => {
   const whatsappUrl = `https://wa.me/923416887454?text=${encodeURIComponent(`Hello H&Q Design Services! I am interested in architectural drawings, interior design, and turnkey construction consultation regarding: ${topic}`)}`
 
   return `
-    <div class="space-y-10">
-      
-      <!-- Executive Summary Card -->
-      <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-emerald-500/10 via-teal-500/5 to-transparent border border-[#088C7E]/30 shadow-sm space-y-4">
-        <div class="flex items-center gap-3">
-          <span class="w-8 h-8 rounded-xl bg-[#088C7E] text-white flex items-center justify-center font-black text-sm shadow-md">H&Q</span>
-          <h3 class="text-xl sm:text-2xl font-black text-[#088C7E] dark:text-emerald-400">
-            Executive Architectural Overview: ${topic}
-          </h3>
-        </div>
-        <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
-          Planning and executing premium architecture, interior decor, and structural engineering in Pakistan requires a seamless synthesis of municipal bylaw compliance, energy-efficient spatial ergonomics, and timeless aesthetic elegance. At <strong>H&Q Design Services</strong> (Parkview City Lahore studio, registered with PCATP and verified partner with Zameen.com), our senior architects and structural engineers deliver end-to-end turnkey solutions specifically tailored for <em>${topic}</em>.
+    <div class="space-y-8">
+      <div class="p-6 rounded-2xl bg-emerald-50 dark:bg-emerald-950/30 border border-[#088C7E]/30">
+        <h3 class="text-xl font-bold text-[#088C7E] dark:text-emerald-400 mb-2">
+          Executive Architectural Overview: ${topic}
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          Planning and executing premium architecture and interior design projects in Pakistan requires a synthesis of structural integrity, municipal bylaw compliance, and modern aesthetic elegance. At <strong>H&Q Design Services</strong> (Lahore, Pakistan), our team of registered PCATP architects and structural engineers provides turnkey solutions tailored to <em>${topic}</em>.
         </p>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
           <div class="p-3 rounded-2xl bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 text-center">
@@ -221,10 +216,19 @@ export const generateArticleContent = (topic, category, id) => {
       <!-- Section 6: Municipal Bylaws & Building Approval Checklist -->
       <div class="space-y-4">
         <h3 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center gap-2">
-          <span class="text-[#088C7E]">6.</span> Municipal Bylaw Approvals (DHA, Parkview City, Bahria & LDA)
+          <span class="text-[#088C7E]">6.</span> Municipal Bylaw Approvals (DHA, Bahria Town & LDA)
         </h3>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
           Constructing without vetted municipal drawings risks construction halts and demolition notices. For <strong>${topic}</strong>, our architectural drawings comply 100% with local development authorities:
+        </p>
+      </div>
+
+      <div class="p-6 rounded-3xl bg-slate-900 text-white space-y-4 shadow-xl">
+        <h4 class="text-lg font-black text-amber-400">
+          Book a Free Consultation with H&Q Senior Architects
+        </h4>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Whether you own a 5 Marla, 10 Marla, 1 Kanal plot or a commercial plaza in Lahore, Islamabad, or Karachi, our studio is ready to transform your vision into an architectural masterpiece.
         </p>
         <div class="p-5 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-2">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
@@ -320,12 +324,12 @@ export const generateArticleContent = (topic, category, id) => {
       <!-- Direct Consultation & Call-to-Action Banner -->
       <div class="p-6 sm:p-8 rounded-3xl bg-slate-900 text-white space-y-4 shadow-xl border border-slate-800">
         <div class="space-y-1">
-          <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Parkview City Lahore Studio • Partner with Zameen.com</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-400">DHA Lahore Studio • Professional Architects</span>
           <h4 class="text-xl sm:text-2xl font-black text-white">
             Schedule a Design Review Session for: ${topic}
           </h4>
           <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-            Whether you are building in DHA Lahore, Bahria Town, Parkview City, or anywhere in Pakistan, consult directly with H&Q Senior Architects to review your plot blueprints and cost estimates.
+            Whether you are building in DHA Lahore, Bahria Town, Gulberg, or anywhere in Pakistan, consult directly with H&Q Senior Architects to review your plot blueprints and cost estimates.
           </p>
         </div>
         <div class="flex flex-wrap items-center gap-3 pt-2">
@@ -366,9 +370,9 @@ export const generate2000Blogs = () => {
     const month = months[i % months.length]
     const dateStr = `${month} ${day}, 2026`
     
-    const readTime = `${5 + (i % 4)} min read`
-    const title = `${keyword} - Complete Architecture, Cost & Bylaws Guide 2026`
-    const excerpt = `In-depth 2026 architectural analysis, floor plans, structural guidelines, and turnkey construction cost estimates for ${keyword}. Designed by H&Q Design Services senior architects in Parkview City Lahore, partner studio with Zameen.com.`
+    const readTime = `${4 + (i % 5)} min read`
+    const title = `${keyword} - Architecture & Interior Design Guide`
+    const excerpt = `Complete 2026 architectural analysis and interior design guidelines for ${keyword}. Written by H&Q Design Services senior architects in Lahore, Pakistan.`
     const content = generateArticleContent(keyword, category, id)
 
     blogs.push({

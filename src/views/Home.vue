@@ -26,11 +26,11 @@
         <div class="flex flex-wrap items-center gap-3">
           <span class="px-4 py-1.5 rounded-full text-xs font-black bg-[#088C7E] text-white tracking-wider uppercase shadow-xl flex items-center gap-2 border border-emerald-400/30">
             <i class="fa-solid fa-award text-amber-300 text-sm"></i>
-            <span>Official Zameen.com Verified Partner</span>
+            <span>Official PEC & LDA Registered Architects</span>
           </span>
           <span class="px-4 py-1.5 rounded-full text-xs font-extrabold bg-slate-900/90 text-amber-300 backdrop-blur-md border border-amber-500/30 flex items-center gap-1.5 shadow-lg">
             <i class="fa-solid fa-location-dot text-[#088C7E]"></i>
-            <span>Parkview City Studio · Lahore</span>
+            <span>Lahore Studio, Pakistan</span>
           </span>
           <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-950/80 text-emerald-300 backdrop-blur-md border border-emerald-500/30 hidden sm:flex items-center gap-1.5 shadow-lg">
             <i class="fa-solid fa-shield-halved text-emerald-400"></i>
@@ -41,14 +41,14 @@
         <!-- Main Heading & Subtitle -->
         <div class="max-w-4xl space-y-4">
           <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight drop-shadow-2xl">
-            Search Properties, <span class="text-gradient-zameen">3D Architecture & Plots</span> in Pakistan
+            Search Properties, <span class="text-gradient-hq">3D Architecture & Plots</span> in Pakistan
           </h1>
           <p class="text-slate-200 text-base sm:text-lg lg:text-xl font-medium leading-relaxed max-w-2xl drop-shadow-md">
-            Find verified villas, commercial plazas, on-ground plots, and photorealistic 4K 3D elevation blueprints across Parkview City, DHA, and Gulberg Lahore.
+            Find verified villas, commercial plazas, on-ground plots, and photorealistic 4K 3D elevation blueprints across DHA, Gulberg, and Bahria Town Lahore.
           </p>
         </div>
 
-        <!-- Zameen Property Search Filter Glassmorphic Widget -->
+        <!-- Property Search Filter Glassmorphic Widget -->
         <div class="p-5 sm:p-7 rounded-3xl bg-slate-950/75 backdrop-blur-2xl border border-slate-700/60 shadow-2xl space-y-5 max-w-5xl">
           
           <!-- Category Tabs (Buy / Rent / Projects / Plots / Commercial) -->
@@ -74,7 +74,7 @@
               <label class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">City / Housing Society</label>
               <select v-model="searchLocation" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 text-white border border-slate-700 focus:outline-none focus:border-[#088C7E] shadow-inner font-semibold">
                 <option value="All">All Locations (Pakistan)</option>
-                <option value="Parkview City">Parkview City, Lahore</option>
+                <option value="Bahria Town">Bahria Town, Lahore</option>
                 <option value="DHA Lahore">DHA Phase 1-9, Lahore</option>
                 <option value="Gulberg Lahore">Gulberg III, Lahore</option>
                 <option value="Lake City">Lake City, Lahore</option>
@@ -142,22 +142,22 @@
     <section class="w-full overflow-hidden bg-[#088C7E] text-white py-3 shadow-md border-y border-[#088C7E]/30">
       <div class="flex w-max animate-marquee space-x-12">
         <div class="flex items-center gap-12 text-xs font-bold shrink-0">
-          <span class="flex items-center gap-2"><i class="fa-solid fa-award text-amber-300"></i> Official Partner: Zameen.com</span>
-          <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot"></i> Parkview City Studio Lahore</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-award text-amber-300"></i> Licensed PEC Architectural Studio</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot"></i> Lahore Studio, Pakistan</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-calculator text-amber-300"></i> 2026 Construction Cost Calculator</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-city"></i> Verified Plots & New Mega Projects</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-phone"></i> Call 0341-6887454</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-globe"></i> KSA +966 50 714 3124</span>
-          <span class="flex items-center gap-2"><i class="fa-solid fa-handshake text-amber-300"></i> Affiliated with Zameen.com</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-handshake text-amber-300"></i> Turnkey Material Specifications</span>
         </div>
         <div class="flex items-center gap-12 text-xs font-bold shrink-0 pr-12">
-          <span class="flex items-center gap-2"><i class="fa-solid fa-award text-amber-300"></i> Official Partner: Zameen.com</span>
-          <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot"></i> Parkview City Studio Lahore</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-award text-amber-300"></i> Licensed PEC Architectural Studio</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot"></i> Lahore Studio, Pakistan</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-calculator text-amber-300"></i> 2026 Construction Cost Calculator</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-city"></i> Verified Plots & New Mega Projects</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-phone"></i> Call 0341-6887454</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-globe"></i> KSA +966 50 714 3124</span>
-          <span class="flex items-center gap-2"><i class="fa-solid fa-handshake text-amber-300"></i> Affiliated with Zameen.com</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-handshake text-amber-300"></i> Turnkey Material Specifications</span>
         </div>
       </div>
     </section>
@@ -173,7 +173,7 @@
             <span class="text-xs font-bold text-slate-400">4K Ultra-Realistic Commercial</span>
           </div>
           <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white font-serif tracking-tight">
-            Experience <span class="text-gradient-zameen">H&Q Luxury Architecture</span> in Motion
+            Experience <span class="text-gradient-hq">H&Q Luxury Architecture</span> in Motion
           </h2>
           <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-2xl">
             Watch our complete 60-second architectural showcase featuring luxury villas, master bedroom suites, open-concept living, and complete before-and-after space transformations.
@@ -191,12 +191,12 @@
       <CinematicShowreel />
     </section>
 
-    <!-- ZAMEEN CORE TOOLS HUB SHORTCUTS SECTION -->
+    <!-- CORE TOOLS HUB SHORTCUTS SECTION -->
     <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div class="space-y-1">
           <span class="text-xs font-black uppercase tracking-wider text-[#088C7E]">Interactive Real Estate Suite</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">Zameen Construction & Property Tools</h2>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">Construction & Property Tools</h2>
         </div>
         <router-link to="/tools" class="text-xs font-bold text-[#088C7E] hover:underline flex items-center gap-1">
           <span>Open Full Tools Suite</span>
@@ -229,7 +229,7 @@
           </div>
           <div>
             <h3 class="text-base font-extrabold text-slate-900 dark:text-white group-hover:text-[#088C7E] transition-colors">Plot Finder & Maps</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">High-definition sector and block layouts for Parkview & DHA.</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">High-definition sector and block layouts for DHA & Bahria Town.</p>
           </div>
           <span class="text-xs font-bold text-[#088C7E] flex items-center gap-1">Explore Maps →</span>
         </router-link>
@@ -586,19 +586,19 @@
     <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 rounded-3xl bg-white dark:bg-slate-900/60 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 text-center shadow-sm">
         <div>
-          <div class="text-3xl sm:text-4xl font-extrabold text-gradient-zameen">500+</div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-gradient-hq">500+</div>
           <p class="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">Projects Completed</p>
         </div>
         <div>
-          <div class="text-3xl sm:text-4xl font-extrabold text-gradient-zameen">15+</div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-gradient-hq">15+</div>
           <p class="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">Years Experience</p>
         </div>
         <div>
-          <div class="text-3xl sm:text-4xl font-extrabold text-gradient-zameen">200+</div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-gradient-hq">200+</div>
           <p class="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">Happy Clients</p>
         </div>
         <div>
-          <div class="text-3xl sm:text-4xl font-extrabold text-gradient-zameen">50+</div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-gradient-hq">50+</div>
           <p class="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">Design Awards</p>
         </div>
       </div>
@@ -672,7 +672,7 @@ const getKeywordTargetLink = (kw) => {
   if (lower.includes('interior') || lower.includes('kitchen') || lower.includes('bedroom') || lower.includes('ceiling') || lower.includes('living')) {
     return '/services'
   }
-  if (lower.includes('parkview') || lower.includes('dha') || lower.includes('bahria') || lower.includes('guide') || lower.includes('city') || lower.includes('sector')) {
+  if (lower.includes('lakecity') || lower.includes('dha') || lower.includes('bahria') || lower.includes('guide') || lower.includes('city') || lower.includes('sector')) {
     return '/area-guides'
   }
   if (lower.includes('project') || lower.includes('plaza') || lower.includes('commercial') || lower.includes('installment')) {

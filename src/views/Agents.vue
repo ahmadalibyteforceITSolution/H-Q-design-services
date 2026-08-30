@@ -13,10 +13,10 @@
 
         <div class="max-w-3xl space-y-2">
           <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
-            Pakistan's Certified <span class="text-gradient-zameen">Architects & Real Estate</span> Experts
+            Pakistan's Certified <span class="text-gradient-hq">Architects & Real Estate</span> Experts
           </h1>
           <p class="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
-            Connect directly with verified architectural engineers, luxury interior stylists, and DHA/Parkview City licensed real estate consultants.
+            Connect directly with verified architectural engineers, luxury interior stylists, and DHA/Bahria Town licensed real estate consultants.
           </p>
         </div>
 

@@ -4,13 +4,13 @@
     <!-- Hero Header -->
     <div class="text-center max-w-3xl mx-auto space-y-4">
       <span class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-[#088C7E]/10 text-[#088C7E] uppercase tracking-wider border border-[#088C7E]/20">
-        Zameen Verified Portfolio
+        Official Project Portfolio
       </span>
       <h1 class="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
-        Featured <span class="text-gradient-zameen">3D Elevation Renders</span> & Maps
+        Featured <span class="text-gradient-hq">3D Elevation Renders</span> & Maps
       </h1>
       <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
-        Explore 500+ completed residential villas, commercial plazas, and luxury interiors designed by H&Q Studio in Parkview City & DHA Lahore.
+        Explore 500+ completed residential villas, commercial plazas, and luxury interiors designed by H&Q Studio in DHA & Bahria Town Lahore.
       </p>
     </div>
 
@@ -53,7 +53,7 @@
         class="group rounded-3xl overflow-hidden bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
       >
         <div>
-          <!-- Image Container with Zameen Price Badge -->
+          <!-- Image Container with Price Badge -->
           <div class="relative h-64 overflow-hidden cursor-pointer" @click="selectedProject = project">
             <img 
               :src="project.image" 
@@ -64,7 +64,7 @@
               {{ project.price }}
             </div>
             <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-amber-300 text-xs font-bold border border-amber-500/20 flex items-center gap-1">
-              <i class="fa-solid fa-circle-check text-emerald-400"></i> Zameen Verified
+              <i class="fa-solid fa-circle-check text-emerald-400"></i> Verified Listing
             </div>
           </div>
 
@@ -123,7 +123,7 @@
       </div>
     </div>
 
-    <!-- Zameen Project Detail Modal -->
+    <!-- Project Detail Modal -->
     <div 
       v-if="selectedProject" 
       class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-md p-4"
@@ -146,7 +146,7 @@
             <span class="px-3.5 py-1 rounded-full bg-[#088C7E] text-white text-xs font-black">
               {{ selectedProject.price }}
             </span>
-            <span class="text-xs font-bold text-[#088C7E]">Zameen Verified Standard</span>
+            <span class="text-xs font-bold text-[#088C7E]">Verified Premium Standard</span>
           </div>
 
           <h3 class="text-2xl font-black">{{ selectedProject.title }}</h3>
@@ -207,7 +207,7 @@ const projects = ref([
     title: 'Modern Luxury Villa Architectural Masterpiece',
     category: '1 Kanal Estates',
     isCommercial: false,
-    location: 'Parkview City Golf Estate, Lahore',
+    location: 'DHA Phase 6, Lahore',
     plotSize: '1 Kanal (50x90)',
     price: 'PKR 6.5 Lac Design Package',
     beds: '5 Beds',
@@ -235,7 +235,7 @@ const projects = ref([
     title: 'Open-Concept Calacatta Living Room & Lounge',
     category: 'Luxury Interiors',
     isCommercial: false,
-    location: 'Parkview City Executive Block, Lahore',
+    location: 'DHA Phase 5, Lahore',
     plotSize: '10 Marla Luxury',
     price: 'PKR 4.2 Lac',
     beds: 'Lounge Suite',
@@ -291,7 +291,7 @@ const projects = ref([
     title: 'Grey Structure to Turnkey Luxury Transformation',
     category: '5 Marla Villas',
     isCommercial: false,
-    location: 'Parkview City, Lahore',
+    location: 'DHA Phase 8, Lahore',
     plotSize: '5 Marla (25x45)',
     price: 'PKR 2.2 Lac',
     beds: '3 Beds',
@@ -341,6 +341,62 @@ const projects = ref([
     parking: 'Dedicated Parking Bay',
     image: 'https://images.unsplash.com/photo-1577495508048-b635879837f1?w=800&q=80',
     description: 'High-visibility commercial arcade architectural plan featuring double-glazed glass front, modern showroom layouts, and DHA municipal approved elevator shaft plans.'
+  },
+  {
+    id: 3,
+    title: 'Modern 10 Marla Spanish Villa Floor Plan',
+    category: '10 Marla Luxury',
+    isCommercial: false,
+    location: 'DHA Phase 7, Lahore',
+    plotSize: '10 Marla (35x70)',
+    price: 'PKR 2.8 Lac',
+    beds: '5 Beds',
+    baths: '6 Baths',
+    floors: 'Triple Story',
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+    description: 'Spanish architectural villa design featuring double-height ceiling lounge, underground basement entertainment room, and open terrace.'
+  },
+  {
+    id: 4,
+    title: 'Executive DHA Phase 6 Interior Package',
+    category: 'Luxury Interiors',
+    isCommercial: false,
+    location: 'DHA Phase 6, Lahore',
+    plotSize: '1 Kanal (50x90)',
+    price: 'PKR 4.8 Lac',
+    beds: '4 Beds',
+    baths: '5 Baths',
+    floors: 'Double Story',
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
+    description: 'Custom interior styling with Italian Statuario marble floors, rosewood wall paneling, LED cove illumination, and modular kitchen.'
+  },
+  {
+    id: 5,
+    title: '5 Marla Minimalist Modern House Map',
+    category: '5 Marla Villas',
+    isCommercial: false,
+    location: 'DHA Phase 9, Lahore',
+    plotSize: '5 Marla (25x45)',
+    price: 'PKR 1.8 Lac',
+    beds: '3 Beds',
+    baths: '4 Baths',
+    floors: 'Double Story',
+    image: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800&q=80',
+    description: 'Compact 5 Marla floor plan engineered for max ventilation, natural light, Car Porch, and modern 3D elevation.'
+  },
+  {
+    id: 6,
+    title: '1 Kanal Royal Mansion Architectural Blueprint',
+    category: '1 Kanal Estates',
+    isCommercial: false,
+    location: 'Bahria Town, Lahore',
+    plotSize: '1 Kanal (50x90)',
+    price: 'PKR 5.5 Lac',
+    beds: '6 Beds',
+    baths: '7 Baths',
+    floors: 'Triple Story + Basement',
+    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
+    description: 'Royal classical mansion elevation complete with swimming pool layout, servant quarters, and municipal approval blueprint.'
   }
 ])
 

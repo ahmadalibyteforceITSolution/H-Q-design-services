@@ -8,12 +8,12 @@
         <div class="flex items-center gap-2 text-xs font-bold text-slate-400">
           <router-link to="/" class="hover:text-[#088C7E] transition-colors">Home</router-link>
           <span>/</span>
-          <span class="text-white">Zameen Real Estate & Architectural Tools Hub</span>
+          <span class="text-white">Real Estate & Architectural Tools Hub</span>
         </div>
 
         <div class="max-w-3xl space-y-2">
           <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
-            Smart <span class="text-gradient-zameen">Real Estate & Construction</span> Tools
+            Smart <span class="text-gradient-hq">Real Estate & Construction</span> Tools
           </h1>
           <p class="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
             Calculate exact 2026 house construction costs, explore interactive society plot maps, convert Pakistani land area units, and estimate monthly bank mortgage EMIs.
@@ -159,7 +159,7 @@
           <!-- Society Selector Tabs -->
           <div class="flex flex-wrap items-center gap-2">
             <button 
-              v-for="soc in ['Parkview City Lahore', 'DHA Lahore Phase 6', 'DHA Phase 9 Prism', 'Lake City Lahore', 'Bahria Town Lahore']" 
+              v-for="soc in ['DHA Lahore Phase 7', 'DHA Lahore Phase 6', 'DHA Phase 9 Prism', 'Lake City Lahore', 'Bahria Town Lahore']" 
               :key="soc"
               @click="selectedMapSociety = soc"
               :class="[
@@ -460,7 +460,7 @@ const calculatedCost = computed(() => {
 })
 
 // 2. Plot Finder State
-const selectedMapSociety = ref('Parkview City Lahore')
+const selectedMapSociety = ref('DHA Lahore Phase 7')
 const selectedBlock = ref('Overseas Block')
 
 // 3. Unit Converter State

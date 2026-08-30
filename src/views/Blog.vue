@@ -1,7 +1,7 @@
 <template>
   <div class="py-12 space-y-16">
     
-    <!-- Hero Header (Zameen Style) -->
+    <!-- Hero Header -->
     <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
       <div class="relative rounded-3xl p-8 sm:p-14 bg-slate-950 text-white overflow-hidden border border-slate-800 shadow-2xl">
         <div class="absolute -top-20 -right-20 w-64 h-64 bg-[#088C7E]/20 rounded-full blur-3xl pointer-events-none"></div>
@@ -11,10 +11,10 @@
             <i class="fa-solid fa-compass-drafting text-amber-300"></i> H&Q Architecture & Design Knowledge Base
           </span>
           <h1 class="text-4xl sm:text-5xl font-black tracking-tight">
-            Explore 2,000+ Architectural & <span class="text-[#088C7E] bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-200">Interior Guides</span>
+            Explore 1,000+ Architectural & <span class="text-gradient-hq">Interior Guides</span>
           </h1>
           <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-            Pakistan's most comprehensive architectural library. In-depth analysis on 2 Marla to 4 Kanal floor plans, DHA/Parkview City bylaws, 4K 3D elevation renders, luxury turnkey interiors, and 2026 construction cost benchmarks.
+            The most extensive architectural library in Pakistan. In-depth analysis on 3 Marla to 4 Kanal floor plans, DHA bylaws, 4K 3D visualization, turnkey interior finishes, and 2026 construction rates.
           </p>
         </div>
       </div>

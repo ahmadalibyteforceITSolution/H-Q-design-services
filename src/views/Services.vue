@@ -82,9 +82,9 @@ const fullServices = ref([
     id: 'arch',
     title: 'Architectural Floor Planning & Elevation',
     icon: 'fa-solid fa-compass-drafting',
-    desc: 'Complete architectural layout design for 5 Marla, 10 Marla, 1 Kanal, and 2 Kanal villas, including municipal submission drawings compliant with Parkview City and DHA bylaws.',
+    desc: 'Complete architectural layout design for 5 Marla, 10 Marla, 1 Kanal, and 2 Kanal villas, including municipal submission drawings compliant with DHA and Bahria Town bylaws.',
     timeframe: '2-3 Weeks',
-    deliverables: ['2D Floor Plans & Sections', 'Front Elevation Design', 'Structural Calculations', 'Parkview City Submission Files']
+    deliverables: ['2D Floor Plans & Sections', 'Front Elevation Design', 'Structural Calculations', 'DHA Submission Files']
   },
   {
     id: 'interior',

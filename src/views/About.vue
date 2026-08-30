@@ -14,13 +14,13 @@
             Crafting Timeless <span class="text-gradient">Architectural Landmarks</span>
           </h1>
           <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-            Founded with a vision to redefine modern living and workspace design in Lahore, <strong>HANDQ (H&Q Design Services)</strong> is Pakistan's premier architecture and luxury interior studio based in Parkview City, Lahore.
+            Founded with a vision to redefine modern living and workspace design, H&Q Design Services is Pakistan's premier architecture and luxury interior studio based in Lahore, Pakistan.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Company Story & Zameen.com Affiliation -->
+    <!-- Company Story & Heritage -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
@@ -32,10 +32,10 @@
             Where Precision Architecture Meets Interior Elegance
           </h2>
           <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-            H&Q Design Services has designed over 500+ luxury villas, commercial plazas, and high-end residential interiors across Parkview City, DHA Lahore, Gulberg, and Bahria Town.
+            H&Q Design Services has designed over 500+ luxury villas, commercial plazas, and high-end residential interiors across DHA Lahore, Gulberg, and Bahria Town.
           </p>
           <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-            As an official partner affiliated with <strong class="text-slate-900 dark:text-white">Zameen.com</strong>, we hold ourselves to the highest standards of structural integrity, municipal approval compliance, and aesthetic perfection.
+            We hold ourselves to the highest standards of structural integrity, municipal approval compliance, and aesthetic perfection.
           </p>
 
           <div class="pt-4 grid grid-cols-2 gap-4">
@@ -59,7 +59,7 @@
             />
             <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-950/80 backdrop-blur-md border border-slate-800 text-white">
               <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
-                <i class="fa-solid fa-location-dot"></i> Parkview City Studio
+                <i class="fa-solid fa-location-dot"></i> DHA Lahore Studio
               </div>
               <div class="text-sm font-semibold">Lahore, Punjab, Pakistan</div>
             </div>
@@ -112,7 +112,7 @@
             <i class="fa-solid fa-ruler-combined"></i>
           </div>
           <h3 class="text-lg font-bold text-slate-900 dark:text-white">Precision Planning</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Exact dimensional accuracy matching society bylaws for Parkview City and DHA.</p>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Exact dimensional accuracy matching society bylaws for DHA and Bahria Town.</p>
         </div>
         <div class="p-6 rounded-3xl glass-card border border-slate-200 dark:border-slate-800 space-y-3">
           <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl">
@@ -132,8 +132,8 @@
           <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl">
             <i class="fa-solid fa-award"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Zameen.com Trust</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Verified partnership ensuring transparent pricing and guaranteed delivery timelines.</p>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Guaranteed Trust</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Registered architects ensuring transparent pricing and guaranteed delivery timelines.</p>
         </div>
       </div>
     </section>
@@ -141,7 +141,7 @@
     <!-- Studio Contact CTA -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="p-8 sm:p-12 rounded-3xl bg-slate-900 text-white text-center space-y-6 border border-slate-800">
-        <h3 class="text-2xl sm:text-4xl font-extrabold">Visit Our Studio in Parkview City</h3>
+        <h3 class="text-2xl sm:text-4xl font-extrabold">Visit Our Studio in Lahore</h3>
         <p class="text-slate-400 max-w-xl mx-auto text-sm">
           Discuss your 5 Marla, 10 Marla, or 1 Kanal plot floor plans over tea with our chief architects.
         </p>

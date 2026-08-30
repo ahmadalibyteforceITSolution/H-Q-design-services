@@ -19,7 +19,7 @@
           <div class="flex flex-wrap items-center gap-2">
             <span class="px-3 py-1 rounded-full bg-[#088C7E] text-white text-xs font-black uppercase tracking-wider flex items-center gap-1.5 shadow">
               <i class="fa-solid fa-circle-check text-amber-300"></i>
-              <span>{{ property.tag || 'Zameen Verified' }}</span>
+              <span>{{ property.tag || 'Verified Listing' }}</span>
             </span>
             <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-[#088C7E] border border-[#088C7E]/30 text-xs font-bold uppercase">
               {{ property.purpose }}
@@ -72,7 +72,7 @@
           </div>
         </div>
 
-        <!-- Key Metrics Strip (Zameen Style) -->
+        <!-- Key Metrics Strip -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 text-center">
           <div class="space-y-1">
             <span class="text-[11px] text-slate-500 dark:text-slate-400 font-bold uppercase block">Area Size</span>
@@ -133,7 +133,7 @@
           </div>
         </div>
 
-        <!-- Society & Utility Amenities (Zameen Style) -->
+        <!-- Society & Utility Amenities -->
         <div v-if="property.amenities && property.amenities.length" class="space-y-3">
           <h3 class="text-sm font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
             <i class="fa-solid fa-bolt-lightning text-amber-500"></i>

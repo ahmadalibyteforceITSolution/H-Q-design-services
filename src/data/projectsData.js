@@ -62,9 +62,9 @@ export const projectsData = [
   },
   {
     id: 'PRJ-103',
-    title: 'Zameen Opal - Modern Residential Living',
-    slug: 'zameen-opal-modern-residential-living-lahore',
-    developer: 'Zameen Developments & Partner Architects',
+    title: 'Opal Residency - Modern Residential Living',
+    slug: 'opal-residency-modern-residential-living-lahore',
+    developer: 'H&Q Consortium Developments',
     location: 'Land Breeze Housing Society, Raiwind Road, Lahore',
     city: 'Lahore',
     society: 'Raiwind Road',
@@ -77,7 +77,7 @@ export const projectsData = [
     downPayment: '25% Booking',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
     bannerImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=85',
-    overview: 'Zameen Opal is a premier apartment complex offering contemporary lifestyle amenities on Raiwind Road, a short drive from Lahore Ring Road and Shaukat Khanum Hospital.',
+    overview: 'Opal Residency is a premier apartment complex offering contemporary lifestyle amenities on Raiwind Road, a short drive from Lahore Ring Road and Shaukat Khanum Hospital.',
     offerings: [
       { size: 'Studio Apartment (450 sqft)', price: 'PKR 95 Lacs', downPayment: 'PKR 23.75 Lacs', monthly: 'PKR 145,000' },
       { size: '1 Bed Modern Apartment (650 sqft)', price: 'PKR 1.40 Crore', downPayment: 'PKR 35 Lacs', monthly: 'PKR 215,000' },

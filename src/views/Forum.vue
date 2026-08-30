@@ -13,7 +13,7 @@
 
         <div class="max-w-3xl space-y-2">
           <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
-            Real Estate & <span class="text-gradient-zameen">Architecture Q&A</span> Forum
+            Real Estate & <span class="text-gradient-hq">Architecture Q&A</span> Forum
           </h1>
           <p class="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
             Ask questions about plot prices, construction material rates, LDA/DHA bylaws, and architectural layouts. Answered by certified engineers and fellow investors.

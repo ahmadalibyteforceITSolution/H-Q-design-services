@@ -7,7 +7,7 @@ const translations = {
     // Header
     properties: 'PROPERTIES',
     propertyBlocks: 'PROPERTY BLOCKS',
-    parkviewGuides: 'PARKVIEW GUIDES',
+    societyGuides: 'SOCIETY GUIDES',
     blog: 'BLOG',
     maps: 'MAPS',
     tools: 'TOOLS',
@@ -22,10 +22,10 @@ const translations = {
     getFreeQuote: 'Get Free Quote',
 
     // Hero
-    officialZameenPartner: 'OFFICIAL ZAMEEN.COM PARTNER',
-    parkviewStudioLahore: 'PARKVIEW CITY STUDIO, LAHORE',
+    officialPartner: 'TOP DESIGN ARCHITECTS',
+    studioLahore: 'LAHORE STUDIO, PAKISTAN',
     heroTitle: 'Search Architecture & Design Solutions in Pakistan',
-    heroSubtitle: 'Find 5 Marla, 10 Marla, 1 Kanal Floor Plans, 3D Elevation Renders & Luxury Interior Styling in Parkview City, DHA & Gulberg, Lahore.',
+    heroSubtitle: 'Find 5 Marla, 10 Marla, 1 Kanal Floor Plans, 3D Elevation Renders & Luxury Interior Styling in DHA, Gulberg & Bahria Town, Lahore.',
     findDesign: 'FIND DESIGN',
     citySociety: 'City / Society',
     designType: 'Design Type',
@@ -35,15 +35,15 @@ const translations = {
     // Footer
     popularSearches: 'Popular Searches',
     areaGuides: 'Cities & Area Guides',
-    zameenAppUpdates: 'Zameen App & Updates',
-    copyright: '© 2026 H&Q Design Services. Affiliated with Zameen.com. All rights reserved.'
+    appUpdates: 'App & Updates',
+    copyright: '© 2026 H&Q Design Services. All rights reserved.'
   },
 
   UR: {
     // Header
     properties: 'پراپرٹیز',
     propertyBlocks: 'پراپرٹی بلاکس',
-    parkviewGuides: 'پارک ویو گائیڈز',
+    societyGuides: 'سوسائٹی گائیڈز',
     blog: 'بلاگ',
     maps: 'نقشے',
     tools: 'ٹولز',
@@ -58,10 +58,10 @@ const translations = {
     getFreeQuote: 'مفت کوٹ حاصل کریں',
 
     // Hero
-    officialZameenPartner: 'زمین ڈاٹ کام کا آفیشل پارٹنر',
-    parkviewStudioLahore: 'پارک ویو سٹی اسٹوڈیو، لاہور',
+    officialPartner: 'معروف آرکیٹیکچر اسٹوڈیو',
+    studioLahore: 'لاہور اسٹوڈیو، پاکستان',
     heroTitle: 'پاکستان میں آرکیٹیکچر اور ڈیزائن کا حل تلاش کریں',
-    heroSubtitle: 'پارک ویو سٹی، ڈی ایچ اے اور گلبرگ لاہور میں 5 مرلہ، 10 مرلہ، 1 کنال فلور پلانز اور 3D نقشے حاصل کریں۔',
+    heroSubtitle: 'ڈی ایچ اے، بحریہ ٹاؤن اور گلبرگ لاہور میں 5 مرلہ، 10 مرلہ، 1 کنال فلور پلانز اور 3D نقشے حاصل کریں۔',
     findDesign: 'ڈیزائن تلاش کریں',
     citySociety: 'شہر / سوسائٹی',
     designType: 'ڈیزائن کی قسم',
@@ -70,16 +70,16 @@ const translations = {
 
     // Footer
     popularSearches: 'مقبول تلاش',
-    areaGuides: 'شہر اور ایریا گائیڈز',
-    zameenAppUpdates: 'زمین ایپ اور اپ ڈیٹس',
-    copyright: '© 2026 H&Q ڈیزائن سروسز۔ زمین ڈاٹ کام سے الحاق شدہ۔ جملہ حقوق محفوظ ہیں۔'
+    areaGuides: 'شهر اور ایریا گائیڈز',
+    appUpdates: 'ایپ اور اپ ڈیٹس',
+    copyright: '© 2026 H&Q ڈیزائن سروسز۔ جملہ حقوق محفوظ ہیں۔'
   },
 
   AR: {
     // Header
     properties: 'العقارات',
     propertyBlocks: 'المجمعات العقارية',
-    parkviewGuides: 'دليل بارك فيو',
+    societyGuides: 'دليل المجتمعات السكنية',
     blog: 'المدونة',
     maps: 'الخرائط',
     tools: 'الأدوات',
@@ -94,8 +94,8 @@ const translations = {
     getFreeQuote: 'احصل على عرض سعر مجاني',
 
     // Hero
-    officialZameenPartner: 'الشريك الرسمي لـ ZAMEEN.COM',
-    parkviewStudioLahore: 'استوديو بارك فيو سيتي، لاهور',
+    officialPartner: 'استوديو التصميم الرائد',
+    studioLahore: 'استوديو لاهور، باكستان',
     heroTitle: 'ابحث عن حلول الهندسة المعمارية والتصميم في باكستان',
     heroSubtitle: 'احصل على مخططات الطوابق والتصاميم ثلاثية الأبعاد 3D لمساحات 5 مرلة، 10 مرلة، و 1 کانال في لاهور.',
     findDesign: 'بحث عن تصميم',
@@ -107,13 +107,13 @@ const translations = {
     // Footer
     popularSearches: 'الأبحاث الشائعة',
     areaGuides: 'دليل المدن والمناطق',
-    zameenAppUpdates: 'تطبيق Zameen والتحديثات',
-    copyright: '© 2026 H&Q للخدمات الهندسية. الشريك الرسمي لـ Zameen.com. جميع الحقوق محفوظة.'
+    appUpdates: 'التطبيق والتحديثات',
+    copyright: '© 2026 H&Q للخدمات الهندسية. جميع الحقوق محفوظة.'
   }
 }
 
 export function useI18n() {
-  const setLanguage = (lang) => {
+  const setLanguage = (lang, isInitial = false) => {
     currentLang.value = lang
     localStorage.setItem('hq-lang', lang)
 
@@ -124,11 +124,34 @@ export function useI18n() {
       document.documentElement.setAttribute('dir', 'ltr')
       document.documentElement.setAttribute('lang', 'en')
     }
+
+    if (!isInitial) {
+      try {
+        const codeMap = {
+          'EN': 'en',
+          'UR': 'ur',
+          'AR': 'ar'
+        }
+        const targetCode = codeMap[lang] || 'en'
+        document.cookie = `googtrans=/en/${targetCode}; path=/; domain=${window.location.hostname}`
+        document.cookie = `googtrans=/en/${targetCode}; path=/`
+        
+        const selectEl = document.querySelector('.goog-te-combo')
+        if (selectEl) {
+          selectEl.value = targetCode
+          selectEl.dispatchEvent(new Event('change'))
+        } else {
+          window.location.reload()
+        }
+      } catch (e) {
+        console.error('Google Translate trigger error:', e)
+      }
+    }
   }
 
   // Initialize on load
   const initI18n = () => {
-    setLanguage(currentLang.value)
+    setLanguage(currentLang.value, true)
   }
 
   const t = computed(() => translations[currentLang.value] || translations.EN)

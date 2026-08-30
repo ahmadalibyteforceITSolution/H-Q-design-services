@@ -4,7 +4,7 @@
     
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
-      <!-- Top 5-Column Zameen Footer Grid -->
+      <!-- Top 5-Column Footer Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
         
         <!-- Brand Info with Official Image Logo -->
@@ -22,7 +22,7 @@
           </router-link>
 
           <p class="text-xs leading-relaxed text-slate-400 max-w-sm">
-            Pakistan's Premier Architecture & Interior Design Studio. Official partner affiliated with <strong class="text-white">Zameen.com</strong>. Transforming spaces into luxury homes, offices, and commercial landmarks across Parkview City, DHA, and Gulberg Lahore.
+            Pakistan's Premier Architecture & Interior Design Studio. Transforming spaces into luxury homes, offices, and commercial landmarks across DHA, Gulberg, and Bahria Town Lahore.
           </p>
 
           <!-- Status Indicator -->
@@ -33,7 +33,7 @@
             </span>
             <span class="text-slate-300 font-mono text-[11px] flex items-center gap-1.5">
               <i class="fa-solid fa-handshake text-[#088C7E] text-xs"></i>
-              Official Zameen Partner · Parkview City Studio Lahore
+              Licensed PEC Architects · Lahore, Pakistan
             </span>
           </div>
 
@@ -41,7 +41,7 @@
           <div class="text-xs text-slate-300 space-y-2 pt-2">
             <p class="flex items-center gap-2">
               <i class="fa-solid fa-location-dot text-[#088C7E] text-xs"></i>
-              <span>Parkview City, Lahore, Punjab, Pakistan</span>
+              <span>DHA Lahore, Punjab, Pakistan</span>
             </p>
             <p class="flex items-center gap-2">
               <i class="fa-solid fa-phone text-[#088C7E] text-xs"></i>
@@ -68,7 +68,7 @@
           <h4 class="text-xs font-bold uppercase tracking-wider text-white">Properties & Portals</h4>
           <ul class="space-y-2 text-xs">
             <li><router-link to="/properties" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-house text-[10px] text-[#088C7E]"></i> Homes for Sale in Lahore</router-link></li>
-            <li><router-link to="/properties" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-map-location-dot text-[10px] text-[#088C7E]"></i> Plots in Parkview City</router-link></li>
+            <li><router-link to="/properties" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-map-location-dot text-[10px] text-[#088C7E]"></i> Plots in DHA Lahore</router-link></li>
             <li><router-link to="/projects" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-city text-[10px] text-[#088C7E]"></i> New Housing Projects 2026</router-link></li>
             <li><router-link to="/properties" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-building text-[10px] text-[#088C7E]"></i> Commercial Plazas Gulberg</router-link></li>
             <li><router-link to="/agents" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-users-gear text-[10px] text-[#088C7E]"></i> Certified Agents & Architects</router-link></li>
@@ -77,7 +77,7 @@
           </ul>
         </div>
 
-        <!-- Zameen Tools & Area Guides (Internal Links) -->
+        <!-- Tools & Area Guides (Internal Links) -->
         <div class="space-y-4">
           <h4 class="text-xs font-bold uppercase tracking-wider text-white">Tools & Area Guides</h4>
           <ul class="space-y-2 text-xs">
@@ -85,14 +85,14 @@
             <li><router-link to="/tools" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-map text-[10px] text-[#088C7E]"></i> Plot Finder & Master Maps</router-link></li>
             <li><router-link to="/tools" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-ruler-combined text-[10px] text-[#088C7E]"></i> Area Unit Converter</router-link></li>
             <li><router-link to="/tools" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-landmark text-[10px] text-[#088C7E]"></i> Mortgage EMI Calculator</router-link></li>
-            <li><router-link to="/area-guides" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-[10px] text-amber-500"></i> Parkview City Guide</router-link></li>
+            <li><router-link to="/area-guides" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-[10px] text-amber-500"></i> Lake City Lahore Guide</router-link></li>
             <li><router-link to="/trends" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-arrow-trend-up text-[10px] text-emerald-400"></i> Price Index & Trends</router-link></li>
           </ul>
         </div>
 
         <!-- Newsletter & Mobile Apps -->
         <div class="space-y-4">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Zameen App & Alerts</h4>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Newsletter & Alerts</h4>
           <p class="text-xs text-slate-400">Get instant plot price alerts, 3D design releases, and verified listings.</p>
           
           <form @submit.prevent="subscribe" class="space-y-2">
@@ -188,15 +188,6 @@
             Designer Summer Wash & Wear & Cotton Suits
           </a>
           <span>·</span>
-          <a 
-            href="https://www.zameen.com/" 
-            target="_blank" 
-            rel="noopener"
-            class="hover:text-white transition-colors"
-          >
-            Zameen.com Real Estate Portal
-          </a>
-          <span>·</span>
           <router-link 
             to="/partners" 
             class="text-[#088C7E] hover:underline font-bold transition-colors"
@@ -214,7 +205,7 @@
           <span>·</span>
           <router-link to="/tools" class="hover:text-[#088C7E] transition-colors">House Construction Cost in Pakistan 2026</router-link>
           <span>·</span>
-          <router-link to="/projects" class="hover:text-[#088C7E] transition-colors">Park View City Installment Plans</router-link>
+          <router-link to="/projects" class="hover:text-[#088C7E] transition-colors">DHA Lahore Installment Plans</router-link>
           <span>·</span>
           <router-link to="/properties" class="hover:text-[#088C7E] transition-colors">5 Marla House Design & Elevation</router-link>
           <span>·</span>
@@ -231,9 +222,9 @@
       <!-- Bottom Bar -->
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
         <div class="flex items-center gap-6">
-          <span>© 2026 H&amp;Q Design Services · Official Zameen.com Partner. All rights reserved.</span>
+          <span>© 2026 H&amp;Q Design Services. All rights reserved.</span>
           <span class="hidden sm:inline text-slate-700">|</span>
-          <span class="hover:text-slate-300">Parkview City Studio, Lahore</span>
+          <span class="hover:text-slate-300">DHA Lahore Studio, Lahore</span>
         </div>
 
         <!-- Social Icons -->

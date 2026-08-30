@@ -1,32 +1,32 @@
 export const areaGuidesData = [
   {
     id: 'AG-101',
-    name: 'Park View City Lahore',
-    slug: 'park-view-city-lahore-area-guide',
+    name: 'Lake City Lahore',
+    slug: 'lake-city-lahore-area-guide',
     city: 'Lahore',
-    tagline: 'Premier LDA-Approved Housing & Architectural Hub in Lahore',
+    tagline: 'Premium Gated Community with Golf Course & Modern Infrastructure',
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
-    lifestyleScore: 9.6,
-    avgPrice5Marla: 'PKR 85 Lacs - 1.85 Crore',
-    avgPrice10Marla: 'PKR 1.60 Crore - 3.20 Crore',
-    avgPrice1Kanal: 'PKR 2.80 Crore - 6.50 Crore',
-    overview: 'Park View City Lahore by Vision Group is one of the most prestigious, fast-developing housing societies situated directly on Multan Road near Thokar Niaz Baig and DHA EME. Designed with scenic botanical gardens, underground infrastructure, 200-ft main boulevards, and premier educational institutions.',
-    sectors: ['Overseas Block', 'Golf Estate', 'Crystal Block', 'Diamond Block', 'Executive Block', 'Block J & K'],
+    lifestyleScore: 9.5,
+    avgPrice5Marla: 'PKR 90 Lacs - 1.95 Crore',
+    avgPrice10Marla: 'PKR 1.80 Crore - 3.40 Crore',
+    avgPrice1Kanal: 'PKR 3.0 Crore - 6.80 Crore',
+    overview: 'Lake City Lahore is one of the most prestigious, fast-developing housing societies situated directly on Raiwind Road. Designed with scenic lakes, an 18-hole championship golf course, underground utilities, and premier shopping malls.',
+    sectors: ['Golf Estate', 'M-1 to M-8 Blocks', 'Lake City Roof Gardens', 'Sector M-3A'],
     amenities: [
-      { name: 'National School & University Campus', rating: 9.8, icon: 'fa-solid fa-graduation-cap' },
-      { name: 'Park View Hospital & Trauma Center', rating: 9.4, icon: 'fa-solid fa-hospital' },
-      { name: 'The Walk Commercial Mall & Cineplex', rating: 9.6, icon: 'fa-solid fa-film' },
-      { name: 'Central Grand Mosque', rating: 9.9, icon: 'fa-solid fa-mosque' },
+      { name: 'Lake City Golf & Country Club', rating: 9.8, icon: 'fa-solid fa-golf-ball-tee' },
+      { name: "Froebel's International School", rating: 9.5, icon: 'fa-solid fa-graduation-cap' },
+      { name: 'Lake City Mall & Cinepax', rating: 9.4, icon: 'fa-solid fa-film' },
+      { name: 'Central Mosque Lake City', rating: 9.8, icon: 'fa-solid fa-mosque' },
       { name: 'Gated 24/7 Monitored Security', rating: 9.7, icon: 'fa-solid fa-shield-halved' },
-      { name: 'Parks, Zoos & Dancing Fountain', rating: 9.5, icon: 'fa-solid fa-tree' }
+      { name: 'Community Parks & Lakes', rating: 9.5, icon: 'fa-solid fa-tree' }
     ],
     commuteTimes: [
-      { to: 'Lahore Ring Road (SL-3)', time: '5 Mins' },
-      { to: 'Thokar Niaz Baig & Motorway M2', time: '8 Mins' },
-      { to: 'Allama Iqbal International Airport', time: '28 Mins' },
+      { to: 'Lahore Ring Road Interchange', time: '1 Min' },
+      { to: 'Shaukat Khanum Hospital', time: '10 Mins' },
+      { to: 'Allama Iqbal International Airport', time: '25 Mins' },
       { to: 'Gulberg III & Main Boulevard', time: '20 Mins' }
     ],
-    bylawsSummary: 'LDA building bylaws compliant. 5 Marla permissible covered area: 1,800-2,100 sqft (Ground + First + Mumty). Height allowance: 38 feet. Compulsory front open space: 5 feet.'
+    bylawsSummary: 'LDA and Lake City building bylaws compliant. 5 Marla permissible covered area: 1,800-2,100 sqft (Ground + First + Mumty). Height allowance: 38 feet. Compulsory front open space: 5 feet.'
   },
   {
     id: 'AG-102',

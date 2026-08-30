@@ -263,12 +263,12 @@ const services = [
 ]
 
 const plotSizes = ['5 Marla', '10 Marla', '1 Kanal', '2+ Kanal / Commercial']
-const locationOptions = ['Parkview City', 'DHA Lahore', 'Gulberg', 'Bahria Town', 'Other Lahore', 'Saudi Arabia / Overseas']
+const locationOptions = ['Lake City', 'DHA Lahore', 'Gulberg', 'Bahria Town', 'Other Lahore', 'Saudi Arabia / Overseas']
 
 const form = reactive({
   service: 'Architecture Design',
   plotSize: '10 Marla',
-  location: 'Parkview City',
+  location: 'DHA Lahore',
   name: '',
   phone: '',
   email: '',

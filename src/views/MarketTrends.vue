@@ -13,7 +13,7 @@
 
         <div class="max-w-3xl space-y-2">
           <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
-            Real Estate <span class="text-gradient-zameen">Price Index & Market</span> Trends
+            Real Estate <span class="text-gradient-hq">Price Index & Market</span> Trends
           </h1>
           <p class="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
             Track historical property price growth (2021-2026), demand scores, and rental yields across Lahore, Islamabad, and Karachi with verified architectural insights.
@@ -28,7 +28,7 @@
           </div>
           <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1">
             <span class="text-[10px] uppercase font-bold text-slate-400">Top Demand Sector</span>
-            <div class="text-base font-extrabold text-white truncate">Parkview City & DHA</div>
+            <div class="text-base font-extrabold text-white truncate">DHA & Bahria Town</div>
           </div>
           <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1">
             <span class="text-[10px] uppercase font-bold text-slate-400">Average Construction Cost</span>

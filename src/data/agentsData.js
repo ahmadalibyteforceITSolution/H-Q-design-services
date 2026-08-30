@@ -2,7 +2,7 @@ export const agentsData = [
   {
     id: 'AGT-101',
     name: 'Engr. Asad Ali',
-    company: 'H&Q Design Services (Official Partner)',
+    company: 'H&Q Design Services',
     role: 'Principal Architectural Engineer & Studio Director',
     experience: '15+ Years',
     specialty: '3D Front Elevations, Spanish & Modern Villa Architecture, DHA/LDA Bylaws Approvals',
@@ -10,13 +10,13 @@ export const agentsData = [
     reviewCount: 148,
     activeListings: 24,
     completedProjects: 520,
-    location: 'Parkview City Studio, Lahore',
+    location: 'DHA Lahore Studio, Lahore',
     city: 'Lahore',
     phone: '0341-6887454',
     whatsapp: '966507143124',
     email: 'asadali28997@gmail.com',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80',
-    verifiedBadge: 'Zameen Titanium Partner',
+    verifiedBadge: 'Senior PEC Consultant',
     badges: ['Licensed PEC Engineer', 'LDA Registered Consultant', 'DHA Approved Architect']
   },
   {
@@ -42,7 +42,7 @@ export const agentsData = [
   {
     id: 'AGT-103',
     name: 'Malik Tariq Mehmood',
-    company: 'Park View Real Estate & Advisory',
+    company: 'Lahore Real Estate & Advisory',
     role: 'Senior Real Estate Consultant & Land Valuer',
     experience: '18+ Years',
     specialty: 'Overseas Block & Golf Estate Plot Acquisitions, Fast Registry & Transfers',
@@ -50,14 +50,14 @@ export const agentsData = [
     reviewCount: 110,
     activeListings: 32,
     completedProjects: 410,
-    location: 'Parkview City Commercial Downtown, Lahore',
+    location: 'DHA Phase 6 Commercial, Lahore',
     city: 'Lahore',
     phone: '0341-6887454',
     whatsapp: '966507143124',
     email: 'asadali28997@gmail.com',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-    verifiedBadge: 'Zameen Platinum Broker',
-    badges: ['Park View City Authorized', 'Title Verification Expert']
+    verifiedBadge: 'Platinum Real Estate Broker',
+    badges: ['DHA Lahore Authorized', 'Title Verification Expert']
   },
   {
     id: 'AGT-104',

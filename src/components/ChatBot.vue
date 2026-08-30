@@ -18,7 +18,7 @@
                 <i class="fa-solid fa-robot text-emerald-400 text-xs"></i>
                 H&Q AI Design Advisor
               </h4>
-              <p class="text-[10px] text-slate-400">Parkview City Studio · Zameen.com Partner</p>
+              <p class="text-[10px] text-slate-400">Lahore Studio · Certified Architects</p>
             </div>
           </div>
           <button 
@@ -79,7 +79,7 @@
           <input 
             v-model="inputQuery" 
             type="text" 
-            placeholder="Ask about floor plans, 3D renders, Parkview City..."
+            placeholder="Ask about floor plans, 3D renders, DHA Lahore..."
             class="flex-1 px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white text-xs border border-transparent focus:border-emerald-500 focus:outline-none"
           />
           <button 
@@ -119,7 +119,7 @@ const isTyping = ref(false)
 const messageBox = ref(null)
 
 const messages = ref([
-  { sender: 'bot', text: 'Welcome to H&Q Design Services! I am your AI Design Advisor. How can we help transform your home or office space in Parkview City, DHA, or Lahore?' }
+  { sender: 'bot', text: 'Welcome to H&Q Design Services! I am your AI Design Advisor. How can we help transform your home or office space in DHA, Bahria Town, or Lahore?' }
 ])
 
 const promptPills = [
@@ -159,8 +159,8 @@ const sendMessage = () => {
     const lower = q.toLowerCase()
     if (lower.includes('service') || lower.includes('offer')) {
       reply = "H&Q Design Services offers Architectural Floor Planning, Luxury Interior Design, Photorealistic 3D Renders, Space Planning, Custom Furniture, and Full Home Renovation."
-    } else if (lower.includes('office') || lower.includes('location') || lower.includes('parkview')) {
-      reply = "Our flagship studio is located in Parkview City, Lahore. We also serve clients across DHA, Gulberg, Bahria Town, and overseas clients."
+    } else if (lower.includes('office') || lower.includes('location') || lower.includes('studio')) {
+      reply = "Our flagship studio is located in DHA Lahore. We also serve clients across Gulberg, Bahria Town, and overseas clients."
     } else if (lower.includes('cost') || lower.includes('pricing') || lower.includes('10 marla') || lower.includes('3d')) {
       reply = "Architectural drawing and 3D rendering packages depend on plot size (5 Marla, 10 Marla, 1 Kanal). Check out our interactive Design Estimator tool on the homepage!"
     } else if (lower.includes('whatsapp') || lower.includes('call') || lower.includes('phone')) {

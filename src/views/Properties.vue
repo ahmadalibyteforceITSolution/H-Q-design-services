@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-12 pb-16">
     
-    <!-- Top Hero Banner with Zameen Search Engine -->
+    <!-- Top Hero Banner with Search Engine -->
     <section class="bg-gradient-to-r from-emerald-950 via-slate-950 to-slate-900 border-b border-slate-800 text-white py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div class="absolute inset-0 bg-[radial-gradient(#088C7E_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none"></div>
       
@@ -16,7 +16,7 @@
 
         <div class="max-w-3xl space-y-2">
           <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
-            Find Your Dream <span class="text-gradient-zameen">House, Plot & Commercial</span> Property
+            Find Your Dream <span class="text-gradient-hq">House, Plot & Commercial</span> Property
           </h1>
           <p class="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
             Search 100% verified residential villas, commercial plazas, and on-ground plots with approved architectural 3D blueprints across Lahore, Islamabad, and Karachi.
@@ -60,7 +60,7 @@
               <label class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">Housing Society</label>
               <select v-model="selectedSociety" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 text-white border border-slate-700 focus:outline-none focus:border-[#088C7E]">
                 <option value="All">All Societies</option>
-                <option value="Parkview City">Parkview City</option>
+                <option value="Bahria Town">Bahria Town</option>
                 <option value="DHA Lahore">DHA Lahore</option>
                 <option value="Lake City">Lake City</option>
                 <option value="Gulberg Lahore">Gulberg</option>

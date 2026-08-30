@@ -125,7 +125,7 @@
 
       <!-- 7. Studio Location / Google Maps Pin -->
       <a 
-        href="https://maps.google.com/?q=Parkview+City+Lahore" 
+        href="https://maps.google.com/?q=DHA+Phase+6+Lahore" 
         target="_blank" 
         rel="noopener noreferrer"
         aria-label="View Studio Location on Google Maps"
@@ -133,7 +133,7 @@
       >
         <i class="fa-solid fa-location-dot group-hover:scale-110 transition-transform"></i>
         <div class="absolute right-full mr-3 px-3 py-1.5 rounded-xl bg-slate-950 text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl border border-slate-800">
-          Studio Location: Parkview City Lahore
+          Studio Location: DHA Phase 6 Lahore
         </div>
       </a>
 

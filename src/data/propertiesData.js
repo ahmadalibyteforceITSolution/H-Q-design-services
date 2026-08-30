@@ -2,15 +2,15 @@ export const propertiesData = [
   {
     id: 'HQ-PROP-101',
     title: '5 Marla Brand New Ultra-Modern Luxury Villa',
-    slug: '5-marla-brand-new-ultra-modern-luxury-villa-parkview-city',
+    slug: '5-marla-brand-new-ultra-modern-luxury-villa-dha-lahore',
     purpose: 'For Sale',
     type: 'House',
     category: 'Homes',
     price: 18500000,
     priceFormatted: 'PKR 1.85 Crore',
     city: 'Lahore',
-    location: 'Parkview City, Block J, Lahore',
-    society: 'Parkview City',
+    location: 'DHA Phase 9 Town, Block J, Lahore',
+    society: 'DHA Lahore',
     size: '5 Marla',
     sizeSqFt: 1125,
     bedrooms: 3,
@@ -30,7 +30,7 @@ export const propertiesData = [
       'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80'
     ],
     floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
-    description: 'H&Q Design Services architected 5 Marla Spanish-Modern fusion villa situated in the prime Overseas Block of Parkview City Lahore. Built with A+ turnkey grade materials, imported Turkish fittings, Italian kitchen appliances, and complete DHA/LDA municipal bylaw clearance.',
+    description: 'H&Q Design Services architected 5 Marla Spanish-Modern fusion villa situated in the prime block of DHA Lahore. Built with A+ turnkey grade materials, imported Turkish fittings, Italian kitchen appliances, and complete DHA/LDA municipal bylaw clearance.',
     features: [
       '3 Master Bedrooms with En-suite Bathrooms',
       'Designer Drawing & Dining Hall',
@@ -54,7 +54,7 @@ export const propertiesData = [
     agent: {
       name: 'Engr. Asad Ali',
       role: 'Chief Architect & Project Lead',
-      agency: 'H&Q Design Services (Zameen Partner)',
+      agency: 'H&Q Design Services',
       phone: '0341-6887454',
       whatsapp: '966507143124',
       email: 'asadali28997@gmail.com'
@@ -84,7 +84,7 @@ export const propertiesData = [
     isSuperHot: true,
     hasVideoTour: true,
     isDirectFromBuilder: true,
-    tag: 'Zameen Verified Platinum',
+    tag: 'Verified Premium Platinum',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
     gallery: [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
@@ -116,7 +116,7 @@ export const propertiesData = [
     agent: {
       name: 'Engr. Asad Ali',
       role: 'Chief Architect & Project Lead',
-      agency: 'H&Q Design Services (Zameen Partner)',
+      agency: 'H&Q Design Services',
       phone: '0341-6887454',
       whatsapp: '966507143124',
       email: 'asadali28997@gmail.com'
@@ -177,7 +177,7 @@ export const propertiesData = [
     agent: {
       name: 'Engr. Asad Ali',
       role: 'Chief Architect & Project Lead',
-      agency: 'H&Q Design Services (Zameen Partner)',
+      agency: 'H&Q Design Services',
       phone: '0341-6887454',
       whatsapp: '966507143124',
       email: 'asadali28997@gmail.com'
@@ -188,15 +188,15 @@ export const propertiesData = [
   {
     id: 'HQ-PROP-104',
     title: '1 Kanal Corner Residential Plot with Approved Map',
-    slug: '1-kanal-corner-residential-plot-parkview-city-lahore',
+    slug: '1-kanal-corner-residential-plot-dha-lahore-phase-7',
     purpose: 'For Sale',
     type: 'Plot',
     category: 'Plots',
     price: 24500000,
     priceFormatted: 'PKR 2.45 Crore',
     city: 'Lahore',
-    location: 'Parkview City, Overseas Block, Lahore',
-    society: 'Parkview City',
+    location: 'DHA Phase 7, Lahore',
+    society: 'DHA Lahore',
     size: '1 Kanal',
     sizeSqFt: 4500,
     bedrooms: 0,
@@ -214,7 +214,7 @@ export const propertiesData = [
       'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80'
     ],
     floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
-    description: 'Prime 1 Kanal Corner Plot on 80-foot Boulevard in Parkview City Overseas Block. Comes with ready-to-construct H&Q 3D elevation architectural drawings and municipal NOC clearance.',
+    description: 'Prime 1 Kanal Corner Plot on 80-foot Boulevard in DHA Phase 7. Comes with ready-to-construct H&Q 3D elevation architectural drawings and municipal NOC clearance.',
     features: [
       'Corner Plot with Dual 80ft & 50ft Frontage',
       'Direct Park Facing & Green Belt View',
@@ -230,7 +230,7 @@ export const propertiesData = [
     agent: {
       name: 'Engr. Asad Ali',
       role: 'Chief Architect & Project Lead',
-      agency: 'H&Q Design Services (Zameen Partner)',
+      agency: 'H&Q Design Services',
       phone: '0341-6887454',
       whatsapp: '966507143124',
       email: 'asadali28997@gmail.com'
@@ -284,7 +284,7 @@ export const propertiesData = [
     agent: {
       name: 'Engr. Asad Ali',
       role: 'Chief Architect & Project Lead',
-      agency: 'H&Q Design Services (Zameen Partner)',
+      agency: 'H&Q Design Services',
       phone: '0341-6887454',
       whatsapp: '966507143124',
       email: 'asadali28997@gmail.com'
@@ -340,7 +340,7 @@ export const propertiesData = [
     agent: {
       name: 'Engr. Asad Ali',
       role: 'Chief Architect & Project Lead',
-      agency: 'H&Q Design Services (Zameen Partner)',
+      agency: 'H&Q Design Services',
       phone: '0341-6887454',
       whatsapp: '966507143124',
       email: 'asadali28997@gmail.com'
@@ -390,7 +390,7 @@ export const propertiesData = [
     agent: {
       name: 'Engr. Asad Ali',
       role: 'Chief Architect & Project Lead',
-      agency: 'H&Q Design Services (Zameen Partner)',
+      agency: 'H&Q Design Services',
       phone: '0341-6887454',
       whatsapp: '966507143124',
       email: 'asadali28997@gmail.com'
@@ -443,7 +443,7 @@ export const propertiesData = [
     agent: {
       name: 'Engr. Asad Ali',
       role: 'Chief Architect & Project Lead',
-      agency: 'H&Q Design Services (Zameen Partner)',
+      agency: 'H&Q Design Services',
       phone: '0341-6887454',
       whatsapp: '966507143124',
       email: 'asadali28997@gmail.com'
