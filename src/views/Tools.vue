@@ -406,7 +406,10 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 
 const toolsTabs = [
   { id: 'cost-calc', name: 'Construction Cost Calculator', icon: 'fa-solid fa-calculator' },
@@ -416,6 +419,20 @@ const toolsTabs = [
 ]
 
 const activeTool = ref('cost-calc')
+
+const applyQueryTab = () => {
+  if (route.query.tab && toolsTabs.some(t => t.id === route.query.tab)) {
+    activeTool.value = route.query.tab
+  }
+}
+
+onMounted(() => {
+  applyQueryTab()
+})
+
+watch(() => route.query.tab, () => {
+  applyQueryTab()
+})
 
 // 1. Cost Calculator State
 const calcSize = ref('5 Marla')

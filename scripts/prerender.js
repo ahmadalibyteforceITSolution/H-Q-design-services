@@ -96,7 +96,8 @@ const staticPages = [
   { route: 'blog', title: '2,000+ Architectural & Interior Design Guides | H&Q Design Services', desc: 'Pakistan\'s largest architectural library. In-depth guides on floor plans, DHA bylaws, 3D renders, and construction costs.' },
   { route: 'about', title: 'About H&Q Design Services (HANDQ) | Premier Architects Lahore', desc: 'Learn about HANDQ (H&Q Design Services), official partner with Zameen.com based in Parkview City Lahore.' },
   { route: 'partners', title: 'H&Q Partners & Backlinks Network Hub | Best Architects in Lahore', desc: 'Explore official H&Q Design Services partner directory, high-authority domain listings, copy-pasteable SEO backlinks, and link exchange program guidelines.' },
-  { route: 'contact', title: 'Contact H&Q Architectural Studio Lahore | Call 0341-6887454', desc: 'Visit our studio in Parkview City Lahore or connect with our Saudi Arabia desk +966 50 714 3124.' }
+  { route: 'contact', title: 'Contact H&Q Architectural Studio Lahore | Call 0341-6887454', desc: 'Visit our studio in Parkview City Lahore or connect with our Saudi Arabia desk +966 50 714 3124.' },
+  { route: 'keywords-directory', title: 'Trending Architecture & Real Estate Searches | H&Q Studio', desc: 'Explore 1,000+ top search topics across Pakistan covering floor plans, 3D front elevations, interior designs, and construction cost estimates.' }
 ]
 
 staticPages.forEach(p => {

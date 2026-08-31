@@ -277,9 +277,12 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import { propertiesData } from '../data/propertiesData.js'
 import PropertyDetailModal from '../components/PropertyDetailModal.vue'
+
+const route = useRoute()
 
 const selectedPurpose = ref('All')
 const selectedCity = ref('All')
@@ -290,6 +293,22 @@ const onlyVerified = ref(false)
 const sortBy = ref('featured')
 
 const selectedProperty = ref(null)
+
+const applyQueryFilters = () => {
+  selectedPurpose.value = route.query.purpose || 'All'
+  selectedCity.value = route.query.city || 'All'
+  selectedSociety.value = route.query.society || 'All'
+  selectedType.value = route.query.type || 'All'
+  selectedSize.value = route.query.size || 'All'
+}
+
+onMounted(() => {
+  applyQueryFilters()
+})
+
+watch(() => route.query, () => {
+  applyQueryFilters()
+}, { deep: true })
 
 const openDetail = (item) => {
   selectedProperty.value = item

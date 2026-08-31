@@ -15,6 +15,7 @@ import MarketTrends from '../views/MarketTrends.vue'
 import Agents from '../views/Agents.vue'
 import Forum from '../views/Forum.vue'
 import BacklinksHub from '../views/BacklinksHub.vue'
+import KeywordsDirectory from '../views/KeywordsDirectory.vue'
 
 const routes = [
   {
@@ -175,6 +176,16 @@ const routes = [
       title: 'H&Q Partners & Backlinks Network | Professional Design Partners',
       description: 'Official link exchange, high-authority domain directory, and brand entity stacked backlinks for H&Q Design Services Lahore.',
       keywords: 'H&Q backlinks, link exchange Lahore, real estate guest posts, architecture partner links, high authority backlinks Pakistan'
+    }
+  },
+  {
+    path: '/keywords-directory',
+    name: 'KeywordsDirectory',
+    component: KeywordsDirectory,
+    meta: {
+      title: 'Trending Architecture & Real Estate Searches | H&Q Studio',
+      description: 'Explore 1,000+ top search topics across Pakistan covering floor plans, 3D front elevations, interior designs, and construction cost estimates.',
+      keywords: 'trending searches, architecture directory, real estate keywords Lahore, construction cost keywords, 5 Marla house plan tags'
     }
   }
 ]
