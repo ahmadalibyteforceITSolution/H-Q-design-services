@@ -166,13 +166,11 @@
         <div class="flex items-center justify-between h-20 gap-6">
           
           <!-- Official H&Q DESIGN SERVICES Image Logo -->
-          <router-link to="/" class="flex items-center group focus:outline-none shrink-0 py-1">
+          <router-link to="/" class="h-full flex items-center group focus:outline-none shrink-0 py-1">
             <img 
               :src="logoImg" 
               alt="H&Q Design Services Logo" 
-              width="240"
-              height="64"
-              class="h-14 sm:h-16 w-auto object-contain hover:scale-105 transition-transform"
+              class="h-full w-full object-contain hover:scale-105 transition-transform"
             />
           </router-link>
 
@@ -302,7 +300,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from '../composables/useI18n.js'
-import logoImg from '../assets/logo.jpg'
+import logoImg from '../assets/logo.png'
 
 const emit = defineEmits(['open-start-project', 'open-add-property'])
 

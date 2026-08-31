@@ -111,7 +111,7 @@
 
 <script setup>
 import { ref, nextTick } from 'vue'
-import logoImg from '../assets/logo.jpg'
+import logoImg from '../assets/logo.png'
 
 const isOpen = ref(false)
 const inputQuery = ref('')

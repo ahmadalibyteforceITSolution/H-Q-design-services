@@ -241,7 +241,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
-import logoImg from '../assets/logo.jpg'
+import logoImg from '../assets/logo.png'
 
 const props = defineProps({
   isOpen: Boolean

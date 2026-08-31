@@ -11,13 +11,11 @@
         <div class="lg:col-span-2 space-y-5">
           
           <!-- Official H&Q Design Services Image Logo -->
-          <router-link to="/" class="inline-block group">
+          <router-link to="/" class="inline-block group h-24 sm:h-28">
             <img 
               :src="logoImg" 
               alt="H&Q Design Services Logo" 
-              width="280"
-              height="112"
-              class="h-24 sm:h-28 w-auto object-contain hover:scale-105 transition-transform"
+              class="h-full w-full object-contain hover:scale-105 transition-transform"
             />
           </router-link>
 
@@ -256,7 +254,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import logoImg from '../assets/logo.jpg'
+import logoImg from '../assets/logo.png'
 
 defineEmits(['open-start-project'])
 
