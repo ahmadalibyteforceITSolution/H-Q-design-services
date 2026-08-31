@@ -78,13 +78,22 @@
         <!-- Right Side Controls in Top Green Bar -->
         <div class="flex items-center gap-3 shrink-0 ml-auto lg:ml-0">
           
-          <!-- Add Property / Post Requirement CTA Button -->
+          <!-- Add Property CTA Button -->
           <button 
             @click="$emit('open-add-property')"
             class="px-3.5 py-1.5 rounded-lg bg-white text-[#088C7E] hover:bg-slate-100 text-xs font-black tracking-tight shadow transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap"
           >
             <i class="fa-solid fa-plus text-xs"></i>
-            <span>+ Add Property / Project</span>
+            <span>+ Add Property</span>
+          </button>
+
+          <!-- Request Service CTA Button -->
+          <button 
+            @click="$emit('open-start-project')"
+            class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-white text-xs font-black tracking-tight shadow transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap"
+          >
+            <i class="fa-solid fa-pen-ruler text-xs"></i>
+            <span>Request Service</span>
           </button>
 
           <!-- Language Selector Dropdown -->
@@ -136,11 +145,6 @@
           >
             <i v-if="isDark" class="fa-solid fa-sun text-amber-300"></i>
             <i v-else class="fa-solid fa-gear text-white"></i>
-          </button>
-
-          <!-- User Quick Inquiry Modal Icon -->
-          <button @click="$emit('open-start-project')" class="hover:text-amber-300 text-xs p-1" title="Get Instant Quote">
-            <i class="fa-solid fa-user"></i>
           </button>
 
           <!-- Mobile Hamburger Toggle -->
@@ -264,13 +268,23 @@
       </router-link>
 
       <div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-3">
-        <button 
-          @click="openAddPropertyFromMobile"
-          class="w-full py-3 rounded-xl bg-[#088C7E] text-white font-black text-xs uppercase tracking-wider text-center shadow-lg shadow-[#088C7E]/20 flex items-center justify-center gap-2"
-        >
-          <i class="fa-solid fa-plus text-xs"></i>
-          <span>+ Add Property / Post Project</span>
-        </button>
+        <div class="grid grid-cols-2 gap-2">
+          <button 
+            @click="openAddPropertyFromMobile"
+            class="py-3 rounded-xl bg-[#088C7E] text-white font-black text-[10px] uppercase tracking-wider text-center shadow-lg shadow-[#088C7E]/20 flex items-center justify-center gap-1.5"
+          >
+            <i class="fa-solid fa-plus text-xs"></i>
+            <span>+ Add Property</span>
+          </button>
+
+          <button 
+            @click="openRequestServiceFromMobile"
+            class="py-3 rounded-xl bg-amber-500 text-white font-black text-[10px] uppercase tracking-wider text-center shadow-lg shadow-amber-500/20 flex items-center justify-center gap-1.5"
+          >
+            <i class="fa-solid fa-pen-ruler text-xs"></i>
+            <span>Request Service</span>
+          </button>
+        </div>
 
         <div class="flex justify-center items-center gap-4 pt-2 text-xs font-bold">
           <button @click="selectLang('EN')" :class="currentLang === 'EN' ? 'text-[#088C7E]' : 'text-slate-400'">GB English</button>
@@ -352,6 +366,11 @@ const toggleTheme = () => {
 const openAddPropertyFromMobile = () => {
   mobileMenuOpen.value = false
   emit('open-add-property')
+}
+
+const openRequestServiceFromMobile = () => {
+  mobileMenuOpen.value = false
+  emit('open-start-project')
 }
 
 onMounted(() => {

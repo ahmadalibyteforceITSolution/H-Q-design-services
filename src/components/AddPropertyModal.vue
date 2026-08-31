@@ -9,7 +9,7 @@
             <i class="fa-solid fa-cloud-arrow-up"></i>
             <span>Property Management Portal</span>
           </div>
-          <h2 class="text-xl sm:text-2xl font-black">Add Property / Post Project Requirement</h2>
+          <h2 class="text-xl sm:text-2xl font-black">Add Property / List Property</h2>
         </div>
         <button 
           @click="$emit('close')" 
@@ -42,10 +42,10 @@
           <!-- Requirement Type -->
           <div class="space-y-1.5">
             <label class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 block">I Want To</label>
-            <div class="grid grid-cols-3 gap-2">
+            <div class="grid grid-cols-2 gap-2">
               <button 
                 type="button" 
-                v-for="purp in ['Sell Property', 'Rent Out', 'Architectural 3D Design']" 
+                v-for="purp in ['Sell Property', 'Rent Out']" 
                 :key="purp"
                 @click="form.purpose = purp"
                 :class="[
@@ -149,7 +149,7 @@
               class="w-full py-3.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white font-black text-xs uppercase tracking-wider transition-all shadow-lg shadow-[#088C7E]/30 flex items-center justify-center gap-2 cursor-pointer"
             >
               <i class="fa-solid fa-paper-plane"></i>
-              <span>Submit Listing / Design Request</span>
+              <span>Submit Property Listing</span>
             </button>
           </div>
 
@@ -174,7 +174,7 @@ const emit = defineEmits(['close'])
 
 const submitted = ref(false)
 const form = ref({
-  purpose: 'Architectural 3D Design',
+  purpose: 'Sell Property',
   type: 'Residential House / Villa',
   size: '5 Marla (25x45)',
   city: 'Lahore',
@@ -191,7 +191,7 @@ const handleSubmit = () => {
 const resetAndClose = () => {
   submitted.value = false
   form.value = {
-    purpose: 'Architectural 3D Design',
+    purpose: 'Sell Property',
     type: 'Residential House / Villa',
     size: '5 Marla (25x45)',
     city: 'Lahore',

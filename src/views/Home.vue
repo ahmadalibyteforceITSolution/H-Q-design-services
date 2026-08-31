@@ -191,6 +191,96 @@
       <CinematicShowreel />
     </section>
 
+    <!-- OUR CORE DESIGN SERVICES SECTION -->
+    <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="space-y-1">
+          <span class="text-xs font-black uppercase tracking-wider text-[#088C7E]">PEC Registered Architects</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">Our Core Design & Architectural Services</h2>
+        </div>
+        <router-link to="/services" class="text-xs font-bold text-[#088C7E] hover:underline flex items-center gap-1">
+          <span>View All Deliverables</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </router-link>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div 
+          class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#088C7E] transition-all shadow-sm flex flex-col justify-between space-y-4 group"
+        >
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-[#088C7E] flex items-center justify-center text-xl group-hover:bg-[#088C7E] group-hover:text-white transition-colors">
+              <i class="fa-solid fa-compass-drafting"></i>
+            </div>
+            <h3 class="text-base font-extrabold text-slate-900 dark:text-white group-hover:text-[#088C7E] transition-colors">Architectural Planning</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Complete 2D floor plans, sections, elevations, and DHA/Bahria Town approved submissions.</p>
+          </div>
+          <button 
+            @click="$emit('open-start-project')"
+            class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#088C7E] hover:text-white text-slate-800 dark:text-white text-xs font-extrabold transition-all cursor-pointer text-center"
+          >
+            Book Consultation
+          </button>
+        </div>
+
+        <div 
+          class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#088C7E] transition-all shadow-sm flex flex-col justify-between space-y-4 group"
+        >
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl group-hover:bg-amber-500 group-hover:text-white transition-colors">
+              <i class="fa-solid fa-couch"></i>
+            </div>
+            <h3 class="text-base font-extrabold text-slate-900 dark:text-white group-hover:text-[#088C7E] transition-colors">Luxury Interiors</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Bespoke wall paneling, false ceiling patterns, moodboards, and premium marble styling.</p>
+          </div>
+          <button 
+            @click="$emit('open-start-project')"
+            class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#088C7E] hover:text-white text-slate-800 dark:text-white text-xs font-extrabold transition-all cursor-pointer text-center"
+          >
+            Book Consultation
+          </button>
+        </div>
+
+        <div 
+          class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#088C7E] transition-all shadow-sm flex flex-col justify-between space-y-4 group"
+        >
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center text-xl group-hover:bg-cyan-500 group-hover:text-white transition-colors">
+              <i class="fa-solid fa-cube"></i>
+            </div>
+            <h3 class="text-base font-extrabold text-slate-900 dark:text-white group-hover:text-[#088C7E] transition-colors">3D Renders & VR</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Photorealistic 4K elevation rendering and interactive walkthrough animations in Lumion.</p>
+          </div>
+          <button 
+            @click="$emit('open-start-project')"
+            class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#088C7E] hover:text-white text-slate-800 dark:text-white text-xs font-extrabold transition-all cursor-pointer text-center"
+          >
+            Book Consultation
+          </button>
+        </div>
+
+        <div 
+          class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#088C7E] transition-all shadow-sm flex flex-col justify-between space-y-4 group"
+        >
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-500 flex items-center justify-center text-xl group-hover:bg-purple-500 group-hover:text-white transition-colors">
+              <i class="fa-solid fa-hammer"></i>
+            </div>
+            <h3 class="text-base font-extrabold text-slate-900 dark:text-white group-hover:text-[#088C7E] transition-colors">Full Renovation</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Complete home remodeling, facade updates, space optimizations, and turnkey handover.</p>
+          </div>
+          <button 
+            @click="$emit('open-start-project')"
+            class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#088C7E] hover:text-white text-slate-800 dark:text-white text-xs font-extrabold transition-all cursor-pointer text-center"
+          >
+            Book Consultation
+          </button>
+        </div>
+
+      </div>
+    </section>
+
     <!-- CORE TOOLS HUB SHORTCUTS SECTION -->
     <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -616,6 +706,8 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+
+defineEmits(['open-start-project'])
 import { useRouter } from 'vue-router'
 import { propertiesData } from '../data/propertiesData.js'
 import { projectsData } from '../data/projectsData.js'
