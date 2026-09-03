@@ -28,19 +28,21 @@ export default async function handler(req, res) {
     const { name, email, phone, service, location, message } = req.body;
     console.log('Received data:', { name, email, phone, service, location, message });
 
-    if (!name || !email || !message) {
-      console.log('Missing fields');
-      return res.status(400).json({ error: 'Missing required fields' });
+    if (!email || !message) {
+      console.log('Missing fields: email and message are required');
+      return res.status(400).json({ error: 'Missing required fields: email and message' });
     }
+
+    const clientName = name || (phone ? `Website Lead (${phone})` : 'Website Client');
 
     // Save to MongoDB
     console.log('Saving to MongoDB...');
     const contact = await Contact.create({
-      name,
+      name: clientName,
       email,
-      phone,
-      service,
-      location,
+      phone: phone || '',
+      service: service || 'Architectural Design Consultation',
+      location: location || 'Saudi Arabia / Pakistan',
       message
     });
 

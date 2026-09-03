@@ -3,8 +3,8 @@ import mongoose from 'mongoose';
 const ContactSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'Please provide a name.'],
-    maxlength: [60, 'Name cannot be more than 60 characters'],
+    default: 'Website Client',
+    maxlength: [100, 'Name cannot be more than 100 characters'],
   },
   email: {
     type: String,
@@ -13,7 +13,7 @@ const ContactSchema = new mongoose.Schema({
   },
   phone: {
     type: String,
-    maxlength: [20, 'Phone cannot be more than 20 characters'],
+    maxlength: [50, 'Phone cannot be more than 50 characters'],
   },
   service: {
     type: String,

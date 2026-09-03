@@ -2,7 +2,7 @@
   <div class="min-h-screen flex flex-col bg-slate-50 text-slate-900 dark:bg-[#090D16] dark:text-slate-100 transition-colors duration-300 font-sans selection:bg-[#088C7E] selection:text-white">
     <!-- Main Top Navigation -->
     <Navbar 
-      @open-start-project="showModal = true" 
+      @open-start-project="showLeadModal = true" 
       @open-add-property="showAddPropertyModal = true" 
     />
 
@@ -12,7 +12,7 @@
         <transition name="page-fade" mode="out-in">
           <component 
             :is="Component" 
-            @open-start-project="showModal = true" 
+            @open-start-project="showLeadModal = true" 
             @open-add-property="showAddPropertyModal = true" 
           />
         </transition>
@@ -21,7 +21,7 @@
 
     <!-- Main Footer -->
     <Footer 
-      @open-start-project="showModal = true" 
+      @open-start-project="showLeadModal = true" 
       @open-add-property="showAddPropertyModal = true" 
     />
 
@@ -35,7 +35,14 @@
     <AddPropertyModal :isOpen="showAddPropertyModal" @close="showAddPropertyModal = false" />
 
     <!-- Floating Quick Contact & Social Sidebar (All Pages) -->
-    <FloatingSideBar @open-start-project="showModal = true" />
+    <FloatingSideBar @open-start-project="showLeadModal = true" />
+
+    <!-- Global Lead Generation Pop-up Modal (Number, Email, Message -> KSA WhatsApp + Email) -->
+    <LeadPopupModal 
+      :isOpen="showLeadModal" 
+      @close="showLeadModal = false" 
+      @open="showLeadModal = true" 
+    />
 
     <!-- Floating Direct WhatsApp Button to Saudi Arabia Desk (+966 50 714 3124) -->
     <a 
@@ -54,16 +61,40 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import ChatBot from './components/ChatBot.vue'
 import StartProjectModal from './components/StartProjectModal.vue'
 import AddPropertyModal from './components/AddPropertyModal.vue'
 import FloatingSideBar from './components/FloatingSideBar.vue'
+import LeadPopupModal from './components/LeadPopupModal.vue'
 
 const showModal = ref(false)
 const showAddPropertyModal = ref(false)
+const showLeadModal = ref(false)
+
+const route = useRoute()
+let popupTimer = null
+
+const triggerPopup = (delay = 1200) => {
+  if (popupTimer) clearTimeout(popupTimer)
+  popupTimer = setTimeout(() => {
+    // Show pop up form when any page opens
+    showLeadModal.value = true
+  }, delay)
+}
+
+onMounted(() => {
+  // Trigger pop-up on initial page load
+  triggerPopup(1200)
+})
+
+// Trigger when any page opens via router navigation
+watch(() => route?.fullPath, () => {
+  triggerPopup(1000)
+})
 </script>
 
 <style>
