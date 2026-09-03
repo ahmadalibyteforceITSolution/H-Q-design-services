@@ -1,8 +1,10 @@
-import fs from 'fs'
+﻿import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { allBlogs } from '../src/data/blogData.js'
 import { userGscSlugs } from './gsc-urls.js'
+import { homePageData } from './static-home.js'
+import { staticPagesDetailed } from './static-pages-data.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -26,9 +28,9 @@ const escapeXml = (str) => {
     .replace(/'/g, '&#039;')
 }
 
-console.log(`Starting pre-rendering of static pages, ${allBlogs.length} blog articles, and custom GSC target URLs...`)
+console.log('Starting comprehensive pre-rendering for Google AdSense compliance & high-value content...')
 
-// Helper to write html file into target directory
+// Helper to write html file into target directory or root
 const renderPage = (routePath, pageTitle, pageDesc, canonicalUrl, pageImage, pageContentHtml, extraHeadHtml = '') => {
   let html = baseTemplate
 
@@ -75,47 +77,55 @@ const renderPage = (routePath, pageTitle, pageDesc, canonicalUrl, pageImage, pag
   const appContainer = `<div id="app" class="flex-1 flex flex-col min-h-screen">${pageContentHtml}</div>`
   html = html.replace(/<div id="app" class="flex-1 flex flex-col min-h-screen"><\/div>/i, appContainer)
 
-  // Ensure directory exists
-  const targetDir = path.join(distDir, routePath)
-  fs.mkdirSync(targetDir, { recursive: true })
-  fs.writeFileSync(path.join(targetDir, 'index.html'), html, 'utf8')
+  // Write to destination
+  if (!routePath || routePath === '/') {
+    fs.writeFileSync(path.join(distDir, 'index.html'), html, 'utf8')
+  } else {
+    const targetDir = path.join(distDir, routePath)
+    fs.mkdirSync(targetDir, { recursive: true })
+    fs.writeFileSync(path.join(targetDir, 'index.html'), html, 'utf8')
+  }
 }
 
-// 1. Pre-render Static Site Pages
-const staticPages = [
-  { route: 'properties', title: 'Luxury Properties & Plots for Sale in Lahore | H&Q Design Services', desc: 'Browse verified 5 Marla, 10 Marla & 1 Kanal houses, plots, and commercial properties in Parkview City, DHA, and Gulberg Lahore.' },
-  { route: 'tools', title: 'Construction Cost Calculator & Plot Maps 2026 | H&Q Design Services', desc: 'Calculate house construction costs in Pakistan for 2026, convert area units, and explore plot maps for DHA Lahore & Parkview City.' },
-  { route: 'projects', title: 'New Housing Projects & Investment Plans 2026 | H&Q Design Services', desc: 'Discover new residential and commercial housing projects on installments across Lahore, Islamabad, and Karachi.' },
-  { route: 'area-guides', title: 'DHA Lahore & Parkview City Area Guides | H&Q Design Services', desc: 'In-depth society guides, block maps, possession details, and LDA/DHA bylaws for Parkview City, DHA Lahore, and Gulberg.' },
-  { route: 'trends', title: 'Pakistan Property Price Index & Trends 2026 | H&Q Design Services', desc: 'Real-time property market trends, plot price analysis, and construction material rate forecasts in Pakistan.' },
-  { route: 'agents', title: 'Certified Architects & Real Estate Consultants | H&Q Design Services', desc: 'Meet our PCATP registered chief architects and verified property consultants at Parkview City Studio Lahore.' },
-  { route: 'forum', title: 'Real Estate & Architecture Q&A Forum | H&Q Design Services', desc: 'Ask questions about LDA bylaws, DHA submission maps, grey structure costs, and interior design recommendations.' },
-  { route: 'services', title: 'Architectural Design & 3D Render Services | H&Q Design Services', desc: 'Turnkey architectural planning, 4K 3D elevation renders, municipal map approvals, and luxury interior design.' },
-  { route: 'portfolio', title: '3D Elevation & Interior Architecture Portfolio | H&Q Design Services', desc: 'Explore 500+ completed luxury villa elevations, modern interiors, and commercial plaza designs in Lahore.' },
-  { route: 'case-studies', title: 'Architectural Case Studies & Project Blueprints | H&Q Design Services', desc: 'Detailed architectural case studies of 5 Marla, 10 Marla, and 1 Kanal modern & Spanish villas designed by H&Q.' },
-  { route: 'blog', title: '2,000+ Architectural & Interior Design Guides | H&Q Design Services', desc: 'Pakistan\'s largest architectural library. In-depth guides on floor plans, DHA bylaws, 3D renders, and construction costs.' },
-  { route: 'about', title: 'About H&Q Design Services (HANDQ) | Premier Architects Lahore', desc: 'Learn about HANDQ (H&Q Design Services), official partner with Zameen.com based in Parkview City Lahore.' },
-  { route: 'partners', title: 'H&Q Partners & Backlinks Network Hub | Best Architects in Lahore', desc: 'Explore official H&Q Design Services partner directory, high-authority domain listings, copy-pasteable SEO backlinks, and link exchange program guidelines.' },
-  { route: 'contact', title: 'Contact H&Q Architectural Studio Lahore | Call 0341-6887454', desc: 'Visit our studio in Parkview City Lahore or connect with our Saudi Arabia desk +966 50 714 3124.' },
-  { route: 'keywords-directory', title: 'Trending Architecture & Real Estate Searches | H&Q Studio', desc: 'Explore 1,000+ top search topics across Pakistan covering floor plans, 3D front elevations, interior designs, and construction cost estimates.' }
-]
+// 1. Pre-render Root Homepage (dist/index.html) with Rich Semantic HTML
+renderPage('/', homePageData.title, homePageData.desc, 'https://h-q-design-services.vercel.app/', 'https://h-q-design-services.vercel.app/logo.png', homePageData.body)
 
-staticPages.forEach(p => {
+// 2. Pre-render All Static Pages with Substantial Content
+staticPagesDetailed.forEach(p => {
   const canonicalUrl = `https://h-q-design-services.vercel.app/${p.route}`
   const bodyHtml = `
-    <div class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-      <h1 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">${escapeXml(p.title)}</h1>
-      <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">${escapeXml(p.desc)}</p>
-      <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-        <p class="text-xs text-slate-500">Official H&Q Design Services Studio • Parkview City Lahore • Partner with Zameen.com</p>
-        <a href="tel:03416887454" class="inline-block mt-3 px-4 py-2 rounded-xl bg-[#088C7E] text-white text-xs font-bold">Call 0341-6887454</a>
+    <header class="bg-slate-900 text-white border-b border-slate-800 py-4 px-6">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <a href="/" class="text-xl font-extrabold text-[#088C7E]">H&Q Design Services</a>
+        <nav class="flex gap-4 text-xs font-semibold">
+          <a href="/about">About</a>
+          <a href="/services">Services</a>
+          <a href="/portfolio">Portfolio</a>
+          <a href="/tools">Cost Calculator</a>
+          <a href="/properties">Properties</a>
+          <a href="/blog">Guides</a>
+          <a href="/contact">Contact</a>
+        </nav>
       </div>
-    </div>
+    </header>
+    <main class="py-10">
+      ${p.body}
+    </main>
+    <footer class="bg-slate-950 text-slate-400 py-8 px-6 text-xs text-center border-t border-slate-800 space-y-3">
+      <p>© 2026 H&Q Design Services (HANDQ). All rights reserved. DHA Lahore & Parkview City, Lahore, Pakistan.</p>
+      <div class="flex justify-center gap-4 text-slate-300">
+        <a href="/privacy-policy">Privacy Policy</a> ·
+        <a href="/terms-of-service">Terms of Service</a> ·
+        <a href="/disclaimer">Disclaimer</a> ·
+        <a href="/partners">Partners</a> ·
+        <a href="/contact">Contact</a>
+      </div>
+    </footer>
   `
   renderPage(p.route, p.title, p.desc, canonicalUrl, 'https://h-q-design-services.vercel.app/logo.jpg', bodyHtml)
 })
 
-// 2. Pre-render Blog Pages
+// 3. Pre-render Blog Pages
 const renderedSlugs = new Set()
 let renderedBlogCount = 0
 
@@ -166,37 +176,27 @@ const renderSingleBlog = (b, slugOverride = null) => {
     ]
   }
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": `How long does it take to complete architectural drawings for ${b.keyword || b.title}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Standard 2D architectural blueprints and submission drawings take 7 to 10 working days. A complete turnkey package with 4K 3D elevations, structural vetting, and MEP layouts takes approximately 2 to 3 weeks."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `Will H&Q Design Services manage municipal map approval with DHA / LDA?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Our PCATP registered architects handle the full submission documentation, structural stability certificate, and liaison with building control authorities to guarantee NOC clearance."
-        }
-      }
-    ]
-  }
-
   const schemasHtml = `
     <script type="application/ld+json">${JSON.stringify(blogPostingSchema)}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
-    <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>
   `
 
   const bodyHtml = `
-    <div class="py-12 space-y-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="bg-slate-900 text-white border-b border-slate-800 py-4 px-6">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <a href="/" class="text-xl font-extrabold text-[#088C7E]">H&Q Design Services</a>
+        <nav class="flex gap-4 text-xs font-semibold">
+          <a href="/about">About</a>
+          <a href="/services">Services</a>
+          <a href="/portfolio">Portfolio</a>
+          <a href="/tools">Cost Calculator</a>
+          <a href="/blog">Guides</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="py-12 space-y-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-slate-500">
         <a href="/" class="hover:text-[#088C7E]">Home</a>
         <span>/</span>
@@ -205,14 +205,11 @@ const renderSingleBlog = (b, slugOverride = null) => {
         <span class="text-slate-900 dark:text-white font-semibold truncate">${escapeXml(b.title)}</span>
       </nav>
 
-      <div class="space-y-4">
-        <div class="flex flex-wrap items-center gap-2">
-          <span class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-[#088C7E]/10 text-[#088C7E] border border-[#088C7E]/30 uppercase tracking-wider">${escapeXml(b.category)}</span>
-          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">PCATP Verified</span>
-        </div>
+      <div class="space-y-3">
+        <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-[#088C7E]/10 text-[#088C7E] border border-[#088C7E]/30 uppercase tracking-wider">${escapeXml(b.category)}</span>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white leading-tight">${escapeXml(b.title)}</h1>
-        <div class="flex flex-wrap items-center gap-4 text-xs text-slate-500 border-b border-slate-200 dark:border-slate-800 pb-4">
-          <span>By H&Q Chief Architect</span> • <span>${escapeXml(b.date)}</span> • <span>${escapeXml(b.readTime)}</span> • <span>Parkview City Studio, Lahore</span>
+        <div class="text-xs text-slate-500 border-b border-slate-200 dark:border-slate-800 pb-3">
+          By H&Q Chief Architect • PCATP Registered • Parkview City Studio, Lahore
         </div>
       </div>
 
@@ -225,26 +222,36 @@ const renderSingleBlog = (b, slugOverride = null) => {
         ${b.content}
       </article>
 
-      <div class="p-8 rounded-3xl bg-slate-900 text-white space-y-4">
-        <h4 class="font-extrabold text-lg">Planning Construction in Lahore or Pakistan?</h4>
-        <p class="text-xs text-slate-300">Consult directly with H&Q Senior Architects for plot floor plans, 3D renders, and cost estimates.</p>
-        <a href="https://wa.me/966507143124" target="_blank" rel="noopener" class="inline-block px-6 py-3 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase">WhatsApp Consultation (+966 50 714 3124)</a>
+      <div class="p-8 rounded-3xl bg-slate-900 text-white space-y-3">
+        <h4 class="font-extrabold text-lg">Consult With H&Q Senior Architects</h4>
+        <p class="text-xs text-slate-300">Plot consultations, 4K elevation rendering, and municipal map approval in DHA & Bahria Town.</p>
+        <a href="tel:03416887454" class="inline-block px-5 py-2.5 rounded-xl bg-[#088C7E] text-white text-xs font-bold uppercase">Call Studio (0341-6887454)</a>
       </div>
     </div>
+
+    <footer class="bg-slate-950 text-slate-400 py-8 px-6 text-xs text-center border-t border-slate-800 space-y-3">
+      <p>© 2026 H&Q Design Services (HANDQ). All rights reserved. DHA Lahore & Parkview City, Lahore, Pakistan.</p>
+      <div class="flex justify-center gap-4 text-slate-300">
+        <a href="/privacy-policy">Privacy Policy</a> ·
+        <a href="/terms-of-service">Terms of Service</a> ·
+        <a href="/disclaimer">Disclaimer</a> ·
+        <a href="/partners">Partners</a> ·
+        <a href="/contact">Contact</a>
+      </div>
+    </footer>
   `
 
   renderPage(routePath, pageTitle, pageDesc, canonicalUrl, b.image, bodyHtml, schemasHtml)
   renderedBlogCount++
 }
 
-// First render all dataset blogs
+// Render all dataset blogs
 allBlogs.forEach(b => renderSingleBlog(b))
 
-// Next render explicit GSC URLs requested for indexing
+// Render explicit GSC URLs requested for indexing
 let gscCustomCount = 0
 userGscSlugs.forEach(customSlug => {
   if (!renderedSlugs.has(customSlug)) {
-    // Find post by ID match
     const idMatch = customSlug.match(/^article-(\d+)-/i)
     let postToRender = null
     if (idMatch) {
@@ -259,4 +266,4 @@ userGscSlugs.forEach(customSlug => {
   }
 })
 
-console.log(`Successfully pre-rendered ${staticPages.length} static pages, ${allBlogs.length} dataset blogs, and ${gscCustomCount} custom GSC target URLs into dist/!`)
+console.log(`Successfully pre-rendered home page, ${staticPagesDetailed.length} detailed static pages, ${allBlogs.length} dataset blogs, and ${gscCustomCount} custom GSC target URLs into dist/!`)

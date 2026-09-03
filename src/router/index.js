@@ -16,6 +16,9 @@ import Agents from '../views/Agents.vue'
 import Forum from '../views/Forum.vue'
 import BacklinksHub from '../views/BacklinksHub.vue'
 import KeywordsDirectory from '../views/KeywordsDirectory.vue'
+import PrivacyPolicy from '../views/PrivacyPolicy.vue'
+import TermsOfService from '../views/TermsOfService.vue'
+import Disclaimer from '../views/Disclaimer.vue'
 
 const routes = [
   {
@@ -173,9 +176,9 @@ const routes = [
     name: 'Partners',
     component: BacklinksHub,
     meta: {
-      title: 'H&Q Partners & Backlinks Network | Professional Design Partners',
-      description: 'Official link exchange, high-authority domain directory, and brand entity stacked backlinks for H&Q Design Services Lahore.',
-      keywords: 'H&Q backlinks, link exchange Lahore, real estate guest posts, architecture partner links, high authority backlinks Pakistan'
+      title: 'Industry Partners & Architectural Collaborations | H&Q Studio',
+      description: 'Explore H&Q Design Services verified architectural engineering partners, building material manufacturers, sanitary brands, and real estate associates.',
+      keywords: 'architecture partners, engineering consultants Lahore, building material suppliers, construction partners Pakistan'
     }
   },
   {
@@ -183,9 +186,39 @@ const routes = [
     name: 'KeywordsDirectory',
     component: KeywordsDirectory,
     meta: {
-      title: 'Trending Architecture & Real Estate Searches | H&Q Studio',
-      description: 'Explore 1,000+ top search topics across Pakistan covering floor plans, 3D front elevations, interior designs, and construction cost estimates.',
-      keywords: 'trending searches, architecture directory, real estate keywords Lahore, construction cost keywords, 5 Marla house plan tags'
+      title: 'Architecture & Construction Knowledge Glossary | H&Q Studio',
+      description: 'Comprehensive architectural glossary and spatial planning resource covering 3 Marla to 4 Kanal layouts, 3D elevations, structural engineering, and construction costs.',
+      keywords: 'architecture glossary, construction terminology Lahore, house planning standards, building bylaws Pakistan'
+    }
+  },
+  {
+    path: '/privacy-policy',
+    name: 'PrivacyPolicy',
+    component: PrivacyPolicy,
+    meta: {
+      title: 'Privacy Policy | H&Q Design Services Studio Lahore',
+      description: 'Learn how H&Q Design Services collects, uses, and protects visitor data, including Google AdSense, cookies, and privacy rights.',
+      keywords: 'privacy policy, H&Q design services privacy, cookies disclosure, user privacy'
+    }
+  },
+  {
+    path: '/terms-of-service',
+    name: 'TermsOfService',
+    component: TermsOfService,
+    meta: {
+      title: 'Terms of Service | H&Q Design Services Studio Lahore',
+      description: 'Terms and conditions governing architectural planning, 3D elevation modeling, turnkey estimates, and website use for H&Q Design Services.',
+      keywords: 'terms of service, architectural terms, legal conditions H&Q'
+    }
+  },
+  {
+    path: '/disclaimer',
+    name: 'Disclaimer',
+    component: Disclaimer,
+    meta: {
+      title: 'Website & Architectural Disclaimer | H&Q Design Services',
+      description: 'Official disclaimers regarding construction cost calculations, municipal building approvals, and property listings.',
+      keywords: 'disclaimer, construction cost estimate disclaimer, architectural bylaws disclaimer'
     }
   }
 ]

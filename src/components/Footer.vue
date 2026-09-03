@@ -71,7 +71,10 @@
             <li><router-link to="/properties" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-building text-[10px] text-[#088C7E]"></i> Commercial Plazas Gulberg</router-link></li>
             <li><router-link to="/agents" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-users-gear text-[10px] text-[#088C7E]"></i> Certified Agents & Architects</router-link></li>
             <li><router-link to="/forum" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-comments text-[10px] text-[#088C7E]"></i> Real Estate Forum Q&A</router-link></li>
-            <li><router-link to="/partners" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-link text-[10px] text-[#088C7E]"></i> Backlink Exchange & Partner Hub</router-link></li>
+            <li><router-link to="/partners" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-handshake-simple text-[10px] text-[#088C7E]"></i> Industry Collaborations & Partners</router-link></li>
+            <li><router-link to="/privacy-policy" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-[10px] text-[#088C7E]"></i> Privacy Policy</router-link></li>
+            <li><router-link to="/terms-of-service" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-file-contract text-[10px] text-[#088C7E]"></i> Terms of Service</router-link></li>
+            <li><router-link to="/disclaimer" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-circle-exclamation text-[10px] text-[#088C7E]"></i> Website Disclaimer</router-link></li>
           </ul>
         </div>
 
@@ -129,68 +132,46 @@
 
       </div>
 
-      <!-- HIGH AUTHORITY PARTNER NETWORK & FEATURED BACKLINK SPOTLIGHT -->
+      <!-- INDUSTRY PARTNERS & STRATEGIC COLLABORATIONS -->
       <div class="p-6 rounded-3xl bg-gradient-to-r from-slate-900 via-emerald-950/40 to-slate-900 border border-slate-800 text-xs space-y-4">
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div class="space-y-1">
             <span class="px-2.5 py-0.5 rounded-full bg-[#088C7E]/20 text-[#088C7E] text-[10px] font-black uppercase tracking-wider">
-              Featured Partner Network & Textile Sponsor
+              Strategic Industry Collaborations
             </span>
             <h4 class="text-sm font-extrabold text-white">
-              Official Collaboration & Premium Fashion Fabric Partner
+              Official Material, Structural Engineering & Technology Partners
             </h4>
             <p class="text-xs text-slate-400 max-w-2xl">
-              H&Q Design Services partners with leading lifestyle and luxury brands in Pakistan. For premium unstitched fabrics, men's luxury shalwar kameez, wash & wear suits, and designer festive wear, explore our partner brand:
+              H&Q Design Services collaborates with verified structural engineers, top building material manufacturers (Mughal & Amreli Steel, DG Cement), premium sanitary brands (Grohe, Kohler), and smart-home automation providers across Pakistan.
             </p>
           </div>
 
-          <!-- Direct Authority Backlink Card with Targeted Anchor Text -->
-          <a 
-            href="https://ahmad-cloths.vercel.app/" 
-            target="_blank" 
-            rel="noopener"
-            title="Ahmad Cloths - Buy Premium Unstitched Fabrics & Men's Luxury Suits Online"
+          <router-link 
+            to="/partners" 
             class="px-5 py-3 rounded-2xl bg-[#088C7E] hover:bg-[#066D62] text-white font-black text-xs uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2.5 shrink-0"
           >
-            <i class="fa-solid fa-shirt text-sm"></i>
-            <span>Visit Ahmad Cloths Official →</span>
-          </a>
+            <i class="fa-solid fa-handshake text-sm"></i>
+            <span>View Partner Network →</span>
+          </router-link>
         </div>
 
         <div class="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2 border-t border-slate-800/80 text-[11px] text-slate-400">
-          <span class="font-bold text-slate-300">Partner Links:</span>
-          <a 
-            href="https://ahmad-cloths.vercel.app/" 
-            target="_blank" 
-            rel="noopener"
-            class="text-emerald-400 hover:text-emerald-300 hover:underline font-bold transition-colors"
-          >
-            Ahmad Cloths (ahmad-cloths.vercel.app)
-          </a>
+          <span class="font-bold text-slate-300">Industry Directory:</span>
+          <router-link to="/partners" class="text-emerald-400 hover:text-emerald-300 hover:underline font-bold transition-colors">
+            Certified Structural Engineers
+          </router-link>
           <span>·</span>
-          <a 
-            href="https://ahmad-cloths.vercel.app/" 
-            target="_blank" 
-            rel="noopener"
-            class="hover:text-white transition-colors"
-          >
-            Men's Luxury Unstitched Fabric Collection
-          </a>
+          <router-link to="/partners" class="hover:text-white transition-colors">
+            Grade 60 Steel & Ready-Mix Suppliers
+          </router-link>
           <span>·</span>
-          <a 
-            href="https://ahmad-cloths.vercel.app/" 
-            target="_blank" 
-            rel="noopener"
-            class="hover:text-white transition-colors"
-          >
-            Designer Summer Wash & Wear & Cotton Suits
-          </a>
+          <router-link to="/partners" class="hover:text-white transition-colors">
+            Imported Sanitary & Architectural Glass
+          </router-link>
           <span>·</span>
-          <router-link 
-            to="/partners" 
-            class="text-[#088C7E] hover:underline font-bold transition-colors"
-          >
-            H&Q Backlinks Exchange Hub
+          <router-link to="/keywords-directory" class="text-[#088C7E] hover:underline font-bold transition-colors">
+            Architecture Knowledge Glossary
           </router-link>
         </div>
       </div>
@@ -218,11 +199,15 @@
       </div>
 
       <!-- Bottom Bar -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-        <div class="flex items-center gap-6">
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs border-t border-slate-900">
+        <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6 text-slate-400">
           <span>© 2026 H&amp;Q Design Services. All rights reserved.</span>
           <span class="hidden sm:inline text-slate-700">|</span>
-          <span class="hover:text-slate-300">DHA Lahore Studio, Lahore</span>
+          <router-link to="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</router-link>
+          <span class="text-slate-700">·</span>
+          <router-link to="/terms-of-service" class="hover:text-emerald-400 transition-colors">Terms of Service</router-link>
+          <span class="text-slate-700">·</span>
+          <router-link to="/disclaimer" class="hover:text-emerald-400 transition-colors">Disclaimer</router-link>
         </div>
 
         <!-- Social Icons -->
