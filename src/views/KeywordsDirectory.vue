@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="space-y-12 pb-20">
     <!-- Hero Banner for Knowledge Index -->
     <section class="bg-gradient-to-r from-emerald-950 via-slate-950 to-slate-900 border-b border-slate-800 text-white py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -164,7 +164,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { topKeywordsData, allFlatKeywords } from '../data/keywordsData.js'
+import { topKeywordsData, allFlatKeywords, slugifyKeyword } from '../data/keywordsData.js'
 
 const keywordSearchQuery = ref('')
 const selectedCategoryIndex = ref(-1)
@@ -190,22 +190,6 @@ const filteredCategories = computed(() => {
 })
 
 const getKeywordTargetLink = (kw) => {
-  const lower = kw.toLowerCase()
-  if (lower.includes('cost') || lower.includes('calculator') || lower.includes('rate') || lower.includes('price') || lower.includes('material') || lower.includes('bylaw') || lower.includes('estimate')) {
-    return '/tools'
-  }
-  if (lower.includes('elevation') || lower.includes('render') || lower.includes('3d') || lower.includes('portfolio') || lower.includes('villa') || lower.includes('design')) {
-    return '/portfolio'
-  }
-  if (lower.includes('interior') || lower.includes('kitchen') || lower.includes('bedroom') || lower.includes('ceiling') || lower.includes('living')) {
-    return '/services'
-  }
-  if (lower.includes('lakecity') || lower.includes('dha') || lower.includes('bahria') || lower.includes('guide') || lower.includes('city') || lower.includes('sector')) {
-    return '/area-guides'
-  }
-  if (lower.includes('project') || lower.includes('plaza') || lower.includes('commercial') || lower.includes('installment')) {
-    return '/projects'
-  }
-  return '/properties'
+  return `/keywords/${slugifyKeyword(kw)}`
 }
 </script>

@@ -1,10 +1,11 @@
-﻿import fs from 'fs'
+import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { allBlogs } from '../src/data/blogData.js'
+import { allBlogs, getCategoryForKeyword, generateArticleContent, architectureImages } from '../src/data/blogData.js'
 import { userGscSlugs } from './gsc-urls.js'
 import { homePageData } from './static-home.js'
 import { staticPagesDetailed } from './static-pages-data.js'
+import { allFlatKeywords, slugifyKeyword } from '../src/data/keywordsData.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -46,7 +47,9 @@ const renderPage = (routePath, pageTitle, pageDesc, canonicalUrl, pageImage, pag
 
   // Inject Canonical Tag
   const canonicalTag = `<link rel="canonical" href="${escapeXml(canonicalUrl)}">`
-  if (html.includes('<!-- Dynamic Canonical Tag')) {
+  if (html.includes('<link rel="canonical"')) {
+    html = html.replace(/<link rel="canonical" href=".*?"\s*\/?>/i, canonicalTag)
+  } else if (html.includes('<!-- Dynamic Canonical Tag')) {
     html = html.replace(/<!-- Dynamic Canonical Tag.*?-->/i, canonicalTag)
   } else {
     html = html.replace('</head>', `  ${canonicalTag}\n</head>`)
@@ -266,4 +269,123 @@ userGscSlugs.forEach(customSlug => {
   }
 })
 
-console.log(`Successfully pre-rendered home page, ${staticPagesDetailed.length} detailed static pages, ${allBlogs.length} dataset blogs, and ${gscCustomCount} custom GSC target URLs into dist/!`)
+// 4. Pre-render Respective Keyword Pages (dist/keywords/:slug/index.html)
+const renderedKeywordSlugs = new Set()
+let renderedKeywordCount = 0
+
+allFlatKeywords.forEach((kw, i) => {
+  const slug = slugifyKeyword(kw)
+  if (renderedKeywordSlugs.has(slug)) return
+  renderedKeywordSlugs.add(slug)
+
+  const routePath = `keywords/${slug}`
+  const canonicalUrl = `https://h-q-design-services.vercel.app/keywords/${slug}`
+  const pageTitle = `${kw} | 2026 Architectural Plan & Cost | H&Q Studio Lahore`
+  const pageDesc = `Comprehensive 2026 architectural designs, 3D elevations, floor plans, and construction cost estimates for ${kw} in Pakistan. Consult H&Q Senior Architects.`
+  const category = getCategoryForKeyword(kw)
+  const img = architectureImages[i % architectureImages.length]
+  const content = generateArticleContent(kw, category, i + 1)
+
+  const keywordPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemPage",
+    "name": pageTitle,
+    "description": pageDesc,
+    "url": canonicalUrl,
+    "image": img,
+    "provider": {
+      "@type": "Organization",
+      "name": "H&Q Design Services",
+      "telephone": "+923416887454",
+      "url": "https://h-q-design-services.vercel.app/"
+    }
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://h-q-design-services.vercel.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Keywords Directory", "item": "https://h-q-design-services.vercel.app/keywords-directory" },
+      { "@type": "ListItem", "position": 3, "name": kw, "item": canonicalUrl }
+    ]
+  }
+
+  const schemasHtml = `
+    <script type="application/ld+json">${JSON.stringify(keywordPageSchema)}</script>
+    <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
+  `
+
+  const bodyHtml = `
+    <header class="bg-slate-900 text-white border-b border-slate-800 py-4 px-6">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <a href="/" class="text-xl font-extrabold text-[#088C7E]">H&Q Design Services</a>
+        <nav class="flex gap-4 text-xs font-semibold">
+          <a href="/about">About</a>
+          <a href="/services">Services</a>
+          <a href="/portfolio">Portfolio</a>
+          <a href="/tools">Cost Calculator</a>
+          <a href="/keywords-directory">Glossary</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="py-12 space-y-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-slate-500">
+        <a href="/" class="hover:text-[#088C7E]">Home</a>
+        <span>/</span>
+        <a href="/keywords-directory" class="hover:text-[#088C7E]">Glossary</a>
+        <span>/</span>
+        <span class="text-slate-900 dark:text-white font-semibold truncate">${escapeXml(kw)}</span>
+      </nav>
+
+      <div class="space-y-3">
+        <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-[#088C7E]/10 text-[#088C7E] border border-[#088C7E]/30 uppercase tracking-wider">${escapeXml(category)}</span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white leading-tight">${escapeXml(kw)}</h1>
+        <div class="text-xs text-slate-500 border-b border-slate-200 dark:border-slate-800 pb-3">
+          2026 Architectural Guide • PCATP Verified • Turnkey Construction Rates in Pakistan
+        </div>
+      </div>
+
+      <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 h-80 sm:h-96 shadow-lg relative">
+        <img src="${escapeXml(img)}" alt="${escapeXml(kw)}" class="w-full h-full object-cover" />
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs p-5 rounded-2xl bg-slate-100 dark:bg-slate-800">
+        <div><strong>Steel:</strong> Grade 60 Rebar</div>
+        <div><strong>Concrete:</strong> 3,000-4,000 PSI</div>
+        <div><strong>Bylaws:</strong> DHA, LDA & Bahria Compliant</div>
+      </div>
+
+      <article class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 space-y-6 leading-relaxed text-base">
+        ${content}
+      </article>
+
+      <div class="p-8 rounded-3xl bg-slate-900 text-white space-y-3">
+        <h4 class="font-extrabold text-lg">Consult With H&Q Senior Architects for ${escapeXml(kw)}</h4>
+        <p class="text-xs text-slate-300">Plot consultations, 4K elevation rendering, and municipal map approval in DHA & Bahria Town.</p>
+        <div class="flex gap-3 pt-2">
+          <a href="tel:03416887454" class="inline-block px-5 py-2.5 rounded-xl bg-[#088C7E] text-white text-xs font-bold uppercase">Call: 0341-6887454</a>
+          <a href="https://wa.me/923416887454?text=${encodeURIComponent('Inquiry for ' + kw)}" class="inline-block px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase">WhatsApp Consultation</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-slate-950 text-slate-400 py-8 px-6 text-xs text-center border-t border-slate-800 space-y-3">
+      <p>© 2026 H&Q Design Services (HANDQ). All rights reserved. DHA Lahore & Parkview City, Lahore, Pakistan.</p>
+      <div class="flex justify-center gap-4 text-slate-300">
+        <a href="/privacy-policy">Privacy Policy</a> ·
+        <a href="/terms-of-service">Terms of Service</a> ·
+        <a href="/disclaimer">Disclaimer</a> ·
+        <a href="/keywords-directory">Keywords Directory</a> ·
+        <a href="/contact">Contact</a>
+      </div>
+    </footer>
+  `
+
+  renderPage(routePath, pageTitle, pageDesc, canonicalUrl, img, bodyHtml, schemasHtml)
+  renderedKeywordCount++
+})
+
+console.log(`Successfully pre-rendered home page, ${staticPagesDetailed.length} detailed static pages, ${allBlogs.length} dataset blogs, ${renderedKeywordCount} respective keyword pages, and ${gscCustomCount} custom GSC target URLs into dist/!`)

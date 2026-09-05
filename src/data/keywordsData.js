@@ -399,3 +399,57 @@ const generateExpandedKeywords = (baseKeywords) => {
 
 const baseFlatKeywords = topKeywordsData.flatMap(cat => cat.keywords)
 export const allFlatKeywords = generateExpandedKeywords(baseFlatKeywords)
+
+export const slugifyKeyword = (kw) => {
+  if (!kw) return ''
+  return String(kw)
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
+let slugMapCache = null
+
+export const getKeywordBySlug = (slug) => {
+  if (!slug) return null
+  const cleanSlug = String(slug).toLowerCase().trim()
+  
+  if (!slugMapCache) {
+    slugMapCache = new Map()
+    for (const kw of allFlatKeywords) {
+      const s = slugifyKeyword(kw)
+      slugMapCache.set(s, kw)
+    }
+  }
+
+  if (slugMapCache.has(cleanSlug)) {
+    return slugMapCache.get(cleanSlug)
+  }
+
+  // Fallback: If slug has 'article-123-slug' format
+  const articleMatch = cleanSlug.match(/^article-\d+-(.+)$/)
+  if (articleMatch && slugMapCache.has(articleMatch[1])) {
+    return slugMapCache.get(articleMatch[1])
+  }
+
+  // Fallback fuzzy: match case-insensitively with spaces
+  const unslugged = cleanSlug.replace(/-/g, ' ')
+  const matched = allFlatKeywords.find(k => k.toLowerCase() === unslugged)
+  if (matched) return matched
+
+  // Fallback partial match
+  const partial = allFlatKeywords.find(k => cleanSlug.includes(slugifyKeyword(k)) || slugifyKeyword(k).includes(cleanSlug))
+  if (partial) return partial
+
+  return unslugged.charAt(0).toUpperCase() + unslugged.slice(1)
+}
+
+export const getAllKeywordsWithSlugs = () => {
+  return allFlatKeywords.map((kw, idx) => ({
+    id: idx + 1,
+    name: kw,
+    slug: slugifyKeyword(kw)
+  }))
+}

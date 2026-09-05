@@ -2,7 +2,7 @@
 import { topKeywordsData, allFlatKeywords } from './keywordsData.js'
 
 // Curated Architectural, Interior Design & Real Estate Imagery Pool
-const architectureImages = [
+export const architectureImages = [
   'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80', // Luxury Villa Facade
   'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80', // Contemporary Home Exterior
   'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80', // Modern Villa with Pool

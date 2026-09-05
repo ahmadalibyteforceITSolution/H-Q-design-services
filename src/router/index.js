@@ -19,6 +19,7 @@ import KeywordsDirectory from '../views/KeywordsDirectory.vue'
 import PrivacyPolicy from '../views/PrivacyPolicy.vue'
 import TermsOfService from '../views/TermsOfService.vue'
 import Disclaimer from '../views/Disclaimer.vue'
+import KeywordDetail from '../views/KeywordDetail.vue'
 
 const routes = [
   {
@@ -190,6 +191,20 @@ const routes = [
       description: 'Comprehensive architectural glossary and spatial planning resource covering 3 Marla to 4 Kanal layouts, 3D elevations, structural engineering, and construction costs.',
       keywords: 'architecture glossary, construction terminology Lahore, house planning standards, building bylaws Pakistan'
     }
+  },
+  {
+    path: '/keywords/:slug',
+    name: 'KeywordDetail',
+    component: KeywordDetail,
+    meta: {
+      title: 'Architectural Design Guide & Specifications | H&Q Studio',
+      description: 'Comprehensive 2026 architectural design, floor plans, and construction cost estimates for trending topics in Pakistan.',
+      keywords: 'architectural design, 3D elevation Lahore, turnkey construction Pakistan'
+    }
+  },
+  {
+    path: '/keyword/:slug',
+    redirect: to => `/keywords/${to.params.slug}`
   },
   {
     path: '/privacy-policy',

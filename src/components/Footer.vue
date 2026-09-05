@@ -180,21 +180,21 @@
       <div class="pt-4 border-t border-slate-800/80">
         <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Trending Real Estate & Architecture Searches</h4>
         <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-400">
-          <router-link to="/properties" class="hover:text-[#088C7E] transition-colors">Properties for Sale in Lahore</router-link>
+          <router-link to="/keywords/5-marla-house-design" class="hover:text-[#088C7E] transition-colors">5 Marla House Design</router-link>
           <span>·</span>
-          <router-link to="/tools" class="hover:text-[#088C7E] transition-colors">House Construction Cost in Pakistan 2026</router-link>
+          <router-link to="/keywords/10-marla-spanish-villa" class="hover:text-[#088C7E] transition-colors">10 Marla Spanish Villa</router-link>
           <span>·</span>
-          <router-link to="/projects" class="hover:text-[#088C7E] transition-colors">DHA Lahore Installment Plans</router-link>
+          <router-link to="/keywords/1-kanal-house-plan" class="hover:text-[#088C7E] transition-colors">1 Kanal Modern House Plan</router-link>
           <span>·</span>
-          <router-link to="/properties" class="hover:text-[#088C7E] transition-colors">5 Marla House Design & Elevation</router-link>
+          <router-link to="/keywords/house-construction-cost-in-pakistan" class="hover:text-[#088C7E] transition-colors">House Construction Cost Pakistan 2026</router-link>
           <span>·</span>
-          <router-link to="/area-guides" class="hover:text-[#088C7E] transition-colors">DHA Lahore Phase 6 Reviews</router-link>
+          <router-link to="/keywords/interior-designers-in-lahore" class="hover:text-[#088C7E] transition-colors">Interior Designers in Lahore</router-link>
           <span>·</span>
-          <router-link to="/trends" class="hover:text-[#088C7E] transition-colors">Pakistan Property Price Index 2026</router-link>
+          <router-link to="/keywords/architects-in-dha-lahore" class="hover:text-[#088C7E] transition-colors">Architects in DHA Lahore</router-link>
           <span>·</span>
-          <router-link to="/agents" class="hover:text-[#088C7E] transition-colors">Best Architects in Lahore</router-link>
+          <router-link to="/keywords/3d-house-elevation-design" class="hover:text-[#088C7E] transition-colors">3D House Elevation Design</router-link>
           <span>·</span>
-          <router-link to="/forum" class="hover:text-[#088C7E] transition-colors">LDA Building Bylaws Forum</router-link>
+          <router-link to="/keywords/furniture-showrooms-in-dha-lahore" class="hover:text-[#088C7E] transition-colors">Furniture Showrooms in DHA</router-link>
         </div>
       </div>
 

@@ -3,6 +3,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { allBlogs } from '../src/data/blogData.js'
 import { userGscSlugs } from './gsc-urls.js'
+import { allFlatKeywords, slugifyKeyword } from '../src/data/keywordsData.js'
 
 // Setup path equivalents in ES Modules
 const __filename = fileURLToPath(import.meta.url)
@@ -88,8 +89,24 @@ userGscSlugs.forEach(slug => {
   }
 })
 
+// Add dynamic respective keyword pages
+const addedKeywordSlugs = new Set()
+allFlatKeywords.forEach(kw => {
+  const kSlug = slugifyKeyword(kw)
+  if (!addedKeywordSlugs.has(kSlug)) {
+    addedKeywordSlugs.add(kSlug)
+    xml += `  <url>
+    <loc>${baseUrl}/keywords/${kSlug}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+`
+  }
+})
+
 xml += '</urlset>\n'
 
 const outputPath = path.join(__dirname, '../public/sitemap.xml')
 fs.writeFileSync(outputPath, xml, 'utf8')
-console.log(`Successfully generated sitemap with ${staticPages.length + allBlogs.length} URLs in public/sitemap.xml.`)
+console.log(`Successfully generated sitemap with ${staticPages.length + allBlogs.length + addedKeywordSlugs.size} URLs in public/sitemap.xml.`)
