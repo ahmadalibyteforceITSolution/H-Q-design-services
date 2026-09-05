@@ -51,7 +51,7 @@ const today = new Date().toISOString().split('T')[0]
 
 // Add static pages
 staticPages.forEach(p => {
-  const pathPart = p.url ? `/${p.url}` : ''
+  const pathPart = p.url ? `/${p.url}` : '/'
   xml += `  <url>
     <loc>${baseUrl}${pathPart}</loc>
     <lastmod>${today}</lastmod>

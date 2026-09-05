@@ -20,6 +20,7 @@ import PrivacyPolicy from '../views/PrivacyPolicy.vue'
 import TermsOfService from '../views/TermsOfService.vue'
 import Disclaimer from '../views/Disclaimer.vue'
 import KeywordDetail from '../views/KeywordDetail.vue'
+import { getKeywordBySlug, slugifyKeyword } from '../data/keywordsData.js'
 
 const routes = [
   {
@@ -253,7 +254,28 @@ const router = createRouter({
 // Dynamic Canonical Tag & Meta Management Guard for 100% SEO Indexing
 router.afterEach((to) => {
   const baseUrl = 'https://h-q-design-services.vercel.app'
-  const canonicalUrl = `${baseUrl}${to.path}`
+  const cleanPath = to.path === '/' ? '/' : to.path.replace(/\/+$/, '')
+  let canonicalUrl = `${baseUrl}${cleanPath}`
+
+  // Ensure Meta Robots tag is index, follow
+  let robotsMeta = document.querySelector('meta[name="robots"]')
+  if (!robotsMeta) {
+    robotsMeta = document.createElement('meta')
+    robotsMeta.setAttribute('name', 'robots')
+    document.head.appendChild(robotsMeta)
+  }
+  robotsMeta.setAttribute('content', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1')
+
+  // Dynamic Keyword Detail metadata resolution
+  if (to.name === 'KeywordDetail' && to.params.slug) {
+    const kw = getKeywordBySlug(to.params.slug)
+    if (kw) {
+      const slug = slugifyKeyword(kw)
+      to.meta.title = `${kw} | 2026 Architectural Plan & Cost | H&Q Studio Lahore`
+      to.meta.description = `Comprehensive 2026 architectural designs, 3D elevations, floor plans, and construction cost estimates for ${kw} in Pakistan. Consult H&Q Senior Architects.`
+      canonicalUrl = `${baseUrl}/keywords/${slug}`
+    }
+  }
 
   // Update Page Title
   if (to.meta && to.meta.title) {
@@ -263,9 +285,12 @@ router.afterEach((to) => {
   // Update Meta Description
   if (to.meta && to.meta.description) {
     let descMeta = document.querySelector('meta[name="description"]')
-    if (descMeta) {
-      descMeta.setAttribute('content', to.meta.description)
+    if (!descMeta) {
+      descMeta = document.createElement('meta')
+      descMeta.setAttribute('name', 'description')
+      document.head.appendChild(descMeta)
     }
+    descMeta.setAttribute('content', to.meta.description)
   }
 
   // Update Meta Keywords
@@ -295,6 +320,12 @@ router.afterEach((to) => {
   if (twUrl) twUrl.setAttribute('content', canonicalUrl)
 
   // Ensure Link Canonical Tag is strictly present and matches current route
+  let canonicalLinks = document.querySelectorAll('link[rel="canonical"]')
+  if (canonicalLinks.length > 1) {
+    for (let i = 1; i < canonicalLinks.length; i++) {
+      canonicalLinks[i].remove()
+    }
+  }
   let canonicalLink = document.querySelector('link[rel="canonical"]')
   if (!canonicalLink) {
     canonicalLink = document.createElement('link')

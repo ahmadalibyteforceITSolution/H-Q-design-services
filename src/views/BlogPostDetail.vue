@@ -247,6 +247,12 @@ watchEffect(() => {
     document.title = pageTitle
 
     // Canonical Tag
+    let canonicalLinks = document.querySelectorAll('link[rel="canonical"]')
+    if (canonicalLinks.length > 1) {
+      for (let i = 1; i < canonicalLinks.length; i++) {
+        canonicalLinks[i].remove()
+      }
+    }
     let canonicalLink = document.querySelector('link[rel="canonical"]')
     if (!canonicalLink) {
       canonicalLink = document.createElement('link')

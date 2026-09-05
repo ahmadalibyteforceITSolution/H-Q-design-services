@@ -11,6 +11,9 @@ Allow: /portfolio/
 Allow: /area-guides/
 Allow: /tools/
 Allow: /trends/
+Allow: /keywords/
+Allow: /keywords-directory
+Allow: /keyword/
 Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
