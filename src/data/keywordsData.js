@@ -284,7 +284,7 @@ const constructionMaterialsAndBylaws = [
   'Steel Rebar Binding Wire Rates', 'Fly Ash Concrete Mix Design', 'Water Stopper PVC Construction Joint', 'Retaining Wall Weep Hole Drainage System'
 ]
 
-export const topKeywordsData = [
+const baseCategoriesMeta = [
   {
     category: 'House Sizes & Layout Plans (3 Marla to 4 Kanal)',
     icon: 'fa-solid fa-house-chimney',
@@ -397,8 +397,40 @@ const generateExpandedKeywords = (baseKeywords) => {
   return Array.from(new Set(result))
 }
 
-const baseFlatKeywords = topKeywordsData.flatMap(cat => cat.keywords)
+const baseFlatKeywords = baseCategoriesMeta.flatMap(cat => cat.keywords)
 export const allFlatKeywords = generateExpandedKeywords(baseFlatKeywords)
+
+const categorizeKeywords = (flatList) => {
+  const catMap = {
+    'House Sizes & Layout Plans (3 Marla to 4 Kanal)': [],
+    'Architectural Styles & 3D Visualizations': [],
+    'Luxury Interior Design & Bespoke Room Aesthetics': [],
+    'Top Housing Societies & City Real Estate Searches': [],
+    '2026 Construction Rates, Material Costs & Bylaws': []
+  }
+
+  for (const kw of flatList) {
+    const lower = kw.toLowerCase()
+    if (lower.includes('marla') || lower.includes('kanal') || lower.includes('house plan') || lower.includes('floor plan') || lower.includes('bedroom') || lower.includes('story') || lower.includes('villa') || lower.includes('layout') || lower.includes('porch') || lower.includes('duplex') || lower.includes('basement') || lower.includes('farmhouse') || lower.includes('apartment') || lower.includes('plaza') || lower.includes('commercial')) {
+      catMap['House Sizes & Layout Plans (3 Marla to 4 Kanal)'].push(kw)
+    } else if (lower.includes('elevation') || lower.includes('3d') || lower.includes('facade') || lower.includes('render') || lower.includes('modern') || lower.includes('spanish') || lower.includes('classical') || lower.includes('minimalist') || lower.includes('contemporary') || lower.includes('victorian') || lower.includes('scandinavian') || lower.includes('bim') || lower.includes('cad') || lower.includes('architect') || lower.includes('architectural')) {
+      catMap['Architectural Styles & 3D Visualizations'].push(kw)
+    } else if (lower.includes('interior') || lower.includes('kitchen') || lower.includes('living') || lower.includes('furniture') || lower.includes('ceiling') || lower.includes('wardrobe') || lower.includes('marble') || lower.includes('decor') || lower.includes('joinery') || lower.includes('sofa') || lower.includes('dining') || lower.includes('lighting') || lower.includes('washroom') || lower.includes('bathroom') || lower.includes('foyer')) {
+      catMap['Luxury Interior Design & Bespoke Room Aesthetics'].push(kw)
+    } else if (lower.includes('dha') || lower.includes('bahria') || lower.includes('lda') || lower.includes('society') || lower.includes('lahore') || lower.includes('islamabad') || lower.includes('karachi') || lower.includes('gulberg') || lower.includes('city') || lower.includes('model town') || lower.includes('johar') || lower.includes('valencia') || lower.includes('lake city') || lower.includes('wapda')) {
+      catMap['Top Housing Societies & City Real Estate Searches'].push(kw)
+    } else {
+      catMap['2026 Construction Rates, Material Costs & Bylaws'].push(kw)
+    }
+  }
+
+  return baseCategoriesMeta.map(meta => ({
+    ...meta,
+    keywords: Array.from(new Set(catMap[meta.category] || []))
+  }))
+}
+
+export const topKeywordsData = categorizeKeywords(allFlatKeywords)
 
 export const slugifyKeyword = (kw) => {
   if (!kw) return ''

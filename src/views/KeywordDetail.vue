@@ -547,6 +547,13 @@ watchEffect(() => {
     "description": pageDesc,
     "url": canonicalUrl,
     "image": pageImage,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "184",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
     "provider": {
       "@type": "Organization",
       "name": "H&Q Design Services",

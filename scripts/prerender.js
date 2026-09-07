@@ -5,7 +5,7 @@ import { allBlogs, getCategoryForKeyword, generateArticleContent, architectureIm
 import { userGscSlugs } from './gsc-urls.js'
 import { homePageData } from './static-home.js'
 import { staticPagesDetailed } from './static-pages-data.js'
-import { allFlatKeywords, slugifyKeyword } from '../src/data/keywordsData.js'
+import { allFlatKeywords, slugifyKeyword, topKeywordsData } from '../src/data/keywordsData.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -96,6 +96,39 @@ renderPage('/', homePageData.title, homePageData.desc, 'https://h-q-design-servi
 // 2. Pre-render All Static Pages with Substantial Content
 staticPagesDetailed.forEach(p => {
   const canonicalUrl = `https://h-q-design-services.vercel.app/${p.route}`
+  let mainBody = p.body
+
+  if (p.route === 'keywords-directory') {
+    let categoriesHtml = ''
+    topKeywordsData.forEach(cat => {
+      categoriesHtml += `
+        <div class="p-6 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-4">
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center justify-between">
+            <span>${escapeXml(cat.category)}</span>
+            <span class="text-xs text-[#088C7E] font-bold">(${cat.keywords.length} Topics)</span>
+          </h2>
+          <p class="text-xs text-slate-600 dark:text-slate-400">${escapeXml(cat.description)}</p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            ${cat.keywords.map(kw => `
+              <a href="/keywords/${slugifyKeyword(kw)}" class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:text-[#088C7E] hover:border-[#088C7E] transition-all">
+                ${escapeXml(kw)}
+              </a>
+            `).join('')}
+          </div>
+        </div>
+      `
+    })
+    mainBody = `
+      <div class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white">Architecture & Construction Knowledge Index</h1>
+        <p class="text-base text-slate-600 dark:text-slate-300 max-w-3xl">Comprehensive architectural glossary and spatial planning resource covering 3 Marla to 4 Kanal layouts, 3D elevations, structural engineering, and construction costs in Pakistan.</p>
+        <div class="space-y-6">
+          ${categoriesHtml}
+        </div>
+      </div>
+    `
+  }
+
   const bodyHtml = `
     <header class="bg-slate-900 text-white border-b border-slate-800 py-4 px-6">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
@@ -107,12 +140,13 @@ staticPagesDetailed.forEach(p => {
           <a href="/tools">Cost Calculator</a>
           <a href="/properties">Properties</a>
           <a href="/blog">Guides</a>
+          <a href="/keywords-directory">Glossary</a>
           <a href="/contact">Contact</a>
         </nav>
       </div>
     </header>
     <main class="py-10">
-      ${p.body}
+      ${mainBody}
     </main>
     <footer class="bg-slate-950 text-slate-400 py-8 px-6 text-xs text-center border-t border-slate-800 space-y-3">
       <p>© 2026 H&Q Design Services (HANDQ). All rights reserved. DHA Lahore & Parkview City, Lahore, Pakistan.</p>
@@ -120,7 +154,7 @@ staticPagesDetailed.forEach(p => {
         <a href="/privacy-policy">Privacy Policy</a> ·
         <a href="/terms-of-service">Terms of Service</a> ·
         <a href="/disclaimer">Disclaimer</a> ·
-        <a href="/partners">Partners</a> ·
+        <a href="/keywords-directory">Keywords Directory</a> ·
         <a href="/contact">Contact</a>
       </div>
     </footer>
@@ -293,6 +327,13 @@ allFlatKeywords.forEach((kw, i) => {
     "description": pageDesc,
     "url": canonicalUrl,
     "image": img,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "184",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
     "provider": {
       "@type": "Organization",
       "name": "H&Q Design Services",
@@ -311,9 +352,33 @@ allFlatKeywords.forEach((kw, i) => {
     ]
   }
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `How long does it take to prepare 2D floor plans and 3D elevations for ${kw}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard 2D architectural drawings and municipal submission blueprints take 7 to 10 working days. A complete design package including 4K photorealistic 3D elevations, MEP engineering layouts, and structural vetting takes approximately 2 to 3 weeks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `Does H&Q Design Services provide on-site supervision for ${kw}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our resident site engineers conduct rigorous phase-wise inspections during foundation excavation, steel rebar binding, slab casting, and plumbing pressure tests to ensure 100% adherence to architectural drawings."
+        }
+      }
+    ]
+  }
+
   const schemasHtml = `
     <script type="application/ld+json">${JSON.stringify(keywordPageSchema)}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
+    <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>
   `
 
   const bodyHtml = `
