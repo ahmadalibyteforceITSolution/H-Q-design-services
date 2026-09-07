@@ -247,24 +247,63 @@
       </div>
 
       <!-- Embed Widget Code for Partners -->
-      <div class="space-y-2">
-        <div class="flex items-center justify-between text-xs text-slate-300 font-bold">
-          <span>Embed H&Q Backlink Badge on Your Website:</span>
-          <span v-if="copied" class="text-emerald-400 font-black">Copied to Clipboard!</span>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Option A: Text Anchor Link Badge -->
+        <div class="space-y-2 p-5 rounded-2xl bg-slate-900 border border-slate-800">
+          <div class="flex items-center justify-between text-xs text-slate-300 font-bold">
+            <span class="text-[#088C7E]">Option 1: Backlink & Trust Badge</span>
+            <span v-if="copiedSnippet" class="text-emerald-400 font-black">Copied!</span>
+          </div>
+          <p class="text-[11px] text-slate-400">Pinnable HTML badge with dofollow anchor text pointing to H&Q Lahore Studio.</p>
+          <div class="relative">
+            <textarea 
+              readonly 
+              rows="3"
+              class="w-full font-mono text-[11px] p-3 rounded-xl bg-slate-950 border border-slate-700 text-emerald-400 focus:outline-none select-all"
+              :value="embedSnippet"
+            ></textarea>
+            <button 
+              @click="copyText(embedSnippet, 'snippet')"
+              class="absolute right-2 bottom-3 px-3 py-1 rounded-lg bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-bold transition-all shadow cursor-pointer"
+            >
+              <i class="fa-solid fa-copy mr-1"></i> Copy Link
+            </button>
+          </div>
         </div>
-        <div class="relative">
-          <textarea 
-            readonly 
-            rows="2"
-            class="w-full font-mono text-xs p-3.5 rounded-xl bg-slate-950 border border-slate-700 text-emerald-400 focus:outline-none select-all"
-            :value="embedSnippet"
-          ></textarea>
-          <button 
-            @click="copySnippet"
-            class="absolute right-3 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-lg bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-bold transition-all shadow cursor-pointer"
-          >
-            <i class="fa-solid fa-copy mr-1"></i> Copy Code
-          </button>
+
+        <!-- Option B: Full Interactive 2026 Construction Calculator Widget -->
+        <div class="space-y-2 p-5 rounded-2xl bg-slate-900 border border-slate-800">
+          <div class="flex items-center justify-between text-xs text-slate-300 font-bold">
+            <span class="text-amber-400">Option 2: Live Calculator iFrame (Traffic Magnet)</span>
+            <span v-if="copiedWidget" class="text-emerald-400 font-black">Copied!</span>
+          </div>
+          <p class="text-[11px] text-slate-400">Embed our full live 2026 house cost calculator on your blog or portal. Passes referral traffic and brand authority.</p>
+          <div class="relative">
+            <textarea 
+              readonly 
+              rows="3"
+              class="w-full font-mono text-[11px] p-3 rounded-xl bg-slate-950 border border-slate-700 text-amber-400 focus:outline-none select-all"
+              :value="embedWidgetSnippet"
+            ></textarea>
+            <button 
+              @click="copyText(embedWidgetSnippet, 'widget')"
+              class="absolute right-2 bottom-3 px-3 py-1 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition-all shadow cursor-pointer"
+            >
+              <i class="fa-solid fa-code mr-1"></i> Copy Widget
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Widget Preview -->
+      <div class="space-y-3 pt-4 border-t border-slate-800">
+        <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wider">Live Embed Preview on Partner Sites:</h4>
+        <div class="w-full overflow-hidden rounded-2xl border border-slate-700">
+          <iframe 
+            src="/embed/calculator" 
+            class="w-full h-[520px] border-0" 
+            title="H&Q Construction Cost Calculator Widget"
+          ></iframe>
         </div>
       </div>
 
@@ -288,22 +327,117 @@
       </div>
     </section>
 
+    <!-- Tier 7: Top Pakistani Local Business Directories (Direct Referral & High-DA Citations) -->
+    <section class="space-y-6">
+      <div class="border-l-4 border-[#088C7E] pl-4">
+        <h2 class="text-lg sm:text-2xl font-black text-slate-900 dark:text-white">
+          Pakistan High-DA Directories & Local Citations
+        </h2>
+        <p class="text-xs text-slate-500">
+          Verified business directories where H&Q's profile drives direct consumer inquiries and powerful dofollow SEO authority.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div 
+          v-for="dir in localDirectories" 
+          :key="dir.name"
+          class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-3"
+        >
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                {{ dir.type }}
+              </span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                DA {{ dir.da }}
+              </span>
+            </div>
+            <h4 class="font-extrabold text-slate-900 dark:text-white text-sm">{{ dir.name }}</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{{ dir.description }}</p>
+          </div>
+          <a 
+            :href="dir.url" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-xs font-bold text-[#088C7E] hover:underline flex items-center gap-1 pt-2 border-t border-slate-100 dark:border-slate-800"
+          >
+            <span>Submit / View Listing</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 
-const copied = ref(false)
-const embedSnippet = `<a href="https://h-q-design-services.vercel.app/" target="_blank" rel="noopener">H&Q Design Services - Best Architects & Luxury Interior Designers in Lahore</a>`
+const copiedSnippet = ref(false)
+const copiedWidget = ref(false)
 
-const copySnippet = () => {
+const embedSnippet = `<a href="https://h-q-design-services.vercel.app/" target="_blank" rel="noopener">H&Q Design Services - Best Architects & Luxury Interior Designers in Lahore</a>`
+const embedWidgetSnippet = `<iframe src="https://h-q-design-services.vercel.app/embed/calculator" width="100%" height="540" frameborder="0" style="border:none;border-radius:16px;max-width:850px;width:100%;display:block;margin:auto;"></iframe>`
+
+const copyText = (text, type) => {
   if (navigator.clipboard) {
-    navigator.clipboard.writeText(embedSnippet)
-    copied.value = true
-    setTimeout(() => { copied.value = false }, 3000)
+    navigator.clipboard.writeText(text)
+    if (type === 'snippet') {
+      copiedSnippet.value = true
+      setTimeout(() => { copiedSnippet.value = false }, 3000)
+    } else {
+      copiedWidget.value = true
+      setTimeout(() => { copiedWidget.value = false }, 3000)
+    }
   }
 }
+
+const localDirectories = [
+  {
+    name: 'Google Business Profile (Google Maps)',
+    type: 'Local Pack #1',
+    da: '98',
+    url: 'https://business.google.com',
+    description: 'The single most powerful local search ranking asset in Lahore. Directly drives phone calls, direction requests, and site visits from nearby clients searching for architects.'
+  },
+  {
+    name: 'YellowPages Pakistan',
+    type: 'Business Citation',
+    da: '68',
+    url: 'https://www.yellowpages.com.pk',
+    description: 'National business directory with high-authority trust signals, driving organic directory referral inquiries for engineering & architectural firms.'
+  },
+  {
+    name: 'PakistanBizDir',
+    type: 'Commercial Index',
+    da: '55',
+    url: 'https://www.pakistanbizdir.com',
+    description: 'Comprehensive business directory covering corporate offices, building construction contractors, and interior decor suppliers across Punjab.'
+  },
+  {
+    name: 'Yalwa Lahore Business Directory',
+    type: 'City Directory',
+    da: '62',
+    url: 'https://lahore.yalwa.com.pk',
+    description: 'City-specific directory connecting Lahore residents with certified local service providers, consultants, and architectural draughtsmen.'
+  },
+  {
+    name: 'HamariWeb Business Directory',
+    type: 'Portal Directory',
+    da: '72',
+    url: 'https://hamariweb.com',
+    description: 'Prominent Pakistan portal directory with extensive audience reach across all major Pakistani metropolitan cities.'
+  },
+  {
+    name: 'BusinessDirectory.pk',
+    type: 'Verified Listing',
+    da: '50',
+    url: 'https://businessdirectory.pk',
+    description: 'Dedicated directory for local Pakistani startups, architectural studios, and property development agencies.'
+  }
+]
 
 const regulatoryAffiliations = [
   {

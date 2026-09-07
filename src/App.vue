@@ -2,12 +2,13 @@
   <div class="min-h-screen flex flex-col bg-slate-50 text-slate-900 dark:bg-[#090D16] dark:text-slate-100 transition-colors duration-300 font-sans selection:bg-[#088C7E] selection:text-white">
     <!-- Main Top Navigation -->
     <Navbar 
+      v-if="!route.meta?.hideHeaderFooter"
       @open-start-project="showLeadModal = true" 
       @open-add-property="showAddPropertyModal = true" 
     />
 
     <!-- Page Content Container with Smooth Router View Transitions -->
-    <main class="flex-1 w-full">
+    <main class="flex-1 w-full" :class="{ 'p-4 sm:p-6 bg-slate-950 min-h-screen flex items-center justify-center': route.meta?.hideHeaderFooter }">
       <router-view v-slot="{ Component }">
         <transition name="page-fade" mode="out-in">
           <component 
@@ -21,24 +22,26 @@
 
     <!-- Main Footer -->
     <Footer 
+      v-if="!route.meta?.hideHeaderFooter"
       @open-start-project="showLeadModal = true" 
       @open-add-property="showAddPropertyModal = true" 
     />
 
     <!-- Interactive AI Advisor Chatbot Widget -->
-    <ChatBot />
+    <ChatBot v-if="!route.meta?.hideHeaderFooter" />
 
     <!-- Multi-step Lead Consultation Modal -->
-    <StartProjectModal :isOpen="showModal" @close="showModal = false" />
+    <StartProjectModal v-if="!route.meta?.hideHeaderFooter" :isOpen="showModal" @close="showModal = false" />
 
     <!-- Add Property / Post Project Modal -->
-    <AddPropertyModal :isOpen="showAddPropertyModal" @close="showAddPropertyModal = false" />
+    <AddPropertyModal v-if="!route.meta?.hideHeaderFooter" :isOpen="showAddPropertyModal" @close="showAddPropertyModal = false" />
 
     <!-- Floating Quick Contact & Social Sidebar (All Pages) -->
-    <FloatingSideBar @open-start-project="showLeadModal = true" />
+    <FloatingSideBar v-if="!route.meta?.hideHeaderFooter" @open-start-project="showLeadModal = true" />
 
     <!-- Global Lead Generation Pop-up Modal (Number, Email, Message -> KSA WhatsApp + Email) -->
     <LeadPopupModal 
+      v-if="!route.meta?.hideHeaderFooter"
       :isOpen="showLeadModal" 
       @close="showLeadModal = false" 
       @open="showLeadModal = true" 
@@ -46,6 +49,7 @@
 
     <!-- Floating Direct WhatsApp Button to Saudi Arabia Desk (+966 50 714 3124) -->
     <a 
+      v-if="!route.meta?.hideHeaderFooter"
       href="https://api.whatsapp.com/send/?phone=966507143124&text=Hello%20H%26Q%20Design%20Services,%20I%20want%20to%20inquire%20about%20architectural%20and%20interior%20design%20services.&type=phone_number&app_absent=0" 
       target="_blank" 
       rel="noopener noreferrer"
@@ -79,10 +83,13 @@ const route = useRoute()
 let popupTimer = null
 
 const triggerPopup = (delay = 1200) => {
+  if (route.meta?.hideHeaderFooter) return
   if (popupTimer) clearTimeout(popupTimer)
   popupTimer = setTimeout(() => {
     // Show pop up form when any page opens
-    showLeadModal.value = true
+    if (!route.meta?.hideHeaderFooter) {
+      showLeadModal.value = true
+    }
   }, delay)
 }
 

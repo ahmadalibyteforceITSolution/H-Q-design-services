@@ -20,6 +20,7 @@ import PrivacyPolicy from '../views/PrivacyPolicy.vue'
 import TermsOfService from '../views/TermsOfService.vue'
 import Disclaimer from '../views/Disclaimer.vue'
 import KeywordDetail from '../views/KeywordDetail.vue'
+import EmbedCalculator from '../views/EmbedCalculator.vue'
 import { getKeywordBySlug, slugifyKeyword } from '../data/keywordsData.js'
 
 const routes = [
@@ -235,6 +236,16 @@ const routes = [
       title: 'Website & Architectural Disclaimer | H&Q Design Services',
       description: 'Official disclaimers regarding construction cost calculations, municipal building approvals, and property listings.',
       keywords: 'disclaimer, construction cost estimate disclaimer, architectural bylaws disclaimer'
+    }
+  },
+  {
+    path: '/embed/calculator',
+    name: 'EmbedCalculator',
+    component: EmbedCalculator,
+    meta: {
+      title: 'Pakistan House Construction Cost Calculator Widget | H&Q Design Services',
+      description: 'Embeddable 2026 house construction cost calculator for real estate and construction websites.',
+      hideHeaderFooter: true
     }
   }
 ]
