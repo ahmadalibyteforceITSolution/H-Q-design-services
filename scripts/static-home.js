@@ -1,6 +1,6 @@
-﻿export const homePageData = {
+export const homePageData = {
   title: 'H&Q Design Services | Best Architects in Lahore | Luxury House Design',
-  desc: 'Premier architecture and interior design studio in Lahore, Pakistan. 500+ luxury villas, 4K 3D elevation renders, floor plans, and 2026 construction cost estimates in DHA, Gulberg & Bahria Town.',
+  desc: 'Best Architects & Luxury Interior Designers in Lahore. 500+ custom villas, 4K 3D front elevations, DHA bylaws, turnkey floor plans & 2026 construction cost calculator. Call 0341-6887454.',
   body: `
     <header class="bg-slate-900 text-white border-b border-slate-800 py-4 px-6">
       <div class="max-w-7xl mx-auto flex items-center justify-between">

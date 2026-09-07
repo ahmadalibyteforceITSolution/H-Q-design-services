@@ -1,7 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { allBlogs } from '../src/data/blogData.js'
+import { allBlogs, getCategoryForKeyword } from '../src/data/blogData.js'
+import { allFlatKeywords, slugifyKeyword } from '../src/data/keywordsData.js'
 
 // Setup path equivalents in ES Modules
 const __filename = fileURLToPath(import.meta.url)
@@ -19,7 +20,8 @@ const getBaseUrl = () => {
 }
 
 const baseUrl = getBaseUrl()
-const feedBlogs = allBlogs.slice(0, 200) // Top 200 latest items in standard RSS feed
+const feedBlogs = allBlogs.slice(0, 150)
+const feedKeywords = allFlatKeywords.slice(0, 150)
 
 const escapeXml = (unsafe) => {
   if (!unsafe) return ''
@@ -73,10 +75,27 @@ feedBlogs.forEach(b => {
 `
 })
 
+const todayRfc = new Date().toUTCString()
+feedKeywords.forEach(kw => {
+  const slug = slugifyKeyword(kw)
+  const itemLink = `${baseUrl}/keywords/${slug}`
+  const cat = getCategoryForKeyword(kw)
+  
+  xml += `  <item>
+    <title>${escapeXml(kw + ' - 2026 Architectural Plan & Cost Matrix')}</title>
+    <link>${itemLink}</link>
+    <guid isPermaLink="true">${itemLink}</guid>
+    <pubDate>${todayRfc}</pubDate>
+    <category>${escapeXml(cat)}</category>
+    <description>${escapeXml('Comprehensive 2026 architectural designs, 3D elevations, floor plans, and construction cost estimates for ' + kw + ' in Pakistan.')}</description>
+  </item>
+`
+})
+
 xml += `</channel>
 </rss>
 `
 
 const outputPath = path.join(projectRoot, 'public/feed.xml')
 fs.writeFileSync(outputPath, xml, 'utf8')
-console.log(`Successfully generated RSS feed with ${feedBlogs.length} items in public/feed.xml.`)
+console.log(`Successfully generated RSS feed with ${feedBlogs.length + feedKeywords.length} items in public/feed.xml.`)

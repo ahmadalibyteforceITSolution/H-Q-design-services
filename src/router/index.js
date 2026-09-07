@@ -29,7 +29,7 @@ const routes = [
     component: Home,
     meta: {
       title: 'H&Q Design Services | Best Architects in Lahore',
-      description: 'Premier architecture studio in Lahore. 500+ luxury villas, 3D elevation renders, floor plans & construction cost estimates. Call 0341-6887454.',
+      description: 'Best Architects & Luxury Interior Designers in Lahore. 500+ custom villas, 4K 3D front elevations, DHA bylaws, turnkey floor plans & 2026 construction cost calculator. Call 0341-6887454.',
       keywords: 'H&Q Design Services, Best Architects in Lahore, House Construction Cost in Pakistan, 5 Marla House Design, 10 Marla Spanish Villa, 1 Kanal House Plan, DHA Lahore Bylaws, 3D Elevation Lahore'
     }
   },

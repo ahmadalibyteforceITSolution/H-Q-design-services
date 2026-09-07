@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="py-12 space-y-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Breadcrumb -->
@@ -104,7 +104,54 @@
       </div>
     </section>
 
-    <!-- Tier 3: Luxury Sanitary, Architectural Glass & Interior Partners -->
+    <!-- Tier 3: National Real Estate & Construction Portals -->
+    <section class="space-y-6">
+      <div class="border-l-4 border-[#088C7E] pl-4">
+        <h2 class="text-lg sm:text-2xl font-black text-slate-900 dark:text-white">
+          Real Estate Portals & Property Intelligence Networks
+        </h2>
+        <p class="text-xs text-slate-500">
+          Syndicating verified house designs, plot dimensions, and turnkey valuations across Pakistan's major real estate portals.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div 
+          v-for="portal in realEstatePortals" 
+          :key="portal.name"
+          class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md flex flex-col justify-between space-y-4 hover:border-[#088C7E] transition-all hover:scale-[1.02]"
+        >
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold uppercase">
+                {{ portal.badge }}
+              </span>
+              <span class="text-[10px] font-bold text-slate-400">
+                DA {{ portal.da }}
+              </span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 dark:text-white text-lg flex items-center gap-2">
+              <i :class="portal.icon + ' text-[#088C7E]'"></i>
+              <span>{{ portal.name }}</span>
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              {{ portal.description }}
+            </p>
+          </div>
+          <a 
+            :href="portal.url" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-bold text-[#088C7E] hover:underline flex items-center justify-between"
+          >
+            <span>Explore Integration</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tier 4: Luxury Sanitary, Architectural Glass & Interior Partners -->
     <section class="space-y-6">
       <div class="border-l-4 border-[#088C7E] pl-4">
         <h2 class="text-lg sm:text-2xl font-black text-slate-900 dark:text-white">
@@ -145,47 +192,94 @@
       </div>
     </section>
 
-    <!-- Tier 4: Collaboration Inquiry Form / Panel -->
-    <section class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-slate-800 text-white shadow-2xl space-y-6">
-      <div class="max-w-3xl space-y-3">
-        <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase bg-[#088C7E] text-white tracking-wider">
-          Vendor & Professional Outreach
-        </span>
-        <h3 class="text-2xl sm:text-3xl font-black text-white">
-          Collaborate with H&Q Design Services
-        </h3>
-        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-          Are you a licensed structural engineering firm, certified building material supplier, smart-home automation integrator, or interior craftsman in Pakistan? We welcome project-level collaborations on our luxury residential and commercial developments.
+    <!-- Tier 5: Global Architectural Design Networks & Portfolios -->
+    <section class="space-y-6">
+      <div class="border-l-4 border-[#088C7E] pl-4">
+        <h2 class="text-lg sm:text-2xl font-black text-slate-900 dark:text-white">
+          International Architecture Portals & Citation Networks
+        </h2>
+        <p class="text-xs text-slate-500">
+          High-Domain-Authority global platforms featuring H&Q 3D elevation renders and luxury villa case studies.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-          <h4 class="font-bold text-[#088C7E] text-xs uppercase">Turnkey Construction</h4>
-          <p class="text-[11px] text-slate-400">Sub-contracting for grey structure, waterproofing, and MEP installations.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div 
+          v-for="network in globalNetworks" 
+          :key="network.name"
+          class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-3"
+        >
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <i :class="network.icon + ' text-xl text-[#088C7E]'"></i>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                DA {{ network.da }}
+              </span>
+            </div>
+            <h4 class="font-extrabold text-slate-900 dark:text-white text-sm">{{ network.name }}</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{{ network.description }}</p>
+          </div>
+          <a 
+            :href="network.url" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-xs font-bold text-[#088C7E] hover:underline flex items-center gap-1 pt-2 border-t border-slate-100 dark:border-slate-800"
+          >
+            <span>View Network</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
         </div>
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-          <h4 class="font-bold text-[#088C7E] text-xs uppercase">Bespoke Millwork & Marble</h4>
-          <p class="text-[11px] text-slate-400">Custom cabinetry, Italian marble processing, and CNC stone dry-cladding.</p>
+      </div>
+    </section>
+
+    <!-- Tier 6: Reciprocal Backlink & Guest Posting Exchange Hub -->
+    <section class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-slate-800 text-white shadow-2xl space-y-6">
+      <div class="max-w-3xl space-y-3">
+        <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase bg-[#088C7E] text-white tracking-wider">
+          Organic & Inorganic Backlink Exchange
+        </span>
+        <h3 class="text-2xl sm:text-3xl font-black text-white">
+          Reciprocal Backlinks & Guest Post Collaboration
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Are you a real estate portal, architecture blog, construction company, building material supplier, or home decor brand? Boost your domain authority and organic traffic by linking with H&Q Design Services.
+        </p>
+      </div>
+
+      <!-- Embed Widget Code for Partners -->
+      <div class="space-y-2">
+        <div class="flex items-center justify-between text-xs text-slate-300 font-bold">
+          <span>Embed H&Q Backlink Badge on Your Website:</span>
+          <span v-if="copied" class="text-emerald-400 font-black">Copied to Clipboard!</span>
         </div>
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-          <h4 class="font-bold text-[#088C7E] text-xs uppercase">Architectural Glass & Automation</h4>
-          <p class="text-[11px] text-slate-400">Low-E thermal break windows, motorized louvers, and smart home lighting.</p>
+        <div class="relative">
+          <textarea 
+            readonly 
+            rows="2"
+            class="w-full font-mono text-xs p-3.5 rounded-xl bg-slate-950 border border-slate-700 text-emerald-400 focus:outline-none select-all"
+            :value="embedSnippet"
+          ></textarea>
+          <button 
+            @click="copySnippet"
+            class="absolute right-3 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-lg bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-bold transition-all shadow cursor-pointer"
+          >
+            <i class="fa-solid fa-copy mr-1"></i> Copy Code
+          </button>
         </div>
       </div>
 
       <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center gap-4">
         <a 
-          href="https://wa.me/923416887454?text=Hello%20H%26Q%20Design%20Services!%20We%20would%20like%20to%20inquire%20about%20a%20professional%20vendor%20or%20engineering%20collaboration."
+          href="https://wa.me/923416887454?text=Hello%20H%26Q%20Design%20Services!%20I%20would%20like%20to%20exchange%20backlinks%20and%20guest%20posts%20with%20your%20website."
           target="_blank" 
           rel="noopener"
-          class="px-6 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-lg flex items-center gap-2"
+          class="px-6 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 cursor-pointer"
         >
           <i class="fa-brands fa-whatsapp text-sm"></i>
-          <span>WhatsApp Procurement Desk</span>
+          <span>WhatsApp Link Exchange</span>
         </a>
         <a 
-          href="mailto:asadali28997@gmail.com?subject=Vendor%20Collaboration%20Inquiry%20-%20H%26Q%20Design%20Services"
+          href="mailto:asadali28997@gmail.com?subject=Backlink%20and%20Guest%20Post%20Collaboration%20-%20H%26Q%20Design%20Services"
           class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 border border-slate-700"
         >
           <i class="fa-solid fa-envelope text-sm"></i>
@@ -198,6 +292,19 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
+const copied = ref(false)
+const embedSnippet = `<a href="https://h-q-design-services.vercel.app/" target="_blank" rel="noopener">H&Q Design Services - Best Architects & Luxury Interior Designers in Lahore</a>`
+
+const copySnippet = () => {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(embedSnippet)
+    copied.value = true
+    setTimeout(() => { copied.value = false }, 3000)
+  }
+}
+
 const regulatoryAffiliations = [
   {
     name: 'PCATP Pakistan',
@@ -246,6 +353,57 @@ const materialPartners = [
   }
 ]
 
+const realEstatePortals = [
+  {
+    name: 'Zameen.com',
+    badge: 'National Portal',
+    da: '76',
+    icon: 'fa-solid fa-building',
+    url: 'https://www.zameen.com',
+    description: "Pakistan's largest property portal. Cross-referencing DHA Lahore, Bahria Town, and Islamabad verified plot listings and construction rate benchmarks."
+  },
+  {
+    name: 'Graana.com',
+    badge: 'Smart Property',
+    da: '52',
+    icon: 'fa-solid fa-city',
+    url: 'https://www.graana.com',
+    description: "Digital real estate marketplace and advisory platform covering new housing projects, commercial plazas, and residential societies."
+  },
+  {
+    name: 'OLX Pakistan Properties',
+    badge: 'High Traffic',
+    da: '78',
+    icon: 'fa-solid fa-house-chimney',
+    url: 'https://www.olx.com.pk/properties_c2',
+    description: 'Direct consumer property marketplace for buying, selling, and leasing 5 Marla, 10 Marla, and 1 Kanal villas and commercial spaces in Lahore.'
+  },
+  {
+    name: 'Lamudi Pakistan',
+    badge: 'Regional Network',
+    da: '60',
+    icon: 'fa-solid fa-globe',
+    url: 'https://www.lamudi.pk',
+    description: 'Emerging real estate platform providing locality guides, developer directory listings, and property market price indices.'
+  },
+  {
+    name: 'PakWheels Properties',
+    badge: 'National Community',
+    da: '64',
+    icon: 'fa-solid fa-users',
+    url: 'https://www.pakwheels.com',
+    description: 'Community network and lifestyle portal connecting verified residential plots and executive housing projects across Punjab.'
+  },
+  {
+    name: 'PropSure Digital Solutions',
+    badge: 'Verification Tech',
+    da: '48',
+    icon: 'fa-solid fa-shield-halved',
+    url: 'https://propsure.com.pk',
+    description: 'Cadastral spatial mapping, regulatory title vetting, and approved society master plan digitization in Pakistan.'
+  }
+]
+
 const luxuryBrands = [
   {
     name: 'Grohe & Kohler Sanitary',
@@ -264,6 +422,37 @@ const luxuryBrands = [
     tag: 'Smart Home Living',
     description: 'Integrated home automation systems including mood lighting control, magnetic track lights, motorized curtain tracks, and smart video intercoms.',
     feature: 'Zigbee & App Smart Control'
+  }
+]
+
+const globalNetworks = [
+  {
+    name: 'Houzz Architecture',
+    da: '91',
+    icon: 'fa-brands fa-houzz',
+    url: 'https://www.houzz.com',
+    description: 'Global authority platform for high-end residential architectural designs and luxury home interiors.'
+  },
+  {
+    name: 'ArchDaily Global',
+    da: '89',
+    icon: 'fa-solid fa-cubes',
+    url: 'https://www.archdaily.com',
+    description: "The world's most visited architecture website showcasing contemporary facades, spatial plans, and materials."
+  },
+  {
+    name: 'Behance Architecture',
+    da: '93',
+    icon: 'fa-brands fa-behance',
+    url: 'https://www.behance.net',
+    description: 'Adobe creative network showcasing 4K 3D elevation renderings and photorealistic architectural walk-throughs.'
+  },
+  {
+    name: 'Pinterest Design Board',
+    da: '94',
+    icon: 'fa-brands fa-pinterest',
+    url: 'https://www.pinterest.com',
+    description: 'High-intent visual discovery engine driving thousands of daily organic impressions for luxury home decor.'
   }
 ]
 </script>
