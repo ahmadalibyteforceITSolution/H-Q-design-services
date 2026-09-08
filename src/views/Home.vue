@@ -41,10 +41,10 @@
         <!-- Main Heading & Subtitle -->
         <div class="max-w-4xl space-y-4">
           <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight drop-shadow-2xl">
-            Search Properties, <span class="text-gradient-hq">3D Architecture & Plots</span> in Pakistan
+            <span class="text-gradient-hq">H&Q Design Services</span> · Best Architects in Lahore
           </h1>
-          <p class="text-slate-200 text-base sm:text-lg lg:text-xl font-medium leading-relaxed max-w-2xl drop-shadow-md">
-            Find verified villas, commercial plazas, on-ground plots, and photorealistic 4K 3D elevation blueprints across DHA, Gulberg, and Bahria Town Lahore.
+          <p class="text-slate-200 text-base sm:text-lg lg:text-xl font-medium leading-relaxed max-w-3xl drop-shadow-md">
+            Welcome to <strong>H&Q Design Services (HANDQ)</strong>. 500+ luxury villas, 4K 3D elevations, DHA bylaws floor plans & turnkey construction in Lahore, Islamabad & Saudi Arabia.
           </p>
         </div>
 
