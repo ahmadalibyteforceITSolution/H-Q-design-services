@@ -5,13 +5,15 @@ export const homePageData = {
     <header class="bg-slate-900 text-white border-b border-slate-800 py-4 px-6">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
         <span class="text-xl font-extrabold text-[#088C7E]">H&Q Design Services</span>
-        <nav class="flex gap-4 text-xs font-semibold">
+        <nav class="flex flex-wrap gap-4 text-xs font-semibold">
           <a href="/about">About</a>
           <a href="/services">Services</a>
           <a href="/portfolio">Portfolio</a>
           <a href="/tools">Cost Calculator</a>
+          <a href="/keywords-directory">Design Directory</a>
           <a href="/properties">Properties</a>
           <a href="/blog">Guides</a>
+          <a href="/partners">Partners & Backlinks</a>
           <a href="/contact">Contact</a>
         </nav>
       </div>
@@ -31,6 +33,33 @@ export const homePageData = {
         <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
           <a href="tel:03416887454" class="px-6 py-3 rounded-xl bg-[#088C7E] text-white font-bold text-sm shadow-lg">Call Studio: 0341-6887454</a>
           <a href="/tools" class="px-6 py-3 rounded-xl bg-slate-800 text-white font-bold text-sm border border-slate-700">2026 Construction Calculator</a>
+          <a href="/keywords-directory" class="px-6 py-3 rounded-xl bg-emerald-900/60 text-emerald-300 font-bold text-sm border border-emerald-700">Browse 3,000+ Keyword Designs</a>
+        </div>
+      </section>
+
+      <!-- Featured Architectural Keyword Categories Hub -->
+      <section class="space-y-4">
+        <div class="border-l-4 border-[#088C7E] pl-4">
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">Trending Architectural Design Topics & House Plans</h2>
+          <p class="text-xs text-slate-500">Explore comprehensive 2026 drawings, municipal bylaws, and cost estimates across top categories.</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-bold">
+          <a href="/keywords/5-marla-house-design" class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#088C7E] transition-all">
+            <span class="text-[#088C7E] block text-[10px] uppercase">Villa Plans</span>
+            <span class="text-slate-900 dark:text-white">5 Marla House Design</span>
+          </a>
+          <a href="/keywords/10-marla-spanish-house-design" class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#088C7E] transition-all">
+            <span class="text-[#088C7E] block text-[10px] uppercase">Spanish Facade</span>
+            <span class="text-slate-900 dark:text-white">10 Marla Spanish Villa</span>
+          </a>
+          <a href="/keywords/1-kanal-modern-house-design" class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#088C7E] transition-all">
+            <span class="text-[#088C7E] block text-[10px] uppercase">Luxury Mansion</span>
+            <span class="text-slate-900 dark:text-white">1 Kanal Modern House Plan</span>
+          </a>
+          <a href="/keywords/dha-lahore-construction-bylaws" class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#088C7E] transition-all">
+            <span class="text-[#088C7E] block text-[10px] uppercase">Legal & Bylaws</span>
+            <span class="text-slate-900 dark:text-white">DHA Lahore Building Bylaws</span>
+          </a>
         </div>
       </section>
 
@@ -72,10 +101,11 @@ export const homePageData = {
     <footer class="bg-slate-950 text-slate-400 py-8 px-6 text-xs text-center border-t border-slate-800 space-y-3">
       <p>© 2026 H&Q Design Services (HANDQ). All rights reserved. DHA Lahore & Parkview City, Lahore, Pakistan.</p>
       <div class="flex justify-center gap-4 text-slate-300">
+        <a href="/keywords-directory">Keywords Directory</a> ·
         <a href="/privacy-policy">Privacy Policy</a> ·
         <a href="/terms-of-service">Terms of Service</a> ·
         <a href="/disclaimer">Disclaimer</a> ·
-        <a href="/partners">Partners</a> ·
+        <a href="/partners">Partners & Backlinks</a> ·
         <a href="/contact">Contact</a>
       </div>
     </footer>
