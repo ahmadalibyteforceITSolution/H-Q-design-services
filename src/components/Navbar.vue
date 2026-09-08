@@ -209,13 +209,23 @@
               </div>
             </div>
 
-            <!-- Standalone Main Pages -->
             <router-link 
               to="/about" 
               class="hover:text-[#088C7E] dark:hover:text-emerald-400 transition-colors py-2"
               active-class="text-[#088C7E] dark:text-emerald-400 font-black"
             >
               About Studio
+            </router-link>
+
+            <router-link 
+              to="/reviews" 
+              class="hover:text-[#088C7E] dark:hover:text-emerald-400 transition-colors py-2 flex items-center gap-1.5"
+              active-class="text-[#088C7E] dark:text-emerald-400 font-black"
+            >
+              <span>Reviews</span>
+              <span class="px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 font-extrabold text-[10px] flex items-center gap-0.5 border border-amber-500/20">
+                <i class="fa-solid fa-star text-[8px]"></i>5.0
+              </span>
             </router-link>
 
             <router-link 
@@ -352,6 +362,7 @@ const mobileNavLinks = [
   { name: 'BLOG & NEWS', path: '/blog', iconClass: 'fa-solid fa-newspaper' },
   { name: 'PARTNERS & BACKLINKS HUB', path: '/partners', iconClass: 'fa-solid fa-link' },
   { name: 'TRENDING KEYWORDS', path: '/keywords-directory', iconClass: 'fa-solid fa-tags' },
+  { name: 'GOOGLE REVIEWS (5.0 ★)', path: '/reviews', iconClass: 'fa-solid fa-star' },
   { name: 'ABOUT US', path: '/about', iconClass: 'fa-solid fa-circle-info' },
   { name: 'CONTACT & LOCATION', path: '/contact', iconClass: 'fa-solid fa-headset' }
 ]

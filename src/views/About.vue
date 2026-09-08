@@ -138,6 +138,9 @@
       </div>
     </section>
 
+    <!-- Client Reviews Section -->
+    <GoogleReviews />
+
     <!-- Studio Contact CTA -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="p-8 sm:p-12 rounded-3xl bg-slate-900 text-white text-center space-y-6 border border-slate-800">
@@ -159,5 +162,6 @@
 </template>
 
 <script setup>
+import GoogleReviews from '../components/GoogleReviews.vue'
 defineEmits(['open-start-project'])
 </script>

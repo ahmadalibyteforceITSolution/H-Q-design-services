@@ -21,6 +21,7 @@ import TermsOfService from '../views/TermsOfService.vue'
 import Disclaimer from '../views/Disclaimer.vue'
 import KeywordDetail from '../views/KeywordDetail.vue'
 import EmbedCalculator from '../views/EmbedCalculator.vue'
+import Reviews from '../views/Reviews.vue'
 import { getKeywordBySlug, slugifyKeyword } from '../data/keywordsData.js'
 
 const routes = [
@@ -246,6 +247,16 @@ const routes = [
       title: 'Pakistan House Construction Cost Calculator Widget | H&Q Design Services',
       description: 'Embeddable 2026 house construction cost calculator for real estate and construction websites.',
       hideHeaderFooter: true
+    }
+  },
+  {
+    path: '/reviews',
+    name: 'Reviews',
+    component: Reviews,
+    meta: {
+      title: 'Google Reviews & Client Ratings (5.0 ★) | H&Q Design Services',
+      description: 'Read 100% verified 5.0-star Google reviews for H&Q Design Services Lahore. Homeowners and commercial clients praise our 3D elevations, floor plans, and turnkey construction.',
+      keywords: 'H&Q Design Services reviews, Google reviews H&Q, best architects in Lahore reviews, architect rating Lahore, architectural firm reviews DHA Lahore'
     }
   }
 ]

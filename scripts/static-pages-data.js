@@ -1,4 +1,4 @@
-﻿export const staticPagesDetailed = [
+export const staticPagesDetailed = [
   {
     route: 'privacy-policy',
     title: 'Privacy Policy | H&Q Design Services Studio Lahore',
@@ -103,6 +103,18 @@
         <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white">Industry Partners & Strategic Collaborations</h1>
         <p class="text-lg font-medium text-[#088C7E]">Delivering Quality Construction Through Certified Material & Engineering Partners.</p>
         <p>H&Q Design Services maintains rigorous engineering relationships with statutory regulatory bodies (PCATP, PEC) and certified manufacturers of Grade 60 steel, ready-mix concrete, and luxury sanitary fittings across Pakistan.</p>
+      </div>
+    `
+  },
+  {
+    route: 'reviews',
+    title: 'Google Reviews & Client Ratings (5.0 ★) | H&Q Design Services',
+    desc: 'Read authentic, verified 5.0-star Google customer reviews for H&Q Design Services Lahore. Top architectural planning, 3D elevations, and turnkey house construction.',
+    body: `
+      <div class="py-12 max-w-5xl mx-auto px-4 space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+        <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white">Google Reviews & Client Ratings</h1>
+        <p class="text-lg font-medium text-[#088C7E]">Rated 5.0 / 5.0 Stars by Verified Homeowners & Commercial Developers.</p>
+        <p>Explore 100% verified customer feedback from clients in DHA Lahore, Bahria Town, Park View City, Gulberg, and Saudi Arabia who partnered with H&Q Design Services for 3D elevation renders, floor plans, and turnkey construction.</p>
       </div>
     `
   },

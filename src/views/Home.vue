@@ -570,6 +570,9 @@
       </div>
     </section>
 
+    <!-- OFFICIAL ORIGINAL GOOGLE REVIEWS SECTION -->
+    <GoogleReviews />
+
     <!-- Client Proof Stats Counter -->
     <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 rounded-3xl bg-white dark:bg-slate-900/60 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 text-center shadow-sm">
@@ -612,6 +615,7 @@ import { projectsData } from '../data/projectsData.js'
 import { areaGuidesData } from '../data/areaGuidesData.js'
 import PropertyDetailModal from '../components/PropertyDetailModal.vue'
 import CinematicShowreel from '../components/CinematicShowreel.vue'
+import GoogleReviews from '../components/GoogleReviews.vue'
 
 const router = useRouter()
 
