@@ -31,7 +31,7 @@ const routes = [
     component: Home,
     meta: {
       title: 'H&Q Design Services | Best Architects & Interior Designers in Lahore',
-      description: 'Best Architects & Luxury Interior Designers in Lahore. 500+ custom villas, 4K 3D elevations, architectural planning, house design, and turnkey interior fitouts in Lahore & Pakistan. Call 0341-6887454.',
+      description: 'H&Q Design services offers the best interior designers in Lahore, providing home, office, commercial interior design, architecture and construction solutions.',
       keywords: 'H&Q Design Services, Best Architect in Lahore, Interior Designer in Lahore, Architecture Company Lahore, Interior Design Services, Luxury Interior Design, Modern House Design Lahore, 3D Architectural Visualization, Architects in DHA Lahore'
     }
   },

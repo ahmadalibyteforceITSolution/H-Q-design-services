@@ -1,6 +1,6 @@
 export const homePageData = {
   title: 'H&Q Design Services | Best Architects in Lahore | Luxury House Design',
-  desc: 'Best Architects & Luxury Interior Designers in Lahore. 500+ custom villas, 4K 3D front elevations, DHA bylaws, turnkey floor plans & 2026 construction cost calculator. Call 0341-6887454.',
+  desc: 'H&Q Design services offers the best interior designers in Lahore, providing home, office, commercial interior design, architecture and construction solutions.',
   body: `
     <header class="bg-slate-900 text-white border-b border-slate-800 py-4 px-6">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
