@@ -65,7 +65,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
+import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
@@ -80,28 +80,6 @@ const showAddPropertyModal = ref(false)
 const showLeadModal = ref(false)
 
 const route = useRoute()
-let popupTimer = null
-
-const triggerPopup = (delay = 1200) => {
-  if (route.meta?.hideHeaderFooter) return
-  if (popupTimer) clearTimeout(popupTimer)
-  popupTimer = setTimeout(() => {
-    // Show pop up form when any page opens
-    if (!route.meta?.hideHeaderFooter) {
-      showLeadModal.value = true
-    }
-  }, delay)
-}
-
-onMounted(() => {
-  // Trigger pop-up on initial page load
-  triggerPopup(1200)
-})
-
-// Trigger when any page opens via router navigation
-watch(() => route?.fullPath, () => {
-  triggerPopup(1000)
-})
 </script>
 
 <style>
