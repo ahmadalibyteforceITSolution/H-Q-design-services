@@ -50,8 +50,89 @@
         </div>
       </div>
 
+      <!-- Strategy Clusters Section: 10 Core SEO Pillars -->
+      <section class="space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black uppercase bg-[#088C7E]/10 text-[#088C7E] border border-[#088C7E]/20 mb-2">
+              <i class="fa-solid fa-bullseye text-amber-500"></i>
+              <span>High-Intent SEO Keyword Architecture</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
+              Targeted Keyword Strategy Hub <span class="text-gradient-hq">(10 Pillars)</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-3xl pt-1">
+              Explore specialized search clusters across residential luxury, commercial architecture, 3D visualizations, and turnkey construction with direct links to our core service portfolios and dedicated topic specifications.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div 
+            v-for="cluster in keywordClusterMap" 
+            :key="cluster.id"
+            class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-[#088C7E]/40 transition-all flex flex-col justify-between space-y-4 group"
+          >
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="w-10 h-10 rounded-xl bg-[#088C7E]/10 text-[#088C7E] flex items-center justify-center text-lg">
+                  <i :class="cluster.icon"></i>
+                </div>
+                <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                  {{ cluster.intent }}
+                </span>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-black text-slate-900 dark:text-white group-hover:text-[#088C7E] transition-colors">
+                  {{ cluster.name }}
+                </h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 mt-1">
+                  {{ cluster.description }}
+                </p>
+              </div>
+
+              <!-- Sample Keywords Pills -->
+              <div class="space-y-1.5 pt-1">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Top Queries:</span>
+                <div class="flex flex-wrap gap-1.5">
+                  <router-link 
+                    v-for="kw in cluster.keywords.slice(0, 5)" 
+                    :key="kw"
+                    :to="'/keywords/' + slugifyKeyword(kw)"
+                    class="px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-800/80 hover:bg-[#088C7E] text-slate-700 dark:text-slate-300 hover:text-white text-[11px] font-medium transition-all"
+                  >
+                    {{ kw }}
+                  </router-link>
+                  <span v-if="cluster.keywords.length > 5" class="px-2 py-1 rounded-md text-[10px] text-slate-400 font-bold self-center">
+                    +{{ cluster.keywords.length - 5 }} more
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Target Core Page CTA -->
+            <div class="pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+              <router-link 
+                :to="cluster.targetPage"
+                class="text-xs font-bold text-[#088C7E] hover:text-[#066D62] flex items-center gap-1 group/btn"
+              >
+                <span>Visit {{ cluster.targetPageLabel }}</span>
+                <i class="fa-solid fa-arrow-right text-[10px] group-hover/btn:translate-x-1 transition-transform"></i>
+              </router-link>
+              <button 
+                @click="filterByCluster(cluster)"
+                class="text-[11px] font-semibold text-slate-500 hover:text-slate-900 dark:hover:text-white cursor-pointer"
+              >
+                Filter glossary ↓
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Keyword Knowledge Filter Container -->
-      <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-slate-800 text-white shadow-xl space-y-6">
+      <div id="glossary-filter" class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-slate-800 text-white shadow-xl space-y-6">
         
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-6">
           <div class="space-y-2">
@@ -163,8 +244,8 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import { topKeywordsData, allFlatKeywords, slugifyKeyword } from '../data/keywordsData.js'
+import { ref, computed, onMounted } from 'vue'
+import { topKeywordsData, allFlatKeywords, slugifyKeyword, keywordClusterMap } from '../data/keywordsData.js'
 
 const keywordSearchQuery = ref('')
 const selectedCategoryIndex = ref(-1)
@@ -192,4 +273,42 @@ const filteredCategories = computed(() => {
 const getKeywordTargetLink = (kw) => {
   return `/keywords/${slugifyKeyword(kw)}`
 }
+
+const filterByCluster = (cluster) => {
+  keywordSearchQuery.value = cluster.name.split(' ')[0]
+  const el = document.getElementById('glossary-filter')
+  if (el) el.scrollIntoView({ behavior: 'smooth' })
+}
+
+// Inject DefinedTermSet & CollectionPage Structured Data Schema
+onMounted(() => {
+  const schemaId = 'keywords-directory-schema'
+  let script = document.getElementById(schemaId)
+  if (!script) {
+    script = document.createElement('script')
+    script.setAttribute('id', schemaId)
+    script.setAttribute('type', 'application/ld+json')
+    document.head.appendChild(script)
+  }
+
+  const directorySchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Architecture, Construction & Design Glossary | H&Q Design Services",
+    "description": "Comprehensive reference library and terminology index covering residential villas, 3D elevations, structural engineering, and municipal bylaws in Pakistan.",
+    "url": "https://h-q-design-services.vercel.app/keywords-directory",
+    "mainEntity": {
+      "@type": "DefinedTermSet",
+      "name": "Architecture & Real Estate Terminology Pakistan",
+      "hasDefinedTerm": keywordClusterMap.map(cluster => ({
+        "@type": "DefinedTerm",
+        "name": cluster.name,
+        "description": cluster.description,
+        "url": `https://h-q-design-services.vercel.app${cluster.targetPage}`
+      }))
+    }
+  }
+
+  script.textContent = JSON.stringify(directorySchema, null, 2)
+})
 </script>

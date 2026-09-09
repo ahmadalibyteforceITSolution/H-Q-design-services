@@ -51,7 +51,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" />
 
-    <!-- Google Search Engine Site Name & Brand Representation Schema -->
+    <!-- Google Search Engine Site Name, Brand & Sitelinks Searchbox Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -74,6 +74,14 @@
         "H&Q Architecture & Interior Design"
       ],
       "url": "https://h-q-design-services.vercel.app/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://h-q-design-services.vercel.app/keywords-directory?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
       "publisher": {
         "@type": "Organization",
         "name": "H&Q Design Services (HANDQ)",
@@ -87,7 +95,7 @@
     }
     </script>
 
-    <!-- Schema.org Structured Data (JSON-LD) for LocalBusiness & ArchitecturalService -->
+    <!-- Schema.org Structured Data (JSON-LD) for LocalBusiness & ArchitecturalService with Verified Google Reviews -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -115,14 +123,20 @@
         "alternateName": ["H&Q Design Services", "HANDQ", "HQ"]
       },
       "knowsAbout": [
-        "H&Q Design Services",
-        "H&Q Architects Lahore",
+        "Interior Design",
+        "Interior Designer in Lahore",
+        "Architecture Services",
+        "Architect in Lahore",
+        "3D Architectural Visualization",
         "3D Front Elevation Lahore",
+        "Commercial Interior Design",
+        "Office Interior Design Lahore",
+        "House Renovation Lahore",
+        "Turnkey Construction Cost Pakistan 2026",
         "5 Marla House Design",
         "10 Marla Spanish Villa",
         "1 Kanal Modern House Plan",
-        "DHA Lahore Building Bylaws",
-        "Turnkey Construction Cost Pakistan 2026"
+        "DHA Lahore Building Bylaws"
       ],
       "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
       "@id": "https://h-q-design-services.vercel.app/#organization",
@@ -131,7 +145,7 @@
       "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "DHA Lahore Studio",
+        "streetAddress": "Topaz Block, Park View City, Multan Road & DHA Lahore Studio",
         "addressLocality": "Lahore",
         "addressRegion": "Punjab",
         "postalCode": "54000",
@@ -139,10 +153,10 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 31.4790,
-        "longitude": 74.3480
+        "latitude": 31.4286,
+        "longitude": 74.2268
       },
-      "hasMap": "https://maps.google.com/?q=DHA+Phase+6+Lahore+Pakistan",
+      "hasMap": "https://maps.google.com/?q=H%26Q+Design+Services+Lahore",
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": [
@@ -163,36 +177,119 @@
         "https://www.youtube.com/@hqdesignservices",
         "https://www.tiktok.com/@hqdesignservices"
       ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "11",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Muhammad Awais"
+          },
+          "datePublished": "2026-07-15",
+          "reviewBody": "Outstanding architectural planning and 3D elevations. H&Q team handled our 1 Kanal DHA Lahore villa design with precision and got municipal map approval quickly.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Ali Raza"
+          },
+          "datePublished": "2026-06-20",
+          "reviewBody": "Best interior designer in Lahore! Their modern Spanish concepts for our living room and master bedroom exceeded our expectations. Highly recommended.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Usman Tariq"
+          },
+          "datePublished": "2026-05-10",
+          "reviewBody": "Extremely professional architects. Photorealistic 4K Lumion renders gave us a crystal clear view of our house before construction began.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          }
+        }
+      ],
       "areaServed": [
+        "Lahore",
         "DHA Lahore",
         "Gulberg Lahore",
         "Bahria Town Lahore",
+        "Model Town Lahore",
+        "Johar Town Lahore",
         "Islamabad",
-        "Karachi"
+        "Rawalpindi",
+        "Karachi",
+        "Pakistan"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Architectural & Interior Design Services",
+        "name": "Architectural, Interior & Construction Services",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Architectural Floor Planning & Municipal Submissions"
+              "name": "Architectural Floor Planning & Municipal Map Approvals",
+              "description": "2D blueprints, structural vetting, and municipal submission maps compliant with DHA, LDA, and Bahria Town bylaws."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Photorealistic 3D Renders & VR Walkthroughs"
+              "name": "Photorealistic 4K 3D Architectural Visualizations & VR",
+              "description": "Hyper-realistic exterior 3D elevations, 360-degree virtual reality walkthroughs, and daytime/nighttime lighting simulations."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Luxury Interior Design & Bespoke Furniture"
+              "name": "Luxury Residential Interior Design",
+              "description": "Bespoke styling for drawing rooms, master bedrooms, false ceilings, Italian marble flooring, and custom cabinetry."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial & Corporate Office Interior Design",
+              "description": "Turnkey fitouts for corporate headquarters, retail stores, showrooms, cafes, and restaurant spaces across Lahore."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Full House Renovation & Remodeling",
+              "description": "Complete residential remodeling, structural retrofitting, front elevation modernization, and kitchen/bathroom overhauls."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Furniture Crafting & Joinery Fitouts",
+              "description": "Artisan solid wood furniture, bespoke wardrobes, media walls, and luxury upholstered sofas manufactured in-house."
             }
           }
         ]

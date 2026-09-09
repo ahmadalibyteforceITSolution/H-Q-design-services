@@ -29,6 +29,14 @@
               <i :class="categoryIcon"></i>
               <span>{{ categoryName }}</span>
             </span>
+            <span v-if="activeCluster" class="px-3.5 py-1 rounded-full text-xs font-bold bg-sky-500/20 text-sky-300 border border-sky-500/30 flex items-center gap-1.5 shadow-md">
+              <i :class="activeCluster.icon"></i>
+              <span>{{ activeCluster.name }} Cluster</span>
+            </span>
+            <span v-if="activeCluster?.intent" class="px-3.5 py-1 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 flex items-center gap-1">
+              <i class="fa-solid fa-bullseye text-[10px]"></i>
+              <span>Intent: {{ activeCluster.intent }}</span>
+            </span>
             <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 flex items-center gap-1">
               <i class="fa-solid fa-stamp text-[10px]"></i>
               <span>PCATP & PEC Vetted Standards</span>
@@ -258,6 +266,32 @@
         <!-- Right 4 Columns: Sticky Sidebar with Lead Form, Related Keywords & Fast Links -->
         <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
           
+          <!-- Core Strategy Pillar Card -->
+          <div v-if="activeCluster" class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#088C7E] flex items-center gap-1.5">
+                <i :class="activeCluster.icon"></i>
+                <span>Core Strategy Pillar</span>
+              </span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+                {{ activeCluster.intent }}
+              </span>
+            </div>
+            <h4 class="text-base font-extrabold text-slate-900 dark:text-white">
+              {{ activeCluster.name }}
+            </h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              {{ activeCluster.description }}
+            </p>
+            <router-link 
+              :to="activeCluster.targetPage"
+              class="w-full py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#088C7E] text-slate-800 dark:text-slate-200 hover:text-white font-bold text-xs transition-all flex items-center justify-between group"
+            >
+              <span>Explore {{ activeCluster.targetPageLabel }}</span>
+              <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+            </router-link>
+          </div>
+
           <!-- Consultation Card -->
           <div class="p-6 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-slate-800 text-white shadow-xl space-y-5">
             <div class="space-y-2">
@@ -385,7 +419,7 @@
 <script setup>
 import { computed, watchEffect, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { topKeywordsData, allFlatKeywords, slugifyKeyword, getKeywordBySlug } from '../data/keywordsData.js'
+import { topKeywordsData, allFlatKeywords, slugifyKeyword, getKeywordBySlug, getKeywordCluster } from '../data/keywordsData.js'
 import { getCategoryForKeyword, generateArticleContent, architectureImages } from '../data/blogData.js'
 
 const route = useRoute()
@@ -395,6 +429,11 @@ const activeKeyword = computed(() => {
   const rawSlug = route.params.slug
   if (!rawSlug) return '5 Marla House Design'
   return getKeywordBySlug(rawSlug)
+})
+
+// Active Cluster Resolution
+const activeCluster = computed(() => {
+  return getKeywordCluster(activeKeyword.value)
 })
 
 // Active Category Name
@@ -547,15 +586,20 @@ watchEffect(() => {
     "description": pageDesc,
     "url": canonicalUrl,
     "image": pageImage,
+    "about": {
+      "@type": "Thing",
+      "name": kw
+    },
+    "category": activeCluster.value?.name || categoryName.value,
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "184",
+      "ratingValue": "5.0",
+      "reviewCount": "11",
       "bestRating": "5",
       "worstRating": "1"
     },
     "provider": {
-      "@type": "Organization",
+      "@type": "ArchitecturalService",
       "name": "H&Q Design Services",
       "telephone": "+923416887454",
       "url": "https://h-q-design-services.vercel.app/"

@@ -23,22 +23,22 @@ const getBaseUrl = () => {
 const baseUrl = getBaseUrl()
 const staticPages = [
   { url: '', changefreq: 'daily', priority: '1.0' },
-  { url: 'properties', changefreq: 'daily', priority: '1.0' },
+  { url: 'services', changefreq: 'daily', priority: '0.95' },
+  { url: 'portfolio', changefreq: 'daily', priority: '0.95' },
+  { url: 'reviews', changefreq: 'daily', priority: '0.95' },
+  { url: 'keywords-directory', changefreq: 'daily', priority: '0.95' },
   { url: 'tools', changefreq: 'weekly', priority: '0.95' },
-  { url: 'projects', changefreq: 'weekly', priority: '0.95' },
-  { url: 'area-guides', changefreq: 'weekly', priority: '0.9' },
-  { url: 'trends', changefreq: 'weekly', priority: '0.9' },
+  { url: 'contact', changefreq: 'weekly', priority: '0.90' },
+  { url: 'about', changefreq: 'weekly', priority: '0.90' },
+  { url: 'area-guides', changefreq: 'weekly', priority: '0.90' },
+  { url: 'properties', changefreq: 'daily', priority: '0.90' },
+  { url: 'projects', changefreq: 'weekly', priority: '0.90' },
+  { url: 'trends', changefreq: 'weekly', priority: '0.85' },
   { url: 'agents', changefreq: 'weekly', priority: '0.85' },
   { url: 'forum', changefreq: 'daily', priority: '0.85' },
-  { url: 'services', changefreq: 'weekly', priority: '0.9' },
-  { url: 'portfolio', changefreq: 'weekly', priority: '0.9' },
-  { url: 'case-studies', changefreq: 'monthly', priority: '0.8' },
   { url: 'blog', changefreq: 'daily', priority: '0.85' },
-  { url: 'about', changefreq: 'weekly', priority: '0.8' },
-  { url: 'reviews', changefreq: 'weekly', priority: '0.9' },
+  { url: 'case-studies', changefreq: 'monthly', priority: '0.8' },
   { url: 'partners', changefreq: 'weekly', priority: '0.85' },
-  { url: 'keywords-directory', changefreq: 'weekly', priority: '0.8' },
-  { url: 'contact', changefreq: 'monthly', priority: '0.8' },
   { url: 'privacy-policy', changefreq: 'monthly', priority: '0.7' },
   { url: 'terms-of-service', changefreq: 'monthly', priority: '0.7' },
   { url: 'disclaimer', changefreq: 'monthly', priority: '0.7' }
@@ -71,7 +71,7 @@ allBlogs.forEach(b => {
     <loc>${baseUrl}/blog/${b.slug}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
 `
 })
@@ -100,7 +100,7 @@ allFlatKeywords.forEach(kw => {
     <loc>${baseUrl}/keywords/${kSlug}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
 `
   }

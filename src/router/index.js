@@ -30,9 +30,9 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: 'H&Q Design Services | Best Architects in Lahore',
-      description: 'Best Architects & Luxury Interior Designers in Lahore. 500+ custom villas, 4K 3D front elevations, DHA bylaws, turnkey floor plans & 2026 construction cost calculator. Call 0341-6887454.',
-      keywords: 'H&Q Design Services, Best Architects in Lahore, House Construction Cost in Pakistan, 5 Marla House Design, 10 Marla Spanish Villa, 1 Kanal House Plan, DHA Lahore Bylaws, 3D Elevation Lahore'
+      title: 'H&Q Design Services | Best Architects & Interior Designers in Lahore',
+      description: 'Best Architects & Luxury Interior Designers in Lahore. 500+ custom villas, 4K 3D elevations, architectural planning, house design, and turnkey interior fitouts in Lahore & Pakistan. Call 0341-6887454.',
+      keywords: 'H&Q Design Services, Best Architect in Lahore, Interior Designer in Lahore, Architecture Company Lahore, Interior Design Services, Luxury Interior Design, Modern House Design Lahore, 3D Architectural Visualization, Architects in DHA Lahore'
     }
   },
   {
@@ -52,7 +52,7 @@ const routes = [
     meta: {
       title: 'House Construction Cost Calculator 2026 | H&Q Studio',
       description: 'Instant 2026 House Construction Cost Calculator, Society Master Maps, Plot Finder, Area Unit Converter and Home Loan Mortgage EMI Calculator.',
-      keywords: 'Construction cost calculator Pakistan 2026, House building cost 5 Marla, Plot finder map DHA Lahore, Area unit converter Marla to Sqft, Mortgage EMI calculator Pakistan, Grey structure cost per sqft'
+      keywords: 'House design cost Lahore, Construction cost calculator Pakistan 2026, House building cost 5 Marla, Plot finder map DHA Lahore, Area unit converter Marla to Sqft, Mortgage EMI calculator Pakistan, Grey structure cost per sqft'
     }
   },
   {
@@ -72,7 +72,7 @@ const routes = [
     meta: {
       title: 'Pakistan Real Estate Area Guides | H&Q Design Studio',
       description: 'In-depth neighborhood reviews, average plot prices, lifestyle scores, and building bylaws for DHA Lahore and Bahria Town.',
-      keywords: 'DHA Lahore area guide, DHA Lahore phase reviews, Bahria Town Lahore lifestyle score, Gulberg commercial rates, society price benchmarks, Lahore residential guides'
+      keywords: 'Architect DHA Lahore, Interior designer DHA Lahore, DHA Lahore area guide, Bahria Town Lahore lifestyle score, Gulberg commercial rates, society price benchmarks, Lahore residential guides'
     }
   },
   {
@@ -92,7 +92,7 @@ const routes = [
     meta: {
       title: 'Find Top Architects & Real Estate Agents | H&Q Studio',
       description: 'Connect directly with licensed architectural engineers, luxury interior designers, and DHA/Bahria Town verified real estate advisors.',
-      keywords: 'Architects in Lahore, Registered PEC engineers, Real estate agents DHA Lahore, Luxury interior designers Lahore, DHA authorized consultants, Verified property dealers'
+      keywords: 'Architects in Lahore, Professional Architect Lahore, Registered PEC engineers, Real estate agents DHA Lahore, Luxury interior designers Lahore, DHA authorized consultants, Verified property dealers'
     }
   },
   {
@@ -110,9 +110,9 @@ const routes = [
     name: 'About',
     component: About,
     meta: {
-      title: 'About Us | H&Q Design Services Studio Lahore',
-      description: 'Learn about H&Q Design Services heritage, senior architects, and engineering team in Lahore, Pakistan.',
-      keywords: 'Architecture Studio Lahore, Professional Architects Pakistan, H&Q Design Services, Top Design Studio, Lahore Architects'
+      title: 'Best Architecture Firm & Interior Design Studio | About H&Q',
+      description: 'H&Q Design Services is Pakistan premier architecture company and luxury interior design studio based in Lahore. Licensed PCATP architects and PEC registered structural engineers.',
+      keywords: 'Best Architecture Firm in Lahore, Best Interior Design Company in Lahore, Professional Architect Lahore, Architecture Company Pakistan, Architectural Planning, Registered PCATP Architects Lahore, Architecture Firm Lahore'
     }
   },
   {
@@ -120,9 +120,9 @@ const routes = [
     name: 'Services',
     component: Services,
     meta: {
-      title: 'Architectural & Interior Design Services | HANDQ (H&Q)',
-      description: 'Explore our architectural deliverables: floor planning, submission maps, photorealistic 4K 3D renders, space planning, and luxury interior by HANDQ.',
-      keywords: 'HANDQ Services, HANDQ 3D House Design Elevation, Architectural Layout Lahore, Interior Decoration Packages, Floor Planning Services, 4K Elevation Rendering'
+      title: 'Architectural & Interior Design Services Lahore | H&Q Studio',
+      description: 'Full-scope architectural design services, luxury interior design, 3D rendering, commercial office fitouts, and complete home renovation in Lahore.',
+      keywords: 'Architectural Design Services, Interior Design Services, Best Interior Designer in Lahore, Commercial Interior Design Lahore, Renovation Services Lahore, 3D Rendering Services, Office Interior Design Lahore, Retail Interior Design, Villa Interior Design'
     }
   },
   {
@@ -130,9 +130,9 @@ const routes = [
     name: 'Portfolio',
     component: Portfolio,
     meta: {
-      title: 'Architectural Portfolio & 3D Projects | H&Q Studio',
-      description: 'Browse completed 5 Marla, 10 Marla, 1 Kanal villas, and commercial plazas in DHA, Gulberg, and Bahria Town Lahore with 3D elevation renders.',
-      keywords: '5 Marla Villa Design, 10 Marla House elevation, 1 Kanal Modern House Map, Commercial Plaza architecture, DHA Phase 6 House Designs'
+      title: '3D House Design & Elevation Portfolio | H&Q Studio Lahore',
+      description: 'Browse completed 5 Marla, 10 Marla, 1 Kanal villas, modern front elevations, 3D interior renderings, and commercial plazas in DHA, Gulberg, and Bahria Town Lahore.',
+      keywords: '3D House Design, Front Elevation Design, 3D Architectural Visualization, 5 Marla House Design, 10 Marla House Design, 1 Kanal House Design, Luxury Villa Design, Realistic Architectural Rendering, House Elevation Design'
     }
   },
   {
@@ -170,9 +170,9 @@ const routes = [
     name: 'Contact',
     component: Contact,
     meta: {
-      title: 'Contact H&Q Studio | Lahore, Pakistan',
-      description: 'Connect with senior architects in Lahore, Pakistan. Call 0341-6887454 or WhatsApp for instant 3D design quotes and plot consultations.',
-      keywords: 'Architect contact number Lahore, DHA studio location, WhatsApp architect consultation'
+      title: 'Contact H&Q Design Services | Hire Architects & Interior Designers Lahore',
+      description: 'Book a consultation or request an instant design quote from top architects and interior designers in Lahore. Call or WhatsApp 0341-6887454 for house design fees and turnkey quotation.',
+      keywords: 'Interior Designer Near Me, Architect Near Me, Interior Designer Consultation Lahore, Architect Consultation Lahore, Interior Design Quotation Lahore, House Design Cost Lahore, Interior Designer Charges Lahore, Architect Fees Lahore, Hire Interior Designer Lahore, Hire Architect Lahore'
     }
   },
   {
@@ -366,7 +366,7 @@ router.afterEach((to) => {
     document.head.appendChild(schemaScript)
   }
 
-  const schemaData = {
+  let schemaData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": to.meta?.title || "HANDQ Design Services (H&Q)",
@@ -378,6 +378,66 @@ router.afterEach((to) => {
       "url": `${baseUrl}/`
     }
   }
+
+  if (to.path === '/reviews') {
+    schemaData = {
+      "@context": "https://schema.org",
+      "@type": "ArchitecturalService",
+      "name": "H&Q Design Services Reviews & Ratings",
+      "url": canonicalUrl,
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "11",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+  } else if (to.path === '/contact') {
+    schemaData = {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": to.meta?.title,
+      "description": to.meta?.description,
+      "url": canonicalUrl,
+      "mainEntity": {
+        "@type": "ArchitecturalService",
+        "name": "H&Q Design Services",
+        "telephone": "+923416887454",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Topaz Block, Park View City & DHA Lahore Studio",
+          "addressLocality": "Lahore",
+          "addressRegion": "Punjab",
+          "postalCode": "54000",
+          "addressCountry": "PK"
+        }
+      }
+    }
+  } else if (to.path === '/about') {
+    schemaData = {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": to.meta?.title,
+      "description": to.meta?.description,
+      "url": canonicalUrl
+    }
+  } else if (to.path === '/services') {
+    schemaData = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": to.meta?.title,
+      "description": to.meta?.description,
+      "url": canonicalUrl,
+      "provider": {
+        "@type": "ArchitecturalService",
+        "name": "H&Q Design Services",
+        "telephone": "+923416887454",
+        "url": `${baseUrl}/`
+      }
+    }
+  }
+
   schemaScript.textContent = JSON.stringify(schemaData, null, 2)
 })
 

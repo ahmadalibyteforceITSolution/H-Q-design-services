@@ -5,7 +5,7 @@ import { allBlogs, getCategoryForKeyword, generateArticleContent, architectureIm
 import { userGscSlugs } from './gsc-urls.js'
 import { homePageData } from './static-home.js'
 import { staticPagesDetailed } from './static-pages-data.js'
-import { allFlatKeywords, slugifyKeyword, topKeywordsData } from '../src/data/keywordsData.js'
+import { allFlatKeywords, slugifyKeyword, topKeywordsData, keywordClusterMap } from '../src/data/keywordsData.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -93,12 +93,110 @@ const renderPage = (routePath, pageTitle, pageDesc, canonicalUrl, pageImage, pag
 // 1. Pre-render Root Homepage (dist/index.html) with Rich Semantic HTML
 renderPage('/', homePageData.title, homePageData.desc, 'https://h-q-design-services.vercel.app/', 'https://h-q-design-services.vercel.app/logo.png', homePageData.body)
 
-// 2. Pre-render All Static Pages with Substantial Content
+// 2. Pre-render All Static Pages with Substantial Content & Tailored Schemas
 staticPagesDetailed.forEach(p => {
   const canonicalUrl = `https://h-q-design-services.vercel.app/${p.route}`
   let mainBody = p.body
+  let extraHeadHtml = ''
 
-  if (p.route === 'keywords-directory') {
+  if (p.route === 'reviews') {
+    const reviewsSchema = {
+      "@context": "https://schema.org",
+      "@type": "ArchitecturalService",
+      "name": "H&Q Design Services Google Reviews & Ratings",
+      "url": canonicalUrl,
+      "telephone": "+923416887454",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "11",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    extraHeadHtml = `<script type="application/ld+json">${JSON.stringify(reviewsSchema)}</script>`
+  } else if (p.route === 'services') {
+    const servicesSchema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Architectural & Interior Design Services Lahore",
+      "url": canonicalUrl,
+      "provider": {
+        "@type": "ArchitecturalService",
+        "name": "H&Q Design Services",
+        "telephone": "+923416887454",
+        "url": "https://h-q-design-services.vercel.app/"
+      }
+    }
+    extraHeadHtml = `<script type="application/ld+json">${JSON.stringify(servicesSchema)}</script>`
+  } else if (p.route === 'contact') {
+    const contactSchema = {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": p.title,
+      "description": p.desc,
+      "url": canonicalUrl,
+      "mainEntity": {
+        "@type": "ArchitecturalService",
+        "name": "H&Q Design Services",
+        "telephone": "+923416887454",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Topaz Block, Park View City & DHA Lahore Studio",
+          "addressLocality": "Lahore",
+          "addressRegion": "Punjab",
+          "postalCode": "54000",
+          "addressCountry": "PK"
+        }
+      }
+    }
+    extraHeadHtml = `<script type="application/ld+json">${JSON.stringify(contactSchema)}</script>`
+  } else if (p.route === 'keywords-directory') {
+    const dirSchema = {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Architecture, Construction & Design Glossary | H&Q Design Services",
+      "url": canonicalUrl,
+      "mainEntity": {
+        "@type": "DefinedTermSet",
+        "name": "Architecture & Real Estate Terminology Pakistan",
+        "hasDefinedTerm": keywordClusterMap.map(c => ({
+          "@type": "DefinedTerm",
+          "name": c.name,
+          "description": c.description,
+          "url": `https://h-q-design-services.vercel.app${c.targetPage}`
+        }))
+      }
+    }
+    extraHeadHtml = `<script type="application/ld+json">${JSON.stringify(dirSchema)}</script>`
+
+    let clustersHtml = `
+      <div class="space-y-4">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Targeted Keyword Strategy Hub (10 Core Pillars)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          ${keywordClusterMap.map(cluster => `
+            <div class="p-6 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="font-extrabold text-slate-900 dark:text-white text-base">${escapeXml(cluster.name)}</h3>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-white dark:bg-slate-900 text-[#088C7E]">${escapeXml(cluster.intent)}</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">${escapeXml(cluster.description)}</p>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                ${cluster.keywords.slice(0, 5).map(kw => `
+                  <a href="/keywords/${slugifyKeyword(kw)}" class="px-2 py-1 rounded bg-white dark:bg-slate-900 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-[#088C7E]">
+                    ${escapeXml(kw)}
+                  </a>
+                `).join('')}
+              </div>
+              <div class="pt-2 border-t border-slate-200 dark:border-slate-700">
+                <a href="${cluster.targetPage}" class="text-xs font-bold text-[#088C7E]">Explore ${escapeXml(cluster.targetPageLabel)} →</a>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `
+
     let categoriesHtml = ''
     topKeywordsData.forEach(cat => {
       categoriesHtml += `
@@ -122,7 +220,8 @@ staticPagesDetailed.forEach(p => {
       <div class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white">Architecture & Construction Knowledge Index</h1>
         <p class="text-base text-slate-600 dark:text-slate-300 max-w-3xl">Comprehensive architectural glossary and spatial planning resource covering 3 Marla to 4 Kanal layouts, 3D elevations, structural engineering, and construction costs in Pakistan.</p>
-        <div class="space-y-6">
+        ${clustersHtml}
+        <div class="space-y-6 pt-6">
           ${categoriesHtml}
         </div>
       </div>
@@ -159,7 +258,7 @@ staticPagesDetailed.forEach(p => {
       </div>
     </footer>
   `
-  renderPage(p.route, p.title, p.desc, canonicalUrl, 'https://h-q-design-services.vercel.app/logo.jpg', bodyHtml)
+  renderPage(p.route, p.title, p.desc, canonicalUrl, 'https://h-q-design-services.vercel.app/logo.jpg', bodyHtml, extraHeadHtml)
 })
 
 // 3. Pre-render Blog Pages
@@ -314,8 +413,8 @@ allFlatKeywords.forEach((kw, i) => {
 
   const routePath = `keywords/${slug}`
   const canonicalUrl = `https://h-q-design-services.vercel.app/keywords/${slug}`
-  const pageTitle = `${kw} | 2026 Architectural Plan & Cost | H&Q Studio Lahore`
-  const pageDesc = `Comprehensive 2026 architectural designs, 3D elevations, floor plans, and construction cost estimates for ${kw} in Pakistan. Consult H&Q Senior Architects.`
+  const pageTitle = `${kw} in Lahore | Best Architects & Interior Designers | H&Q Design Services`
+  const pageDesc = `Looking for ${kw} in Lahore, DHA, or Pakistan? H&Q Design Services provides top-rated architectural designs, 3D elevations, luxury interiors, and turnkey construction. Call or WhatsApp 0341-6887454.`
   const category = getCategoryForKeyword(kw)
   const img = architectureImages[i % architectureImages.length]
   const content = generateArticleContent(kw, category, i + 1)
@@ -327,15 +426,19 @@ allFlatKeywords.forEach((kw, i) => {
     "description": pageDesc,
     "url": canonicalUrl,
     "image": img,
+    "about": {
+      "@type": "Thing",
+      "name": kw
+    },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "184",
+      "ratingValue": "5.0",
+      "reviewCount": "11",
       "bestRating": "5",
       "worstRating": "1"
     },
     "provider": {
-      "@type": "Organization",
+      "@type": "ArchitecturalService",
       "name": "H&Q Design Services",
       "telephone": "+923416887454",
       "url": "https://h-q-design-services.vercel.app/"
@@ -369,7 +472,15 @@ allFlatKeywords.forEach((kw, i) => {
         "name": `Does H&Q Design Services provide on-site supervision for ${kw}?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Our resident site engineers conduct rigorous phase-wise inspections during foundation excavation, steel rebar binding, slab casting, and plumbing pressure tests to ensure 100% adherence to architectural drawings."
+          "text": "Yes. Our resident site engineers conduct rigorous phase-wise inspections during foundation excavation, steel rebar binding, slab casting, and plumbing pressure tests to ensure 100% adherence to architectural drawings in DHA, Bahria Town, and across Lahore."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `What is the estimated cost and pricing for ${kw} in Lahore, Pakistan?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Design packages for ${kw} start with preliminary 2D architectural layouts and municipal maps from PKR 40-70 per sq.ft, while complete turnkey interior design and construction finishing range from PKR 4,500 to 7,500 per sq.ft based on premium material selections.`
         }
       }
     ]

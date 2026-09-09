@@ -317,10 +317,194 @@ const baseCategoriesMeta = [
   }
 ]
 
+// 10 Structured Keyword Clusters for Interior Design & Architecture in Lahore / Pakistan
+export const keywordClusterMap = [
+  {
+    id: 'interior-design',
+    name: 'Interior Design',
+    icon: 'fa-solid fa-couch',
+    intent: 'Commercial / Transactional',
+    targetPage: '/services',
+    targetPageLabel: 'Interior Design Services',
+    description: 'Bespoke residential, luxury, and commercial interior styling across Lahore & Pakistan.',
+    keywords: [
+      'Interior Design', 'Interior Designer', 'Interior Design Services', 'Interior Designers in Pakistan',
+      'Interior Designer in Lahore', 'Interior Design Lahore', 'Interior Design Company Lahore',
+      'Best Interior Designer in Lahore', 'Best Interior Design Company in Lahore', 'Professional Interior Designer Lahore',
+      'Residential Interior Design', 'Residential Interior Designer', 'Home Interior Design', 'Home Interior Designer',
+      'Luxury Interior Design', 'Luxury Interior Designer', 'Modern Interior Design', 'Modern Interior Designer',
+      'Contemporary Interior Design', 'Interior Decoration', 'Interior Decoration Services', 'Interior Decorator Lahore',
+      'House Interior Design', 'Apartment Interior Design', 'Villa Interior Design', 'Bedroom Interior Design',
+      'Living Room Interior Design', 'Kitchen Interior Design', 'Bathroom Interior Design', 'Dining Room Interior Design',
+      'Office Interior Design', 'Commercial Interior Design', 'Retail Interior Design', 'Restaurant Interior Design', 'Hotel Interior Design'
+    ]
+  },
+  {
+    id: 'architecture',
+    name: 'Architecture & Planning',
+    icon: 'fa-solid fa-landmark',
+    intent: 'Commercial / High Intent',
+    targetPage: '/services',
+    targetPageLabel: 'Architectural Planning',
+    description: 'PCATP & PEC compliant architectural blueprints, building bylaws, and structural consultancy.',
+    keywords: [
+      'Architecture', 'Architectural Design', 'Architecture Services', 'Architectural Design Services',
+      'Architect in Lahore', 'Architects in Lahore', 'Architecture Company Lahore', 'Architecture Firm Lahore',
+      'Best Architect in Lahore', 'Best Architecture Firm in Lahore', 'Professional Architect Lahore',
+      'Residential Architect Lahore', 'House Architect Lahore', 'Home Architect Lahore', 'Villa Architect Lahore',
+      'Commercial Architect Lahore', 'Building Architect Lahore', 'House Design Architect', 'Modern House Design',
+      'Modern House Architecture', 'Contemporary Architecture', 'Residential Architecture', 'Commercial Architecture',
+      'Architectural Planning', 'Architectural Consultancy', 'Architecture Consultant Lahore'
+    ]
+  },
+  {
+    id: 'house-home-design',
+    name: 'House & Home Design',
+    icon: 'fa-solid fa-house-chimney',
+    intent: 'Commercial / Informational',
+    targetPage: '/portfolio',
+    targetPageLabel: 'Villa Elevations & Plans',
+    description: 'Floor plans, elevations, and layout designs tailored for 5 Marla, 10 Marla, and 1 Kanal homes.',
+    keywords: [
+      'House Design Lahore', 'House Designer Lahore', 'Home Design Lahore', 'Home Designer Lahore',
+      'House Plan Lahore', 'House Planning Lahore', 'House Map Design Lahore', 'Home Architecture Lahore',
+      'House Architecture Lahore', 'Luxury House Design Lahore', 'Modern House Design Lahore',
+      'Contemporary House Design Lahore', 'Villa Design Lahore', 'Luxury Villa Design', 'Villa Architect Lahore',
+      '5 Marla House Design', '10 Marla House Design', '1 Kanal House Design', 'Double Story House Design',
+      'Single Story House Design', 'Front Elevation Design', 'House Elevation Design', '3D House Design', '3D House Visualization'
+    ]
+  },
+  {
+    id: '3d-visualization',
+    name: '3D Visualization & VR',
+    icon: 'fa-solid fa-cube',
+    intent: 'Commercial / Design Intent',
+    targetPage: '/portfolio',
+    targetPageLabel: '3D Renderings & Walkthroughs',
+    description: '4K photorealistic architectural 3D elevations, interior renderings, and Lumion video walkthroughs.',
+    keywords: [
+      '3D Architectural Visualization', 'Architectural 3D Visualization', '3D Interior Design',
+      '3D Interior Visualization', '3D Rendering Services', 'Architectural Rendering',
+      '3D Architectural Rendering', 'Interior Rendering', 'Exterior Rendering', '3D House Rendering',
+      '3D Floor Plan', '3D Floor Plan Design', 'Realistic Architectural Rendering', 'Photorealistic Rendering',
+      'Architectural Visualization Lahore', '3D Visualization Lahore', '3D Rendering Company Lahore'
+    ]
+  },
+  {
+    id: 'commercial',
+    name: 'Commercial Architecture & Interiors',
+    icon: 'fa-solid fa-building',
+    intent: 'B2B / Commercial',
+    targetPage: '/services',
+    targetPageLabel: 'Commercial Fitouts',
+    description: 'Corporate office architecture, retail shops, showrooms, cafes, and restaurant spaces.',
+    keywords: [
+      'Commercial Interior Design Lahore', 'Commercial Interior Designer Lahore', 'Office Interior Design Lahore',
+      'Office Interior Designer Lahore', 'Corporate Office Design', 'Office Architecture Lahore',
+      'Retail Interior Design Lahore', 'Shop Interior Design Lahore', 'Restaurant Interior Design Lahore',
+      'Cafe Interior Design Lahore', 'Hotel Interior Design Lahore', 'Commercial Architecture Lahore',
+      'Commercial Architect Lahore', 'Showroom Interior Design Lahore', 'Workspace Interior Design', 'Corporate Interior Design'
+    ]
+  },
+  {
+    id: 'renovation',
+    name: 'Renovation & Remodeling',
+    icon: 'fa-solid fa-hammer',
+    intent: 'High Intent / Renovation',
+    targetPage: '/services',
+    targetPageLabel: 'Turnkey Renovation',
+    description: 'Complete home remodeling, facade modernization, kitchen and bathroom renovations.',
+    keywords: [
+      'Home Renovation Lahore', 'House Renovation Lahore', 'Interior Renovation Lahore', 'Renovation Services Lahore',
+      'Renovation Company Lahore', 'Home Remodeling Lahore', 'House Remodeling Lahore', 'Interior Remodeling Lahore',
+      'Kitchen Renovation Lahore', 'Bathroom Renovation Lahore', 'Office Renovation Lahore', 'Commercial Renovation Lahore',
+      'Villa Renovation Lahore', 'Apartment Renovation Lahore', 'Complete Home Renovation Lahore'
+    ]
+  },
+  {
+    id: 'lahore-local',
+    name: 'Lahore Local SEO (Societies)',
+    icon: 'fa-solid fa-location-dot',
+    intent: 'Local SEO / High Relevance',
+    targetPage: '/area-guides',
+    targetPageLabel: 'Society Bylaws & Guides',
+    description: 'Hyper-localized architect and interior design services for DHA, Gulberg, Bahria Town, and Model Town.',
+    keywords: [
+      'Interior Designer DHA Lahore', 'Interior Design DHA Lahore', 'Interior Designer DHA Phase 5',
+      'Interior Designer DHA Phase 6', 'Interior Designer DHA Phase 8', 'Interior Designer Gulberg Lahore',
+      'Interior Designer Model Town Lahore', 'Interior Designer Bahria Town Lahore', 'Interior Designer Johar Town Lahore',
+      'Interior Designer Wapda Town Lahore', 'Interior Designer Cantt Lahore', 'Architect DHA Lahore',
+      'Architect Gulberg Lahore', 'Architect Bahria Town Lahore', 'Architect Model Town Lahore',
+      'Architect Johar Town Lahore', 'Architecture Firm DHA Lahore'
+    ]
+  },
+  {
+    id: 'buyer-intent',
+    name: 'Commercial & Buyer-Intent',
+    icon: 'fa-solid fa-wallet',
+    intent: 'Transactional / Ready to Hire',
+    targetPage: '/contact',
+    targetPageLabel: 'Consultation & Quotation',
+    description: 'High-converting search phrases used by clients searching for prices, packages, and architects near them.',
+    keywords: [
+      'Interior Designer Near Me', 'Architect Near Me', 'Interior Design Company Near Me', 'Architecture Firm Near Me',
+      'Best Interior Designer Near Me', 'Best Architect Near Me', 'Interior Designer Price Lahore',
+      'Interior Design Cost Lahore', 'Interior Design Packages Lahore', 'Interior Designer Consultation Lahore',
+      'Architect Consultation Lahore', 'Interior Design Quotation Lahore', 'Interior Design Company Price',
+      'Home Interior Design Cost Lahore', 'Office Interior Design Cost Lahore', 'House Design Cost Lahore'
+    ]
+  },
+  {
+    id: 'pakistan-wide',
+    name: 'Pakistan-Wide Authority',
+    icon: 'fa-solid fa-globe',
+    intent: 'National Brand Authority',
+    targetPage: '/about',
+    targetPageLabel: 'National Studio Profile',
+    description: 'Country-wide search terms establishing H&Q as Pakistan’s leading architectural practice.',
+    keywords: [
+      'Interior Designer Pakistan', 'Interior Design Company Pakistan', 'Interior Design Services Pakistan',
+      'Best Interior Designer Pakistan', 'Architecture Company Pakistan', 'Architecture Firm Pakistan',
+      'Architect Pakistan', 'Architectural Design Pakistan', 'Home Design Pakistan', 'House Design Pakistan',
+      'Residential Architect Pakistan', 'Commercial Architect Pakistan', '3D Visualization Pakistan',
+      '3D Rendering Pakistan', 'Interior Decoration Pakistan', 'Home Renovation Pakistan'
+    ]
+  },
+  {
+    id: 'long-tail',
+    name: 'High-Conversion Long-Tail',
+    icon: 'fa-solid fa-bullseye',
+    intent: 'Long-Tail / Specific Search',
+    targetPage: '/reviews',
+    targetPageLabel: 'Verified Client Results',
+    description: 'Detailed search queries reflecting specific customer requirements with very high conversion rates.',
+    keywords: [
+      'Best Interior Designer for Home in Lahore', 'Affordable Interior Designer in Lahore',
+      'Luxury Interior Designer in Lahore', 'Modern Interior Designer in Lahore',
+      'Residential Interior Design Company Lahore', 'Professional Home Interior Designer Lahore',
+      'Best Architect for House Design Lahore', 'Residential Architecture Firm Lahore',
+      'Modern House Architect Lahore', 'Luxury Villa Interior Designer Lahore',
+      'Complete Home Interior Design Lahore', 'Complete House Design Services Lahore',
+      'Interior and Architecture Design Company Lahore', 'Interior Design and Architectural Services Lahore',
+      '3D House Design and Rendering Lahore', 'Home Renovation and Interior Design Lahore',
+      'Office Interior Design and Renovation Lahore', 'Commercial Interior Design Company Lahore'
+    ]
+  }
+]
+
 // Function to expand keywords dynamically to at least 3,000 high-quality SEO combinations
 const generateExpandedKeywords = (baseKeywords) => {
   const result = [...baseKeywords]
   
+  // Explicitly inject all cluster keywords into the master pool
+  keywordClusterMap.forEach(cluster => {
+    cluster.keywords.forEach(kw => {
+      if (!result.includes(kw)) {
+        result.push(kw)
+      }
+    })
+  })
+
   const locations = [
     'DHA Lahore', 'Gulberg Lahore', 'Bahria Town Lahore', 'DHA Islamabad', 
     'Bahria Town Islamabad', 'DHA Karachi', 'Bahria Town Karachi', 
@@ -484,4 +668,20 @@ export const getAllKeywordsWithSlugs = () => {
     name: kw,
     slug: slugifyKeyword(kw)
   }))
+}
+
+export const getKeywordCluster = (keywordName) => {
+  if (!keywordName) return null
+  const lower = String(keywordName).toLowerCase().trim()
+  for (const cluster of keywordClusterMap) {
+    if (cluster.keywords.some(k => k.toLowerCase() === lower)) {
+      return cluster
+    }
+  }
+  for (const cluster of keywordClusterMap) {
+    if (cluster.keywords.some(k => lower.includes(k.toLowerCase()) || k.toLowerCase().includes(lower))) {
+      return cluster
+    }
+  }
+  return null
 }
