@@ -1,4 +1,6 @@
 export const userGscSlugs = [
+  "article-97-curtain-wall-glass-installation-for-commercial-buildings-in-lahore",
+  "article-1009-interior-design-services-lahore",
   "article-393-driveway-paver-tile-layout",
   "article-898-chawla-aluminium-1-6mm-price",
   "article-665-garbage-disposal-unit-sink-fitting",

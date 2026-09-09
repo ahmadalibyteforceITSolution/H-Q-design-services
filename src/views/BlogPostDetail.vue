@@ -174,7 +174,7 @@
 <script setup>
 import { ref, computed, watchEffect, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { allBlogs } from '../data/blogData.js'
+import { allBlogs, generateArticleContent, getCategoryForKeyword } from '../data/blogData.js'
 
 defineEmits(['open-start-project'])
 
@@ -212,14 +212,23 @@ const activePost = computed(() => {
     if (foundById) return foundById
   }
 
+  // 3. Dynamic generation for any requested slug or keyword
+  const cleanTopic = slug.replace(/^article-\d+-/i, '').replace(/-/g, ' ').trim()
+  const displayTitle = cleanTopic ? cleanTopic.charAt(0).toUpperCase() + cleanTopic.slice(1) : 'Modern Architecture & Interior Design Guide'
+  const category = getCategoryForKeyword(cleanTopic || 'Interior Design')
+  const content = generateArticleContent(displayTitle, category, 1)
+
   return {
-    title: 'Modern Architectural Trends in Lahore: DHA & Bahria Town Guide',
-    category: 'Society News',
-    date: 'July 15, 2026',
-    readTime: '5 min read',
+    id: 1,
+    slug: slug,
+    title: `${displayTitle} - Architecture & Interior Design Guide`,
+    category: category,
+    date: 'August 15, 2026',
+    readTime: '6 min read',
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
-    excerpt: 'Detailed architectural analysis and house layout recommendations from H&Q chief architects in Lahore, Pakistan.',
-    content: ''
+    excerpt: `Complete architectural analysis, technical parameters, and interior design guidelines for ${displayTitle} in Lahore, Pakistan. Written by H&Q Senior Architects.`,
+    content: content,
+    keyword: displayTitle
   }
 })
 
