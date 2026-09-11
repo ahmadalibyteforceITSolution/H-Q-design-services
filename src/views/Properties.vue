@@ -266,6 +266,9 @@
 
     </main>
 
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
     <!-- Global Property Detail Modal -->
     <PropertyDetailModal 
       v-if="selectedProperty" 
@@ -281,6 +284,7 @@ import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { propertiesData } from '../data/propertiesData.js'
 import PropertyDetailModal from '../components/PropertyDetailModal.vue'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 
 const route = useRoute()
 

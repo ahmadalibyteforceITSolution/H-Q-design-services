@@ -110,8 +110,8 @@
               <span>{{ guide.bylawsSummary }}</span>
             </div>
 
-            <!-- CTA Row -->
-            <div class="pt-2">
+            <!-- CTA Row with Cross-Links -->
+            <div class="pt-2 space-y-2">
               <router-link 
                 to="/properties" 
                 class="w-full py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white font-black text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-md text-center"
@@ -119,6 +119,22 @@
                 <span>View Live Properties in {{ guide.name }}</span>
                 <i class="fa-solid fa-arrow-right text-xs"></i>
               </router-link>
+              <div class="grid grid-cols-2 gap-2 text-xs font-bold text-center">
+                <router-link 
+                  to="/tools?tab=cost-calc" 
+                  class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors flex items-center justify-center gap-1.5"
+                >
+                  <i class="fa-solid fa-calculator text-[#088C7E]"></i>
+                  <span>Cost Calculator</span>
+                </router-link>
+                <router-link 
+                  to="/portfolio" 
+                  class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors flex items-center justify-center gap-1.5"
+                >
+                  <i class="fa-solid fa-cubes text-amber-500"></i>
+                  <span>3D Elevations</span>
+                </router-link>
+              </div>
             </div>
 
           </div>
@@ -129,9 +145,13 @@
 
     </main>
 
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
   </div>
 </template>
 
 <script setup>
 import { areaGuidesData } from '../data/areaGuidesData.js'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 </script>

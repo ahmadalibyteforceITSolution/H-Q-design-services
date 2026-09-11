@@ -91,13 +91,39 @@
           </p>
         </div>
       </div>
+
+      <!-- Cross Navigation Action Strip -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="space-y-1 text-center sm:text-left">
+          <h4 class="font-extrabold text-base sm:text-lg text-white">Experience 5-Star Architectural Services</h4>
+          <p class="text-xs text-slate-400">Discover completed floor plans, calculate construction costs, or meet our architects.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <router-link to="/portfolio" class="px-4 py-2.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-bold transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-cubes"></i>
+            <span>3D Portfolio</span>
+          </router-link>
+          <router-link to="/tools?tab=cost-calc" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition-colors flex items-center gap-1.5 border border-slate-700">
+            <i class="fa-solid fa-calculator text-emerald-400"></i>
+            <span>Cost Calculator</span>
+          </router-link>
+          <router-link to="/contact" class="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-white text-xs font-bold transition-colors flex items-center gap-1.5">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Contact Studio</span>
+          </router-link>
+        </div>
+      </div>
     </section>
+
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
 
   </div>
 </template>
 
 <script setup>
 import GoogleReviews from '../components/GoogleReviews.vue'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 import { GOOGLE_BUSINESS } from '../data/googleReviewsData.js'
 
 const businessData = GOOGLE_BUSINESS

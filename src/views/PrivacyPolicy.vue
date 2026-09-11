@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="py-12 space-y-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Breadcrumb Navigation -->
@@ -113,7 +113,7 @@
         </p>
       </section>
 
-      <section class="p-6 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
+      <section class="p-6 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
         <h3 class="font-bold text-slate-900 dark:text-white">Contacting Us</h3>
         <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
           If you have any questions regarding this privacy policy or the practices of this site, please contact:
@@ -124,12 +124,25 @@
           Email: asadali28997@gmail.com<br>
           Phone: +92 341 6887454 | WhatsApp KSA: +966 50 714 3124
         </p>
+        <div class="flex flex-wrap items-center gap-3 pt-2 text-xs font-bold border-t border-slate-200 dark:border-slate-800">
+          <router-link to="/" class="text-[#088C7E] hover:underline">← Home</router-link>
+          <span>·</span>
+          <router-link to="/about" class="text-[#088C7E] hover:underline">About Studio</router-link>
+          <span>·</span>
+          <router-link to="/services" class="text-[#088C7E] hover:underline">Design Services</router-link>
+          <span>·</span>
+          <router-link to="/contact" class="text-[#088C7E] hover:underline">Contact Desk</router-link>
+        </div>
       </section>
 
     </div>
+
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
   </div>
 </template>
 
 <script setup>
-// Privacy Policy
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 </script>

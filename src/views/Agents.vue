@@ -114,9 +114,13 @@
 
     </main>
 
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
   </div>
 </template>
 
 <script setup>
 import { agentsData } from '../data/agentsData.js'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 </script>

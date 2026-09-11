@@ -141,27 +141,54 @@
     <!-- Client Reviews Section -->
     <GoogleReviews />
 
-    <!-- Studio Contact CTA -->
+    <!-- Studio Contact & Cross-Navigation CTA -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="p-8 sm:p-12 rounded-3xl bg-slate-900 text-white text-center space-y-6 border border-slate-800">
         <h3 class="text-2xl sm:text-4xl font-extrabold">Visit Our Studio in Lahore</h3>
         <p class="text-slate-400 max-w-xl mx-auto text-sm">
-          Discuss your 5 Marla, 10 Marla, or 1 Kanal plot floor plans over tea with our chief architects.
+          Discuss your 5 Marla, 10 Marla, or 1 Kanal plot floor plans over tea with our chief architects in DHA Lahore or Parkview City.
         </p>
-        <button 
-          @click="$emit('open-start-project')"
-          class="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm shadow-xl shadow-emerald-500/20 inline-flex items-center gap-2"
-        >
-          <i class="fa-solid fa-calendar-check"></i>
-          <span>Book Consultation Call</span>
-        </button>
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <router-link 
+            to="/contact"
+            class="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm shadow-xl shadow-emerald-500/20 inline-flex items-center gap-2"
+          >
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Schedule Studio Visit</span>
+          </router-link>
+          <router-link 
+            to="/services"
+            class="px-6 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 inline-flex items-center gap-2"
+          >
+            <i class="fa-solid fa-compass-drafting text-[#088C7E]"></i>
+            <span>Explore Services</span>
+          </router-link>
+          <router-link 
+            to="/portfolio"
+            class="px-6 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 inline-flex items-center gap-2"
+          >
+            <i class="fa-solid fa-cubes text-amber-400"></i>
+            <span>3D Elevation Portfolio</span>
+          </router-link>
+          <router-link 
+            to="/tools?tab=cost-calc"
+            class="px-6 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 inline-flex items-center gap-2"
+          >
+            <i class="fa-solid fa-calculator text-emerald-400"></i>
+            <span>2026 Cost Calculator</span>
+          </router-link>
+        </div>
       </div>
     </section>
+
+    <!-- Comprehensive Sitewide Internal Linking Network -->
+    <InternalLinkingHub />
 
   </div>
 </template>
 
 <script setup>
 import GoogleReviews from '../components/GoogleReviews.vue'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 defineEmits(['open-start-project'])
 </script>

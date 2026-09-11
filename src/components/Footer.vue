@@ -4,14 +4,14 @@
     
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
-      <!-- Top 5-Column Footer Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+      <!-- Top 5-Column Footer Grid with Full Architectural & Real Estate Directory -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-slate-800">
         
         <!-- Brand Info with Official Image Logo -->
-        <div class="lg:col-span-2 space-y-5">
+        <div class="space-y-5">
           
           <!-- Official H&Q Design Services Image Logo -->
-          <router-link to="/" class="inline-block group h-24 sm:h-28">
+          <router-link to="/" class="inline-block group h-20 sm:h-24">
             <img 
               :src="logoImg" 
               alt="H&Q Design Services Logo" 
@@ -19,81 +19,89 @@
             />
           </router-link>
 
-          <p class="text-xs leading-relaxed text-slate-400 max-w-sm">
+          <p class="text-xs leading-relaxed text-slate-400">
             Pakistan's Premier Architecture & Interior Design Studio. Transforming spaces into luxury homes, offices, and commercial landmarks across DHA, Gulberg, and Bahria Town Lahore.
           </p>
 
           <!-- Status Indicator -->
-          <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
             <span class="text-slate-300 font-mono text-[11px] flex items-center gap-1.5">
               <i class="fa-solid fa-handshake text-[#088C7E] text-xs"></i>
-              Licensed PEC Architects · Lahore, Pakistan
+              Licensed PEC Architects
             </span>
           </div>
 
           <!-- Contact Snippet -->
-          <div class="text-xs text-slate-300 space-y-2 pt-2">
+          <div class="text-xs text-slate-300 space-y-1.5 pt-1">
             <p class="flex items-center gap-2">
               <i class="fa-solid fa-location-dot text-[#088C7E] text-xs"></i>
-              <span>DHA Lahore, Punjab, Pakistan</span>
+              <span>DHA Lahore & Park View City</span>
             </p>
             <p class="flex items-center gap-2">
               <i class="fa-solid fa-phone text-[#088C7E] text-xs"></i>
-              <span>0341-6887454 | 🇸🇦 +966 50 714 3124</span>
-            </p>
-            <p class="flex items-center gap-2">
-              <i class="fa-solid fa-envelope text-[#088C7E] text-xs"></i>
-              <a 
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=asadali28997@gmail.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="hover:underline hover:text-emerald-400 font-bold transition-colors flex items-center gap-1"
-                title="Open Gmail Compose"
-              >
-                <span>asadali28997@gmail.com</span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-[#088C7E]"></i>
-              </a>
+              <span>0341-6887454 | +966 50 714 3124</span>
             </p>
           </div>
         </div>
 
-        <!-- Popular Real Estate Searches (Internal Links) -->
+        <!-- Architecture & Studio Services (Internal Links) -->
         <div class="space-y-4">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Properties & Portals</h4>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white flex items-center gap-1.5">
+            <i class="fa-solid fa-compass-drafting text-[#088C7E]"></i>
+            <span>Architecture & Design</span>
+          </h4>
           <ul class="space-y-2 text-xs">
-            <li><router-link to="/properties" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-house text-[10px] text-[#088C7E]"></i> Homes for Sale in Lahore</router-link></li>
-            <li><router-link to="/properties" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-map-location-dot text-[10px] text-[#088C7E]"></i> Plots in DHA Lahore</router-link></li>
+            <li><router-link to="/services" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-pen-ruler text-[10px] text-[#088C7E]"></i> Architectural Design</router-link></li>
+            <li><router-link to="/portfolio" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-cubes text-[10px] text-[#088C7E]"></i> 3D Elevations & Plans</router-link></li>
+            <li><router-link to="/services" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-couch text-[10px] text-[#088C7E]"></i> Luxury Interior Design</router-link></li>
+            <li><router-link to="/case-studies" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-file-lines text-[10px] text-[#088C7E]"></i> Design Case Studies</router-link></li>
+            <li><router-link to="/about" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-building-user text-[10px] text-[#088C7E]"></i> About H&Q Studio</router-link></li>
+            <li><router-link to="/contact" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-headset text-[10px] text-[#088C7E]"></i> Contact & Location</router-link></li>
+            <li><router-link to="/reviews" class="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-amber-300 font-bold"><i class="fa-solid fa-star text-[10px] text-amber-400"></i> Google Reviews (5.0 ★)</router-link></li>
+          </ul>
+        </div>
+
+        <!-- Properties & Housing Portals (Internal Links) -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white flex items-center gap-1.5">
+            <i class="fa-solid fa-building text-[#088C7E]"></i>
+            <span>Properties & Portals</span>
+          </h4>
+          <ul class="space-y-2 text-xs">
+            <li><router-link to="/properties?purpose=For Sale" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-house text-[10px] text-[#088C7E]"></i> Homes for Sale in Lahore</router-link></li>
+            <li><router-link to="/properties?purpose=Plots" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-map-location-dot text-[10px] text-[#088C7E]"></i> Plots in DHA Lahore</router-link></li>
             <li><router-link to="/projects" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-city text-[10px] text-[#088C7E]"></i> New Housing Projects 2026</router-link></li>
-            <li><router-link to="/properties" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-building text-[10px] text-[#088C7E]"></i> Commercial Plazas Gulberg</router-link></li>
+            <li><router-link to="/properties?purpose=Commercial" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-store text-[10px] text-[#088C7E]"></i> Commercial Plazas Gulberg</router-link></li>
             <li><router-link to="/agents" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-users-gear text-[10px] text-[#088C7E]"></i> Certified Agents & Architects</router-link></li>
             <li><router-link to="/forum" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-comments text-[10px] text-[#088C7E]"></i> Real Estate Forum Q&A</router-link></li>
-            <li><router-link to="/reviews" class="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-amber-300 font-bold"><i class="fa-solid fa-star text-[10px] text-amber-400"></i> Google Reviews (5.0 ★★★★★)</router-link></li>
-            <li><router-link to="/privacy-policy" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-[10px] text-[#088C7E]"></i> Privacy Policy</router-link></li>
-            <li><router-link to="/terms-of-service" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-file-contract text-[10px] text-[#088C7E]"></i> Terms of Service</router-link></li>
-            <li><router-link to="/disclaimer" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-circle-exclamation text-[10px] text-[#088C7E]"></i> Website Disclaimer</router-link></li>
+            <li><router-link to="/blog" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-newspaper text-[10px] text-[#088C7E]"></i> Architecture Guides (2,000+)</router-link></li>
           </ul>
         </div>
 
         <!-- Tools & Area Guides (Internal Links) -->
         <div class="space-y-4">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Tools & Area Guides</h4>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white flex items-center gap-1.5">
+            <i class="fa-solid fa-calculator text-[#088C7E]"></i>
+            <span>Tools & Area Guides</span>
+          </h4>
           <ul class="space-y-2 text-xs">
-            <li><router-link to="/tools" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-calculator text-[10px] text-[#088C7E]"></i> Construction Cost Calculator</router-link></li>
-            <li><router-link to="/tools" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-map text-[10px] text-[#088C7E]"></i> Plot Finder & Master Maps</router-link></li>
-            <li><router-link to="/tools" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-ruler-combined text-[10px] text-[#088C7E]"></i> Area Unit Converter</router-link></li>
-            <li><router-link to="/tools" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-landmark text-[10px] text-[#088C7E]"></i> Mortgage EMI Calculator</router-link></li>
-            <li><router-link to="/area-guides" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-[10px] text-amber-500"></i> Lake City Lahore Guide</router-link></li>
+            <li><router-link to="/tools?tab=cost-calc" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-calculator text-[10px] text-[#088C7E]"></i> Construction Cost Calculator</router-link></li>
+            <li><router-link to="/tools?tab=plot-finder" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-map text-[10px] text-[#088C7E]"></i> Plot Finder & Master Maps</router-link></li>
+            <li><router-link to="/tools?tab=unit-converter" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-ruler-combined text-[10px] text-[#088C7E]"></i> Area Unit Converter</router-link></li>
+            <li><router-link to="/tools?tab=mortgage-calc" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-landmark text-[10px] text-[#088C7E]"></i> Mortgage EMI Calculator</router-link></li>
+            <li><router-link to="/area-guides" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-[10px] text-amber-500"></i> Society Bylaw Guides</router-link></li>
             <li><router-link to="/trends" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-arrow-trend-up text-[10px] text-emerald-400"></i> Price Index & Trends</router-link></li>
+            <li><router-link to="/embed/calculator" class="hover:text-[#088C7E] transition-colors flex items-center gap-1.5"><i class="fa-solid fa-code text-[10px] text-[#088C7E]"></i> Embeddable Widget</router-link></li>
           </ul>
         </div>
 
-        <!-- Newsletter & Mobile Apps -->
+        <!-- Newsletter & Direct Support -->
         <div class="space-y-4">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Newsletter & Alerts</h4>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Newsletter & Support</h4>
           <p class="text-xs text-slate-400">Get instant plot price alerts, 3D design releases, and verified listings.</p>
           
           <form @submit.prevent="subscribe" class="space-y-2">
@@ -117,16 +125,23 @@
             </p>
           </form>
 
-          <!-- Mobile Apps Badge -->
-          <div class="pt-2 flex items-center gap-2">
-            <button @click="$emit('open-start-project')" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-[#088C7E] text-white text-[10px] font-bold flex items-center gap-1.5 cursor-pointer">
-              <i class="fa-brands fa-google-play text-xs text-[#088C7E]"></i>
-              <span>Google Play</span>
-            </button>
-            <button @click="$emit('open-start-project')" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-[#088C7E] text-white text-[10px] font-bold flex items-center gap-1.5 cursor-pointer">
-              <i class="fa-brands fa-apple text-xs text-amber-400"></i>
-              <span>App Store</span>
-            </button>
+          <!-- Direct Architect Consultation Buttons -->
+          <div class="pt-2 space-y-2">
+            <a 
+              href="https://wa.me/966507143124" 
+              target="_blank" 
+              class="w-full py-2 px-3 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-600/30 transition-all text-xs font-bold flex items-center justify-center gap-2"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>KSA WhatsApp Desk</span>
+            </a>
+            <router-link 
+              to="/contact" 
+              class="w-full py-2 px-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-[#088C7E] text-slate-300 hover:text-white transition-all text-xs font-bold flex items-center justify-center gap-2"
+            >
+              <i class="fa-solid fa-phone text-[#088C7E]"></i>
+              <span>Book Lahore Studio Visit</span>
+            </router-link>
           </div>
         </div>
 
@@ -176,10 +191,16 @@
         </div>
       </div>
 
-      <!-- Trending Keywords -->
-      <div class="pt-4 border-t border-slate-800/80">
-        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Trending Real Estate & Architecture Searches</h4>
-        <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-400">
+      <!-- Trending Keywords & Architecture Deep Links -->
+      <div class="pt-4 border-t border-slate-800/80 space-y-3">
+        <div class="flex items-center justify-between">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Trending Architectural Searches & Bylaws</h4>
+          <router-link to="/keywords-directory" class="text-xs font-bold text-[#088C7E] hover:underline flex items-center gap-1">
+            <span>Browse Complete 10-Cluster Index</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </router-link>
+        </div>
+        <div class="flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-400">
           <router-link to="/keywords/5-marla-house-design" class="hover:text-[#088C7E] transition-colors">5 Marla House Design</router-link>
           <span>·</span>
           <router-link to="/keywords/10-marla-spanish-villa" class="hover:text-[#088C7E] transition-colors">10 Marla Spanish Villa</router-link>
@@ -194,7 +215,13 @@
           <span>·</span>
           <router-link to="/keywords/3d-house-elevation-design" class="hover:text-[#088C7E] transition-colors">3D House Elevation Design</router-link>
           <span>·</span>
-          <router-link to="/keywords/furniture-showrooms-in-dha-lahore" class="hover:text-[#088C7E] transition-colors">Furniture Showrooms in DHA</router-link>
+          <router-link to="/area-guides" class="hover:text-[#088C7E] transition-colors">DHA & Bahria Town Bylaws</router-link>
+          <span>·</span>
+          <router-link to="/tools?tab=cost-calc" class="hover:text-[#088C7E] transition-colors">Grey Structure Cost 2026</router-link>
+          <span>·</span>
+          <router-link to="/case-studies" class="hover:text-[#088C7E] transition-colors">Completed Case Studies</router-link>
+          <span>·</span>
+          <router-link to="/blog" class="hover:text-[#088C7E] transition-colors font-bold text-slate-300">All 3,100+ Blog Guides</router-link>
         </div>
       </div>
 
@@ -208,6 +235,10 @@
           <router-link to="/terms-of-service" class="hover:text-emerald-400 transition-colors">Terms of Service</router-link>
           <span class="text-slate-700">·</span>
           <router-link to="/disclaimer" class="hover:text-emerald-400 transition-colors">Disclaimer</router-link>
+          <span class="text-slate-700">·</span>
+          <router-link to="/about" class="hover:text-emerald-400 transition-colors">About Studio</router-link>
+          <span class="text-slate-700">·</span>
+          <router-link to="/contact" class="hover:text-emerald-400 transition-colors">Contact</router-link>
         </div>
 
         <!-- Social Icons -->

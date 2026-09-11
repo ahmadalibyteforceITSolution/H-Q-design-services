@@ -369,11 +369,15 @@
       </div>
     </section>
 
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 
 const copiedSnippet = ref(false)
 const copiedWidget = ref(false)

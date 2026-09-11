@@ -98,15 +98,87 @@ export const homePageData = {
       </section>
     </main>
 
+      <!-- Comprehensive Internal Linking Directory Section -->
+      <section class="p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 space-y-6">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800 pb-4">
+          <div>
+            <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-[#088C7E]/20 text-[#088C7E] border border-[#088C7E]/30">
+              Site Navigation & Architectural Network
+            </span>
+            <h3 class="text-xl font-bold mt-2">Explore H&Q Design Portals & Resources</h3>
+          </div>
+          <a href="/contact" class="px-5 py-2.5 rounded-xl bg-[#088C7E] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#067367]">
+            Schedule Consultation →
+          </a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs">
+          <div class="space-y-3">
+            <h4 class="font-bold text-[#088C7E] uppercase text-xs">Architecture & Design</h4>
+            <ul class="space-y-2 text-slate-300">
+              <li><a href="/services" class="hover:text-white">• Architecture & Interior Services</a></li>
+              <li><a href="/portfolio" class="hover:text-white">• 3D Elevations & Villa Portfolio</a></li>
+              <li><a href="/case-studies" class="hover:text-white">• Completed Case Studies</a></li>
+              <li><a href="/reviews" class="hover:text-white font-semibold text-amber-400">• Client Reviews (5.0 ★)</a></li>
+              <li><a href="/about" class="hover:text-white">• About H&Q Design Studio</a></li>
+            </ul>
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-[#088C7E] uppercase text-xs">Interactive Tools</h4>
+            <ul class="space-y-2 text-slate-300">
+              <li><a href="/tools" class="hover:text-white">• 2026 Construction Cost Calculator</a></li>
+              <li><a href="/tools" class="hover:text-white">• Society Plot Map Viewer</a></li>
+              <li><a href="/tools" class="hover:text-white">• Marla to SqFt Unit Converter</a></li>
+              <li><a href="/tools" class="hover:text-white">• Home Construction Mortgage EMI</a></li>
+              <li><a href="/embed/calculator" class="hover:text-white">• Free Calculator Embed Widget</a></li>
+            </ul>
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-[#088C7E] uppercase text-xs">Societies & Bylaws</h4>
+            <ul class="space-y-2 text-slate-300">
+              <li><a href="/area-guides" class="hover:text-white">• DHA Lahore & Society Bylaws</a></li>
+              <li><a href="/trends" class="hover:text-white">• Lahore Real Estate Price Trends</a></li>
+              <li><a href="/properties" class="hover:text-white">• Verified Residential Plots</a></li>
+              <li><a href="/projects" class="hover:text-white">• Upcoming Housing Projects 2026</a></li>
+              <li><a href="/agents" class="hover:text-white">• Approved Architects & Engineers</a></li>
+            </ul>
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-[#088C7E] uppercase text-xs">Knowledge & Community</h4>
+            <ul class="space-y-2 text-slate-300">
+              <li><a href="/keywords-directory" class="hover:text-white font-semibold text-emerald-400">• 10-Cluster Keywords Glossary</a></li>
+              <li><a href="/blog" class="hover:text-white">• Architecture Guides (3,100+)</a></li>
+              <li><a href="/forum" class="hover:text-white">• Home Builders Q&A Community</a></li>
+              <li><a href="/partners" class="hover:text-white">• Industry Partners & Backlinks</a></li>
+              <li><a href="/contact" class="hover:text-white">• Studio Address & Consultation</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <footer class="bg-slate-950 text-slate-400 py-8 px-6 text-xs text-center border-t border-slate-800 space-y-3">
       <p>© 2026 H&Q Design Services (HANDQ). All rights reserved. DHA Lahore & Parkview City, Lahore, Pakistan.</p>
-      <div class="flex justify-center gap-4 text-slate-300">
-        <a href="/keywords-directory">Keywords Directory</a> ·
-        <a href="/privacy-policy">Privacy Policy</a> ·
-        <a href="/terms-of-service">Terms of Service</a> ·
-        <a href="/disclaimer">Disclaimer</a> ·
-        <a href="/partners">Partners & Backlinks</a> ·
-        <a href="/contact">Contact</a>
+      <div class="flex justify-center gap-3 text-slate-300 flex-wrap max-w-5xl mx-auto leading-relaxed">
+        <a href="/" class="hover:text-[#088C7E]">Home</a> ·
+        <a href="/about" class="hover:text-[#088C7E]">About Studio</a> ·
+        <a href="/services" class="hover:text-[#088C7E]">Design Services</a> ·
+        <a href="/portfolio" class="hover:text-[#088C7E]">Portfolio</a> ·
+        <a href="/case-studies" class="hover:text-[#088C7E]">Case Studies</a> ·
+        <a href="/reviews" class="hover:text-amber-400 font-bold text-amber-300">Reviews (5.0 ★)</a> ·
+        <a href="/tools" class="hover:text-[#088C7E]">Cost Calculator</a> ·
+        <a href="/area-guides" class="hover:text-[#088C7E]">Area Guides</a> ·
+        <a href="/trends" class="hover:text-[#088C7E]">Market Trends</a> ·
+        <a href="/properties" class="hover:text-[#088C7E]">Properties</a> ·
+        <a href="/projects" class="hover:text-[#088C7E]">Projects</a> ·
+        <a href="/agents" class="hover:text-[#088C7E]">Engineers & Architects</a> ·
+        <a href="/forum" class="hover:text-[#088C7E]">Community Forum</a> ·
+        <a href="/blog" class="hover:text-[#088C7E]">Guides & Articles</a> ·
+        <a href="/keywords-directory" class="hover:text-[#088C7E]">Keywords Glossary</a> ·
+        <a href="/partners" class="hover:text-[#088C7E]">Partners</a> ·
+        <a href="/contact" class="hover:text-[#088C7E]">Contact</a> ·
+        <a href="/privacy-policy" class="hover:text-[#088C7E]">Privacy Policy</a> ·
+        <a href="/terms-of-service" class="hover:text-[#088C7E]">Terms</a> ·
+        <a href="/disclaimer" class="hover:text-[#088C7E]">Disclaimer</a>
       </div>
     </footer>
   `

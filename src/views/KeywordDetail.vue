@@ -413,11 +413,16 @@
 
       </div>
     </main>
+
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
   </div>
 </template>
 
 <script setup>
 import { computed, watchEffect, onUnmounted } from 'vue'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 import { useRoute } from 'vue-router'
 import { topKeywordsData, allFlatKeywords, slugifyKeyword, getKeywordBySlug, getKeywordCluster } from '../data/keywordsData.js'
 import { getCategoryForKeyword, generateArticleContent, architectureImages } from '../data/blogData.js'

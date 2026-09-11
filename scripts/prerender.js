@@ -93,6 +93,72 @@ const renderPage = (routePath, pageTitle, pageDesc, canonicalUrl, pageImage, pag
 // 1. Pre-render Root Homepage (dist/index.html) with Rich Semantic HTML
 renderPage('/', homePageData.title, homePageData.desc, 'https://h-q-design-services.vercel.app/', 'https://h-q-design-services.vercel.app/logo.png', homePageData.body)
 
+const sharedInternalLinkingHtml = `
+  <section style="max-width:1200px;margin:40px auto 20px;padding:30px 24px;background:#0f172a;color:#fff;border-radius:24px;border:1px solid #1e293b;font-family:inherit;">
+    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1e293b;padding-bottom:16px;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
+      <div>
+        <span style="background:#088C7E;color:#fff;font-size:10px;font-weight:900;text-transform:uppercase;padding:4px 10px;border-radius:999px;letter-spacing:1px;display:inline-block;margin-bottom:6px;">H&amp;Q Architecture Network</span>
+        <h3 style="font-size:22px;font-weight:900;margin:0;color:#fff;">Explore Architectural Services, Tools &amp; Area Guides</h3>
+      </div>
+      <a href="/contact" style="background:#088C7E;color:#fff;font-size:12px;font-weight:800;text-decoration:none;padding:10px 18px;border-radius:12px;text-transform:uppercase;">Book Consultation →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:20px;font-size:13px;">
+      <div style="background:#1e293b;padding:18px;border-radius:16px;border:1px solid #334155;">
+        <h4 style="color:#088C7E;font-size:14px;font-weight:900;margin:0 0 12px;text-transform:uppercase;">Design &amp; Elevations</h4>
+        <ul style="list-style:none;padding:0;margin:0;line-height:2;">
+          <li><a href="/services" style="color:#cbd5e1;text-decoration:none;">• Architectural Design Services</a></li>
+          <li><a href="/portfolio" style="color:#cbd5e1;text-decoration:none;">• 3D Elevations &amp; House Plans</a></li>
+          <li><a href="/case-studies" style="color:#cbd5e1;text-decoration:none;">• Completed Case Studies</a></li>
+          <li><a href="/reviews" style="color:#fcd34d;font-weight:bold;text-decoration:none;">• Google Client Reviews (5.0 ★)</a></li>
+          <li><a href="/about" style="color:#cbd5e1;text-decoration:none;">• About H&amp;Q Design Studio</a></li>
+        </ul>
+      </div>
+      <div style="background:#1e293b;padding:18px;border-radius:16px;border:1px solid #334155;">
+        <h4 style="color:#088C7E;font-size:14px;font-weight:900;margin:0 0 12px;text-transform:uppercase;">Interactive Tools</h4>
+        <ul style="list-style:none;padding:0;margin:0;line-height:2;">
+          <li><a href="/tools" style="color:#cbd5e1;text-decoration:none;">• Construction Cost Calculator</a></li>
+          <li><a href="/tools" style="color:#cbd5e1;text-decoration:none;">• Society Plot Finder &amp; Maps</a></li>
+          <li><a href="/tools" style="color:#cbd5e1;text-decoration:none;">• Area Unit Converter (Marla/SqFt)</a></li>
+          <li><a href="/tools" style="color:#cbd5e1;text-decoration:none;">• Mortgage EMI Calculator</a></li>
+          <li><a href="/embed/calculator" style="color:#cbd5e1;text-decoration:none;">• Free Embed Calculator Widget</a></li>
+        </ul>
+      </div>
+      <div style="background:#1e293b;padding:18px;border-radius:16px;border:1px solid #334155;">
+        <h4 style="color:#088C7E;font-size:14px;font-weight:900;margin:0 0 12px;text-transform:uppercase;">Societies &amp; Bylaws</h4>
+        <ul style="list-style:none;padding:0;margin:0;line-height:2;">
+          <li><a href="/area-guides" style="color:#cbd5e1;text-decoration:none;">• DHA &amp; Bahria Town Bylaws</a></li>
+          <li><a href="/trends" style="color:#cbd5e1;text-decoration:none;">• Market Price Trends 2026</a></li>
+          <li><a href="/properties" style="color:#cbd5e1;text-decoration:none;">• Verified Plots &amp; Houses</a></li>
+          <li><a href="/projects" style="color:#cbd5e1;text-decoration:none;">• New Housing Projects 2026</a></li>
+          <li><a href="/agents" style="color:#cbd5e1;text-decoration:none;">• Certified Architects &amp; Agents</a></li>
+        </ul>
+      </div>
+      <div style="background:#1e293b;padding:18px;border-radius:16px;border:1px solid #334155;">
+        <h4 style="color:#088C7E;font-size:14px;font-weight:900;margin:0 0 12px;text-transform:uppercase;">Trending Blueprints</h4>
+        <ul style="list-style:none;padding:0;margin:0;line-height:2;">
+          <li><a href="/keywords/5-marla-house-design" style="color:#cbd5e1;text-decoration:none;">• 5 Marla House Design</a></li>
+          <li><a href="/keywords/10-marla-spanish-villa" style="color:#cbd5e1;text-decoration:none;">• 10 Marla Spanish Villa</a></li>
+          <li><a href="/keywords/1-kanal-house-plan" style="color:#cbd5e1;text-decoration:none;">• 1 Kanal Modern House Plan</a></li>
+          <li><a href="/keywords/house-construction-cost-in-pakistan" style="color:#cbd5e1;text-decoration:none;">• Construction Cost Pakistan</a></li>
+          <li><a href="/keywords-directory" style="color:#088C7E;font-weight:bold;text-decoration:none;">• 10-Cluster Keywords Glossary →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:20px;padding-top:16px;border-top:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:#94a3b8;">
+      <div>
+        <strong style="color:#fff;">Direct Studio Lines:</strong>
+        <a href="tel:03416887454" style="color:#088C7E;text-decoration:none;margin-left:8px;font-weight:bold;">0341-6887454</a> |
+        <a href="https://wa.me/966507143124" style="color:#10b981;text-decoration:none;margin-left:6px;font-weight:bold;">KSA WhatsApp: +966 50 714 3124</a>
+      </div>
+      <div>
+        <a href="/forum" style="color:#cbd5e1;text-decoration:none;margin-right:12px;">Forum Q&amp;A</a>
+        <a href="/partners" style="color:#cbd5e1;text-decoration:none;margin-right:12px;">Partners</a>
+        <a href="/blog" style="color:#cbd5e1;text-decoration:none;">Blog (2,000+)</a>
+      </div>
+    </div>
+  </section>
+`
+
 // 2. Pre-render All Static Pages with Substantial Content & Tailored Schemas
 staticPagesDetailed.forEach(p => {
   const canonicalUrl = `https://h-q-design-services.vercel.app/${p.route}`
@@ -230,31 +296,43 @@ staticPagesDetailed.forEach(p => {
 
   const bodyHtml = `
     <header class="bg-slate-900 text-white border-b border-slate-800 py-4 px-6">
-      <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-4">
         <a href="/" class="text-xl font-extrabold text-[#088C7E]">H&Q Design Services</a>
-        <nav class="flex gap-4 text-xs font-semibold">
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/portfolio">Portfolio</a>
-          <a href="/tools">Cost Calculator</a>
-          <a href="/properties">Properties</a>
-          <a href="/blog">Guides</a>
-          <a href="/keywords-directory">Glossary</a>
-          <a href="/contact">Contact</a>
+        <nav class="flex flex-wrap gap-4 text-xs font-semibold">
+          <a href="/about" class="hover:text-emerald-400">About</a>
+          <a href="/services" class="hover:text-emerald-400">Services</a>
+          <a href="/portfolio" class="hover:text-emerald-400">Portfolio</a>
+          <a href="/tools" class="hover:text-emerald-400">Cost Calculator</a>
+          <a href="/area-guides" class="hover:text-emerald-400">Area Guides</a>
+          <a href="/properties" class="hover:text-emerald-400">Properties</a>
+          <a href="/reviews" class="hover:text-amber-400 font-bold text-amber-300">Reviews (5.0 ★)</a>
+          <a href="/blog" class="hover:text-emerald-400">Guides</a>
+          <a href="/keywords-directory" class="hover:text-emerald-400">Glossary</a>
+          <a href="/contact" class="hover:text-emerald-400">Contact</a>
         </nav>
       </div>
     </header>
     <main class="py-10">
       ${mainBody}
+      ${sharedInternalLinkingHtml}
     </main>
     <footer class="bg-slate-950 text-slate-400 py-8 px-6 text-xs text-center border-t border-slate-800 space-y-3">
       <p>© 2026 H&Q Design Services (HANDQ). All rights reserved. DHA Lahore & Parkview City, Lahore, Pakistan.</p>
-      <div class="flex justify-center gap-4 text-slate-300">
+      <div class="flex justify-center gap-4 text-slate-300 flex-wrap">
+        <a href="/">Home</a> ·
+        <a href="/about">About Studio</a> ·
+        <a href="/services">Services</a> ·
+        <a href="/portfolio">3D Portfolio</a> ·
+        <a href="/tools">Cost Calculator</a> ·
+        <a href="/area-guides">Society Bylaws</a> ·
+        <a href="/reviews">Google Reviews (5.0 ★)</a> ·
+        <a href="/keywords-directory">Glossary</a> ·
+        <a href="/blog">Blog Guides</a> ·
+        <a href="/partners">Partners</a> ·
+        <a href="/contact">Contact</a> ·
         <a href="/privacy-policy">Privacy Policy</a> ·
-        <a href="/terms-of-service">Terms of Service</a> ·
-        <a href="/disclaimer">Disclaimer</a> ·
-        <a href="/keywords-directory">Keywords Directory</a> ·
-        <a href="/contact">Contact</a>
+        <a href="/terms-of-service">Terms</a> ·
+        <a href="/disclaimer">Disclaimer</a>
       </div>
     </footer>
   `
@@ -319,15 +397,19 @@ const renderSingleBlog = (b, slugOverride = null) => {
 
   const bodyHtml = `
     <header class="bg-slate-900 text-white border-b border-slate-800 py-4 px-6">
-      <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-4">
         <a href="/" class="text-xl font-extrabold text-[#088C7E]">H&Q Design Services</a>
-        <nav class="flex gap-4 text-xs font-semibold">
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/portfolio">Portfolio</a>
-          <a href="/tools">Cost Calculator</a>
-          <a href="/blog">Guides</a>
-          <a href="/contact">Contact</a>
+        <nav class="flex flex-wrap gap-4 text-xs font-semibold">
+          <a href="/about" class="hover:text-emerald-400">About</a>
+          <a href="/services" class="hover:text-emerald-400">Services</a>
+          <a href="/portfolio" class="hover:text-emerald-400">Portfolio</a>
+          <a href="/tools" class="hover:text-emerald-400">Cost Calculator</a>
+          <a href="/area-guides" class="hover:text-emerald-400">Area Guides</a>
+          <a href="/properties" class="hover:text-emerald-400">Properties</a>
+          <a href="/reviews" class="hover:text-amber-400 font-bold text-amber-300">Reviews (5.0 ★)</a>
+          <a href="/blog" class="hover:text-emerald-400">Guides</a>
+          <a href="/keywords-directory" class="hover:text-emerald-400">Glossary</a>
+          <a href="/contact" class="hover:text-emerald-400">Contact</a>
         </nav>
       </div>
     </header>
@@ -361,18 +443,32 @@ const renderSingleBlog = (b, slugOverride = null) => {
       <div class="p-8 rounded-3xl bg-slate-900 text-white space-y-3">
         <h4 class="font-extrabold text-lg">Consult With H&Q Senior Architects</h4>
         <p class="text-xs text-slate-300">Plot consultations, 4K elevation rendering, and municipal map approval in DHA & Bahria Town.</p>
-        <a href="tel:03416887454" class="inline-block px-5 py-2.5 rounded-xl bg-[#088C7E] text-white text-xs font-bold uppercase">Call Studio (0341-6887454)</a>
+        <div class="flex gap-3 pt-2">
+          <a href="tel:03416887454" class="inline-block px-5 py-2.5 rounded-xl bg-[#088C7E] text-white text-xs font-bold uppercase">Call Studio (0341-6887454)</a>
+          <a href="https://wa.me/966507143124" class="inline-block px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase">KSA WhatsApp Desk</a>
+        </div>
       </div>
+
+      ${sharedInternalLinkingHtml}
     </div>
 
     <footer class="bg-slate-950 text-slate-400 py-8 px-6 text-xs text-center border-t border-slate-800 space-y-3">
       <p>© 2026 H&Q Design Services (HANDQ). All rights reserved. DHA Lahore & Parkview City, Lahore, Pakistan.</p>
-      <div class="flex justify-center gap-4 text-slate-300">
-        <a href="/privacy-policy">Privacy Policy</a> ·
-        <a href="/terms-of-service">Terms of Service</a> ·
-        <a href="/disclaimer">Disclaimer</a> ·
+      <div class="flex justify-center gap-4 text-slate-300 flex-wrap">
+        <a href="/">Home</a> ·
+        <a href="/about">About Studio</a> ·
+        <a href="/services">Services</a> ·
+        <a href="/portfolio">3D Portfolio</a> ·
+        <a href="/tools">Cost Calculator</a> ·
+        <a href="/area-guides">Society Bylaws</a> ·
+        <a href="/reviews">Google Reviews (5.0 ★)</a> ·
+        <a href="/keywords-directory">Glossary</a> ·
+        <a href="/blog">Blog Guides</a> ·
         <a href="/partners">Partners</a> ·
-        <a href="/contact">Contact</a>
+        <a href="/contact">Contact</a> ·
+        <a href="/privacy-policy">Privacy Policy</a> ·
+        <a href="/terms-of-service">Terms</a> ·
+        <a href="/disclaimer">Disclaimer</a>
       </div>
     </footer>
   `
@@ -494,15 +590,19 @@ allFlatKeywords.forEach((kw, i) => {
 
   const bodyHtml = `
     <header class="bg-slate-900 text-white border-b border-slate-800 py-4 px-6">
-      <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-4">
         <a href="/" class="text-xl font-extrabold text-[#088C7E]">H&Q Design Services</a>
-        <nav class="flex gap-4 text-xs font-semibold">
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/portfolio">Portfolio</a>
-          <a href="/tools">Cost Calculator</a>
-          <a href="/keywords-directory">Glossary</a>
-          <a href="/contact">Contact</a>
+        <nav class="flex flex-wrap gap-4 text-xs font-semibold">
+          <a href="/about" class="hover:text-emerald-400">About</a>
+          <a href="/services" class="hover:text-emerald-400">Services</a>
+          <a href="/portfolio" class="hover:text-emerald-400">Portfolio</a>
+          <a href="/tools" class="hover:text-emerald-400">Cost Calculator</a>
+          <a href="/area-guides" class="hover:text-emerald-400">Area Guides</a>
+          <a href="/properties" class="hover:text-emerald-400">Properties</a>
+          <a href="/reviews" class="hover:text-amber-400 font-bold text-amber-300">Reviews (5.0 ★)</a>
+          <a href="/blog" class="hover:text-emerald-400">Guides</a>
+          <a href="/keywords-directory" class="hover:text-emerald-400">Glossary</a>
+          <a href="/contact" class="hover:text-emerald-400">Contact</a>
         </nav>
       </div>
     </header>
@@ -546,16 +646,27 @@ allFlatKeywords.forEach((kw, i) => {
           <a href="https://wa.me/923416887454?text=${encodeURIComponent('Inquiry for ' + kw)}" class="inline-block px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase">WhatsApp Consultation</a>
         </div>
       </div>
+
+      ${sharedInternalLinkingHtml}
     </div>
 
     <footer class="bg-slate-950 text-slate-400 py-8 px-6 text-xs text-center border-t border-slate-800 space-y-3">
       <p>© 2026 H&Q Design Services (HANDQ). All rights reserved. DHA Lahore & Parkview City, Lahore, Pakistan.</p>
-      <div class="flex justify-center gap-4 text-slate-300">
+      <div class="flex justify-center gap-4 text-slate-300 flex-wrap">
+        <a href="/">Home</a> ·
+        <a href="/about">About Studio</a> ·
+        <a href="/services">Services</a> ·
+        <a href="/portfolio">3D Portfolio</a> ·
+        <a href="/tools">Cost Calculator</a> ·
+        <a href="/area-guides">Society Bylaws</a> ·
+        <a href="/reviews">Google Reviews (5.0 ★)</a> ·
+        <a href="/keywords-directory">Glossary</a> ·
+        <a href="/blog">Blog Guides</a> ·
+        <a href="/partners">Partners</a> ·
+        <a href="/contact">Contact</a> ·
         <a href="/privacy-policy">Privacy Policy</a> ·
-        <a href="/terms-of-service">Terms of Service</a> ·
-        <a href="/disclaimer">Disclaimer</a> ·
-        <a href="/keywords-directory">Keywords Directory</a> ·
-        <a href="/contact">Contact</a>
+        <a href="/terms-of-service">Terms</a> ·
+        <a href="/disclaimer">Disclaimer</a>
       </div>
     </footer>
   `

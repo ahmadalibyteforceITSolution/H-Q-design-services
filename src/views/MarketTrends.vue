@@ -133,9 +133,13 @@
 
     </main>
 
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
   </div>
 </template>
 
 <script setup>
 import { marketTrendsData } from '../data/marketTrendsData.js'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 </script>

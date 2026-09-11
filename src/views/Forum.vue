@@ -115,6 +115,9 @@
 
     </main>
 
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
     <!-- Ask Question Modal -->
     <div v-if="showAskModal" class="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
       <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 w-full max-w-lg rounded-3xl p-6 sm:p-8 space-y-6 text-slate-900 dark:text-white shadow-2xl relative">
@@ -158,6 +161,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { forumThreadsData } from '../data/forumData.js'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 
 const activeCategory = ref('All Topics')
 const showAskModal = ref(false)

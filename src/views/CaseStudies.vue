@@ -49,13 +49,25 @@
             </div>
           </div>
 
-          <div class="pt-2">
+          <div class="pt-2 flex flex-wrap items-center gap-3">
             <button 
               @click="$emit('open-start-project')"
-              class="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-md"
+              class="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-md cursor-pointer"
             >
               Discuss Similar Project →
             </button>
+            <router-link 
+              to="/portfolio"
+              class="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition-colors"
+            >
+              View 3D Elevation
+            </router-link>
+            <router-link 
+              to="/tools?tab=cost-calc"
+              class="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition-colors"
+            >
+              Estimate Cost
+            </router-link>
           </div>
         </div>
 
@@ -67,11 +79,15 @@
       </div>
     </section>
 
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 
 defineEmits(['open-start-project'])
 

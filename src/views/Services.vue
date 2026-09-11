@@ -45,19 +45,42 @@
                 </li>
               </ul>
             </div>
+
+            <!-- Contextual Quick Action Links -->
+            <div class="flex flex-wrap items-center gap-2 pt-2 text-[11px] font-semibold text-slate-500 dark:text-slate-400">
+              <router-link to="/portfolio" class="hover:text-[#088C7E] flex items-center gap-1">
+                <i class="fa-solid fa-cubes text-[#088C7E]"></i> 3D Elevation Portfolio
+              </router-link>
+              <span>·</span>
+              <router-link to="/tools?tab=cost-calc" class="hover:text-[#088C7E] flex items-center gap-1">
+                <i class="fa-solid fa-calculator text-[#088C7E]"></i> Cost Calculator
+              </router-link>
+              <span>·</span>
+              <router-link to="/case-studies" class="hover:text-[#088C7E] flex items-center gap-1">
+                <i class="fa-solid fa-file-invoice text-[#088C7E]"></i> Case Studies
+              </router-link>
+            </div>
           </div>
 
           <div class="pt-4 border-t border-slate-200/60 dark:border-slate-800/60 flex items-center justify-between">
             <span class="text-xs font-semibold text-amber-500 flex items-center gap-1.5">
               <i class="fa-solid fa-clock"></i> Est. Delivery: {{ service.timeframe }}
             </span>
-            <button 
-              @click="$emit('open-start-project')"
-              class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-md flex items-center gap-1.5"
-            >
-              <span>Get Custom Quote</span>
-              <i class="fa-solid fa-arrow-right text-xs"></i>
-            </button>
+            <div class="flex items-center gap-2">
+              <router-link 
+                to="/contact" 
+                class="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition-colors"
+              >
+                Inquire
+              </router-link>
+              <button 
+                @click="$emit('open-start-project')"
+                class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-md flex items-center gap-1.5"
+              >
+                <span>Get Custom Quote</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -78,13 +101,22 @@
             Browse our comprehensive 10-cluster directory with technical specifications for 3 Marla to 4 Kanal villas, commercial plazas, and turnkey construction cost benchmarks.
           </p>
         </div>
-        <router-link 
-          to="/keywords-directory"
-          class="px-6 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-950 text-xs font-black uppercase tracking-wider transition-all hover:scale-105 shrink-0 shadow-lg flex items-center gap-2"
-        >
-          <span>Explore 10-Cluster Hub</span>
-          <i class="fa-solid fa-arrow-right text-xs"></i>
-        </router-link>
+        <div class="flex flex-wrap items-center gap-3 shrink-0">
+          <router-link 
+            to="/portfolio"
+            class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-black uppercase tracking-wider transition-all border border-slate-700 flex items-center gap-2"
+          >
+            <i class="fa-solid fa-images"></i>
+            <span>View 3D Portfolio</span>
+          </router-link>
+          <router-link 
+            to="/keywords-directory"
+            class="px-6 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-950 text-xs font-black uppercase tracking-wider transition-all hover:scale-105 shadow-lg flex items-center gap-2"
+          >
+            <span>Explore 10-Cluster Hub</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </router-link>
+        </div>
       </div>
     </section>
 
@@ -93,12 +125,16 @@
       <ProjectEstimator @request-quote="$emit('open-start-project')" />
     </section>
 
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
 import ProjectEstimator from '../components/ProjectEstimator.vue'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 
 defineEmits(['open-start-project'])
 

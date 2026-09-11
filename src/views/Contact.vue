@@ -200,11 +200,15 @@
 
     </div>
 
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 
 const form = ref({
   name: '',

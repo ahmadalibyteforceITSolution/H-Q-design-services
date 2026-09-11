@@ -123,6 +123,41 @@
       </div>
     </div>
 
+    <!-- Next Steps & Technical Planning Bar -->
+    <div class="p-6 sm:p-8 rounded-3xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span class="text-[10px] font-black uppercase text-[#088C7E] tracking-wider">Turnkey Engineering Workflow</span>
+          <h3 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white">Ready to Design or Estimate Your House?</h3>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 text-xs font-bold">
+          <router-link to="/tools?tab=cost-calc" class="px-4 py-2.5 rounded-xl bg-[#088C7E] text-white hover:bg-[#066D62] transition-colors flex items-center gap-1.5 shadow">
+            <i class="fa-solid fa-calculator"></i>
+            <span>Calculate Cost</span>
+          </router-link>
+          <router-link to="/services" class="px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:text-[#088C7E] transition-colors flex items-center gap-1.5">
+            <i class="fa-solid fa-compass-drafting text-[#088C7E]"></i>
+            <span>All Services</span>
+          </router-link>
+          <router-link to="/area-guides" class="px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:text-[#088C7E] transition-colors flex items-center gap-1.5">
+            <i class="fa-solid fa-location-dot text-amber-500"></i>
+            <span>Society Bylaws</span>
+          </router-link>
+          <router-link to="/case-studies" class="px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:text-[#088C7E] transition-colors flex items-center gap-1.5">
+            <i class="fa-solid fa-file-invoice text-[#088C7E]"></i>
+            <span>Case Studies</span>
+          </router-link>
+          <router-link to="/contact" class="px-4 py-2.5 rounded-xl bg-amber-500 text-white hover:bg-amber-400 transition-colors flex items-center gap-1.5 shadow">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Book Consultation</span>
+          </router-link>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
     <!-- Project Detail Modal -->
     <div 
       v-if="selectedProject" 
@@ -193,6 +228,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import CinematicShowreel from '../components/CinematicShowreel.vue'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 
 const emit = defineEmits(['open-start-project'])
 

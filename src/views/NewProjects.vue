@@ -154,12 +154,16 @@
 
     </main>
 
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
 import { projectsData } from '../data/projectsData.js'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 
 const filterCity = ref('All')
 

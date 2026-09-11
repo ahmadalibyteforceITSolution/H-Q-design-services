@@ -170,12 +170,16 @@
       </button>
     </section>
 
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
 import { allBlogs } from '../data/blogData.js'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 
 const searchQuery = ref('')
 const selectedCat = ref('All')

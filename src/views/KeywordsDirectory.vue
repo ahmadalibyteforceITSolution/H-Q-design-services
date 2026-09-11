@@ -240,11 +240,16 @@
 
       </div>
     </main>
+
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 import { topKeywordsData, allFlatKeywords, slugifyKeyword, keywordClusterMap } from '../data/keywordsData.js'
 
 const keywordSearchQuery = ref('')

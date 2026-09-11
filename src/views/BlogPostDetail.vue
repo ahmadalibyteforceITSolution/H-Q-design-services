@@ -154,19 +154,49 @@
       </div>
     </div>
 
-    <!-- Author & Consultation CTA Card -->
-    <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="space-y-1">
-        <h4 class="font-extrabold text-lg text-slate-900 dark:text-white">Planning Your Plot Design in Lahore?</h4>
-        <p class="text-xs text-slate-500 dark:text-slate-400">Schedule a 1-on-1 floor plan review session at our Lahore Studio.</p>
+    <!-- Trending Architectural Topic Tags & Cross-Links -->
+    <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-4">
+      <div class="flex items-center justify-between">
+        <h4 class="text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-1.5">
+          <i class="fa-solid fa-tags text-[#088C7E]"></i>
+          <span>Related Architectural Topics &amp; Cost Benchmarks</span>
+        </h4>
+        <router-link to="/keywords-directory" class="text-xs font-bold text-[#088C7E] hover:underline flex items-center gap-1">
+          <span>All 1,000+ Topics</span>
+          <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </router-link>
       </div>
-      <button 
-        @click="$emit('open-start-project')"
-        class="px-6 py-3.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider transition-all shadow-lg shrink-0 cursor-pointer"
-      >
-        Get Free Consultation
-      </button>
+      <div class="flex flex-wrap gap-2 text-xs font-semibold">
+        <router-link to="/keywords/5-marla-house-design" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-[#088C7E] hover:border-[#088C7E] transition-all">
+          5 Marla House Design
+        </router-link>
+        <router-link to="/keywords/10-marla-spanish-villa" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-[#088C7E] hover:border-[#088C7E] transition-all">
+          10 Marla Spanish Villa
+        </router-link>
+        <router-link to="/keywords/1-kanal-house-plan" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-[#088C7E] hover:border-[#088C7E] transition-all">
+          1 Kanal Modern House Plan
+        </router-link>
+        <router-link to="/keywords/house-construction-cost-in-pakistan" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-[#088C7E] hover:border-[#088C7E] transition-all">
+          House Construction Cost 2026
+        </router-link>
+        <router-link to="/keywords/interior-designers-in-lahore" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-[#088C7E] hover:border-[#088C7E] transition-all">
+          Interior Designers in Lahore
+        </router-link>
+        <router-link to="/tools?tab=cost-calc" class="px-3 py-1.5 rounded-xl bg-[#088C7E]/10 border border-[#088C7E]/30 text-[#088C7E] font-bold hover:bg-[#088C7E] hover:text-white transition-all flex items-center gap-1">
+          <i class="fa-solid fa-calculator text-xs"></i>
+          <span>Instant Cost Estimator</span>
+        </router-link>
+        <router-link to="/portfolio" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-[#088C7E] hover:border-[#088C7E] transition-all">
+          3D House Elevations
+        </router-link>
+        <router-link to="/area-guides" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-[#088C7E] hover:border-[#088C7E] transition-all">
+          Society Bylaws Guide
+        </router-link>
+      </div>
     </div>
+
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
 
   </div>
 </template>
@@ -175,6 +205,7 @@
 import { ref, computed, watchEffect, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { allBlogs, generateArticleContent, getCategoryForKeyword } from '../data/blogData.js'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 
 defineEmits(['open-start-project'])
 

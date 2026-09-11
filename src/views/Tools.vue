@@ -402,12 +402,16 @@
 
     </main>
 
+    <!-- Comprehensive Internal Linking Network -->
+    <InternalLinkingHub />
+
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 
 const route = useRoute()
 
