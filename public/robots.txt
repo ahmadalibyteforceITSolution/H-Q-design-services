@@ -35,6 +35,12 @@ Disallow: /private/
 Disallow: /draft/
 Disallow: /go/
 
+User-agent: SemrushBot
+Allow: /
+
+User-agent: SemrushBot-SA
+Allow: /
+
 # Sitemap and RSS Index
 Sitemap: https://h-q-design-services.vercel.app/sitemap.xml
 Sitemap: https://h-q-design-services.vercel.app/sitemap_index.xml

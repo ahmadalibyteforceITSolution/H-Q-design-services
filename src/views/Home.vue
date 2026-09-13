@@ -166,6 +166,70 @@
       </div>
     </section>
 
+    <!-- High-Volume Search Keywords & Ranking Authority Hub -->
+    <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="p-5 sm:p-6 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-xl space-y-4">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-xl bg-[#088C7E]/20 text-[#088C7E] flex items-center justify-center text-sm font-black shadow">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+            </span>
+            <div>
+              <h2 class="text-sm sm:text-base font-black text-white">
+                Top Ranking Architecture & Construction Searches in Pakistan
+              </h2>
+              <p class="text-[11px] text-slate-400">
+                Direct access to LDA/DHA approved house plans, 3D front elevations & 2026 cost estimates
+              </p>
+            </div>
+          </div>
+          <router-link to="/keywords-directory" class="text-xs font-black text-[#088C7E] hover:underline flex items-center gap-1 shrink-0">
+            <span>Explore All 3,000+ Keywords</span>
+            <i class="fa-solid fa-angle-right text-[10px]"></i>
+          </router-link>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 pt-1 text-xs font-bold">
+          <router-link to="/keywords/5-marla-house-design" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-[#088C7E] text-slate-200 hover:text-white border border-slate-700 transition-all">
+            5 Marla House Design
+          </router-link>
+          <router-link to="/keywords/best-architects-in-lahore" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-[#088C7E] text-slate-200 hover:text-white border border-slate-700 transition-all">
+            Best Architects in Lahore
+          </router-link>
+          <router-link to="/services" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-[#088C7E] text-slate-200 hover:text-white border border-slate-700 transition-all">
+            Top Interior Designers in Lahore
+          </router-link>
+          <router-link to="/keywords/10-marla-spanish-villa" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-[#088C7E] text-slate-200 hover:text-white border border-slate-700 transition-all">
+            10 Marla Spanish Villa
+          </router-link>
+          <router-link to="/keywords/1-kanal-house-plan" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-[#088C7E] text-slate-200 hover:text-white border border-slate-700 transition-all">
+            1 Kanal House Plan
+          </router-link>
+          <router-link to="/tools" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-[#088C7E] text-slate-200 hover:text-white border border-slate-700 transition-all">
+            House Construction Cost in Pakistan 2026
+          </router-link>
+          <router-link to="/keywords/3d-front-elevation-lahore" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-[#088C7E] text-slate-200 hover:text-white border border-slate-700 transition-all">
+            3D Front Elevation Design
+          </router-link>
+          <router-link to="/keywords/3-marla-house-map-bahria-town" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-[#088C7E] text-slate-200 hover:text-white border border-slate-700 transition-all">
+            3 Marla House Map Bahria Town
+          </router-link>
+          <router-link to="/keywords/10-marla-35x70-spanish-elevation" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-[#088C7E] text-slate-200 hover:text-white border border-slate-700 transition-all">
+            10 Marla 35x70 Spanish Elevation
+          </router-link>
+          <router-link to="/keywords/dha-lahore-covered-area-calculation" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-[#088C7E] text-slate-200 hover:text-white border border-slate-700 transition-all">
+            DHA Lahore Building Bylaws
+          </router-link>
+          <router-link to="/keywords/municipal-submission-drawings" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-[#088C7E] text-slate-200 hover:text-white border border-slate-700 transition-all">
+            LDA Approved Map Lahore
+          </router-link>
+          <router-link to="/tools" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-[#088C7E] text-slate-200 hover:text-white border border-slate-700 transition-all">
+            Grey Structure Cost Pakistan
+          </router-link>
+        </div>
+      </div>
+    </section>
+
     <!-- 4K CINEMATIC COMMERCIAL SHOWREEL SECTION -->
     <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
       <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
