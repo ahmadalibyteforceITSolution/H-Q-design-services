@@ -66,15 +66,14 @@
         </p>
       </div>
 
-      <a 
-        :href="'/go/whatsapp?phone=923416887454&text=' + encodeURIComponent('Assalam-o-Alaikum H&Q Design Services, I checked the construction cost calculator for ' + calcSize + ' in ' + calcCity + ' (Estimated: ' + calculatedCost.totalFormatted + '). I want a 3D elevation and turnkey quote.')"
-        target="_blank" 
-        rel="nofollow noopener noreferrer"
-        class="px-5 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 shrink-0 cursor-pointer"
+      <button 
+        type="button"
+        @click="openWhatsApp('923416887454', 'Assalam-o-Alaikum H&Q Design Services, I checked the construction cost calculator for ' + calcSize + ' in ' + calcCity + ' (Estimated: ' + calculatedCost.totalFormatted + '). I want a 3D elevation and turnkey quote.')"
+        class="px-5 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 shrink-0 cursor-pointer border-0"
       >
         <i class="fa-brands fa-whatsapp text-sm"></i>
         <span>Get Official BOQ on WhatsApp</span>
-      </a>
+      </button>
     </div>
 
     <!-- Itemized Material Breakdown -->
@@ -123,6 +122,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { openWhatsApp } from '../utils/whatsapp.js'
 
 const calcSize = ref('5 Marla')
 const calcScope = ref('turnkey_premium')

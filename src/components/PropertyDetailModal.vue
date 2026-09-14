@@ -183,15 +183,14 @@
               <i class="fa-solid fa-phone text-[#088C7E]"></i>
               <span>Call</span>
             </a>
-            <a 
-              :href="'/go/whatsapp?phone=' + (property.agent?.whatsapp || '966507143124') + '&text=' + encodeURIComponent('Assalam-o-Alaikum, I am interested in: ' + property.title + ' (ID: ' + property.id + ') on H&Q Design Services.')"
-              target="_blank" 
-              rel="nofollow noopener noreferrer"
-              class="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider transition-transform hover:scale-105 shadow-lg shadow-[#088C7E]/30 flex items-center justify-center gap-2"
+            <button 
+              type="button"
+              @click="openWhatsApp(property.agent?.whatsapp || '966507143124', 'Assalam-o-Alaikum, I am interested in: ' + property.title + ' (ID: ' + property.id + ') on H&Q Design Services.')"
+              class="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider transition-transform hover:scale-105 shadow-lg shadow-[#088C7E]/30 flex items-center justify-center gap-2 cursor-pointer border-0"
             >
               <i class="fa-brands fa-whatsapp text-sm"></i>
               <span>WhatsApp Inquiry</span>
-            </a>
+            </button>
           </div>
         </div>
 
@@ -203,6 +202,7 @@
 
 <script setup>
 import { ref, watch } from 'vue'
+import { openWhatsApp } from '../utils/whatsapp.js'
 
 const props = defineProps({
   property: {

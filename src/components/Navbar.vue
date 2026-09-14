@@ -12,10 +12,10 @@
             <span>0341-6887454</span>
           </a>
           <span class="text-white/30 hidden sm:inline">|</span>
-          <a href="/go/whatsapp?phone=966507143124" target="_blank" rel="nofollow noopener noreferrer" class="hover:text-amber-300 transition-colors flex items-center gap-1.5">
+          <button type="button" @click="openWhatsApp('966507143124')" class="hover:text-amber-300 transition-colors flex items-center gap-1.5 bg-transparent border-0 text-inherit p-0 font-inherit cursor-pointer">
             <i class="fa-brands fa-whatsapp text-sm text-emerald-400"></i>
             <span>KSA Architect Desk: +966 50 714 3124</span>
-          </a>
+          </button>
         </div>
 
         <!-- Right Side: Secondary Links, Lang, Theme & Controls -->
@@ -315,6 +315,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from '../composables/useI18n.js'
+import { openWhatsApp } from '../utils/whatsapp.js'
 import logoImg from '../assets/logo.png'
 
 const emit = defineEmits(['open-start-project', 'open-add-property'])

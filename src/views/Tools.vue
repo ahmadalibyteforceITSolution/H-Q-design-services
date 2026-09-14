@@ -107,15 +107,14 @@
               </p>
             </div>
 
-            <a 
-              :href="'/go/whatsapp?phone=966507143124&text=' + encodeURIComponent('Assalam-o-Alaikum, I need complete 3D design & construction execution for ' + calcSize + ' (' + calcScope + ') in ' + calcCity + '. Estimated Cost: ' + calculatedCost.totalFormatted)"
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-              class="px-6 py-3.5 rounded-2xl bg-[#088C7E] hover:bg-[#066D62] text-white font-black text-xs uppercase tracking-wider transition-transform hover:scale-105 shadow-xl flex items-center gap-2 cursor-pointer shrink-0"
+            <button 
+              type="button"
+              @click="openWhatsApp('966507143124', 'Assalam-o-Alaikum, I need complete 3D design & construction execution for ' + calcSize + ' (' + calcScope + ') in ' + calcCity + '. Estimated Cost: ' + calculatedCost.totalFormatted)"
+              class="px-6 py-3.5 rounded-2xl bg-[#088C7E] hover:bg-[#066D62] text-white font-black text-xs uppercase tracking-wider transition-transform hover:scale-105 shadow-xl flex items-center gap-2 cursor-pointer shrink-0 border-0"
             >
               <i class="fa-brands fa-whatsapp text-base"></i>
               <span>Get Detailed Bill of Quantities (BOQ)</span>
-            </a>
+            </button>
           </div>
 
           <!-- Itemized Breakdown Grid -->
@@ -413,6 +412,7 @@
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import InternalLinkingHub from '../components/InternalLinkingHub.vue'
+import { openWhatsApp } from '../utils/whatsapp.js'
 
 const route = useRoute()
 

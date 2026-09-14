@@ -18,7 +18,6 @@ Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
 Disallow: /draft/
-Disallow: /go/
 
 User-agent: Googlebot
 Allow: /

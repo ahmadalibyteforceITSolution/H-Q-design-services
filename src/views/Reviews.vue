@@ -37,15 +37,14 @@
               <i class="fa-solid fa-pen-nib"></i>
               <span>Leave a Google Review</span>
             </a>
-            <a 
-              :href="'/go/whatsapp?phone=' + (businessData.whatsappKSA.replace(/[^0-9]/g, ''))" 
-              target="_blank" 
-              rel="nofollow noopener noreferrer"
-              class="px-6 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 uppercase tracking-wider transition-colors flex items-center gap-2 border border-slate-700"
+            <button 
+              type="button"
+              @click="openWhatsApp(businessData.whatsappKSA)" 
+              class="px-6 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 uppercase tracking-wider transition-colors flex items-center gap-2 border border-slate-700 cursor-pointer"
             >
               <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
               <span>Talk to Senior Architect</span>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -126,6 +125,7 @@
 import GoogleReviews from '../components/GoogleReviews.vue'
 import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 import { GOOGLE_BUSINESS } from '../data/googleReviewsData.js'
+import { openWhatsApp } from '../utils/whatsapp.js'
 
 const businessData = GOOGLE_BUSINESS
 </script>

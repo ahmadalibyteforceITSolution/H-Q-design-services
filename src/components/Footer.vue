@@ -127,15 +127,14 @@
 
           <!-- Direct Architect Consultation Buttons -->
           <div class="pt-2 space-y-2">
-            <a 
-              href="/go/whatsapp?phone=966507143124" 
-              target="_blank" 
-              rel="nofollow noopener noreferrer"
-              class="w-full py-2 px-3 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-600/30 transition-all text-xs font-bold flex items-center justify-center gap-2"
+            <button 
+              type="button"
+              @click="openWhatsApp('966507143124')" 
+              class="w-full py-2 px-3 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-600/30 transition-all text-xs font-bold flex items-center justify-center gap-2 cursor-pointer"
             >
               <i class="fa-brands fa-whatsapp"></i>
               <span>KSA WhatsApp Desk</span>
-            </a>
+            </button>
             <router-link 
               to="/contact" 
               class="w-full py-2 px-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-[#088C7E] text-slate-300 hover:text-white transition-all text-xs font-bold flex items-center justify-center gap-2"
@@ -271,6 +270,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { openWhatsApp } from '../utils/whatsapp.js'
 import logoImg from '../assets/logo.png'
 
 defineEmits(['open-start-project'])

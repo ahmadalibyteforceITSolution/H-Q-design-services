@@ -131,9 +131,13 @@
           <span class="flex items-center gap-2"><i class="fa-solid fa-cube text-emerald-400 text-base"></i> 4K 3D Photorealistic Engine</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-file-signature text-cyan-400 text-base"></i> 100% Submission Approval Guarantee</span>
         </div>
-        <a href="/go/whatsapp?phone=966507143124" target="_blank" rel="nofollow noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 font-extrabold">
+        <button 
+          type="button"
+          @click="openWhatsApp('966507143124')" 
+          class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 font-extrabold bg-transparent border-0 cursor-pointer p-0 font-inherit"
+        >
           <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Architect Desk: +966 50 714 3124 →
-        </a>
+        </button>
       </div>
 
     </section>
@@ -436,15 +440,14 @@
               >
                 View Details
               </button>
-              <a 
-                :href="'/go/whatsapp?phone=' + (item.agent?.whatsapp || '966507143124')"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                class="px-3.5 py-2.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black transition-transform hover:scale-105 shadow-md flex items-center justify-center"
+              <button 
+                type="button"
+                @click="openWhatsApp(item.agent?.whatsapp || '966507143124', 'Assalam-o-Alaikum, I am interested in: ' + item.title)"
+                class="px-3.5 py-2.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black transition-transform hover:scale-105 shadow-md flex items-center justify-center cursor-pointer border-0"
                 title="Direct WhatsApp"
               >
                 <i class="fa-brands fa-whatsapp text-sm"></i>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -608,6 +611,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { openWhatsApp } from '../utils/whatsapp.js'
 
 defineEmits(['open-start-project'])
 import { useRouter } from 'vue-router'

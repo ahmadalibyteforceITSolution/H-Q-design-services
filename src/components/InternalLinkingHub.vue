@@ -247,15 +247,14 @@
         </div>
 
         <div class="flex items-center gap-3">
-          <a 
-            href="/go/whatsapp?phone=966507143124" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer"
-            class="px-3.5 py-2 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-600/30 transition-all font-bold flex items-center gap-1.5"
+          <button 
+            type="button"
+            @click="openWhatsApp('966507143124')" 
+            class="px-3.5 py-2 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-600/30 transition-all font-bold flex items-center gap-1.5 cursor-pointer"
           >
             <i class="fa-brands fa-whatsapp text-sm"></i>
             <span>KSA Desk: +966 50 714 3124</span>
-          </a>
+          </button>
           <a 
             href="tel:03416887454" 
             class="px-3.5 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white transition-all font-bold flex items-center gap-1.5"
@@ -271,5 +270,6 @@
 </template>
 
 <script setup>
+import { openWhatsApp } from '../utils/whatsapp.js'
 // Reusable SEO internal linking hub component
 </script>

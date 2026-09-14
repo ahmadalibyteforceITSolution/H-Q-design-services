@@ -308,15 +308,14 @@
       </div>
 
       <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center gap-4">
-        <a 
-          href="/go/whatsapp?phone=923416887454&text=Hello%20H%26Q%20Design%20Services!%20I%20would%20like%20to%20exchange%20backlinks%20and%20guest%20posts%20with%20your%20website."
-          target="_blank" 
-          rel="nofollow noopener noreferrer"
-          class="px-6 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 cursor-pointer"
+        <button 
+          type="button"
+          @click="openWhatsApp('923416887454', 'Hello H&Q Design Services! I would like to exchange backlinks and guest posts with your website.')"
+          class="px-6 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 cursor-pointer border-0"
         >
           <i class="fa-brands fa-whatsapp text-sm"></i>
           <span>WhatsApp Link Exchange</span>
-        </a>
+        </button>
         <a 
           href="mailto:asadali28997@gmail.com?subject=Backlink%20and%20Guest%20Post%20Collaboration%20-%20H%26Q%20Design%20Services"
           class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 border border-slate-700"
@@ -378,6 +377,7 @@
 <script setup>
 import { ref } from 'vue'
 import InternalLinkingHub from '../components/InternalLinkingHub.vue'
+import { openWhatsApp } from '../utils/whatsapp.js'
 
 const copiedSnippet = ref(false)
 const copiedWidget = ref(false)

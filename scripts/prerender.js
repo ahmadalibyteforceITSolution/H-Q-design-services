@@ -164,7 +164,7 @@ const sharedInternalLinkingHtml = `
       <div>
         <strong style="color:#fff;">Direct Studio Lines:</strong>
         <a href="tel:03416887454" style="color:#088C7E;text-decoration:none;margin-left:8px;font-weight:bold;">0341-6887454</a> |
-        <a href="/go/whatsapp?phone=966507143124" rel="nofollow noopener noreferrer" style="color:#10b981;text-decoration:none;margin-left:6px;font-weight:bold;">KSA WhatsApp: +966 50 714 3124</a>
+        <button type="button" onclick="window.open('https://wa.me/966507143124','_blank','noopener,noreferrer')" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;color:#10b981;text-decoration:none;margin-left:6px;font-weight:bold;">KSA WhatsApp: +966 50 714 3124</button>
       </div>
       <div>
         <a href="/forum" style="color:#cbd5e1;text-decoration:none;margin-right:12px;">Forum Q&amp;A</a>
@@ -461,7 +461,7 @@ const renderSingleBlog = (b, slugOverride = null) => {
         <p class="text-xs text-slate-300">Plot consultations, 4K elevation rendering, and municipal map approval in DHA & Bahria Town.</p>
         <div class="flex gap-3 pt-2">
           <a href="tel:03416887454" class="inline-block px-5 py-2.5 rounded-xl bg-[#088C7E] text-white text-xs font-bold uppercase">Call Studio (0341-6887454)</a>
-          <a href="/go/whatsapp?phone=966507143124" rel="nofollow noopener noreferrer" class="inline-block px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase">KSA WhatsApp Desk</a>
+          <button type="button" onclick="window.open('https://wa.me/966507143124','_blank','noopener,noreferrer')" class="inline-block px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase cursor-pointer border-0">KSA WhatsApp Desk</button>
         </div>
       </div>
 
@@ -666,7 +666,7 @@ allFlatKeywords.forEach((kw, i) => {
         <p class="text-xs text-slate-300">Plot consultations, 4K elevation rendering, and municipal map approval in DHA & Bahria Town.</p>
         <div class="flex gap-3 pt-2">
           <a href="tel:03416887454" class="inline-block px-5 py-2.5 rounded-xl bg-[#088C7E] text-white text-xs font-bold uppercase">Call: 0341-6887454</a>
-          <a href="/go/whatsapp?phone=923416887454&amp;text=${encodeURIComponent('Inquiry for ' + kw)}" rel="nofollow noopener noreferrer" class="inline-block px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase">WhatsApp Consultation</a>
+          <button type="button" onclick="window.open('https://wa.me/923416887454?text=${encodeURIComponent('Inquiry for ' + kw)}','_blank','noopener,noreferrer')" class="inline-block px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase cursor-pointer border-0">WhatsApp Consultation</button>
         </div>
       </div>
 

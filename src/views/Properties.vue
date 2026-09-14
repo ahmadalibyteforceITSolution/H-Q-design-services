@@ -238,15 +238,14 @@
               >
                 View Details
               </button>
-              <a 
-                :href="'/go/whatsapp?phone=' + (item.agent?.whatsapp || '966507143124') + '&text=' + encodeURIComponent('Assalam-o-Alaikum, I am interested in: ' + item.title + ' (ID: ' + item.id + ')') "
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                class="px-3.5 py-2.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black transition-transform hover:scale-105 shadow-md shadow-[#088C7E]/20 flex items-center justify-center gap-1.5 cursor-pointer"
+              <button 
+                type="button"
+                @click="openWhatsApp(item.agent?.whatsapp || '966507143124', 'Assalam-o-Alaikum, I am interested in: ' + item.title + ' (ID: ' + item.id + ')')"
+                class="px-3.5 py-2.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black transition-transform hover:scale-105 shadow-md shadow-[#088C7E]/20 flex items-center justify-center gap-1.5 cursor-pointer border-0"
                 title="Direct WhatsApp"
               >
                 <i class="fa-brands fa-whatsapp text-sm"></i>
-              </a>
+              </button>
             </div>
 
           </div>
@@ -286,6 +285,7 @@ import { useRoute } from 'vue-router'
 import { propertiesData } from '../data/propertiesData.js'
 import PropertyDetailModal from '../components/PropertyDetailModal.vue'
 import InternalLinkingHub from '../components/InternalLinkingHub.vue'
+import { openWhatsApp } from '../utils/whatsapp.js'
 
 const route = useRoute()
 

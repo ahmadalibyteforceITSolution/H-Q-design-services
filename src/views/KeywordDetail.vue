@@ -57,15 +57,14 @@
 
           <!-- Quick Consultation Action Bar -->
           <div class="flex flex-wrap items-center gap-3 pt-2">
-            <a 
-              :href="whatsappUrl" 
-              target="_blank" 
-              rel="nofollow noopener noreferrer"
-              class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-black uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2 cursor-pointer"
+            <button 
+              type="button"
+              @click="openWhatsApp('923416887454', 'Inquiry for ' + activeKeyword)" 
+              class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-black uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2 cursor-pointer border-0"
             >
               <i class="fa-brands fa-whatsapp text-sm"></i>
               <span>WhatsApp Blueprint Quote</span>
-            </a>
+            </button>
             <a 
               href="tel:03416887454" 
               class="px-6 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2"
@@ -426,6 +425,7 @@ import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 import { useRoute } from 'vue-router'
 import { topKeywordsData, allFlatKeywords, slugifyKeyword, getKeywordBySlug, getKeywordCluster } from '../data/keywordsData.js'
 import { getCategoryForKeyword, generateArticleContent, architectureImages } from '../data/blogData.js'
+import { openWhatsApp } from '../utils/whatsapp.js'
 
 const route = useRoute()
 
@@ -495,11 +495,6 @@ const currentUrl = computed(() => {
     return window.location.href
   }
   return `https://h-q-design-services.vercel.app/keywords/${slugifyKeyword(activeKeyword.value)}`
-})
-
-const whatsappUrl = computed(() => {
-  const msg = `Hello H&Q Design Services! I am interested in blueprints, 3D elevations, and construction cost consultation regarding: ${activeKeyword.value}`
-  return `/go/whatsapp?phone=923416887454&text=${encodeURIComponent(msg)}`
 })
 
 // Dynamic SEO & Structured Data

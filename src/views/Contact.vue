@@ -42,15 +42,14 @@
           <p class="text-xs text-slate-500 dark:text-slate-400">Send plot dimensions or architectural sketches directly to our Saudi Arabia desk.</p>
         </div>
         <div class="pt-2">
-          <a 
-            href="/go/whatsapp?phone=966507143124" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer"
-            class="px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold inline-flex items-center gap-2 shadow hover:bg-emerald-500 transition-colors w-full justify-center"
+          <button 
+            type="button"
+            @click="openWhatsApp('966507143124')" 
+            class="px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold inline-flex items-center gap-2 shadow hover:bg-emerald-500 transition-colors w-full justify-center cursor-pointer border-0"
           >
             <i class="fa-brands fa-whatsapp"></i>
             <span>Chat on WhatsApp</span>
-          </a>
+          </button>
         </div>
       </div>
 
@@ -210,6 +209,7 @@
 <script setup>
 import { ref } from 'vue'
 import InternalLinkingHub from '../components/InternalLinkingHub.vue'
+import { openWhatsApp } from '../utils/whatsapp.js'
 
 const form = ref({
   name: '',
@@ -233,10 +233,8 @@ const submitForm = () => {
     `📐 *Plot Scale:* ${form.value.plotSize}\n` +
     `📝 *Details & Vision:* ${form.value.message || 'Floor plan & 3D render consultation requested.'}`
 
-  const targetUrl = `/go/whatsapp?phone=966507143124&text=${encodeURIComponent(waText)}`
-
   setTimeout(() => {
-    window.open(targetUrl, '_blank')
+    openWhatsApp('966507143124', waText)
     submitted.value = false
   }, 400)
 }

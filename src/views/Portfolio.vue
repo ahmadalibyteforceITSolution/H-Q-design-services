@@ -111,15 +111,14 @@
             <i class="fa-solid fa-eye text-xs"></i>
             <span>View 3D Plan</span>
           </button>
-          <a 
-            href="/go/whatsapp?phone=966507143124" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer"
-            class="p-3 rounded-xl bg-emerald-600/20 text-emerald-400 hover:bg-emerald-600/30 transition-all text-sm"
+          <button 
+            type="button"
+            @click="openWhatsApp('966507143124')" 
+            class="p-3 rounded-xl bg-emerald-600/20 text-emerald-400 hover:bg-emerald-600/30 transition-all text-sm cursor-pointer border-0"
             title="Chat on WhatsApp"
           >
             <i class="fa-brands fa-whatsapp"></i>
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -230,6 +229,7 @@
 import { ref, computed } from 'vue'
 import CinematicShowreel from '../components/CinematicShowreel.vue'
 import InternalLinkingHub from '../components/InternalLinkingHub.vue'
+import { openWhatsApp } from '../utils/whatsapp.js'
 
 const emit = defineEmits(['open-start-project'])
 
