@@ -67,9 +67,9 @@
       </div>
 
       <a 
-        :href="'https://wa.me/923416887454?text=' + encodeURIComponent('Assalam-o-Alaikum H&Q Design Services, I checked the construction cost calculator for ' + calcSize + ' in ' + calcCity + ' (Estimated: ' + calculatedCost.totalFormatted + '). I want a 3D elevation and turnkey quote.')"
+        :href="'/go/whatsapp?phone=923416887454&text=' + encodeURIComponent('Assalam-o-Alaikum H&Q Design Services, I checked the construction cost calculator for ' + calcSize + ' in ' + calcCity + ' (Estimated: ' + calculatedCost.totalFormatted + '). I want a 3D elevation and turnkey quote.')"
         target="_blank" 
-        rel="noopener"
+        rel="nofollow noopener noreferrer"
         class="px-5 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 shrink-0 cursor-pointer"
       >
         <i class="fa-brands fa-whatsapp text-sm"></i>

@@ -30,7 +30,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: 'H&Q Design Services | Best Architects & Interior Designers in Lahore',
+      title: 'H&Q Design Services | Premier Architects Lahore',
       description: 'H&Q Design services offers the best interior designers in Lahore, providing home, office, commercial interior design, architecture and construction solutions.',
       keywords: 'H&Q Design Services, Best Architect in Lahore, Interior Designer in Lahore, Architecture Company Lahore, Interior Design Services, Luxury Interior Design, Modern House Design Lahore, 3D Architectural Visualization, Architects in DHA Lahore'
     }
@@ -120,7 +120,7 @@ const routes = [
     name: 'Services',
     component: Services,
     meta: {
-      title: 'Architectural & Interior Design Services Lahore | H&Q Studio',
+      title: 'Architectural & Interior Design Services | H&Q Studio',
       description: 'Full-scope architectural design services, luxury interior design, 3D rendering, commercial office fitouts, and complete home renovation in Lahore.',
       keywords: 'Architectural Design Services, Interior Design Services, Best Interior Designer in Lahore, Commercial Interior Design Lahore, Renovation Services Lahore, 3D Rendering Services, Office Interior Design Lahore, Retail Interior Design, Villa Interior Design'
     }
@@ -170,7 +170,7 @@ const routes = [
     name: 'Contact',
     component: Contact,
     meta: {
-      title: 'Contact H&Q Design Services | Hire Architects & Interior Designers Lahore',
+      title: 'Contact H&Q Design Services | Studio Lahore',
       description: 'Book a consultation or request an instant design quote from top architects and interior designers in Lahore. Call or WhatsApp 0341-6887454 for house design fees and turnkey quotation.',
       keywords: 'Interior Designer Near Me, Architect Near Me, Interior Designer Consultation Lahore, Architect Consultation Lahore, Interior Design Quotation Lahore, House Design Cost Lahore, Interior Designer Charges Lahore, Architect Fees Lahore, Hire Interior Designer Lahore, Hire Architect Lahore'
     }
@@ -180,7 +180,7 @@ const routes = [
     name: 'Partners',
     component: BacklinksHub,
     meta: {
-      title: 'Industry Partners & Architectural Collaborations | H&Q Studio',
+      title: 'Industry Partners & Collaborations | H&Q Studio',
       description: 'Explore H&Q Design Services verified architectural engineering partners, building material manufacturers, sanitary brands, and real estate associates.',
       keywords: 'architecture partners, engineering consultants Lahore, building material suppliers, construction partners Pakistan'
     }
@@ -244,7 +244,7 @@ const routes = [
     name: 'EmbedCalculator',
     component: EmbedCalculator,
     meta: {
-      title: 'Pakistan House Construction Cost Calculator Widget | H&Q Design Services',
+      title: 'Construction Cost Calculator Widget | H&Q Studio',
       description: 'Embeddable 2026 house construction cost calculator for real estate and construction websites.',
       hideHeaderFooter: true
     }
@@ -254,7 +254,7 @@ const routes = [
     name: 'Reviews',
     component: Reviews,
     meta: {
-      title: 'Google Reviews & Client Ratings (5.0 ★) | H&Q Design Services',
+      title: 'Google Reviews & Ratings (5.0 ★) | H&Q Studio',
       description: 'Read 100% verified 5.0-star Google reviews for H&Q Design Services Lahore. Homeowners and commercial clients praise our 3D elevations, floor plans, and turnkey construction.',
       keywords: 'H&Q Design Services reviews, Google reviews H&Q, best architects in Lahore reviews, architect rating Lahore, architectural firm reviews DHA Lahore'
     }
@@ -293,7 +293,11 @@ router.afterEach((to) => {
     const kw = getKeywordBySlug(to.params.slug)
     if (kw) {
       const slug = slugifyKeyword(kw)
-      to.meta.title = `${kw} | 2026 Architectural Plan & Cost | H&Q Studio Lahore`
+      const brand = ' | H&Q Studio'
+      let finalTitle = `${kw}${brand}`
+      if (finalTitle.length > 60) finalTitle = `${kw} | H&Q`
+      if (finalTitle.length > 60) finalTitle = kw.length <= 60 ? kw : kw.slice(0, 57).replace(/\s+\S*$/, '') + '...'
+      to.meta.title = finalTitle
       to.meta.description = `Comprehensive 2026 architectural designs, 3D elevations, floor plans, and construction cost estimates for ${kw} in Pakistan. Consult H&Q Senior Architects.`
       canonicalUrl = `${baseUrl}/keywords/${slug}`
     }

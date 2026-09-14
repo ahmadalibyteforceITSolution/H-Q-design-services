@@ -99,8 +99,9 @@
               <span>Call: {{ agent.phone }}</span>
             </a>
             <a 
-              :href="'https://wa.me/' + agent.whatsapp + '?text=' + encodeURIComponent('Assalam-o-Alaikum ' + agent.name + ', I would like to consult regarding architectural 3D design and property in Lahore.')"
+              :href="'/go/whatsapp?phone=' + agent.whatsapp + '&text=' + encodeURIComponent('Assalam-o-Alaikum ' + agent.name + ', I would like to consult regarding architectural 3D design and property in Lahore.')"
               target="_blank"
+              rel="nofollow noopener noreferrer"
               class="flex-1 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider transition-transform hover:scale-105 shadow-md flex items-center justify-center gap-2"
             >
               <i class="fa-brands fa-whatsapp text-base"></i>

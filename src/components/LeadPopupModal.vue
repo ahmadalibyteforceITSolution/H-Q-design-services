@@ -271,7 +271,7 @@ const submitQuery = async () => {
     `🌐 *URL:* ${currentUrl}\n` +
     `⚡ *Sent via Website Quick Consultation Form*`
 
-  whatsappUrl.value = `https://wa.me/${ksaNumber}?text=${encodeURIComponent(waText)}`
+  whatsappUrl.value = `/go/whatsapp?phone=${ksaNumber}&text=${encodeURIComponent(waText)}`
 
   // 2. Submit to backend API (/api/contact)
   try {

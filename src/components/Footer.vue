@@ -128,8 +128,9 @@
           <!-- Direct Architect Consultation Buttons -->
           <div class="pt-2 space-y-2">
             <a 
-              href="https://wa.me/966507143124" 
+              href="/go/whatsapp?phone=966507143124" 
               target="_blank" 
+              rel="nofollow noopener noreferrer"
               class="w-full py-2 px-3 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-600/30 transition-all text-xs font-bold flex items-center justify-center gap-2"
             >
               <i class="fa-brands fa-whatsapp"></i>

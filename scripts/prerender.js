@@ -29,6 +29,22 @@ const escapeXml = (str) => {
     .replace(/'/g, '&#039;')
 }
 
+const optimizeTitle = (rawTitle, brand = ' | H&Q Studio', max = 60) => {
+  let clean = String(rawTitle || '').replace(/\s+/g, ' ').trim()
+  if (escapeXml(`${clean}${brand}`).length <= max) return `${clean}${brand}`
+  if (escapeXml(`${clean} | H&Q`).length <= max) return `${clean} | H&Q`
+  if (escapeXml(clean).length <= max) return clean
+
+  let cut = clean.slice(0, max - 3)
+  while (cut.length > 5 && escapeXml(`${cut}...`).length > max) {
+    cut = cut.replace(/\s+\S*$/, '')
+    if (cut.length >= max - 3) {
+      cut = cut.slice(0, cut.length - 2)
+    }
+  }
+  return `${cut}...`
+}
+
 console.log('Starting comprehensive pre-rendering for Google AdSense compliance & high-value content...')
 
 // Helper to write html file into target directory or root
@@ -148,7 +164,7 @@ const sharedInternalLinkingHtml = `
       <div>
         <strong style="color:#fff;">Direct Studio Lines:</strong>
         <a href="tel:03416887454" style="color:#088C7E;text-decoration:none;margin-left:8px;font-weight:bold;">0341-6887454</a> |
-        <a href="https://wa.me/966507143124" style="color:#10b981;text-decoration:none;margin-left:6px;font-weight:bold;">KSA WhatsApp: +966 50 714 3124</a>
+        <a href="/go/whatsapp?phone=966507143124" rel="nofollow noopener noreferrer" style="color:#10b981;text-decoration:none;margin-left:6px;font-weight:bold;">KSA WhatsApp: +966 50 714 3124</a>
       </div>
       <div>
         <a href="/forum" style="color:#cbd5e1;text-decoration:none;margin-right:12px;">Forum Q&amp;A</a>
@@ -350,7 +366,7 @@ const renderSingleBlog = (b, slugOverride = null) => {
 
   const routePath = `blog/${targetSlug}`
   const canonicalUrl = `https://h-q-design-services.vercel.app/blog/${targetSlug}`
-  const pageTitle = `${b.title} | H&Q Design Services Studio Lahore`
+  const pageTitle = optimizeTitle(b.title, ' | H&Q Studio', 60)
   const pageDesc = b.excerpt || `Detailed architectural design, floor plans, and 2026 construction cost analysis for ${b.title}.`
 
   const blogPostingSchema = {
@@ -445,7 +461,7 @@ const renderSingleBlog = (b, slugOverride = null) => {
         <p class="text-xs text-slate-300">Plot consultations, 4K elevation rendering, and municipal map approval in DHA & Bahria Town.</p>
         <div class="flex gap-3 pt-2">
           <a href="tel:03416887454" class="inline-block px-5 py-2.5 rounded-xl bg-[#088C7E] text-white text-xs font-bold uppercase">Call Studio (0341-6887454)</a>
-          <a href="https://wa.me/966507143124" class="inline-block px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase">KSA WhatsApp Desk</a>
+          <a href="/go/whatsapp?phone=966507143124" rel="nofollow noopener noreferrer" class="inline-block px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase">KSA WhatsApp Desk</a>
         </div>
       </div>
 
@@ -509,7 +525,7 @@ allFlatKeywords.forEach((kw, i) => {
 
   const routePath = `keywords/${slug}`
   const canonicalUrl = `https://h-q-design-services.vercel.app/keywords/${slug}`
-  const pageTitle = `${kw} in Lahore | Best Architects & Interior Designers | H&Q Design Services`
+  const pageTitle = optimizeTitle(kw, ' | H&Q Studio', 60)
   const pageDesc = `Looking for ${kw} in Lahore, DHA, or Pakistan? H&Q Design Services provides top-rated architectural designs, 3D elevations, luxury interiors, and turnkey construction. Call or WhatsApp 0341-6887454.`
   const category = getCategoryForKeyword(kw)
   const img = architectureImages[i % architectureImages.length]
@@ -638,12 +654,19 @@ allFlatKeywords.forEach((kw, i) => {
         ${content}
       </article>
 
+      <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
+        <h4 class="text-xs font-black uppercase text-[#088C7E] tracking-wider">Related Architectural Plans &amp; Society Blueprints</h4>
+        <div class="flex flex-wrap gap-2 text-xs">
+          ${allFlatKeywords.filter(k => k.toLowerCase() !== kw.toLowerCase()).slice((i * 3) % Math.max(1, allFlatKeywords.length - 8), ((i * 3) % Math.max(1, allFlatKeywords.length - 8)) + 6).map(rk => `<a href="/keywords/${slugifyKeyword(rk)}" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-[#088C7E] text-slate-300 hover:text-white transition-colors text-xs inline-block">• ${escapeXml(rk)}</a>`).join('')}
+        </div>
+      </div>
+
       <div class="p-8 rounded-3xl bg-slate-900 text-white space-y-3">
         <h4 class="font-extrabold text-lg">Consult With H&Q Senior Architects for ${escapeXml(kw)}</h4>
         <p class="text-xs text-slate-300">Plot consultations, 4K elevation rendering, and municipal map approval in DHA & Bahria Town.</p>
         <div class="flex gap-3 pt-2">
           <a href="tel:03416887454" class="inline-block px-5 py-2.5 rounded-xl bg-[#088C7E] text-white text-xs font-bold uppercase">Call: 0341-6887454</a>
-          <a href="https://wa.me/923416887454?text=${encodeURIComponent('Inquiry for ' + kw)}" class="inline-block px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase">WhatsApp Consultation</a>
+          <a href="/go/whatsapp?phone=923416887454&amp;text=${encodeURIComponent('Inquiry for ' + kw)}" rel="nofollow noopener noreferrer" class="inline-block px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase">WhatsApp Consultation</a>
         </div>
       </div>
 

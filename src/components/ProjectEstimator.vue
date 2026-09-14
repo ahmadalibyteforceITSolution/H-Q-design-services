@@ -123,7 +123,7 @@ const sendEstimateToWhatsApp = () => {
     `💰 *Estimated Design Fee:* PKR ${estimatedPriceRange.value}\n\n` +
     `Hi H&Q Architects! I would like to book a 3D floor plan review for this plot estimate.`
 
-  const targetUrl = `https://wa.me/966507143124?text=${encodeURIComponent(waText)}`
+  const targetUrl = `/go/whatsapp?phone=966507143124&text=${encodeURIComponent(waText)}`
   window.open(targetUrl, '_blank')
 }
 </script>

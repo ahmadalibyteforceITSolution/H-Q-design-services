@@ -12,7 +12,7 @@
             <span>0341-6887454</span>
           </a>
           <span class="text-white/30 hidden sm:inline">|</span>
-          <a href="https://wa.me/966507143124" target="_blank" class="hover:text-amber-300 transition-colors flex items-center gap-1.5">
+          <a href="/go/whatsapp?phone=966507143124" target="_blank" rel="nofollow noopener noreferrer" class="hover:text-amber-300 transition-colors flex items-center gap-1.5">
             <i class="fa-brands fa-whatsapp text-sm text-emerald-400"></i>
             <span>KSA Architect Desk: +966 50 714 3124</span>
           </a>

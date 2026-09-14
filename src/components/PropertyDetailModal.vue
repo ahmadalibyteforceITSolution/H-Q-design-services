@@ -184,8 +184,9 @@
               <span>Call</span>
             </a>
             <a 
-              :href="'https://wa.me/' + (property.agent?.whatsapp || '966507143124') + '?text=' + encodeURIComponent('Assalam-o-Alaikum, I am interested in: ' + property.title + ' (ID: ' + property.id + ') on H&Q Design Services.')"
+              :href="'/go/whatsapp?phone=' + (property.agent?.whatsapp || '966507143124') + '&text=' + encodeURIComponent('Assalam-o-Alaikum, I am interested in: ' + property.title + ' (ID: ' + property.id + ') on H&Q Design Services.')"
               target="_blank" 
+              rel="nofollow noopener noreferrer"
               class="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider transition-transform hover:scale-105 shadow-lg shadow-[#088C7E]/30 flex items-center justify-center gap-2"
             >
               <i class="fa-brands fa-whatsapp text-sm"></i>

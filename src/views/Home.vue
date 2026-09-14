@@ -131,7 +131,7 @@
           <span class="flex items-center gap-2"><i class="fa-solid fa-cube text-emerald-400 text-base"></i> 4K 3D Photorealistic Engine</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-file-signature text-cyan-400 text-base"></i> 100% Submission Approval Guarantee</span>
         </div>
-        <a href="https://wa.me/966507143124" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 font-extrabold">
+        <a href="/go/whatsapp?phone=966507143124" target="_blank" rel="nofollow noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 font-extrabold">
           <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Architect Desk: +966 50 714 3124 →
         </a>
       </div>
@@ -437,8 +437,9 @@
                 View Details
               </button>
               <a 
-                :href="'https://wa.me/' + (item.agent?.whatsapp || '966507143124')"
+                :href="'/go/whatsapp?phone=' + (item.agent?.whatsapp || '966507143124')"
                 target="_blank"
+                rel="nofollow noopener noreferrer"
                 class="px-3.5 py-2.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black transition-transform hover:scale-105 shadow-md flex items-center justify-center"
                 title="Direct WhatsApp"
               >

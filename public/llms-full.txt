@@ -1,0 +1,18 @@
+# H&Q Design Services - Full Knowledge Documentation
+
+## About the Organization
+H&Q Design Services (HANDQ) is a multidisciplinary architecture, interior design, and structural engineering firm headquartered in Lahore, Pakistan. The studio operates dedicated desks in DHA Phase 6 Lahore and Parkview City Lahore, alongside an international consultation desk for Pakistani expatriates in Saudi Arabia and the UAE.
+
+## Core Specializations
+1. **Architectural Blueprints & Working Drawings**: Comprehensive 2D floor plans, elevation drawings, section details, and LDA/DHA submission drawing sets.
+2. **Photorealistic 3D Facade & Elevation Rendering**: High-definition exterior visualization for 3 Marla, 5 Marla, 10 Marla, 1 Kanal, and commercial buildings in Spanish, Modern Contemporary, Victorian, and Classical styles.
+3. **Structural & MEP Engineering**: Seismic structural design, concrete mix calculations (3,000-4,000 PSI), Grade 60 steel rebar detailing, and plumbing/electrical schematics.
+4. **Luxury Turnkey Interior Design**: Space optimization, custom woodwork, Italian marble selection, false ceiling engineering, and smart home integration.
+5. **Interactive Construction Estimation**: Free online estimation tools for calculating 2026 grey structure and turnkey construction costs across Pakistani cities.
+
+## Contact Information
+- **Official Domain**: https://h-q-design-services.vercel.app
+- **Studio Telephone**: +92 341 6887454
+- **KSA International Desk**: +966 50 714 3124
+- **Primary Inquiries**: asadali28997@gmail.com
+- **Locations**: DHA Phase 6 & Parkview City, Lahore, Punjab, Pakistan

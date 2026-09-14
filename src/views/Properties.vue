@@ -239,8 +239,9 @@
                 View Details
               </button>
               <a 
-                :href="'https://wa.me/' + (item.agent?.whatsapp || '966507143124') + '?text=' + encodeURIComponent('Assalam-o-Alaikum, I am interested in: ' + item.title + ' (ID: ' + item.id + ')') "
+                :href="'/go/whatsapp?phone=' + (item.agent?.whatsapp || '966507143124') + '&text=' + encodeURIComponent('Assalam-o-Alaikum, I am interested in: ' + item.title + ' (ID: ' + item.id + ')') "
                 target="_blank"
+                rel="nofollow noopener noreferrer"
                 class="px-3.5 py-2.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black transition-transform hover:scale-105 shadow-md shadow-[#088C7E]/20 flex items-center justify-center gap-1.5 cursor-pointer"
                 title="Direct WhatsApp"
               >

@@ -60,7 +60,7 @@
             <a 
               :href="whatsappUrl" 
               target="_blank" 
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-black uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2 cursor-pointer"
             >
               <i class="fa-brands fa-whatsapp text-sm"></i>
@@ -499,7 +499,7 @@ const currentUrl = computed(() => {
 
 const whatsappUrl = computed(() => {
   const msg = `Hello H&Q Design Services! I am interested in blueprints, 3D elevations, and construction cost consultation regarding: ${activeKeyword.value}`
-  return `https://wa.me/923416887454?text=${encodeURIComponent(msg)}`
+  return `/go/whatsapp?phone=923416887454&text=${encodeURIComponent(msg)}`
 })
 
 // Dynamic SEO & Structured Data
@@ -509,7 +509,10 @@ watchEffect(() => {
   const kw = activeKeyword.value
   const slug = slugifyKeyword(kw)
   const canonicalUrl = `https://h-q-design-services.vercel.app/keywords/${slug}`
-  const pageTitle = `${kw} | 2026 Architectural Plan & Cost | H&Q Studio Lahore`
+  const brand = ' | H&Q Studio'
+  let pageTitle = `${kw}${brand}`
+  if (pageTitle.length > 60) pageTitle = `${kw} | H&Q`
+  if (pageTitle.length > 60) pageTitle = kw.length <= 60 ? kw : kw.slice(0, 57).replace(/\s+\S*$/, '') + '...'
   const pageDesc = `Comprehensive 2026 architectural designs, 3D elevations, floor plans, and construction cost estimates for ${kw} in Pakistan. Consult H&Q Senior Architects.`
   const pageImage = keywordImage.value
 

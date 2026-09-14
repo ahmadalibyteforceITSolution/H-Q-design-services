@@ -295,7 +295,7 @@ const submitForm = () => {
     `⏰ *Contact Time:* ${form.time}\n` +
     `📝 *Vision / Notes:* ${form.description || '3D consultation requested.'}`
 
-  const targetUrl = `https://wa.me/966507143124?text=${encodeURIComponent(waText)}`
+  const targetUrl = `/go/whatsapp?phone=966507143124&text=${encodeURIComponent(waText)}`
 
   setTimeout(() => {
     loading.value = false

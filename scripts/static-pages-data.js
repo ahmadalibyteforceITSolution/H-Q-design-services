@@ -33,7 +33,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'disclaimer',
-    title: 'Website & Architectural Disclaimer | H&Q Design Services',
+    title: 'Website & Architectural Disclaimer | H&Q',
     desc: 'Official disclaimers regarding construction cost calculations, material volatility, municipal approvals, and property listings.',
     body: `
       <div class="py-12 max-w-4xl mx-auto px-4 space-y-6 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -47,7 +47,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'about',
-    title: 'About H&Q Design Services (HANDQ) | Premier Architects Lahore',
+    title: 'About H&Q Design Services | Premier Architects Lahore',
     desc: 'Learn about HANDQ (H&Q Design Services), PCATP registered architecture and interior design studio in Lahore, Pakistan.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -60,7 +60,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'services',
-    title: 'Architectural & Interior Design Services | H&Q Studio Lahore',
+    title: 'Architectural & Interior Design Services | H&Q',
     desc: 'Turnkey architectural planning, 4K 3D elevation renders, municipal map approvals, and luxury interior design in Lahore, Pakistan.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -72,7 +72,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'portfolio',
-    title: 'Architectural Portfolio & 3D Projects | H&Q Studio Lahore',
+    title: 'Architectural Portfolio & 3D Projects | H&Q',
     desc: 'Explore 500+ completed luxury villa elevations, modern interiors, and commercial plaza designs in Lahore, Islamabad & Karachi.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -96,7 +96,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'partners',
-    title: 'Industry Partners & Architectural Collaborations | H&Q Studio',
+    title: 'Industry Partners & Collaborations | H&Q Studio',
     desc: 'Verified architectural engineering partners, building material manufacturers (Mughal, Amreli Steel, DG Cement), and sanitary brands.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -108,7 +108,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'reviews',
-    title: 'Google Reviews & Client Ratings (5.0 ★) | H&Q Design Services',
+    title: 'Google Reviews & Ratings (5.0 ★) | H&Q Studio',
     desc: 'Read authentic, verified 5.0-star Google customer reviews for H&Q Design Services Lahore. Top architectural planning, 3D elevations, and turnkey house construction.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -120,7 +120,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'keywords-directory',
-    title: 'Architecture & Construction Knowledge Glossary | H&Q Studio',
+    title: 'Architecture & Design Glossary | H&Q Studio',
     desc: 'Comprehensive architectural glossary and spatial planning resource covering 3 Marla to 4 Kanal layouts, 3D elevations, and bylaws.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -132,7 +132,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'contact',
-    title: 'Contact H&Q Architectural Studio Lahore | Call 0341-6887454',
+    title: 'Contact H&Q Architectural Studio | Lahore',
     desc: 'Connect with senior architects in Lahore, Pakistan. Call 0341-6887454 or WhatsApp for instant 3D design quotes and plot consultations.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -144,7 +144,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'properties',
-    title: 'Luxury Properties & Plots for Sale in Lahore | H&Q Design Services',
+    title: 'Properties & Plots for Sale in Lahore | H&Q Studio',
     desc: 'Browse verified 5 Marla, 10 Marla & 1 Kanal houses, plots, and commercial properties in Parkview City, DHA, and Gulberg Lahore.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-6 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -155,7 +155,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'projects',
-    title: 'New Housing Projects & Investment Plans 2026 | H&Q Design Services',
+    title: 'New Housing Projects & Plans 2026 | H&Q Studio',
     desc: 'Discover new residential and commercial housing projects on installments across Lahore, Islamabad, and Karachi.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-6 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -166,7 +166,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'area-guides',
-    title: 'DHA Lahore & Parkview City Area Guides | H&Q Design Services',
+    title: 'DHA Lahore & Parkview City Area Guides | H&Q Studio',
     desc: 'In-depth society guides, block maps, possession details, and LDA/DHA bylaws for Parkview City, DHA Lahore, and Gulberg.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-6 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -177,7 +177,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'trends',
-    title: 'Pakistan Property Price Index & Trends 2026 | H&Q Design Services',
+    title: 'Pakistan Property Price Index 2026 | H&Q Studio',
     desc: 'Real-time property market trends, plot price analysis, and construction material rate forecasts in Pakistan.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-6 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -188,7 +188,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'agents',
-    title: 'Certified Architects & Real Estate Consultants | H&Q Design Services',
+    title: 'Architects & Real Estate Consultants | H&Q Studio',
     desc: 'Meet our PCATP registered chief architects and verified property consultants at Parkview City Studio Lahore.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-6 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -199,7 +199,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'forum',
-    title: 'Real Estate & Architecture Q&A Forum | H&Q Design Services',
+    title: 'Real Estate & Architecture Q&A | H&Q Studio',
     desc: 'Ask questions about LDA bylaws, DHA submission maps, grey structure costs, and interior design recommendations.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-6 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -210,7 +210,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'case-studies',
-    title: 'Architectural Case Studies & Project Blueprints | H&Q Design Services',
+    title: 'Architectural Case Studies & Blueprints | H&Q Studio',
     desc: 'Detailed architectural case studies of 5 Marla, 10 Marla, and 1 Kanal modern & Spanish villas designed by H&Q.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-6 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -221,7 +221,7 @@ export const staticPagesDetailed = [
   },
   {
     route: 'blog',
-    title: '2,000+ Architectural & Interior Design Guides | H&Q Design Services',
+    title: 'Architectural & Interior Design Guides | H&Q Studio',
     desc: 'Pakistan\'s largest architectural library. In-depth guides on floor plans, DHA bylaws, 3D renders, and construction costs.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-6 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">

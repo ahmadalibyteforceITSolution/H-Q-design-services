@@ -1,5 +1,5 @@
 export const homePageData = {
-  title: 'H&Q Design Services | Best Architects in Lahore | Luxury House Design',
+  title: 'H&Q Design Services | Best Architects in Lahore',
   desc: 'H&Q Design services offers the best interior designers in Lahore, providing home, office, commercial interior design, architecture and construction solutions.',
   body: `
     <header class="bg-slate-900 text-white border-b border-slate-800 py-4 px-6">

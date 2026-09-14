@@ -48,7 +48,7 @@ export const getShortCategory = getCategoryForKeyword
 
 // Generate structured, in-depth architectural article content with internal links, BOQ, bylaws, and FAQs
 export const generateArticleContent = (topic, category, id) => {
-  const whatsappUrl = `https://wa.me/923416887454?text=${encodeURIComponent(`Hello H&Q Design Services! I am interested in architectural drawings, interior design, and turnkey construction consultation regarding: ${topic}`)}`
+  const whatsappUrl = `/go/whatsapp?phone=923416887454&text=${encodeURIComponent(`Hello H&Q Design Services! I am interested in architectural drawings, interior design, and turnkey construction consultation regarding: ${topic}`)}`
 
   return `
     <div class="space-y-8">
@@ -336,7 +336,7 @@ export const generateArticleContent = (topic, category, id) => {
           <a href="tel:03416887454" class="px-6 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider transition-all shadow-lg flex items-center gap-2">
             <i class="fa-solid fa-phone"></i> Call: 0341-6887454
           </a>
-          <a href="${whatsappUrl}" target="_blank" rel="noopener" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-black uppercase tracking-wider transition-all shadow-lg flex items-center gap-2">
+          <a href="${whatsappUrl}" target="_blank" rel="nofollow noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-black uppercase tracking-wider transition-all shadow-lg flex items-center gap-2">
             <i class="fa-brands fa-whatsapp"></i> WhatsApp Consultation
           </a>
         </div>
@@ -371,7 +371,7 @@ export const generate2000Blogs = () => {
     const dateStr = `${month} ${day}, 2026`
     
     const readTime = `${4 + (i % 5)} min read`
-    const title = `${keyword} - Architecture & Interior Design Guide`
+    const title = `${keyword} Architecture Guide`
     const excerpt = `Complete 2026 architectural analysis and interior design guidelines for ${keyword}. Written by H&Q Design Services senior architects in Lahore, Pakistan.`
     const content = generateArticleContent(keyword, category, id)
 

@@ -309,9 +309,9 @@
 
       <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center gap-4">
         <a 
-          href="https://wa.me/923416887454?text=Hello%20H%26Q%20Design%20Services!%20I%20would%20like%20to%20exchange%20backlinks%20and%20guest%20posts%20with%20your%20website."
+          href="/go/whatsapp?phone=923416887454&text=Hello%20H%26Q%20Design%20Services!%20I%20would%20like%20to%20exchange%20backlinks%20and%20guest%20posts%20with%20your%20website."
           target="_blank" 
-          rel="noopener"
+          rel="nofollow noopener noreferrer"
           class="px-6 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 cursor-pointer"
         >
           <i class="fa-brands fa-whatsapp text-sm"></i>

@@ -38,8 +38,9 @@
               <span>Leave a Google Review</span>
             </a>
             <a 
-              :href="'https://wa.me/' + (businessData.whatsappKSA.replace(/[^0-9]/g, ''))" 
+              :href="'/go/whatsapp?phone=' + (businessData.whatsappKSA.replace(/[^0-9]/g, ''))" 
               target="_blank" 
+              rel="nofollow noopener noreferrer"
               class="px-6 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 uppercase tracking-wider transition-colors flex items-center gap-2 border border-slate-700"
             >
               <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>

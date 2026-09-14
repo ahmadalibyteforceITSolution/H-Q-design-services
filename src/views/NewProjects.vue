@@ -131,8 +131,9 @@
             <!-- Actions Row -->
             <div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
               <a 
-                :href="'https://wa.me/966507143124?text=' + encodeURIComponent('Assalam-o-Alaikum, I want brochure and booking details for ' + project.title)"
+                :href="'/go/whatsapp?phone=966507143124&text=' + encodeURIComponent('Assalam-o-Alaikum, I want brochure and booking details for ' + project.title)"
                 target="_blank"
+                rel="nofollow noopener noreferrer"
                 class="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white font-black text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
               >
                 <i class="fa-brands fa-whatsapp text-sm"></i>

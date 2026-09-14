@@ -112,8 +112,9 @@
             <span>View 3D Plan</span>
           </button>
           <a 
-            href="https://wa.me/966507143124" 
+            href="/go/whatsapp?phone=966507143124" 
             target="_blank" 
+            rel="nofollow noopener noreferrer"
             class="p-3 rounded-xl bg-emerald-600/20 text-emerald-400 hover:bg-emerald-600/30 transition-all text-sm"
             title="Chat on WhatsApp"
           >

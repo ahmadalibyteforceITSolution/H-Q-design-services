@@ -43,8 +43,9 @@
         </div>
         <div class="pt-2">
           <a 
-            href="https://wa.me/966507143124" 
+            href="/go/whatsapp?phone=966507143124" 
             target="_blank" 
+            rel="nofollow noopener noreferrer"
             class="px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold inline-flex items-center gap-2 shadow hover:bg-emerald-500 transition-colors w-full justify-center"
           >
             <i class="fa-brands fa-whatsapp"></i>
@@ -232,7 +233,7 @@ const submitForm = () => {
     `📐 *Plot Scale:* ${form.value.plotSize}\n` +
     `📝 *Details & Vision:* ${form.value.message || 'Floor plan & 3D render consultation requested.'}`
 
-  const targetUrl = `https://wa.me/966507143124?text=${encodeURIComponent(waText)}`
+  const targetUrl = `/go/whatsapp?phone=966507143124&text=${encodeURIComponent(waText)}`
 
   setTimeout(() => {
     window.open(targetUrl, '_blank')

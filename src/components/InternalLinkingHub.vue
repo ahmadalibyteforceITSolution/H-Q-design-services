@@ -248,9 +248,9 @@
 
         <div class="flex items-center gap-3">
           <a 
-            href="https://wa.me/966507143124" 
+            href="/go/whatsapp?phone=966507143124" 
             target="_blank" 
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
             class="px-3.5 py-2 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-600/30 transition-all font-bold flex items-center gap-1.5"
           >
             <i class="fa-brands fa-whatsapp text-sm"></i>
