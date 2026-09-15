@@ -388,14 +388,7 @@ router.afterEach((to) => {
       "@context": "https://schema.org",
       "@type": "ArchitecturalService",
       "name": "H&Q Design Services Reviews & Ratings",
-      "url": canonicalUrl,
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "11",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
+      "url": canonicalUrl
     }
   } else if (to.path === '/contact') {
     schemaData = {

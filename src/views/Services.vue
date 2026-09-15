@@ -213,12 +213,9 @@ onMounted(() => {
       "@type": "OfferCatalog",
       "name": "H&Q Design Services Portfolio",
       "itemListElement": fullServices.value.map(s => ({
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": s.title,
-          "description": s.desc
-        }
+        "@type": "Service",
+        "name": s.title,
+        "description": s.desc
       }))
     }
   }

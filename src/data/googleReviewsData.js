@@ -202,7 +202,7 @@ export async function fetchGoogleReviews() {
 /**
  * Generate Schema.org JSON-LD structured data for Google Rich Snippets
  */
-export function generateGoogleReviewSchema(reviews = initialGoogleReviews) {
+export function generateGoogleReviewSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'ArchitecturalService',
@@ -225,29 +225,6 @@ export function generateGoogleReviewSchema(reviews = initialGoogleReviews) {
       'latitude': '31.4286',
       'longitude': '74.2268'
     },
-    'hasMap': GOOGLE_BUSINESS.mapsUrl,
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': '5.0',
-      'bestRating': '5',
-      'worstRating': '1',
-      'ratingCount': String(reviews.length || 48),
-      'reviewCount': String(reviews.length || 48)
-    },
-    'review': reviews.slice(0, 5).map(r => ({
-      '@type': 'Review',
-      'author': {
-        '@type': 'Person',
-        'name': r.author_name
-      },
-      'datePublished': r.date || '2026-08-01',
-      'reviewBody': r.text,
-      'reviewRating': {
-        '@type': 'Rating',
-        'ratingValue': String(r.rating || 5),
-        'bestRating': '5',
-        'worstRating': '1'
-      }
-    }))
+    'hasMap': GOOGLE_BUSINESS.mapsUrl
   };
 }

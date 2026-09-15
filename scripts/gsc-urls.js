@@ -1,4 +1,5 @@
 export const userGscSlugs = [
+  "article-1-parkview-city-lahore-building-guidelines-approval-submission-blueprint",
   "article-97-curtain-wall-glass-installation-for-commercial-buildings-in-lahore",
   "article-1009-interior-design-services-lahore",
   "article-393-driveway-paver-tile-layout",

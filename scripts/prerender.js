@@ -187,14 +187,7 @@ staticPagesDetailed.forEach(p => {
       "@type": "ArchitecturalService",
       "name": "H&Q Design Services Google Reviews & Ratings",
       "url": canonicalUrl,
-      "telephone": "+923416887454",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "11",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
+      "telephone": "+923416887454"
     }
     extraHeadHtml = `<script type="application/ld+json">${JSON.stringify(reviewsSchema)}</script>`
   } else if (p.route === 'services') {
@@ -541,13 +534,6 @@ allFlatKeywords.forEach((kw, i) => {
     "about": {
       "@type": "Thing",
       "name": kw
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "11",
-      "bestRating": "5",
-      "worstRating": "1"
     },
     "provider": {
       "@type": "ArchitecturalService",

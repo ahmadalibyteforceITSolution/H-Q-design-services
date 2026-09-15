@@ -594,13 +594,6 @@ watchEffect(() => {
       "name": kw
     },
     "category": activeCluster.value?.name || categoryName.value,
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "11",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "provider": {
       "@type": "ArchitecturalService",
       "name": "H&Q Design Services",
