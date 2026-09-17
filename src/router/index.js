@@ -436,6 +436,14 @@ router.afterEach((to) => {
   }
 
   schemaScript.textContent = JSON.stringify(schemaData, null, 2)
+
+  // Google Analytics 4 (gtag.js) SPA pageview tracking
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag('config', 'G-6D1G26RD80', {
+      page_path: to.fullPath,
+      page_title: document.title
+    })
+  }
 })
 
 export default router
