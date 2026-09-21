@@ -28,7 +28,8 @@
         </div>
         <div class="pt-2 space-y-1">
           <a href="tel:+966507143124" class="text-sm font-black text-[#088C7E] hover:underline block">🇸🇦 +966 50 714 3124</a>
-          <a href="tel:03416887454" class="text-xs font-semibold text-slate-600 dark:text-slate-400 hover:underline block">🇵🇰 0341-6887454</a>
+          <a href="tel:03416887454" class="text-xs font-semibold text-slate-600 dark:text-slate-400 hover:underline block">🇵🇰 0341-6887454 (Line 1)</a>
+          <a href="tel:03134487315" class="text-xs font-semibold text-slate-600 dark:text-slate-400 hover:underline block">🇵🇰 0313-4487315 (Line 2)</a>
         </div>
       </div>
 

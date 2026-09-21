@@ -210,7 +210,7 @@ export function generateGoogleReviewSchema() {
     'image': 'https://h-q-design-services.vercel.app/logo.png',
     '@id': 'https://h-q-design-services.vercel.app/#business',
     'url': 'https://h-q-design-services.vercel.app/',
-    'telephone': '+923416887454',
+    'telephone': ['+923416887454', '+923134487315'],
     'priceRange': '$$$',
     'address': {
       '@type': 'PostalAddress',

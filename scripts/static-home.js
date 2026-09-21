@@ -30,10 +30,11 @@ export const homePageData = {
         <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
           Welcome to <strong>H&Q Design Services (HANDQ)</strong>, Pakistan's leading architectural studio based in Lahore. Specializing in bespoke 5 Marla, 10 Marla, 1 Kanal, and 2 Kanal modern and Spanish villas, 4K photorealistic 3D front elevations, structural engineering, and turnkey construction management across DHA Lahore, Gulberg, Bahria Town, and Islamabad.
         </p>
-        <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
-          <a href="tel:03416887454" class="px-6 py-3 rounded-xl bg-[#088C7E] text-white font-bold text-sm shadow-lg">Call Studio: 0341-6887454</a>
-          <a href="/tools" class="px-6 py-3 rounded-xl bg-slate-800 text-white font-bold text-sm border border-slate-700">2026 Construction Calculator</a>
-          <a href="/keywords-directory" class="px-6 py-3 rounded-xl bg-emerald-900/60 text-emerald-300 font-bold text-sm border border-emerald-700">Browse 3,000+ Keyword Designs</a>
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <a href="tel:03416887454" class="px-5 py-3 rounded-xl bg-[#088C7E] text-white font-bold text-sm shadow-lg">Call: 0341-6887454</a>
+          <a href="tel:03134487315" class="px-5 py-3 rounded-xl bg-[#066D62] text-white font-bold text-sm shadow-lg">Call: 0313-4487315</a>
+          <a href="/tools" class="px-5 py-3 rounded-xl bg-slate-800 text-white font-bold text-sm border border-slate-700">2026 Construction Calculator</a>
+          <a href="/keywords-directory" class="px-5 py-3 rounded-xl bg-emerald-900/60 text-emerald-300 font-bold text-sm border border-emerald-700">Browse 3,000+ Keyword Designs</a>
         </div>
       </section>
 

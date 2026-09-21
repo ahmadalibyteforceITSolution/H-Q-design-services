@@ -400,7 +400,7 @@ router.afterEach((to) => {
       "mainEntity": {
         "@type": "ArchitecturalService",
         "name": "H&Q Design Services",
-        "telephone": "+923416887454",
+        "telephone": ["+923416887454", "+923134487315"],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Topaz Block, Park View City & DHA Lahore Studio",
@@ -429,7 +429,7 @@ router.afterEach((to) => {
       "provider": {
         "@type": "ArchitecturalService",
         "name": "H&Q Design Services",
-        "telephone": "+923416887454",
+        "telephone": ["+923416887454", "+923134487315"],
         "url": `${baseUrl}/`
       }
     }

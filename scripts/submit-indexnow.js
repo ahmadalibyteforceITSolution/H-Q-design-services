@@ -23,6 +23,7 @@ const staticRoutes = [
   'about',
   'partners',
   'keywords-directory',
+  'reviews',
   'contact'
 ]
 

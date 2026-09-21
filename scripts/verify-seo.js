@@ -13,7 +13,17 @@ let nofollowLinksFound = 0
 let goLinksFound = 0
 let titlesOver60 = 0
 let sampleOver60Titles = []
+let canonicalIssues = []
+let missingCanonical = 0
+let multipleCanonicals = 0
 let totalHtmlScanned = 0
+
+// Check sitemap.xml exists and is non-empty
+const sitemapFile = path.join(__dirname, '../public/sitemap.xml')
+if (!fs.existsSync(sitemapFile) || fs.statSync(sitemapFile).size === 0) {
+  console.error('❌ Sitemap public/sitemap.xml missing or empty!')
+  process.exit(1)
+}
 
 function scanDirectory(dir) {
   const entries = fs.readdirSync(dir, { withFileTypes: true })
@@ -24,6 +34,24 @@ function scanDirectory(dir) {
     } else if (entry.name.endsWith('.html')) {
       totalHtmlScanned++
       const html = fs.readFileSync(fullPath, 'utf8')
+      const relPath = fullPath.replace(distDir, '').replace(/\\/g, '/')
+
+      // Skip the /go/ redirection trampoline from canonical check
+      if (!relPath.includes('/go/')) {
+        const canonMatches = [...html.matchAll(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/gi)]
+        if (canonMatches.length === 0) {
+          missingCanonical++
+          if (canonicalIssues.length < 5) canonicalIssues.push(`Missing canonical: ${relPath}`)
+        } else if (canonMatches.length > 1) {
+          multipleCanonicals++
+          if (canonicalIssues.length < 5) canonicalIssues.push(`Multiple canonicals (${canonMatches.length}): ${relPath}`)
+        } else {
+          const href = canonMatches[0][1]
+          if (!href.startsWith('https://h-q-design-services.vercel.app')) {
+            canonicalIssues.push(`Bad canonical domain in ${relPath}: ${href}`)
+          }
+        }
+      }
 
       // Check for raw wa.me links in <a> tags
       if (/<a\s[^>]*href=["']https:\/\/wa\.me/i.test(html)) {
@@ -67,6 +95,8 @@ function scanDirectory(dir) {
 scanDirectory(distDir)
 
 console.log(`Total HTML files scanned: ${totalHtmlScanned}`)
+console.log(`Missing canonical tags: ${missingCanonical} (Must be 0)`)
+console.log(`Multiple canonical tags: ${multipleCanonicals} (Must be 0)`)
 console.log(`Raw wa.me <a> links found: ${waLinksFound} (Must be 0)`)
 console.log(`Nofollow <a> links found: ${nofollowLinksFound} (Must be 0)`)
 console.log(`/go/ <a> links found: ${goLinksFound} (Must be 0)`)
@@ -74,9 +104,12 @@ console.log(`Titles over 60 characters: ${titlesOver60} (Must be 0)`)
 if (sampleOver60Titles.length > 0) {
   console.log('Sample titles over 60:', sampleOver60Titles)
 }
+if (canonicalIssues.length > 0) {
+  console.log('Sample canonical issues:', canonicalIssues)
+}
 
-if (waLinksFound === 0 && nofollowLinksFound === 0 && goLinksFound === 0 && titlesOver60 === 0) {
-  console.log('✅ ALL CHECKS PASSED: 0 Broken External WhatsApp Links, 0 Nofollow Links, 0 Internal /go/ Links, & 0 Title Tags > 60 chars!')
+if (missingCanonical === 0 && multipleCanonicals === 0 && waLinksFound === 0 && nofollowLinksFound === 0 && goLinksFound === 0 && titlesOver60 === 0) {
+  console.log('✅ ALL CHECKS PASSED: 100% Valid Canonical Tags, 0 Broken External WhatsApp Links, 0 Nofollow Links, 0 Internal /go/ Links, & 0 Title Tags > 60 chars!')
 } else {
   console.error('❌ ISSUES REMAINING!')
   process.exit(1)

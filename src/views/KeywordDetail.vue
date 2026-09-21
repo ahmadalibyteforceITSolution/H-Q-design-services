@@ -72,6 +72,13 @@
               <i class="fa-solid fa-phone text-xs"></i>
               <span>Call: 0341-6887454</span>
             </a>
+            <a 
+              href="tel:03134487315" 
+              class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-black uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2 border border-slate-700"
+            >
+              <i class="fa-solid fa-phone text-xs text-[#088C7E]"></i>
+              <span>Call: 0313-4487315</span>
+            </a>
             <router-link 
               to="/tools" 
               class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-bold transition-all border border-slate-700 flex items-center gap-2"
@@ -317,10 +324,18 @@
 
               <a 
                 href="tel:03416887454" 
-                class="w-full py-3.5 px-4 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg"
+                class="w-full py-3 px-4 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg"
               >
                 <i class="fa-solid fa-phone text-xs"></i>
                 <span>Call: 0341-6887454</span>
+              </a>
+
+              <a 
+                href="tel:03134487315" 
+                class="w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg border border-slate-700"
+              >
+                <i class="fa-solid fa-phone text-xs text-[#088C7E]"></i>
+                <span>Call: 0313-4487315</span>
               </a>
             </div>
 

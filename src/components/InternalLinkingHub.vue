@@ -262,6 +262,13 @@
             <i class="fa-solid fa-phone text-xs text-[#088C7E]"></i>
             <span>0341-6887454</span>
           </a>
+          <a 
+            href="tel:03134487315" 
+            class="px-3.5 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white transition-all font-bold flex items-center gap-1.5"
+          >
+            <i class="fa-solid fa-phone text-xs text-[#088C7E]"></i>
+            <span>0313-4487315</span>
+          </a>
         </div>
       </div>
 

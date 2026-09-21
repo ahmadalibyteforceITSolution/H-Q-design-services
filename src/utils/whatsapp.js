@@ -5,6 +5,9 @@
 
 export const DEFAULT_WHATSAPP_NUMBER = '966507143124'
 export const PK_WHATSAPP_NUMBER = '923416887454'
+export const PK_SECONDARY_NUMBER = '923134487315'
+export const PK_PHONE_DISPLAY_1 = '0341-6887454'
+export const PK_PHONE_DISPLAY_2 = '0313-4487315'
 
 export const getWhatsAppUrl = (phone = DEFAULT_WHATSAPP_NUMBER, text = '') => {
   const cleanPhone = String(phone).replace(/[^0-9]/g, '') || DEFAULT_WHATSAPP_NUMBER

@@ -6,10 +6,15 @@
       <div class="max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4">
         
         <!-- Left Side: Contact Snippets -->
-        <div class="flex flex-wrap items-center justify-center gap-4 font-bold text-[11px]">
-          <a href="tel:03416887454" class="hover:text-amber-300 transition-colors flex items-center gap-1.5">
+        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 font-bold text-[11px]">
+          <a href="tel:03416887454" class="hover:text-amber-300 transition-colors flex items-center gap-1.5" title="Call Studio Lahore 1">
             <i class="fa-solid fa-phone text-xs"></i>
             <span>0341-6887454</span>
+          </a>
+          <span class="text-white/30 hidden sm:inline">|</span>
+          <a href="tel:03134487315" class="hover:text-amber-300 transition-colors flex items-center gap-1.5" title="Call Studio Lahore 2">
+            <i class="fa-solid fa-phone text-xs"></i>
+            <span>0313-4487315</span>
           </a>
           <span class="text-white/30 hidden sm:inline">|</span>
           <button type="button" @click="openWhatsApp('966507143124')" class="hover:text-amber-300 transition-colors flex items-center gap-1.5 bg-transparent border-0 text-inherit p-0 font-inherit cursor-pointer">

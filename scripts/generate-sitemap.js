@@ -14,9 +14,6 @@ const getBaseUrl = () => {
   if (process.env.SITE_URL) {
     return process.env.SITE_URL.replace(/\/$/, '')
   }
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`
-  }
   return 'https://h-q-design-services.vercel.app'
 }
 
@@ -66,14 +63,16 @@ staticPages.forEach(p => {
 const addedSlugs = new Set()
 
 allBlogs.forEach(b => {
-  addedSlugs.add(b.slug)
-  xml += `  <url>
+  if (!addedSlugs.has(b.slug)) {
+    addedSlugs.add(b.slug)
+    xml += `  <url>
     <loc>${baseUrl}/blog/${b.slug}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 `
+  }
 })
 
 // Add explicit high-priority GSC target URLs requested for indexing

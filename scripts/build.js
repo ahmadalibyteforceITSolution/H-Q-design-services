@@ -38,4 +38,12 @@ try {
   process.exit(1)
 }
 
+console.log('Verifying SEO integrity, canonical tags & sitemap conformity...')
+try {
+  execSync('node scripts/verify-seo.js', { stdio: 'inherit', cwd: projectRoot })
+} catch (error) {
+  console.error('SEO verification check failed:', error)
+  process.exit(1)
+}
+
 console.log('Build completed successfully!')
