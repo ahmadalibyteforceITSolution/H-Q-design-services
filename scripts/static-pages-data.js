@@ -103,6 +103,16 @@ export const staticPagesDetailed = [
         <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white">Industry Partners & Strategic Collaborations</h1>
         <p class="text-lg font-medium text-[#088C7E]">Delivering Quality Construction Through Certified Material & Engineering Partners.</p>
         <p>H&Q Design Services maintains rigorous engineering relationships with statutory regulatory bodies (PCATP, PEC) and certified manufacturers of Grade 60 steel, ready-mix concrete, and luxury sanitary fittings across Pakistan.</p>
+        <div class="p-6 rounded-2xl bg-slate-100 dark:bg-slate-800 space-y-3">
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">National Media & Economic Research Citations</h2>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Featured editorial partner report on Pakistan macroeconomic logistics, fuel subsidies, and transport cost impacts:</p>
+          <div class="pt-2">
+            <a href="https://www.theopinion.com.pk/fuel-subsidy-pakistan-2026-check-new-petrol-token-system-and-eligibility-rules/" target="_blank" rel="noopener" class="text-xs font-bold text-[#088C7E] hover:underline inline-flex items-center gap-1.5">
+              <span>Fuel Subsidy Pakistan 2026: Check New Petrol Token System & Eligibility Rules – The Opinion Pakistan</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+        </div>
       </div>
     `
   },

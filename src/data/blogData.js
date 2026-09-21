@@ -349,6 +349,113 @@ export const generateArticleContent = (topic, category, id) => {
 // Generate the complete 2,000+ architectural pages dataset
 export const generate2000Blogs = () => {
   const blogs = []
+  
+  // 1. Featured Editorial & Policy Post: Fuel Subsidy & Petrol Token System 2026
+  const fuelSubsidySlug = 'fuel-subsidy-pakistan-2026-check-new-petrol-token-system-and-eligibility-rules'
+  const fuelSubsidyTitle = 'Fuel Subsidy Pakistan 2026: Petrol Token System & Rates'
+  const fuelSubsidyExcerpt = 'Comprehensive guide to Pakistan 2026 fuel subsidy, petrol token digital system, eligibility rules, and macroeconomic impact on residential construction freight.'
+  const fuelSubsidyContent = `
+    <div class="space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-base">
+      <div class="p-6 rounded-2xl bg-emerald-50 dark:bg-emerald-950/30 border border-[#088C7E]/30">
+        <h3 class="text-xl font-bold text-[#088C7E] dark:text-emerald-400 mb-2">
+          Special Economic & Policy Report: Pakistan Fuel Subsidy 2026
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          The Government of Pakistan has rolled out a targeted <strong>Fuel Subsidy & Petrol Token System for 2026</strong> aimed at curbing inflation for lower and middle-income motorists, public transit riders, and essential logistics. This report explores the digital quota allocation, eligibility verification, and its critical ramifications on regional building material haulage and construction costs across Lahore and Punjab.
+        </p>
+      </div>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-black text-slate-900 dark:text-white">
+          1. Understanding the New Petrol Token System in Pakistan (2026)
+        </h2>
+        <p>
+          Unlike blanket subsidies that previously strained the national exchequer, the 2026 petrol token mechanism utilizes automated digital verification linked to CNIC numbers, vehicle registration databases (Excise & Taxation), and the National Socio-Economic Registry (NSER).
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs p-5 rounded-2xl bg-slate-100 dark:bg-slate-800">
+          <div><strong>Target Quota:</strong> Up to 30 Liters/Month</div>
+          <div><strong>Eligible Engine Size:</strong> Up to 125cc Motorbikes & 800cc Cars</div>
+          <div><strong>Verification Mode:</strong> SMS Short Code & Digital Wallet QR</div>
+        </div>
+        <p>
+          Eligible citizens receive designated monthly subsidy allowances redeemed instantly at participating PSO, Total Parco, and Shell fuel stations upon QR code scan or OTP confirmation.
+        </p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-black text-slate-900 dark:text-white">
+          2. Official Eligibility Rules & Registration Criteria
+        </h2>
+        <p>
+          To qualify for the 2026 petrol subsidy token system, applicants must satisfy specific benchmark criteria established by the Ministry of Energy (Petroleum Division):
+        </p>
+        <ul class="list-disc pl-6 space-y-2 text-sm">
+          <li><strong>Vehicle Ownership:</strong> Registered motorcycles/scooters (up to 125cc), auto-rickshaws, or economy motorcars under 800cc displacement registered under the applicant's own CNIC.</li>
+          <li><strong>Income Threshold:</strong> Verified household monthly income below the designated national poverty and middle-class inflation baseline.</li>
+          <li><strong>Single Beneficiary Rule:</strong> Only one fuel subsidy relief token allocation is sanctioned per family household / CNIC unit.</li>
+          <li><strong>SIM Registration:</strong> The applicant's registered mobile SIM card must strictly correspond to the CNIC under which the vehicle is titled.</li>
+        </ul>
+        <div class="p-5 rounded-2xl bg-slate-900 text-white border border-slate-800 space-y-2">
+          <h4 class="text-xs uppercase font-extrabold text-[#088C7E] tracking-wider">Independent Media Citation & Analysis:</h4>
+          <p class="text-xs text-slate-300">
+            For real-time eligibility status checks, CNIC portal verification steps, and token disbursement schedules, consult the investigative coverage by <em>The Opinion Pakistan</em>:
+          </p>
+          <a 
+            href="https://www.theopinion.com.pk/fuel-subsidy-pakistan-2026-check-new-petrol-token-system-and-eligibility-rules/" 
+            target="_blank" 
+            rel="noopener"
+            class="inline-flex items-center gap-2 text-xs font-black text-[#088C7E] hover:underline"
+          >
+            <span>Read: Fuel Subsidy Pakistan 2026 – Check New Petrol Token System & Eligibility Rules on The Opinion Pakistan</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </a>
+        </div>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-black text-slate-900 dark:text-white">
+          3. Direct Impact on Construction Materials, Freight & Real Estate
+        </h2>
+        <p>
+          At <strong>H&Q Design Services</strong>, our cost-engineering consultants constantly track the interplay between fuel tariffs and building costs. Transportation accounts for approximately <strong>8% to 14% of gross residential construction expenses</strong> in Pakistan:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 text-sm">
+          <li><strong>Red Brick Haulage:</strong> Transporting baked clay bricks from Raiwind kilns to DHA Lahore and Bahria Town relies entirely on commercial diesel trucks. Targeted fuel interventions help prevent cascading price hikes per 1,000 bricks.</li>
+          <li><strong>Ready-Mix Concrete & Cement:</strong> Transit mixer trucks and bulk cement tankers from Hattar and Dandot require predictable fuel pricing to stabilize per-bag retail quotations.</li>
+          <li><strong>ASTM Grade 60 Rebar Freight:</strong> Transporting steel billets and deformed rebar from Karachi and Islamabad mills to Lahore job sites is heavily influenced by national diesel price adjustments.</li>
+        </ul>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-black text-slate-900 dark:text-white">
+          4. How Homeowners Can Lock in Turnkey Construction Rates
+        </h2>
+        <p>
+          To shield your construction budget against fuel-driven material fluctuations, H&Q Design Services offers fixed turnkey procurement agreements. By securing major supplies (cement, Grade 60 steel, sanitary ware, and electrical cabling) in milestone-based bulk contracts, homeowners in DHA, Park View City, and Gulberg can avoid unexpected budget overruns.
+        </p>
+        <div class="p-6 rounded-2xl bg-slate-100 dark:bg-slate-800 space-y-3">
+          <h4 class="font-extrabold text-sm text-slate-900 dark:text-white">Need a Guaranteed Turnkey Construction Estimate?</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300">
+            Consult with our registered PCATP architects and PEC structural engineers. Get an itemized Bill of Quantities (BOQ) with transparent logistics estimates for 2026.
+          </p>
+        </div>
+      </section>
+    </div>
+  `
+
+  blogs.push({
+    id: 9999,
+    slug: fuelSubsidySlug,
+    title: fuelSubsidyTitle,
+    category: '2026 Construction Rates & Costs',
+    date: 'September 21, 2026',
+    readTime: '6 min read',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
+    excerpt: fuelSubsidyExcerpt,
+    content: fuelSubsidyContent,
+    keyword: 'Fuel Subsidy Pakistan 2026'
+  })
+
   const totalKeywords = allFlatKeywords.length
 
   for (let i = 0; i < totalKeywords; i++) {

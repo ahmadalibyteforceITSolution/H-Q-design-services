@@ -232,6 +232,61 @@
       </div>
     </section>
 
+    <!-- Tier 5.5: Featured Media Publications & Policy Research Backlinks -->
+    <section class="space-y-6">
+      <div class="border-l-4 border-[#088C7E] pl-4">
+        <h2 class="text-lg sm:text-2xl font-black text-slate-900 dark:text-white">
+          National Media Publications & Economic Research Partners
+        </h2>
+        <p class="text-xs text-slate-500">
+          Editorial citations, national economic news features, and energy policy analyses referenced by H&Q Studio.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div 
+          v-for="media in mediaCitations" 
+          :key="media.url"
+          class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md hover:border-[#088C7E] transition-all flex flex-col justify-between space-y-4"
+        >
+          <div class="space-y-3">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold uppercase">
+                {{ media.category }}
+              </span>
+              <span class="text-[10px] font-bold text-slate-400 uppercase">
+                {{ media.badge }}
+              </span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 dark:text-white text-base leading-snug">
+              {{ media.title }}
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              {{ media.description }}
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <a 
+              :href="media.url" 
+              target="_blank" 
+              rel="noopener"
+              class="font-black text-[#088C7E] hover:underline inline-flex items-center gap-1.5"
+            >
+              <span>The Opinion Pakistan (Original Publication)</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+            <router-link 
+              :to="media.internalLink"
+              class="text-xs font-bold text-slate-500 hover:text-slate-900 dark:hover:text-white inline-flex items-center gap-1"
+            >
+              <span>H&Q Analysis Guide</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Tier 6: Reciprocal Backlink & Guest Posting Exchange Hub -->
     <section class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-slate-800 text-white shadow-2xl space-y-6">
       <div class="max-w-3xl space-y-3">
@@ -591,6 +646,18 @@ const globalNetworks = [
     icon: 'fa-brands fa-pinterest',
     url: 'https://www.pinterest.com',
     description: 'High-intent visual discovery engine driving thousands of daily organic impressions for luxury home decor.'
+  }
+]
+
+const mediaCitations = [
+  {
+    name: 'The Opinion Pakistan',
+    badge: 'National Policy Journal',
+    category: 'Fuel Subsidy & Transport Logistics',
+    title: 'Fuel Subsidy Pakistan 2026: Check New Petrol Token System and Eligibility Rules',
+    url: 'https://www.theopinion.com.pk/fuel-subsidy-pakistan-2026-check-new-petrol-token-system-and-eligibility-rules/',
+    description: 'In-depth policy report analyzing the digital petrol token allocation, targeted public relief mechanisms, and macroeconomic logistics costs impacting residential building materials in Pakistan.',
+    internalLink: '/blog/fuel-subsidy-pakistan-2026-check-new-petrol-token-system-and-eligibility-rules'
   }
 ]
 </script>
