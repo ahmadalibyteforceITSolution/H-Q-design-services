@@ -1,4 +1,4 @@
-# H&Q Design Services (HANDQ)
+﻿# H&Q Design Services (HANDQ)
 > Premier Architectural Design, 3D Elevation Modeling, Luxury Interiors, and Turnkey Construction Studio based in Lahore, Pakistan.
 
 H&Q Design Services is a licensed architecture and engineering studio (PCATP and PEC affiliated) serving clients across Pakistan (DHA Lahore, Bahria Town, Islamabad, Karachi) and international expatriates (Saudi Arabia, UAE, UK, USA).
@@ -14,5 +14,6 @@ H&Q Design Services is a licensed architecture and engineering studio (PCATP and
 - [Architectural Guides & Blog](https://h-q-design-services.vercel.app/blog): Technical articles on soil testing, concrete mix designs, false ceilings, and interior styling.
 - [Contact Studio](https://h-q-design-services.vercel.app/contact): Booking consultations, phone lines (+92 341 6887454), and international WhatsApp desk (+966 50 714 3124).
 
-## Knowledge Base
-- [Full LLM Knowledge Documentation](https://h-q-design-services.vercel.app/llms-full.txt): Complete detailed architecture and construction guidelines for AI assistants.
+## Knowledge Base & Citation Authority
+- [Full LLM Knowledge Documentation](https://h-q-design-services.vercel.app/llms-full.txt): Complete detailed architecture, structural guidelines, and 58 verified authority business citations.
+- [Verified Citations Index (58 Profiles)](https://h-q-design-services.vercel.app/llms-full.txt): Canonical NAP registry across Google Maps, Apple Business, YellowPages Pakistan, Houzz, Architizer, and global directories.

@@ -381,48 +381,6 @@
       </div>
     </section>
 
-    <!-- Tier 7: Top Pakistani Local Business Directories (Direct Referral & High-DA Citations) -->
-    <section class="space-y-6">
-      <div class="border-l-4 border-[#088C7E] pl-4">
-        <h2 class="text-lg sm:text-2xl font-black text-slate-900 dark:text-white">
-          Pakistan High-DA Directories & Local Citations
-        </h2>
-        <p class="text-xs text-slate-500">
-          Verified business directories where H&Q's profile drives direct consumer inquiries and powerful dofollow SEO authority.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div 
-          v-for="dir in localDirectories" 
-          :key="dir.name"
-          class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-3"
-        >
-          <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
-                {{ dir.type }}
-              </span>
-              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-                DA {{ dir.da }}
-              </span>
-            </div>
-            <h4 class="font-extrabold text-slate-900 dark:text-white text-sm">{{ dir.name }}</h4>
-            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{{ dir.description }}</p>
-          </div>
-          <a 
-            :href="dir.url" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="text-xs font-bold text-[#088C7E] hover:underline flex items-center gap-1 pt-2 border-t border-slate-100 dark:border-slate-800"
-          >
-            <span>Submit / View Listing</span>
-            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- Comprehensive Internal Linking Network -->
     <InternalLinkingHub />
 
@@ -452,51 +410,6 @@ const copyText = (text, type) => {
     }
   }
 }
-
-const localDirectories = [
-  {
-    name: 'Google Business Profile (Google Maps)',
-    type: 'Local Pack #1',
-    da: '98',
-    url: 'https://business.google.com',
-    description: 'The single most powerful local search ranking asset in Lahore. Directly drives phone calls, direction requests, and site visits from nearby clients searching for architects.'
-  },
-  {
-    name: 'YellowPages Pakistan',
-    type: 'Business Citation',
-    da: '68',
-    url: 'https://www.yellowpages.com.pk',
-    description: 'National business directory with high-authority trust signals, driving organic directory referral inquiries for engineering & architectural firms.'
-  },
-  {
-    name: 'PakistanBizDir',
-    type: 'Commercial Index',
-    da: '55',
-    url: 'https://www.pakistanbizdir.com',
-    description: 'Comprehensive business directory covering corporate offices, building construction contractors, and interior decor suppliers across Punjab.'
-  },
-  {
-    name: 'Yalwa Lahore Business Directory',
-    type: 'City Directory',
-    da: '62',
-    url: 'https://lahore.yalwa.com.pk',
-    description: 'City-specific directory connecting Lahore residents with certified local service providers, consultants, and architectural draughtsmen.'
-  },
-  {
-    name: 'HamariWeb Business Directory',
-    type: 'Portal Directory',
-    da: '72',
-    url: 'https://hamariweb.com',
-    description: 'Prominent Pakistan portal directory with extensive audience reach across all major Pakistani metropolitan cities.'
-  },
-  {
-    name: 'BusinessDirectory.pk',
-    type: 'Verified Listing',
-    da: '50',
-    url: 'https://businessdirectory.pk',
-    description: 'Dedicated directory for local Pakistani startups, architectural studios, and property development agencies.'
-  }
-]
 
 const regulatoryAffiliations = [
   {

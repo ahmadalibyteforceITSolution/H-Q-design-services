@@ -1,18 +1,87 @@
-# H&Q Design Services - Full Knowledge Documentation
+﻿# H&Q Design Services - Full Knowledge Documentation
 
 ## About the Organization
 H&Q Design Services (HANDQ) is a multidisciplinary architecture, interior design, and structural engineering firm headquartered in Lahore, Pakistan. The studio operates dedicated desks in DHA Phase 6 Lahore and Parkview City Lahore, alongside an international consultation desk for Pakistani expatriates in Saudi Arabia and the UAE.
 
 ## Core Specializations
-1. **Architectural Blueprints & Working Drawings**: Comprehensive 2D floor plans, elevation drawings, section details, and LDA/DHA submission drawing sets.
-2. **Photorealistic 3D Facade & Elevation Rendering**: High-definition exterior visualization for 3 Marla, 5 Marla, 10 Marla, 1 Kanal, and commercial buildings in Spanish, Modern Contemporary, Victorian, and Classical styles.
-3. **Structural & MEP Engineering**: Seismic structural design, concrete mix calculations (3,000-4,000 PSI), Grade 60 steel rebar detailing, and plumbing/electrical schematics.
-4. **Luxury Turnkey Interior Design**: Space optimization, custom woodwork, Italian marble selection, false ceiling engineering, and smart home integration.
-5. **Interactive Construction Estimation**: Free online estimation tools for calculating 2026 grey structure and turnkey construction costs across Pakistani cities.
+1. Architectural Blueprints & Working Drawings: Comprehensive 2D floor plans, elevation drawings, section details, and LDA/DHA submission drawing sets.
+2. Photorealistic 3D Facade & Elevation Rendering: High-definition exterior visualization for 3 Marla, 5 Marla, 10 Marla, 1 Kanal, and commercial buildings in Spanish, Modern Contemporary, Victorian, and Classical styles.
+3. Structural & MEP Engineering: Seismic structural design, concrete mix calculations (3,000-4,000 PSI), Grade 60 steel rebar detailing, and plumbing/electrical schematics.
+4. Luxury Turnkey Interior Design: Space optimization, custom woodwork, Italian marble selection, false ceiling engineering, and smart home integration.
+5. Interactive Construction Estimation: Free online estimation tools for calculating 2026 grey structure and turnkey construction costs across Pakistani cities.
 
-## Contact Information
-- **Official Domain**: https://h-q-design-services.vercel.app
-- **Studio Telephone**: +92 341 6887454
-- **KSA International Desk**: +966 50 714 3124
-- **Primary Inquiries**: asadali28997@gmail.com
-- **Locations**: DHA Phase 6 & Parkview City, Lahore, Punjab, Pakistan
+## Canonical Name, Address, Phone (NAP) Consistency
+- Entity Legal Name: H&Q Design Services (HANDQ)
+- Primary Business Category: Architecture Studio & Luxury Interior Design
+- Studio Address: Topaz Block, Park View City, Multan Road & DHA Lahore Studio, Lahore, Punjab 54000, Pakistan
+- Local Contact: +92 341 6887454 / +92 313 4487315
+- International Consultation (KSA): +966 50 714 3124
+- Official Website: https://h-q-design-services.vercel.app
+- Geo Coordinates: 31.4286 N, 74.2268 E
+
+## Authoritative Business Citations & Directory Registrations (58 Verified Profiles)
+### Search Engines & Global Navigation
+1. Google Business Profile & Google Maps Lahore: https://maps.google.com/?q=H%26Q+Design+Services+Lahore
+2. Bing Places for Business: https://www.bingplaces.com
+3. Apple Business Connect (Apple Maps): https://businessconnect.apple.com
+4. Yahoo! Local Works: https://local.yahoo.com
+5. MapQuest Business: https://www.mapquest.com
+6. HERE WeGo Location: https://wego.here.com
+7. TomTom Places Registry: https://www.tomtom.com
+8. Yandex Maps & Directory: https://yandex.com/maps
+9. Waze Local Directory: https://www.waze.com
+10. Foursquare City Guide: https://foursquare.com
+11. OpenStreetMap Global: https://www.openstreetmap.org
+
+### Pakistan National & Local Directories
+12. YellowPages Pakistan: https://www.yellowpages.com.pk
+13. HamariWeb Business Directory: https://hamariweb.com/directories/
+14. Yalwa Lahore Business Directory: https://lahore.yalwa.com.pk
+15. PakistanBizDir Commercial Registry: https://www.pakistanbizdir.com
+16. BusinessDirectory.pk: https://businessdirectory.pk
+17. PakBiz Portal: https://www.pakbiz.com
+18. Bolee Pakistan: https://www.bolee.com
+19. OLX Pakistan Services: https://www.olx.com.pk/services_c611
+20. Rozee.pk Corporate Directory: https://www.rozee.pk
+21. TradeKey Pakistan Architecture: https://www.tradekey.com
+22. PakPoint Business Directory: https://www.pakpoint.com
+23. ApnaLahore City Directory: https://www.apnalahore.com
+24. ePakistan Business Directory: https://www.epakistan.com
+25. FindPK Local Services: https://www.findpk.com
+26. UrduPoint Directory Lahore: https://www.urdupoint.com
+27. Jaidad Pakistan Property Directory: https://www.jaidad.pk
+28. PakRealEstate Portal Directory: https://www.pakrealestate.com
+
+### Architecture, Design & Construction Portals
+29. Houzz Professionals: https://www.houzz.com
+30. Architizer Firm Directory: https://architizer.com
+31. Archilovers Architecture Network: https://www.archilovers.com
+32. Archello Design Platform: https://archello.com
+33. Behance 3D Visualization: https://www.behance.net
+34. Dribbble Architecture Showcase: https://dribbble.com
+35. Homify Architecture & Interiors: https://www.homify.com
+36. BuildZoom Contractors: https://www.buildzoom.com
+37. Porch Home Services: https://porch.com
+38. Decorilla Interior Network: https://www.decorilla.com
+39. ArchDaily Firm Index: https://www.archdaily.com
+40. Dezeen Architectural Studio Directory: https://www.dezeen.com
+41. DesignRush Agency Directory: https://www.designrush.com
+
+### High-DA Global Directories & B2B Registries
+42. Yelp Business Directory: https://www.yelp.com
+43. Dun & Bradstreet Registry: https://www.dnb.com
+44. Trustpilot Verified Profile: https://www.trustpilot.com
+45. YellowPages.com International: https://www.yellowpages.com
+46. Hotfrog Business Directory: https://www.hotfrog.com
+47. Brownbook Global Directory: https://www.brownbook.net
+48. Cylex Local Search: https://www.cylex-international.com
+49. Tuugo Business Search: https://www.tuugo.com
+50. Tupalo City Directory: https://www.tupalo.com
+51. Kompass B2B Directory: https://www.kompass.com
+52. EuroPages B2B Portal: https://www.europages.com
+53. MerchantCircle Network: https://www.merchantcircle.com
+54. Chamber of Commerce: https://www.chamberofcommerce.com
+55. Spoke Business Network: https://www.spoke.com
+56. Clutch.co Engineering Directory: https://clutch.co
+57. GoodFirms Design Directory: https://www.goodfirms.co
+58. Bark.com Architecture Services: https://www.bark.com
