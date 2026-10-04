@@ -223,32 +223,50 @@ export const generateArticleContent = (topic, category, id) => {
         </p>
       </div>
 
-      <div class="p-6 rounded-3xl bg-slate-900 text-white space-y-4 shadow-xl">
-        <h4 class="text-lg font-black text-amber-400">
-          Book a Free Consultation with H&Q Senior Architects
-        </h4>
-        <p class="text-xs text-slate-300 leading-relaxed">
-          Whether you own a 5 Marla, 10 Marla, 1 Kanal plot or a commercial plaza in Lahore, Islamabad, or Karachi, our studio is ready to transform your vision into an architectural masterpiece.
-        </p>
-        <div class="p-5 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-2">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
-            <div class="flex items-start gap-2">
-              <i class="fa-solid fa-circle-check text-[#088C7E] mt-1"></i>
-              <span><strong>Front & Rear Setbacks:</strong> Precise mandatory open clearances according to plot size.</span>
+      <div class="p-6 sm:p-8 rounded-3xl bg-slate-900 text-white space-y-5 shadow-2xl border border-slate-800 relative overflow-hidden">
+        <div class="space-y-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
+            <i class="fa-solid fa-compass-drafting text-[10px]"></i>
+            <span>Complimentary Architectural Consultation</span>
+          </div>
+          <h4 class="text-xl sm:text-2xl font-black text-amber-400 tracking-tight">
+            Book a Free Consultation with H&Q Senior Architects
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">
+            Whether you own a 5 Marla, 10 Marla, 1 Kanal plot or a commercial plaza in Lahore, Islamabad, or Karachi, our studio is ready to transform your vision into an architectural masterpiece.
+          </p>
+        </div>
+
+        <div class="p-5 sm:p-6 rounded-2xl bg-slate-800/90 border border-slate-700/80 text-slate-200 shadow-inner">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs sm:text-sm">
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-emerald-400 mt-1 shrink-0"></i>
+              <span class="text-slate-300"><strong class="text-white">Front & Rear Setbacks:</strong> Precise mandatory open clearances according to plot size.</span>
             </div>
-            <div class="flex items-start gap-2">
-              <i class="fa-solid fa-circle-check text-[#088C7E] mt-1"></i>
-              <span><strong>Building Height Envelope:</strong> Max 35-38 feet standard residential limit strictly maintained.</span>
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-emerald-400 mt-1 shrink-0"></i>
+              <span class="text-slate-300"><strong class="text-white">Building Height Envelope:</strong> Max 35-38 feet standard residential limit strictly maintained.</span>
             </div>
-            <div class="flex items-start gap-2">
-              <i class="fa-solid fa-circle-check text-[#088C7E] mt-1"></i>
-              <span><strong>Rainwater Harvesting Pit:</strong> Mandatory soakage well sizing implemented in blueprints.</span>
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-emerald-400 mt-1 shrink-0"></i>
+              <span class="text-slate-300"><strong class="text-white">Rainwater Harvesting Pit:</strong> Mandatory soakage well sizing implemented in blueprints.</span>
             </div>
-            <div class="flex items-start gap-2">
-              <i class="fa-solid fa-circle-check text-[#088C7E] mt-1"></i>
-              <span><strong>Parking Requirements:</strong> Dedicated covered car porch bays designed per society rules.</span>
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-emerald-400 mt-1 shrink-0"></i>
+              <span class="text-slate-300"><strong class="text-white">Parking Requirements:</strong> Dedicated covered car porch bays designed per society rules.</span>
             </div>
           </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-1">
+          <a href="/contact" class="px-5 py-3 rounded-xl bg-[#088C7E] hover:bg-[#077569] text-white text-xs sm:text-sm font-bold transition-all shadow-lg hover:shadow-teal-900/40 inline-flex items-center gap-2">
+            <span>Book In-Person / Online Meeting</span>
+            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+          </a>
+          <button type="button" onclick="window.open('https://wa.me/923416887454?text=Assalam-o-Alaikum%20HQ%20Design%20Services%2C%20I%20would%20like%20to%20consult%20regarding%20my%20plot%20design','_blank','noopener,noreferrer')" class="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold transition-all shadow-lg hover:shadow-emerald-900/40 inline-flex items-center gap-2">
+            <i class="fa-brands fa-whatsapp text-sm"></i>
+            <span>WhatsApp Senior Architect</span>
+          </button>
         </div>
       </div>
 

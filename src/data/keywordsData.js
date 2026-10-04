@@ -581,8 +581,47 @@ const generateExpandedKeywords = (baseKeywords) => {
   return Array.from(new Set(result))
 }
 
+export const essentialKeywords = [
+  'House Construction Cost in Pakistan',
+  'House Construction Cost in Pakistan 2026',
+  'Best Architects in Lahore',
+  'Interior Designers in Lahore',
+  'Architects in DHA Lahore',
+  '3D House Elevation Design',
+  'Interior Designers in Karachi',
+  'Luxury Villas Karachi',
+  'Commercial Architects Karachi',
+  '3D Elevation Karachi',
+  '3 Marla House Design',
+  '5 Marla House Design',
+  '5 Marla Spanish House Design',
+  '7 Marla House Design',
+  '10 Marla House Design',
+  '10 Marla Spanish Villa',
+  '1 Kanal House Plan',
+  '1 Kanal Classical House',
+  '2 Kanal House Design',
+  'Corner Plot House Design',
+  'Basement House Design',
+  'Modern Front Elevation',
+  'Spanish Front Elevation',
+  'Commercial Plaza Design',
+  'Farmhouse Design Pakistan',
+  'Swimming Pool Villa Design',
+  'Duplex House Design',
+  '4K Photorealistic Renders',
+  '3D Front Elevation Lahore',
+  '3 Marla House Map Bahria Town',
+  '10 Marla 35x70 Spanish Elevation',
+  'DHA Lahore Covered Area Calculation',
+  'Municipal Submission Drawings',
+  'Structural Engineer DHA Lahore',
+  'Luxury Bedroom Interior Lahore',
+  'Turnkey Construction Contractor'
+]
+
 const baseFlatKeywords = baseCategoriesMeta.flatMap(cat => cat.keywords)
-export const allFlatKeywords = generateExpandedKeywords(baseFlatKeywords)
+export const allFlatKeywords = Array.from(new Set([...essentialKeywords, ...generateExpandedKeywords(baseFlatKeywords)]))
 
 const categorizeKeywords = (flatList) => {
   const catMap = {

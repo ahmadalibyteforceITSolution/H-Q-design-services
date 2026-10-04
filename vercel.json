@@ -19,7 +19,7 @@
       "destination": "/go/whatsapp.html"
     },
     {
-      "source": "/((?!api/).*)",
+      "source": "/:path*",
       "destination": "/index.html"
     }
   ],
