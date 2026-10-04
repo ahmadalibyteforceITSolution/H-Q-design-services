@@ -154,12 +154,12 @@ export const staticPagesDetailed = [
   },
   {
     route: 'properties',
-    title: 'Properties & Plots for Sale in Lahore | H&Q Studio',
-    desc: 'Browse verified 5 Marla, 10 Marla & 1 Kanal houses, plots, and commercial properties in Parkview City, DHA, and Gulberg Lahore.',
+    title: 'Properties for Sale in Pakistan 2026 | H&Q Studio',
+    desc: 'Browse 32+ verified 5 Marla, 10 Marla & 1 Kanal houses, plots, and commercial properties in Lahore, Islamabad, Rawalpindi & Karachi with approved bylaws.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-6 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-        <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white">Properties for Sale in Lahore & Pakistan</h1>
-        <p>Explore verified houses, residential plots, commercial plazas, and luxury apartments for sale with architectural blueprints in DHA Lahore, Bahria Town, and Parkview City.</p>
+        <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white">Properties for Sale in Pakistan</h1>
+        <p>Explore 32+ verified houses, residential plots, commercial plazas, and luxury apartments for sale with architectural blueprints across Lahore, Islamabad, Rawalpindi, and Karachi.</p>
       </div>
     `
   },

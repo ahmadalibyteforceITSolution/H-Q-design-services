@@ -1,4 +1,7 @@
 export const propertiesData = [
+  // ==========================================
+  // LAHORE PROPERTIES
+  // ==========================================
   {
     id: 'HQ-PROP-101',
     title: '5 Marla Brand New Ultra-Modern Luxury Villa',
@@ -31,6 +34,8 @@ export const propertiesData = [
     ],
     floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
     description: 'H&Q Design Services architected 5 Marla Spanish-Modern fusion villa situated in the prime block of DHA Lahore. Built with A+ turnkey grade materials, imported Turkish fittings, Italian kitchen appliances, and complete DHA/LDA municipal bylaw clearance.',
+    bylawCompliance: '100% DHA Lahore Bylaws Approved',
+    possessionStatus: 'Ready for Possession',
     features: [
       '3 Master Bedrooms with En-suite Bathrooms',
       'Designer Drawing & Dining Hall',
@@ -56,7 +61,7 @@ export const propertiesData = [
       role: 'Chief Architect & Project Lead',
       agency: 'H&Q Design Services',
       phone: '0341-6887454',
-      whatsapp: '966507143124',
+      whatsapp: '923416887454',
       email: 'asadali28997@gmail.com'
     },
     installmentAvailable: true,
@@ -64,13 +69,13 @@ export const propertiesData = [
   },
   {
     id: 'HQ-PROP-102',
-    title: '10 Marla Spanish Royal Villa with Basement',
-    slug: '10-marla-spanish-royal-villa-dha-phase-6-lahore',
+    title: '10 Marla Spanish Villa with Swimming Pool & Basement',
+    slug: '10-marla-spanish-villa-swimming-pool-dha-phase-6-lahore',
     purpose: 'For Sale',
     type: 'House',
     category: 'Homes',
-    price: 42500000,
-    priceFormatted: 'PKR 4.25 Crore',
+    price: 49500000,
+    priceFormatted: 'PKR 4.95 Crore',
     city: 'Lahore',
     location: 'DHA Phase 6, Sector L, Lahore',
     society: 'DHA Lahore',
@@ -84,32 +89,30 @@ export const propertiesData = [
     isSuperHot: true,
     hasVideoTour: true,
     isDirectFromBuilder: true,
-    tag: 'Verified Premium Platinum',
+    tag: 'Exclusive Luxury Mansion',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
     gallery: [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600573472591-ee6c563aaec9?w=1200&q=80'
+      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80'
     ],
     floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
-    description: 'Exquisite 10 Marla Spanish Villa designed by H&Q Studio. Features double height lobby, Turkish marble flooring, home cinema in basement, automated smart lighting, and energy-efficient double glazed windows.',
+    description: 'Custom-designed 10 Marla classical Spanish masterpiece in DHA Phase 6 Lahore featuring double-height ceiling lobby, Spanish roof tiles, tempered glass railings, heated plunge pool in basement, and Grohe Germany sanitary fittings.',
+    bylawCompliance: 'DHA Phase 6 Vetted & Approved',
+    possessionStatus: 'Ready for Immediate Move-in',
     features: [
-      '5 Master Bedrooms with Walk-in Closets',
-      '6 Luxury Spanish Tile Bathrooms with Jacuzzis',
-      'Underground Basement Home Theatre Lounge',
-      '2 Full Chef Kitchens (Show Kitchen & Dirty Kitchen)',
-      'Double Height Grand Lobby with Chandelier',
-      'Lush Green Lawn & Water Cascade Feature',
-      'DHA Lahore Engineering Clearance Certified'
+      '5 King Size Bedrooms with Walk-in Closets',
+      'Double Height Ceiling Spanish Foyer',
+      'Basement Home Cinema & Heated Plunge Pool',
+      'German Grohe Bathware & Spanish Porcelain Tiles',
+      'Two Dirty & Clean Modular Kitchens',
+      '2 Car Covered Garage with EV Charging Port'
     ],
     amenities: [
       { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
       { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
-      { name: 'Water Filtration', available: true, icon: 'fa-solid fa-droplet' },
       { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' },
       { name: 'Nearby Mosque', available: true, icon: 'fa-solid fa-mosque' },
-      { name: 'Nearby Commercial Mall', available: true, icon: 'fa-solid fa-store' },
       { name: 'Community Park', available: true, icon: 'fa-solid fa-tree' },
       { name: 'Fiber Internet (FTTH)', available: true, icon: 'fa-solid fa-wifi' }
     ],
@@ -118,24 +121,24 @@ export const propertiesData = [
       role: 'Chief Architect & Project Lead',
       agency: 'H&Q Design Services',
       phone: '0341-6887454',
-      whatsapp: '966507143124',
+      whatsapp: '923416887454',
       email: 'asadali28997@gmail.com'
     },
     installmentAvailable: false,
-    installmentDetail: 'Cash payment / Bank mortgage finance support available'
+    installmentDetail: 'Full Cash or Bank Islamic Home Finance'
   },
   {
     id: 'HQ-PROP-103',
-    title: '1 Kanal Luxury Designer Mansion with Swimming Pool',
-    slug: '1-kanal-luxury-designer-mansion-lake-city-lahore',
+    title: '1 Kanal Modern Contemporary Palace in DHA Phase 7',
+    slug: '1-kanal-modern-contemporary-palace-dha-phase-7-lahore',
     purpose: 'For Sale',
     type: 'House',
     category: 'Homes',
-    price: 89000000,
-    priceFormatted: 'PKR 8.90 Crore',
+    price: 87500000,
+    priceFormatted: 'PKR 8.75 Crore',
     city: 'Lahore',
-    location: 'Lake City, Golf View Sector, Lahore',
-    society: 'Lake City',
+    location: 'DHA Phase 7, Sector U, Lahore',
+    society: 'DHA Lahore',
     size: '1 Kanal',
     sizeSqFt: 4500,
     bedrooms: 6,
@@ -146,32 +149,29 @@ export const propertiesData = [
     isSuperHot: true,
     hasVideoTour: true,
     isDirectFromBuilder: true,
-    tag: 'Super Luxury Signature',
+    tag: 'Architectural Trophy Property',
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
     gallery: [
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80'
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80'
     ],
     floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
-    description: 'Signature 1 Kanal Mansion fronting the 18-hole Championship Golf Course. Featuring heated indoor swimming pool, smart home automation, solar power 20kW grid-tied system, and 4-car garage.',
+    description: 'Magnificent 1 Kanal contemporary luxury residence in DHA Phase 7 Lahore. Designed with steel glass facade, cantilevered balconies, private landscaped courtyard, solar 20kW grid-tied system, and complete home automation.',
+    bylawCompliance: '100% DHA Bylaws Certified',
+    possessionStatus: 'Ready for Possession',
     features: [
-      '6 King-Sized Bedrooms with Walk-in Dressing Rooms',
-      'Heated Private Swimming Pool & Jacuzzi',
-      '20 kW Solar Grid System (Zero Net Electricity Bills)',
-      'Double Glazed Low-E Acoustic Windows',
-      'Elevator / Lift from Basement to Rooftop',
-      'Designer Landscaped Garden & Water Fountain'
+      '6 Luxury Ensuite Bedrooms with Jacuzzis',
+      'Smart Home Automation (Lights, HVAC, Curtains)',
+      'Solar 20kW Installed Net-Metering Setup',
+      'Designer Waterfall Courtyard & Rooftop Pergola',
+      'Double Servant Quarter with Dedicated Entrance',
+      '4 Car Covered Parking Porch'
     ],
     amenities: [
       { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
       { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
-      { name: 'Water Filtration', available: true, icon: 'fa-solid fa-droplet' },
       { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' },
       { name: 'Nearby Mosque', available: true, icon: 'fa-solid fa-mosque' },
-      { name: 'Nearby Commercial Mall', available: true, icon: 'fa-solid fa-store' },
-      { name: 'Community Park', available: true, icon: 'fa-solid fa-tree' },
       { name: 'Fiber Internet (FTTH)', available: true, icon: 'fa-solid fa-wifi' }
     ],
     agent: {
@@ -179,23 +179,23 @@ export const propertiesData = [
       role: 'Chief Architect & Project Lead',
       agency: 'H&Q Design Services',
       phone: '0341-6887454',
-      whatsapp: '966507143124',
+      whatsapp: '923416887454',
       email: 'asadali28997@gmail.com'
     },
     installmentAvailable: true,
-    installmentDetail: '30% Down Payment, 24 Months Installments'
+    installmentDetail: 'Flexible 12-Month Structural Payment Milestone Schedule'
   },
   {
     id: 'HQ-PROP-104',
-    title: '1 Kanal Corner Residential Plot with Approved Map',
-    slug: '1-kanal-corner-residential-plot-dha-lahore-phase-7',
-    purpose: 'For Sale',
+    title: '1 Kanal Residential Plot in DHA Phase 9 Prism',
+    slug: '1-kanal-residential-plot-dha-phase-9-prism-lahore',
+    purpose: 'Plots',
     type: 'Plot',
     category: 'Plots',
     price: 24500000,
     priceFormatted: 'PKR 2.45 Crore',
     city: 'Lahore',
-    location: 'DHA Phase 7, Lahore',
+    location: 'DHA Phase 9 Prism, Sector D, Lahore',
     society: 'DHA Lahore',
     size: '1 Kanal',
     sizeSqFt: 4500,
@@ -204,137 +204,191 @@ export const propertiesData = [
     parkingSpaces: 0,
     yearBuilt: 2026,
     isVerified: true,
-    isSuperHot: false,
+    isSuperHot: true,
     hasVideoTour: false,
     isDirectFromBuilder: true,
-    tag: 'Corner Plot with Approved Blueprint',
+    tag: 'Prime Location Plot',
     image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80',
     gallery: [
-      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80'
+      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80'
     ],
     floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
-    description: 'Prime 1 Kanal Corner Plot on 80-foot Boulevard in DHA Phase 7. Comes with ready-to-construct H&Q 3D elevation architectural drawings and municipal NOC clearance.',
+    description: 'Direct on-ground 1 Kanal residential plot in DHA Phase 9 Prism Sector D. Clear title, 50-ft wide boulevard front, near 100-ft commercial corridor and central theme park. Free H&Q 3D elevation and municipal floor plan included upon plot purchase.',
+    bylawCompliance: 'DHA Phase 9 Prism Master Plan Clear',
+    possessionStatus: 'Possession Available / Ready for Construction',
     features: [
-      'Corner Plot with Dual 80ft & 50ft Frontage',
-      'Direct Park Facing & Green Belt View',
-      '100% Possession & Ready for Immediate Construction',
-      'Free 3D Architectural Elevation Blueprint Included'
+      'Direct On-Ground Verified Plot with Demarcation',
+      '50 Feet Wide Front Road Access',
+      'Ideal Level Plot Ready for Groundbreaking',
+      'Includes Complimentary H&Q 3D House Plan Design',
+      'Walking Distance to Sector Park & Grand Mosque'
     ],
     amenities: [
-      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
       { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
-      { name: 'Water Filtration', available: true, icon: 'fa-solid fa-droplet' },
-      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' },
+      { name: 'Nearby Mosque', available: true, icon: 'fa-solid fa-mosque' },
+      { name: 'Community Park', available: true, icon: 'fa-solid fa-tree' }
     ],
     agent: {
       name: 'Engr. Asad Ali',
       role: 'Chief Architect & Project Lead',
       agency: 'H&Q Design Services',
       phone: '0341-6887454',
-      whatsapp: '966507143124',
+      whatsapp: '923416887454',
       email: 'asadali28997@gmail.com'
     },
     installmentAvailable: false,
-    installmentDetail: 'Immediate Transfer & Registry'
+    installmentDetail: 'Direct Cash Transfer at DHA Lahore Sub-Office'
   },
   {
     id: 'HQ-PROP-105',
-    title: '4-Story Modern Commercial Plaza with High Rental Yield',
-    slug: '4-story-modern-commercial-plaza-gulberg-3-lahore',
+    title: '5 Marla Brand New Designer Home in Bahria Town Sector C',
+    slug: '5-marla-brand-new-designer-home-bahria-town-sector-c-lahore',
     purpose: 'For Sale',
-    type: 'Commercial',
-    category: 'Commercial',
-    price: 135000000,
-    priceFormatted: 'PKR 13.50 Crore',
+    type: 'House',
+    category: 'Homes',
+    price: 16500000,
+    priceFormatted: 'PKR 1.65 Crore',
     city: 'Lahore',
-    location: 'Gulberg III, MM Alam Road Area, Lahore',
-    society: 'Gulberg Lahore',
-    size: '8 Marla Commercial',
-    sizeSqFt: 3600,
-    bedrooms: 0,
-    bathrooms: 8,
-    parkingSpaces: 8,
-    yearBuilt: 2025,
+    location: 'Bahria Town, Sector C, Iris Block, Lahore',
+    society: 'Bahria Town',
+    size: '5 Marla',
+    sizeSqFt: 1125,
+    bedrooms: 3,
+    bathrooms: 4,
+    parkingSpaces: 1,
+    yearBuilt: 2026,
     isVerified: true,
-    isSuperHot: true,
+    isSuperHot: false,
     hasVideoTour: true,
     isDirectFromBuilder: true,
-    tag: 'High Rental Yield Plaza',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
+    tag: 'Hot Deal',
+    image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80',
     gallery: [
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80'
+      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80'
     ],
     floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
-    description: 'Prime 8 Marla Commercial Plaza situated on Main Commercial Hub of Gulberg III. Designed with glass curtain wall facade, passenger elevator, backup generator, and dedicated basement parking.',
+    description: 'Immaculately constructed 5 Marla double story home in Bahria Town Lahore Sector C. Uninterrupted Bahria electricity grid, Spanish flooring, modern UV kitchen cabinets, and glass shower cabins.',
+    bylawCompliance: '100% Bahria Town Bylaws Approved',
+    possessionStatus: 'Ready to Move In',
     features: [
-      'Basement + Ground + 3 Upper Commercial Floors',
-      'Passenger Elevator & Fire Fighting Systems Installed',
-      'Projected Monthly Rental Yield: PKR 8.5 Lacs/month',
-      'LDA Approved Commercial Blueprint with Parking Space'
+      '3 Spacious Bedrooms with Designer Wardrobes',
+      'Double Unit Design with Independent Access',
+      'Zero Load Shedding with Bahria Power Grid',
+      'Near Grand Jamia Mosque and Eiffel Tower',
+      'Solid Teakwood Main Entrance Door'
     ],
     amenities: [
       { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
       { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
       { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' },
-      { name: 'Commercial Elevator', available: true, icon: 'fa-solid fa-arrows-up-down' }
+      { name: 'Nearby Mosque', available: true, icon: 'fa-solid fa-mosque' }
     ],
     agent: {
       name: 'Engr. Asad Ali',
       role: 'Chief Architect & Project Lead',
       agency: 'H&Q Design Services',
       phone: '0341-6887454',
-      whatsapp: '966507143124',
+      whatsapp: '923416887454',
       email: 'asadali28997@gmail.com'
     },
     installmentAvailable: true,
-    installmentDetail: '40% Down Payment, 12 Months Flexible Payment'
+    installmentDetail: 'Bank Home Financing with Meezan Bank & HBL'
   },
   {
     id: 'HQ-PROP-106',
-    title: '3-Bed Luxury Furnished Penthouse in DHA Phase 2 Islamabad',
-    slug: '3-bed-luxury-furnished-penthouse-dha-phase-2-islamabad',
+    title: '10 Marla Brand New Villa in Lake City Golf Estate',
+    slug: '10-marla-brand-new-villa-lake-city-golf-estate-lahore',
     purpose: 'For Sale',
-    type: 'Apartment',
+    type: 'House',
     category: 'Homes',
     price: 36500000,
     priceFormatted: 'PKR 3.65 Crore',
-    city: 'Islamabad',
-    location: 'DHA Phase 2, Central Heights, Islamabad',
-    society: 'DHA Islamabad',
-    size: '2400 Sq. Ft.',
-    sizeSqFt: 2400,
-    bedrooms: 3,
-    bathrooms: 4,
+    city: 'Lahore',
+    location: 'Lake City, Sector M-7, Lahore',
+    society: 'Lake City',
+    size: '10 Marla',
+    sizeSqFt: 2250,
+    bedrooms: 4,
+    bathrooms: 5,
     parkingSpaces: 2,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: false,
+    hasVideoTour: true,
+    isDirectFromBuilder: true,
+    tag: 'Golf Course Living',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Chic 10 Marla modern minimalist villa overlooking PGA-standard 18-hole golf course in Lake City Lahore. Direct Ring Road access, underground utilities, and serene lakeside surroundings.',
+    bylawCompliance: 'Lake City Management Approved',
+    possessionStatus: 'Ready for Possession',
+    features: [
+      '4 Master Suites with Imported Porcelain En-suites',
+      'Panoramic Golf View Balcony',
+      'Designer Corian Countertops & Kitchen Island',
+      'Direct Ring Road Interchange Connectivity (15 Mins to Airport)'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' },
+      { name: 'Nearby Commercial Mall', available: true, icon: 'fa-solid fa-store' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: true,
+    installmentDetail: '30% Down Payment, 12 Months Flexible Balance'
+  },
+  {
+    id: 'HQ-PROP-107',
+    title: '4 Marla Commercial Plaza on Main Boulevard Gulberg III',
+    slug: '4-marla-commercial-plaza-main-boulevard-gulberg-3-lahore',
+    purpose: 'Commercial',
+    type: 'Commercial',
+    category: 'Commercial',
+    price: 120000000,
+    priceFormatted: 'PKR 12.0 Crore',
+    city: 'Lahore',
+    location: 'Gulberg III, Main Boulevard, Lahore',
+    society: 'Gulberg Lahore',
+    size: '4 Marla',
+    sizeSqFt: 3600,
+    bedrooms: 0,
+    bathrooms: 6,
+    parkingSpaces: 6,
     yearBuilt: 2026,
     isVerified: true,
     isSuperHot: true,
     hasVideoTour: true,
     isDirectFromBuilder: true,
-    tag: 'Panoramic Margalla View',
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80',
+    tag: 'High ROI Commercial Plaza',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
     gallery: [
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80'
+      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80'
     ],
     floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
-    description: 'Ultra-luxurious 3-Bedroom Penthouse with panoramic Margalla Hills view in DHA Phase 2 Islamabad. Designed with open terrace jacuzzi, Italian marble floors, and smart automation.',
+    description: 'Basement + Ground + 4 Storey brand-new corporate commercial plaza on Main Boulevard Gulberg III Lahore. High-speed passenger elevator, dedicated transformer, 8.5% guaranteed annual rental yield from corporate multinational tenant.',
+    bylawCompliance: '100% LDA Commercial Bylaws Cleared',
+    possessionStatus: 'Ready for Immediate Commercial Lease',
     features: [
-      '3 Master Suites with Private Sun Decks',
-      'Open-concept European Kitchen with Wine Cellar & Island',
-      'Private Terrace with Heated Jacuzzi & BBQ Area',
-      'Caretaker & Concierge Desk with RFID Access'
+      'Basement, Ground + 4 Modern Office Floors',
+      'Passenger Capsule Lift Installed',
+      'Dedicated 100 kVA Substation Transformer',
+      'Over PKR 8.5 Lakh Monthly Projected Rental Yield'
     ],
     amenities: [
-      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
       { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
-      { name: 'Water Filtration', available: true, icon: 'fa-solid fa-droplet' },
       { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' },
-      { name: 'Community Park', available: true, icon: 'fa-solid fa-tree' },
       { name: 'Fiber Internet (FTTH)', available: true, icon: 'fa-solid fa-wifi' }
     ],
     agent: {
@@ -342,61 +396,11 @@ export const propertiesData = [
       role: 'Chief Architect & Project Lead',
       agency: 'H&Q Design Services',
       phone: '0341-6887454',
-      whatsapp: '966507143124',
-      email: 'asadali28997@gmail.com'
-    },
-    installmentAvailable: true,
-    installmentDetail: '25% Down Payment, 30 Months Installments'
-  },
-  {
-    id: 'HQ-PROP-107',
-    title: '5 Marla Residential Plot in Bahria Town Karachi',
-    slug: '5-marla-residential-plot-bahria-town-karachi',
-    purpose: 'For Sale',
-    type: 'Plot',
-    category: 'Plots',
-    price: 4800000,
-    priceFormatted: 'PKR 48 Lacs',
-    city: 'Karachi',
-    location: 'Bahria Town Karachi, Precinct 10, Karachi',
-    society: 'Bahria Town Karachi',
-    size: '125 Sq. Yd. (5 Marla)',
-    sizeSqFt: 1125,
-    bedrooms: 0,
-    bathrooms: 0,
-    parkingSpaces: 0,
-    yearBuilt: 2026,
-    isVerified: true,
-    isSuperHot: false,
-    hasVideoTour: false,
-    isDirectFromBuilder: true,
-    tag: 'Ready for Construction',
-    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80'
-    ],
-    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
-    description: '125 Sq. Yd. (5 Marla) on-ground plot in Precinct 10 of Bahria Town Karachi. Ideal for family villa construction with 24/7 unhindered electricity and water supply.',
-    features: [
-      'On-ground demarcated plot with boundary wall ready',
-      'Near Grand Mosque and Theme Park',
-      'Affordable architectural 3D construction package available'
-    ],
-    amenities: [
-      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
-      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
-      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
-    ],
-    agent: {
-      name: 'Engr. Asad Ali',
-      role: 'Chief Architect & Project Lead',
-      agency: 'H&Q Design Services',
-      phone: '0341-6887454',
-      whatsapp: '966507143124',
+      whatsapp: '923416887454',
       email: 'asadali28997@gmail.com'
     },
     installmentAvailable: false,
-    installmentDetail: 'Immediate Transfer in Bahria Office'
+    installmentDetail: 'Immediate Sale Deed Registration'
   },
   {
     id: 'HQ-PROP-108',
@@ -428,6 +432,8 @@ export const propertiesData = [
     ],
     floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
     description: 'Immaculate 10 Marla residential villa for rent in DHA Phase 5 Lahore. Features solar system, inverter air conditioners, luxury sanitary fittings, and servant quarters.',
+    bylawCompliance: 'DHA Phase 5 Registered',
+    possessionStatus: 'Ready for Immediate Move-in',
     features: [
       '4 Master Bedrooms with Attached Bathrooms',
       'Spacious TV Lounges on both floors',
@@ -445,10 +451,1276 @@ export const propertiesData = [
       role: 'Chief Architect & Project Lead',
       agency: 'H&Q Design Services',
       phone: '0341-6887454',
-      whatsapp: '966507143124',
+      whatsapp: '923416887454',
       email: 'asadali28997@gmail.com'
     },
     installmentAvailable: false,
     installmentDetail: '2 Months Security Deposit + 1 Month Advance Rent'
+  },
+  {
+    id: 'HQ-PROP-109',
+    title: '5 Marla Residential Plot in Park View City Crystal Block',
+    slug: '5-marla-residential-plot-park-view-city-crystal-block-lahore',
+    purpose: 'Plots',
+    type: 'Plot',
+    category: 'Plots',
+    price: 4800000,
+    priceFormatted: 'PKR 48.0 Lakh',
+    city: 'Lahore',
+    location: 'Park View City, Crystal Block, Multan Road, Lahore',
+    society: 'Park View City',
+    size: '5 Marla',
+    sizeSqFt: 1125,
+    bedrooms: 0,
+    bathrooms: 0,
+    parkingSpaces: 0,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: false,
+    hasVideoTour: false,
+    isDirectFromBuilder: true,
+    tag: 'LDA Approved Plot',
+    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77d66?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1524813686514-a57563d77d66?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: '100% LDA approved on-ground 5 Marla residential plot in Park View City Lahore Crystal Block. Gated community with dancing fountains, IMAX cinema, 24/7 security and underground electrification.',
+    bylawCompliance: '100% LDA Approved NOC',
+    possessionStatus: 'Possession Ready / Construction Permitted',
+    features: [
+      '100% LDA Approved Society',
+      'On-Ground Verified Plot Ready for Immediate Construction',
+      'Direct Access from Multan Road and Thokar Niaz Baig',
+      'Includes Architectural Consultation & Map Approval Guide'
+    ],
+    amenities: [
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' },
+      { name: 'Nearby Commercial Mall', available: true, icon: 'fa-solid fa-store' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: true,
+    installmentDetail: '25% Down Payment, Remaining in 6 Bi-Monthly Installments'
+  },
+  {
+    id: 'HQ-PROP-110',
+    title: '1 Kanal Luxury Classical Spanish Villa in Model Town',
+    slug: '1-kanal-luxury-classical-spanish-villa-model-town-lahore',
+    purpose: 'For Sale',
+    type: 'House',
+    category: 'Homes',
+    price: 115000000,
+    priceFormatted: 'PKR 11.5 Crore',
+    city: 'Lahore',
+    location: 'Model Town, Block G, Lahore',
+    society: 'Model Town Lahore',
+    size: '1 Kanal',
+    sizeSqFt: 4500,
+    bedrooms: 5,
+    bathrooms: 6,
+    parkingSpaces: 3,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: true,
+    hasVideoTour: true,
+    isDirectFromBuilder: true,
+    tag: 'Model Town Heritage Villa',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Bespoke 1 Kanal Spanish Colonial bungalow in prestigious Model Town Lahore. High ceilings, teak woodwork, marble flooring, lush manicured lawn, and servant quarter block.',
+    bylawCompliance: 'Model Town Society & LDA Approved',
+    possessionStatus: 'Ready for Move-In',
+    features: [
+      '5 Grand Bedrooms with Walk-in Closets',
+      'Solid Burma Teak Paneling and Handcrafted Doors',
+      'Lush Front Garden with Sprinkler System',
+      'Prime Central Location Close to Model Town Park'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: false,
+    installmentDetail: 'Direct Registry Transfer'
+  },
+  {
+    id: 'HQ-PROP-111',
+    title: '3 Marla Brand New Smart Double Story House in New Lahore City',
+    slug: '3-marla-brand-new-smart-house-new-lahore-city',
+    purpose: 'For Sale',
+    type: 'House',
+    category: 'Homes',
+    price: 9200000,
+    priceFormatted: 'PKR 92.0 Lakh',
+    city: 'Lahore',
+    location: 'New Lahore City, Phase 2, Canal Road, Lahore',
+    society: 'New Lahore City',
+    size: '3 Marla',
+    sizeSqFt: 675,
+    bedrooms: 3,
+    bathrooms: 3,
+    parkingSpaces: 1,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: false,
+    hasVideoTour: true,
+    isDirectFromBuilder: true,
+    tag: 'Affordable Smart Home',
+    image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Compact 3 Marla double storey smart house designed for modern small families. Efficient space utilization by H&Q architects, 3 bedrooms with attached baths, drawing room, rooftop terrace, and solar inverter setup.',
+    bylawCompliance: '100% LDA Approved Society',
+    possessionStatus: 'Ready for Possession',
+    features: [
+      '3 Bedrooms + 3 Bathrooms in Optimized 3 Marla Blueprint',
+      'Modern High-Gloss UV Kitchen with Hood',
+      'Underground Electrification & Gated Security',
+      'Direct Access from Multan Road and Ring Road SL3'
+    ],
+    amenities: [
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' },
+      { name: 'Community Park', available: true, icon: 'fa-solid fa-tree' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: true,
+    installmentDetail: '20% Advance, 24 Monthly Installments'
+  },
+  {
+    id: 'HQ-PROP-112',
+    title: '10 Marla Modern House for Rent in Bahria Town Sector B',
+    slug: '10-marla-modern-house-for-rent-bahria-town-lahore',
+    purpose: 'For Rent',
+    type: 'House',
+    category: 'Homes',
+    price: 140000,
+    priceFormatted: 'PKR 1.40 Lac / Month',
+    city: 'Lahore',
+    location: 'Bahria Town, Sector B, Umar Block, Lahore',
+    society: 'Bahria Town',
+    size: '10 Marla',
+    sizeSqFt: 2250,
+    bedrooms: 4,
+    bathrooms: 5,
+    parkingSpaces: 2,
+    yearBuilt: 2025,
+    isVerified: true,
+    isSuperHot: false,
+    hasVideoTour: false,
+    isDirectFromBuilder: false,
+    tag: 'Family Rental Home',
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Well-maintained 10 Marla family residence for rent in Bahria Town Lahore Sector B. Near Safari Zoo, commercial market, and hospital. Fully furnished kitchen and split ACs fitted.',
+    bylawCompliance: 'Bahria Town Approved',
+    possessionStatus: 'Ready for Rent',
+    features: [
+      '4 Bed with En-suite Bathrooms',
+      'Dual TV Lounges with Wood Paneling',
+      'Uninterrupted 24/7 Bahria Electricity',
+      'Walking Distance to Commercial Market'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: false,
+    installmentDetail: 'Standard Rental Contract (2 Months Security)'
+  },
+  {
+    id: 'HQ-PROP-113',
+    title: '10 Marla Residential Plot in Central Park Housing Society',
+    slug: '10-marla-residential-plot-central-park-lahore',
+    purpose: 'Plots',
+    type: 'Plot',
+    category: 'Plots',
+    price: 6500000,
+    priceFormatted: 'PKR 65.0 Lakh',
+    city: 'Lahore',
+    location: 'Central Park Housing Scheme, Block B, Ferozepur Road, Lahore',
+    society: 'Central Park Lahore',
+    size: '10 Marla',
+    sizeSqFt: 2250,
+    bedrooms: 0,
+    bathrooms: 0,
+    parkingSpaces: 0,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: false,
+    hasVideoTour: false,
+    isDirectFromBuilder: true,
+    tag: 'LDA Approved Society',
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Fully developed 10 Marla on-ground plot in Central Park Housing Society Lahore Block B. Possession available, sewerage and electricity ready, hospital and medical college inside society.',
+    bylawCompliance: '100% LDA Approved Society',
+    possessionStatus: 'Possession Handed Over',
+    features: [
+      'On-Ground Verified Plot with Fast Construction Permitted',
+      '40-ft Wide Carpeted Road',
+      'Includes H&Q 10 Marla Double Story 3D Architectural Package'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: false,
+    installmentDetail: 'Full Cash Direct Registry Transfer'
+  },
+  {
+    id: 'HQ-PROP-114',
+    title: '2 Kanal Waterfront Presidential Mansion in DHA Phase 8',
+    slug: '2-kanal-waterfront-presidential-mansion-dha-phase-8-lahore',
+    purpose: 'For Sale',
+    type: 'House',
+    category: 'Homes',
+    price: 185000000,
+    priceFormatted: 'PKR 18.5 Crore',
+    city: 'Lahore',
+    location: 'DHA Phase 8 (Ex-Park View), Sector V, Lahore',
+    society: 'DHA Lahore',
+    size: '2 Kanal',
+    sizeSqFt: 9000,
+    bedrooms: 7,
+    bathrooms: 9,
+    parkingSpaces: 6,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: true,
+    hasVideoTour: true,
+    isDirectFromBuilder: true,
+    tag: 'Ultra-Luxury Presidential Estate',
+    image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Flagship 2 Kanal modern architectural marvel opposite Lahore International Airport in DHA Phase 8. Features private indoor infinity swimming pool, hydraulic elevator, Italian kitchen with Miele appliances, Finnish sauna, and guard room.',
+    bylawCompliance: '100% DHA Phase 8 Bylaws Cleared',
+    possessionStatus: 'Ready for Immediate Possession',
+    features: [
+      '7 Master Bedroom Suites with Dressing Rooms',
+      'Indoor Temperature-Controlled Infinity Pool & Spa',
+      'Hydraulic Glass Passenger Elevator',
+      'Italian Valcucine Kitchen & Dirty Kitchen',
+      'Guard Room, 2 Servant Quarters with Private Staircase'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' },
+      { name: 'Nearby Mosque', available: true, icon: 'fa-solid fa-mosque' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: true,
+    installmentDetail: 'Bespoke Payment Schedule via Bank Escrow'
+  },
+
+  // ==========================================
+  // ISLAMABAD PROPERTIES
+  // ==========================================
+  {
+    id: 'HQ-PROP-115',
+    title: '1 Kanal Brand New Designer Villa in DHA Islamabad Phase 2',
+    slug: '1-kanal-brand-new-designer-villa-dha-islamabad-phase-2',
+    purpose: 'For Sale',
+    type: 'House',
+    category: 'Homes',
+    price: 92000000,
+    priceFormatted: 'PKR 9.20 Crore',
+    city: 'Islamabad',
+    location: 'DHA Phase 2, Sector B, Islamabad',
+    society: 'DHA Islamabad',
+    size: '1 Kanal',
+    sizeSqFt: 4500,
+    bedrooms: 5,
+    bathrooms: 6,
+    parkingSpaces: 4,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: true,
+    hasVideoTour: true,
+    isDirectFromBuilder: true,
+    tag: 'Capital Luxury Villa',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Signature 1 Kanal architectural home in DHA Islamabad Phase 2. Prime location near Giga Mall and GT Road / Islamabad Expressway. Fully air conditioned, solid ash woodwork, designer bathrooms with Jacuzzi tubs, and servant quarter.',
+    bylawCompliance: 'DHA Islamabad Vetted & Approved',
+    possessionStatus: 'Ready for Possession',
+    features: [
+      '5 Master Bedrooms with En-suite Bathrooms',
+      'Panoramic Margalla & Rawat View Balcony',
+      'Two Fully Equipped Kitchens with Built-in Ovens',
+      'Walking Distance to DHA Phase 2 Central Park & Commercial'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' },
+      { name: 'Nearby Commercial Mall', available: true, icon: 'fa-solid fa-store' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: true,
+    installmentDetail: 'Islamic Home Financing Option Available'
+  },
+  {
+    id: 'HQ-PROP-116',
+    title: '5 Marla Brand New Modern House in Bahria Enclave Islamabad',
+    slug: '5-marla-brand-new-modern-house-bahria-enclave-islamabad',
+    purpose: 'For Sale',
+    type: 'House',
+    category: 'Homes',
+    price: 21500000,
+    priceFormatted: 'PKR 2.15 Crore',
+    city: 'Islamabad',
+    location: 'Bahria Enclave, Sector C, Islamabad',
+    society: 'Bahria Enclave',
+    size: '5 Marla',
+    sizeSqFt: 1125,
+    bedrooms: 3,
+    bathrooms: 4,
+    parkingSpaces: 1,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: false,
+    hasVideoTour: true,
+    isDirectFromBuilder: true,
+    tag: 'Margalla Foothill Living',
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Scenic 5 Marla modern home nestled in Margalla hills foothills in Bahria Enclave Islamabad Sector C. Modern elevation, 3 bedrooms, designer chandeliers, imported tiles, and CDA bylaw compliant structure.',
+    bylawCompliance: '100% CDA & Bahria Approved',
+    possessionStatus: 'Ready for Move-In',
+    features: [
+      '3 Bedrooms with Attached Bathrooms',
+      'Unobstructed Margalla Mountain View from Rooftop',
+      'Imported Spanish Sanitary Ware & Granite Vanity',
+      'Underground Electrification & Gated Security'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: true,
+    installmentDetail: 'Cash or Bank Installments'
+  },
+  {
+    id: 'HQ-PROP-117',
+    title: '10 Marla Residential Plot in Capital Smart City Overseas Prime',
+    slug: '10-marla-residential-plot-capital-smart-city-islamabad',
+    purpose: 'Plots',
+    type: 'Plot',
+    category: 'Plots',
+    price: 7800000,
+    priceFormatted: 'PKR 78.0 Lakh',
+    city: 'Islamabad',
+    location: 'Capital Smart City, Overseas Prime Block, Motorway M-2, Islamabad',
+    society: 'Capital Smart City',
+    size: '10 Marla',
+    sizeSqFt: 2250,
+    bedrooms: 0,
+    bathrooms: 0,
+    parkingSpaces: 0,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: true,
+    hasVideoTour: false,
+    isDirectFromBuilder: true,
+    tag: 'Smart City Verified Plot',
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'On-ground 10 Marla plot in Pakistan first designated smart eco-city, Capital Smart City Islamabad. Dedicated interchange on M-2 Motorway, smart traffic controls, 18-hole golf club, and high-speed FTTH internet.',
+    bylawCompliance: 'RDA Approved NOC Society',
+    possessionStatus: 'Possession Announced / Ready for Construction',
+    features: [
+      'Smart Villa Ready Plot with Elevated Topography',
+      'Includes Smart Home Architectural Elevation Blueprint from H&Q',
+      'Direct M-2 Motorway Connectivity'
+    ],
+    amenities: [
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' },
+      { name: 'Fiber Internet (FTTH)', available: true, icon: 'fa-solid fa-wifi' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: true,
+    installmentDetail: 'Transfer on Clearing Surcharge or Balance Installments'
+  },
+  {
+    id: 'HQ-PROP-118',
+    title: '4 Kanal Luxury Farmhouse Plot in Gulberg Greens Islamabad',
+    slug: '4-kanal-luxury-farmhouse-plot-gulberg-greens-islamabad',
+    purpose: 'Plots',
+    type: 'Plot',
+    category: 'Plots',
+    price: 65000000,
+    priceFormatted: 'PKR 6.50 Crore',
+    city: 'Islamabad',
+    location: 'Gulberg Greens, Executive Farmhouses Block, Islamabad',
+    society: 'Gulberg Greens',
+    size: '4 Kanal',
+    sizeSqFt: 18000,
+    bedrooms: 0,
+    bathrooms: 0,
+    parkingSpaces: 0,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: false,
+    hasVideoTour: false,
+    isDirectFromBuilder: true,
+    tag: 'Executive Farmhouse Plot',
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Exclusive 4 Kanal agricultural farmhouse land in CDA approved Gulberg Greens Islamabad. Perfect for luxury estate villa, private swimming pool, and equestrian stables.',
+    bylawCompliance: '100% CDA Approved Farmhouse Scheme',
+    possessionStatus: 'Ready for Immediate Construction',
+    features: [
+      'Clear CDA Transfer Title with Full Utility Clearance',
+      'Wide Tree-Lined Boulevard Entrance',
+      'Includes Architectural Masterplan for Farmhouse from H&Q'
+    ],
+    amenities: [
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: false,
+    installmentDetail: 'Direct Cash Transfer at IBECHS Sub-Registrar'
+  },
+  {
+    id: 'HQ-PROP-119',
+    title: '5 Marla Residential Plot in Faisal Hills Taxila / Islamabad',
+    slug: '5-marla-residential-plot-faisal-hills-taxila-islamabad',
+    purpose: 'Plots',
+    type: 'Plot',
+    category: 'Plots',
+    price: 3600000,
+    priceFormatted: 'PKR 36.0 Lakh',
+    city: 'Islamabad',
+    location: 'Faisal Hills, Executive Block, GT Road, Islamabad / Taxila',
+    society: 'Faisal Hills',
+    size: '5 Marla',
+    sizeSqFt: 1125,
+    bedrooms: 0,
+    bathrooms: 0,
+    parkingSpaces: 0,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: false,
+    hasVideoTour: false,
+    isDirectFromBuilder: true,
+    tag: 'RDA Approved Budget Plot',
+    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77d66?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1524813686514-a57563d77d66?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'On-ground 5 Marla plot in Faisal Hills Executive Block facing Margalla Hills. RDA approved, paved roads, water tanks installed, and houses under fast construction.',
+    bylawCompliance: '100% RDA Approved Society',
+    possessionStatus: 'Possession Ready',
+    features: [
+      'Clear Title On-Ground Plot in Executive Block',
+      'Panoramic Hill Views and Fresh Mountain Breeze',
+      'Free 5 Marla Contemporary Map Design from H&Q'
+    ],
+    amenities: [
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: false,
+    installmentDetail: 'Direct Cash Transfer at Zedem International Office'
+  },
+  {
+    id: 'HQ-PROP-120',
+    title: '10 Marla Brand New Modern Villa in DHA Islamabad Phase 5',
+    slug: '10-marla-brand-new-modern-villa-dha-islamabad-phase-5',
+    purpose: 'For Sale',
+    type: 'House',
+    category: 'Homes',
+    price: 48000000,
+    priceFormatted: 'PKR 4.80 Crore',
+    city: 'Islamabad',
+    location: 'DHA Phase 5, Sector A, Islamabad Expressway, Islamabad',
+    society: 'DHA Islamabad',
+    size: '10 Marla',
+    sizeSqFt: 2250,
+    bedrooms: 4,
+    bathrooms: 5,
+    parkingSpaces: 2,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: true,
+    hasVideoTour: true,
+    isDirectFromBuilder: true,
+    tag: 'DHA Expressway Living',
+    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Immaculate 10 Marla double unit house in DHA Phase 5 Islamabad directly on Islamabad Expressway. High-end finishes, double glazed windows, inverter AC conduits, and solid oak woodwork.',
+    bylawCompliance: 'DHA Islamabad Phase 5 Vetted',
+    possessionStatus: 'Ready for Immediate Move-in',
+    features: [
+      '4 Master Bedrooms with En-suite Bathrooms',
+      'Solid Oak Woodwork and Custom Wardrobes',
+      'Dual Kitchen Setup (Dirty & Open Show Kitchen)',
+      'Direct Access from Signal-Free Islamabad Expressway'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: true,
+    installmentDetail: 'Bank Financing Eligible'
+  },
+
+  // ==========================================
+  // RAWALPINDI PROPERTIES
+  // ==========================================
+  {
+    id: 'HQ-PROP-121',
+    title: '10 Marla Brand New Modern House in Bahria Town Phase 7',
+    slug: '10-marla-brand-new-modern-house-bahria-town-phase-7-rawalpindi',
+    purpose: 'For Sale',
+    type: 'House',
+    category: 'Homes',
+    price: 38500000,
+    priceFormatted: 'PKR 3.85 Crore',
+    city: 'Rawalpindi',
+    location: 'Bahria Town, Phase 7, Sector B, Rawalpindi',
+    society: 'Bahria Town Rawalpindi',
+    size: '10 Marla',
+    sizeSqFt: 2250,
+    bedrooms: 5,
+    bathrooms: 6,
+    parkingSpaces: 2,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: true,
+    hasVideoTour: true,
+    isDirectFromBuilder: true,
+    tag: 'River View Villa',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Stunning 10 Marla contemporary villa in Bahria Town Rawalpindi Phase 7 near Clock Tower commercial. Beautiful river views, imported Spanish tiles, double height ceiling, and separate servant quarter.',
+    bylawCompliance: '100% Bahria Town Bylaws Approved',
+    possessionStatus: 'Ready for Move-In',
+    features: [
+      '5 Master Bedrooms with Designer Baths',
+      'Overlooks Soan River and Green Belt',
+      'Dual Meters Installed with Bahria Grid Power',
+      'Proximity to Greenvalley Supermarket & Fast Food Hub'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: true,
+    installmentDetail: 'Standard Financing or Cash'
+  },
+  {
+    id: 'HQ-PROP-122',
+    title: '5 Marla Brand New Double Storey House in Bahria Town Phase 8',
+    slug: '5-marla-brand-new-double-storey-house-bahria-town-phase-8-rawalpindi',
+    purpose: 'For Sale',
+    type: 'House',
+    category: 'Homes',
+    price: 17500000,
+    priceFormatted: 'PKR 1.75 Crore',
+    city: 'Rawalpindi',
+    location: 'Bahria Town, Phase 8, Sector F, Rawalpindi',
+    society: 'Bahria Town Rawalpindi',
+    size: '5 Marla',
+    sizeSqFt: 1125,
+    bedrooms: 3,
+    bathrooms: 4,
+    parkingSpaces: 1,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: false,
+    hasVideoTour: true,
+    isDirectFromBuilder: true,
+    tag: 'Bahria Phase 8 Hot Deal',
+    image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Chic 5 Marla double story home in Bahria Town Phase 8 Sector F. Ready for immediate move-in, complete with imported sanitaries, false ceilings with LED cove lighting, and spacious garage.',
+    bylawCompliance: 'Bahria Town Approved',
+    possessionStatus: 'Ready for Immediate Move-in',
+    features: [
+      '3 Ensuite Bedrooms + Drawing Room',
+      'Solid Ash Doors & Fall Ceiling in All Rooms',
+      'Zero Load Shedding with Bahria Power Grid'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: true,
+    installmentDetail: 'Bank Islamic Financing Available'
+  },
+  {
+    id: 'HQ-PROP-123',
+    title: '1 Kanal Luxury Mansion in DHA Phase 1 Rawalpindi',
+    slug: '1-kanal-luxury-mansion-dha-phase-1-rawalpindi',
+    purpose: 'For Sale',
+    type: 'House',
+    category: 'Homes',
+    price: 85000000,
+    priceFormatted: 'PKR 8.50 Crore',
+    city: 'Rawalpindi',
+    location: 'DHA Phase 1, Sector E, Rawalpindi',
+    society: 'DHA Islamabad',
+    size: '1 Kanal',
+    sizeSqFt: 4500,
+    bedrooms: 6,
+    bathrooms: 7,
+    parkingSpaces: 4,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: true,
+    hasVideoTour: true,
+    isDirectFromBuilder: true,
+    tag: 'DHA Elite Estate',
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Palatial 1 Kanal residence in the established community of DHA Phase 1 Rawalpindi. Easy access to GT Road, Morgah, and Saddar. Features 6 king-size bedrooms, home theater room, and heated plunge jacuzzi.',
+    bylawCompliance: 'DHA Rawalpindi Vetted',
+    possessionStatus: 'Ready for Possession',
+    features: [
+      '6 Luxury Bedrooms with Imported Sanitary Baths',
+      'Home Theater & Entertainment Lounge',
+      'High-grade Solar Inverter 15 kW System Installed'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: false,
+    installmentDetail: 'Direct Cash Transfer'
+  },
+  {
+    id: 'HQ-PROP-124',
+    title: '10 Marla Residential Plot in Top City-1 Rawalpindi',
+    slug: '10-marla-residential-plot-top-city-1-rawalpindi',
+    purpose: 'Plots',
+    type: 'Plot',
+    category: 'Plots',
+    price: 9500000,
+    priceFormatted: 'PKR 95.0 Lakh',
+    city: 'Rawalpindi',
+    location: 'Top City-1, Block B, Near New Islamabad International Airport, Rawalpindi',
+    society: 'Top City-1',
+    size: '10 Marla',
+    sizeSqFt: 2250,
+    bedrooms: 0,
+    bathrooms: 0,
+    parkingSpaces: 0,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: false,
+    hasVideoTour: false,
+    isDirectFromBuilder: true,
+    tag: 'Airport Vicinity Plot',
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'On-ground 10 Marla plot situated next to the Srinagar Highway and Metro Bus Station near New Islamabad Airport. RDA approved, ready for building construction.',
+    bylawCompliance: '100% RDA Approved Society',
+    possessionStatus: 'Possession Handed Over',
+    features: [
+      'Prime Location 5 Minutes from New Islamabad International Airport',
+      'Direct Metro Bus Stop Connectivity',
+      'Free 10 Marla Turnkey Construction Estimate & Blueprint'
+    ],
+    amenities: [
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: false,
+    installmentDetail: 'Cash Registry Transfer'
+  },
+  {
+    id: 'HQ-PROP-125',
+    title: '5 Marla Commercial Shop in Bahria Town Phase 4 Civic Center',
+    slug: '5-marla-commercial-shop-civic-center-bahria-town-phase-4-rawalpindi',
+    purpose: 'Commercial',
+    type: 'Commercial',
+    category: 'Commercial',
+    price: 32000000,
+    priceFormatted: 'PKR 3.20 Crore',
+    city: 'Rawalpindi',
+    location: 'Civic Center, Bahria Town, Phase 4, Rawalpindi',
+    society: 'Bahria Town Rawalpindi',
+    size: '5 Marla',
+    sizeSqFt: 1125,
+    bedrooms: 0,
+    bathrooms: 2,
+    parkingSpaces: 4,
+    yearBuilt: 2025,
+    isVerified: true,
+    isSuperHot: false,
+    hasVideoTour: false,
+    isDirectFromBuilder: true,
+    tag: 'High Footfall Commercial Shop',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Ground floor corner retail commercial shop in high-footfall Civic Center Bahria Town Phase 4. Rented to national retail brand generating PKR 220,000 monthly rental income.',
+    bylawCompliance: 'Bahria Civic Center Approved',
+    possessionStatus: 'Leased with Active Income',
+    features: [
+      'Ground Floor Corner Location on Main Boulevard',
+      'Current Monthly Rental Income: PKR 2.20 Lac',
+      'Immediate Positive Cash Flow Property'
+    ],
+    amenities: [
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: false,
+    installmentDetail: 'Immediate Deed Registration'
+  },
+
+  // ==========================================
+  // KARACHI PROPERTIES
+  // ==========================================
+  {
+    id: 'HQ-PROP-126',
+    title: '10 Marla (250 Sq. Yds) Luxury Villa in Bahria Town Karachi Precinct 1',
+    slug: '10-marla-250-sq-yds-luxury-villa-bahria-town-karachi-precinct-1',
+    purpose: 'For Sale',
+    type: 'House',
+    category: 'Homes',
+    price: 36000000,
+    priceFormatted: 'PKR 3.60 Crore',
+    city: 'Karachi',
+    location: 'Bahria Town Karachi, Precinct 1, Main Super Highway, Karachi',
+    society: 'Bahria Town Karachi',
+    size: '10 Marla',
+    sizeSqFt: 2250,
+    bedrooms: 4,
+    bathrooms: 5,
+    parkingSpaces: 2,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: true,
+    hasVideoTour: true,
+    isDirectFromBuilder: true,
+    tag: 'Precinct 1 Signature Villa',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Luxurious 250 Sq. Yards (10 Marla) custom-built villa located at the premier entrance Precinct 1 of Bahria Town Karachi. Zero load shedding, 24/7 security, lush surroundings, and Danzoo nearby.',
+    bylawCompliance: '100% Bahria Town Karachi Approved',
+    possessionStatus: 'Ready for Move-In',
+    features: [
+      '4 Master Bedrooms with En-suite Designer Bathrooms',
+      'Imported Italian Kitchen & Marble Flooring',
+      'Zero Load Shedding with Bahria Dedicated Power Station'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: true,
+    installmentDetail: 'Bank Financing or Cash'
+  },
+  {
+    id: 'HQ-PROP-127',
+    title: '5 Marla (125 Sq. Yds) Designer Villa in Bahria Town Karachi Precinct 10A',
+    slug: '5-marla-125-sq-yds-designer-villa-bahria-town-karachi-precinct-10a',
+    purpose: 'For Sale',
+    type: 'House',
+    category: 'Homes',
+    price: 16500000,
+    priceFormatted: 'PKR 1.65 Crore',
+    city: 'Karachi',
+    location: 'Bahria Town Karachi, Precinct 10A, Karachi',
+    society: 'Bahria Town Karachi',
+    size: '5 Marla',
+    sizeSqFt: 1125,
+    bedrooms: 3,
+    bathrooms: 4,
+    parkingSpaces: 1,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: false,
+    hasVideoTour: true,
+    isDirectFromBuilder: true,
+    tag: 'Precinct 10A Hot Deal',
+    image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Charming 125 Sq. Yards villa in prime populated Precinct 10A Bahria Town Karachi. 3 bedrooms with attached baths, drawing room, rooftop terrace, and walking distance to central mosque and park.',
+    bylawCompliance: 'Bahria Town Karachi Bylaws Cleared',
+    possessionStatus: 'Ready for Immediate Possession',
+    features: [
+      '3 Bedrooms + 4 Bathrooms with Modern Fixtures',
+      'Solid Construction with Anti-Earthquake RCC Framework',
+      'Walking Distance to Commercial & Mosque'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: true,
+    installmentDetail: 'Cash or Easy Settlement'
+  },
+  {
+    id: 'HQ-PROP-128',
+    title: '1 Kanal (500 Sq. Yds) Modern Spanish Villa in DHA Karachi Phase 6',
+    slug: '1-kanal-500-sq-yds-modern-spanish-villa-dha-karachi-phase-6',
+    purpose: 'For Sale',
+    type: 'House',
+    category: 'Homes',
+    price: 135000000,
+    priceFormatted: 'PKR 13.5 Crore',
+    city: 'Karachi',
+    location: 'DHA Phase 6, Khayaban-e-Seher, Karachi',
+    society: 'DHA Karachi',
+    size: '1 Kanal',
+    sizeSqFt: 4500,
+    bedrooms: 5,
+    bathrooms: 6,
+    parkingSpaces: 3,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: true,
+    hasVideoTour: true,
+    isDirectFromBuilder: true,
+    tag: 'DHA Coastal Luxury',
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Stunning 500 Sq. Yds custom designed Spanish home on Khayaban-e-Seher DHA Karachi Phase 6. Proximity to sea breeze, imported Turkish sanitaries, dirty kitchen, and servant quarters.',
+    bylawCompliance: '100% DHA Karachi Bylaws Approved',
+    possessionStatus: 'Ready for Move-In',
+    features: [
+      '5 Grand Bedrooms with Walk-in Closets and Italian Jacuzzi Baths',
+      'Double Height Ceiling with Teak Wood Handrails',
+      'Water Desalination Filtration System Installed'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: false,
+    installmentDetail: 'Direct Cash Transfer at DHA Karachi Head Office'
+  },
+  {
+    id: 'HQ-PROP-129',
+    title: '3 Bed Luxury Arabian Sea View Apartment in Clifton Block 4',
+    slug: '3-bed-luxury-arabian-sea-view-apartment-clifton-block-4-karachi',
+    purpose: 'For Sale',
+    type: 'Apartment',
+    category: 'Homes',
+    price: 45000000,
+    priceFormatted: 'PKR 4.50 Crore',
+    city: 'Karachi',
+    location: 'Clifton, Block 4, Sea View Avenue, Karachi',
+    society: 'Clifton Karachi',
+    size: '10 Marla',
+    sizeSqFt: 2200,
+    bedrooms: 3,
+    bathrooms: 4,
+    parkingSpaces: 2,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: true,
+    hasVideoTour: true,
+    isDirectFromBuilder: true,
+    tag: 'Direct Arabian Sea View Flat',
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'High-floor 3 Bed luxury apartment in high-rise condominium in Clifton Block 4 Karachi. Panoramic uninterrupted Arabian Sea views, standby generators, high-speed capsule elevators, and designated underground parking.',
+    bylawCompliance: '100% SBCA Approved Tower',
+    possessionStatus: 'Ready for Possession',
+    features: [
+      '3 Master Bedrooms with Ocean View Balconies',
+      '100% Power Backup 24/7 with Standby Generators',
+      'Gymnasium, Rooftop Infinity Pool & Reception Lobby'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: true,
+    installmentDetail: '40% Down Payment, 12 Months Balance'
+  },
+  {
+    id: 'HQ-PROP-130',
+    title: '120 Sq. Yds (5 Marla) Residential Plot in Scheme 33 Karachi',
+    slug: '120-sq-yds-5-marla-residential-plot-scheme-33-karachi',
+    purpose: 'Plots',
+    type: 'Plot',
+    category: 'Plots',
+    price: 5200000,
+    priceFormatted: 'PKR 52.0 Lakh',
+    city: 'Karachi',
+    location: 'Sector 33, Teachers Housing Society, Scheme 33, Karachi',
+    society: 'Scheme 33 Karachi',
+    size: '5 Marla',
+    sizeSqFt: 1080,
+    bedrooms: 0,
+    bathrooms: 0,
+    parkingSpaces: 0,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: false,
+    hasVideoTour: false,
+    isDirectFromBuilder: true,
+    tag: 'Budget Karachi Plot',
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'On-ground 120 Sq. Yards (approx 5 Marla) residential plot in Scheme 33 Karachi. Clear KDA transfer title, water and electricity connected, rapid residential construction ongoing.',
+    bylawCompliance: '100% KDA / SBCA Cleared',
+    possessionStatus: 'Possession Ready',
+    features: [
+      'Leased Clear Title 120 Sq. Yards Plot',
+      'Free 120 Sq. Yds Ground + 1 Floor Plan Blueprint from H&Q',
+      'Close to Karachi University and Main Super Highway'
+    ],
+    amenities: [
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: false,
+    installmentDetail: 'Immediate Sale Deed Registration'
+  },
+  {
+    id: 'HQ-PROP-131',
+    title: '2 Kanal Sea View Ultra-Luxury Mansion in DHA Karachi Phase 8',
+    slug: '2-kanal-sea-view-ultra-luxury-mansion-dha-karachi-phase-8',
+    purpose: 'For Sale',
+    type: 'House',
+    category: 'Homes',
+    price: 240000000,
+    priceFormatted: 'PKR 24.0 Crore',
+    city: 'Karachi',
+    location: 'DHA Phase 8, Zone A, Marine Drive, Karachi',
+    society: 'DHA Karachi',
+    size: '2 Kanal',
+    sizeSqFt: 9000,
+    bedrooms: 6,
+    bathrooms: 8,
+    parkingSpaces: 6,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: true,
+    hasVideoTour: true,
+    isDirectFromBuilder: true,
+    tag: 'Presidential Seafront Mansion',
+    image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Prestige 1,000 Sq. Yards (2 Kanal) beachfront palace overlooking the Arabian Sea on Marine Drive DHA Phase 8 Karachi. Private swimming pool, glass elevator, rooftop helipad-ready deck, and German smart home system.',
+    bylawCompliance: '100% DHA Karachi Approved',
+    possessionStatus: 'Ready for Possession',
+    features: [
+      '6 Grand Master Suites with Panoramic Sea Views',
+      'Private Swimming Pool, Jacuzzi & Steam Sauna',
+      'Glass Capsule Elevator & Italian Marble Flooring'
+    ],
+    amenities: [
+      { name: 'Sui Gas', available: true, icon: 'fa-solid fa-fire' },
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: true,
+    installmentDetail: 'Custom Escrow Agreement'
+  },
+  {
+    id: 'HQ-PROP-132',
+    title: '5 Marla Commercial Shop in DHA Phase 6 Commercial Broadway',
+    slug: '5-marla-commercial-shop-dha-phase-6-broadway-lahore',
+    purpose: 'Commercial',
+    type: 'Commercial',
+    category: 'Commercial',
+    price: 45000000,
+    priceFormatted: 'PKR 4.50 Crore',
+    city: 'Lahore',
+    location: 'Main Broadway Commercial, DHA Phase 6, Lahore',
+    society: 'DHA Lahore',
+    size: '5 Marla',
+    sizeSqFt: 1125,
+    bedrooms: 0,
+    bathrooms: 2,
+    parkingSpaces: 4,
+    yearBuilt: 2026,
+    isVerified: true,
+    isSuperHot: true,
+    hasVideoTour: false,
+    isDirectFromBuilder: true,
+    tag: 'Prime Broadway Commercial',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80'
+    ],
+    floorPlanImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80',
+    description: 'Ground floor prime retail commercial space on 150-ft Main Broadway Commercial DHA Phase 6 Lahore. High commercial footfall, ample customer parking, and high rental return potential.',
+    bylawCompliance: '100% DHA Lahore Commercial Cleared',
+    possessionStatus: 'Ready for Handover',
+    features: [
+      'Ground Floor High-Exposure Retail Shop',
+      '150 Feet Wide Boulevard Frontage',
+      'Over PKR 3.0 Lakh Monthly Projected Rental Income'
+    ],
+    amenities: [
+      { name: 'Underground Electricity', available: true, icon: 'fa-solid fa-bolt' },
+      { name: '24/7 Security', available: true, icon: 'fa-solid fa-shield-halved' }
+    ],
+    agent: {
+      name: 'Engr. Asad Ali',
+      role: 'Chief Architect & Project Lead',
+      agency: 'H&Q Design Services',
+      phone: '0341-6887454',
+      whatsapp: '923416887454',
+      email: 'asadali28997@gmail.com'
+    },
+    installmentAvailable: false,
+    installmentDetail: 'Direct DHA Lahore Transfer'
   }
 ]

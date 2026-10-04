@@ -6,6 +6,8 @@ import { userGscSlugs } from './gsc-urls.js'
 import { homePageData } from './static-home.js'
 import { staticPagesDetailed } from './static-pages-data.js'
 import { allFlatKeywords, slugifyKeyword, topKeywordsData, keywordClusterMap } from '../src/data/keywordsData.js'
+import { propertiesData } from '../src/data/propertiesData.js'
+import { generateCitationsJsonLd } from '../src/data/citationsData.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -97,80 +99,201 @@ const renderPage = (routePath, pageTitle, pageDesc, canonicalUrl, pageImage, pag
   html = html.replace(/<div id="app" class="flex-1 flex flex-col min-h-screen"><\/div>/i, appContainer)
 
   // Write to destination
+  // Write to destination
   if (!routePath || routePath === '/') {
     fs.writeFileSync(path.join(distDir, 'index.html'), html, 'utf8')
   } else {
     const targetDir = path.join(distDir, routePath)
     fs.mkdirSync(targetDir, { recursive: true })
     fs.writeFileSync(path.join(targetDir, 'index.html'), html, 'utf8')
+
+    // Also write dist/${routePath}.html for Vercel cleanUrls support
+    const htmlFilePath = path.join(distDir, `${routePath}.html`)
+    fs.mkdirSync(path.dirname(htmlFilePath), { recursive: true })
+    fs.writeFileSync(htmlFilePath, html, 'utf8')
   }
 }
 
-// 1. Pre-render Root Homepage (dist/index.html) with Rich Semantic HTML
-renderPage('/', homePageData.title, homePageData.desc, 'https://h-q-design-services.vercel.app/', 'https://h-q-design-services.vercel.app/logo.png', homePageData.body)
+// 1. Pre-render Root Homepage (dist/index.html) with Rich Semantic HTML & Citations Schema
+const citationsJsonLdScript = `<script type="application/ld+json">${JSON.stringify(generateCitationsJsonLd())}</script>`
+renderPage('/', homePageData.title, homePageData.desc, 'https://h-q-design-services.vercel.app/', 'https://h-q-design-services.vercel.app/logo.png', homePageData.body, citationsJsonLdScript)
 
 const sharedInternalLinkingHtml = `
   <section style="max-width:1200px;margin:40px auto 20px;padding:30px 24px;background:#0f172a;color:#fff;border-radius:24px;border:1px solid #1e293b;font-family:inherit;">
     <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1e293b;padding-bottom:16px;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
       <div>
-        <span style="background:#088C7E;color:#fff;font-size:10px;font-weight:900;text-transform:uppercase;padding:4px 10px;border-radius:999px;letter-spacing:1px;display:inline-block;margin-bottom:6px;">H&amp;Q Architecture Network</span>
-        <h3 style="font-size:22px;font-weight:900;margin:0;color:#fff;">Explore Architectural Services, Tools &amp; Area Guides</h3>
+        <span style="background:#088C7E;color:#fff;font-size:10px;font-weight:900;text-transform:uppercase;padding:4px 10px;border-radius:999px;letter-spacing:1px;display:inline-block;margin-bottom:6px;">Pakistan Real Estate &amp; Architecture Network</span>
+        <h3 style="font-size:22px;font-weight:900;margin:0;color:#fff;">100+ Internal Portals, 3D Elevations, Societies &amp; Verified Blueprints</h3>
       </div>
       <a href="/contact" style="background:#088C7E;color:#fff;font-size:12px;font-weight:800;text-decoration:none;padding:10px 18px;border-radius:12px;text-transform:uppercase;">Book Consultation →</a>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:20px;font-size:13px;">
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:20px;font-size:12px;">
+      <!-- Col 1: Architecture & Design Portals (16 Links) -->
       <div style="background:#1e293b;padding:18px;border-radius:16px;border:1px solid #334155;">
-        <h4 style="color:#088C7E;font-size:14px;font-weight:900;margin:0 0 12px;text-transform:uppercase;">Design &amp; Elevations</h4>
-        <ul style="list-style:none;padding:0;margin:0;line-height:2;">
+        <h4 style="color:#088C7E;font-size:13px;font-weight:900;margin:0 0 10px;text-transform:uppercase;border-bottom:1px solid #334155;padding-bottom:6px;">Design &amp; Portals</h4>
+        <ul style="list-style:none;padding:0;margin:0;line-height:1.9;">
           <li><a href="/services" style="color:#cbd5e1;text-decoration:none;">• Architectural Design Services</a></li>
           <li><a href="/portfolio" style="color:#cbd5e1;text-decoration:none;">• 3D Elevations &amp; House Plans</a></li>
-          <li><a href="/case-studies" style="color:#cbd5e1;text-decoration:none;">• Completed Case Studies</a></li>
+          <li><a href="/case-studies" style="color:#cbd5e1;text-decoration:none;">• Completed Villa Case Studies</a></li>
           <li><a href="/reviews" style="color:#fcd34d;font-weight:bold;text-decoration:none;">• Google Client Reviews (5.0 ★)</a></li>
           <li><a href="/about" style="color:#cbd5e1;text-decoration:none;">• About H&amp;Q Design Studio</a></li>
-        </ul>
-      </div>
-      <div style="background:#1e293b;padding:18px;border-radius:16px;border:1px solid #334155;">
-        <h4 style="color:#088C7E;font-size:14px;font-weight:900;margin:0 0 12px;text-transform:uppercase;">Interactive Tools</h4>
-        <ul style="list-style:none;padding:0;margin:0;line-height:2;">
-          <li><a href="/tools" style="color:#cbd5e1;text-decoration:none;">• Construction Cost Calculator</a></li>
-          <li><a href="/tools" style="color:#cbd5e1;text-decoration:none;">• Society Plot Finder &amp; Maps</a></li>
-          <li><a href="/tools" style="color:#cbd5e1;text-decoration:none;">• Area Unit Converter (Marla/SqFt)</a></li>
-          <li><a href="/tools" style="color:#cbd5e1;text-decoration:none;">• Mortgage EMI Calculator</a></li>
-          <li><a href="/embed/calculator" style="color:#cbd5e1;text-decoration:none;">• Free Embed Calculator Widget</a></li>
-        </ul>
-      </div>
-      <div style="background:#1e293b;padding:18px;border-radius:16px;border:1px solid #334155;">
-        <h4 style="color:#088C7E;font-size:14px;font-weight:900;margin:0 0 12px;text-transform:uppercase;">Societies &amp; Bylaws</h4>
-        <ul style="list-style:none;padding:0;margin:0;line-height:2;">
-          <li><a href="/area-guides" style="color:#cbd5e1;text-decoration:none;">• DHA &amp; Bahria Town Bylaws</a></li>
-          <li><a href="/trends" style="color:#cbd5e1;text-decoration:none;">• Market Price Trends 2026</a></li>
-          <li><a href="/properties" style="color:#cbd5e1;text-decoration:none;">• Verified Plots &amp; Houses</a></li>
-          <li><a href="/projects" style="color:#cbd5e1;text-decoration:none;">• New Housing Projects 2026</a></li>
+          <li><a href="/properties" style="color:#cbd5e1;text-decoration:none;">• Verified Pakistan Properties</a></li>
+          <li><a href="/projects" style="color:#cbd5e1;text-decoration:none;">• New Housing Mega Projects</a></li>
+          <li><a href="/area-guides" style="color:#cbd5e1;text-decoration:none;">• Society Bylaws &amp; Area Guides</a></li>
+          <li><a href="/trends" style="color:#cbd5e1;text-decoration:none;">• Market Price Index 2026</a></li>
           <li><a href="/agents" style="color:#cbd5e1;text-decoration:none;">• Certified Architects &amp; Agents</a></li>
+          <li><a href="/forum" style="color:#cbd5e1;text-decoration:none;">• Community Real Estate Forum</a></li>
+          <li><a href="/partners" style="color:#cbd5e1;text-decoration:none;">• Building Material Partners</a></li>
+          <li><a href="/blog" style="color:#cbd5e1;text-decoration:none;">• Architecture Blog (2,000+)</a></li>
+          <li><a href="/keywords-directory" style="color:#cbd5e1;text-decoration:none;">• 10-Cluster Keywords Glossary</a></li>
+          <li><a href="/contact" style="color:#cbd5e1;text-decoration:none;">• Contact Studio &amp; Book Visit</a></li>
+          <li><a href="/embed/calculator" style="color:#cbd5e1;text-decoration:none;">• Free Embed Cost Calculator</a></li>
         </ul>
       </div>
+
+      <!-- Col 2: Lahore Housing Societies (18 Links) -->
       <div style="background:#1e293b;padding:18px;border-radius:16px;border:1px solid #334155;">
-        <h4 style="color:#088C7E;font-size:14px;font-weight:900;margin:0 0 12px;text-transform:uppercase;">Trending Blueprints</h4>
-        <ul style="list-style:none;padding:0;margin:0;line-height:2;">
-          <li><a href="/keywords/5-marla-house-design" style="color:#cbd5e1;text-decoration:none;">• 5 Marla House Design</a></li>
-          <li><a href="/keywords/10-marla-spanish-villa" style="color:#cbd5e1;text-decoration:none;">• 10 Marla Spanish Villa</a></li>
-          <li><a href="/keywords/1-kanal-house-plan" style="color:#cbd5e1;text-decoration:none;">• 1 Kanal Modern House Plan</a></li>
-          <li><a href="/keywords/house-construction-cost-in-pakistan" style="color:#cbd5e1;text-decoration:none;">• Construction Cost Pakistan</a></li>
-          <li><a href="/keywords-directory" style="color:#088C7E;font-weight:bold;text-decoration:none;">• 10-Cluster Keywords Glossary →</a></li>
+        <h4 style="color:#088C7E;font-size:13px;font-weight:900;margin:0 0 10px;text-transform:uppercase;border-bottom:1px solid #334155;padding-bottom:6px;">Lahore Real Estate</h4>
+        <ul style="list-style:none;padding:0;margin:0;line-height:1.9;">
+          <li><a href="/properties?city=Lahore" style="color:#cbd5e1;text-decoration:none;">• Lahore Houses &amp; Plots Portal</a></li>
+          <li><a href="/area-guides?society=dha-lahore" style="color:#cbd5e1;text-decoration:none;">• DHA Lahore Phase 1 to 9 Bylaws</a></li>
+          <li><a href="/properties?society=DHA+Lahore" style="color:#cbd5e1;text-decoration:none;">• DHA Phase 5 Luxury Houses</a></li>
+          <li><a href="/properties?society=DHA+Lahore" style="color:#cbd5e1;text-decoration:none;">• DHA Phase 6 10 Marla Spanish Villa</a></li>
+          <li><a href="/properties?society=DHA+Lahore" style="color:#cbd5e1;text-decoration:none;">• DHA Phase 7 1 Kanal Contemporary</a></li>
+          <li><a href="/properties?society=DHA+Lahore" style="color:#cbd5e1;text-decoration:none;">• DHA Phase 8 2 Kanal Presidential</a></li>
+          <li><a href="/properties?society=DHA+Lahore" style="color:#cbd5e1;text-decoration:none;">• DHA Phase 9 Prism 1 Kanal Plot</a></li>
+          <li><a href="/properties?society=Bahria+Town" style="color:#cbd5e1;text-decoration:none;">• Bahria Town Lahore Sector C Homes</a></li>
+          <li><a href="/area-guides?society=bahria-town-lahore" style="color:#cbd5e1;text-decoration:none;">• Bahria Town Sector Guide &amp; Rates</a></li>
+          <li><a href="/properties?society=Lake+City" style="color:#cbd5e1;text-decoration:none;">• Lake City Golf Estate 10M Villa</a></li>
+          <li><a href="/properties?society=Park+View+City" style="color:#cbd5e1;text-decoration:none;">• Park View City Crystal &amp; Tulip Plots</a></li>
+          <li><a href="/properties?society=Gulberg+Lahore" style="color:#cbd5e1;text-decoration:none;">• Gulberg III Main Boulevard Plazas</a></li>
+          <li><a href="/properties?society=Model+Town+Lahore" style="color:#cbd5e1;text-decoration:none;">• Model Town Classical Spanish Villa</a></li>
+          <li><a href="/properties?society=New+Lahore+City" style="color:#cbd5e1;text-decoration:none;">• New Lahore City 3 &amp; 5 Marla Homes</a></li>
+          <li><a href="/properties?society=Central+Park+Lahore" style="color:#cbd5e1;text-decoration:none;">• Central Park 10 Marla On-Ground Plot</a></li>
+          <li><a href="/keywords/interior-designers-in-lahore" style="color:#cbd5e1;text-decoration:none;">• Luxury Interior Designers DHA Lahore</a></li>
+          <li><a href="/keywords/house-construction-cost-in-pakistan" style="color:#cbd5e1;text-decoration:none;">• Grey Structure Cost in Lahore</a></li>
+          <li><a href="/keywords/best-architects-in-lahore" style="color:#cbd5e1;text-decoration:none;">• Best Architects in Lahore Profile</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Islamabad & Rawalpindi (18 Links) -->
+      <div style="background:#1e293b;padding:18px;border-radius:16px;border:1px solid #334155;">
+        <h4 style="color:#088C7E;font-size:13px;font-weight:900;margin:0 0 10px;text-transform:uppercase;border-bottom:1px solid #334155;padding-bottom:6px;">Islamabad &amp; Rawalpindi</h4>
+        <ul style="list-style:none;padding:0;margin:0;line-height:1.9;">
+          <li><a href="/properties?city=Islamabad" style="color:#cbd5e1;text-decoration:none;">• Islamabad Real Estate Portal</a></li>
+          <li><a href="/properties?city=Rawalpindi" style="color:#cbd5e1;text-decoration:none;">• Rawalpindi Villas &amp; Plots Portal</a></li>
+          <li><a href="/properties?society=DHA+Islamabad" style="color:#cbd5e1;text-decoration:none;">• DHA Islamabad Phase 2 1K Villa</a></li>
+          <li><a href="/properties?society=DHA+Islamabad" style="color:#cbd5e1;text-decoration:none;">• DHA Phase 5 Islamabad Expressway</a></li>
+          <li><a href="/properties?society=DHA+Islamabad" style="color:#cbd5e1;text-decoration:none;">• DHA Phase 1 Rawalpindi 1K House</a></li>
+          <li><a href="/properties?society=Bahria+Enclave" style="color:#cbd5e1;text-decoration:none;">• Bahria Enclave Margalla View Homes</a></li>
+          <li><a href="/properties?society=Bahria+Town+Rawalpindi" style="color:#cbd5e1;text-decoration:none;">• Bahria Town Rawalpindi Phase 7 10M</a></li>
+          <li><a href="/properties?society=Bahria+Town+Rawalpindi" style="color:#cbd5e1;text-decoration:none;">• Bahria Phase 8 Double Storey 5M</a></li>
+          <li><a href="/properties?society=Bahria+Town+Rawalpindi" style="color:#cbd5e1;text-decoration:none;">• Civic Center Bahria Commercial Shop</a></li>
+          <li><a href="/properties?society=Gulberg+Greens" style="color:#cbd5e1;text-decoration:none;">• Gulberg Greens 4 Kanal Farmhouse</a></li>
+          <li><a href="/properties?society=Capital+Smart+City" style="color:#cbd5e1;text-decoration:none;">• Capital Smart City Overseas Prime</a></li>
+          <li><a href="/properties?society=Faisal+Hills" style="color:#cbd5e1;text-decoration:none;">• Faisal Hills Taxila Margalla Plots</a></li>
+          <li><a href="/properties?society=Top+City-1" style="color:#cbd5e1;text-decoration:none;">• Top City-1 Airport Metro Plots</a></li>
+          <li><a href="/blog/cda-approved-societies-islamabad-2026" style="color:#cbd5e1;text-decoration:none;">• CDA Approved Societies 2026</a></li>
+          <li><a href="/blog/rda-approved-societies-rawalpindi-2026" style="color:#cbd5e1;text-decoration:none;">• RDA Approved Schemes Rawalpindi</a></li>
+          <li><a href="/blog/dha-islamabad-building-bylaws-guide" style="color:#cbd5e1;text-decoration:none;">• DHA Islamabad Building Bylaws</a></li>
+          <li><a href="/blog/capital-smart-city-noc-masterplan-2026" style="color:#cbd5e1;text-decoration:none;">• Capital Smart City Blueprints</a></li>
+          <li><a href="/blog/bahria-enclave-islamabad-plot-rates-2026" style="color:#cbd5e1;text-decoration:none;">• Bahria Enclave Plot Price Trends</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Karachi Real Estate (16 Links) -->
+      <div style="background:#1e293b;padding:18px;border-radius:16px;border:1px solid #334155;">
+        <h4 style="color:#088C7E;font-size:13px;font-weight:900;margin:0 0 10px;text-transform:uppercase;border-bottom:1px solid #334155;padding-bottom:6px;">Karachi Seafront &amp; Prime</h4>
+        <ul style="list-style:none;padding:0;margin:0;line-height:1.9;">
+          <li><a href="/properties?city=Karachi" style="color:#cbd5e1;text-decoration:none;">• Karachi Verified Properties Portal</a></li>
+          <li><a href="/properties?society=Bahria+Town+Karachi" style="color:#cbd5e1;text-decoration:none;">• Bahria Town Karachi Precinct 1 250Y</a></li>
+          <li><a href="/properties?society=Bahria+Town+Karachi" style="color:#cbd5e1;text-decoration:none;">• Bahria Karachi Precinct 10A 125Y</a></li>
+          <li><a href="/properties?society=DHA+Karachi" style="color:#cbd5e1;text-decoration:none;">• DHA Karachi Phase 6 500Y Spanish</a></li>
+          <li><a href="/properties?society=DHA+Karachi" style="color:#cbd5e1;text-decoration:none;">• DHA Phase 8 Marine Drive 1000Y</a></li>
+          <li><a href="/properties?society=Clifton+Karachi" style="color:#cbd5e1;text-decoration:none;">• Clifton Block 4 Arabian Sea Flats</a></li>
+          <li><a href="/properties?society=Scheme+33+Karachi" style="color:#cbd5e1;text-decoration:none;">• Scheme 33 120 Sq. Yds Leased Plot</a></li>
+          <li><a href="/blog/bahria-town-karachi-2026-rates-update" style="color:#cbd5e1;text-decoration:none;">• Bahria Karachi Rates Update 2026</a></li>
+          <li><a href="/blog/dha-karachi-phase-8-plot-prices-2026" style="color:#cbd5e1;text-decoration:none;">• DHA Karachi Phase 8 Beachfront Rates</a></li>
+          <li><a href="/blog/sbca-approved-high-rise-projects-karachi" style="color:#cbd5e1;text-decoration:none;">• SBCA Approved High-Rise Condos</a></li>
+          <li><a href="/blog/scheme-33-karachi-noc-verification" style="color:#cbd5e1;text-decoration:none;">• Scheme 33 Lease Title Verification</a></li>
+          <li><a href="/blog/construction-cost-in-karachi-2026" style="color:#cbd5e1;text-decoration:none;">• Construction Cost per Sq Ft Karachi</a></li>
+          <li><a href="/keywords/interior-designers-in-karachi" style="color:#cbd5e1;text-decoration:none;">• Coastal Anti-Rust Interior Design</a></li>
+          <li><a href="/keywords/luxury-villas-karachi" style="color:#cbd5e1;text-decoration:none;">• Beach House Architectural Plans</a></li>
+          <li><a href="/keywords/commercial-architects-karachi" style="color:#cbd5e1;text-decoration:none;">• SBCA Commercial Complex Plans</a></li>
+          <li><a href="/keywords/3d-elevation-karachi" style="color:#cbd5e1;text-decoration:none;">• 120 &amp; 250 Sq Yds 3D Elevations</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: 3D Elevations & Blueprints (18 Links) -->
+      <div style="background:#1e293b;padding:18px;border-radius:16px;border:1px solid #334155;">
+        <h4 style="color:#088C7E;font-size:13px;font-weight:900;margin:0 0 10px;text-transform:uppercase;border-bottom:1px solid #334155;padding-bottom:6px;">3D Elevations &amp; Maps</h4>
+        <ul style="list-style:none;padding:0;margin:0;line-height:1.9;">
+          <li><a href="/keywords/3-marla-house-design" style="color:#cbd5e1;text-decoration:none;">• 3 Marla Compact House Plan (20x35)</a></li>
+          <li><a href="/keywords/5-marla-house-design" style="color:#cbd5e1;text-decoration:none;">• 5 Marla Double Story House Design</a></li>
+          <li><a href="/keywords/5-marla-spanish-house-design" style="color:#cbd5e1;text-decoration:none;">• 5 Marla Spanish Elevation 3D</a></li>
+          <li><a href="/keywords/7-marla-house-design" style="color:#cbd5e1;text-decoration:none;">• 7 Marla Contemporary Luxury Plan</a></li>
+          <li><a href="/keywords/10-marla-house-design" style="color:#cbd5e1;text-decoration:none;">• 10 Marla Double Story Family Plan</a></li>
+          <li><a href="/keywords/10-marla-spanish-villa" style="color:#cbd5e1;text-decoration:none;">• 10 Marla Spanish Villa with Pool</a></li>
+          <li><a href="/keywords/1-kanal-house-plan" style="color:#cbd5e1;text-decoration:none;">• 1 Kanal Modern House Plan (50x90)</a></li>
+          <li><a href="/keywords/1-kanal-classical-house" style="color:#cbd5e1;text-decoration:none;">• 1 Kanal Classical Victorian Bungalow</a></li>
+          <li><a href="/keywords/2-kanal-house-design" style="color:#cbd5e1;text-decoration:none;">• 2 Kanal Presidential Palace Design</a></li>
+          <li><a href="/keywords/corner-plot-house-design" style="color:#cbd5e1;text-decoration:none;">• Corner Plot Double Front Elevation</a></li>
+          <li><a href="/keywords/basement-house-design" style="color:#cbd5e1;text-decoration:none;">• Full Basement Waterproof Design</a></li>
+          <li><a href="/keywords/modern-front-elevation" style="color:#cbd5e1;text-decoration:none;">• 2026 Modern Front Elevations</a></li>
+          <li><a href="/keywords/spanish-front-elevation" style="color:#cbd5e1;text-decoration:none;">• Spanish Elevation with Arches</a></li>
+          <li><a href="/keywords/commercial-plaza-design" style="color:#cbd5e1;text-decoration:none;">• 4 &amp; 8 Marla Commercial Plazas</a></li>
+          <li><a href="/keywords/farmhouse-design-pakistan" style="color:#cbd5e1;text-decoration:none;">• Modern Farmhouse Blueprints</a></li>
+          <li><a href="/keywords/swimming-pool-villa-design" style="color:#cbd5e1;text-decoration:none;">• Indoor Heated Swimming Pool Villa</a></li>
+          <li><a href="/keywords/duplex-house-design" style="color:#cbd5e1;text-decoration:none;">• Dual Unit Duplex Floor Plans</a></li>
+          <li><a href="/keywords/4k-photorealistic-renders" style="color:#cbd5e1;text-decoration:none;">• 4K Photorealistic 3D Renders</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 6: 2026 Material Rates & Calculators (18 Links) -->
+      <div style="background:#1e293b;padding:18px;border-radius:16px;border:1px solid #334155;">
+        <h4 style="color:#088C7E;font-size:13px;font-weight:900;margin:0 0 10px;text-transform:uppercase;border-bottom:1px solid #334155;padding-bottom:6px;">2026 Costs &amp; Tools</h4>
+        <ul style="list-style:none;padding:0;margin:0;line-height:1.9;">
+          <li><a href="/tools?tab=cost-calc" style="color:#cbd5e1;font-weight:bold;text-decoration:none;">• Construction Cost Calculator 2026</a></li>
+          <li><a href="/tools?tab=unit-converter" style="color:#cbd5e1;font-weight:bold;text-decoration:none;">• Marla to Sq Ft Area Converter</a></li>
+          <li><a href="/tools?tab=mortgage-calc" style="color:#cbd5e1;font-weight:bold;text-decoration:none;">• Bank Islamic Home Mortgage EMI</a></li>
+          <li><a href="/tools?tab=plot-finder" style="color:#cbd5e1;font-weight:bold;text-decoration:none;">• Society Master Plot Finder Maps</a></li>
+          <li><a href="/keywords/house-construction-cost-in-pakistan" style="color:#cbd5e1;text-decoration:none;">• 5 Marla Construction Cost 2026</a></li>
+          <li><a href="/blog/10-marla-house-construction-cost-2026" style="color:#cbd5e1;text-decoration:none;">• 10 Marla Turnkey BOQ Breakdown</a></li>
+          <li><a href="/blog/steel-rate-in-pakistan-today-2026" style="color:#cbd5e1;text-decoration:none;">• Grade 60 Steel Rate Today</a></li>
+          <li><a href="/blog/cement-bag-price-in-pakistan-today" style="color:#cbd5e1;text-decoration:none;">• Cement Bag Price in Pakistan Today</a></li>
+          <li><a href="/blog/red-bricks-rate-lahore-2026" style="color:#cbd5e1;text-decoration:none;">• Awal Red Bricks &amp; Sand Rates</a></li>
+          <li><a href="/blog/solar-system-installation-cost-pakistan" style="color:#cbd5e1;text-decoration:none;">• 10kW On-Grid Solar System Cost</a></li>
+          <li><a href="/blog/fbr-property-taxes-filer-vs-non-filer-2026" style="color:#cbd5e1;text-decoration:none;">• FBR Property Tax Rates 2026</a></li>
+          <li><a href="/blog/dha-lahore-building-bylaws-2026" style="color:#cbd5e1;text-decoration:none;">• DHA Lahore 2026 Building Bylaws</a></li>
+          <li><a href="/blog/lda-map-approval-process-guide" style="color:#cbd5e1;text-decoration:none;">• LDA Online Map Approval Guide</a></li>
+          <li><a href="/blog/cda-building-regulations-islamabad" style="color:#cbd5e1;text-decoration:none;">• CDA Building Regulations Islamabad</a></li>
+          <li><a href="/blog/fuel-subsidy-pakistan-2026-policy" style="color:#cbd5e1;text-decoration:none;">• Pakistan Fuel Subsidy Policy 2026</a></li>
+          <li><a href="/privacy-policy" style="color:#cbd5e1;text-decoration:none;">• Privacy Policy &amp; AdSense Terms</a></li>
+          <li><a href="/terms-of-service" style="color:#cbd5e1;text-decoration:none;">• Terms of Service &amp; Copyrights</a></li>
+          <li><a href="/disclaimer" style="color:#cbd5e1;text-decoration:none;">• Turnkey Estimation Disclaimer</a></li>
         </ul>
       </div>
     </div>
-    <div style="margin-top:20px;padding-top:16px;border-top:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:#94a3b8;">
-      <div>
-        <strong style="color:#fff;">Direct Studio Lines:</strong>
-        <a href="tel:03416887454" style="color:#088C7E;text-decoration:none;margin-left:8px;font-weight:bold;">0341-6887454</a> |
-        <a href="tel:03134487315" style="color:#088C7E;text-decoration:none;margin-left:8px;font-weight:bold;">0313-4487315</a> |
-        <button type="button" onclick="window.open('https://wa.me/966507143124','_blank','noopener,noreferrer')" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;color:#10b981;text-decoration:none;margin-left:6px;font-weight:bold;">KSA WhatsApp: +966 50 714 3124</button>
+
+    <!-- Verified National Authorities & Citations Footprint Banner -->
+    <div style="margin-top:20px;padding-top:16px;border-top:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:11px;color:#94a3b8;">
+      <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+        <strong style="color:#fff;">Official Regulatory Standards &amp; Citations:</strong>
+        <span style="background:#1e293b;padding:3px 8px;border-radius:6px;border:1px solid #334155;">PCATP Licensed</span>
+        <span style="background:#1e293b;padding:3px 8px;border-radius:6px;border:1px solid #334155;">PEC Registered</span>
+        <span style="background:#1e293b;padding:3px 8px;border-radius:6px;border:1px solid #334155;">LDA Approved</span>
+        <span style="background:#1e293b;padding:3px 8px;border-radius:6px;border:1px solid #334155;">CDA Islamabad</span>
+        <span style="background:#1e293b;padding:3px 8px;border-radius:6px;border:1px solid #334155;">RDA Rawalpindi</span>
+        <span style="background:#1e293b;padding:3px 8px;border-radius:6px;border:1px solid #334155;">SBCA Karachi</span>
+        <span style="background:#1e293b;padding:3px 8px;border-radius:6px;border:1px solid #334155;">SBP Islamic Mortgage</span>
+        <span style="background:#1e293b;padding:3px 8px;border-radius:6px;border:1px solid #334155;">FBR 2026 Valuation</span>
       </div>
       <div>
-        <a href="/forum" style="color:#cbd5e1;text-decoration:none;margin-right:12px;">Forum Q&amp;A</a>
-        <a href="/partners" style="color:#cbd5e1;text-decoration:none;margin-right:12px;">Partners</a>
-        <a href="/blog" style="color:#cbd5e1;text-decoration:none;">Blog (2,000+)</a>
+        <strong style="color:#fff;">Direct Lines:</strong>
+        <a href="tel:03416887454" style="color:#088C7E;text-decoration:none;margin-left:8px;font-weight:bold;">0341-6887454</a> |
+        <a href="tel:03134487315" style="color:#088C7E;text-decoration:none;margin-left:8px;font-weight:bold;">0313-4487315</a> |
+        <button type="button" onclick="window.open('https://wa.me/923416887454?text=Assalam-o-Alaikum%20HQ%20Design%20Services','_blank','noopener,noreferrer')" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;color:#10b981;text-decoration:none;margin-left:6px;font-weight:bold;">WhatsApp Consultation</button>
       </div>
     </div>
   </section>
@@ -302,6 +425,131 @@ staticPagesDetailed.forEach(p => {
         </div>
       </div>
     `
+  } else if (p.route === 'properties') {
+    const propertiesSchema = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Verified Properties & Houses for Sale in Pakistan 2026",
+      "description": "Explore 32+ verified residential and commercial properties, plots, and luxury houses across Lahore, Islamabad, Rawalpindi, and Karachi with approved municipal bylaws.",
+      "numberOfItems": propertiesData.length,
+      "itemListElement": propertiesData.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "RealEstateListing",
+          "name": item.title,
+          "description": item.description,
+          "url": `https://h-q-design-services.vercel.app/properties`,
+          "image": item.images && item.images.length > 0 ? item.images[0] : "https://h-q-design-services.vercel.app/logo.png",
+          "offers": {
+            "@type": "Offer",
+            "price": item.numericPrice || 0,
+            "priceCurrency": "PKR",
+            "availability": "https://schema.org/InStock"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": item.location,
+            "addressLocality": item.city,
+            "addressRegion": item.city === 'Karachi' ? 'Sindh' : (item.city === 'Islamabad' ? 'Islamabad Capital Territory' : 'Punjab'),
+            "addressCountry": "PK"
+          }
+        }
+      }))
+    }
+    extraHeadHtml = `<script type="application/ld+json">${JSON.stringify(propertiesSchema)}</script>`
+
+    const cityStats = [
+      { name: 'All Pakistan', count: propertiesData.length },
+      { name: 'Lahore', count: propertiesData.filter(x => x.city === 'Lahore').length },
+      { name: 'Islamabad', count: propertiesData.filter(x => x.city === 'Islamabad').length },
+      { name: 'Rawalpindi', count: propertiesData.filter(x => x.city === 'Rawalpindi').length },
+      { name: 'Karachi', count: propertiesData.filter(x => x.city === 'Karachi').length }
+    ]
+
+    const propertiesCardsHtml = propertiesData.map(item => `
+      <article class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden flex flex-col transition-all hover:shadow-md">
+        <div class="relative h-48 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+          <img src="${item.images && item.images[0] ? item.images[0] : 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'}" alt="${escapeXml(item.title)}" loading="lazy" class="w-full h-full object-cover" />
+          <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+            <span class="bg-[#088C7E] text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md shadow-sm">
+              ${item.featured ? '★ Featured' : 'Verified'}
+            </span>
+            <span class="bg-slate-900/80 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-1 rounded-md">
+              ${escapeXml(item.type)}
+            </span>
+          </div>
+          <div class="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm text-emerald-400 font-bold text-[11px] px-2 py-0.5 rounded">
+            ${escapeXml(item.possessionStatus || 'Possession Ready')}
+          </div>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="text-xl font-black text-[#088C7E]">${escapeXml(item.price)}</div>
+            <h2 class="text-base font-bold text-slate-900 dark:text-white line-clamp-1 mt-1">${escapeXml(item.title)}</h2>
+            <div class="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-1">
+              <span>📍</span> <span>${escapeXml(item.location)}</span>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-4 text-xs font-semibold text-slate-700 dark:text-slate-300 py-2 border-y border-slate-100 dark:border-slate-700/60">
+            ${item.bedrooms ? `<span>🛏️ ${item.bedrooms} Beds</span>` : ''}
+            ${item.bathrooms ? `<span>🚿 ${item.bathrooms} Baths</span>` : ''}
+            <span>📐 ${escapeXml(item.area)}</span>
+          </div>
+
+          <div class="bg-slate-50 dark:bg-slate-900/60 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800 text-[11px] text-slate-600 dark:text-slate-400 space-y-1">
+            <div><strong class="text-slate-700 dark:text-slate-200">Bylaw Status:</strong> ${escapeXml(item.bylawCompliance || 'LDA Approved')}</div>
+            ${item.installmentDetail ? `<div><strong class="text-emerald-600 dark:text-emerald-400">Installments:</strong> ${escapeXml(item.installmentDetail)}</div>` : ''}
+            <div class="text-[10px] text-slate-500 flex gap-2">
+              <span>⚡ Elec</span> <span>🔥 Gas</span> <span>💧 Water</span> <span>🏗️ Structural Cert</span>
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center gap-2">
+            <a href="/contact" class="flex-1 text-center bg-[#088C7E] hover:bg-[#07776b] text-white font-bold text-xs py-2 px-3 rounded-lg transition-colors">
+              Schedule Inspection
+            </a>
+            <button type="button" onclick="window.open('https://wa.me/923416887454?text=${encodeURIComponent('Assalam-o-Alaikum, I am inquiring about property: ' + item.title + ' (' + item.price + ')')}', '_blank', 'noopener,noreferrer')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2 px-3 rounded-lg transition-colors flex items-center justify-center gap-1">
+              WhatsApp
+            </button>
+          </div>
+        </div>
+      </article>
+    `).join('')
+
+    mainBody = `
+      <div class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div class="space-y-4">
+          <div class="flex items-center gap-2 text-xs font-bold text-[#088C7E] uppercase tracking-wider">
+            <span>Verified Pakistan Real Estate Portal</span> · <span>Zameen-Grade Due Diligence</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white">
+            Properties &amp; Houses for Sale in Pakistan (2026)
+          </h1>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
+            Browse ${propertiesData.length} verified residential houses, commercial plazas, and developer plots across Lahore, Islamabad, Rawalpindi, and Karachi. Every property listing includes municipal bylaw verification (LDA, CDA, RDA, SBCA), PEC structural inspection stamps, 3D architectural floor plans, and utility connection statuses.
+          </p>
+          
+          <div class="flex flex-wrap gap-2 pt-2">
+            ${cityStats.map(c => `
+              <div class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
+                ${escapeXml(c.name)}: <span class="text-[#088C7E]">${c.count}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pt-4">
+          ${propertiesCardsHtml}
+        </div>
+
+        <div class="mt-12 p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400 space-y-3">
+          <h3 class="font-extrabold text-slate-900 dark:text-white text-sm">Real Estate Buyer Protection &amp; Technical Verification</h3>
+          <p>H&amp;Q Design Services acts as an independent architectural engineering authority. In compliance with PCATP (Pakistan Council of Architects and Town Planners) and PEC (Pakistan Engineering Council), our team provides structural audit certificates, zoning clearance checks, and complete turnkey BOQ construction cost assessments for buyers and investors in Pakistan and overseas.</p>
+        </div>
+      </div>
+    `
   }
 
   const bodyHtml = `
@@ -346,7 +594,7 @@ staticPagesDetailed.forEach(p => {
       </div>
     </footer>
   `
-  renderPage(p.route, p.title, p.desc, canonicalUrl, 'https://h-q-design-services.vercel.app/logo.jpg', bodyHtml, extraHeadHtml)
+  renderPage(p.route, optimizeTitle(p.title), p.desc, canonicalUrl, 'https://h-q-design-services.vercel.app/logo.jpg', bodyHtml, extraHeadHtml)
 })
 
 // 3. Pre-render Blog Pages

@@ -74,12 +74,19 @@
               <label class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">City / Housing Society</label>
               <select v-model="searchLocation" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 text-white border border-slate-700 focus:outline-none focus:border-[#088C7E] shadow-inner font-semibold">
                 <option value="All">All Locations (Pakistan)</option>
-                <option value="Bahria Town">Bahria Town, Lahore</option>
+                <option value="Lahore">Lahore (All Societies)</option>
+                <option value="Islamabad">Islamabad</option>
+                <option value="Rawalpindi">Rawalpindi</option>
+                <option value="Karachi">Karachi</option>
                 <option value="DHA Lahore">DHA Phase 1-9, Lahore</option>
+                <option value="Bahria Town">Bahria Town, Lahore</option>
                 <option value="Gulberg Lahore">Gulberg III, Lahore</option>
                 <option value="Lake City">Lake City, Lahore</option>
+                <option value="Park View City">Park View City, Lahore</option>
                 <option value="DHA Islamabad">DHA Islamabad</option>
+                <option value="Bahria Town Rawalpindi">Bahria Town Rawalpindi</option>
                 <option value="Bahria Town Karachi">Bahria Town Karachi</option>
+                <option value="DHA Karachi">DHA Karachi</option>
               </select>
             </div>
 
@@ -663,6 +670,9 @@
       </div>
     </section>
 
+    <!-- Comprehensive 100+ Internal Linking Network -->
+    <InternalLinkingHub />
+
     <!-- Global Property Detail Modal -->
     <PropertyDetailModal 
       v-if="selectedProperty" 
@@ -685,6 +695,7 @@ import { areaGuidesData } from '../data/areaGuidesData.js'
 import PropertyDetailModal from '../components/PropertyDetailModal.vue'
 import CinematicShowreel from '../components/CinematicShowreel.vue'
 import GoogleReviews from '../components/GoogleReviews.vue'
+import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 
 const router = useRouter()
 
@@ -710,7 +721,7 @@ const goToProperties = () => {
   const loc = searchLocation.value
   let query = { purpose }
   if (loc !== 'All') {
-    if (['Lahore', 'Islamabad', 'Karachi'].includes(loc)) {
+    if (['Lahore', 'Islamabad', 'Rawalpindi', 'Karachi'].includes(loc)) {
       query.city = loc
     } else {
       query.society = loc

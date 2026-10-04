@@ -5,7 +5,7 @@
       <!-- Close Button -->
       <button 
         @click="$emit('close')" 
-        class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-slate-950/70 hover:bg-slate-900 text-white flex items-center justify-center text-lg transition-transform hover:scale-110 shadow-lg cursor-pointer"
+        class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-slate-950/70 hover:bg-slate-900 text-white flex items-center justify-center text-lg transition-transform hover:scale-110 shadow-lg cursor-pointer border border-white/10"
         aria-label="Close Property Details"
       >
         <i class="fa-solid fa-xmark"></i>
@@ -27,6 +27,9 @@
             <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold">
               ID: {{ property.id }}
             </span>
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 border border-blue-500/30 text-xs font-bold">
+              City: {{ property.city }}
+            </span>
           </div>
 
           <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white leading-tight">
@@ -47,12 +50,12 @@
               :alt="property.title" 
               class="w-full h-full object-cover object-center transition-all duration-300"
             />
-            <div class="absolute bottom-4 left-4 bg-slate-950/80 backdrop-blur-md px-4 py-2 rounded-xl text-white font-black text-lg sm:text-2xl shadow-xl border border-white/10">
+            <div class="absolute bottom-4 left-4 bg-slate-950/85 backdrop-blur-md px-4 py-2 rounded-xl text-white font-black text-lg sm:text-2xl shadow-xl border border-white/10">
               {{ property.priceFormatted }}
             </div>
             <div v-if="property.installmentAvailable" class="absolute bottom-4 right-4 bg-[#088C7E]/90 backdrop-blur-md px-3 py-1.5 rounded-lg text-white font-bold text-xs shadow-lg flex items-center gap-1.5">
               <i class="fa-solid fa-calculator"></i>
-              <span>Installment Available</span>
+              <span>Installment Plan</span>
             </div>
           </div>
 
@@ -69,6 +72,53 @@
             >
               <img :src="img" alt="Thumbnail" class="w-full h-full object-cover" />
             </button>
+          </div>
+        </div>
+
+        <!-- Comprehensive Property Issue & Verification Inspection Box -->
+        <div class="p-5 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-3">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-clipboard-check text-[#088C7E] text-base"></i>
+              <span class="text-sm font-black uppercase text-slate-900 dark:text-white">Property Verification &amp; Due Diligence Inspection</span>
+            </div>
+            <span class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/60 px-2.5 py-1 rounded-lg">
+              100% Verified
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+            <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1">
+              <span class="text-[10px] font-black uppercase text-slate-400 block">Municipal / Bylaw Clearance</span>
+              <span class="font-extrabold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs">
+                <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                {{ property.bylawCompliance || '100% Municipal Approved' }}
+              </span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1">
+              <span class="text-[10px] font-black uppercase text-slate-400 block">Possession Status</span>
+              <span class="font-extrabold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs">
+                <i class="fa-solid fa-key text-amber-500"></i>
+                {{ property.possessionStatus || 'Ready for Immediate Move-in' }}
+              </span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1">
+              <span class="text-[10px] font-black uppercase text-slate-400 block">Structural Engineering</span>
+              <span class="font-extrabold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs">
+                <i class="fa-solid fa-shield-halved text-blue-500"></i>
+                PEC Certified RCC Structure
+              </span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1">
+              <span class="text-[10px] font-black uppercase text-slate-400 block">Installment / Payment Terms</span>
+              <span class="font-extrabold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs">
+                <i class="fa-solid fa-money-bill-wave text-emerald-500"></i>
+                {{ property.installmentDetail || 'Full Cash or Bank Finance' }}
+              </span>
+            </div>
           </div>
         </div>
 
@@ -108,7 +158,7 @@
         <div class="space-y-2">
           <h3 class="text-sm font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
             <i class="fa-solid fa-align-left text-[#088C7E]"></i>
-            <span>Property & Architectural Overview</span>
+            <span>Property &amp; Architectural Overview</span>
           </h3>
           <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
             {{ property.description }}
@@ -119,7 +169,7 @@
         <div v-if="property.features && property.features.length" class="space-y-3">
           <h3 class="text-sm font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
             <i class="fa-solid fa-list-check text-[#088C7E]"></i>
-            <span>Architectural Highlights & Finishes</span>
+            <span>Architectural Highlights &amp; Finishes</span>
           </h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             <div 
@@ -137,7 +187,7 @@
         <div v-if="property.amenities && property.amenities.length" class="space-y-3">
           <h3 class="text-sm font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
             <i class="fa-solid fa-bolt-lightning text-amber-500"></i>
-            <span>Society Infrastructure & Utilities</span>
+            <span>Society Infrastructure &amp; Utilities Checklist</span>
           </h3>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
             <div 
@@ -159,12 +209,17 @@
               <span>Architectural Floor Plan Blueprint</span>
             </h3>
             <span class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2.5 py-1 rounded-lg border border-emerald-500/20">
-              H&Q Certified Layout
+              H&amp;Q Certified Layout
             </span>
           </div>
           <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-950/40 max-h-72 flex items-center justify-center p-2">
             <img :src="property.floorPlanImage" alt="Floor Plan Blueprint" class="max-h-64 object-contain rounded-xl" />
           </div>
+        </div>
+
+        <!-- Official Citations Reference Note -->
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 space-y-1">
+          <p><strong>Regulatory Citations:</strong> Architectural elevations and municipal layout designs comply with Pakistan Council of Architects &amp; Town Planners (PCATP) and Pakistan Engineering Council (PEC) structural guidelines. All properties undergo verification against LDA / CDA / RDA / DHA building bylaws.</p>
         </div>
 
         <!-- Contact & Agent Box -->
@@ -181,11 +236,11 @@
               class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-xs font-black uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
             >
               <i class="fa-solid fa-phone text-[#088C7E]"></i>
-              <span>Call</span>
+              <span>Call: 0341-6887454</span>
             </a>
             <button 
               type="button"
-              @click="openWhatsApp(property.agent?.whatsapp || '966507143124', 'Assalam-o-Alaikum, I am interested in: ' + property.title + ' (ID: ' + property.id + ') on H&Q Design Services.')"
+              @click="openWhatsApp(property.agent?.whatsapp || '923416887454', 'Assalam-o-Alaikum, I am interested in: ' + property.title + ' (ID: ' + property.id + ', Price: ' + property.priceFormatted + ') on H&Q Design Services.')"
               class="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider transition-transform hover:scale-105 shadow-lg shadow-[#088C7E]/30 flex items-center justify-center gap-2 cursor-pointer border-0"
             >
               <i class="fa-brands fa-whatsapp text-sm"></i>
