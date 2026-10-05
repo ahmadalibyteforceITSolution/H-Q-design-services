@@ -1,12 +1,74 @@
 <template>
   <header class="sticky top-0 left-0 right-0 z-50 transition-colors duration-300 shadow-md">
     
-    <!-- TOP UTILITY TIER (Green Bar) -->
-    <div class="bg-[#088C7E] text-white py-2.5 px-4 text-xs">
+    <!-- TOP UTILITY / MOBILE HEADER TIER (Green Bar) -->
+    <div class="bg-[#088C7E] text-white py-2 px-3 sm:px-4 text-xs">
       <div class="max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4">
         
-        <!-- Left Side: Contact Snippets -->
-        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 font-bold text-[11px]">
+        <!-- Mobile Header Bar: Logo on Left, Controls & Hamburger on Right -->
+        <div class="flex lg:hidden items-center justify-between w-full">
+          <router-link to="/" class="flex items-center shrink-0 h-11 py-0.5">
+            <img 
+              :src="logoImg" 
+              alt="H&Q Design Services Logo" 
+              class="h-full w-auto object-contain bg-white/10 rounded-lg p-1 border border-white/20 hover:scale-105 transition-transform"
+            />
+          </router-link>
+
+          <div class="flex items-center gap-2">
+            <!-- Mobile Call Button -->
+            <a 
+              href="tel:03416887454" 
+              class="bg-white/10 hover:bg-white/20 text-white p-2 rounded-lg text-xs border border-white/20 flex items-center justify-center cursor-pointer"
+              title="Call Studio Lahore"
+            >
+              <i class="fa-solid fa-phone text-xs"></i>
+            </a>
+
+            <!-- Mobile WhatsApp Button -->
+            <button 
+              type="button" 
+              @click="openWhatsApp('966507143124')" 
+              class="bg-emerald-600/70 hover:bg-emerald-600 text-white p-2 rounded-lg text-xs border border-white/20 flex items-center justify-center cursor-pointer"
+              title="KSA Architect WhatsApp Desk"
+            >
+              <i class="fa-brands fa-whatsapp text-sm text-emerald-300"></i>
+            </button>
+
+            <!-- Language Dropdown Toggle (Mobile) -->
+            <button 
+              @click="toggleLangDropdown" 
+              class="bg-white/10 hover:bg-white/20 px-2 py-1.5 rounded-lg border border-white/20 cursor-pointer text-[10px] font-bold flex items-center gap-1"
+            >
+              <i class="fa-solid fa-globe text-xs"></i>
+              <span>{{ activeLangLabel }}</span>
+            </button>
+
+            <!-- Theme Switcher -->
+            <button 
+              @click="toggleTheme" 
+              aria-label="Settings Theme Toggle"
+              class="bg-white/10 hover:bg-white/20 p-2 rounded-lg border border-white/20 cursor-pointer text-xs flex items-center justify-center"
+              title="Toggle Light/Dark Theme"
+            >
+              <i v-if="isDark" class="fa-solid fa-sun text-amber-300"></i>
+              <i v-else class="fa-solid fa-gear text-white"></i>
+            </button>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button 
+              @click="mobileMenuOpen = !mobileMenuOpen"
+              class="bg-white/20 hover:bg-white/30 text-white p-2 rounded-lg text-base focus:outline-none cursor-pointer flex items-center justify-center border border-white/25 ml-0.5"
+              aria-label="Toggle Navigation Menu"
+            >
+              <i v-if="!mobileMenuOpen" class="fa-solid fa-bars"></i>
+              <i v-else class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Left Side (Desktop): Contact Snippets -->
+        <div class="hidden lg:flex flex-wrap items-center justify-center gap-3 sm:gap-4 font-bold text-[11px]">
           <a href="tel:03416887454" class="hover:text-amber-300 transition-colors flex items-center gap-1.5" title="Call Studio Lahore 1">
             <i class="fa-solid fa-phone text-xs"></i>
             <span>0341-6887454</span>
@@ -23,11 +85,11 @@
           </button>
         </div>
 
-        <!-- Right Side: Secondary Links, Lang, Theme & Controls -->
-        <div class="flex items-center gap-4 shrink-0 font-bold text-[11px]">
+        <!-- Right Side (Desktop): Secondary Links, Lang, Theme & Controls -->
+        <div class="hidden lg:flex items-center gap-4 shrink-0 font-bold text-[11px]">
           
           <!-- Secondary Links (Forum, Blog, Partners, Keywords) -->
-          <div class="hidden lg:flex items-center gap-4 uppercase tracking-wider text-white/90">
+          <div class="flex items-center gap-4 uppercase tracking-wider text-white/90">
             <router-link to="/forum" class="hover:text-amber-300 transition-colors" active-class="text-amber-300 font-black">FORUM Q&A</router-link>
             <router-link to="/blog" class="hover:text-amber-300 transition-colors" active-class="text-amber-300 font-black">BLOG</router-link>
             <router-link to="/partners" class="hover:text-amber-300 transition-colors flex items-center gap-1" active-class="text-amber-300 font-black">
@@ -40,7 +102,7 @@
             </router-link>
           </div>
 
-          <span class="text-white/30 hidden lg:inline">|</span>
+          <span class="text-white/30">|</span>
 
           <!-- Language Selector -->
           <div 
@@ -48,7 +110,7 @@
             class="relative cursor-pointer" 
           >
             <button 
-              @click="toggleLangDropdown"
+              @click="toggleLangDropdown" 
               class="flex items-center gap-1.5 hover:text-amber-300 bg-white/10 px-2.5 py-1 rounded border border-white/20 text-[10px]"
             >
               <i class="fa-solid fa-globe text-xs"></i>
@@ -93,22 +155,13 @@
             <i v-else class="fa-solid fa-gear text-white"></i>
           </button>
 
-          <!-- Mobile Hamburger Toggle -->
-          <button 
-            @click="mobileMenuOpen = !mobileMenuOpen"
-            class="lg:hidden ml-1 text-white text-base focus:outline-none cursor-pointer"
-          >
-            <i v-if="!mobileMenuOpen" class="fa-solid fa-bars"></i>
-            <i v-else class="fa-solid fa-xmark"></i>
-          </button>
-
         </div>
 
       </div>
     </div>
 
-    <!-- MAIN MENU TIER (White/Dark Bar) -->
-    <div class="bg-white dark:bg-slate-950 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <!-- MAIN MENU TIER (White/Dark Bar) - Hidden on Mobile, Shown on Desktop -->
+    <div class="hidden lg:block bg-white dark:bg-slate-950 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20 gap-6">
           
