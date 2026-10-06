@@ -1,5 +1,6 @@
 export const userGscSlugs = [
   // User GSC 404 Reported Slugs from Search Console (Aug - Sep 2026)
+  "article-2526-top-architectural-sun-study-diagram",
   "article-97-5-marla-modern-house-sialkot",
   "article-688-lake-city-building-bylaws",
   "article-1009-interior-design-services-lahore",

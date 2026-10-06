@@ -19,7 +19,15 @@
       "destination": "/go/whatsapp.html"
     },
     {
-      "source": "/:path*",
+      "source": "/blog/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/keywords/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
