@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { allBlogs, getCategoryForKeyword, generateArticleContent, architectureImages } from '../src/data/blogData.js'
+import { allBlogs, getCategoryForKeyword, generateArticleContent, architectureImages, toTitleCase } from '../src/data/blogData.js'
 import { userGscSlugs } from './gsc-urls.js'
 import { homePageData } from './static-home.js'
 import { staticPagesDetailed } from './static-pages-data.js'
@@ -743,17 +743,33 @@ allBlogs.forEach(b => renderSingleBlog(b))
 let gscCustomCount = 0
 userGscSlugs.forEach(customSlug => {
   if (!renderedSlugs.has(customSlug)) {
-    const idMatch = customSlug.match(/^article-(\d+)-/i)
-    let postToRender = null
-    if (idMatch) {
-      const id = parseInt(idMatch[1], 10)
-      postToRender = allBlogs.find(b => b.id === id)
+    const existing = allBlogs.find(b => b.slug === customSlug)
+    if (existing) {
+      renderSingleBlog(existing)
+    } else {
+      const cleanTopic = customSlug.replace(/^article-\d+-/i, '').replace(/^article-/i, '').replace(/-/g, ' ').trim()
+      const displayTitle = toTitleCase(cleanTopic) || 'Modern Architecture & 2026 Construction Guide'
+      const category = getCategoryForKeyword(cleanTopic || 'House Design')
+      const idMatch = customSlug.match(/^article-(\d+)-/i)
+      const id = idMatch ? parseInt(idMatch[1], 10) : (allBlogs.length + gscCustomCount + 1)
+      const img = architectureImages[id % architectureImages.length]
+      const content = generateArticleContent(displayTitle, category, id)
+
+      const virtualBlog = {
+        id: id,
+        slug: customSlug,
+        title: `${displayTitle} - Architecture & 2026 Construction Guide`,
+        category: category,
+        date: 'September 2026',
+        readTime: '6 min read',
+        image: img,
+        excerpt: `Complete 2026 architectural analysis, floor plans, and turnkey construction guidelines for ${displayTitle}. Reviewed by H&Q Senior Architects in Pakistan.`,
+        content: content,
+        keyword: displayTitle
+      }
+      renderSingleBlog(virtualBlog, customSlug)
+      gscCustomCount++
     }
-    if (!postToRender) {
-      postToRender = allBlogs[0]
-    }
-    renderSingleBlog(postToRender, customSlug)
-    gscCustomCount++
   }
 })
 

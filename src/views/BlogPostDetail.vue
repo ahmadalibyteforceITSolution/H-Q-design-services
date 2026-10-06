@@ -48,9 +48,9 @@
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-slate-200/80 dark:border-slate-800/80 shadow-md">
       <div class="space-y-1">
         <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
-          <i class="fa-solid fa-share-nodes text-[#088C7E]"></i> Share Design Blueprint
+          <i class="fa-solid fa-share-nodes text-[#088C7E]"></i> Share This Architectural Guide
         </h4>
-        <p class="text-[11px] text-slate-500 dark:text-slate-400">Share this guide with friends, clients, or contractors.</p>
+        <p class="text-xs text-slate-600 dark:text-slate-300 font-medium">Help overseas Pakistanis and home builders calculate realistic construction costs.</p>
       </div>
       <div class="flex items-center gap-2 flex-wrap">
         <!-- WhatsApp -->
@@ -58,40 +58,40 @@
           :href="'https://api.whatsapp.com/send?text=' + encodeURIComponent(activePost.title + ' - ' + currentUrl)" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm"
+          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm"
           title="Share on WhatsApp"
         >
           <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <!-- LinkedIn -->
-        <a 
-          :href="'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(currentUrl)" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-blue-700 hover:bg-blue-600 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm"
-          title="Share on LinkedIn"
-        >
-          <i class="fa-brands fa-linkedin-in"></i>
         </a>
         <!-- Facebook -->
         <a 
           :href="'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(currentUrl)" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-blue-600 hover:bg-blue-500 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm"
+          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-blue-600 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm"
           title="Share on Facebook"
         >
           <i class="fa-brands fa-facebook-f"></i>
         </a>
-        <!-- Twitter/X -->
+        <!-- Twitter / X -->
         <a 
-          :href="'https://twitter.com/intent/tweet?url=' + encodeURIComponent(currentUrl) + '&text=' + encodeURIComponent(activePost.title)" 
+          :href="'https://twitter.com/intent/tweet?text=' + encodeURIComponent(activePost.title) + '&url=' + encodeURIComponent(currentUrl)" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-900 dark:bg-black hover:scale-105 active:scale-95 border border-slate-700 transition-all text-white text-base shadow-sm"
+          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-900 dark:bg-slate-800 hover:bg-black hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm border border-slate-700"
           title="Share on X"
         >
           <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <!-- LinkedIn -->
+        <a 
+          :href="'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(currentUrl)" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-sky-700 hover:bg-sky-800 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm"
+          title="Share on LinkedIn"
+        >
+          <i class="fa-brands fa-linkedin-in"></i>
         </a>
         <!-- Pinterest -->
         <a 
@@ -198,19 +198,29 @@
     <!-- Comprehensive Internal Linking Network -->
     <InternalLinkingHub />
 
+    <!-- Property Details Interactive Modal -->
+    <PropertyDetailModal 
+      v-if="selectedProperty"
+      :property="selectedProperty"
+      @close="selectedProperty = null"
+      @open-start-project="$emit('open-start-project')"
+    />
+
   </div>
 </template>
 
 <script setup>
 import { ref, computed, watchEffect, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { allBlogs, generateArticleContent, getCategoryForKeyword } from '../data/blogData.js'
+import { allBlogs, generateArticleContent, getCategoryForKeyword, architectureImages, toTitleCase } from '../data/blogData.js'
 import InternalLinkingHub from '../components/InternalLinkingHub.vue'
+import PropertyDetailModal from '../components/PropertyDetailModal.vue'
 
 defineEmits(['open-start-project'])
 
 const route = useRoute()
 const copied = ref(false)
+const selectedProperty = ref(null)
 
 const currentUrl = computed(() => {
   const slug = route.params.slug || ''
@@ -231,33 +241,37 @@ const activePost = computed(() => {
   const slug = route.params.slug
   if (!slug) return allBlogs[0]
 
-  // 1. Exact match by slug
+  // 1. Exact match by slug in pre-defined blogs
   const found = allBlogs.find(b => b.slug === slug)
   if (found) return found
 
-  // 2. Fallback match by article ID (e.g. article-963-...)
-  const matchId = slug.match(/^article-(\d+)-/i)
-  if (matchId) {
-    const id = parseInt(matchId[1], 10)
-    const foundById = allBlogs.find(b => b.id === id)
-    if (foundById) return foundById
+  // 2. Check if clean topic slug matches an existing blog (ignoring legacy ID differences)
+  const cleanTopicSlug = slug.replace(/^article-\d+-/i, '')
+  const foundByCleanSlug = allBlogs.find(b => b.slug.replace(/^article-\d+-/i, '') === cleanTopicSlug)
+  if (foundByCleanSlug) {
+    return {
+      ...foundByCleanSlug,
+      slug: slug // Keep the requested slug so canonical tag matches the requested URL
+    }
   }
 
   // 3. Dynamic generation for any requested slug or keyword
   const cleanTopic = slug.replace(/^article-\d+-/i, '').replace(/-/g, ' ').trim()
-  const displayTitle = cleanTopic ? cleanTopic.charAt(0).toUpperCase() + cleanTopic.slice(1) : 'Modern Architecture & Interior Design Guide'
-  const category = getCategoryForKeyword(cleanTopic || 'Interior Design')
-  const content = generateArticleContent(displayTitle, category, 1)
+  const displayTitle = toTitleCase(cleanTopic) || 'Modern Architecture & 2026 Construction Guide'
+  const category = getCategoryForKeyword(cleanTopic || 'House Design')
+  const matchId = slug.match(/^article-(\d+)-/i)
+  const id = matchId ? parseInt(matchId[1], 10) : 1
+  const content = generateArticleContent(displayTitle, category, id)
 
   return {
-    id: 1,
+    id: id,
     slug: slug,
-    title: `${displayTitle} - Architecture & Interior Design Guide`,
+    title: `${displayTitle} - Architecture & 2026 Construction Guide`,
     category: category,
-    date: 'August 15, 2026',
+    date: 'September 2026',
     readTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
-    excerpt: `Complete architectural analysis, technical parameters, and interior design guidelines for ${displayTitle} in Lahore, Pakistan. Written by H&Q Senior Architects.`,
+    image: architectureImages[id % architectureImages.length],
+    excerpt: `Complete 2026 architectural analysis, floor plans, and turnkey construction guidelines for ${displayTitle}. Reviewed by H&Q Senior Architects in Pakistan.`,
     content: content,
     keyword: displayTitle
   }
@@ -476,11 +490,11 @@ const defaultContent = `
   </p>
   <h3>1. Floor Plan Optimization & Bylaw Compliance</h3>
   <p>
-    In societies like DHA and Bahria Town Lahore, structural setbacks, height restrictions, and ventilation shafts must be strictly calculated. Our team utilizes 3ds Max and Revit to create precise 2D blueprints ensuring immediate municipal approval.
+    In societies like DHA and Bahria Town Lahore, structural setbacks, height restrictions, and ventilation shafts must be strictly calculated. Our team creates precise 2D blueprints ensuring immediate municipal approval.
   </p>
   <h3>2. 4K 3D Photorealistic Visualizations</h3>
   <p>
-    Before ground excavation begins, seeing 3D photorealistic renderings of your villa facade and interior rooms prevents costly material alterations. You can preview Spanish tiles, LED illumination, and wooden paneling in realistic 4K lighting.
+    Before ground excavation begins, seeing 3D photorealistic renderings of your villa facade and interior rooms prevents costly material alterations.
   </p>
   <h3>3. Luxury Interior Material Selection</h3>
   <p>

@@ -448,7 +448,10 @@ const route = useRoute()
 const activeKeyword = computed(() => {
   const rawSlug = route.params.slug
   if (!rawSlug) return '5 Marla House Design'
-  return getKeywordBySlug(rawSlug)
+  const found = getKeywordBySlug(rawSlug)
+  if (found) return found
+  const clean = rawSlug.replace(/^article-\d+-/i, '').replace(/-/g, ' ').trim()
+  return clean ? clean.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') : '5 Marla House Design'
 })
 
 // Active Cluster Resolution
