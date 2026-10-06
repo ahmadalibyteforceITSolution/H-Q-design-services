@@ -951,4 +951,10 @@ allFlatKeywords.forEach((kw, i) => {
   renderedKeywordCount++
 })
 
+// 5. Generate dist/404.html as a full SPA fallback so Vercel can never show a generic 404 error
+const fallback404Path = path.join(distDir, '404.html')
+const fallbackHtml = baseTemplate.replace(/<title>.*?<\/title>/s, '<title>H&amp;Q Design Services | Studio Lahore</title>')
+fs.writeFileSync(fallback404Path, fallbackHtml, 'utf8')
+console.log('Successfully generated dist/404.html SPA fallback.')
+
 console.log(`Successfully pre-rendered home page, ${staticPagesDetailed.length} detailed static pages, ${allBlogs.length} dataset blogs, ${renderedKeywordCount} respective keyword pages, and ${gscCustomCount} custom GSC target URLs into dist/!`)

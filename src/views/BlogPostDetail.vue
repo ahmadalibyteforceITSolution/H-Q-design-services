@@ -238,7 +238,14 @@ const copyLink = () => {
 }
 
 const activePost = computed(() => {
-  const slug = route.params.slug
+  let slug = route.params.slug
+  if (!slug && route.params.pathMatch) {
+    const pm = Array.isArray(route.params.pathMatch) ? route.params.pathMatch.join('/') : route.params.pathMatch
+    slug = pm.split('/').filter(Boolean).pop()
+  }
+  if (!slug && typeof window !== 'undefined') {
+    slug = window.location.pathname.split('/').filter(Boolean).pop()
+  }
   if (!slug) return allBlogs[0]
 
   // 1. Exact match by slug in pre-defined blogs
@@ -246,8 +253,8 @@ const activePost = computed(() => {
   if (found) return found
 
   // 2. Check if clean topic slug matches an existing blog (ignoring legacy ID differences)
-  const cleanTopicSlug = slug.replace(/^article-\d+-/i, '')
-  const foundByCleanSlug = allBlogs.find(b => b.slug.replace(/^article-\d+-/i, '') === cleanTopicSlug)
+  const cleanTopicSlug = slug.replace(/^article-\d+-/i, '').replace(/^article-/i, '')
+  const foundByCleanSlug = allBlogs.find(b => b.slug.replace(/^article-\d+-/i, '').replace(/^article-/i, '') === cleanTopicSlug)
   if (foundByCleanSlug) {
     return {
       ...foundByCleanSlug,
@@ -256,7 +263,7 @@ const activePost = computed(() => {
   }
 
   // 3. Dynamic generation for any requested slug or keyword
-  const cleanTopic = slug.replace(/^article-\d+-/i, '').replace(/-/g, ' ').trim()
+  const cleanTopic = slug.replace(/^article-\d+-/i, '').replace(/^article-/i, '').replace(/-/g, ' ').trim()
   const displayTitle = toTitleCase(cleanTopic) || 'Modern Architecture & 2026 Construction Guide'
   const category = getCategoryForKeyword(cleanTopic || 'House Design')
   const matchId = slug.match(/^article-(\d+)-/i)

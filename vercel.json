@@ -7,10 +7,6 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "/api/:path*"
-    },
-    {
       "source": "/sitemap_index.xml",
       "destination": "/sitemap.xml"
     },
@@ -19,16 +15,16 @@
       "destination": "/go/whatsapp.html"
     },
     {
-      "source": "/blog/:path*",
-      "destination": "/index.html"
+      "source": "/blog/(.*)",
+      "destination": "/"
     },
     {
-      "source": "/keywords/:path*",
-      "destination": "/index.html"
+      "source": "/keywords/(.*)",
+      "destination": "/"
     },
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/"
     }
   ],
   "headers": [

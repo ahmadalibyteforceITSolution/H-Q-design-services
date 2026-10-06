@@ -258,6 +258,19 @@ const routes = [
       description: 'Read 100% verified 5.0-star Google reviews for H&Q Design Services Lahore. Homeowners and commercial clients praise our 3D elevations, floor plans, and turnkey construction.',
       keywords: 'H&Q Design Services reviews, Google reviews H&Q, best architects in Lahore reviews, architect rating Lahore, architectural firm reviews DHA Lahore'
     }
+  },
+  {
+    path: '/article-:slug(.*)',
+    redirect: to => `/blog/article-${to.params.slug}`
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'DynamicCatchAll',
+    component: BlogPostDetail,
+    meta: {
+      title: 'Architectural Design Guide & Real Estate | H&Q',
+      description: 'Detailed architectural analysis and house layout recommendations from H&Q chief architects in Lahore, Pakistan.'
+    }
   }
 ]
 

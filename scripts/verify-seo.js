@@ -36,8 +36,8 @@ function scanDirectory(dir) {
       const html = fs.readFileSync(fullPath, 'utf8')
       const relPath = fullPath.replace(distDir, '').replace(/\\/g, '/')
 
-      // Skip the /go/ redirection trampoline from canonical check
-      if (!relPath.includes('/go/')) {
+      // Skip the /go/ redirection trampoline and /404.html fallback from canonical check
+      if (!relPath.includes('/go/') && !relPath.includes('404.html')) {
         const canonMatches = [...html.matchAll(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/gi)]
         if (canonMatches.length === 0) {
           missingCanonical++
@@ -79,7 +79,7 @@ function scanDirectory(dir) {
 
       // Check title length
       const titleMatch = html.match(/<title>(.*?)<\/title>/is)
-      if (titleMatch) {
+      if (titleMatch && !relPath.includes('404.html')) {
         const titleText = titleMatch[1].trim()
         if (titleText.length > 60) {
           titlesOver60++
