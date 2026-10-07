@@ -113,7 +113,7 @@
           </button>
           <button 
             type="button"
-            @click="openWhatsApp('966507143124')" 
+            @click="openWhatsApp('923134487315')" 
             class="p-3 rounded-xl bg-emerald-600/20 text-emerald-400 hover:bg-emerald-600/30 transition-all text-sm cursor-pointer border-0"
             title="Chat on WhatsApp"
           >
@@ -209,7 +209,7 @@
           <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
             <div class="text-xs text-slate-500">
               <span>Direct Architect Desk: </span>
-              <strong class="text-slate-900 dark:text-white">+966 50 714 3124</strong>
+              <strong class="text-slate-900 dark:text-white">0313-4487315</strong>
             </div>
             <button 
               @click="requestThisProject"

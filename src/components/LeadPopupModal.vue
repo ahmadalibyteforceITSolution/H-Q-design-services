@@ -21,7 +21,7 @@
                 <div>
                   <div class="flex items-center gap-2">
                     <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-400/20 text-emerald-300 border border-emerald-400/30 uppercase tracking-wider">
-                      🇸🇦 KSA & 🇵🇰 PK Desk
+                      Studio Consultation Desk
                     </span>
                     <span class="flex h-2 w-2 relative">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -51,7 +51,7 @@
                 </div>
                 <h4 class="text-2xl font-black text-slate-900 dark:text-white">Inquiry Submitted Successfully!</h4>
                 <p class="text-slate-600 dark:text-slate-300 text-sm max-w-sm mx-auto leading-relaxed">
-                  Your project query has been sent to our team at <strong class="text-slate-900 dark:text-white">asadali28997@gmail.com</strong> and redirected to our Saudi Arabia WhatsApp desk.
+                  Your project query has been sent to our team at <strong class="text-slate-900 dark:text-white">asadali28997@gmail.com</strong> and redirected to our WhatsApp desk (<strong class="text-slate-900 dark:text-white">0313-4487315</strong>).
                 </p>
 
                 <!-- WhatsApp Redirect Button Fallback -->
@@ -63,7 +63,7 @@
                     class="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/25 transition-all"
                   >
                     <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Chat on WhatsApp (+966 50 714 3124)</span>
+                    <span>Chat on WhatsApp (0313-4487315)</span>
                   </a>
                   <button 
                     @click="handleClose"
@@ -78,7 +78,7 @@
               <div v-else class="space-y-4">
                 <div class="space-y-1">
                   <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Leave your contact details and project requirements. Our Senior Architects in <strong class="text-slate-900 dark:text-white">Saudi Arabia (+966 50 714 3124)</strong> & Lahore will respond promptly.
+                    Leave your contact details and project requirements. Our Senior Architects at <strong class="text-slate-900 dark:text-white">0313-4487315</strong> will respond promptly.
                   </p>
                 </div>
 
@@ -90,13 +90,12 @@
                         <i class="fa-solid fa-phone text-[#088C7E] text-xs"></i>
                         Phone / WhatsApp Number <span class="text-rose-500">*</span>
                       </span>
-                      <span class="text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold">🇸🇦 KSA / 🇵🇰 PK / Worldwide</span>
                     </label>
                     <input 
                       v-model="form.phone"
                       type="tel"
                       required
-                      placeholder="e.g. +966 50 714 3124 or 0341-6887454"
+                      placeholder="e.g. 0313-4487315"
                       class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-[#088C7E] focus:ring-2 focus:ring-[#088C7E]/20 text-xs sm:text-sm transition-all"
                     />
                   </div>
@@ -151,7 +150,7 @@
                   >
                     <span v-if="loading" class="inline-block animate-spin mr-1">⟳</span>
                     <i v-else class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>{{ loading ? 'Sending Inquiry...' : 'Submit Query & Send to Saudi WhatsApp' }}</span>
+                    <span>{{ loading ? 'Sending Inquiry...' : 'Submit Query & Send to WhatsApp (0313-4487315)' }}</span>
                   </button>
 
                   <div class="text-center pt-1">
@@ -170,7 +169,7 @@
             <!-- Footer Strip -->
             <div class="px-5 py-2.5 bg-slate-50 dark:bg-slate-900/80 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400">
               <span class="flex items-center gap-1 font-medium">
-                <i class="fa-solid fa-globe text-[#088C7E]"></i> KSA Desk: +966 50 714 3124
+                <i class="fa-solid fa-phone text-[#088C7E]"></i> 0313-4487315
               </span>
               <span class="flex items-center gap-1 font-medium">
                 <i class="fa-solid fa-envelope text-amber-500"></i> asadali28997@gmail.com
@@ -257,11 +256,11 @@ const submitQuery = async () => {
 
   loading.value = true
 
-  const ksaNumber = '966507143124'
+  const studioNumber = '923134487315'
   const currentUrl = typeof window !== 'undefined' ? window.location.href : 'H&Q Website'
   const pageTitle = typeof document !== 'undefined' ? document.title : 'Architectural Design Consultation'
 
-  // 1. Build Pre-formatted WhatsApp message for Saudi Arabia desk
+  // 1. Build Pre-formatted WhatsApp message for Studio desk
   const waText = 
     `🏛️ *NEW ARCHITECTURAL INQUIRY (H&Q DESIGN SERVICES)*\n\n` +
     `📱 *Client Phone / WhatsApp:* ${form.phone}\n` +
@@ -271,7 +270,7 @@ const submitQuery = async () => {
     `🌐 *URL:* ${currentUrl}\n` +
     `⚡ *Sent via Website Quick Consultation Form*`
 
-  whatsappUrl.value = `/go/whatsapp?phone=${ksaNumber}&text=${encodeURIComponent(waText)}`
+  whatsappUrl.value = `https://wa.me/${studioNumber}?text=${encodeURIComponent(waText)}`
 
   // 2. Submit to backend API (/api/contact)
   try {
@@ -283,7 +282,7 @@ const submitQuery = async () => {
         email: form.email,
         phone: form.phone,
         service: 'Quick Architectural Inquiry',
-        location: 'KSA / PK / Overseas',
+        location: 'Lahore / Pakistan / Overseas',
         message: form.message
       })
     }).catch(err => console.warn('Database logging warning:', err))
@@ -305,14 +304,14 @@ const submitQuery = async () => {
         email: form.email,
         message: form.message,
         source_page: currentUrl,
-        sent_to: 'asadali28997@gmail.com & WhatsApp (+966507143124)'
+        sent_to: 'asadali28997@gmail.com & WhatsApp (0313-4487315)'
       })
     }).catch(err => console.warn('Email dispatch warning:', err))
   } catch (err) {
     console.warn('Email error:', err)
   }
 
-  // 4. Trigger WhatsApp redirection to Saudi Arabia number
+  // 4. Trigger WhatsApp redirection to 0313-4487315
   setTimeout(() => {
     loading.value = false
     submitted.value = true

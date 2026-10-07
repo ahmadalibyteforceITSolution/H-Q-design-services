@@ -140,10 +140,10 @@
         </div>
         <button 
           type="button"
-          @click="openWhatsApp('966507143124')" 
+          @click="openWhatsApp('923134487315')" 
           class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 font-extrabold bg-transparent border-0 cursor-pointer p-0 font-inherit"
         >
-          <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Architect Desk: +966 50 714 3124 →
+          <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Architect Desk: 0313-4487315 →
         </button>
       </div>
 
@@ -157,8 +157,8 @@
           <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot"></i> Lahore Studio, Pakistan</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-calculator text-amber-300"></i> 2026 Construction Cost Calculator</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-city"></i> Verified Plots & New Mega Projects</span>
-          <span class="flex items-center gap-2"><i class="fa-solid fa-phone"></i> Call 0341-6887454</span>
-          <span class="flex items-center gap-2"><i class="fa-solid fa-globe"></i> KSA +966 50 714 3124</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-phone"></i> Call 0313-4487315</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-globe"></i> KSA 0313-4487315</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-handshake text-amber-300"></i> Turnkey Material Specifications</span>
         </div>
         <div class="flex items-center gap-12 text-xs font-bold shrink-0 pr-12">
@@ -166,8 +166,8 @@
           <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot"></i> Lahore Studio, Pakistan</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-calculator text-amber-300"></i> 2026 Construction Cost Calculator</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-city"></i> Verified Plots & New Mega Projects</span>
-          <span class="flex items-center gap-2"><i class="fa-solid fa-phone"></i> Call 0341-6887454</span>
-          <span class="flex items-center gap-2"><i class="fa-solid fa-globe"></i> KSA +966 50 714 3124</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-phone"></i> Call 0313-4487315</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-globe"></i> KSA 0313-4487315</span>
           <span class="flex items-center gap-2"><i class="fa-solid fa-handshake text-amber-300"></i> Turnkey Material Specifications</span>
         </div>
       </div>
@@ -513,7 +513,7 @@
               </button>
               <button 
                 type="button"
-                @click="openWhatsApp(item.agent?.whatsapp || '966507143124', 'Assalam-o-Alaikum, I am interested in: ' + item.title)"
+                @click="openWhatsApp(item.agent?.whatsapp || '923134487315', 'Assalam-o-Alaikum, I am interested in: ' + item.title)"
                 class="px-3.5 py-2.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black transition-transform hover:scale-105 shadow-md flex items-center justify-center cursor-pointer border-0"
                 title="Direct WhatsApp"
               >

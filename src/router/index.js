@@ -171,7 +171,7 @@ const routes = [
     component: Contact,
     meta: {
       title: 'Contact H&Q Design Services | Studio Lahore',
-      description: 'Book a consultation or request an instant design quote from top architects and interior designers in Lahore. Call or WhatsApp 0341-6887454 for house design fees and turnkey quotation.',
+      description: 'Book a consultation or request an instant design quote from top architects and interior designers in Lahore. Call or WhatsApp 0313-4487315 for house design fees and turnkey quotation.',
       keywords: 'Interior Designer Near Me, Architect Near Me, Interior Designer Consultation Lahore, Architect Consultation Lahore, Interior Design Quotation Lahore, House Design Cost Lahore, Interior Designer Charges Lahore, Architect Fees Lahore, Hire Interior Designer Lahore, Hire Architect Lahore'
     }
   },
@@ -413,7 +413,7 @@ router.afterEach((to) => {
       "mainEntity": {
         "@type": "ArchitecturalService",
         "name": "H&Q Design Services",
-        "telephone": ["+923416887454", "+923134487315"],
+        "telephone": ["+923134487315"],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Topaz Block, Park View City & DHA Lahore Studio",
@@ -442,7 +442,7 @@ router.afterEach((to) => {
       "provider": {
         "@type": "ArchitecturalService",
         "name": "H&Q Design Services",
-        "telephone": ["+923416887454", "+923134487315"],
+        "telephone": ["+923134487315"],
         "url": `${baseUrl}/`
       }
     }

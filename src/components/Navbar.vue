@@ -18,7 +18,7 @@
           <div class="flex items-center gap-2">
             <!-- Mobile Call Button -->
             <a 
-              href="tel:03416887454" 
+              href="tel:03134487315" 
               class="bg-white/10 hover:bg-white/20 text-white p-2 rounded-lg text-xs border border-white/20 flex items-center justify-center cursor-pointer"
               title="Call Studio Lahore"
             >
@@ -28,9 +28,9 @@
             <!-- Mobile WhatsApp Button -->
             <button 
               type="button" 
-              @click="openWhatsApp('966507143124')" 
+              @click="openWhatsApp('923134487315')" 
               class="bg-emerald-600/70 hover:bg-emerald-600 text-white p-2 rounded-lg text-xs border border-white/20 flex items-center justify-center cursor-pointer"
-              title="KSA Architect WhatsApp Desk"
+              title="WhatsApp 0313-4487315"
             >
               <i class="fa-brands fa-whatsapp text-sm text-emerald-300"></i>
             </button>
@@ -69,20 +69,10 @@
 
         <!-- Left Side (Desktop): Contact Snippets -->
         <div class="hidden lg:flex flex-wrap items-center justify-center gap-3 sm:gap-4 font-bold text-[11px]">
-          <a href="tel:03416887454" class="hover:text-amber-300 transition-colors flex items-center gap-1.5" title="Call Studio Lahore 1">
-            <i class="fa-solid fa-phone text-xs"></i>
-            <span>0341-6887454</span>
-          </a>
-          <span class="text-white/30 hidden sm:inline">|</span>
-          <a href="tel:03134487315" class="hover:text-amber-300 transition-colors flex items-center gap-1.5" title="Call Studio Lahore 2">
+          <a href="tel:03134487315" class="hover:text-amber-300 transition-colors flex items-center gap-1.5" title="Call Studio Lahore">
             <i class="fa-solid fa-phone text-xs"></i>
             <span>0313-4487315</span>
           </a>
-          <span class="text-white/30 hidden sm:inline">|</span>
-          <button type="button" @click="openWhatsApp('966507143124')" class="hover:text-amber-300 transition-colors flex items-center gap-1.5 bg-transparent border-0 text-inherit p-0 font-inherit cursor-pointer">
-            <i class="fa-brands fa-whatsapp text-sm text-emerald-400"></i>
-            <span>KSA Architect Desk: +966 50 714 3124</span>
-          </button>
         </div>
 
         <!-- Right Side (Desktop): Secondary Links, Lang, Theme & Controls -->

@@ -259,18 +259,18 @@
         <div class="flex items-center gap-3">
           <button 
             type="button"
-            @click="openWhatsApp('923416887454', 'Assalam-o-Alaikum H&Q Design Services, I would like to consult with an architect.')" 
+            @click="openWhatsApp('923134487315', 'Assalam-o-Alaikum H&Q Design Services, I would like to consult with an architect.')" 
             class="px-3.5 py-2 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-600/30 transition-all font-bold flex items-center gap-1.5 cursor-pointer"
           >
             <i class="fa-brands fa-whatsapp text-sm"></i>
             <span>WhatsApp Consultation</span>
           </button>
           <a 
-            href="tel:03416887454" 
+            href="tel:03134487315" 
             class="px-3.5 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white transition-all font-bold flex items-center gap-1.5"
           >
             <i class="fa-solid fa-phone text-xs text-[#088C7E]"></i>
-            <span>0341-6887454</span>
+            <span>0313-4487315</span>
           </a>
           <a 
             href="tel:03134487315" 

@@ -313,7 +313,7 @@
 
               <button 
                 type="button"
-                @click="openWhatsApp(item.agent?.whatsapp || '923416887454', 'Assalam-o-Alaikum, I am inquiring about: ' + item.title + ' (' + item.priceFormatted + ') in ' + item.location + ' on H&Q Design Services.')"
+                @click="openWhatsApp(item.agent?.whatsapp || '923134487315', 'Assalam-o-Alaikum, I am inquiring about: ' + item.title + ' (' + item.priceFormatted + ') in ' + item.location + ' on H&Q Design Services.')"
                 class="px-3.5 py-2 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-bold transition-all shadow flex items-center justify-center gap-1.5 cursor-pointer border-0"
                 aria-label="WhatsApp Inquiry"
               >

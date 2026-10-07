@@ -32,7 +32,7 @@
           At <strong>H&Q Design Services</strong> (accessible from <a href="https://h-q-design-services.vercel.app/" class="text-[#088C7E] hover:underline font-semibold">https://h-q-design-services.vercel.app/</a>), one of our main priorities is the privacy of our visitors. This Privacy Policy document outlines the types of personal and non-personal information collected and recorded by H&Q Design Services and how we use, safeguard, and disclose it.
         </p>
         <p>
-          If you have additional questions or require more information about our Privacy Policy, please contact us directly at <a href="mailto:asadali28997@gmail.com" class="text-[#088C7E] font-semibold hover:underline">asadali28997@gmail.com</a> or call our studio at <a href="tel:03416887454" class="text-[#088C7E] font-semibold hover:underline">+92 341 6887454</a> / <a href="tel:03134487315" class="text-[#088C7E] font-semibold hover:underline">+92 313 4487315</a>.
+          If you have additional questions or require more information about our Privacy Policy, please contact us directly at <a href="mailto:asadali28997@gmail.com" class="text-[#088C7E] font-semibold hover:underline">asadali28997@gmail.com</a> or call our studio at <a href="tel:03134487315" class="text-[#088C7E] font-semibold hover:underline">+92 313 4487315</a> / <a href="tel:03134487315" class="text-[#088C7E] font-semibold hover:underline">+92 313 4487315</a>.
         </p>
       </section>
 
@@ -122,7 +122,7 @@
           H&Q Design Services (HANDQ)<br>
           Studio Location: DHA Lahore & Parkview City, Lahore, Punjab, Pakistan<br>
           Email: asadali28997@gmail.com<br>
-          Phone: +92 341 6887454 | WhatsApp KSA: +966 50 714 3124
+          Phone: +92 313 4487315 | WhatsApp KSA: 0313-4487315
         </p>
         <div class="flex flex-wrap items-center gap-3 pt-2 text-xs font-bold border-t border-slate-200 dark:border-slate-800">
           <router-link to="/" class="text-[#088C7E] hover:underline">← Home</router-link>

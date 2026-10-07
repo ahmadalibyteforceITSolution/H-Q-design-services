@@ -59,18 +59,18 @@
           <div class="flex flex-wrap items-center gap-3 pt-2">
             <button 
               type="button"
-              @click="openWhatsApp('923416887454', 'Inquiry for ' + activeKeyword)" 
+              @click="openWhatsApp('923134487315', 'Inquiry for ' + activeKeyword)" 
               class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-black uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2 cursor-pointer border-0"
             >
               <i class="fa-brands fa-whatsapp text-sm"></i>
               <span>WhatsApp Blueprint Quote</span>
             </button>
             <a 
-              href="tel:03416887454" 
+              href="tel:03134487315" 
               class="px-6 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2"
             >
               <i class="fa-solid fa-phone text-xs"></i>
-              <span>Call: 0341-6887454</span>
+              <span>Call: 0313-4487315</span>
             </a>
             <a 
               href="tel:03134487315" 
@@ -323,11 +323,11 @@
               </a>
 
               <a 
-                href="tel:03416887454" 
+                href="tel:03134487315" 
                 class="w-full py-3 px-4 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg"
               >
                 <i class="fa-solid fa-phone text-xs"></i>
-                <span>Call: 0341-6887454</span>
+                <span>Call: 0313-4487315</span>
               </a>
 
               <a 
@@ -615,7 +615,7 @@ watchEffect(() => {
     "provider": {
       "@type": "ArchitecturalService",
       "name": "H&Q Design Services",
-      "telephone": "+923416887454",
+      "telephone": "+923134487315",
       "url": "https://h-q-design-services.vercel.app/"
     }
   }

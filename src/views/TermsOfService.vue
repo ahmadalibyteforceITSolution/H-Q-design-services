@@ -85,7 +85,7 @@
         </p>
         <p class="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200">
           H&Q Design Services (HANDQ)<br>
-          Email: asadali28997@gmail.com | Phone: +92 341 6887454<br>
+          Email: asadali28997@gmail.com | Phone: +92 313 4487315<br>
           DHA Lahore & Parkview City, Lahore, Punjab, Pakistan
         </p>
         <div class="flex flex-wrap items-center gap-3 pt-2 text-xs font-bold border-t border-slate-200 dark:border-slate-800">

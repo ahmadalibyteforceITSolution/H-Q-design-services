@@ -42,7 +42,7 @@
               </div>
               <h3 class="text-2xl font-bold">Opening WhatsApp Chat...</h3>
               <p class="text-slate-600 dark:text-slate-400 max-w-md mx-auto text-sm">
-                Thank you, <span class="font-semibold text-slate-900 dark:text-white">{{ form.name }}</span>! Opening WhatsApp to send your project details to <strong class="text-emerald-500">+966 50 714 3124</strong>.
+                Thank you, <span class="font-semibold text-slate-900 dark:text-white">{{ form.name }}</span>! Opening WhatsApp to send your project details to <strong class="text-emerald-500">0313-4487315</strong>.
               </p>
               <button 
                 @click="resetAndClose"
@@ -153,7 +153,7 @@
             <!-- Step 3: Contact Information -->
             <div v-else-if="currentStep === 3">
               <h4 class="text-xl font-bold mb-2">Where should we send your initial designs?</h4>
-              <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Submitting will send all project details to Saudi Arabia WhatsApp desk (+966507143124).</p>
+              <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Submitting will send all project details to WhatsApp desk (0313-4487315).</p>
 
               <form @submit.prevent="submitForm" class="space-y-4 mb-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -173,7 +173,7 @@
                       v-model="form.phone" 
                       required 
                       type="tel" 
-                      placeholder="0341-6887454"
+                      placeholder="0313-4487315"
                       class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:border-emerald-500 text-sm"
                     />
                   </div>
@@ -222,12 +222,12 @@
                   </button>
 
                   <button 
-                    type="submit"
-                    :disabled="loading"
+                    type="submit" 
+                    :disabled="loading" 
                     class="px-8 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-all shadow-lg shadow-emerald-500/25 flex items-center gap-2 cursor-pointer"
                   >
                     <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Send Inquiry to WhatsApp (+966507143124)</span>
+                    <span>Send Inquiry to WhatsApp (0313-4487315)</span>
                   </button>
                 </div>
               </form>
@@ -295,7 +295,7 @@ const submitForm = () => {
     `⏰ *Contact Time:* ${form.time}\n` +
     `📝 *Vision / Notes:* ${form.description || '3D consultation requested.'}`
 
-  const targetUrl = `/go/whatsapp?phone=966507143124&text=${encodeURIComponent(waText)}`
+  const targetUrl = `https://wa.me/923134487315?text=${encodeURIComponent(waText)}`
 
   setTimeout(() => {
     loading.value = false

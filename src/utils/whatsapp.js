@@ -3,10 +3,10 @@
  * Opens WhatsApp in a new tab/window for visitors without exposing raw <a> links to SEO crawlers.
  */
 
-export const DEFAULT_WHATSAPP_NUMBER = '966507143124'
-export const PK_WHATSAPP_NUMBER = '923416887454'
-export const PK_SECONDARY_NUMBER = '923134487315'
-export const PK_PHONE_DISPLAY_1 = '0341-6887454'
+export const DEFAULT_WHATSAPP_NUMBER = '923134487315'
+export const PK_WHATSAPP_NUMBER = '923134487315'
+export const PK_PHONE_DISPLAY = '0313-4487315'
+export const PK_PHONE_DISPLAY_1 = '0313-4487315'
 export const PK_PHONE_DISPLAY_2 = '0313-4487315'
 
 export const getWhatsAppUrl = (phone = DEFAULT_WHATSAPP_NUMBER, text = '') => {

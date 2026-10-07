@@ -96,7 +96,7 @@
 
       <!-- 5. WhatsApp Click to Chat -->
       <a 
-        href="https://api.whatsapp.com/send/?phone=966507143124&amp;text=Hello%20H%26Q%20Design%20Services,%20I%20want%20to%20inquire%20about%20architectural%20and%20interior%20design%20services.&amp;type=phone_number&amp;app_absent=0" 
+        href="https://api.whatsapp.com/send/?phone=923134487315&amp;text=Hello%20H%26Q%20Design%20Services,%20I%20want%20to%20inquire%20about%20architectural%20and%20interior%20design%20services.&amp;type=phone_number&amp;app_absent=0" 
         target="_blank" 
         rel="noopener noreferrer"
         aria-label="Chat directly on WhatsApp"
@@ -105,7 +105,7 @@
         <i class="fa-brands fa-whatsapp group-hover:scale-110 transition-transform"></i>
         <div class="absolute right-full mr-3 px-3 py-1.5 rounded-xl bg-slate-950 text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl border border-slate-800 flex items-center gap-1.5">
           <i class="fa-brands fa-whatsapp text-emerald-400"></i>
-          <span>WhatsApp +966 50 714 3124</span>
+          <span>WhatsApp 0313-4487315</span>
         </div>
       </a>
 

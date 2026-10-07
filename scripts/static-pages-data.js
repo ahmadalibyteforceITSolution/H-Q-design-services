@@ -13,7 +13,7 @@ export const staticPagesDetailed = [
         <h2 class="text-xl font-bold text-slate-900 dark:text-white">Log Files & Web Analytics</h2>
         <p>Like most modern website operators, we collect non-personally identifiable server logs including IP addresses, browser variants, ISP details, timestamps, and referring pages to evaluate aggregate website traffic trends and improve user experience.</p>
         <h2 class="text-xl font-bold text-slate-900 dark:text-white">User Rights under GDPR and CCPA</h2>
-        <p>Users have the right to request disclosure, rectification, data portability, or erasure of any personal records maintained by H&Q Design Services. To exercise your rights, contact us at asadali28997@gmail.com or call +92 341 6887454.</p>
+        <p>Users have the right to request disclosure, rectification, data portability, or erasure of any personal records maintained by H&Q Design Services. To exercise your rights, contact us at asadali28997@gmail.com or call 0313-4487315.</p>
       </div>
     `
   },
@@ -54,7 +54,7 @@ export const staticPagesDetailed = [
         <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white">About H&Q Design Services</h1>
         <p class="text-lg font-medium text-[#088C7E]">Crafting Iconic Architecture, Bespoke Interiors & Structural Excellence Across Pakistan.</p>
         <p>Founded with a vision to redefine residential and commercial architecture in Pakistan, <strong>H&Q Design Services (HANDQ)</strong> is a premier multidisciplinary studio based in Lahore. Our team unites licensed PCATP architects, PEC registered structural engineers, and luxury interior stylists.</p>
-        <p>Our studio is located in DHA Lahore and Parkview City, with an international desk supporting clients in Saudi Arabia and the UAE. Call 0341-6887454 or email asadali28997@gmail.com.</p>
+        <p>Our studio is located in DHA Lahore and Parkview City, with an international desk supporting clients in Saudi Arabia and the UAE. Call 0313-4487315 or email asadali28997@gmail.com.</p>
       </div>
     `
   },
@@ -143,12 +143,12 @@ export const staticPagesDetailed = [
   {
     route: 'contact',
     title: 'Contact H&Q Architectural Studio | Lahore',
-    desc: 'Connect with senior architects in Lahore, Pakistan. Call 0341-6887454 or WhatsApp for instant 3D design quotes and plot consultations.',
+    desc: 'Connect with senior architects in Lahore, Pakistan. Call 0313-4487315 or WhatsApp for instant 3D design quotes and plot consultations.',
     body: `
       <div class="py-12 max-w-5xl mx-auto px-4 space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
         <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white">Contact H&Q Design Services</h1>
         <p class="text-lg font-medium text-[#088C7E]">Book An In-Person Consultation at Our Lahore Studio or Online Worldwide.</p>
-        <p>Studio Address: DHA Lahore & Parkview City, Lahore, Punjab, Pakistan. Phone: +92 341 6887454. WhatsApp KSA: +966 50 714 3124.</p>
+        <p>Studio Address: DHA Lahore & Parkview City, Lahore, Punjab, Pakistan. Phone: 0313-4487315. WhatsApp KSA: 0313-4487315.</p>
       </div>
     `
   },

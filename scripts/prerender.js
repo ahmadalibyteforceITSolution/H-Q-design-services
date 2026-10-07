@@ -291,9 +291,9 @@ const sharedInternalLinkingHtml = `
       </div>
       <div>
         <strong style="color:#fff;">Direct Lines:</strong>
-        <a href="tel:03416887454" style="color:#088C7E;text-decoration:none;margin-left:8px;font-weight:bold;">0341-6887454</a> |
         <a href="tel:03134487315" style="color:#088C7E;text-decoration:none;margin-left:8px;font-weight:bold;">0313-4487315</a> |
-        <button type="button" onclick="window.open('https://wa.me/923416887454?text=Assalam-o-Alaikum%20HQ%20Design%20Services','_blank','noopener,noreferrer')" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;color:#10b981;text-decoration:none;margin-left:6px;font-weight:bold;">WhatsApp Consultation</button>
+        <a href="tel:03134487315" style="color:#088C7E;text-decoration:none;margin-left:8px;font-weight:bold;">0313-4487315</a> |
+        <button type="button" onclick="window.open('https://wa.me/923134487315?text=Assalam-o-Alaikum%20HQ%20Design%20Services','_blank','noopener,noreferrer')" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;color:#10b981;text-decoration:none;margin-left:6px;font-weight:bold;">WhatsApp Consultation</button>
       </div>
     </div>
   </section>
@@ -311,7 +311,7 @@ staticPagesDetailed.forEach(p => {
       "@type": "ArchitecturalService",
       "name": "H&Q Design Services Google Reviews & Ratings",
       "url": canonicalUrl,
-      "telephone": ["+923416887454", "+923134487315"]
+      "telephone": ["+923134487315", "+923134487315"]
     }
     extraHeadHtml = `<script type="application/ld+json">${JSON.stringify(reviewsSchema)}</script>`
   } else if (p.route === 'services') {
@@ -323,7 +323,7 @@ staticPagesDetailed.forEach(p => {
       "provider": {
         "@type": "ArchitecturalService",
         "name": "H&Q Design Services",
-        "telephone": ["+923416887454", "+923134487315"],
+        "telephone": ["+923134487315", "+923134487315"],
         "url": "https://h-q-design-services.vercel.app/"
       }
     }
@@ -338,7 +338,7 @@ staticPagesDetailed.forEach(p => {
       "mainEntity": {
         "@type": "ArchitecturalService",
         "name": "H&Q Design Services",
-        "telephone": ["+923416887454", "+923134487315"],
+        "telephone": ["+923134487315", "+923134487315"],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Topaz Block, Park View City & DHA Lahore Studio",
@@ -510,7 +510,7 @@ staticPagesDetailed.forEach(p => {
             <a href="/contact" class="flex-1 text-center bg-[#088C7E] hover:bg-[#07776b] text-white font-bold text-xs py-2 px-3 rounded-lg transition-colors">
               Schedule Inspection
             </a>
-            <button type="button" onclick="window.open('https://wa.me/923416887454?text=${encodeURIComponent('Assalam-o-Alaikum, I am inquiring about property: ' + item.title + ' (' + item.price + ')')}', '_blank', 'noopener,noreferrer')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2 px-3 rounded-lg transition-colors flex items-center justify-center gap-1">
+            <button type="button" onclick="window.open('https://wa.me/923134487315?text=${encodeURIComponent('Assalam-o-Alaikum, I am inquiring about property: ' + item.title + ' (' + item.price + ')')}', '_blank', 'noopener,noreferrer')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2 px-3 rounded-lg transition-colors flex items-center justify-center gap-1">
               WhatsApp
             </button>
           </div>
@@ -702,9 +702,9 @@ const renderSingleBlog = (b, slugOverride = null) => {
         <h4 class="font-extrabold text-lg">Consult With H&Q Senior Architects</h4>
         <p class="text-xs text-slate-300">Plot consultations, 4K elevation rendering, and municipal map approval in DHA & Bahria Town.</p>
         <div class="flex flex-wrap gap-3 pt-2">
-          <a href="tel:03416887454" class="inline-block px-5 py-2.5 rounded-xl bg-[#088C7E] text-white text-xs font-bold uppercase">Call Studio (0341-6887454)</a>
+          <a href="tel:03134487315" class="inline-block px-5 py-2.5 rounded-xl bg-[#088C7E] text-white text-xs font-bold uppercase">Call Studio (0313-4487315)</a>
           <a href="tel:03134487315" class="inline-block px-5 py-2.5 rounded-xl bg-slate-800 text-white text-xs font-bold uppercase">Call (0313-4487315)</a>
-          <button type="button" onclick="window.open('https://wa.me/966507143124','_blank','noopener,noreferrer')" class="inline-block px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase cursor-pointer border-0">KSA WhatsApp Desk</button>
+          <button type="button" onclick="window.open('https://wa.me/923134487315','_blank','noopener,noreferrer')" class="inline-block px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase cursor-pointer border-0">KSA WhatsApp Desk</button>
         </div>
       </div>
 
@@ -785,7 +785,7 @@ allFlatKeywords.forEach((kw, i) => {
   const routePath = `keywords/${slug}`
   const canonicalUrl = `https://h-q-design-services.vercel.app/keywords/${slug}`
   const pageTitle = optimizeTitle(kw, ' | H&Q Studio', 60)
-  const pageDesc = `Looking for ${kw} in Lahore, DHA, or Pakistan? H&Q Design Services provides top-rated architectural designs, 3D elevations, luxury interiors, and turnkey construction. Call or WhatsApp 0341-6887454.`
+  const pageDesc = `Looking for ${kw} in Lahore, DHA, or Pakistan? H&Q Design Services provides top-rated architectural designs, 3D elevations, luxury interiors, and turnkey construction. Call or WhatsApp 0313-4487315.`
   const category = getCategoryForKeyword(kw)
   const img = architectureImages[i % architectureImages.length]
   const content = generateArticleContent(kw, category, i + 1)
@@ -804,7 +804,7 @@ allFlatKeywords.forEach((kw, i) => {
     "provider": {
       "@type": "ArchitecturalService",
       "name": "H&Q Design Services",
-      "telephone": ["+923416887454", "+923134487315"],
+      "telephone": ["+923134487315", "+923134487315"],
       "url": "https://h-q-design-services.vercel.app/"
     }
   }
@@ -917,9 +917,9 @@ allFlatKeywords.forEach((kw, i) => {
         <h4 class="font-extrabold text-lg">Consult With H&Q Senior Architects for ${escapeXml(kw)}</h4>
         <p class="text-xs text-slate-300">Plot consultations, 4K elevation rendering, and municipal map approval in DHA & Bahria Town.</p>
         <div class="flex flex-wrap gap-3 pt-2">
-          <a href="tel:03416887454" class="inline-block px-5 py-2.5 rounded-xl bg-[#088C7E] text-white text-xs font-bold uppercase">Call: 0341-6887454</a>
+          <a href="tel:03134487315" class="inline-block px-5 py-2.5 rounded-xl bg-[#088C7E] text-white text-xs font-bold uppercase">Call: 0313-4487315</a>
           <a href="tel:03134487315" class="inline-block px-5 py-2.5 rounded-xl bg-slate-800 text-white text-xs font-bold uppercase">0313-4487315</a>
-          <button type="button" onclick="window.open('https://wa.me/923416887454?text=${encodeURIComponent('Inquiry for ' + kw)}','_blank','noopener,noreferrer')" class="inline-block px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase cursor-pointer border-0">WhatsApp Consultation</button>
+          <button type="button" onclick="window.open('https://wa.me/923134487315?text=${encodeURIComponent('Inquiry for ' + kw)}','_blank','noopener,noreferrer')" class="inline-block px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase cursor-pointer border-0">WhatsApp Consultation</button>
         </div>
       </div>
 

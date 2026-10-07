@@ -89,7 +89,7 @@
         class="w-full sm:w-auto px-8 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-2 shrink-0 cursor-pointer"
       >
         <i class="fa-brands fa-whatsapp text-lg"></i>
-        <span>Send Quote to WhatsApp (+966507143124)</span>
+        <span>Send Quote to WhatsApp (+923134487315)</span>
       </button>
     </div>
 
@@ -123,7 +123,7 @@ const sendEstimateToWhatsApp = () => {
     `💰 *Estimated Design Fee:* PKR ${estimatedPriceRange.value}\n\n` +
     `Hi H&Q Architects! I would like to book a 3D floor plan review for this plot estimate.`
 
-  const targetUrl = `/go/whatsapp?phone=966507143124&text=${encodeURIComponent(waText)}`
+  const targetUrl = `/go/whatsapp?phone=923134487315&text=${encodeURIComponent(waText)}`
   window.open(targetUrl, '_blank')
 }
 </script>

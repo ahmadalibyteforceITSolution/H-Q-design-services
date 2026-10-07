@@ -43,7 +43,7 @@
             </p>
             <p class="flex items-center gap-2">
               <i class="fa-solid fa-phone text-[#088C7E] text-xs"></i>
-              <span>0341-6887454 | +966 50 714 3124</span>
+              <span>0313-4487315</span>
             </p>
           </div>
         </div>
@@ -129,11 +129,11 @@
           <div class="pt-2 space-y-2">
             <button 
               type="button"
-              @click="openWhatsApp('966507143124')" 
+              @click="openWhatsApp('923134487315')" 
               class="w-full py-2 px-3 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-600/30 transition-all text-xs font-bold flex items-center justify-center gap-2 cursor-pointer"
             >
               <i class="fa-brands fa-whatsapp"></i>
-              <span>KSA WhatsApp Desk</span>
+              <span>WhatsApp 0313-4487315</span>
             </button>
             <router-link 
               to="/contact" 

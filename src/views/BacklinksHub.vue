@@ -365,7 +365,7 @@
       <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center gap-4">
         <button 
           type="button"
-          @click="openWhatsApp('923416887454', 'Hello H&Q Design Services! I would like to exchange backlinks and guest posts with your website.')"
+          @click="openWhatsApp('923134487315', 'Hello H&Q Design Services! I would like to exchange backlinks and guest posts with your website.')"
           class="px-6 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 cursor-pointer border-0"
         >
           <i class="fa-brands fa-whatsapp text-sm"></i>

@@ -14,8 +14,8 @@ export const GOOGLE_BUSINESS = {
   address: 'Topaz Block, Park View City, Multan Road, Lahore, Pakistan',
   mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJg8CWDkSXPw8R1VdS2bYbavw',
   writeReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJg8CWDkSXPw8R1VdS2bYbavw',
-  phone: '0341-6887454',
-  whatsappKSA: '+966 50 714 3124'
+  phone: '0313-4487315',
+  whatsappKSA: '0313-4487315'
 };
 
 export const initialGoogleReviews = [
@@ -210,7 +210,7 @@ export function generateGoogleReviewSchema() {
     'image': 'https://h-q-design-services.vercel.app/logo.png',
     '@id': 'https://h-q-design-services.vercel.app/#business',
     'url': 'https://h-q-design-services.vercel.app/',
-    'telephone': ['+923416887454', '+923134487315'],
+    'telephone': ['+923134487315', '+923134487315'],
     'priceRange': '$$$',
     'address': {
       '@type': 'PostalAddress',

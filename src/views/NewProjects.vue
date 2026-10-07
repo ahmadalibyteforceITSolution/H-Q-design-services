@@ -132,7 +132,7 @@
             <div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
               <button 
                 type="button"
-                @click="openWhatsApp('966507143124', 'Assalam-o-Alaikum, I want brochure and booking details for ' + project.title)"
+                @click="openWhatsApp('923134487315', 'Assalam-o-Alaikum, I want brochure and booking details for ' + project.title)"
                 class="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white font-black text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer border-0"
               >
                 <i class="fa-brands fa-whatsapp text-sm"></i>
@@ -140,7 +140,7 @@
               </button>
 
               <a 
-                href="tel:03416887454"
+                href="tel:03134487315"
                 class="w-full sm:w-auto px-5 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
               >
                 <i class="fa-solid fa-phone text-[#088C7E]"></i>

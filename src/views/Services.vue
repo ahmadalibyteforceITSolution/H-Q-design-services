@@ -206,7 +206,7 @@ onMounted(() => {
     "provider": {
       "@type": "ArchitecturalService",
       "name": "H&Q Design Services",
-      "telephone": "+923416887454",
+      "telephone": "+923134487315",
       "url": "https://h-q-design-services.vercel.app/"
     },
     "hasOfferCatalog": {

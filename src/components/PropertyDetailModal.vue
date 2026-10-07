@@ -232,15 +232,15 @@
 
           <div class="flex items-center gap-3 w-full sm:w-auto">
             <a 
-              :href="'tel:' + (property.agent?.phone || '03416887454')"
+              :href="'tel:' + (property.agent?.phone || '03134487315')"
               class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-xs font-black uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
             >
               <i class="fa-solid fa-phone text-[#088C7E]"></i>
-              <span>Call: 0341-6887454</span>
+              <span>Call: 0313-4487315</span>
             </a>
             <button 
               type="button"
-              @click="openWhatsApp(property.agent?.whatsapp || '923416887454', 'Assalam-o-Alaikum, I am interested in: ' + property.title + ' (ID: ' + property.id + ', Price: ' + property.priceFormatted + ') on H&Q Design Services.')"
+              @click="openWhatsApp(property.agent?.whatsapp || '923134487315', 'Assalam-o-Alaikum, I am interested in: ' + property.title + ' (ID: ' + property.id + ', Price: ' + property.priceFormatted + ') on H&Q Design Services.')"
               class="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider transition-transform hover:scale-105 shadow-lg shadow-[#088C7E]/30 flex items-center justify-center gap-2 cursor-pointer border-0"
             >
               <i class="fa-brands fa-whatsapp text-sm"></i>

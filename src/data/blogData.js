@@ -97,7 +97,7 @@ export const toTitleCase = (str) => {
 export const generateArticleContent = (topic, category, id) => {
   const safeId = typeof id === 'number' && !isNaN(id) ? id : 1
   const t = (topic || '').toLowerCase()
-  const directWhatsAppUrl = 'https://wa.me/923416887454?text=' + encodeURIComponent(`Hello H&Q Design Services! I would like to consult with senior architects regarding: ${topic}`)
+  const directWhatsAppUrl = 'https://wa.me/923134487315?text=' + encodeURIComponent(`Hello H&Q Design Services! I would like to consult with senior architects regarding: ${topic}`)
 
   // 1. Determine Typology & Technical Dimensions
   let sizeType = '5 Marla'
@@ -309,7 +309,7 @@ export const generateArticleContent = (topic, category, id) => {
           <a href="/properties" class="flex-1 py-2 rounded-xl bg-slate-700 hover:bg-slate-600 text-white text-[11px] font-bold text-center transition-colors">
             View Details
           </a>
-          <button type="button" onclick="window.open('https://wa.me/923416887454?text=' + encodeURIComponent('Assalam-o-Alaikum, I am interested in ${p.title} (ID: ${p.id}) related to ${topic}'), '_blank', 'noopener,noreferrer')" class="px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold transition-colors cursor-pointer border-0 flex items-center justify-center">
+          <button type="button" onclick="window.open('https://wa.me/923134487315?text=' + encodeURIComponent('Assalam-o-Alaikum, I am interested in ${p.title} (ID: ${p.id}) related to ${topic}'), '_blank', 'noopener,noreferrer')" class="px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold transition-colors cursor-pointer border-0 flex items-center justify-center">
             <i class="fa-brands fa-whatsapp text-sm"></i>
           </button>
         </div>
@@ -564,8 +564,8 @@ export const generateArticleContent = (topic, category, id) => {
           </p>
         </div>
         <div class="flex flex-wrap items-center gap-3 pt-2">
-          <a href="tel:03416887454" class="px-6 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider transition-all shadow-lg flex items-center gap-2">
-            <i class="fa-solid fa-phone"></i> Call: 0341-6887454
+          <a href="tel:03134487315" class="px-6 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider transition-all shadow-lg flex items-center gap-2">
+            <i class="fa-solid fa-phone"></i> Call: 0313-4487315
           </a>
           <button type="button" onclick="window.open('${directWhatsAppUrl}', '_blank', 'noopener,noreferrer')" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-black uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 cursor-pointer border-0">
             <i class="fa-brands fa-whatsapp"></i> WhatsApp Consultation

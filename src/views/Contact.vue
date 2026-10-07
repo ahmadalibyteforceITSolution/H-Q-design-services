@@ -4,13 +4,13 @@
     <!-- Hero Header -->
     <div class="text-center max-w-3xl mx-auto space-y-4">
       <span class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-[#088C7E]/10 text-[#088C7E] uppercase tracking-wider border border-[#088C7E]/20">
-        Saudi Arabia & Lahore Studio Desk
+        Lahore Studio Consultation Desk
       </span>
       <h1 class="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
         Connect with Our <span class="text-gradient-hq">Senior Architects</span>
       </h1>
       <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
-        Visit our studio in Lahore, Pakistan, or connect with our Saudi Arabia WhatsApp desk and direct Gmail desk.
+        Visit our studio in Lahore, Pakistan, or connect with our WhatsApp desk (0313-4487315) and direct Gmail desk.
       </p>
     </div>
 
@@ -27,9 +27,7 @@
           <p class="text-xs text-slate-500 dark:text-slate-400">Direct phone line for quick plot inquiries & 3D render consultations.</p>
         </div>
         <div class="pt-2 space-y-1">
-          <a href="tel:+966507143124" class="text-sm font-black text-[#088C7E] hover:underline block">🇸🇦 +966 50 714 3124</a>
-          <a href="tel:03416887454" class="text-xs font-semibold text-slate-600 dark:text-slate-400 hover:underline block">🇵🇰 0341-6887454 (Line 1)</a>
-          <a href="tel:03134487315" class="text-xs font-semibold text-slate-600 dark:text-slate-400 hover:underline block">🇵🇰 0313-4487315 (Line 2)</a>
+          <a href="tel:03134487315" class="text-sm font-black text-[#088C7E] hover:underline block">0313-4487315</a>
         </div>
       </div>
 
@@ -40,12 +38,12 @@
             <i class="fa-brands fa-whatsapp"></i>
           </div>
           <h3 class="text-lg font-bold text-slate-900 dark:text-white">WhatsApp Direct Desk</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Send plot dimensions or architectural sketches directly to our Saudi Arabia desk.</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Send plot dimensions or architectural sketches directly to our WhatsApp desk (0313-4487315).</p>
         </div>
         <div class="pt-2">
           <button 
             type="button"
-            @click="openWhatsApp('966507143124')" 
+            @click="openWhatsApp('923134487315')" 
             class="px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold inline-flex items-center gap-2 shadow hover:bg-emerald-500 transition-colors w-full justify-center cursor-pointer border-0"
           >
             <i class="fa-brands fa-whatsapp"></i>
@@ -103,11 +101,11 @@
     <!-- Contact Form & Map Section -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       
-      <!-- Inquiry Form Sending ONLY to Saudi Arabia Number (+966507143124) -->
+      <!-- Inquiry Form -->
       <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
         <div class="space-y-1">
           <h3 class="text-2xl font-black text-slate-900 dark:text-white">Send Us Your Plot Details</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Submitting will send all project inquiry details directly to Saudi Arabia WhatsApp (+966507143124).</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Submitting will send all project inquiry details directly to WhatsApp (0313-4487315).</p>
         </div>
 
         <form @submit.prevent="submitForm" class="space-y-4 text-xs">
@@ -129,7 +127,7 @@
                 v-model="form.phone"
                 type="tel" 
                 required
-                placeholder="03416887454" 
+                placeholder="0313-4487315" 
                 class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-[#088C7E]"
               />
             </div>
@@ -178,11 +176,11 @@
             class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/20 cursor-pointer flex items-center justify-center gap-2"
           >
             <i class="fa-brands fa-whatsapp text-base"></i>
-            <span>Send Details to WhatsApp (+966 50 714 3124)</span>
+            <span>Send Details to WhatsApp (0313-4487315)</span>
           </button>
           
           <p v-if="submitted" class="text-xs text-center text-[#088C7E] font-bold flex items-center justify-center gap-1">
-            <i class="fa-solid fa-circle-check"></i> Redirecting to WhatsApp (+966507143124)...
+            <i class="fa-solid fa-circle-check"></i> Redirecting to WhatsApp (0313-4487315)...
           </p>
         </form>
       </div>
@@ -235,7 +233,7 @@ const submitForm = () => {
     `📝 *Details & Vision:* ${form.value.message || 'Floor plan & 3D render consultation requested.'}`
 
   setTimeout(() => {
-    openWhatsApp('966507143124', waText)
+    openWhatsApp('923134487315', waText)
     submitted.value = false
   }, 400)
 }
