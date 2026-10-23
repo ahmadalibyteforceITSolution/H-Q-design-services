@@ -1,20 +1,21 @@
 <template>
-  <div class="py-12 space-y-20">
+  <div class="py-12 space-y-20 bg-transparent text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
     
-    <!-- About Hero -->
+    <!-- About Hero in Tecture Architectural Style -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="relative rounded-3xl p-8 sm:p-14 bg-slate-950 text-white overflow-hidden border border-slate-800 shadow-2xl">
-        <div class="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="relative rounded-3xl p-8 sm:p-14 bg-gradient-to-br from-slate-900 via-[#121620] to-slate-900 text-white overflow-hidden border border-slate-800 dark:border-white/10 shadow-2xl">
+        <div class="absolute -top-20 -right-20 w-80 h-80 bg-[#C5A880]/15 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-3xl space-y-4">
-          <span class="px-3.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider flex items-center gap-1.5 w-fit">
-            <i class="fa-solid fa-building-user"></i> About HANDQ (H&Q Design Services)
+          <span class="tecture-tag text-[#DFC8A5] flex items-center gap-2 bg-[#0B0E14]/80 px-3.5 py-1.5 rounded-full border border-white/10 w-fit">
+            <i class="fa-solid fa-building-user text-[#C5A880]"></i>
+            <span>About HANDQ · H&amp;Q Design Services</span>
           </span>
-          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
-            Crafting Timeless <span class="text-gradient">Architectural Landmarks</span>
+          <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight">
+            Crafting Timeless <span class="text-gradient-gold">Architectural Landmarks</span>
           </h1>
           <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-            Founded with a vision to redefine modern living and workspace design, H&Q Design Services is Pakistan's premier architecture and luxury interior studio based in Lahore, Pakistan.
+            Founded with a vision to redefine modern spatial design and luxury interior architecture, H&amp;Q Design Services is Pakistan's premier architecture and engineering studio based in Lahore, Pakistan.
           </p>
         </div>
       </div>
@@ -25,43 +26,49 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <div class="lg:col-span-6 space-y-6">
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-500 flex items-center gap-1.5">
-            <i class="fa-solid fa-certificate"></i> Our Heritage & Expertise
+          <span class="tecture-tag text-[#C5A880] flex items-center gap-2">
+            <span class="w-6 h-px bg-[#C5A880]"></span>
+            <span>01 // OUR HERITAGE &amp; EXPERTISE</span>
           </span>
-          <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">
-            Where Precision Architecture Meets Interior Elegance
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white leading-tight">
+            Where Precision Structural Engineering Meets Luxury Elegance
           </h2>
-          <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-            H&Q Design Services has designed over 500+ luxury villas, commercial plazas, and high-end residential interiors across DHA Lahore, Gulberg, and Bahria Town.
+          <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-sm">
+            H&amp;Q Design Services has conceptualized and delivered over 500+ luxury villas, commercial plazas, and high-end residential interiors across DHA Lahore, Gulberg, and Bahria Town.
           </p>
           <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-            We hold ourselves to the highest standards of structural integrity, municipal approval compliance, and aesthetic perfection.
+            We hold ourselves to the highest standards of structural integrity, municipal approval compliance (LDA, CDA, DHA), and aesthetic perfection.
           </p>
 
           <div class="pt-4 grid grid-cols-2 gap-4">
-            <div class="p-4 rounded-2xl glass-card border border-slate-200 dark:border-slate-800">
-              <div class="text-2xl font-bold text-emerald-500">500+</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Villas & Plazas Completed</div>
+            <div class="p-6 rounded-2xl tecture-card space-y-1">
+              <div class="text-3xl font-black text-gradient-gold font-mono">500+</div>
+              <div class="text-xs text-slate-700 dark:text-slate-300 font-extrabold uppercase tracking-wider">Villas &amp; Plazas Completed</div>
             </div>
-            <div class="p-4 rounded-2xl glass-card border border-slate-200 dark:border-slate-800">
-              <div class="text-2xl font-bold text-amber-500">15+ Years</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Engineering Leadership</div>
+            <div class="p-6 rounded-2xl tecture-card space-y-1">
+              <div class="text-3xl font-black text-gradient-gold font-mono">15+ Years</div>
+              <div class="text-xs text-slate-700 dark:text-slate-300 font-extrabold uppercase tracking-wider">Engineering Leadership</div>
             </div>
           </div>
         </div>
 
         <div class="lg:col-span-6">
-          <div class="relative rounded-3xl overflow-hidden glass-card border border-slate-200 dark:border-slate-800 p-2 shadow-2xl">
+          <div class="relative rounded-3xl overflow-hidden tecture-card p-2 shadow-2xl group">
             <img 
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" 
               alt="H&Q Architectural Studio" 
-              class="w-full h-[400px] object-cover rounded-2xl"
+              class="w-full h-[420px] object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700"
             />
-            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-950/80 backdrop-blur-md border border-slate-800 text-white">
-              <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
-                <i class="fa-solid fa-location-dot"></i> DHA Lahore Studio
+            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-[#0B0E14]/90 backdrop-blur-md border border-white/10 text-white flex items-center justify-between">
+              <div>
+                <div class="text-xs font-bold text-[#DFC8A5] uppercase tracking-wider flex items-center gap-1.5">
+                  <i class="fa-solid fa-location-dot text-[#C5A880]"></i> DHA Lahore Studio
+                </div>
+                <div class="text-sm font-semibold text-slate-200">Lahore, Punjab, Pakistan</div>
               </div>
-              <div class="text-sm font-semibold">Lahore, Punjab, Pakistan</div>
+              <span class="px-3 py-1 rounded-full text-[10px] font-black bg-[#C5A880] text-[#0B0E14] uppercase">
+                PEC Verified
+              </span>
             </div>
           </div>
         </div>
@@ -69,19 +76,19 @@
       </div>
     </section>
 
-    <!-- Official Corporate & Lifestyle Partner Showcase (Backlink Spotlight) -->
+    <!-- Official Corporate & Lifestyle Partner Showcase (Preserving Exact Partner Link) -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 text-white space-y-6 shadow-xl">
+      <div class="p-8 sm:p-10 rounded-3xl bg-[#121620] border border-white/10 text-white space-y-6 shadow-xl">
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div class="space-y-2 max-w-2xl">
-            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider">
-              Strategic Partner & Textile Brand
+            <span class="tecture-tag text-[#C5A880]">
+              STRATEGIC PARTNER &amp; TEXTILE BRAND
             </span>
-            <h3 class="text-2xl font-extrabold text-white">
-              Ahmad Cloths - Premium Fabrics & Clothing Brand
+            <h3 class="text-2xl font-black text-white">
+              Ahmad Cloths - Premium Fabrics &amp; Clothing Brand
             </h3>
             <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              We collaborate with premier Pakistani textile manufacturers for high-grade upholstery, curtains, and bespoke luxury fabrics. For the finest men's unstitched suits, designer cotton, wash & wear fabrics, and festive clothing collections, explore <a href="https://ahmad-cloths.vercel.app/" target="_blank" rel="noopener" class="text-emerald-400 underline font-bold hover:text-emerald-300">Ahmad Cloths</a>.
+              We collaborate with premier Pakistani textile manufacturers for high-grade upholstery, curtains, and bespoke luxury fabrics. For the finest men's unstitched suits, designer cotton, wash &amp; wear fabrics, and festive clothing collections, explore <a href="https://ahmad-cloths.vercel.app/" target="_blank" rel="noopener" class="text-[#DFC8A5] underline font-bold hover:text-white">Ahmad Cloths</a>.
             </p>
           </div>
 
@@ -90,7 +97,7 @@
             target="_blank" 
             rel="noopener"
             title="Ahmad Cloths Official Store - Premium Unstitched Fabrics"
-            class="px-6 py-3.5 rounded-2xl bg-[#088C7E] hover:bg-[#066D62] text-white font-black text-xs uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2 shrink-0"
+            class="px-6 py-3.5 rounded-full tecture-btn-gold text-xs flex items-center gap-2 shrink-0 shadow-xl"
           >
             <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
             <span>Visit ahmad-cloths.vercel.app</span>
@@ -99,41 +106,45 @@
       </div>
     </section>
 
-    <!-- Core Values Section -->
+    <!-- Core Engineering Values Section (Tecture Numbered Style) -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       <div class="text-center max-w-2xl mx-auto space-y-2">
-        <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Our Engineering Values</h2>
-        <p class="text-sm text-slate-500 dark:text-slate-400">The core principles guiding every floor plan, 3D render, and interior detail.</p>
+        <span class="tecture-tag text-[#C5A880] block">02 // DESIGN ETHOS</span>
+        <h2 class="text-3xl font-black text-slate-900 dark:text-white">Our Architectural Values</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400">The core principles guiding every blueprint, 3D visualization, and interior space.</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="p-6 rounded-3xl glass-card border border-slate-200 dark:border-slate-800 space-y-3">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl">
+        <div class="p-8 rounded-3xl tecture-card space-y-4 group">
+          <div class="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-white/5 group-hover:bg-[#C5A880] text-[#8C6A38] dark:text-[#DFC8A5] group-hover:text-[#0B0E14] flex items-center justify-center text-xl transition-all">
             <i class="fa-solid fa-ruler-combined"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Precision Planning</h3>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors">Precision Planning</h3>
           <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Exact dimensional accuracy matching society bylaws for DHA and Bahria Town.</p>
         </div>
-        <div class="p-6 rounded-3xl glass-card border border-slate-200 dark:border-slate-800 space-y-3">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl">
+
+        <div class="p-8 rounded-3xl tecture-card space-y-4 group">
+          <div class="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-white/5 group-hover:bg-[#C5A880] text-[#8C6A38] dark:text-[#DFC8A5] group-hover:text-[#0B0E14] flex items-center justify-center text-xl transition-all">
             <i class="fa-solid fa-cube"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white">4K 3D Renderings</h3>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors">4K 3D Renderings</h3>
           <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Photorealistic walkthroughs so you see your building before laying a single brick.</p>
         </div>
-        <div class="p-6 rounded-3xl glass-card border border-slate-200 dark:border-slate-800 space-y-3">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl">
+
+        <div class="p-8 rounded-3xl tecture-card space-y-4 group">
+          <div class="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-white/5 group-hover:bg-[#C5A880] text-[#8C6A38] dark:text-[#DFC8A5] group-hover:text-[#0B0E14] flex items-center justify-center text-xl transition-all">
             <i class="fa-solid fa-gem"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Luxury Finishings</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Handpicked Italian marble, custom woodwork, and bespoke lighting fixtures.</p>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors">Luxury Finishings</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Handpicked Italian marble, custom woodwork, and bespoke architectural illumination.</p>
         </div>
-        <div class="p-6 rounded-3xl glass-card border border-slate-200 dark:border-slate-800 space-y-3">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl">
+
+        <div class="p-8 rounded-3xl tecture-card space-y-4 group">
+          <div class="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-white/5 group-hover:bg-[#C5A880] text-[#8C6A38] dark:text-[#DFC8A5] group-hover:text-[#0B0E14] flex items-center justify-center text-xl transition-all">
             <i class="fa-solid fa-award"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Guaranteed Trust</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Registered architects ensuring transparent pricing and guaranteed delivery timelines.</p>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors">Guaranteed Trust</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Registered PCATP architects ensuring transparent pricing and guaranteed delivery timelines.</p>
         </div>
       </div>
     </section>
@@ -143,38 +154,39 @@
 
     <!-- Studio Contact & Cross-Navigation CTA -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="p-8 sm:p-12 rounded-3xl bg-slate-900 text-white text-center space-y-6 border border-slate-800">
-        <h3 class="text-2xl sm:text-4xl font-extrabold">Visit Our Studio in Lahore</h3>
+      <div class="p-8 sm:p-12 rounded-3xl bg-[#121620] text-white text-center space-y-6 border border-white/10 shadow-2xl">
+        <span class="tecture-tag text-[#C5A880] block">SCHEDULE A MEETING</span>
+        <h3 class="text-2xl sm:text-4xl font-black">Visit Our Studio in Lahore</h3>
         <p class="text-slate-400 max-w-xl mx-auto text-sm">
-          Discuss your 5 Marla, 10 Marla, or 1 Kanal plot floor plans over tea with our chief architects in DHA Lahore or Parkview City.
+          Discuss your 5 Marla, 10 Marla, or 1 Kanal plot floor plans over tea with our chief architects in DHA Lahore or Park View City.
         </p>
         <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
           <router-link 
             to="/contact"
-            class="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm shadow-xl shadow-emerald-500/20 inline-flex items-center gap-2"
+            class="px-8 py-3.5 rounded-full tecture-btn-gold text-xs shadow-xl inline-flex items-center gap-2"
           >
             <i class="fa-solid fa-calendar-check"></i>
             <span>Schedule Studio Visit</span>
           </router-link>
           <router-link 
             to="/services"
-            class="px-6 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 inline-flex items-center gap-2"
+            class="px-6 py-3.5 rounded-full tecture-btn-outline text-xs inline-flex items-center gap-2"
           >
-            <i class="fa-solid fa-compass-drafting text-[#088C7E]"></i>
+            <i class="fa-solid fa-compass-drafting text-[#C5A880]"></i>
             <span>Explore Services</span>
           </router-link>
           <router-link 
             to="/portfolio"
-            class="px-6 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 inline-flex items-center gap-2"
+            class="px-6 py-3.5 rounded-full tecture-btn-outline text-xs inline-flex items-center gap-2"
           >
-            <i class="fa-solid fa-cubes text-amber-400"></i>
+            <i class="fa-solid fa-cubes text-[#C5A880]"></i>
             <span>3D Elevation Portfolio</span>
           </router-link>
           <router-link 
             to="/tools?tab=cost-calc"
-            class="px-6 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 inline-flex items-center gap-2"
+            class="px-6 py-3.5 rounded-full tecture-btn-outline text-xs inline-flex items-center gap-2"
           >
-            <i class="fa-solid fa-calculator text-emerald-400"></i>
+            <i class="fa-solid fa-calculator text-[#C5A880]"></i>
             <span>2026 Cost Calculator</span>
           </router-link>
         </div>

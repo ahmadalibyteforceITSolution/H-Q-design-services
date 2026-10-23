@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-slate-50 text-slate-900 dark:bg-[#090D16] dark:text-slate-100 transition-colors duration-300 font-sans selection:bg-[#088C7E] selection:text-white">
-    <!-- Main Top Navigation -->
+  <div class="min-h-screen flex flex-col bg-[#F8F9FA] dark:bg-[#0B0E14] text-slate-800 dark:text-slate-100 transition-colors duration-300 font-sans selection:bg-[#C5A880] selection:text-[#0B0E14]">
+    <!-- Main Top Navigation (Tecture Style) -->
     <Navbar 
       v-if="!route.meta?.hideHeaderFooter"
       @open-start-project="showLeadModal = true" 
@@ -8,7 +8,7 @@
     />
 
     <!-- Page Content Container with Smooth Router View Transitions -->
-    <main class="flex-1 w-full" :class="{ 'p-4 sm:p-6 bg-slate-950 min-h-screen flex items-center justify-center': route.meta?.hideHeaderFooter }">
+    <main class="flex-1 w-full" :class="{ 'p-4 sm:p-6 bg-[#0B0E14] min-h-screen flex items-center justify-center': route.meta?.hideHeaderFooter }">
       <router-view v-slot="{ Component }">
         <transition name="page-fade" mode="out-in">
           <component 
@@ -20,7 +20,7 @@
       </router-view>
     </main>
 
-    <!-- Main Footer -->
+    <!-- Main Footer (Tecture Style) -->
     <Footer 
       v-if="!route.meta?.hideHeaderFooter"
       @open-start-project="showLeadModal = true" 
@@ -54,11 +54,11 @@
       target="_blank" 
       rel="noopener noreferrer"
       aria-label="Direct WhatsApp Chat with Chief Architect"
-      class="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full bg-emerald-600 text-white shadow-2xl flex items-center justify-center hover:bg-emerald-500 hover:scale-110 active:scale-95 transition-all duration-300 group cursor-pointer"
+      class="hidden md:flex fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full bg-emerald-600 text-white shadow-2xl flex items-center justify-center hover:bg-emerald-500 hover:scale-110 active:scale-95 transition-all duration-300 group cursor-pointer border border-emerald-400/40"
     >
       <i class="fa-brands fa-whatsapp text-2xl group-hover:rotate-12 transition-transform"></i>
-      <span class="absolute left-full ml-3 px-3 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg pointer-events-none border border-slate-800">
-        WhatsApp 0313-4487315
+      <span class="absolute left-full ml-3 px-3 py-1.5 rounded-xl bg-[#121620] text-slate-200 text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-2xl pointer-events-none border border-white/10">
+        WhatsApp: 0313-4487315
       </span>
     </a>
   </div>
@@ -86,16 +86,16 @@ const route = useRoute()
 /* Page Transition Animation */
 .page-fade-enter-active,
 .page-fade-leave-active {
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .page-fade-enter-from {
   opacity: 0;
-  transform: translateY(6px);
+  transform: translateY(8px);
 }
 
 .page-fade-leave-to {
   opacity: 0;
-  transform: translateY(-6px);
+  transform: translateY(-8px);
 }
 </style>

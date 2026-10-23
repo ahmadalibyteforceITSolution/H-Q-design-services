@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bottom-6 right-6 z-50">
+  <div class="fixed bottom-16 right-4 sm:bottom-6 sm:right-6 z-50">
     <!-- Chat Window -->
     <Transition name="slide-up">
       <div 

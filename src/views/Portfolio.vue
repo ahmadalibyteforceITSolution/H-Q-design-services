@@ -1,83 +1,84 @@
 <template>
-  <div class="py-12 space-y-12 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="py-12 space-y-16 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 bg-transparent text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
     
-    <!-- Hero Header -->
+    <!-- Hero Header in Tecture Style -->
     <div class="text-center max-w-3xl mx-auto space-y-4">
-      <span class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-[#088C7E]/10 text-[#088C7E] uppercase tracking-wider border border-[#088C7E]/20">
-        Official Project Portfolio
+      <span class="tecture-tag text-[#8C6A38] dark:text-[#DFC8A5] inline-flex items-center gap-2 bg-white dark:bg-[#121620] px-4 py-1.5 rounded-full border border-slate-200 dark:border-white/10 shadow-sm">
+        <i class="fa-solid fa-cubes text-[#C5A880]"></i>
+        <span>Official Architectural Portfolio</span>
       </span>
-      <h1 class="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
-        Featured <span class="text-gradient-hq">3D Elevation Renders</span> & Maps
+      <h1 class="text-4xl sm:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
+        Featured <span class="text-gradient-gold">3D Elevations</span> &amp; Luxury Blueprints
       </h1>
-      <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
-        Explore 500+ completed residential villas, commercial plazas, and luxury interiors designed by H&Q Studio in DHA & Bahria Town Lahore.
+      <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+        Explore 500+ completed residential villas, commercial plazas, and luxury interiors designed by H&amp;Q Studio in DHA &amp; Bahria Town Lahore.
       </p>
     </div>
 
     <!-- 4K Cinematic Commercial Showcase -->
     <div class="space-y-4">
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-4">
         <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
-          <i class="fa-solid fa-play-circle text-[#088C7E]"></i>
+          <i class="fa-solid fa-play-circle text-[#C5A880]"></i>
           <span>Official 4K Cinematic Showcase</span>
         </h2>
-        <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+        <span class="text-xs font-bold text-[#8C6A38] dark:text-[#DFC8A5] bg-[#C5A880]/15 px-3.5 py-1.5 rounded-full border border-[#C5A880]/30">
           60-Second Full Tour
         </span>
       </div>
       <CinematicShowreel />
     </div>
 
-    <!-- Filter Category Pills -->
-    <div class="flex flex-wrap items-center justify-center gap-2">
+    <!-- Filter Category Pills in Tecture Style -->
+    <div class="flex flex-wrap items-center justify-center gap-2.5 pt-4">
       <button 
         v-for="cat in categories" 
         :key="cat"
         @click="activeCategory = cat"
         :class="[
-          'px-5 py-2.5 rounded-full text-xs font-bold transition-all cursor-pointer border',
+          'px-6 py-3 rounded-full text-xs font-bold transition-all cursor-pointer border tracking-wider uppercase',
           activeCategory === cat 
-            ? 'bg-[#088C7E] text-white border-[#088C7E] shadow-lg shadow-[#088C7E]/30' 
-            : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:border-[#088C7E]'
+            ? 'tecture-btn-gold shadow-xl border-[#C5A880]' 
+            : 'bg-white dark:bg-[#121620] text-slate-800 dark:text-slate-300 border-slate-300 dark:border-white/10 hover:border-[#C5A880] hover:text-slate-900 dark:hover:text-white shadow-sm'
         ]"
       >
         {{ cat }}
       </button>
     </div>
 
-    <!-- Portfolio Listings Grid -->
+    <!-- Portfolio Listings Grid in Tecture Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div 
         v-for="project in filteredProjects" 
         :key="project.id"
-        class="group rounded-3xl overflow-hidden bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+        class="group rounded-3xl overflow-hidden tecture-card flex flex-col justify-between"
       >
         <div>
           <!-- Image Container with Price Badge -->
-          <div class="relative h-64 overflow-hidden cursor-pointer" @click="selectedProject = project">
+          <div class="relative h-72 overflow-hidden cursor-pointer bg-black" @click="selectedProject = project">
             <img 
               :src="project.image" 
               :alt="project.title" 
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div class="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-[#088C7E] text-white text-xs font-black shadow-lg">
+            <div class="absolute top-4 left-4 px-3.5 py-1.5 rounded-full tecture-btn-gold text-[10px] shadow-lg">
               {{ project.price }}
             </div>
-            <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-amber-300 text-xs font-bold border border-amber-500/20 flex items-center gap-1">
-              <i class="fa-solid fa-circle-check text-emerald-400"></i> Verified Listing
+            <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-[#0B0E14]/80 backdrop-blur-md text-[#DFC8A5] text-xs font-bold border border-white/10 flex items-center gap-1.5">
+              <i class="fa-solid fa-circle-check text-[#C5A880]"></i> Verified Project
             </div>
           </div>
 
           <!-- Content Info -->
-          <div class="p-6 space-y-3">
+          <div class="p-6 sm:p-8 space-y-3">
             <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
-              <span class="flex items-center gap-1"><i class="fa-solid fa-location-dot text-[#088C7E]"></i> {{ project.location }}</span>
-              <span class="font-bold text-slate-900 dark:text-white">{{ project.plotSize }}</span>
+              <span class="flex items-center gap-1.5 text-[#8C6A38] dark:text-[#DFC8A5] font-bold"><i class="fa-solid fa-location-dot text-[#C5A880]"></i> {{ project.location }}</span>
+              <span class="font-mono text-slate-900 dark:text-white text-[11px] font-bold">{{ project.plotSize }}</span>
             </div>
 
             <h3 
               @click="selectedProject = project" 
-              class="text-lg font-extrabold text-slate-900 dark:text-white group-hover:text-[#088C7E] transition-colors cursor-pointer"
+              class="text-xl font-black text-slate-900 dark:text-white group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors cursor-pointer line-clamp-1"
             >
               {{ project.title }}
             </h3>
@@ -87,67 +88,67 @@
             </p>
 
             <!-- Specification Badges (Residential vs Commercial) -->
-            <div class="flex flex-wrap items-center gap-3 text-xs text-slate-600 dark:text-slate-400 pt-3 border-t border-slate-200 dark:border-slate-800">
+            <div class="flex flex-wrap items-center gap-3 text-xs text-slate-700 dark:text-slate-300 pt-3 border-t border-slate-200 dark:border-white/10">
               <template v-if="project.isCommercial">
-                <span class="flex items-center gap-1"><i class="fa-solid fa-building text-[#088C7E]"></i> {{ project.type }}</span>
-                <span class="flex items-center gap-1"><i class="fa-solid fa-layer-group text-[#088C7E]"></i> {{ project.floors }}</span>
-                <span class="flex items-center gap-1"><i class="fa-solid fa-square-parking text-[#088C7E]"></i> {{ project.parking }}</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-building text-[#C5A880]"></i> {{ project.type }}</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-layer-group text-[#C5A880]"></i> {{ project.floors }}</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-square-parking text-[#C5A880]"></i> {{ project.parking }}</span>
               </template>
               <template v-else>
-                <span class="flex items-center gap-1"><i class="fa-solid fa-bed text-[#088C7E]"></i> {{ project.beds }}</span>
-                <span class="flex items-center gap-1"><i class="fa-solid fa-bath text-[#088C7E]"></i> {{ project.baths }}</span>
-                <span class="flex items-center gap-1"><i class="fa-solid fa-layer-group text-[#088C7E]"></i> {{ project.floors }}</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-bed text-[#C5A880]"></i> {{ project.beds }}</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-bath text-[#C5A880]"></i> {{ project.baths }}</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-layer-group text-[#C5A880]"></i> {{ project.floors }}</span>
               </template>
             </div>
           </div>
         </div>
 
         <!-- Action Row -->
-        <div class="p-6 pt-0 flex items-center gap-3">
+        <div class="p-6 sm:p-8 pt-0 flex items-center gap-3">
           <button 
             @click="selectedProject = project"
-            class="flex-1 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-bold transition-all text-center flex items-center justify-center gap-2 cursor-pointer shadow"
+            class="flex-1 py-3.5 rounded-full tecture-btn-gold text-xs shadow cursor-pointer text-center flex items-center justify-center gap-2"
           >
             <i class="fa-solid fa-eye text-xs"></i>
-            <span>View 3D Plan</span>
+            <span>View 3D Plan &amp; Specs</span>
           </button>
           <button 
             type="button"
             @click="openWhatsApp('923134487315')" 
-            class="p-3 rounded-xl bg-emerald-600/20 text-emerald-400 hover:bg-emerald-600/30 transition-all text-sm cursor-pointer border-0"
+            class="w-11 h-11 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white transition-all text-sm cursor-pointer flex items-center justify-center shadow-lg shrink-0 border-0"
             title="Chat on WhatsApp"
           >
-            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-whatsapp text-lg"></i>
           </button>
         </div>
       </div>
     </div>
 
     <!-- Next Steps & Technical Planning Bar -->
-    <div class="p-6 sm:p-8 rounded-3xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-4">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#121620] border border-slate-200 dark:border-white/10 space-y-4 shadow-xl">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
         <div>
-          <span class="text-[10px] font-black uppercase text-[#088C7E] tracking-wider">Turnkey Engineering Workflow</span>
-          <h3 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white">Ready to Design or Estimate Your House?</h3>
+          <span class="tecture-tag text-[#8C6A38] dark:text-[#DFC8A5]">TURNKEY ENGINEERING WORKFLOW</span>
+          <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-1">Ready to Design or Estimate Your House?</h3>
         </div>
         <div class="flex flex-wrap items-center gap-3 text-xs font-bold">
-          <router-link to="/tools?tab=cost-calc" class="px-4 py-2.5 rounded-xl bg-[#088C7E] text-white hover:bg-[#066D62] transition-colors flex items-center gap-1.5 shadow">
+          <router-link to="/tools?tab=cost-calc" class="px-5 py-3 rounded-full tecture-btn-gold flex items-center gap-2">
             <i class="fa-solid fa-calculator"></i>
             <span>Calculate Cost</span>
           </router-link>
-          <router-link to="/services" class="px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:text-[#088C7E] transition-colors flex items-center gap-1.5">
-            <i class="fa-solid fa-compass-drafting text-[#088C7E]"></i>
+          <router-link to="/services" class="px-5 py-3 rounded-full tecture-btn-outline flex items-center gap-2">
+            <i class="fa-solid fa-compass-drafting text-[#C5A880]"></i>
             <span>All Services</span>
           </router-link>
-          <router-link to="/area-guides" class="px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:text-[#088C7E] transition-colors flex items-center gap-1.5">
-            <i class="fa-solid fa-location-dot text-amber-500"></i>
+          <router-link to="/area-guides" class="px-5 py-3 rounded-full tecture-btn-outline flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-[#C5A880]"></i>
             <span>Society Bylaws</span>
           </router-link>
-          <router-link to="/case-studies" class="px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:text-[#088C7E] transition-colors flex items-center gap-1.5">
-            <i class="fa-solid fa-file-invoice text-[#088C7E]"></i>
+          <router-link to="/case-studies" class="px-5 py-3 rounded-full tecture-btn-outline flex items-center gap-2">
+            <i class="fa-solid fa-file-invoice text-[#C5A880]"></i>
             <span>Case Studies</span>
           </router-link>
-          <router-link to="/contact" class="px-4 py-2.5 rounded-xl bg-amber-500 text-white hover:bg-amber-400 transition-colors flex items-center gap-1.5 shadow">
+          <router-link to="/contact" class="px-5 py-3 rounded-full tecture-btn-gold flex items-center gap-2">
             <i class="fa-solid fa-calendar-check"></i>
             <span>Book Consultation</span>
           </router-link>
@@ -158,62 +159,64 @@
     <!-- Comprehensive Internal Linking Network -->
     <InternalLinkingHub />
 
-    <!-- Project Detail Modal -->
+    <!-- Project Detail Modal in Tecture Style -->
     <div 
       v-if="selectedProject" 
-      class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-md p-4"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
       @click.self="selectedProject = null"
     >
-      <div class="bg-white dark:bg-slate-900 text-slate-900 dark:text-white max-w-3xl w-full rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl space-y-6 p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+      <div class="bg-white dark:bg-[#121620] text-slate-900 dark:text-slate-100 max-w-3xl w-full rounded-3xl overflow-hidden border border-slate-200 dark:border-white/15 shadow-2xl space-y-6 p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
         <button 
           @click="selectedProject = null" 
-          class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white flex items-center justify-center font-bold text-base"
+          class="absolute top-5 right-5 w-10 h-10 rounded-full bg-slate-100 dark:bg-white/5 hover:bg-[#C5A880] text-slate-600 dark:text-slate-400 hover:text-[#0B0E14] flex items-center justify-center font-bold text-base cursor-pointer border border-slate-200 dark:border-white/10 transition-colors"
         >
           ✕
         </button>
 
-        <div class="rounded-2xl overflow-hidden h-72">
+        <div class="rounded-2xl overflow-hidden h-72 bg-black">
           <img :src="selectedProject.image" :alt="selectedProject.title" class="w-full h-full object-cover" />
         </div>
 
         <div class="space-y-4">
           <div class="flex items-center justify-between">
-            <span class="px-3.5 py-1 rounded-full bg-[#088C7E] text-white text-xs font-black">
+            <span class="px-4 py-1.5 rounded-full tecture-btn-gold text-xs font-black">
               {{ selectedProject.price }}
             </span>
-            <span class="text-xs font-bold text-[#088C7E]">Verified Premium Standard</span>
+            <span class="text-xs font-bold text-[#8C6A38] dark:text-[#DFC8A5] flex items-center gap-1.5">
+              <i class="fa-solid fa-certificate text-[#C5A880]"></i> Verified Premium Standard
+            </span>
           </div>
 
-          <h3 class="text-2xl font-black">{{ selectedProject.title }}</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{{ selectedProject.description }}</p>
+          <h3 class="text-2xl font-black text-slate-900 dark:text-white">{{ selectedProject.title }}</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">{{ selectedProject.description }}</p>
 
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 text-xs font-bold text-center">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-2xl bg-slate-50 dark:bg-[#0B0E14] border border-slate-200 dark:border-white/10 text-xs font-bold text-center">
             <div>
-              <span class="text-slate-400 block text-[10px]">LOCATION</span>
-              <span>{{ selectedProject.location }}</span>
+              <span class="text-slate-500 dark:text-slate-400 block text-[10px] uppercase tracking-wider font-extrabold">LOCATION</span>
+              <span class="text-slate-900 dark:text-white">{{ selectedProject.location }}</span>
             </div>
             <div>
-              <span class="text-slate-400 block text-[10px]">PLOT SCALE</span>
-              <span>{{ selectedProject.plotSize }}</span>
+              <span class="text-slate-500 dark:text-slate-400 block text-[10px] uppercase tracking-wider font-extrabold">PLOT SCALE</span>
+              <span class="text-slate-900 dark:text-white">{{ selectedProject.plotSize }}</span>
             </div>
             <div>
-              <span class="text-slate-400 block text-[10px]">PROJECT TYPE</span>
-              <span>{{ selectedProject.isCommercial ? selectedProject.type : selectedProject.beds + ' / ' + selectedProject.baths }}</span>
+              <span class="text-slate-500 dark:text-slate-400 block text-[10px] uppercase tracking-wider font-extrabold">PROJECT TYPE</span>
+              <span class="text-slate-900 dark:text-white">{{ selectedProject.isCommercial ? selectedProject.type : selectedProject.beds + ' / ' + selectedProject.baths }}</span>
             </div>
             <div>
-              <span class="text-slate-400 block text-[10px]">FLOORS</span>
-              <span>{{ selectedProject.floors }}</span>
+              <span class="text-slate-500 dark:text-slate-400 block text-[10px] uppercase tracking-wider font-extrabold">FLOORS</span>
+              <span class="text-slate-900 dark:text-white">{{ selectedProject.floors }}</span>
             </div>
           </div>
 
-          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
-            <div class="text-xs text-slate-500">
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-200 dark:border-white/10">
+            <div class="text-xs text-slate-600 dark:text-slate-400 font-bold">
               <span>Direct Architect Desk: </span>
-              <strong class="text-slate-900 dark:text-white">0313-4487315</strong>
+              <strong class="text-[#8C6A38] dark:text-[#DFC8A5] font-mono">0313-4487315</strong>
             </div>
             <button 
               @click="requestThisProject"
-              class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider shadow-lg shadow-[#088C7E]/30 cursor-pointer"
+              class="w-full sm:w-auto px-8 py-3.5 rounded-full tecture-btn-gold text-xs shadow-xl cursor-pointer"
             >
               Get Floor Plan Quote
             </button>

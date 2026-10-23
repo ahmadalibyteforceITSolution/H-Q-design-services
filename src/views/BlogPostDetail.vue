@@ -1,56 +1,56 @@
 <template>
-  <div class="py-12 space-y-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="py-12 space-y-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-transparent text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
     
     <!-- Breadcrumb -->
-    <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-slate-500">
-      <router-link to="/" class="hover:text-[#088C7E] flex items-center gap-1">
+    <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 font-bold">
+      <router-link to="/" class="hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] flex items-center gap-1 transition-colors">
         <i class="fa-solid fa-house text-[10px]"></i> Home
       </router-link>
       <span>/</span>
-      <router-link to="/blog" class="hover:text-[#088C7E]">Architectural Guides</router-link>
+      <router-link to="/blog" class="hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] transition-colors">Architectural Guides</router-link>
       <span>/</span>
-      <span class="text-slate-900 dark:text-white font-semibold truncate">{{ activePost.title }}</span>
+      <span class="text-slate-900 dark:text-white font-extrabold truncate">{{ activePost.title }}</span>
     </nav>
 
     <!-- Header -->
     <div class="space-y-4">
       <div class="flex flex-wrap items-center gap-2">
-        <span class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-[#088C7E]/10 text-[#088C7E] border border-[#088C7E]/30 uppercase tracking-wider">
+        <span class="px-3.5 py-1 rounded-full text-xs font-black tecture-btn-gold uppercase tracking-wider">
           {{ activePost.category }}
         </span>
-        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#C5A880]/15 text-[#8C6A38] dark:text-[#DFC8A5] border border-[#C5A880]/30">
           <i class="fa-solid fa-circle-check mr-1 text-[10px]"></i> PCATP Verified
         </span>
       </div>
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white leading-tight">
         {{ activePost.title }}
       </h1>
-      <div class="flex flex-wrap items-center gap-4 text-xs text-slate-500 border-b border-slate-200 dark:border-slate-800 pb-4">
-        <span><i class="fa-solid fa-user-tie text-[#088C7E] mr-1"></i> By H&Q Chief Architect</span>
+      <div class="flex flex-wrap items-center gap-4 text-xs text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-white/10 pb-4 font-semibold">
+        <span><i class="fa-solid fa-user-tie text-[#C5A880] mr-1"></i> By H&amp;Q Chief Architect</span>
         <span>•</span>
-        <span><i class="fa-solid fa-calendar text-[#088C7E] mr-1"></i> {{ activePost.date }}</span>
+        <span><i class="fa-solid fa-calendar text-[#C5A880] mr-1"></i> {{ activePost.date }}</span>
         <span>•</span>
         <span><i class="fa-solid fa-clock text-amber-500 mr-1"></i> {{ activePost.readTime }}</span>
         <span>•</span>
-        <span><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i> DHA Studio, Lahore</span>
+        <span><i class="fa-solid fa-location-dot text-[#C5A880] mr-1"></i> DHA Studio, Lahore</span>
       </div>
     </div>
 
     <!-- Cover Image -->
-    <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 h-80 sm:h-96 shadow-lg relative group">
+    <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 h-80 sm:h-96 shadow-lg relative group bg-black">
       <img :src="activePost.image" :alt="activePost.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-      <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-white text-xs font-medium border border-white/20 flex items-center gap-1.5">
-        <i class="fa-solid fa-camera text-amber-400"></i> H&Q 4K Architectural Visualization
+      <div class="absolute bottom-4 left-4 bg-[#0B0E14]/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-white text-xs font-bold border border-white/20 flex items-center gap-1.5 shadow-xl">
+        <i class="fa-solid fa-camera text-[#C5A880]"></i> H&amp;Q 4K Architectural Visualization
       </div>
     </div>
 
     <!-- Social Sharing Bar (Off-Page SEO & Virality) -->
-    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-slate-200/80 dark:border-slate-800/80 shadow-md">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 shadow-md">
       <div class="space-y-1">
-        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
-          <i class="fa-solid fa-share-nodes text-[#088C7E]"></i> Share This Architectural Guide
+        <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-800 dark:text-slate-200 flex items-center gap-2">
+          <i class="fa-solid fa-share-nodes text-[#C5A880]"></i> Share This Architectural Guide
         </h4>
-        <p class="text-xs text-slate-600 dark:text-slate-300 font-medium">Help overseas Pakistanis and home builders calculate realistic construction costs.</p>
+        <p class="text-xs text-slate-600 dark:text-slate-400 font-medium">Help overseas Pakistanis and home builders calculate realistic construction costs.</p>
       </div>
       <div class="flex items-center gap-2 flex-wrap">
         <!-- WhatsApp -->
@@ -58,7 +58,7 @@
           :href="'https://api.whatsapp.com/send?text=' + encodeURIComponent(activePost.title + ' - ' + currentUrl)" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm"
+          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm cursor-pointer"
           title="Share on WhatsApp"
         >
           <i class="fa-brands fa-whatsapp"></i>
@@ -68,7 +68,7 @@
           :href="'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(currentUrl)" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-blue-600 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm"
+          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-blue-600 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm cursor-pointer"
           title="Share on Facebook"
         >
           <i class="fa-brands fa-facebook-f"></i>
@@ -78,7 +78,7 @@
           :href="'https://twitter.com/intent/tweet?text=' + encodeURIComponent(activePost.title) + '&url=' + encodeURIComponent(currentUrl)" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-900 dark:bg-slate-800 hover:bg-black hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm border border-slate-700"
+          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-900 dark:bg-slate-800 hover:bg-black hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm border border-slate-700 cursor-pointer"
           title="Share on X"
         >
           <i class="fa-brands fa-x-twitter"></i>
@@ -88,7 +88,7 @@
           :href="'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(currentUrl)" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-sky-700 hover:bg-sky-800 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm"
+          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-sky-700 hover:bg-sky-800 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm cursor-pointer"
           title="Share on LinkedIn"
         >
           <i class="fa-brands fa-linkedin-in"></i>
@@ -98,7 +98,7 @@
           :href="'https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(currentUrl) + '&media=' + encodeURIComponent(activePost.image) + '&description=' + encodeURIComponent(activePost.title)" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-red-600 hover:bg-red-500 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm"
+          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-red-600 hover:bg-red-500 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm cursor-pointer"
           title="Pin on Pinterest"
         >
           <i class="fa-brands fa-pinterest-p"></i>
@@ -106,7 +106,7 @@
         <!-- Copy Link -->
         <button 
           @click="copyLink"
-          class="h-10 px-4 rounded-2xl flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 hover:scale-105 active:scale-95 transition-all text-slate-700 dark:text-slate-300 text-xs font-bold shadow-sm border border-slate-200 dark:border-slate-800/60 cursor-pointer"
+          class="h-10 px-4 rounded-2xl flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 hover:scale-105 active:scale-95 transition-all text-slate-800 dark:text-slate-200 text-xs font-bold shadow-sm border border-slate-200 dark:border-white/10 cursor-pointer"
           :title="copied ? 'Link Copied!' : 'Copy Link'"
         >
           <i class="fa-solid" :class="copied ? 'fa-circle-check text-emerald-500 animate-bounce' : 'fa-link'"></i>
@@ -116,17 +116,17 @@
     </div>
 
     <!-- Content -->
-    <article class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 space-y-6 leading-relaxed text-base">
+    <article class="prose dark:prose-invert max-w-none text-slate-800 dark:text-slate-200 space-y-6 leading-relaxed text-base">
       <div v-html="activePost.content || defaultContent"></div>
     </article>
 
     <!-- Related Articles Section (Internal Link Juice Distribution) -->
-    <div class="space-y-6 pt-6 border-t border-slate-200 dark:border-slate-800">
+    <div class="space-y-6 pt-6 border-t border-slate-200 dark:border-white/10">
       <div class="flex items-center justify-between">
         <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
-          <i class="fa-solid fa-newspaper text-[#088C7E]"></i> Related Architectural Guides
+          <i class="fa-solid fa-newspaper text-[#C5A880]"></i> Related Architectural Guides
         </h3>
-        <router-link to="/blog" class="text-xs font-bold text-[#088C7E] hover:underline flex items-center gap-1">
+        <router-link to="/blog" class="text-xs font-bold text-[#8C6A38] dark:text-[#DFC8A5] hover:underline flex items-center gap-1">
           View All 2,000+ Guides <i class="fa-solid fa-arrow-right text-[10px]"></i>
         </router-link>
       </div>
@@ -135,61 +135,61 @@
           v-for="rel in relatedPosts" 
           :key="rel.id" 
           :to="'/blog/' + rel.slug"
-          class="group p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#088C7E] hover:shadow-lg transition-all flex flex-col justify-between space-y-3"
+          class="group p-4 rounded-2xl tecture-card border border-slate-200 dark:border-white/10 hover:border-[#C5A880] hover:shadow-lg transition-all flex flex-col justify-between space-y-3"
         >
           <div class="space-y-2">
-            <div class="rounded-xl overflow-hidden h-32 w-full">
+            <div class="rounded-xl overflow-hidden h-32 w-full bg-black">
               <img :src="rel.image" :alt="rel.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             </div>
-            <span class="text-[10px] font-bold text-[#088C7E] uppercase tracking-wider block">{{ rel.category }}</span>
-            <h4 class="text-xs font-black text-slate-900 dark:text-white line-clamp-2 group-hover:text-[#088C7E] transition-colors">
+            <span class="text-[10px] font-black text-[#8C6A38] dark:text-[#DFC8A5] uppercase tracking-wider block">{{ rel.category }}</span>
+            <h4 class="text-xs font-black text-slate-900 dark:text-white line-clamp-2 group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors leading-snug">
               {{ rel.title }}
             </h4>
           </div>
-          <div class="flex items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-800">
+          <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-200 dark:border-white/10">
             <span>{{ rel.date }}</span>
-            <span class="text-[#088C7E] font-bold flex items-center gap-1">Read <i class="fa-solid fa-chevron-right text-[8px]"></i></span>
+            <span class="text-[#8C6A38] dark:text-[#DFC8A5] font-bold flex items-center gap-1">Read <i class="fa-solid fa-chevron-right text-[8px]"></i></span>
           </div>
         </router-link>
       </div>
     </div>
 
     <!-- Trending Architectural Topic Tags & Cross-Links -->
-    <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-4">
+    <div class="p-6 sm:p-8 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 space-y-4 shadow-sm">
       <div class="flex items-center justify-between">
         <h4 class="text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-1.5">
-          <i class="fa-solid fa-tags text-[#088C7E]"></i>
+          <i class="fa-solid fa-tags text-[#C5A880]"></i>
           <span>Related Architectural Topics &amp; Cost Benchmarks</span>
         </h4>
-        <router-link to="/keywords-directory" class="text-xs font-bold text-[#088C7E] hover:underline flex items-center gap-1">
+        <router-link to="/keywords-directory" class="text-xs font-bold text-[#8C6A38] dark:text-[#DFC8A5] hover:underline flex items-center gap-1">
           <span>All 1,000+ Topics</span>
           <i class="fa-solid fa-arrow-right text-[10px]"></i>
         </router-link>
       </div>
       <div class="flex flex-wrap gap-2 text-xs font-semibold">
-        <router-link to="/keywords/5-marla-house-design" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-[#088C7E] hover:border-[#088C7E] transition-all">
+        <router-link to="/keywords/5-marla-house-design" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
           5 Marla House Design
         </router-link>
-        <router-link to="/keywords/10-marla-spanish-villa" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-[#088C7E] hover:border-[#088C7E] transition-all">
+        <router-link to="/keywords/10-marla-spanish-villa" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
           10 Marla Spanish Villa
         </router-link>
-        <router-link to="/keywords/1-kanal-house-plan" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-[#088C7E] hover:border-[#088C7E] transition-all">
+        <router-link to="/keywords/1-kanal-house-plan" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
           1 Kanal Modern House Plan
         </router-link>
-        <router-link to="/keywords/house-construction-cost-in-pakistan" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-[#088C7E] hover:border-[#088C7E] transition-all">
+        <router-link to="/keywords/house-construction-cost-in-pakistan" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
           House Construction Cost 2026
         </router-link>
-        <router-link to="/keywords/interior-designers-in-lahore" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-[#088C7E] hover:border-[#088C7E] transition-all">
+        <router-link to="/keywords/interior-designers-in-lahore" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
           Interior Designers in Lahore
         </router-link>
-        <router-link to="/tools?tab=cost-calc" class="px-3 py-1.5 rounded-xl bg-[#088C7E]/10 border border-[#088C7E]/30 text-[#088C7E] font-bold hover:bg-[#088C7E] hover:text-white transition-all flex items-center gap-1">
+        <router-link to="/tools?tab=cost-calc" class="px-3.5 py-1.5 rounded-full tecture-btn-gold text-[11px] font-bold flex items-center gap-1">
           <i class="fa-solid fa-calculator text-xs"></i>
           <span>Instant Cost Estimator</span>
         </router-link>
-        <router-link to="/portfolio" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-[#088C7E] hover:border-[#088C7E] transition-all">
+        <router-link to="/portfolio" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
           3D House Elevations
         </router-link>
-        <router-link to="/area-guides" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-[#088C7E] hover:border-[#088C7E] transition-all">
+        <router-link to="/area-guides" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
           Society Bylaws Guide
         </router-link>
       </div>

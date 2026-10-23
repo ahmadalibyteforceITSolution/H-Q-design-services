@@ -1,46 +1,54 @@
 <template>
-  <div class="py-12 space-y-20">
+  <div class="py-12 space-y-20 bg-transparent text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
     
-    <!-- Services Hero -->
+    <!-- Services Hero in Tecture Architectural Style -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="relative rounded-3xl p-8 sm:p-14 bg-slate-950 text-white overflow-hidden border border-slate-800 shadow-2xl">
-        <div class="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="relative rounded-3xl p-8 sm:p-14 bg-gradient-to-br from-slate-900 via-[#121620] to-slate-900 text-white overflow-hidden border border-slate-800 dark:border-white/10 shadow-2xl">
+        <div class="absolute -top-20 -right-20 w-80 h-80 bg-[#C5A880]/15 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-3xl space-y-4">
-          <span class="px-3.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider flex items-center gap-1.5 w-fit">
-            <i class="fa-solid fa-compass-drafting"></i> Architecture & Interior Catalog
+          <span class="tecture-tag text-[#DFC8A5] flex items-center gap-2 bg-[#0B0E14]/80 px-3.5 py-1.5 rounded-full border border-white/10 w-fit">
+            <i class="fa-solid fa-compass-drafting text-[#C5A880]"></i>
+            <span>Architecture &amp; Interior Catalog</span>
           </span>
-          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
-            Our Architectural <span class="text-gradient">Services & Deliverables</span>
+          <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight">
+            Our Architectural <span class="text-gradient-gold">Services &amp; Deliverables</span>
           </h1>
           <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-            From preliminary sketch drawings to turnkey interior execution, explore our comprehensive range of design solutions for luxury residences and commercial plazas.
+            From preliminary sketch drawings to turnkey interior execution, explore our comprehensive range of design solutions for luxury residences and commercial plazas in Lahore.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Services Grid -->
+    <!-- Services Grid in Tecture Architectural Cards -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div 
-          v-for="service in fullServices" 
+          v-for="(service, idx) in fullServices" 
           :key="service.id"
-          class="p-8 rounded-3xl glass-card border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 transition-all flex flex-col justify-between space-y-6"
+          class="p-8 sm:p-10 rounded-3xl tecture-card flex flex-col justify-between space-y-6 group"
         >
           <div class="space-y-4">
-            <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-3xl">
-              <i :class="service.icon"></i>
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-3xl font-black text-[#C5A880]">0{{ idx + 1 }}</span>
+              <div class="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-white/5 group-hover:bg-[#C5A880] text-[#8C6A38] dark:text-[#DFC8A5] group-hover:text-[#0B0E14] flex items-center justify-center text-2xl transition-all">
+                <i :class="service.icon"></i>
+              </div>
             </div>
-            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">{{ service.title }}</h3>
+            
+            <h3 class="text-2xl font-black text-slate-900 dark:text-white group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors">
+              {{ service.title }}
+            </h3>
+            
             <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{{ service.desc }}</p>
 
             <!-- Deliverables Pills -->
-            <div class="space-y-2 pt-2">
-              <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Included Deliverables:</span>
-              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700 dark:text-slate-300">
+            <div class="space-y-2 pt-2 border-t border-slate-200 dark:border-white/10">
+              <span class="tecture-tag text-slate-700 dark:text-slate-400 block font-bold">Included Deliverables:</span>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700 dark:text-slate-300 font-medium">
                 <li v-for="item in service.deliverables" :key="item" class="flex items-center gap-2">
-                  <i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i>
+                  <i class="fa-solid fa-circle-check text-[#C5A880] text-xs"></i>
                   <span>{{ item }}</span>
                 </li>
               </ul>
@@ -48,34 +56,34 @@
 
             <!-- Contextual Quick Action Links -->
             <div class="flex flex-wrap items-center gap-2 pt-2 text-[11px] font-semibold text-slate-500 dark:text-slate-400">
-              <router-link to="/portfolio" class="hover:text-[#088C7E] flex items-center gap-1">
-                <i class="fa-solid fa-cubes text-[#088C7E]"></i> 3D Elevation Portfolio
+              <router-link to="/portfolio" class="hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] flex items-center gap-1">
+                <i class="fa-solid fa-cubes text-[#C5A880]"></i> 3D Elevation Portfolio
               </router-link>
               <span>·</span>
-              <router-link to="/tools?tab=cost-calc" class="hover:text-[#088C7E] flex items-center gap-1">
-                <i class="fa-solid fa-calculator text-[#088C7E]"></i> Cost Calculator
+              <router-link to="/tools?tab=cost-calc" class="hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] flex items-center gap-1">
+                <i class="fa-solid fa-calculator text-[#C5A880]"></i> Cost Calculator
               </router-link>
               <span>·</span>
-              <router-link to="/case-studies" class="hover:text-[#088C7E] flex items-center gap-1">
-                <i class="fa-solid fa-file-invoice text-[#088C7E]"></i> Case Studies
+              <router-link to="/case-studies" class="hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] flex items-center gap-1">
+                <i class="fa-solid fa-file-invoice text-[#C5A880]"></i> Case Studies
               </router-link>
             </div>
           </div>
 
-          <div class="pt-4 border-t border-slate-200/60 dark:border-slate-800/60 flex items-center justify-between">
-            <span class="text-xs font-semibold text-amber-500 flex items-center gap-1.5">
-              <i class="fa-solid fa-clock"></i> Est. Delivery: {{ service.timeframe }}
+          <div class="pt-6 border-t border-slate-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-4">
+            <span class="text-xs font-bold text-[#8C6A38] dark:text-[#DFC8A5] flex items-center gap-1.5">
+              <i class="fa-solid fa-clock text-[#C5A880]"></i> Est. Delivery: {{ service.timeframe }}
             </span>
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-3">
               <router-link 
                 to="/contact" 
-                class="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition-colors"
+                class="px-4 py-2.5 rounded-full tecture-btn-outline text-xs"
               >
                 Inquire
               </router-link>
               <button 
                 @click="$emit('open-start-project')"
-                class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-md flex items-center gap-1.5"
+                class="px-5 py-2.5 rounded-full tecture-btn-gold text-xs shadow-md flex items-center gap-1.5 cursor-pointer"
               >
                 <span>Get Custom Quote</span>
                 <i class="fa-solid fa-arrow-right text-xs"></i>
@@ -88,11 +96,11 @@
 
     <!-- Strategic Keywords & Technical Standards Link Section -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 border border-slate-800 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+      <div class="p-8 sm:p-10 rounded-3xl bg-[#121620] border border-white/10 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
         <div class="space-y-2 max-w-2xl">
-          <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase bg-[#088C7E] text-white tracking-wider inline-flex items-center gap-1.5">
-            <i class="fa-solid fa-book-bookmark text-amber-300"></i>
-            <span>Architecture & Design Knowledge Index</span>
+          <span class="tecture-tag text-[#C5A880] inline-flex items-center gap-1.5">
+            <i class="fa-solid fa-book-bookmark text-[#C5A880]"></i>
+            <span>Architecture &amp; Design Knowledge Index</span>
           </span>
           <h3 class="text-xl sm:text-2xl font-black text-white">
             Looking for Specific Plot Dimensions, DHA Bylaws or 3D Visualizations?
@@ -104,14 +112,14 @@
         <div class="flex flex-wrap items-center gap-3 shrink-0">
           <router-link 
             to="/portfolio"
-            class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-black uppercase tracking-wider transition-all border border-slate-700 flex items-center gap-2"
+            class="px-5 py-3 rounded-full tecture-btn-outline text-xs flex items-center gap-2"
           >
-            <i class="fa-solid fa-images"></i>
+            <i class="fa-solid fa-images text-[#C5A880]"></i>
             <span>View 3D Portfolio</span>
           </router-link>
           <router-link 
             to="/keywords-directory"
-            class="px-6 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-950 text-xs font-black uppercase tracking-wider transition-all hover:scale-105 shadow-lg flex items-center gap-2"
+            class="px-6 py-3 rounded-full tecture-btn-gold text-xs flex items-center gap-2"
           >
             <span>Explore 10-Cluster Hub</span>
             <i class="fa-solid fa-arrow-right text-xs"></i>

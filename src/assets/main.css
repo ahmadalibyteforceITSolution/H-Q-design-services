@@ -16,12 +16,29 @@
   }
 }
 
-/* Custom Aesthetics & Design Tokens */
+/* Custom Aesthetics & Design Tokens - Tecture Architectural Theme */
 :root {
   --hq-emerald: #088C7E;
   --hq-emerald-dark: #066D62;
   --hq-emerald-light: #E6F4F2;
-  --hq-gold: #D4AF37;
+  --hq-gold: #C5A880;
+  --hq-gold-light: #DFC8A5;
+  --hq-gold-dark: #A58455;
+  --tecture-dark: #0B0E14;
+  --tecture-dark-card: #121620;
+  --tecture-dark-border: rgba(255, 255, 255, 0.08);
+}
+
+.text-hq-gold {
+  color: #C5A880;
+}
+
+.bg-hq-gold {
+  background-color: #C5A880;
+}
+
+.border-hq-gold {
+  border-color: #C5A880;
 }
 
 .text-hq-emerald {
@@ -40,14 +57,20 @@
   border-color: #088C7E;
 }
 
+.text-gradient-gold {
+  background: linear-gradient(135deg, #DFC8A5 0%, #C5A880 50%, #9E7D4E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .text-gradient-hq {
-  background: linear-gradient(135deg, #088C7E 0%, #10B981 50%, #F59E0B 100%);
+  background: linear-gradient(135deg, #DFC8A5 0%, #C5A880 40%, #10B981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #10B981 0%, #3B82F6 50%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #C5A880 0%, #3B82F6 60%, #10B981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -58,8 +81,113 @@
   -webkit-text-fill-color: transparent;
 }
 
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #C5A880 0%, #9E7D4E 100%);
+}
+
 .bg-gradient-brand {
   background: linear-gradient(135deg, #088C7E 0%, #066D62 100%);
+}
+
+/* Tecture Architectural Styling */
+.tecture-tag {
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Dual Light & Dark Mode Tecture Cards */
+.tecture-card {
+  background: #ffffff;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  color: #1e293b;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .tecture-card {
+  background: rgba(18, 22, 32, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+  color: #f1f5f9;
+}
+
+.tecture-card:hover {
+  border-color: rgba(165, 132, 85, 0.5);
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08), 0 0 20px -5px rgba(197, 168, 128, 0.2);
+}
+
+.dark .tecture-card:hover {
+  border-color: rgba(197, 168, 128, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 25px -5px rgba(197, 168, 128, 0.15);
+}
+
+.tecture-btn-gold {
+  background: #C5A880;
+  color: #0B0E14;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.tecture-btn-gold:hover {
+  background: #DFC8A5;
+  box-shadow: 0 10px 25px -5px rgba(197, 168, 128, 0.4);
+  transform: translateY(-2px);
+}
+
+.tecture-btn-outline {
+  background: transparent;
+  border: 1.5px solid #A58455;
+  color: #8C6A38;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.dark .tecture-btn-outline {
+  border: 1px solid rgba(197, 168, 128, 0.5);
+  color: #DFC8A5;
+}
+
+.tecture-btn-outline:hover {
+  background: #C5A880;
+  border-color: #C5A880;
+  color: #0B0E14 !important;
+  transform: translateY(-2px);
+}
+
+/* Reviews Continuous Right-to-Left Auto-Slider */
+@keyframes reviews-slider-rtl {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-reviews-slider {
+  display: flex;
+  width: max-content;
+  animation: reviews-slider-rtl 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-reviews-slider:hover,
+.animate-reviews-slider:focus-within {
+  animation-play-state: paused;
+}
+
+@media (max-width: 640px) {
+  .animate-reviews-slider {
+    animation-duration: 30s;
+  }
 }
 
 .glass-card {

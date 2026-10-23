@@ -42,6 +42,15 @@ export default {
           emerald: '#10B981',
           rose: '#F43F5E',
           amber: '#F59E0B'
+        },
+        tecture: {
+          gold: '#C5A880',
+          'gold-light': '#DFC8A5',
+          'gold-dark': '#9E7D4E',
+          dark: '#0B0E14',
+          card: '#121620',
+          surface: '#1A202C',
+          border: 'rgba(255, 255, 255, 0.08)'
         }
       },
       fontFamily: {

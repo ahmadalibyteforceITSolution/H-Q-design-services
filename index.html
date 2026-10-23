@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" class="dark h-full antialiased">
   <head>
+    <script>
+  (function() {
+    try {
+      var saved = localStorage.getItem('hq-theme');
+      if (saved === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    } catch(e) {}
+  })();
+</script>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://h-q-design-services.vercel.app/favicon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://h-q-design-services.vercel.app/favicon.png">
-    <link rel="shortcut icon" href="https://h-q-design-services.vercel.app/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="/favicon.png?v=2">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://h-q-design-services.vercel.app/favicon.png">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png?v=2">
+    <link rel="icon" type="image/svg+xml" href="/favicon.png?v=2">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Google tag (gtag.js) -->
@@ -111,7 +123,7 @@
         "name": "H&Q Design Services (HANDQ)",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://h-q-design-services.vercel.app/favicon.png",
+          "url": "/favicon.png?v=2",
           "width": 512,
           "height": 512
         }

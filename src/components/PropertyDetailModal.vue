@@ -1,11 +1,11 @@
 <template>
-  <div v-if="property" class="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-fadeIn">
-    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl relative my-8 text-slate-900 dark:text-white flex flex-col max-h-[90vh]">
+  <div v-if="property" class="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-fadeIn">
+    <div class="bg-white dark:bg-[#0E131F] border border-slate-200 dark:border-white/10 w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl relative my-8 text-slate-900 dark:text-white flex flex-col max-h-[90vh]">
       
       <!-- Close Button -->
       <button 
         @click="$emit('close')" 
-        class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-slate-950/70 hover:bg-slate-900 text-white flex items-center justify-center text-lg transition-transform hover:scale-110 shadow-lg cursor-pointer border border-white/10"
+        class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-[#C5A880] text-white hover:text-[#0B0E14] flex items-center justify-center text-lg transition-all shadow-lg cursor-pointer border border-white/10"
         aria-label="Close Property Details"
       >
         <i class="fa-solid fa-xmark"></i>
@@ -17,17 +17,17 @@
         <!-- Header Info -->
         <div class="space-y-3">
           <div class="flex flex-wrap items-center gap-2">
-            <span class="px-3 py-1 rounded-full bg-[#088C7E] text-white text-xs font-black uppercase tracking-wider flex items-center gap-1.5 shadow">
-              <i class="fa-solid fa-circle-check text-amber-300"></i>
+            <span class="px-3 py-1 rounded-full tecture-btn-gold text-xs font-black uppercase tracking-wider flex items-center gap-1.5 shadow">
+              <i class="fa-solid fa-circle-check text-[#0B0E14]"></i>
               <span>{{ property.tag || 'Verified Listing' }}</span>
             </span>
-            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-[#088C7E] border border-[#088C7E]/30 text-xs font-bold uppercase">
+            <span class="px-3 py-1 rounded-full bg-[#C5A880]/15 text-[#8C6A38] dark:text-[#DFC8A5] border border-[#C5A880]/30 text-xs font-bold uppercase">
               {{ property.purpose }}
             </span>
-            <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold">
+            <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 text-xs font-bold">
               ID: {{ property.id }}
             </span>
-            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 border border-blue-500/30 text-xs font-bold">
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 text-xs font-bold">
               City: {{ property.city }}
             </span>
           </div>
@@ -36,24 +36,24 @@
             {{ property.title }}
           </h2>
 
-          <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">
-            <i class="fa-solid fa-location-dot text-rose-500"></i>
+          <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-semibold">
+            <i class="fa-solid fa-location-dot text-[#C5A880]"></i>
             <span>{{ property.location }}</span>
           </div>
         </div>
 
         <!-- Main Gallery Showcase -->
         <div class="space-y-3">
-          <div class="relative h-64 sm:h-96 rounded-2xl overflow-hidden shadow-lg border border-slate-200 dark:border-slate-800 bg-slate-950">
+          <div class="relative h-64 sm:h-96 rounded-2xl overflow-hidden shadow-lg border border-slate-200 dark:border-white/10 bg-slate-950">
             <img 
               :src="selectedImage || property.image" 
               :alt="property.title" 
               class="w-full h-full object-cover object-center transition-all duration-300"
             />
-            <div class="absolute bottom-4 left-4 bg-slate-950/85 backdrop-blur-md px-4 py-2 rounded-xl text-white font-black text-lg sm:text-2xl shadow-xl border border-white/10">
+            <div class="absolute bottom-4 left-4 bg-[#0B0E14]/90 backdrop-blur-md px-4 py-2 rounded-xl text-white font-black text-lg sm:text-2xl shadow-xl border border-white/10">
               {{ property.priceFormatted }}
             </div>
-            <div v-if="property.installmentAvailable" class="absolute bottom-4 right-4 bg-[#088C7E]/90 backdrop-blur-md px-3 py-1.5 rounded-lg text-white font-bold text-xs shadow-lg flex items-center gap-1.5">
+            <div v-if="property.installmentAvailable" class="absolute bottom-4 right-4 bg-[#C5A880]/95 backdrop-blur-md px-3 py-1.5 rounded-lg text-[#0B0E14] font-black text-xs shadow-lg flex items-center gap-1.5 uppercase tracking-wider">
               <i class="fa-solid fa-calculator"></i>
               <span>Installment Plan</span>
             </div>
@@ -67,7 +67,7 @@
               @click="selectedImage = img"
               :class="[
                 'shrink-0 w-20 h-14 rounded-xl overflow-hidden border-2 transition-all cursor-pointer',
-                selectedImage === img ? 'border-[#088C7E] scale-105 shadow-md' : 'border-transparent opacity-70 hover:opacity-100'
+                selectedImage === img ? 'border-[#C5A880] scale-105 shadow-md' : 'border-transparent opacity-70 hover:opacity-100'
               ]"
             >
               <img :src="img" alt="Thumbnail" class="w-full h-full object-cover" />
@@ -76,44 +76,44 @@
         </div>
 
         <!-- Comprehensive Property Issue & Verification Inspection Box -->
-        <div class="p-5 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 space-y-4">
-          <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-3">
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-200 dark:border-white/10 space-y-4 shadow-sm">
+          <div class="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-3">
             <div class="flex items-center gap-2">
-              <i class="fa-solid fa-clipboard-check text-[#088C7E] text-base"></i>
+              <i class="fa-solid fa-clipboard-check text-[#C5A880] text-base"></i>
               <span class="text-sm font-black uppercase text-slate-900 dark:text-white">Property Verification &amp; Due Diligence Inspection</span>
             </div>
-            <span class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/60 px-2.5 py-1 rounded-lg">
+            <span class="text-[11px] font-extrabold text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/60 px-2.5 py-1 rounded-lg border border-emerald-500/20">
               100% Verified
             </span>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
-            <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1">
-              <span class="text-[10px] font-black uppercase text-slate-400 block">Municipal / Bylaw Clearance</span>
+            <div class="p-3 rounded-xl bg-white dark:bg-[#0B0E14] border border-slate-200 dark:border-white/10 space-y-1">
+              <span class="text-[10px] font-black uppercase text-slate-500 dark:text-slate-400 block">Municipal / Bylaw Clearance</span>
               <span class="font-extrabold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs">
                 <i class="fa-solid fa-circle-check text-emerald-500"></i>
                 {{ property.bylawCompliance || '100% Municipal Approved' }}
               </span>
             </div>
 
-            <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1">
-              <span class="text-[10px] font-black uppercase text-slate-400 block">Possession Status</span>
+            <div class="p-3 rounded-xl bg-white dark:bg-[#0B0E14] border border-slate-200 dark:border-white/10 space-y-1">
+              <span class="text-[10px] font-black uppercase text-slate-500 dark:text-slate-400 block">Possession Status</span>
               <span class="font-extrabold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs">
                 <i class="fa-solid fa-key text-amber-500"></i>
                 {{ property.possessionStatus || 'Ready for Immediate Move-in' }}
               </span>
             </div>
 
-            <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1">
-              <span class="text-[10px] font-black uppercase text-slate-400 block">Structural Engineering</span>
+            <div class="p-3 rounded-xl bg-white dark:bg-[#0B0E14] border border-slate-200 dark:border-white/10 space-y-1">
+              <span class="text-[10px] font-black uppercase text-slate-500 dark:text-slate-400 block">Structural Engineering</span>
               <span class="font-extrabold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs">
                 <i class="fa-solid fa-shield-halved text-blue-500"></i>
                 PEC Certified RCC Structure
               </span>
             </div>
 
-            <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1">
-              <span class="text-[10px] font-black uppercase text-slate-400 block">Installment / Payment Terms</span>
+            <div class="p-3 rounded-xl bg-white dark:bg-[#0B0E14] border border-slate-200 dark:border-white/10 space-y-1">
+              <span class="text-[10px] font-black uppercase text-slate-500 dark:text-slate-400 block">Installment / Payment Terms</span>
               <span class="font-extrabold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs">
                 <i class="fa-solid fa-money-bill-wave text-emerald-500"></i>
                 {{ property.installmentDetail || 'Full Cash or Bank Finance' }}
@@ -123,32 +123,32 @@
         </div>
 
         <!-- Key Metrics Strip -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 text-center">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-200 dark:border-white/10 text-center font-bold">
           <div class="space-y-1">
-            <span class="text-[11px] text-slate-500 dark:text-slate-400 font-bold uppercase block">Area Size</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400 uppercase block font-extrabold">Area Size</span>
             <span class="text-base font-extrabold text-slate-900 dark:text-white flex items-center justify-center gap-1">
-              <i class="fa-solid fa-ruler-combined text-[#088C7E] text-xs"></i>
+              <i class="fa-solid fa-ruler-combined text-[#C5A880] text-xs"></i>
               {{ property.size }}
             </span>
           </div>
           <div v-if="property.bedrooms > 0" class="space-y-1">
-            <span class="text-[11px] text-slate-500 dark:text-slate-400 font-bold uppercase block">Bedrooms</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400 uppercase block font-extrabold">Bedrooms</span>
             <span class="text-base font-extrabold text-slate-900 dark:text-white flex items-center justify-center gap-1">
-              <i class="fa-solid fa-bed text-[#088C7E] text-xs"></i>
+              <i class="fa-solid fa-bed text-[#C5A880] text-xs"></i>
               {{ property.bedrooms }} Beds
             </span>
           </div>
           <div v-if="property.bathrooms > 0" class="space-y-1">
-            <span class="text-[11px] text-slate-500 dark:text-slate-400 font-bold uppercase block">Baths</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400 uppercase block font-extrabold">Baths</span>
             <span class="text-base font-extrabold text-slate-900 dark:text-white flex items-center justify-center gap-1">
-              <i class="fa-solid fa-bath text-[#088C7E] text-xs"></i>
+              <i class="fa-solid fa-bath text-[#C5A880] text-xs"></i>
               {{ property.bathrooms }} Baths
             </span>
           </div>
           <div class="space-y-1">
-            <span class="text-[11px] text-slate-500 dark:text-slate-400 font-bold uppercase block">Type / Status</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400 uppercase block font-extrabold">Type / Status</span>
             <span class="text-base font-extrabold text-slate-900 dark:text-white flex items-center justify-center gap-1">
-              <i class="fa-solid fa-house-chimney text-[#088C7E] text-xs"></i>
+              <i class="fa-solid fa-house-chimney text-[#C5A880] text-xs"></i>
               {{ property.type }}
             </span>
           </div>
@@ -157,10 +157,10 @@
         <!-- Description -->
         <div class="space-y-2">
           <h3 class="text-sm font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
-            <i class="fa-solid fa-align-left text-[#088C7E]"></i>
+            <i class="fa-solid fa-align-left text-[#C5A880]"></i>
             <span>Property &amp; Architectural Overview</span>
           </h3>
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
             {{ property.description }}
           </p>
         </div>
@@ -168,16 +168,16 @@
         <!-- Features Checklist -->
         <div v-if="property.features && property.features.length" class="space-y-3">
           <h3 class="text-sm font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
-            <i class="fa-solid fa-list-check text-[#088C7E]"></i>
+            <i class="fa-solid fa-list-check text-[#C5A880]"></i>
             <span>Architectural Highlights &amp; Finishes</span>
           </h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             <div 
               v-for="(feat, idx) in property.features" 
               :key="idx"
-              class="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300"
+              class="flex items-center gap-2 text-xs font-bold text-slate-700 dark:text-slate-300"
             >
-              <i class="fa-solid fa-circle-check text-[#088C7E] text-sm shrink-0"></i>
+              <i class="fa-solid fa-circle-check text-[#C5A880] text-sm shrink-0"></i>
               <span>{{ feat }}</span>
             </div>
           </div>
@@ -193,9 +193,9 @@
             <div 
               v-for="(amenity, idx) in property.amenities" 
               :key="idx"
-              class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 text-xs font-bold text-slate-700 dark:text-slate-200"
+              class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 dark:bg-[#121620] border border-slate-200 dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200"
             >
-              <i :class="amenity.icon + ' text-[#088C7E] text-sm'"></i>
+              <i :class="amenity.icon + ' text-[#C5A880] text-sm'"></i>
               <span>{{ amenity.name }}</span>
             </div>
           </div>
@@ -205,43 +205,43 @@
         <div v-if="property.floorPlanImage" class="space-y-3 pt-2">
           <div class="flex items-center justify-between">
             <h3 class="text-sm font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
-              <i class="fa-solid fa-compass-drafting text-[#088C7E]"></i>
+              <i class="fa-solid fa-compass-drafting text-[#C5A880]"></i>
               <span>Architectural Floor Plan Blueprint</span>
             </h3>
-            <span class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2.5 py-1 rounded-lg border border-emerald-500/20">
+            <span class="text-[11px] font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2.5 py-1 rounded-lg border border-emerald-500/20">
               H&amp;Q Certified Layout
             </span>
           </div>
-          <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-950/40 max-h-72 flex items-center justify-center p-2">
+          <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-950/40 max-h-72 flex items-center justify-center p-2">
             <img :src="property.floorPlanImage" alt="Floor Plan Blueprint" class="max-h-64 object-contain rounded-xl" />
           </div>
         </div>
 
         <!-- Official Citations Reference Note -->
-        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 space-y-1">
-          <p><strong>Regulatory Citations:</strong> Architectural elevations and municipal layout designs comply with Pakistan Council of Architects &amp; Town Planners (PCATP) and Pakistan Engineering Council (PEC) structural guidelines. All properties undergo verification against LDA / CDA / RDA / DHA building bylaws.</p>
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-[#121620] border border-slate-200 dark:border-white/10 text-[11px] text-slate-600 dark:text-slate-400 space-y-1">
+          <p><strong class="text-slate-900 dark:text-white">Regulatory Citations:</strong> Architectural elevations and municipal layout designs comply with Pakistan Council of Architects &amp; Town Planners (PCATP) and Pakistan Engineering Council (PEC) structural guidelines. All properties undergo verification against LDA / CDA / RDA / DHA building bylaws.</p>
         </div>
 
         <!-- Contact & Agent Box -->
-        <div class="p-5 rounded-2xl bg-gradient-to-r from-emerald-950/30 to-slate-900/60 border border-[#088C7E]/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-[#C5A880]/30 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
           <div class="space-y-1 text-center sm:text-left">
-            <span class="text-[10px] font-black uppercase tracking-wider text-[#088C7E]">Verified Desk Architect</span>
+            <span class="text-[10px] font-black uppercase tracking-wider text-[#8C6A38] dark:text-[#DFC8A5]">Verified Desk Architect</span>
             <h4 class="text-base font-extrabold text-slate-900 dark:text-white">{{ property.agent?.name || 'Engr. Asad Ali' }}</h4>
-            <p class="text-xs text-slate-500 dark:text-slate-400">{{ property.agent?.agency || 'H&Q Design Services' }}</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">{{ property.agent?.agency || 'H&Q Design Services' }}</p>
           </div>
 
           <div class="flex items-center gap-3 w-full sm:w-auto">
             <a 
               :href="'tel:' + (property.agent?.phone || '03134487315')"
-              class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-xs font-black uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
+              class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-slate-200 dark:bg-white/10 hover:bg-slate-300 dark:hover:bg-white/15 text-slate-900 dark:text-white text-xs font-black uppercase tracking-wider transition-colors flex items-center justify-center gap-2 border border-slate-300 dark:border-white/10"
             >
-              <i class="fa-solid fa-phone text-[#088C7E]"></i>
+              <i class="fa-solid fa-phone text-[#C5A880]"></i>
               <span>Call: 0313-4487315</span>
             </a>
             <button 
               type="button"
               @click="openWhatsApp(property.agent?.whatsapp || '923134487315', 'Assalam-o-Alaikum, I am interested in: ' + property.title + ' (ID: ' + property.id + ', Price: ' + property.priceFormatted + ') on H&Q Design Services.')"
-              class="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider transition-transform hover:scale-105 shadow-lg shadow-[#088C7E]/30 flex items-center justify-center gap-2 cursor-pointer border-0"
+              class="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-black uppercase tracking-wider transition-transform hover:scale-105 shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 cursor-pointer border-0"
             >
               <i class="fa-brands fa-whatsapp text-sm"></i>
               <span>WhatsApp Inquiry</span>

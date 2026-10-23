@@ -1,34 +1,39 @@
 <template>
-  <div class="space-y-16 pb-20">
+  <div class="space-y-16 pb-20 bg-transparent text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
     
-    <!-- Top Hero Banner -->
-    <section class="bg-gradient-to-r from-emerald-950 via-slate-950 to-slate-900 border-b border-slate-800 text-white py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <!-- Top Hero Banner in Tecture Architectural Style -->
+    <section class="bg-gradient-to-br from-slate-900 via-[#121620] to-slate-900 border-b border-slate-800 dark:border-white/10 text-white py-14 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#C5A880]/15 rounded-full blur-3xl pointer-events-none"></div>
+      
       <div class="max-w-[1440px] mx-auto space-y-4 relative z-10">
         
         <div class="flex items-center gap-2 text-xs font-bold text-slate-400">
-          <router-link to="/" class="hover:text-[#088C7E] transition-colors">Home</router-link>
+          <router-link to="/" class="hover:text-[#DFC8A5] transition-colors">Home</router-link>
           <span>/</span>
-          <span class="text-white">Real Estate & Architectural Tools Hub</span>
+          <span class="text-[#DFC8A5]">Architectural &amp; Real Estate Tools Hub</span>
         </div>
 
         <div class="max-w-3xl space-y-2">
-          <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
-            Smart <span class="text-gradient-hq">Real Estate & Construction</span> Tools
+          <span class="tecture-tag text-[#C5A880]">PRECISION COMPUTATION SUITE</span>
+          <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+            Smart <span class="text-gradient-gold">Construction &amp; Real Estate</span> Tools
           </h1>
           <p class="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
             Calculate exact 2026 house construction costs, explore interactive society plot maps, convert Pakistani land area units, and estimate monthly bank mortgage EMIs.
           </p>
         </div>
 
-        <!-- Tool Selection Tabs -->
+        <!-- Tool Selection Tabs in Tecture Style -->
         <div class="flex flex-wrap items-center gap-3 pt-4">
           <button 
             v-for="tool in toolsTabs" 
             :key="tool.id"
             @click="activeTool = tool.id"
             :class="[
-              'px-5 py-3 rounded-2xl text-xs font-black transition-all cursor-pointer flex items-center gap-2.5 shadow-md',
-              activeTool === tool.id ? 'bg-[#088C7E] text-white scale-105 shadow-[#088C7E]/40' : 'bg-slate-900/80 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-700'
+              'px-5 py-3 rounded-full text-xs font-bold transition-all cursor-pointer flex items-center gap-2.5 shadow-md border tracking-wider uppercase',
+              activeTool === tool.id 
+                ? 'tecture-btn-gold shadow-xl border-[#C5A880]' 
+                : 'bg-white dark:bg-[#0B0E14] text-slate-800 dark:text-slate-300 border-slate-300 dark:border-white/10 hover:border-[#C5A880] hover:text-slate-900 dark:hover:text-white shadow-sm'
             ]"
           >
             <i :class="tool.icon"></i>
@@ -44,16 +49,16 @@
       
       <!-- 1. CONSTRUCTION COST CALCULATOR -->
       <section v-if="activeTool === 'cost-calc'" class="space-y-8 animate-fadeIn">
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 space-y-8 shadow-sm">
+        <div class="tecture-card rounded-3xl p-6 sm:p-10 space-y-8 shadow-2xl">
           
           <div class="space-y-2">
-            <span class="px-3 py-1 rounded-full bg-[#088C7E]/10 text-[#088C7E] text-[11px] font-black uppercase tracking-wider">
-              Updated for Pakistan 2026 Rates
+            <span class="tecture-tag text-[#C5A880]">
+              UPDATED FOR PAKISTAN 2026 RATES
             </span>
             <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
               House Construction Cost Calculator
             </h2>
-            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               Calculate total construction budget, material estimates (Bricks, Steel, Cement, Sand), and labor charges for Grey Structure vs Complete Turnkey.
             </p>
           </div>
@@ -63,8 +68,8 @@
             
             <!-- Plot Size -->
             <div class="space-y-1.5">
-              <label class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 block">House Size</label>
-              <select v-model="calcSize" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-[#088C7E]">
+              <label class="tecture-tag text-slate-700 dark:text-slate-300 block font-black">House Size</label>
+              <select v-model="calcSize" class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-[#0B0E14] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:border-[#C5A880] cursor-pointer">
                 <option value="3 Marla">3 Marla (Covered Area: 1,150 sq.ft.)</option>
                 <option value="5 Marla">5 Marla (Covered Area: 1,950 sq.ft.)</option>
                 <option value="10 Marla">10 Marla (Covered Area: 3,300 sq.ft.)</option>
@@ -75,8 +80,8 @@
 
             <!-- Finish Quality -->
             <div class="space-y-1.5">
-              <label class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 block">Construction Scope</label>
-              <select v-model="calcScope" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-[#088C7E]">
+              <label class="tecture-tag text-slate-700 dark:text-slate-300 block font-black">Construction Scope</label>
+              <select v-model="calcScope" class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-[#0B0E14] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:border-[#C5A880] cursor-pointer">
                 <option value="turnkey_premium">Complete Turnkey (A+ Luxury Standard)</option>
                 <option value="turnkey_standard">Complete Turnkey (A-Grade Standard)</option>
                 <option value="grey_structure">Grey Structure Only (Bricks + Concrete)</option>
@@ -85,10 +90,10 @@
 
             <!-- City Location -->
             <div class="space-y-1.5">
-              <label class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 block">City</label>
-              <select v-model="calcCity" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-[#088C7E]">
+              <label class="tecture-tag text-slate-700 dark:text-slate-300 block font-black">City</label>
+              <select v-model="calcCity" class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-[#0B0E14] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:border-[#C5A880] cursor-pointer">
                 <option value="Lahore">Lahore (Park View / DHA / Bahria)</option>
-                <option value="Islamabad">Islamabad & Rawalpindi</option>
+                <option value="Islamabad">Islamabad &amp; Rawalpindi</option>
                 <option value="Karachi">Karachi</option>
               </select>
             </div>
@@ -96,42 +101,43 @@
           </div>
 
           <!-- Total Cost Output Card -->
-          <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-emerald-950/60 to-slate-900 border border-[#088C7E]/40 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+          <div class="p-8 sm:p-10 rounded-3xl bg-slate-50 dark:bg-gradient-to-br dark:from-[#121620] dark:via-[#0E121B] dark:to-[#121620] border-2 border-[#C5A880]/50 text-slate-900 dark:text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl">
             <div class="space-y-1 text-center sm:text-left">
-              <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Estimated Total Construction Budget</span>
-              <div class="text-3xl sm:text-5xl font-black text-white">
+              <span class="tecture-tag text-[#8C6A38] dark:text-[#DFC8A5] block font-black">Estimated Total Construction Budget</span>
+              <div class="text-3xl sm:text-5xl font-black text-[#9E7D4E] dark:text-gradient-gold font-mono">
                 {{ calculatedCost.totalFormatted }}
               </div>
-              <p class="text-xs text-slate-300">
-                Rate: <strong class="text-amber-300">{{ calculatedCost.ratePerSqFt }}</strong> · Total Area: {{ calculatedCost.sqft }} sq.ft.
+              <p class="text-xs text-slate-600 dark:text-slate-400">
+                Rate: <strong class="text-slate-900 dark:text-white">{{ calculatedCost.ratePerSqFt }}</strong> · Total Area: {{ calculatedCost.sqft }} sq.ft.
               </p>
             </div>
 
             <button 
               type="button"
               @click="openWhatsApp('923134487315', 'Assalam-o-Alaikum, I need complete 3D design & construction execution for ' + calcSize + ' (' + calcScope + ') in ' + calcCity + '. Estimated Cost: ' + calculatedCost.totalFormatted)"
-              class="px-6 py-3.5 rounded-2xl bg-[#088C7E] hover:bg-[#066D62] text-white font-black text-xs uppercase tracking-wider transition-transform hover:scale-105 shadow-xl flex items-center gap-2 cursor-pointer shrink-0 border-0"
+              class="px-8 py-4 rounded-full tecture-btn-gold text-xs shadow-xl flex items-center gap-2 cursor-pointer shrink-0 border-0"
             >
               <i class="fa-brands fa-whatsapp text-base"></i>
-              <span>Get Detailed Bill of Quantities (BOQ)</span>
+              <span>Get Detailed BOQ on WhatsApp</span>
             </button>
           </div>
 
           <!-- Itemized Breakdown Grid -->
           <div class="space-y-4">
-            <h3 class="text-base font-black text-slate-900 dark:text-white uppercase tracking-wider">
-              Itemized Material & Labor Bill of Quantities
+            <h3 class="text-base font-black text-slate-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#C5A880]"></span>
+              <span>Itemized Material &amp; Labor Bill of Quantities</span>
             </h3>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
-              <div v-for="item in calculatedCost.breakdown" :key="item.name" class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex items-center justify-between">
+              <div v-for="item in calculatedCost.breakdown" :key="item.name" class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B0E14] border border-slate-200 dark:border-white/10 flex items-center justify-between">
                 <div class="space-y-0.5">
                   <span class="font-extrabold text-slate-900 dark:text-white">{{ item.name }}</span>
                   <span class="text-[11px] text-slate-500 dark:text-slate-400 block">{{ item.quantity }}</span>
                 </div>
                 <div class="text-right">
-                  <span class="font-black text-[#088C7E] text-sm">{{ item.cost }}</span>
-                  <span class="text-[10px] text-slate-400 block">{{ item.share }}</span>
+                  <span class="font-black text-[#8C6A38] dark:text-[#DFC8A5] text-sm font-mono">{{ item.cost }}</span>
+                  <span class="text-[10px] text-slate-500 dark:text-slate-400 block">{{ item.share }}</span>
                 </div>
               </div>
             </div>
@@ -142,17 +148,17 @@
 
       <!-- 2. PLOT FINDER & SOCIETY MAPS -->
       <section v-if="activeTool === 'plot-finder'" class="space-y-8 animate-fadeIn">
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 space-y-8 shadow-sm">
+        <div class="tecture-card rounded-3xl p-6 sm:p-10 space-y-8 shadow-2xl">
           
           <div class="space-y-2">
-            <span class="px-3 py-1 rounded-full bg-[#088C7E]/10 text-[#088C7E] text-[11px] font-black uppercase tracking-wider">
-              High Definition Master Society Maps
+            <span class="tecture-tag text-[#C5A880]">
+              HIGH DEFINITION MASTER SOCIETY MAPS
             </span>
             <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
-              Plot Finder & Society Maps Explorer
+              Plot Finder &amp; Society Maps Explorer
             </h2>
-            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-              Explore officially approved sector layouts, block maps, and boulevard plots with H&Q 3D design clearance.
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+              Explore officially approved sector layouts, block maps, and boulevard plots with H&amp;Q 3D design clearance.
             </p>
           </div>
 
@@ -163,8 +169,10 @@
               :key="soc"
               @click="selectedMapSociety = soc"
               :class="[
-                'px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer',
-                selectedMapSociety === soc ? 'bg-[#088C7E] text-white shadow' : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200'
+                'px-5 py-2.5 rounded-full text-xs font-bold transition-all cursor-pointer border',
+                selectedMapSociety === soc 
+                  ? 'tecture-btn-gold shadow border-[#C5A880]' 
+                  : 'bg-white dark:bg-[#0B0E14] text-slate-800 dark:text-slate-300 border-slate-300 dark:border-white/10 hover:border-[#C5A880] shadow-sm'
               ]"
             >
               {{ soc }}
@@ -172,14 +180,14 @@
           </div>
 
           <!-- Map Mock Viewer & Sectors -->
-          <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-950 p-6 sm:p-10 text-white space-y-6 relative">
-            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+          <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#0B0E14] p-6 sm:p-10 text-slate-900 dark:text-white space-y-6 relative">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-white/10 pb-4">
               <div>
-                <h3 class="text-xl font-bold text-white">{{ selectedMapSociety }} - Official Layout</h3>
-                <p class="text-xs text-slate-400">Status: 100% Possession, Ready for Construction</p>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ selectedMapSociety }} - Official Layout</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Status: 100% Possession, Ready for Construction</p>
               </div>
               <div class="flex items-center gap-2">
-                <span class="px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 text-xs font-bold">
+                <span class="px-3.5 py-1.5 rounded-full bg-[#C5A880]/20 text-[#8C6A38] dark:text-[#DFC8A5] text-xs font-bold border border-[#C5A880]/30">
                   LDA / DHA Sanctioned
                 </span>
               </div>
@@ -187,7 +195,7 @@
 
             <!-- Interactive Block Grid -->
             <div class="space-y-4">
-              <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-400">Select Block to View Dimensions & 3D Elevations:</h4>
+              <h4 class="tecture-tag text-slate-700 dark:text-slate-400 font-bold">Select Block to View Dimensions &amp; 3D Elevations:</h4>
               <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
                 <button 
                   v-for="blk in ['Overseas Block', 'Golf Estate', 'Crystal Block', 'Diamond Block', 'Executive Block', 'Block J']" 
@@ -195,7 +203,9 @@
                   @click="selectedBlock = blk"
                   :class="[
                     'p-4 rounded-2xl border text-center transition-all cursor-pointer space-y-1',
-                    selectedBlock === blk ? 'bg-[#088C7E] border-emerald-400 text-white shadow-lg' : 'bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800'
+                    selectedBlock === blk 
+                      ? 'tecture-btn-gold border-[#C5A880] shadow-lg' 
+                      : 'bg-white dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-300 hover:border-[#C5A880]'
                   ]"
                 >
                   <i class="fa-solid fa-map-location-dot text-lg block"></i>
@@ -205,23 +215,23 @@
             </div>
 
             <!-- Block Specs Summary Box -->
-            <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-4">
+            <div class="p-6 rounded-2xl bg-white dark:bg-[#121620] border border-slate-200 dark:border-white/10 space-y-4 shadow-sm">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-black uppercase text-[#088C7E]">{{ selectedBlock }} Overview</span>
-                <span class="text-xs text-amber-300 font-bold">5M, 10M & 1 Kanal Plots</span>
+                <span class="tecture-tag text-[#8C6A38] dark:text-[#DFC8A5] font-black">{{ selectedBlock }} Overview</span>
+                <span class="text-xs text-[#8C6A38] dark:text-[#C5A880] font-bold">5M, 10M &amp; 1 Kanal Plots</span>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-                <div class="p-3 rounded-xl bg-slate-800/80">
-                  <span class="text-slate-400 block text-[11px]">Average 5 Marla Price</span>
-                  <strong class="text-white text-sm">PKR 85 Lacs - 1.25 Crore</strong>
+                <div class="p-4 rounded-xl bg-slate-50 dark:bg-[#0B0E14] border border-slate-200 dark:border-white/5">
+                  <span class="text-slate-500 dark:text-slate-400 block text-[11px]">Average 5 Marla Price</span>
+                  <strong class="text-slate-900 dark:text-white text-sm">PKR 85 Lacs - 1.25 Crore</strong>
                 </div>
-                <div class="p-3 rounded-xl bg-slate-800/80">
-                  <span class="text-slate-400 block text-[11px]">Boulevard Width</span>
-                  <strong class="text-white text-sm">80 ft & 150 ft Main Blvd</strong>
+                <div class="p-4 rounded-xl bg-slate-50 dark:bg-[#0B0E14] border border-slate-200 dark:border-white/5">
+                  <span class="text-slate-500 dark:text-slate-400 block text-[11px]">Boulevard Width</span>
+                  <strong class="text-slate-900 dark:text-white text-sm">80 ft &amp; 150 ft Main Blvd</strong>
                 </div>
-                <div class="p-3 rounded-xl bg-slate-800/80">
-                  <span class="text-slate-400 block text-[11px]">H&Q Villa Elevation Package</span>
-                  <strong class="text-emerald-400 text-sm">Free Map Consultation</strong>
+                <div class="p-4 rounded-xl bg-slate-50 dark:bg-[#0B0E14] border border-slate-200 dark:border-white/5">
+                  <span class="text-slate-500 dark:text-slate-400 block text-[11px]">H&amp;Q Villa Elevation Package</span>
+                  <strong class="text-[#8C6A38] dark:text-[#DFC8A5] text-sm">Free Map Consultation</strong>
                 </div>
               </div>
             </div>
@@ -233,32 +243,32 @@
 
       <!-- 3. AREA UNIT CONVERTER -->
       <section v-if="activeTool === 'unit-converter'" class="space-y-8 animate-fadeIn">
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 space-y-8 shadow-sm">
+        <div class="tecture-card rounded-3xl p-6 sm:p-10 space-y-8 shadow-2xl">
           
           <div class="space-y-2">
-            <span class="px-3 py-1 rounded-full bg-[#088C7E]/10 text-[#088C7E] text-[11px] font-black uppercase tracking-wider">
-              Pakistani Land Measurement System
+            <span class="tecture-tag text-[#C5A880]">
+              PAKISTANI LAND MEASUREMENT SYSTEM
             </span>
             <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
               Real Estate Area Unit Converter
             </h2>
-            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               Instantly convert between Marla, Kanal, Square Feet, Square Yards, Square Meters, Acres, and Murabba.
             </p>
           </div>
 
           <!-- Converter Inputs Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-center p-6 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-center p-6 rounded-3xl bg-slate-50 dark:bg-[#0B0E14] border border-slate-200 dark:border-white/10">
             
             <div class="space-y-2">
-              <label class="text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">From Value & Unit</label>
+              <label class="tecture-tag text-slate-700 dark:text-slate-400 block font-bold">From Value &amp; Unit</label>
               <div class="flex gap-2">
                 <input 
                   type="number" 
                   v-model.number="unitInput" 
-                  class="w-1/2 px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-black text-base focus:outline-none focus:border-[#088C7E]"
+                  class="w-1/2 px-4 py-3 rounded-2xl bg-white dark:bg-[#121620] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-black text-base focus:outline-none focus:border-[#C5A880]"
                 />
-                <select v-model="fromUnit" class="w-1/2 px-3 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-xs font-bold focus:outline-none focus:border-[#088C7E]">
+                <select v-model="fromUnit" class="w-1/2 px-3 py-3 rounded-2xl bg-white dark:bg-[#121620] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white text-xs font-bold focus:outline-none focus:border-[#C5A880] cursor-pointer">
                   <option value="marla">Marla (225 sqft)</option>
                   <option value="kanal">Kanal (20 Marla)</option>
                   <option value="sqft">Sq. Ft.</option>
@@ -270,16 +280,16 @@
             </div>
 
             <div class="flex justify-center">
-              <div class="w-10 h-10 rounded-full bg-[#088C7E] text-white flex items-center justify-center text-base shadow-md">
+              <div class="w-12 h-12 rounded-full tecture-btn-gold flex items-center justify-center text-base shadow-xl">
                 <i class="fa-solid fa-arrow-right-arrow-left"></i>
               </div>
             </div>
 
             <div class="space-y-2">
-              <label class="text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Converted Result</label>
-              <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-[#088C7E] text-slate-900 dark:text-white font-black text-lg flex items-center justify-between">
+              <label class="tecture-tag text-slate-700 dark:text-slate-400 block font-bold">Converted Result</label>
+              <div class="p-3.5 rounded-2xl bg-white dark:bg-[#121620] border-2 border-[#C5A880]/50 text-slate-900 dark:text-white font-black text-lg flex items-center justify-between">
                 <span>{{ convertedValues.sqft }} Sq. Ft.</span>
-                <span class="text-xs text-[#088C7E] font-bold">Standard</span>
+                <span class="text-xs text-[#8C6A38] dark:text-[#DFC8A5] font-bold">Standard</span>
               </div>
             </div>
 
@@ -291,22 +301,22 @@
               Instant Equivalent Measurements for {{ unitInput }} {{ fromUnit.toUpperCase() }}
             </h3>
 
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-bold">
-              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 space-y-1">
-                <span class="text-slate-400 block">Marla</span>
-                <strong class="text-[#088C7E] text-base">{{ convertedValues.marla }} Marla</strong>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-bold">
+              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B0E14] border border-slate-200 dark:border-white/10 space-y-1">
+                <span class="text-slate-500 dark:text-slate-400 block">Marla</span>
+                <strong class="text-[#8C6A38] dark:text-[#DFC8A5] text-base">{{ convertedValues.marla }} Marla</strong>
               </div>
-              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 space-y-1">
-                <span class="text-slate-400 block">Kanal</span>
-                <strong class="text-[#088C7E] text-base">{{ convertedValues.kanal }} Kanal</strong>
+              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B0E14] border border-slate-200 dark:border-white/10 space-y-1">
+                <span class="text-slate-500 dark:text-slate-400 block">Kanal</span>
+                <strong class="text-[#8C6A38] dark:text-[#DFC8A5] text-base">{{ convertedValues.kanal }} Kanal</strong>
               </div>
-              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 space-y-1">
-                <span class="text-slate-400 block">Sq. Yards (Ghaz)</span>
-                <strong class="text-[#088C7E] text-base">{{ convertedValues.sqyd }} Sq. Yd.</strong>
+              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B0E14] border border-slate-200 dark:border-white/10 space-y-1">
+                <span class="text-slate-500 dark:text-slate-400 block">Sq. Yards (Ghaz)</span>
+                <strong class="text-[#8C6A38] dark:text-[#DFC8A5] text-base">{{ convertedValues.sqyd }} Sq. Yd.</strong>
               </div>
-              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 space-y-1">
-                <span class="text-slate-400 block">Sq. Meters</span>
-                <strong class="text-[#088C7E] text-base">{{ convertedValues.sqm }} Sq. M</strong>
+              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B0E14] border border-slate-200 dark:border-white/10 space-y-1">
+                <span class="text-slate-500 dark:text-slate-400 block">Sq. Meters</span>
+                <strong class="text-[#8C6A38] dark:text-[#DFC8A5] text-base">{{ convertedValues.sqm }} Sq. M</strong>
               </div>
             </div>
           </div>
@@ -316,16 +326,16 @@
 
       <!-- 4. MORTGAGE EMI CALCULATOR -->
       <section v-if="activeTool === 'mortgage-calc'" class="space-y-8 animate-fadeIn">
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 space-y-8 shadow-sm">
+        <div class="tecture-card rounded-3xl p-6 sm:p-10 space-y-8 shadow-2xl">
           
           <div class="space-y-2">
-            <span class="px-3 py-1 rounded-full bg-[#088C7E]/10 text-[#088C7E] text-[11px] font-black uppercase tracking-wider">
-              Bank Housing Finance Calculator
+            <span class="tecture-tag text-[#C5A880]">
+              BANK HOUSING FINANCE CALCULATOR
             </span>
             <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
-              Home Loan & Mortgage EMI Calculator
+              Home Loan &amp; Mortgage EMI Calculator
             </h2>
-            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               Calculate monthly installment repayments based on property price, down payment, loan tenure, and KIBOR interest rates.
             </p>
           </div>
@@ -338,55 +348,55 @@
               <!-- Total Property Price -->
               <div class="space-y-2">
                 <div class="flex justify-between">
-                  <label class="uppercase text-slate-500 dark:text-slate-400">Property Price (PKR)</label>
-                  <span class="text-[#088C7E] font-black text-sm">PKR {{ (mortgagePrice / 10000000).toFixed(2) }} Crore</span>
+                  <label class="uppercase text-slate-600 dark:text-slate-400">Property Price (PKR)</label>
+                  <span class="text-[#8C6A38] dark:text-[#DFC8A5] font-black text-sm">PKR {{ (mortgagePrice / 10000000).toFixed(2) }} Crore</span>
                 </div>
-                <input type="range" min="3000000" max="150000000" step="500000" v-model.number="mortgagePrice" class="w-full accent-[#088C7E]" />
+                <input type="range" min="3000000" max="150000000" step="500000" v-model.number="mortgagePrice" class="w-full accent-[#C5A880]" />
               </div>
 
               <!-- Down Payment -->
               <div class="space-y-2">
                 <div class="flex justify-between">
-                  <label class="uppercase text-slate-500 dark:text-slate-400">Down Payment ({{ mortgageDownPct }}%)</label>
-                  <span class="text-[#088C7E] font-black text-sm">PKR {{ ((mortgagePrice * mortgageDownPct / 100) / 100000).toFixed(1) }} Lacs</span>
+                  <label class="uppercase text-slate-600 dark:text-slate-400">Down Payment ({{ mortgageDownPct }}%)</label>
+                  <span class="text-[#8C6A38] dark:text-[#DFC8A5] font-black text-sm">PKR {{ ((mortgagePrice * mortgageDownPct / 100) / 100000).toFixed(1) }} Lacs</span>
                 </div>
-                <input type="range" min="15" max="80" step="5" v-model.number="mortgageDownPct" class="w-full accent-[#088C7E]" />
+                <input type="range" min="15" max="80" step="5" v-model.number="mortgageDownPct" class="w-full accent-[#C5A880]" />
               </div>
 
               <!-- Loan Tenure -->
               <div class="space-y-2">
                 <div class="flex justify-between">
-                  <label class="uppercase text-slate-500 dark:text-slate-400">Loan Tenure</label>
-                  <span class="text-[#088C7E] font-black text-sm">{{ mortgageTenure }} Years ({{ mortgageTenure * 12 }} Months)</span>
+                  <label class="uppercase text-slate-600 dark:text-slate-400">Loan Tenure</label>
+                  <span class="text-[#8C6A38] dark:text-[#DFC8A5] font-black text-sm">{{ mortgageTenure }} Years ({{ mortgageTenure * 12 }} Months)</span>
                 </div>
-                <input type="range" min="3" max="25" step="1" v-model.number="mortgageTenure" class="w-full accent-[#088C7E]" />
+                <input type="range" min="3" max="25" step="1" v-model.number="mortgageTenure" class="w-full accent-[#C5A880]" />
               </div>
 
               <!-- Interest Rate -->
               <div class="space-y-2">
                 <div class="flex justify-between">
-                  <label class="uppercase text-slate-500 dark:text-slate-400">KIBOR + Spread Rate (%)</label>
-                  <span class="text-[#088C7E] font-black text-sm">{{ mortgageRate }}% p.a.</span>
+                  <label class="uppercase text-slate-600 dark:text-slate-400">KIBOR + Spread Rate (%)</label>
+                  <span class="text-[#8C6A38] dark:text-[#DFC8A5] font-black text-sm">{{ mortgageRate }}% p.a.</span>
                 </div>
-                <input type="range" min="8" max="24" step="0.25" v-model.number="mortgageRate" class="w-full accent-[#088C7E]" />
+                <input type="range" min="8" max="24" step="0.25" v-model.number="mortgageRate" class="w-full accent-[#C5A880]" />
               </div>
 
             </div>
 
             <!-- Output Box -->
-            <div class="p-6 rounded-3xl bg-slate-900 border border-[#088C7E]/40 text-white space-y-6 text-center shadow-xl">
-              <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Estimated Monthly EMI</span>
-              <div class="text-3xl sm:text-4xl font-black text-white">
+            <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B0E14] border-2 border-[#C5A880]/50 text-slate-900 dark:text-white space-y-6 text-center shadow-2xl">
+              <span class="tecture-tag text-[#8C6A38] dark:text-[#DFC8A5] block font-black">Estimated Monthly EMI</span>
+              <div class="text-3xl sm:text-4xl font-black text-[#9E7D4E] dark:text-gradient-gold font-mono">
                 PKR {{ emiCalculation.monthlyFormatted }}
               </div>
-              <div class="space-y-3 pt-2 text-xs border-t border-slate-800 text-left">
+              <div class="space-y-3 pt-3 text-xs border-t border-white/10 text-left">
                 <div class="flex justify-between">
                   <span class="text-slate-400">Principal Loan:</span>
                   <span class="font-bold text-white">PKR {{ (emiCalculation.principal / 100000).toFixed(1) }} Lacs</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-slate-400">Total Interest:</span>
-                  <span class="font-bold text-amber-400">PKR {{ (emiCalculation.totalInterest / 100000).toFixed(1) }} Lacs</span>
+                  <span class="font-bold text-[#DFC8A5]">PKR {{ (emiCalculation.totalInterest / 100000).toFixed(1) }} Lacs</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-slate-400">Total Payable:</span>

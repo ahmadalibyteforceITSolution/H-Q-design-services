@@ -1,20 +1,20 @@
 <template>
-  <div class="space-y-12 pb-24">
-    <!-- Top Hero Banner with Dynamic Keyword Info -->
-    <section class="bg-gradient-to-r from-emerald-950 via-slate-950 to-slate-900 border-b border-slate-800 text-white py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div class="absolute inset-0 bg-[radial-gradient(#088C7E_1px,transparent_1px)] [background-size:24px_24px] opacity-20 pointer-events-none"></div>
+  <div class="space-y-12 pb-24 bg-transparent text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
+    <!-- Top Hero Banner with Dynamic Keyword Info (Tecture Architectural Style) -->
+    <section class="bg-gradient-to-br from-slate-900 via-[#121620] to-slate-900 border-b border-slate-800 dark:border-white/10 text-white py-14 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#C5A880]/15 rounded-full blur-3xl pointer-events-none"></div>
       
       <div class="max-w-[1440px] mx-auto space-y-6 relative z-10">
         
         <!-- Breadcrumb -->
         <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-400">
-          <router-link to="/" class="hover:text-[#088C7E] flex items-center gap-1 transition-colors">
+          <router-link to="/" class="hover:text-[#DFC8A5] flex items-center gap-1 transition-colors">
             <i class="fa-solid fa-house text-[10px]"></i>
             <span>Home</span>
           </router-link>
           <span>/</span>
-          <router-link to="/keywords-directory" class="hover:text-[#088C7E] transition-colors">
-            Glossary & Directory
+          <router-link to="/keywords-directory" class="hover:text-[#DFC8A5] transition-colors">
+            Glossary &amp; Directory
           </router-link>
           <span>/</span>
           <span class="text-slate-400">{{ categoryName }}</span>
@@ -25,21 +25,21 @@
         <!-- Header Title & Badges -->
         <div class="max-w-4xl space-y-4">
           <div class="flex flex-wrap items-center gap-2.5">
-            <span class="px-3.5 py-1 rounded-full text-xs font-black uppercase bg-[#088C7E] text-white tracking-wider flex items-center gap-1.5 shadow-md">
+            <span class="px-3.5 py-1 rounded-full text-xs font-black uppercase tecture-btn-gold tracking-wider flex items-center gap-1.5 shadow-md">
               <i :class="categoryIcon"></i>
               <span>{{ categoryName }}</span>
             </span>
-            <span v-if="activeCluster" class="px-3.5 py-1 rounded-full text-xs font-bold bg-sky-500/20 text-sky-300 border border-sky-500/30 flex items-center gap-1.5 shadow-md">
+            <span v-if="activeCluster" class="px-3.5 py-1 rounded-full text-xs font-bold bg-[#C5A880]/15 text-[#DFC8A5] border border-[#C5A880]/30 flex items-center gap-1.5 shadow-md">
               <i :class="activeCluster.icon"></i>
               <span>{{ activeCluster.name }} Cluster</span>
             </span>
-            <span v-if="activeCluster?.intent" class="px-3.5 py-1 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 flex items-center gap-1">
-              <i class="fa-solid fa-bullseye text-[10px]"></i>
+            <span v-if="activeCluster?.intent" class="px-3.5 py-1 rounded-full text-xs font-semibold bg-white/10 text-slate-200 border border-white/15 flex items-center gap-1">
+              <i class="fa-solid fa-bullseye text-[10px] text-[#C5A880]"></i>
               <span>Intent: {{ activeCluster.intent }}</span>
             </span>
             <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 flex items-center gap-1">
               <i class="fa-solid fa-stamp text-[10px]"></i>
-              <span>PCATP & PEC Vetted Standards</span>
+              <span>PCATP &amp; PEC Vetted</span>
             </span>
             <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
               <i class="fa-solid fa-calendar-check text-[10px]"></i>
@@ -52,7 +52,7 @@
           </h1>
 
           <p class="text-slate-300 text-sm sm:text-base font-medium leading-relaxed max-w-3xl">
-            Complete 2026 architectural blueprints, 3D elevation renderings, spatial floor planning, and turnkey construction cost benchmarks for <strong>{{ activeKeyword }}</strong> in Lahore, Islamabad, and major cities of Pakistan.
+            Complete 2026 architectural blueprints, 3D elevation renderings, spatial floor planning, and turnkey construction cost benchmarks for <strong class="text-white">{{ activeKeyword }}</strong> in Lahore, Islamabad, and major cities of Pakistan.
           </p>
 
           <!-- Quick Consultation Action Bar -->
@@ -60,31 +60,24 @@
             <button 
               type="button"
               @click="openWhatsApp('923134487315', 'Inquiry for ' + activeKeyword)" 
-              class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-black uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2 cursor-pointer border-0"
+              class="px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-black uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2 cursor-pointer border-0"
             >
               <i class="fa-brands fa-whatsapp text-sm"></i>
               <span>WhatsApp Blueprint Quote</span>
             </button>
             <a 
               href="tel:03134487315" 
-              class="px-6 py-3 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white text-xs font-black uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2"
+              class="px-6 py-3 rounded-full tecture-btn-gold text-xs font-black uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2"
             >
               <i class="fa-solid fa-phone text-xs"></i>
               <span>Call: 0313-4487315</span>
             </a>
-            <a 
-              href="tel:03134487315" 
-              class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-black uppercase tracking-wider transition-all hover:scale-105 shadow-xl flex items-center gap-2 border border-slate-700"
-            >
-              <i class="fa-solid fa-phone text-xs text-[#088C7E]"></i>
-              <span>Call: 0313-4487315</span>
-            </a>
             <router-link 
               to="/tools" 
-              class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-bold transition-all border border-slate-700 flex items-center gap-2"
+              class="px-5 py-3 rounded-full tecture-btn-outline text-xs font-bold transition-all flex items-center gap-2"
             >
-              <i class="fa-solid fa-calculator text-amber-400"></i>
-              <span>Construction Cost Calculator</span>
+              <i class="fa-solid fa-calculator text-[#C5A880]"></i>
+              <span>Cost Calculator</span>
             </router-link>
           </div>
         </div>
@@ -100,7 +93,7 @@
         <div class="lg:col-span-8 space-y-8">
           
           <!-- Visual Architectural Render Card -->
-          <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900 shadow-xl relative group">
+          <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-950 shadow-xl relative group">
             <div class="h-80 sm:h-[450px] w-full overflow-hidden relative">
               <img 
                 :src="keywordImage" 
@@ -111,63 +104,63 @@
               
               <!-- Image Caption Overlays -->
               <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2 text-white">
-                <div class="bg-black/70 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-xs font-semibold border border-white/20 flex items-center gap-1.5">
-                  <i class="fa-solid fa-camera text-amber-400"></i>
-                  <span>H&Q 4K Photorealistic Facade Visualization</span>
+                <div class="bg-[#0B0E14]/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-xs font-semibold border border-white/20 flex items-center gap-1.5 shadow-xl">
+                  <i class="fa-solid fa-camera text-[#C5A880]"></i>
+                  <span>H&amp;Q 4K Photorealistic Facade Visualization</span>
                 </div>
-                <div class="bg-black/70 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-xs font-semibold border border-white/20 flex items-center gap-1.5 text-emerald-400">
+                <div class="bg-[#0B0E14]/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-xs font-semibold border border-white/20 flex items-center gap-1.5 text-emerald-400 shadow-xl">
                   <i class="fa-solid fa-building-circle-check"></i>
-                  <span>DHA & LDA Bylaw Compliant</span>
+                  <span>DHA &amp; LDA Bylaw Compliant</span>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Technical Parameters & Key Architectural Highlights Table -->
-          <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-4">
+          <div class="p-6 sm:p-8 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 shadow-xl space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-white/10 pb-4">
               <div>
-                <span class="text-xs font-extrabold uppercase text-[#088C7E] tracking-wider">Spatial & Engineering Benchmark</span>
-                <h3 class="text-xl font-black text-slate-900 dark:text-white">Technical Specifications & Cost Matrix</h3>
+                <span class="text-xs font-extrabold uppercase text-[#8C6A38] dark:text-[#DFC8A5] tracking-wider">Spatial &amp; Engineering Benchmark</span>
+                <h3 class="text-xl font-black text-slate-900 dark:text-white">Technical Specifications &amp; Cost Matrix</h3>
               </div>
-              <span class="text-xs font-mono font-bold px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+              <span class="text-xs font-mono font-bold px-3 py-1 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200">
                 Pakistan Building Code 2026
               </span>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs">
-              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
-                <span class="text-slate-500 dark:text-slate-400 font-medium">Topic / Classification</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs font-bold">
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-200 dark:border-white/10 space-y-1">
+                <span class="text-slate-500 dark:text-slate-400 font-extrabold text-[10px] uppercase block">Topic / Classification</span>
                 <div class="font-black text-slate-900 dark:text-white text-sm truncate">{{ activeKeyword }}</div>
               </div>
-              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
-                <span class="text-slate-500 dark:text-slate-400 font-medium">Steel Specification</span>
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-200 dark:border-white/10 space-y-1">
+                <span class="text-slate-500 dark:text-slate-400 font-extrabold text-[10px] uppercase block">Steel Specification</span>
                 <div class="font-black text-slate-900 dark:text-white text-sm">Grade 60 Deformed Rebar</div>
               </div>
-              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
-                <span class="text-slate-500 dark:text-slate-400 font-medium">Concrete Strength</span>
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-200 dark:border-white/10 space-y-1">
+                <span class="text-slate-500 dark:text-slate-400 font-extrabold text-[10px] uppercase block">Concrete Strength</span>
                 <div class="font-black text-slate-900 dark:text-white text-sm">3,000 - 4,000 PSI Cylinder</div>
               </div>
-              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
-                <span class="text-slate-500 dark:text-slate-400 font-medium">Grey Structure Rate (2026)</span>
-                <div class="font-black text-[#088C7E] text-sm">PKR 3,000 - 3,400 / Sq.Ft</div>
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-200 dark:border-white/10 space-y-1">
+                <span class="text-slate-500 dark:text-slate-400 font-extrabold text-[10px] uppercase block">Grey Structure Rate (2026)</span>
+                <div class="font-black text-[#8C6A38] dark:text-[#DFC8A5] text-sm">PKR 3,000 - 3,400 / Sq.Ft</div>
               </div>
-              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
-                <span class="text-slate-500 dark:text-slate-400 font-medium">A+ Turnkey Finishing Rate</span>
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-200 dark:border-white/10 space-y-1">
+                <span class="text-slate-500 dark:text-slate-400 font-extrabold text-[10px] uppercase block">A+ Turnkey Finishing Rate</span>
                 <div class="font-black text-amber-500 text-sm">PKR 6,500 - 7,800 / Sq.Ft</div>
               </div>
-              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
-                <span class="text-slate-500 dark:text-slate-400 font-medium">Seismic Safety Standard</span>
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-200 dark:border-white/10 space-y-1">
+                <span class="text-slate-500 dark:text-slate-400 font-extrabold text-[10px] uppercase block">Seismic Safety Standard</span>
                 <div class="font-black text-slate-900 dark:text-white text-sm">Zone 2B UBC-97 / BCP</div>
               </div>
             </div>
 
             <!-- Municipal Approvals Guidance -->
-            <div class="p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-500/20 flex items-start gap-3 text-xs">
+            <div class="p-4 rounded-2xl bg-[#C5A880]/10 border border-[#C5A880]/30 flex items-start gap-3 text-xs">
               <i class="fa-solid fa-circle-check text-emerald-500 text-base mt-0.5"></i>
               <div class="space-y-1">
-                <div class="font-bold text-slate-900 dark:text-white">Municipal Submission & NOC Guarantee</div>
-                <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                <div class="font-extrabold text-slate-900 dark:text-white">Municipal Submission &amp; NOC Guarantee</div>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                   All blueprints for <em>{{ activeKeyword }}</em> are drafted by licensed PCATP architects in strict alignment with DHA Lahore, LDA, CDA, SBCA, and Bahria Town town-planning bylaws to ensure immediate sanctioning.
                 </p>
               </div>
@@ -175,15 +168,15 @@
           </div>
 
           <!-- In-Depth Architectural Guide Content -->
-          <div class="p-6 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-8">
-            <article class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 space-y-6 leading-relaxed text-sm sm:text-base">
+          <div class="p-6 sm:p-10 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 shadow-xl space-y-8">
+            <article class="prose dark:prose-invert max-w-none text-slate-800 dark:text-slate-200 space-y-6 leading-relaxed text-sm sm:text-base">
               <div v-html="articleHtml"></div>
             </article>
 
             <!-- Social Sharing -->
-            <div class="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <div class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
-                <i class="fa-solid fa-share-nodes text-[#088C7E]"></i>
+            <div class="pt-6 border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 flex items-center gap-2">
+                <i class="fa-solid fa-share-nodes text-[#C5A880]"></i>
                 <span>Share This Topic</span>
               </div>
               <div class="flex items-center gap-2">
@@ -191,7 +184,7 @@
                   :href="'https://api.whatsapp.com/send?text=' + encodeURIComponent(activeKeyword + ' - ' + currentUrl)" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  class="w-9 h-9 rounded-xl flex items-center justify-center bg-emerald-600 text-white text-sm hover:scale-105 transition-transform"
+                  class="w-9 h-9 rounded-xl flex items-center justify-center bg-emerald-600 text-white text-sm hover:scale-105 transition-transform cursor-pointer"
                   title="Share on WhatsApp"
                 >
                   <i class="fa-brands fa-whatsapp"></i>
@@ -200,7 +193,7 @@
                   :href="'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(currentUrl)" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  class="w-9 h-9 rounded-xl flex items-center justify-center bg-blue-700 text-white text-sm hover:scale-105 transition-transform"
+                  class="w-9 h-9 rounded-xl flex items-center justify-center bg-blue-700 text-white text-sm hover:scale-105 transition-transform cursor-pointer"
                   title="Share on LinkedIn"
                 >
                   <i class="fa-brands fa-linkedin-in"></i>
@@ -209,7 +202,7 @@
                   :href="'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(currentUrl)" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  class="w-9 h-9 rounded-xl flex items-center justify-center bg-blue-600 text-white text-sm hover:scale-105 transition-transform"
+                  class="w-9 h-9 rounded-xl flex items-center justify-center bg-blue-600 text-white text-sm hover:scale-105 transition-transform cursor-pointer"
                   title="Share on Facebook"
                 >
                   <i class="fa-brands fa-facebook-f"></i>
@@ -218,7 +211,7 @@
                   :href="'https://twitter.com/intent/tweet?url=' + encodeURIComponent(currentUrl) + '&text=' + encodeURIComponent(activeKeyword)" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  class="w-9 h-9 rounded-xl flex items-center justify-center bg-slate-900 dark:bg-black border border-slate-700 text-white text-sm hover:scale-105 transition-transform"
+                  class="w-9 h-9 rounded-xl flex items-center justify-center bg-slate-900 dark:bg-black border border-slate-700 text-white text-sm hover:scale-105 transition-transform cursor-pointer"
                   title="Share on X"
                 >
                   <i class="fa-brands fa-x-twitter"></i>
@@ -228,39 +221,39 @@
           </div>
 
           <!-- Frequently Asked Questions for this Keyword -->
-          <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
+          <div class="p-6 sm:p-8 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 shadow-xl space-y-6">
             <div class="space-y-1">
-              <span class="text-xs font-extrabold uppercase text-[#088C7E] tracking-wider">Client Inquiries & Clarifications</span>
+              <span class="text-xs font-extrabold uppercase text-[#8C6A38] dark:text-[#DFC8A5] tracking-wider">Client Inquiries &amp; Clarifications</span>
               <h3 class="text-xl font-black text-slate-900 dark:text-white">Frequently Asked Questions: {{ activeKeyword }}</h3>
             </div>
 
             <div class="space-y-4 text-xs sm:text-sm">
-              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-200 dark:border-white/10 space-y-2">
                 <h4 class="font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
-                  <i class="fa-solid fa-circle-question text-[#088C7E]"></i>
+                  <i class="fa-solid fa-circle-question text-[#C5A880]"></i>
                   <span>How long does it take to prepare 2D floor plans and 3D elevations for {{ activeKeyword }}?</span>
                 </h4>
-                <p class="text-slate-600 dark:text-slate-300 leading-relaxed pl-6">
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed pl-6 font-medium">
                   Standard 2D architectural drawings and municipal submission blueprints take 7 to 10 working days. A complete design package including 4K photorealistic 3D elevations, MEP engineering layouts, and structural vetting takes approximately 2 to 3 weeks.
                 </p>
               </div>
 
-              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-200 dark:border-white/10 space-y-2">
                 <h4 class="font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
-                  <i class="fa-solid fa-circle-question text-[#088C7E]"></i>
-                  <span>Does H&Q Design Services provide on-site supervision in Lahore and DHA?</span>
+                  <i class="fa-solid fa-circle-question text-[#C5A880]"></i>
+                  <span>Does H&amp;Q Design Services provide on-site supervision in Lahore and DHA?</span>
                 </h4>
-                <p class="text-slate-600 dark:text-slate-300 leading-relaxed pl-6">
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed pl-6 font-medium">
                   Yes. Our resident site engineers conduct rigorous phase-wise inspections during foundation excavation, steel rebar binding, slab casting, and plumbing pressure tests to ensure 100% adherence to architectural drawings.
                 </p>
               </div>
 
-              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-200 dark:border-white/10 space-y-2">
                 <h4 class="font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
-                  <i class="fa-solid fa-circle-question text-[#088C7E]"></i>
+                  <i class="fa-solid fa-circle-question text-[#C5A880]"></i>
                   <span>Can I request turnkey construction cost estimates with material brand specifications?</span>
                 </h4>
-                <p class="text-slate-600 dark:text-slate-300 leading-relaxed pl-6">
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed pl-6 font-medium">
                   Certainly. We provide comprehensive Bill of Quantities (BOQ) with transparent line-item pricing covering Mughal/Amreli Grade 60 steel, Bestway cement, imported porcelain tiles, Chawla aluminum, and Grohe/Kohler bathroom fittings.
                 </p>
               </div>
@@ -273,25 +266,25 @@
         <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
           
           <!-- Core Strategy Pillar Card -->
-          <div v-if="activeCluster" class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+          <div v-if="activeCluster" class="p-6 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 shadow-xl space-y-4">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-bold uppercase tracking-wider text-[#088C7E] flex items-center gap-1.5">
+              <span class="text-xs font-black uppercase tracking-wider text-[#8C6A38] dark:text-[#DFC8A5] flex items-center gap-1.5">
                 <i :class="activeCluster.icon"></i>
                 <span>Core Strategy Pillar</span>
               </span>
-              <span class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-[#C5A880]/15 text-[#8C6A38] dark:text-[#DFC8A5] border border-[#C5A880]/30">
                 {{ activeCluster.intent }}
               </span>
             </div>
             <h4 class="text-base font-extrabold text-slate-900 dark:text-white">
               {{ activeCluster.name }}
             </h4>
-            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
               {{ activeCluster.description }}
             </p>
             <router-link 
               :to="activeCluster.targetPage"
-              class="w-full py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#088C7E] text-slate-800 dark:text-slate-200 hover:text-white font-bold text-xs transition-all flex items-center justify-between group"
+              class="w-full py-2.5 px-4 rounded-full tecture-btn-outline font-bold text-xs transition-all flex items-center justify-between group cursor-pointer"
             >
               <span>Explore {{ activeCluster.targetPageLabel }}</span>
               <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
@@ -299,14 +292,14 @@
           </div>
 
           <!-- Consultation Card -->
-          <div class="p-6 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-slate-800 text-white shadow-xl space-y-5">
+          <div class="p-6 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 shadow-xl space-y-5 text-slate-900 dark:text-white">
             <div class="space-y-2">
-              <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase bg-[#088C7E] text-white tracking-wider flex items-center gap-1.5 w-fit">
-                <i class="fa-solid fa-headset text-amber-300"></i>
+              <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tecture-btn-gold tracking-wider flex items-center gap-1.5 w-fit">
+                <i class="fa-solid fa-headset"></i>
                 <span>Direct Architect Line</span>
               </span>
-              <h3 class="text-lg font-black text-white">Consult H&Q Chief Architect</h3>
-              <p class="text-xs text-slate-400 leading-relaxed">
+              <h3 class="text-lg font-black text-slate-900 dark:text-white">Consult H&amp;Q Chief Architect</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                 Discuss plot dimensions, 3D elevation themes, and budget planning for <strong>{{ activeKeyword }}</strong>.
               </p>
             </div>
@@ -316,7 +309,7 @@
                 :href="whatsappUrl" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer"
+                class="w-full py-3.5 px-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer"
               >
                 <i class="fa-brands fa-whatsapp text-base"></i>
                 <span>WhatsApp Instant Inquiry</span>
@@ -324,88 +317,80 @@
 
               <a 
                 href="tel:03134487315" 
-                class="w-full py-3 px-4 rounded-xl bg-[#088C7E] hover:bg-[#066D62] text-white font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg"
+                class="w-full py-3 px-4 rounded-full tecture-btn-gold text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer"
               >
                 <i class="fa-solid fa-phone text-xs"></i>
                 <span>Call: 0313-4487315</span>
               </a>
-
-              <a 
-                href="tel:03134487315" 
-                class="w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg border border-slate-700"
-              >
-                <i class="fa-solid fa-phone text-xs text-[#088C7E]"></i>
-                <span>Call: 0313-4487315</span>
-              </a>
             </div>
 
-            <div class="pt-3 border-t border-slate-800 space-y-2 text-[11px] text-slate-400">
+            <div class="pt-3 border-t border-slate-200 dark:border-white/10 space-y-2 text-[11px] text-slate-600 dark:text-slate-400 font-semibold">
               <div class="flex items-center gap-2">
-                <i class="fa-solid fa-location-dot text-[#088C7E]"></i>
-                <span>Studio: Parkview City & DHA Lahore</span>
+                <i class="fa-solid fa-location-dot text-[#C5A880]"></i>
+                <span>Studio: Parkview City &amp; DHA Lahore</span>
               </div>
               <div class="flex items-center gap-2">
-                <i class="fa-solid fa-clock text-amber-400"></i>
+                <i class="fa-solid fa-clock text-amber-500"></i>
                 <span>Mon – Sat: 9:00 AM – 8:00 PM</span>
               </div>
             </div>
           </div>
 
           <!-- Quick Navigation Tools Widget -->
-          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+          <div class="p-6 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 shadow-sm space-y-4">
             <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
-              <i class="fa-solid fa-toolbox text-[#088C7E]"></i>
+              <i class="fa-solid fa-toolbox text-[#C5A880]"></i>
               <span>Architectural Tools</span>
             </h4>
             
             <div class="space-y-2 text-xs font-semibold">
               <router-link 
                 to="/tools" 
-                class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-[#088C7E]/10 border border-slate-200 dark:border-slate-700/60 flex items-center justify-between group transition-colors"
+                class="p-3 rounded-2xl bg-slate-50 dark:bg-[#121620] hover:border-[#C5A880] border border-slate-200 dark:border-white/10 flex items-center justify-between group transition-colors"
               >
-                <span class="text-slate-700 dark:text-slate-300 group-hover:text-[#088C7E]">2026 Cost Calculator</span>
-                <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-[#088C7E]"></i>
+                <span class="text-slate-800 dark:text-slate-200 group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5]">2026 Cost Calculator</span>
+                <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5]"></i>
               </router-link>
 
               <router-link 
                 to="/portfolio" 
-                class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-[#088C7E]/10 border border-slate-200 dark:border-slate-700/60 flex items-center justify-between group transition-colors"
+                class="p-3 rounded-2xl bg-slate-50 dark:bg-[#121620] hover:border-[#C5A880] border border-slate-200 dark:border-white/10 flex items-center justify-between group transition-colors"
               >
-                <span class="text-slate-700 dark:text-slate-300 group-hover:text-[#088C7E]">3D Elevation Portfolio</span>
-                <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-[#088C7E]"></i>
+                <span class="text-slate-800 dark:text-slate-200 group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5]">3D Elevation Portfolio</span>
+                <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5]"></i>
               </router-link>
 
               <router-link 
                 to="/area-guides" 
-                class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-[#088C7E]/10 border border-slate-200 dark:border-slate-700/60 flex items-center justify-between group transition-colors"
+                class="p-3 rounded-2xl bg-slate-50 dark:bg-[#121620] hover:border-[#C5A880] border border-slate-200 dark:border-white/10 flex items-center justify-between group transition-colors"
               >
-                <span class="text-slate-700 dark:text-slate-300 group-hover:text-[#088C7E]">DHA & Bahria Town Guides</span>
-                <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-[#088C7E]"></i>
+                <span class="text-slate-800 dark:text-slate-200 group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5]">DHA &amp; Bahria Town Guides</span>
+                <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5]"></i>
               </router-link>
 
               <router-link 
                 to="/keywords-directory" 
-                class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-[#088C7E]/10 border border-slate-200 dark:border-slate-700/60 flex items-center justify-between group transition-colors"
+                class="p-3 rounded-2xl bg-slate-50 dark:bg-[#121620] hover:border-[#C5A880] border border-slate-200 dark:border-white/10 flex items-center justify-between group transition-colors"
               >
-                <span class="text-slate-700 dark:text-slate-300 group-hover:text-[#088C7E]">Complete 3,000+ Keyword Directory</span>
-                <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-[#088C7E]"></i>
+                <span class="text-slate-800 dark:text-slate-200 group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5]">Complete 3,000+ Keyword Directory</span>
+                <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5]"></i>
               </router-link>
             </div>
           </div>
 
           <!-- Related Respective Keyword Pages Tag Cloud -->
-          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+          <div class="p-6 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 shadow-sm space-y-4">
             <div class="flex items-center justify-between">
               <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
-                <i class="fa-solid fa-tags text-emerald-500"></i>
-                <span>Related Topics & Pages</span>
+                <i class="fa-solid fa-tags text-[#C5A880]"></i>
+                <span>Related Topics &amp; Pages</span>
               </h4>
-              <router-link to="/keywords-directory" class="text-[11px] font-bold text-[#088C7E] hover:underline">
+              <router-link to="/keywords-directory" class="text-[11px] font-bold text-[#8C6A38] dark:text-[#DFC8A5] hover:underline">
                 View All
               </router-link>
             </div>
 
-            <p class="text-[11px] text-slate-500 dark:text-slate-400">
+            <p class="text-[11px] text-slate-600 dark:text-slate-400 font-medium">
               Browse dedicated architectural design pages in <strong>{{ categoryName }}</strong>:
             </p>
 
@@ -414,10 +399,10 @@
                 v-for="relKw in relatedKeywords" 
                 :key="relKw"
                 :to="'/keywords/' + slugifyKeyword(relKw)"
-                class="px-2.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-[#088C7E] text-slate-700 dark:text-slate-300 hover:text-white text-[11px] font-semibold transition-all border border-slate-200/80 dark:border-slate-700/60 hover:border-emerald-400/40 truncate max-w-full"
+                class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 hover:bg-[#C5A880] text-slate-800 dark:text-slate-200 hover:text-[#0B0E14] text-[11px] font-bold transition-all border border-slate-200 dark:border-white/10 hover:border-[#C5A880] truncate max-w-full"
                 :title="'Explore ' + relKw"
               >
-                <i class="fa-solid fa-arrow-right text-[8px] mr-1 text-[#088C7E] group-hover:text-white"></i>
+                <i class="fa-solid fa-arrow-right text-[8px] mr-1 text-[#C5A880] group-hover:text-[#0B0E14]"></i>
                 <span>{{ relKw }}</span>
               </router-link>
             </div>
