@@ -725,12 +725,12 @@
         
         <div class="rounded-3xl tecture-card overflow-hidden flex flex-col justify-between group">
           <div class="relative h-72 overflow-hidden bg-black">
-            <img src="/images/scene1_villa.jpg" alt="1 Kanal Luxury Villa DHA Phase 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img src="/images/portfolio/ATTIBI.jpg" alt="Modern 10 Marla Luxury Villa Elevation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div class="absolute top-4 left-4 px-3.5 py-1 rounded-full tecture-btn-gold text-[10px]">
-              1 Kanal (50x90)
+              10 Marla (35x70)
             </div>
             <div class="absolute bottom-4 left-4 bg-[#0B0E14]/90 backdrop-blur-md px-4 py-2 rounded-2xl text-white font-black text-xs border border-white/10">
-              DHA Phase 6, Lahore
+              DHA Phase 7, Lahore
             </div>
           </div>
           <div class="p-6 space-y-3">
@@ -738,59 +738,59 @@
               Modern Luxury Villa Architectural Elevation
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
-              Contemporary geometric villa featuring cantilevered limestone slabs, floor-to-ceiling thermal glass facades, and architectural LED illumination.
+              Modern vertical volume villa design featuring warm architectural LED wash lighting, textured travertine boundary wall, rooftop louvered parapet, and manicured entryway greenery.
             </p>
             <div class="pt-2 flex items-center justify-between">
               <router-link to="/portfolio" class="text-xs font-bold text-[#8C6A38] dark:text-[#DFC8A5] flex items-center gap-1 hover:underline">
                 View Project Details →
               </router-link>
-              <span class="text-[11px] text-[#8C6A38] dark:text-[#C5A880] font-bold">5 Beds · Double Story</span>
+              <span class="text-[11px] text-[#8C6A38] dark:text-[#C5A880] font-bold">4 Beds · Double Story</span>
             </div>
           </div>
         </div>
 
         <div class="rounded-3xl tecture-card overflow-hidden flex flex-col justify-between group">
           <div class="relative h-72 overflow-hidden bg-black">
-            <img src="/images/scene9_hero.jpg" alt="Double-Height Royal Penthouse Suite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img src="/images/portfolio/interior_render_08.jpg" alt="Executive Club Lounge & Cigar Salon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div class="absolute top-4 left-4 px-3.5 py-1 rounded-full tecture-btn-gold text-[10px]">
-              Penthouse Suite
+              Executive Lounge
             </div>
             <div class="absolute bottom-4 left-4 bg-[#0B0E14]/90 backdrop-blur-md px-4 py-2 rounded-2xl text-white font-black text-xs border border-white/10">
-              DHA Phase 6 Boulevard, Lahore
+              DHA Phase 6, Lahore
             </div>
           </div>
           <div class="p-6 space-y-3">
             <h3 class="text-xl font-black text-slate-900 dark:text-white group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors">
-              Double-Height Royal Penthouse Interior
+              Executive Club Lounge &amp; Cigar Salon
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
-              Sculptural floating illuminated spiral staircase, double-height panoramic skyline windows, and bookmatched Calacatta marble flooring.
+              Sophisticated executive club lounge featuring tufted caramel Chesterfield leather banquettes, coffered grid ceiling with brass globe pendants, and dark navy wainscoting.
             </p>
             <div class="pt-2 flex items-center justify-between">
               <router-link to="/portfolio" class="text-xs font-bold text-[#8C6A38] dark:text-[#DFC8A5] flex items-center gap-1 hover:underline">
                 View Project Details →
               </router-link>
-              <span class="text-[11px] text-[#8C6A38] dark:text-[#C5A880] font-bold">Luxury Interior</span>
+              <span class="text-[11px] text-[#8C6A38] dark:text-[#C5A880] font-bold">Executive Suite · Interior</span>
             </div>
           </div>
         </div>
 
         <div class="rounded-3xl tecture-card overflow-hidden flex flex-col justify-between group">
           <div class="relative h-72 overflow-hidden bg-black">
-            <img src="/images/portfolio/interior_render_02.jpg" alt="Executive Master Bedroom Suite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img src="/images/portfolio/interior_render_04.jpg" alt="Grand Master Bedroom Suite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div class="absolute top-4 left-4 px-3.5 py-1 rounded-full tecture-btn-gold text-[10px]">
               Master Suite
             </div>
             <div class="absolute bottom-4 left-4 bg-[#0B0E14]/90 backdrop-blur-md px-4 py-2 rounded-2xl text-white font-black text-xs border border-white/10">
-              DHA Phase 5, Lahore
+              DHA Phase 6, Lahore
             </div>
           </div>
           <div class="p-6 space-y-3">
             <h3 class="text-xl font-black text-slate-900 dark:text-white group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors">
-              Executive Master Suite &amp; Ambient Lighting
+              Grand Master Suite &amp; Timber Slat Partitions
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
-              Curated master bedroom interior featuring plush upholstered back wall, ambient LED cove illumination, integrated reading profiles, and bespoke nightstands.
+              Expansive luxury master bedroom featuring vertical oak acoustic slat partition walls, diamond-coffered ceiling with recessed perimeter cove lighting, and black marble columns.
             </p>
             <div class="pt-2 flex items-center justify-between">
               <router-link to="/portfolio" class="text-xs font-bold text-[#8C6A38] dark:text-[#DFC8A5] flex items-center gap-1 hover:underline">
@@ -928,7 +928,7 @@ const heroSlides = [
     titlePart1: 'Visionary Architectural',
     titlePart2: 'Design & Engineering Services',
     description: 'Licensed PCATP architects & PEC structural engineers in Lahore. Specializing in luxury 5 Marla, 10 Marla, 1 Kanal and 2 Kanal villas, guaranteed LDA/DHA approved submission drawings, and precision BIM modeling.',
-    image: '/images/scene1_villa.jpg'
+    image: '/images/portfolio/D.jpg'
   },
   {
     id: 2,
@@ -937,7 +937,7 @@ const heroSlides = [
     titlePart1: 'Bespoke Interior',
     titlePart2: 'Architecture & Styling Services',
     description: 'Transforming luxury residences in DHA & Gulberg with curated Italian Calacatta marble, acoustic woodwork, architectural lighting plans, bespoke wardrobe joinery, and turnkey execution.',
-    image: '/images/portfolio/interior_render_03.jpg'
+    image: '/images/portfolio/interior_render_04.jpg'
   },
   {
     id: 3,
@@ -946,7 +946,7 @@ const heroSlides = [
     titlePart1: 'Photorealistic 4K',
     titlePart2: '3D Elevations & Virtual Reality',
     description: 'Experience your dream villa in cinematic 4K Lumion and 3ds Max before laying a single brick. Spanish, Contemporary Modern, Classical, and Minimalist exterior facades with exact daylight and night illumination.',
-    image: '/images/scene9_hero.jpg'
+    image: '/images/portfolio/ATTIBI.jpg'
   },
   {
     id: 4,
@@ -955,7 +955,7 @@ const heroSlides = [
     titlePart1: 'Turnkey Construction',
     titlePart2: '& Complete Home Remodeling',
     description: 'End-to-end engineering execution in Lahore from grey structure to opulent turnkey handover with transparent bill of quantities (BOQ), Grade-60 steel, OPC cement, and rigorous site supervision.',
-    image: '/images/portfolio/interior_render_04.jpg'
+    image: '/images/portfolio/NAHD.jpg'
   }
 ]
 
