@@ -55,7 +55,7 @@
         <div class="lg:col-span-6">
           <div class="relative rounded-3xl overflow-hidden tecture-card p-2 shadow-2xl group">
             <img 
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" 
+              src="/images/portfolio/interior_render_05.jpg" 
               alt="H&Q Architectural Studio" 
               class="w-full h-[420px] object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700"
             />

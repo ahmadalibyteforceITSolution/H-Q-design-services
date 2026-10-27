@@ -266,7 +266,7 @@
         <div class="lg:col-span-6 relative">
           <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
             <img 
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1000&q=85" 
+              src="/images/portfolio/interior_render_01.jpg" 
               alt="H&Q Architectural Studio Lahore" 
               class="w-full h-[400px] sm:h-[480px] object-cover group-hover:scale-105 transition-transform duration-700"
             />
@@ -777,26 +777,26 @@
 
         <div class="rounded-3xl tecture-card overflow-hidden flex flex-col justify-between group">
           <div class="relative h-72 overflow-hidden bg-black">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="10 Marla Spanish Villa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img src="/images/portfolio/interior_render_02.jpg" alt="Executive Master Bedroom Suite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div class="absolute top-4 left-4 px-3.5 py-1 rounded-full tecture-btn-gold text-[10px]">
-              10 Marla (35x70)
+              Master Suite
             </div>
             <div class="absolute bottom-4 left-4 bg-[#0B0E14]/90 backdrop-blur-md px-4 py-2 rounded-2xl text-white font-black text-xs border border-white/10">
-              DHA Phase 7, Lahore
+              DHA Phase 5, Lahore
             </div>
           </div>
           <div class="p-6 space-y-3">
             <h3 class="text-xl font-black text-slate-900 dark:text-white group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors">
-              Spanish Classical Villa Elevation &amp; Map
+              Executive Master Suite &amp; Ambient Lighting
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
-              Classical Spanish elevation design complete with decorative archways, textured stone cladding, open terraces, and DHA approval compliance.
+              Curated master bedroom interior featuring plush upholstered back wall, ambient LED cove illumination, integrated reading profiles, and bespoke nightstands.
             </p>
             <div class="pt-2 flex items-center justify-between">
               <router-link to="/portfolio" class="text-xs font-bold text-[#8C6A38] dark:text-[#DFC8A5] flex items-center gap-1 hover:underline">
                 View Project Details →
               </router-link>
-              <span class="text-[11px] text-[#8C6A38] dark:text-[#C5A880] font-bold">5 Beds · Triple Story</span>
+              <span class="text-[11px] text-[#8C6A38] dark:text-[#C5A880] font-bold">Master Suite · Luxury Interior</span>
             </div>
           </div>
         </div>
@@ -928,7 +928,7 @@ const heroSlides = [
     titlePart1: 'Visionary Architectural',
     titlePart2: 'Design & Engineering Services',
     description: 'Licensed PCATP architects & PEC structural engineers in Lahore. Specializing in luxury 5 Marla, 10 Marla, 1 Kanal and 2 Kanal villas, guaranteed LDA/DHA approved submission drawings, and precision BIM modeling.',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=85'
+    image: '/images/scene1_villa.jpg'
   },
   {
     id: 2,
@@ -937,7 +937,7 @@ const heroSlides = [
     titlePart1: 'Bespoke Interior',
     titlePart2: 'Architecture & Styling Services',
     description: 'Transforming luxury residences in DHA & Gulberg with curated Italian Calacatta marble, acoustic woodwork, architectural lighting plans, bespoke wardrobe joinery, and turnkey execution.',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&q=85'
+    image: '/images/portfolio/interior_render_03.jpg'
   },
   {
     id: 3,
@@ -946,7 +946,7 @@ const heroSlides = [
     titlePart1: 'Photorealistic 4K',
     titlePart2: '3D Elevations & Virtual Reality',
     description: 'Experience your dream villa in cinematic 4K Lumion and 3ds Max before laying a single brick. Spanish, Contemporary Modern, Classical, and Minimalist exterior facades with exact daylight and night illumination.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85'
+    image: '/images/scene9_hero.jpg'
   },
   {
     id: 4,
@@ -955,7 +955,7 @@ const heroSlides = [
     titlePart1: 'Turnkey Construction',
     titlePart2: '& Complete Home Remodeling',
     description: 'End-to-end engineering execution in Lahore from grey structure to opulent turnkey handover with transparent bill of quantities (BOQ), Grade-60 steel, OPC cement, and rigorous site supervision.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=85'
+    image: '/images/portfolio/interior_render_04.jpg'
   }
 ]
 
