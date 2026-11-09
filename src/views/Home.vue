@@ -928,7 +928,7 @@ const heroSlides = [
     titlePart1: 'Visionary Architectural',
     titlePart2: 'Design & Engineering Services',
     description: 'Licensed PCATP architects & PEC structural engineers in Lahore. Specializing in luxury 5 Marla, 10 Marla, 1 Kanal and 2 Kanal villas, guaranteed LDA/DHA approved submission drawings, and precision BIM modeling.',
-    image: '/images/portfolio/D.jpg'
+    image: '/images/portfolio/hero_landmark_building.jpg'
   },
   {
     id: 2,
