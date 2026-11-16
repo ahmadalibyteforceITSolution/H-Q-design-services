@@ -1,37 +1,23 @@
+import fs from 'fs'
+import path from 'path'
 import https from 'https'
-import { allBlogs } from '../src/data/blogData.js'
-import { allFlatKeywords, slugifyKeyword } from '../src/data/keywordsData.js'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const host = process.env.SITE_HOST || 'www.hqdesignservices.com'
 const key = '8d7a42b109fc4d70835b3e1c9e2a5f71'
 const keyLocation = `https://${host}/${key}.txt`
 
-// Assemble high-priority indexing URL list
-const staticRoutes = [
-  '',
-  'properties',
-  'tools',
-  'projects',
-  'area-guides',
-  'trends',
-  'agents',
-  'forum',
-  'services',
-  'portfolio',
-  'case-studies',
-  'blog',
-  'about',
-  'partners',
-  'keywords-directory',
-  'reviews',
-  'contact'
-]
+// Read all verified unique URLs directly from public/sitemap.xml
+const sitemapPath = path.join(__dirname, '../public/sitemap.xml')
+let urlList = []
+if (fs.existsSync(sitemapPath)) {
+  const sitemapContent = fs.readFileSync(sitemapPath, 'utf8')
+  urlList = [...sitemapContent.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1])
+}
 
-const urlList = [
-  ...staticRoutes.map(r => r ? `https://${host}/${r}` : `https://${host}/`),
-  ...allFlatKeywords.slice(0, 1000).map(kw => `https://${host}/keywords/${slugifyKeyword(kw)}`),
-  ...allBlogs.slice(0, 1000).map(b => `https://${host}/blog/${b.slug}`)
-]
 
 const payload = JSON.stringify({
   host,
