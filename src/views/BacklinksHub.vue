@@ -395,8 +395,8 @@ import { openWhatsApp } from '../utils/whatsapp.js'
 const copiedSnippet = ref(false)
 const copiedWidget = ref(false)
 
-const embedSnippet = `<a href="https://h-q-design-services.vercel.app/" target="_blank" rel="noopener">H&Q Design Services - Best Architects & Luxury Interior Designers in Lahore</a>`
-const embedWidgetSnippet = `<iframe src="https://h-q-design-services.vercel.app/embed/calculator" width="100%" height="540" frameborder="0" style="border:none;border-radius:16px;max-width:850px;width:100%;display:block;margin:auto;"></iframe>`
+const embedSnippet = `<a href="https://www.hqdesignservices.com/" target="_blank" rel="noopener">H&Q Design Services - Best Architects & Luxury Interior Designers in Lahore</a>`
+const embedWidgetSnippet = `<iframe src="https://www.hqdesignservices.com/embed/calculator" width="100%" height="540" frameborder="0" style="border:none;border-radius:16px;max-width:850px;width:100%;display:block;margin:auto;"></iframe>`
 
 const copyText = (text, type) => {
   if (navigator.clipboard) {

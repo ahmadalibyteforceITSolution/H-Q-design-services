@@ -13,7 +13,7 @@ const getBaseUrl = () => {
   if (process.env.SITE_URL) {
     return process.env.SITE_URL.replace(/\/$/, '')
   }
-  return 'https://h-q-design-services.vercel.app'
+  return 'https://www.hqdesignservices.com'
 }
 
 const baseUrl = getBaseUrl()
@@ -57,8 +57,12 @@ let xml = `<?xml version="1.0" encoding="UTF-8" ?>
   <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml" />
 `
 
+const addedFeedUrls = new Set()
+
 feedBlogs.forEach(b => {
   const itemLink = `${baseUrl}/blog/${b.slug}`
+  if (addedFeedUrls.has(itemLink)) return
+  addedFeedUrls.add(itemLink)
   const pubDate = formatRfc822(b.date)
   
   xml += `  <item>
@@ -76,6 +80,8 @@ const todayRfc = new Date().toUTCString()
 feedKeywords.forEach(kw => {
   const slug = slugifyKeyword(kw)
   const itemLink = `${baseUrl}/keywords/${slug}`
+  if (addedFeedUrls.has(itemLink)) return
+  addedFeedUrls.add(itemLink)
   const cat = getCategoryForKeyword(kw)
   
   xml += `  <item>
@@ -95,4 +101,4 @@ xml += `</channel>
 
 const outputPath = path.join(projectRoot, 'public/feed.xml')
 fs.writeFileSync(outputPath, xml, 'utf8')
-console.log(`Successfully generated RSS feed with ${feedBlogs.length + feedKeywords.length} items in public/feed.xml.`)
+console.log(`Successfully generated RSS feed with ${addedFeedUrls.size} unique items in public/feed.xml.`)

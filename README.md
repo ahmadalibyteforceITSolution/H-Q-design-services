@@ -16,4 +16,4 @@ Official architectural design platform for **H&Q Design Services**, an engineeri
 - **Pakistan Phone / WhatsApp**: 0313-4487315
 - **Saudi Arabia Desk**: 0313-4487315
 - **Email**: asadali28997@gmail.com
-- **Website**: [h-q-design-services.vercel.app](https://h-q-design-services.vercel.app)
+- **Website**: [www.hqdesignservices.com](https://www.hqdesignservices.com)

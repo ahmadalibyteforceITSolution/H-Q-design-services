@@ -29,7 +29,7 @@
       <section class="space-y-3">
         <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">1. Introduction & Overview</h2>
         <p>
-          At <strong>H&Q Design Services</strong> (accessible from <a href="https://h-q-design-services.vercel.app/" class="text-[#088C7E] hover:underline font-semibold">https://h-q-design-services.vercel.app/</a>), one of our main priorities is the privacy of our visitors. This Privacy Policy document outlines the types of personal and non-personal information collected and recorded by H&Q Design Services and how we use, safeguard, and disclose it.
+          At <strong>H&Q Design Services</strong> (accessible from <a href="https://www.hqdesignservices.com/" class="text-[#088C7E] hover:underline font-semibold">https://www.hqdesignservices.com/</a>), one of our main priorities is the privacy of our visitors. This Privacy Policy document outlines the types of personal and non-personal information collected and recorded by H&Q Design Services and how we use, safeguard, and disclose it.
         </p>
         <p>
           If you have additional questions or require more information about our Privacy Policy, please contact us directly at <a href="mailto:asadali28997@gmail.com" class="text-[#088C7E] font-semibold hover:underline">asadali28997@gmail.com</a> or call our studio at <a href="tel:03134487315" class="text-[#088C7E] font-semibold hover:underline">+92 313 4487315</a> / <a href="tel:03134487315" class="text-[#088C7E] font-semibold hover:underline">+92 313 4487315</a>.

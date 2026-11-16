@@ -7,7 +7,7 @@ export const staticPagesDetailed = [
       <div class="py-12 max-w-4xl mx-auto px-4 space-y-6 text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
         <h1 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">Privacy Policy</h1>
         <p class="text-xs text-slate-500">Last updated: September 2, 2026 | Effective Date: January 1, 2026</p>
-        <p>At <strong>H&Q Design Services</strong> (https://h-q-design-services.vercel.app/), the privacy of our visitors is of paramount importance. This document details the types of personal data received and collected and how it is used.</p>
+        <p>At <strong>H&Q Design Services</strong> (https://www.hqdesignservices.com/), the privacy of our visitors is of paramount importance. This document details the types of personal data received and collected and how it is used.</p>
         <h2 class="text-xl font-bold text-slate-900 dark:text-white">Google AdSense & DoubleClick DART Cookies</h2>
         <p>Google is a third-party advertising vendor on our website. Google uses cookies, specifically DoubleClick DART cookies, to serve targeted advertisements based on a user's prior visits to this website and other websites across the Internet. Visitors may opt out of the use of DART cookies by visiting the Google Ad and Content Network Privacy Policy at https://policies.google.com/technologies/ads.</p>
         <h2 class="text-xl font-bold text-slate-900 dark:text-white">Log Files & Web Analytics</h2>

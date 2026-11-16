@@ -497,7 +497,7 @@ const currentUrl = computed(() => {
   if (typeof window !== 'undefined') {
     return window.location.href
   }
-  return `https://h-q-design-services.vercel.app/keywords/${slugifyKeyword(activeKeyword.value)}`
+  return `https://www.hqdesignservices.com/keywords/${slugifyKeyword(activeKeyword.value)}`
 })
 
 // Dynamic SEO & Structured Data
@@ -506,7 +506,7 @@ watchEffect(() => {
 
   const kw = activeKeyword.value
   const slug = slugifyKeyword(kw)
-  const canonicalUrl = `https://h-q-design-services.vercel.app/keywords/${slug}`
+  const canonicalUrl = `https://www.hqdesignservices.com/keywords/${slug}`
   const brand = ' | H&Q Studio'
   let pageTitle = `${kw}${brand}`
   if (pageTitle.length > 60) pageTitle = `${kw} | H&Q`
@@ -601,7 +601,7 @@ watchEffect(() => {
       "@type": "ArchitecturalService",
       "name": "H&Q Design Services",
       "telephone": "+923134487315",
-      "url": "https://h-q-design-services.vercel.app/"
+      "url": "https://www.hqdesignservices.com/"
     }
   }
   pageSchemaScript.textContent = JSON.stringify(pageSchemaData, null, 2)
@@ -624,13 +624,13 @@ watchEffect(() => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://h-q-design-services.vercel.app/"
+        "item": "https://www.hqdesignservices.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Keywords Directory",
-        "item": "https://h-q-design-services.vercel.app/keywords-directory"
+        "item": "https://www.hqdesignservices.com/keywords-directory"
       },
       {
         "@type": "ListItem",

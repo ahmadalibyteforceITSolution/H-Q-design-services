@@ -95,7 +95,7 @@
       <div class="flex items-center gap-2">
         <span class="text-slate-400 text-[11px]">Widget Powered by:</span>
         <a 
-          href="https://h-q-design-services.vercel.app/?utm_source=embed_calc_widget&utm_medium=referral&utm_campaign=partner_network" 
+          href="https://www.hqdesignservices.com/?utm_source=embed_calc_widget&utm_medium=referral&utm_campaign=partner_network" 
           target="_blank" 
           rel="noopener"
           class="text-[#088C7E] hover:text-emerald-300 font-extrabold text-[11px] underline underline-offset-2 flex items-center gap-1"
@@ -107,7 +107,7 @@
 
       <div class="flex items-center gap-3">
         <a 
-          href="https://h-q-design-services.vercel.app/partners?utm_source=embed_calc_widget&utm_medium=referral" 
+          href="https://www.hqdesignservices.com/partners?utm_source=embed_calc_widget&utm_medium=referral" 
           target="_blank" 
           rel="noopener"
           class="text-slate-400 hover:text-slate-200 text-[10px] font-semibold transition-colors"

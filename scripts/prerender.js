@@ -49,8 +49,16 @@ const optimizeTitle = (rawTitle, brand = ' | H&Q Studio', max = 60) => {
 
 console.log('Starting comprehensive pre-rendering for Google AdSense compliance & high-value content...')
 
+const seenCanonicals = new Map()
+
 // Helper to write html file into target directory or root
 const renderPage = (routePath, pageTitle, pageDesc, canonicalUrl, pageImage, pageContentHtml, extraHeadHtml = '') => {
+  if (seenCanonicals.has(canonicalUrl)) {
+    console.warn(`[SEO WARNING] Duplicate canonical URL detected: "${canonicalUrl}" used by "${routePath}" and already used by "${seenCanonicals.get(canonicalUrl)}"`)
+  } else {
+    seenCanonicals.set(canonicalUrl, routePath)
+  }
+
   let html = baseTemplate
 
   // Replace Title
@@ -116,7 +124,7 @@ const renderPage = (routePath, pageTitle, pageDesc, canonicalUrl, pageImage, pag
 
 // 1. Pre-render Root Homepage (dist/index.html) with Rich Semantic HTML & Citations Schema
 const citationsJsonLdScript = `<script type="application/ld+json">${JSON.stringify(generateCitationsJsonLd())}</script>`
-renderPage('/', homePageData.title, homePageData.desc, 'https://h-q-design-services.vercel.app/', 'https://h-q-design-services.vercel.app/logo.png', homePageData.body, citationsJsonLdScript)
+renderPage('/', homePageData.title, homePageData.desc, 'https://www.hqdesignservices.com/', 'https://www.hqdesignservices.com/logo.png', homePageData.body, citationsJsonLdScript)
 
 const sharedInternalLinkingHtml = `
   <section style="max-width:1200px;margin:40px auto 20px;padding:30px 24px;background:#0f172a;color:#fff;border-radius:24px;border:1px solid #1e293b;font-family:inherit;">
@@ -301,7 +309,7 @@ const sharedInternalLinkingHtml = `
 
 // 2. Pre-render All Static Pages with Substantial Content & Tailored Schemas
 staticPagesDetailed.forEach(p => {
-  const canonicalUrl = `https://h-q-design-services.vercel.app/${p.route}`
+  const canonicalUrl = `https://www.hqdesignservices.com/${p.route}`
   let mainBody = p.body
   let extraHeadHtml = ''
 
@@ -324,7 +332,7 @@ staticPagesDetailed.forEach(p => {
         "@type": "ArchitecturalService",
         "name": "H&Q Design Services",
         "telephone": ["+923134487315", "+923134487315"],
-        "url": "https://h-q-design-services.vercel.app/"
+        "url": "https://www.hqdesignservices.com/"
       }
     }
     extraHeadHtml = `<script type="application/ld+json">${JSON.stringify(servicesSchema)}</script>`
@@ -363,7 +371,7 @@ staticPagesDetailed.forEach(p => {
           "@type": "DefinedTerm",
           "name": c.name,
           "description": c.description,
-          "url": `https://h-q-design-services.vercel.app${c.targetPage}`
+          "url": `https://www.hqdesignservices.com${c.targetPage}`
         }))
       }
     }
@@ -439,8 +447,8 @@ staticPagesDetailed.forEach(p => {
           "@type": "RealEstateListing",
           "name": item.title,
           "description": item.description,
-          "url": `https://h-q-design-services.vercel.app/properties`,
-          "image": item.images && item.images.length > 0 ? item.images[0] : "https://h-q-design-services.vercel.app/logo.png",
+          "url": `https://www.hqdesignservices.com/properties`,
+          "image": item.images && item.images.length > 0 ? item.images[0] : "https://www.hqdesignservices.com/logo.png",
           "offers": {
             "@type": "Offer",
             "price": item.numericPrice || 0,
@@ -594,7 +602,7 @@ staticPagesDetailed.forEach(p => {
       </div>
     </footer>
   `
-  renderPage(p.route, optimizeTitle(p.title), p.desc, canonicalUrl, 'https://h-q-design-services.vercel.app/logo.jpg', bodyHtml, extraHeadHtml)
+  renderPage(p.route, optimizeTitle(p.title), p.desc, canonicalUrl, 'https://www.hqdesignservices.com/logo.jpg', bodyHtml, extraHeadHtml)
 })
 
 // 3. Pre-render Blog Pages
@@ -607,7 +615,7 @@ const renderSingleBlog = (b, slugOverride = null) => {
   renderedSlugs.add(targetSlug)
 
   const routePath = `blog/${targetSlug}`
-  const canonicalUrl = `https://h-q-design-services.vercel.app/blog/${targetSlug}`
+  const canonicalUrl = `https://www.hqdesignservices.com/blog/${targetSlug}`
   const pageTitle = optimizeTitle(b.title, ' | H&Q Studio', 60)
   const pageDesc = b.excerpt || `Detailed architectural design, floor plans, and 2026 construction cost analysis for ${b.title}.`
 
@@ -621,14 +629,14 @@ const renderSingleBlog = (b, slugOverride = null) => {
     "author": [{
       "@type": "Organization",
       "name": "H&Q Design Services",
-      "url": "https://h-q-design-services.vercel.app/"
+      "url": "https://www.hqdesignservices.com/"
     }],
     "publisher": {
       "@type": "Organization",
       "name": "H&Q Design Services",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://h-q-design-services.vercel.app/favicon.png"
+        "url": "https://www.hqdesignservices.com/favicon.png"
       }
     },
     "description": pageDesc,
@@ -642,8 +650,8 @@ const renderSingleBlog = (b, slugOverride = null) => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://h-q-design-services.vercel.app/" },
-      { "@type": "ListItem", "position": 2, "name": "Architectural Guides", "item": "https://h-q-design-services.vercel.app/blog" },
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hqdesignservices.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Architectural Guides", "item": "https://www.hqdesignservices.com/blog" },
       { "@type": "ListItem", "position": 3, "name": b.title, "item": canonicalUrl }
     ]
   }
@@ -783,7 +791,7 @@ allFlatKeywords.forEach((kw, i) => {
   renderedKeywordSlugs.add(slug)
 
   const routePath = `keywords/${slug}`
-  const canonicalUrl = `https://h-q-design-services.vercel.app/keywords/${slug}`
+  const canonicalUrl = `https://www.hqdesignservices.com/keywords/${slug}`
   const pageTitle = optimizeTitle(kw, ' | H&Q Studio', 60)
   const pageDesc = `Looking for ${kw} in Lahore, DHA, or Pakistan? H&Q Design Services provides top-rated architectural designs, 3D elevations, luxury interiors, and turnkey construction. Call or WhatsApp 0313-4487315.`
   const category = getCategoryForKeyword(kw)
@@ -805,7 +813,7 @@ allFlatKeywords.forEach((kw, i) => {
       "@type": "ArchitecturalService",
       "name": "H&Q Design Services",
       "telephone": ["+923134487315", "+923134487315"],
-      "url": "https://h-q-design-services.vercel.app/"
+      "url": "https://www.hqdesignservices.com/"
     }
   }
 
@@ -813,8 +821,8 @@ allFlatKeywords.forEach((kw, i) => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://h-q-design-services.vercel.app/" },
-      { "@type": "ListItem", "position": 2, "name": "Keywords Directory", "item": "https://h-q-design-services.vercel.app/keywords-directory" },
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hqdesignservices.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Keywords Directory", "item": "https://www.hqdesignservices.com/keywords-directory" },
       { "@type": "ListItem", "position": 3, "name": kw, "item": canonicalUrl }
     ]
   }

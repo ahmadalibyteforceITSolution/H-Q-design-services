@@ -14,7 +14,7 @@ const getBaseUrl = () => {
   if (process.env.SITE_URL) {
     return process.env.SITE_URL.replace(/\/$/, '')
   }
-  return 'https://h-q-design-services.vercel.app'
+  return 'https://www.hqdesignservices.com'
 }
 
 const baseUrl = getBaseUrl()
@@ -46,62 +46,50 @@ let xml = `<?xml version="1.0" encoding="UTF-8"?>
 `
 
 const today = new Date().toISOString().split('T')[0]
+const allAddedUrls = new Set()
+
+const addSitemapUrl = (rawLoc, changefreq, priority, lastmod = today) => {
+  if (!rawLoc) return
+  let cleanLoc = rawLoc.trim()
+  if (cleanLoc !== `${baseUrl}/` && cleanLoc.endsWith('/')) {
+    cleanLoc = cleanLoc.slice(0, -1)
+  }
+  if (allAddedUrls.has(cleanLoc)) return
+  allAddedUrls.add(cleanLoc)
+  xml += `  <url>
+    <loc>${cleanLoc}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+  </url>
+`
+}
 
 // Add static pages
 staticPages.forEach(p => {
   const pathPart = p.url ? `/${p.url}` : '/'
-  xml += `  <url>
-    <loc>${baseUrl}${pathPart}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>${p.changefreq}</changefreq>
-    <priority>${p.priority}</priority>
-  </url>
-`
+  addSitemapUrl(`${baseUrl}${pathPart}`, p.changefreq, p.priority)
 })
 
 // Add dynamic 2,000+ architectural & interior design pages
-const addedSlugs = new Set()
-
 allBlogs.forEach(b => {
-  if (!addedSlugs.has(b.slug)) {
-    addedSlugs.add(b.slug)
-    xml += `  <url>
-    <loc>${baseUrl}/blog/${b.slug}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-`
+  if (b.slug) {
+    addSitemapUrl(`${baseUrl}/blog/${b.slug}`, 'weekly', '0.85')
   }
 })
 
 // Add explicit high-priority GSC target URLs requested for indexing
 userGscSlugs.forEach(slug => {
-  if (!addedSlugs.has(slug)) {
-    addedSlugs.add(slug)
-    xml += `  <url>
-    <loc>${baseUrl}/blog/${slug}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
-  </url>
-`
+  if (slug) {
+    addSitemapUrl(`${baseUrl}/blog/${slug}`, 'daily', '0.95')
   }
 })
 
 // Add dynamic respective keyword pages
-const addedKeywordSlugs = new Set()
 allFlatKeywords.forEach(kw => {
   const kSlug = slugifyKeyword(kw)
-  if (!addedKeywordSlugs.has(kSlug)) {
-    addedKeywordSlugs.add(kSlug)
-    xml += `  <url>
-    <loc>${baseUrl}/keywords/${kSlug}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-`
+  if (kSlug) {
+    addSitemapUrl(`${baseUrl}/keywords/${kSlug}`, 'weekly', '0.90')
   }
 })
 
@@ -109,4 +97,4 @@ xml += '</urlset>\n'
 
 const outputPath = path.join(__dirname, '../public/sitemap.xml')
 fs.writeFileSync(outputPath, xml, 'utf8')
-console.log(`Successfully generated sitemap with ${staticPages.length + allBlogs.length + addedKeywordSlugs.size} URLs in public/sitemap.xml.`)
+console.log(`Successfully generated sitemap with ${allAddedUrls.size} unique URLs in public/sitemap.xml.`)

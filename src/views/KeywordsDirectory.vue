@@ -306,7 +306,7 @@ onMounted(() => {
     "@type": "CollectionPage",
     "name": "Architecture, Construction & Design Glossary | H&Q Design Services",
     "description": "Comprehensive reference library and terminology index covering residential villas, 3D elevations, structural engineering, and municipal bylaws in Pakistan.",
-    "url": "https://h-q-design-services.vercel.app/keywords-directory",
+    "url": "https://www.hqdesignservices.com/keywords-directory",
     "mainEntity": {
       "@type": "DefinedTermSet",
       "name": "Architecture & Real Estate Terminology Pakistan",
@@ -314,7 +314,7 @@ onMounted(() => {
         "@type": "DefinedTerm",
         "name": cluster.name,
         "description": cluster.description,
-        "url": `https://h-q-design-services.vercel.app${cluster.targetPage}`
+        "url": `https://www.hqdesignservices.com${cluster.targetPage}`
       }))
     }
   }

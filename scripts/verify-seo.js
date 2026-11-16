@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const distDir = path.join(__dirname, '../dist')
 
-console.log('--- Verifying Dist Build for SEO Issues ---')
+console.log('--- Verifying Dist Build for SEO & Canonical Issues ---')
 
 let waLinksFound = 0
 let nofollowLinksFound = 0
@@ -16,13 +16,26 @@ let sampleOver60Titles = []
 let canonicalIssues = []
 let missingCanonical = 0
 let multipleCanonicals = 0
+let duplicateCanonicals = 0
 let totalHtmlScanned = 0
 
-// Check sitemap.xml exists and is non-empty
+const canonicalToRoutesMap = new Map()
+
+// Check sitemap.xml exists and is non-empty, and check for duplicate URLs
 const sitemapFile = path.join(__dirname, '../public/sitemap.xml')
 if (!fs.existsSync(sitemapFile) || fs.statSync(sitemapFile).size === 0) {
   console.error('❌ Sitemap public/sitemap.xml missing or empty!')
   process.exit(1)
+}
+
+const sitemapContent = fs.readFileSync(sitemapFile, 'utf8')
+const sitemapLocMatches = [...sitemapContent.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1])
+const uniqueSitemapLocs = new Set(sitemapLocMatches)
+if (sitemapLocMatches.length !== uniqueSitemapLocs.size) {
+  console.error(`❌ Duplicate URLs found in sitemap! Total: ${sitemapLocMatches.length}, Unique: ${uniqueSitemapLocs.size}`)
+  process.exit(1)
+} else {
+  console.log(`✅ Sitemap conformity passed: ${uniqueSitemapLocs.size} unique URLs verified (0 duplicates).`)
 }
 
 function scanDirectory(dir) {
@@ -47,8 +60,22 @@ function scanDirectory(dir) {
           if (canonicalIssues.length < 5) canonicalIssues.push(`Multiple canonicals (${canonMatches.length}): ${relPath}`)
         } else {
           const href = canonMatches[0][1]
-          if (!href.startsWith('https://h-q-design-services.vercel.app')) {
+          if (!href.startsWith('https://www.hqdesignservices.com')) {
             canonicalIssues.push(`Bad canonical domain in ${relPath}: ${href}`)
+          }
+
+          // Check for duplicate canonical tags across different unique routes
+          const cleanRoute = relPath.replace(/\/index\.html$/, '').replace(/\.html$/, '') || '/'
+          if (canonicalToRoutesMap.has(href)) {
+            const prevRoute = canonicalToRoutesMap.get(href)
+            if (prevRoute !== cleanRoute) {
+              duplicateCanonicals++
+              if (canonicalIssues.length < 5) {
+                canonicalIssues.push(`Duplicate canonical tag: "${href}" shared by "${cleanRoute}" and "${prevRoute}"`)
+              }
+            }
+          } else {
+            canonicalToRoutesMap.set(href, cleanRoute)
           }
         }
       }
@@ -97,6 +124,7 @@ scanDirectory(distDir)
 console.log(`Total HTML files scanned: ${totalHtmlScanned}`)
 console.log(`Missing canonical tags: ${missingCanonical} (Must be 0)`)
 console.log(`Multiple canonical tags: ${multipleCanonicals} (Must be 0)`)
+console.log(`Duplicate canonical tags across different routes: ${duplicateCanonicals} (Must be 0)`)
 console.log(`Raw wa.me <a> links found: ${waLinksFound} (Must be 0)`)
 console.log(`Nofollow <a> links found: ${nofollowLinksFound} (Must be 0)`)
 console.log(`/go/ <a> links found: ${goLinksFound} (Must be 0)`)
@@ -108,8 +136,8 @@ if (canonicalIssues.length > 0) {
   console.log('Sample canonical issues:', canonicalIssues)
 }
 
-if (missingCanonical === 0 && multipleCanonicals === 0 && waLinksFound === 0 && nofollowLinksFound === 0 && goLinksFound === 0 && titlesOver60 === 0) {
-  console.log('✅ ALL CHECKS PASSED: 100% Valid Canonical Tags, 0 Broken External WhatsApp Links, 0 Nofollow Links, 0 Internal /go/ Links, & 0 Title Tags > 60 chars!')
+if (missingCanonical === 0 && multipleCanonicals === 0 && duplicateCanonicals === 0 && waLinksFound === 0 && nofollowLinksFound === 0 && goLinksFound === 0 && titlesOver60 === 0 && canonicalIssues.length === 0) {
+  console.log('✅ ALL CHECKS PASSED: 100% Unique & Valid Canonical Tags, 0 Repeated URLs, 0 Broken External WhatsApp Links, 0 Nofollow Links, 0 Internal /go/ Links, & 0 Title Tags > 60 chars!')
 } else {
   console.error('❌ ISSUES REMAINING!')
   process.exit(1)

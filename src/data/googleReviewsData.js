@@ -207,9 +207,9 @@ export function generateGoogleReviewSchema() {
     '@context': 'https://schema.org',
     '@type': 'ArchitecturalService',
     'name': 'H&Q Design Services',
-    'image': 'https://h-q-design-services.vercel.app/logo.png',
-    '@id': 'https://h-q-design-services.vercel.app/#business',
-    'url': 'https://h-q-design-services.vercel.app/',
+    'image': 'https://www.hqdesignservices.com/logo.png',
+    '@id': 'https://www.hqdesignservices.com/#business',
+    'url': 'https://www.hqdesignservices.com/',
     'telephone': ['+923134487315', '+923134487315'],
     'priceRange': '$$$',
     'address': {

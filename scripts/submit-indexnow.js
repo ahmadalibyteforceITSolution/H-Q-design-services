@@ -2,7 +2,7 @@ import https from 'https'
 import { allBlogs } from '../src/data/blogData.js'
 import { allFlatKeywords, slugifyKeyword } from '../src/data/keywordsData.js'
 
-const host = 'h-q-design-services.vercel.app'
+const host = process.env.SITE_HOST || 'www.hqdesignservices.com'
 const key = '8d7a42b109fc4d70835b3e1c9e2a5f71'
 const keyLocation = `https://${host}/${key}.txt`
 

@@ -29,7 +29,7 @@
       <section class="space-y-3">
         <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">1. Agreement to Terms</h2>
         <p>
-          Welcome to <strong>H&Q Design Services</strong> ("Company", "we", "our", "us"). By accessing or using our website located at <a href="https://h-q-design-services.vercel.app/" class="text-[#088C7E] hover:underline font-semibold">https://h-q-design-services.vercel.app/</a>, you agree to be bound by these Terms of Service and all applicable laws and regulations in Pakistan.
+          Welcome to <strong>H&Q Design Services</strong> ("Company", "we", "our", "us"). By accessing or using our website located at <a href="https://www.hqdesignservices.com/" class="text-[#088C7E] hover:underline font-semibold">https://www.hqdesignservices.com/</a>, you agree to be bound by these Terms of Service and all applicable laws and regulations in Pakistan.
         </p>
       </section>
 

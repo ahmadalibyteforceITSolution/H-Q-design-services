@@ -2,6 +2,8 @@ import { execSync } from 'child_process'
 import { fileURLToPath } from 'url'
 import path from 'path'
 
+import fs from 'fs'
+
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const projectRoot = path.join(__dirname, '..')
@@ -20,6 +22,12 @@ try {
 } catch (error) {
   console.error('RSS feed generation failed:', error)
   process.exit(1)
+}
+
+console.log('Cleaning dist directory to prevent stale HTML files...')
+const distPath = path.join(projectRoot, 'dist')
+if (fs.existsSync(distPath)) {
+  fs.rmSync(distPath, { recursive: true, force: true })
 }
 
 console.log('Compiling Vite production build...')

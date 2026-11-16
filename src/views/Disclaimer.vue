@@ -29,7 +29,7 @@
       <section class="space-y-3">
         <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">1. General Information Disclaimer</h2>
         <p>
-          The information provided by <strong>H&Q Design Services</strong> ("we", "us", or "our") on <a href="https://h-q-design-services.vercel.app/" class="text-[#088C7E] hover:underline font-semibold">https://h-q-design-services.vercel.app/</a> is for general informational and educational purposes only. All information on the site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the site.
+          The information provided by <strong>H&Q Design Services</strong> ("we", "us", or "our") on <a href="https://www.hqdesignservices.com/" class="text-[#088C7E] hover:underline font-semibold">https://www.hqdesignservices.com/</a> is for general informational and educational purposes only. All information on the site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the site.
         </p>
       </section>
 

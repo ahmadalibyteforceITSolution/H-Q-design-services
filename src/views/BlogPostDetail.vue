@@ -224,7 +224,7 @@ const selectedProperty = ref(null)
 
 const currentUrl = computed(() => {
   const slug = route.params.slug || ''
-  return `https://h-q-design-services.vercel.app/blog/${slug}`
+  return `https://www.hqdesignservices.com/blog/${slug}`
 })
 
 const copyLink = () => {
@@ -302,7 +302,7 @@ watchEffect(() => {
     const pageTitle = `${post.title} | H&Q Design Services Studio Lahore`
     const pageDesc = post.excerpt || `Comprehensive architectural design, floor plans, and 2026 construction cost analysis for ${post.title}.`
     const pageImage = post.image
-    const canonicalUrl = `https://h-q-design-services.vercel.app/blog/${post.slug}`
+    const canonicalUrl = `https://www.hqdesignservices.com/blog/${post.slug}`
 
     // Document Title
     document.title = pageTitle
@@ -385,14 +385,14 @@ watchEffect(() => {
       "author": [{
         "@type": "Organization",
         "name": "H&Q Design Services",
-        "url": "https://h-q-design-services.vercel.app/"
+        "url": "https://www.hqdesignservices.com/"
       }],
       "publisher": {
         "@type": "Organization",
         "name": "H&Q Design Services",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://h-q-design-services.vercel.app/favicon.png"
+          "url": "https://www.hqdesignservices.com/favicon.png"
         }
       },
       "description": pageDesc,
@@ -421,13 +421,13 @@ watchEffect(() => {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://h-q-design-services.vercel.app/"
+          "item": "https://www.hqdesignservices.com/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Architectural Guides",
-          "item": "https://h-q-design-services.vercel.app/blog"
+          "item": "https://www.hqdesignservices.com/blog"
         },
         {
           "@type": "ListItem",

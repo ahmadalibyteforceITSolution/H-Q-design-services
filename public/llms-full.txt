@@ -1,4 +1,4 @@
-﻿# H&Q Design Services - Full Knowledge Documentation
+# H&Q Design Services - Full Knowledge Documentation
 
 ## About the Organization
 H&Q Design Services (HANDQ) is a multidisciplinary architecture, interior design, and structural engineering firm headquartered in Lahore, Pakistan. The studio operates dedicated desks in DHA Phase 6 Lahore and Parkview City Lahore, alongside an international consultation desk for Pakistani expatriates in Saudi Arabia and the UAE.
@@ -16,7 +16,7 @@ H&Q Design Services (HANDQ) is a multidisciplinary architecture, interior design
 - Studio Address: Topaz Block, Park View City, Multan Road & DHA Lahore Studio, Lahore, Punjab 54000, Pakistan
 - Local Contact: +92 341 6887454 / +92 313 4487315
 - International Consultation (KSA): +966 50 714 3124
-- Official Website: https://h-q-design-services.vercel.app
+- Official Website: https://www.hqdesignservices.com
 - Geo Coordinates: 31.4286 N, 74.2268 E
 
 ## Authoritative Business Citations & Directory Registrations (58 Verified Profiles)
