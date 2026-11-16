@@ -21,7 +21,7 @@ let totalHtmlScanned = 0
 
 const canonicalToRoutesMap = new Map()
 
-// Check sitemap.xml exists and is non-empty, and check for duplicate URLs
+// Check sitemap.xml exists and is non-empty, and check for duplicate URLs & domain accuracy
 const sitemapFile = path.join(__dirname, '../public/sitemap.xml')
 if (!fs.existsSync(sitemapFile) || fs.statSync(sitemapFile).size === 0) {
   console.error('❌ Sitemap public/sitemap.xml missing or empty!')
@@ -31,11 +31,47 @@ if (!fs.existsSync(sitemapFile) || fs.statSync(sitemapFile).size === 0) {
 const sitemapContent = fs.readFileSync(sitemapFile, 'utf8')
 const sitemapLocMatches = [...sitemapContent.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1])
 const uniqueSitemapLocs = new Set(sitemapLocMatches)
+
 if (sitemapLocMatches.length !== uniqueSitemapLocs.size) {
   console.error(`❌ Duplicate URLs found in sitemap! Total: ${sitemapLocMatches.length}, Unique: ${uniqueSitemapLocs.size}`)
   process.exit(1)
-} else {
-  console.log(`✅ Sitemap conformity passed: ${uniqueSitemapLocs.size} unique URLs verified (0 duplicates).`)
+}
+
+// Strict domain verification - zero tolerance for vercel.app in sitemap URLs
+const nonProdUrls = sitemapLocMatches.filter(loc => !loc.startsWith('https://www.hqdesignservices.com'))
+if (nonProdUrls.length > 0) {
+  console.error(`❌ Non-production domain found in sitemap! Sample: ${nonProdUrls.slice(0, 5).join(', ')}`)
+  process.exit(1)
+}
+
+console.log(`✅ Sitemap conformity passed: ${uniqueSitemapLocs.size} unique URLs verified on https://www.hqdesignservices.com (0 duplicates, 0 vercel.app).`)
+
+// Check dist/sitemap.xml if dist exists
+const distSitemapFile = path.join(distDir, 'sitemap.xml')
+if (fs.existsSync(distSitemapFile)) {
+  const distContent = fs.readFileSync(distSitemapFile, 'utf8')
+  if (distContent.includes('vercel.app')) {
+    console.error('❌ dist/sitemap.xml contains vercel.app domain!')
+    process.exit(1)
+  }
+}
+
+// Check feed.xml
+const feedFile = path.join(__dirname, '../public/feed.xml')
+if (fs.existsSync(feedFile)) {
+  const feedContent = fs.readFileSync(feedFile, 'utf8')
+  if (feedContent.includes('vercel.app')) {
+    console.error('❌ public/feed.xml contains vercel.app domain!')
+    process.exit(1)
+  }
+}
+const distFeedFile = path.join(distDir, 'feed.xml')
+if (fs.existsSync(distFeedFile)) {
+  const distFeedContent = fs.readFileSync(distFeedFile, 'utf8')
+  if (distFeedContent.includes('vercel.app')) {
+    console.error('❌ dist/feed.xml contains vercel.app domain!')
+    process.exit(1)
+  }
 }
 
 function scanDirectory(dir) {

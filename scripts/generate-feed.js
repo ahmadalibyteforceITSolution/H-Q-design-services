@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename)
 const projectRoot = path.join(__dirname, '..')
 
 const getBaseUrl = () => {
-  if (process.env.SITE_URL) {
+  if (process.env.SITE_URL && !process.env.SITE_URL.includes('vercel.app')) {
     return process.env.SITE_URL.replace(/\/$/, '')
   }
   return 'https://www.hqdesignservices.com'
@@ -101,4 +101,9 @@ xml += `</channel>
 
 const outputPath = path.join(projectRoot, 'public/feed.xml')
 fs.writeFileSync(outputPath, xml, 'utf8')
+
+const distDir = path.join(projectRoot, 'dist')
+if (fs.existsSync(distDir)) {
+  fs.writeFileSync(path.join(distDir, 'feed.xml'), xml, 'utf8')
+}
 console.log(`Successfully generated RSS feed with ${addedFeedUrls.size} unique items in public/feed.xml.`)

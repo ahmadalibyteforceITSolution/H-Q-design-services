@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename)
 
 // Setup dynamic baseUrl from environment variables for cross-domain flexibility
 const getBaseUrl = () => {
-  if (process.env.SITE_URL) {
+  if (process.env.SITE_URL && !process.env.SITE_URL.includes('vercel.app')) {
     return process.env.SITE_URL.replace(/\/$/, '')
   }
   return 'https://www.hqdesignservices.com'
@@ -97,4 +97,9 @@ xml += '</urlset>\n'
 
 const outputPath = path.join(__dirname, '../public/sitemap.xml')
 fs.writeFileSync(outputPath, xml, 'utf8')
+
+const distDir = path.join(__dirname, '../dist')
+if (fs.existsSync(distDir)) {
+  fs.writeFileSync(path.join(distDir, 'sitemap.xml'), xml, 'utf8')
+}
 console.log(`Successfully generated sitemap with ${allAddedUrls.size} unique URLs in public/sitemap.xml.`)

@@ -288,7 +288,8 @@ const router = createRouter({
 
 // Dynamic Canonical Tag & Meta Management Guard for 100% SEO Indexing
 router.afterEach((to) => {
-  const baseUrl = import.meta.env.VITE_SITE_URL || 'https://www.hqdesignservices.com'
+  const envUrl = import.meta.env.VITE_SITE_URL
+  const baseUrl = (envUrl && !envUrl.includes('vercel.app')) ? envUrl.replace(/\/$/, '') : 'https://www.hqdesignservices.com'
   const cleanPath = to.path === '/' ? '/' : to.path.replace(/\/+$/, '')
   let canonicalUrl = `${baseUrl}${cleanPath}`
 
