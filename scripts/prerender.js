@@ -127,7 +127,7 @@ const citationsJsonLdScript = `<script type="application/ld+json">${JSON.stringi
 renderPage('/', homePageData.title, homePageData.desc, 'https://www.hqdesignservices.com/', 'https://www.hqdesignservices.com/logo.png', homePageData.body, citationsJsonLdScript)
 
 const sharedInternalLinkingHtml = `
-  <section style="max-width:1200px;margin:40px auto 20px;padding:30px 24px;background:#0f172a;color:#fff;border-radius:24px;border:1px solid #1e293b;font-family:inherit;">
+  <section style="max-width:100%;margin:40px auto 20px;padding:30px 24px;background:#0f172a;color:#fff;border-radius:24px;border:1px solid #1e293b;font-family:inherit;">
     <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1e293b;padding-bottom:16px;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
       <div>
         <span style="background:#088C7E;color:#fff;font-size:10px;font-weight:900;text-transform:uppercase;padding:4px 10px;border-radius:999px;letter-spacing:1px;display:inline-block;margin-bottom:6px;">Pakistan Real Estate &amp; Architecture Network</span>
@@ -680,7 +680,7 @@ const renderSingleBlog = (b, slugOverride = null) => {
       </div>
     </header>
 
-    <div class="py-12 space-y-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="py-12 space-y-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-slate-500">
         <a href="/" class="hover:text-[#088C7E]">Home</a>
         <span>/</span>
@@ -697,7 +697,7 @@ const renderSingleBlog = (b, slugOverride = null) => {
         </div>
       </div>
 
-      <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 h-80 sm:h-96 shadow-lg relative">
+      <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 h-80 sm:h-[440px] lg:h-[540px] shadow-2xl relative">
         <img src="${escapeXml(b.image)}" alt="${escapeXml(b.title)}" class="w-full h-full object-cover" />
       </div>
 
@@ -883,7 +883,7 @@ allFlatKeywords.forEach((kw, i) => {
       </div>
     </header>
 
-    <div class="py-12 space-y-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="py-12 space-y-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-slate-500">
         <a href="/" class="hover:text-[#088C7E]">Home</a>
         <span>/</span>
@@ -900,7 +900,7 @@ allFlatKeywords.forEach((kw, i) => {
         </div>
       </div>
 
-      <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 h-80 sm:h-96 shadow-lg relative">
+      <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 h-80 sm:h-[440px] lg:h-[540px] shadow-2xl relative">
         <img src="${escapeXml(img)}" alt="${escapeXml(kw)}" class="w-full h-full object-cover" />
       </div>
 

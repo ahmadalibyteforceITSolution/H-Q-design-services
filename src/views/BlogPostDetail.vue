@@ -1,5 +1,5 @@
 <template>
-  <div class="py-12 space-y-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-transparent text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
+  <div class="py-10 space-y-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-transparent text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
     
     <!-- Breadcrumb -->
     <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 font-bold">
@@ -36,92 +36,237 @@
       </div>
     </div>
 
-    <!-- Cover Image -->
-    <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 h-80 sm:h-96 shadow-lg relative group bg-black">
+    <!-- Cover Image: Expanded High-Resolution Aspect Ratio -->
+    <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 h-80 sm:h-[440px] lg:h-[540px] shadow-2xl relative group bg-black">
       <img :src="activePost.image" :alt="activePost.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
       <div class="absolute bottom-4 left-4 bg-[#0B0E14]/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-white text-xs font-bold border border-white/20 flex items-center gap-1.5 shadow-xl">
         <i class="fa-solid fa-camera text-[#C5A880]"></i> H&amp;Q 4K Architectural Visualization
       </div>
     </div>
 
-    <!-- Social Sharing Bar (Off-Page SEO & Virality) -->
-    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 shadow-md">
-      <div class="space-y-1">
-        <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-800 dark:text-slate-200 flex items-center gap-2">
-          <i class="fa-solid fa-share-nodes text-[#C5A880]"></i> Share This Architectural Guide
-        </h4>
-        <p class="text-xs text-slate-600 dark:text-slate-400 font-medium">Help overseas Pakistanis and home builders calculate realistic construction costs.</p>
+    <!-- 12-Column Responsive Editorial Grid (Main Body + Sticky Architectural Sidebar) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Main Content Column (8 cols) -->
+      <div class="lg:col-span-8 space-y-8">
+        
+        <!-- Social Sharing Bar (Off-Page SEO & Virality) -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 shadow-md">
+          <div class="space-y-1">
+            <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-800 dark:text-slate-200 flex items-center gap-2">
+              <i class="fa-solid fa-share-nodes text-[#C5A880]"></i> Share This Architectural Guide
+            </h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 font-medium">Help overseas Pakistanis and home builders calculate realistic construction costs.</p>
+          </div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <!-- WhatsApp -->
+            <a 
+              :href="'https://api.whatsapp.com/send?text=' + encodeURIComponent(activePost.title + ' - ' + currentUrl)" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-10 h-10 rounded-2xl flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm cursor-pointer"
+              title="Share on WhatsApp"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <!-- Facebook -->
+            <a 
+              :href="'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(currentUrl)" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-10 h-10 rounded-2xl flex items-center justify-center bg-blue-600 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm cursor-pointer"
+              title="Share on Facebook"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <!-- Twitter / X -->
+            <a 
+              :href="'https://twitter.com/intent/tweet?text=' + encodeURIComponent(activePost.title) + '&url=' + encodeURIComponent(currentUrl)" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-900 dark:bg-slate-800 hover:bg-black hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm border border-slate-700 cursor-pointer"
+              title="Share on X"
+            >
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <!-- LinkedIn -->
+            <a 
+              :href="'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(currentUrl)" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-10 h-10 rounded-2xl flex items-center justify-center bg-sky-700 hover:bg-sky-800 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm cursor-pointer"
+              title="Share on LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <!-- Pinterest -->
+            <a 
+              :href="'https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(currentUrl) + '&media=' + encodeURIComponent(activePost.image) + '&description=' + encodeURIComponent(activePost.title)" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-10 h-10 rounded-2xl flex items-center justify-center bg-red-600 hover:bg-red-500 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm cursor-pointer"
+              title="Pin on Pinterest"
+            >
+              <i class="fa-brands fa-pinterest-p"></i>
+            </a>
+            <!-- Copy Link -->
+            <button 
+              @click="copyLink"
+              class="h-10 px-4 rounded-2xl flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 hover:scale-105 active:scale-95 transition-all text-slate-800 dark:text-slate-200 text-xs font-bold shadow-sm border border-slate-200 dark:border-white/10 cursor-pointer"
+              :title="copied ? 'Link Copied!' : 'Copy Link'"
+            >
+              <i class="fa-solid" :class="copied ? 'fa-circle-check text-emerald-500 animate-bounce' : 'fa-link'"></i>
+              <span>{{ copied ? 'Link Copied!' : 'Copy Link' }}</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <article class="prose dark:prose-invert max-w-none text-slate-800 dark:text-slate-200 space-y-6 leading-relaxed text-base sm:text-lg">
+          <div v-html="activePost.content || defaultContent"></div>
+        </article>
+
+        <!-- Trending Architectural Topic Tags & Cross-Links -->
+        <div class="p-6 sm:p-8 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 space-y-4 shadow-sm">
+          <div class="flex items-center justify-between">
+            <h4 class="text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-1.5">
+              <i class="fa-solid fa-tags text-[#C5A880]"></i>
+              <span>Related Architectural Topics &amp; Cost Benchmarks</span>
+            </h4>
+            <router-link to="/keywords-directory" class="text-xs font-bold text-[#8C6A38] dark:text-[#DFC8A5] hover:underline flex items-center gap-1">
+              <span>All 1,000+ Topics</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </router-link>
+          </div>
+          <div class="flex flex-wrap gap-2 text-xs font-semibold">
+            <router-link to="/keywords/5-marla-house-design" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
+              5 Marla House Design
+            </router-link>
+            <router-link to="/keywords/10-marla-spanish-villa" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
+              10 Marla Spanish Villa
+            </router-link>
+            <router-link to="/keywords/1-kanal-house-plan" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
+              1 Kanal Modern House Plan
+            </router-link>
+            <router-link to="/keywords/house-construction-cost-in-pakistan" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
+              House Construction Cost 2026
+            </router-link>
+            <router-link to="/keywords/interior-designers-in-lahore" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
+              Interior Designers in Lahore
+            </router-link>
+            <router-link to="/tools?tab=cost-calc" class="px-3.5 py-1.5 rounded-full tecture-btn-gold text-[11px] font-bold flex items-center gap-1">
+              <i class="fa-solid fa-calculator text-xs"></i>
+              <span>Instant Cost Estimator</span>
+            </router-link>
+            <router-link to="/portfolio" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
+              3D House Elevations
+            </router-link>
+            <router-link to="/area-guides" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
+              Society Bylaws Guide
+            </router-link>
+          </div>
+        </div>
+
       </div>
-      <div class="flex items-center gap-2 flex-wrap">
-        <!-- WhatsApp -->
-        <a 
-          :href="'https://api.whatsapp.com/send?text=' + encodeURIComponent(activePost.title + ' - ' + currentUrl)" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm cursor-pointer"
-          title="Share on WhatsApp"
-        >
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <!-- Facebook -->
-        <a 
-          :href="'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(currentUrl)" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-blue-600 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm cursor-pointer"
-          title="Share on Facebook"
-        >
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-        <!-- Twitter / X -->
-        <a 
-          :href="'https://twitter.com/intent/tweet?text=' + encodeURIComponent(activePost.title) + '&url=' + encodeURIComponent(currentUrl)" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-900 dark:bg-slate-800 hover:bg-black hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm border border-slate-700 cursor-pointer"
-          title="Share on X"
-        >
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
-        <!-- LinkedIn -->
-        <a 
-          :href="'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(currentUrl)" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-sky-700 hover:bg-sky-800 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm cursor-pointer"
-          title="Share on LinkedIn"
-        >
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-        <!-- Pinterest -->
-        <a 
-          :href="'https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(currentUrl) + '&media=' + encodeURIComponent(activePost.image) + '&description=' + encodeURIComponent(activePost.title)" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="w-10 h-10 rounded-2xl flex items-center justify-center bg-red-600 hover:bg-red-500 hover:scale-105 active:scale-95 transition-all text-white text-base shadow-sm cursor-pointer"
-          title="Pin on Pinterest"
-        >
-          <i class="fa-brands fa-pinterest-p"></i>
-        </a>
-        <!-- Copy Link -->
-        <button 
-          @click="copyLink"
-          class="h-10 px-4 rounded-2xl flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 hover:scale-105 active:scale-95 transition-all text-slate-800 dark:text-slate-200 text-xs font-bold shadow-sm border border-slate-200 dark:border-white/10 cursor-pointer"
-          :title="copied ? 'Link Copied!' : 'Copy Link'"
-        >
-          <i class="fa-solid" :class="copied ? 'fa-circle-check text-emerald-500 animate-bounce' : 'fa-link'"></i>
-          <span>{{ copied ? 'Link Copied!' : 'Copy Link' }}</span>
-        </button>
-      </div>
+
+      <!-- Sticky Architectural Sidebar (4 cols) -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+        
+        <!-- Architect Consultation Card -->
+        <div class="p-6 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 shadow-xl space-y-5 bg-gradient-to-br from-slate-900 to-[#121620] text-white">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-[#C5A880]/20 border border-[#C5A880]/40 flex items-center justify-center text-[#C5A880] text-lg font-black shrink-0">
+              <i class="fa-solid fa-compass-drafting"></i>
+            </div>
+            <div>
+              <span class="text-[10px] uppercase font-black text-[#DFC8A5] tracking-widest block">PCATP Registered</span>
+              <h3 class="text-base font-black text-white leading-tight">Consult Chief Architect</h3>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Need customized house plans, 3D photorealistic elevations, or DHA &amp; LDA municipal map approvals? Talk directly with our senior architectural team.
+          </p>
+          <div class="space-y-2.5">
+            <a 
+              href="https://wa.me/923134487315?text=Assalam-o-Alaikum%20H%26Q%20Design%20Services,%20I%20would%20like%20to%20consult%20with%20an%20architect." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-full py-3 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg hover:scale-[1.02] active:scale-98 transition-all"
+            >
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>Direct WhatsApp Desk</span>
+            </a>
+            <a 
+              href="tel:03134487315" 
+              class="w-full py-3 px-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all"
+            >
+              <i class="fa-solid fa-phone text-xs text-[#C5A880]"></i>
+              <span>Call: 0313-4487315</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2026 Turnkey Construction Cost Estimator Card -->
+        <div class="p-6 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 shadow-lg space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-500 text-sm">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-black uppercase text-amber-500 tracking-wider block">Instant 2026 Estimator</span>
+              <h4 class="text-sm font-black text-slate-900 dark:text-white">Calculate Construction Cost</h4>
+            </div>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Estimate grey structure and turnkey premium finishing costs for 3, 5, 10 Marla and 1 Kanal plots in Pakistan.
+          </p>
+          <div class="grid grid-cols-2 gap-2 text-xs font-bold">
+            <router-link to="/tools?tab=cost-calc" class="p-2.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-center hover:border-[#C5A880] transition-colors">
+              5 Marla Cost →
+            </router-link>
+            <router-link to="/tools?tab=cost-calc" class="p-2.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-center hover:border-[#C5A880] transition-colors">
+              10 Marla Cost →
+            </router-link>
+            <router-link to="/tools?tab=cost-calc" class="p-2.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-center hover:border-[#C5A880] transition-colors">
+              1 Kanal Cost →
+            </router-link>
+            <router-link to="/tools?tab=cost-calc" class="p-2.5 rounded-xl bg-[#C5A880]/15 text-[#8C6A38] dark:text-[#DFC8A5] border border-[#C5A880]/30 text-center font-extrabold hover:bg-[#C5A880]/25 transition-colors">
+              All Sizes Calculator →
+            </router-link>
+          </div>
+        </div>
+
+        <!-- Verified Standards & Regulatory Badges -->
+        <div class="p-6 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 shadow-sm space-y-3">
+          <h4 class="text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
+            <i class="fa-solid fa-stamp text-[#C5A880]"></i> Architectural Vetting
+          </h4>
+          <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i>
+              <span><strong>PCATP &amp; PEC</strong> Registered Architects</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i>
+              <span><strong>DHA &amp; LDA</strong> Building Bylaw Compliant</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i>
+              <span><strong>ASTM Grade 60</strong> Structural Seismic Codes</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i>
+              <span><strong>4K V-Ray &amp; Lumion</strong> Photorealistic Renders</span>
+            </li>
+          </ul>
+        </div>
+
+      </aside>
+
     </div>
 
-    <!-- Content -->
-    <article class="prose dark:prose-invert max-w-none text-slate-800 dark:text-slate-200 space-y-6 leading-relaxed text-base">
-      <div v-html="activePost.content || defaultContent"></div>
-    </article>
-
-    <!-- Related Articles Section (Internal Link Juice Distribution) -->
-    <div class="space-y-6 pt-6 border-t border-slate-200 dark:border-white/10">
+    <!-- Related Articles Section (Internal Link Juice Distribution - Spacious 3-Column Grid) -->
+    <div class="space-y-6 pt-10 border-t border-slate-200 dark:border-white/10">
       <div class="flex items-center justify-between">
         <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
           <i class="fa-solid fa-newspaper text-[#C5A880]"></i> Related Architectural Guides
@@ -130,67 +275,26 @@
           View All 2,000+ Guides <i class="fa-solid fa-arrow-right text-[10px]"></i>
         </router-link>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <router-link 
           v-for="rel in relatedPosts" 
           :key="rel.id" 
           :to="'/blog/' + rel.slug"
-          class="group p-4 rounded-2xl tecture-card border border-slate-200 dark:border-white/10 hover:border-[#C5A880] hover:shadow-lg transition-all flex flex-col justify-between space-y-3"
+          class="group p-5 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 hover:border-[#C5A880] hover:shadow-xl transition-all flex flex-col justify-between space-y-4"
         >
-          <div class="space-y-2">
-            <div class="rounded-xl overflow-hidden h-32 w-full bg-black">
+          <div class="space-y-3">
+            <div class="rounded-2xl overflow-hidden h-44 w-full bg-black shadow-inner">
               <img :src="rel.image" :alt="rel.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             </div>
             <span class="text-[10px] font-black text-[#8C6A38] dark:text-[#DFC8A5] uppercase tracking-wider block">{{ rel.category }}</span>
-            <h4 class="text-xs font-black text-slate-900 dark:text-white line-clamp-2 group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors leading-snug">
+            <h4 class="text-sm font-black text-slate-900 dark:text-white line-clamp-2 group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors leading-snug">
               {{ rel.title }}
             </h4>
           </div>
-          <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-200 dark:border-white/10">
+          <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 pt-3 border-t border-slate-200 dark:border-white/10">
             <span>{{ rel.date }}</span>
-            <span class="text-[#8C6A38] dark:text-[#DFC8A5] font-bold flex items-center gap-1">Read <i class="fa-solid fa-chevron-right text-[8px]"></i></span>
+            <span class="text-[#8C6A38] dark:text-[#DFC8A5] font-bold flex items-center gap-1">Read Guide <i class="fa-solid fa-chevron-right text-[9px]"></i></span>
           </div>
-        </router-link>
-      </div>
-    </div>
-
-    <!-- Trending Architectural Topic Tags & Cross-Links -->
-    <div class="p-6 sm:p-8 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 space-y-4 shadow-sm">
-      <div class="flex items-center justify-between">
-        <h4 class="text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-1.5">
-          <i class="fa-solid fa-tags text-[#C5A880]"></i>
-          <span>Related Architectural Topics &amp; Cost Benchmarks</span>
-        </h4>
-        <router-link to="/keywords-directory" class="text-xs font-bold text-[#8C6A38] dark:text-[#DFC8A5] hover:underline flex items-center gap-1">
-          <span>All 1,000+ Topics</span>
-          <i class="fa-solid fa-arrow-right text-[10px]"></i>
-        </router-link>
-      </div>
-      <div class="flex flex-wrap gap-2 text-xs font-semibold">
-        <router-link to="/keywords/5-marla-house-design" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
-          5 Marla House Design
-        </router-link>
-        <router-link to="/keywords/10-marla-spanish-villa" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
-          10 Marla Spanish Villa
-        </router-link>
-        <router-link to="/keywords/1-kanal-house-plan" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
-          1 Kanal Modern House Plan
-        </router-link>
-        <router-link to="/keywords/house-construction-cost-in-pakistan" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
-          House Construction Cost 2026
-        </router-link>
-        <router-link to="/keywords/interior-designers-in-lahore" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
-          Interior Designers in Lahore
-        </router-link>
-        <router-link to="/tools?tab=cost-calc" class="px-3.5 py-1.5 rounded-full tecture-btn-gold text-[11px] font-bold flex items-center gap-1">
-          <i class="fa-solid fa-calculator text-xs"></i>
-          <span>Instant Cost Estimator</span>
-        </router-link>
-        <router-link to="/portfolio" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
-          3D House Elevations
-        </router-link>
-        <router-link to="/area-guides" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:text-[#8C6A38] dark:hover:text-[#DFC8A5] hover:border-[#C5A880] transition-all">
-          Society Bylaws Guide
         </router-link>
       </div>
     </div>
