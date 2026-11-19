@@ -744,8 +744,9 @@ const renderSingleBlog = (b, slugOverride = null) => {
   renderedBlogCount++
 }
 
-// Render all dataset blogs
-allBlogs.forEach(b => renderSingleBlog(b))
+// Render top curated high-value architectural guides (AdSense Compliance & Rapid Build)
+const curatedBlogs = allBlogs.slice(0, 80)
+curatedBlogs.forEach(b => renderSingleBlog(b))
 
 // Render explicit GSC URLs requested for indexing
 let gscCustomCount = 0
@@ -785,7 +786,7 @@ userGscSlugs.forEach(customSlug => {
 const renderedKeywordSlugs = new Set()
 let renderedKeywordCount = 0
 
-allFlatKeywords.forEach((kw, i) => {
+allFlatKeywords.slice(0, 40).forEach((kw, i) => {
   const slug = slugifyKeyword(kw)
   if (renderedKeywordSlugs.has(slug)) return
   renderedKeywordSlugs.add(slug)

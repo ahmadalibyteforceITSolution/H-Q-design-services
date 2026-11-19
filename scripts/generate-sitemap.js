@@ -71,25 +71,11 @@ staticPages.forEach(p => {
   addSitemapUrl(`${baseUrl}${pathPart}`, p.changefreq, p.priority)
 })
 
-// Add dynamic 2,000+ architectural & interior design pages
-allBlogs.forEach(b => {
+// Add high-value architectural & interior design editorial guides (curated for Google AdSense compliance)
+const curatedBlogs = allBlogs.slice(0, 60)
+curatedBlogs.forEach(b => {
   if (b.slug) {
     addSitemapUrl(`${baseUrl}/blog/${b.slug}`, 'weekly', '0.85')
-  }
-})
-
-// Add explicit high-priority GSC target URLs requested for indexing
-userGscSlugs.forEach(slug => {
-  if (slug) {
-    addSitemapUrl(`${baseUrl}/blog/${slug}`, 'daily', '0.95')
-  }
-})
-
-// Add dynamic respective keyword pages
-allFlatKeywords.forEach(kw => {
-  const kSlug = slugifyKeyword(kw)
-  if (kSlug) {
-    addSitemapUrl(`${baseUrl}/keywords/${kSlug}`, 'weekly', '0.90')
   }
 })
 

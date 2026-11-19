@@ -21,7 +21,7 @@
     </section>
 
     <!-- Search & Filter Bar -->
-    <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
       <div class="p-6 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 shadow-xl space-y-4">
         
         <div class="flex flex-col md:flex-row justify-between items-center gap-4">
@@ -30,7 +30,7 @@
             <input 
               v-model="searchQuery" 
               type="text" 
-              placeholder="Search 2,000+ topics (e.g., 5 Marla, DHA Phase 6, Travertine, Italian Marble, Cost)..."
+              placeholder="Search topics (e.g., 5 Marla, DHA Phase 6, Travertine, Cost)..."
               class="w-full pl-10 pr-4 py-3 rounded-2xl border border-slate-300 dark:border-white/10 bg-slate-50 dark:bg-[#121620] text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 text-xs focus:outline-none focus:border-[#C5A880] focus:ring-2 focus:ring-[#C5A880]/20 font-medium"
             />
             <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-xs"></i>
@@ -60,6 +60,9 @@
         </div>
 
       </div>
+
+      <!-- Google AdSense Policy-Compliant Banner -->
+      <AdSenseUnit format="horizontal" />
     </section>
 
     <!-- 2,000+ Articles Grid -->
@@ -180,6 +183,7 @@
 import { ref, computed } from 'vue'
 import { allBlogs } from '../data/blogData.js'
 import InternalLinkingHub from '../components/InternalLinkingHub.vue'
+import AdSenseUnit from '../components/AdSenseUnit.vue'
 
 const searchQuery = ref('')
 const selectedCat = ref('All')

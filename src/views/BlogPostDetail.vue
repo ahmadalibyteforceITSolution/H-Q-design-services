@@ -121,10 +121,16 @@
           </div>
         </div>
 
+        <!-- Google AdSense Policy-Compliant Leaderboard Slot -->
+        <AdSenseUnit format="horizontal" />
+
         <!-- Content -->
         <article class="prose dark:prose-invert max-w-none text-slate-800 dark:text-slate-200 space-y-6 leading-relaxed text-base sm:text-lg">
           <div v-html="activePost.content || defaultContent"></div>
         </article>
+
+        <!-- Google AdSense In-Article / Bottom Ad Slot -->
+        <AdSenseUnit format="auto" />
 
         <!-- Trending Architectural Topic Tags & Cross-Links -->
         <div class="p-6 sm:p-8 rounded-3xl tecture-card border border-slate-200 dark:border-white/10 space-y-4 shadow-sm">
@@ -261,6 +267,9 @@
           </ul>
         </div>
 
+        <!-- Google AdSense Policy-Compliant Sidebar Display Slot -->
+        <AdSenseUnit format="rectangle" />
+
       </aside>
 
     </div>
@@ -319,6 +328,7 @@ import { useRoute } from 'vue-router'
 import { allBlogs, generateArticleContent, getCategoryForKeyword, architectureImages, toTitleCase } from '../data/blogData.js'
 import InternalLinkingHub from '../components/InternalLinkingHub.vue'
 import PropertyDetailModal from '../components/PropertyDetailModal.vue'
+import AdSenseUnit from '../components/AdSenseUnit.vue'
 
 defineEmits(['open-start-project'])
 

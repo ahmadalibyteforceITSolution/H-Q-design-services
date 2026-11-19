@@ -27,6 +27,7 @@ import { getKeywordBySlug, slugifyKeyword } from '../data/keywordsData.js'
 const routes = [
   {
     path: '/',
+    alias: ['/index', '/index.html', '/home'],
     name: 'Home',
     component: Home,
     meta: {

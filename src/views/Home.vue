@@ -862,6 +862,11 @@
     <!-- 11. GOOGLE CLIENT REVIEWS (5.0★) -->
     <GoogleReviews />
 
+    <!-- Google AdSense Policy-Compliant Banner -->
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      <AdSenseUnit format="horizontal" />
+    </div>
+
     <!-- 12. CALL TO ACTION: VISIT OUR LAHORE STUDIO -->
     <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
       <div class="p-8 sm:p-14 rounded-3xl bg-[#0B0E14] dark:bg-[#121620] border border-[#C5A880]/30 text-center space-y-6 shadow-2xl relative overflow-hidden">
@@ -907,6 +912,7 @@ import { openWhatsApp } from '../utils/whatsapp.js'
 import CinematicShowreel from '../components/CinematicShowreel.vue'
 import GoogleReviews from '../components/GoogleReviews.vue'
 import InternalLinkingHub from '../components/InternalLinkingHub.vue'
+import AdSenseUnit from '../components/AdSenseUnit.vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 

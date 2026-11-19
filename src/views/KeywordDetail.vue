@@ -569,6 +569,9 @@ watchEffect(() => {
     tag.setAttribute('content', content)
   }
 
+  // Set robots meta to noindex, follow for keyword programmatic pages to guarantee AdSense quality compliance
+  setMetaName('robots', 'noindex, follow')
+
   setMetaName('twitter:title', pageTitle)
   setMetaName('twitter:description', pageDesc)
   setMetaName('twitter:image', pageImage)
