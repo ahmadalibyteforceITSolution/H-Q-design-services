@@ -76,71 +76,117 @@
                 </div>
               </div>
 
-              <!-- Form State (Phone, Email, Message) -->
+              <!-- Form State (Phone, Plot Size, Service, Optional Message) -->
               <div v-else class="space-y-4">
                 <div class="space-y-1">
                   <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                    Leave your contact details and project requirements. Our Senior Architects at <strong class="text-slate-900 dark:text-white">0313-4487315</strong> will respond promptly.
+                    Connect directly with licensed PCATP architects. Enter your WhatsApp number below to get free sample floor plans, 3D elevations, or a 2026 BOQ construction rate sheet:
                   </p>
                 </div>
 
-                <form @submit.prevent="submitQuery" class="space-y-4 text-left">
-                  <!-- Field 1: Phone / WhatsApp Number -->
+                <form @submit.prevent="submitQuery" class="space-y-3.5 text-left">
+                  <!-- Field 1: Phone / WhatsApp Number (Primary & Required) -->
                   <div>
                     <label class="flex items-center justify-between text-xs font-extrabold text-slate-800 dark:text-slate-200 mb-1.5">
                       <span class="flex items-center gap-1.5">
                         <i class="fa-solid fa-phone text-[#C5A880] text-xs"></i>
-                        Phone / WhatsApp Number <span class="text-rose-500">*</span>
+                        WhatsApp / Phone Number <span class="text-rose-500">*</span>
                       </span>
+                      <span class="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold">1-Click WhatsApp Reply</span>
                     </label>
                     <input 
                       v-model="form.phone"
                       type="tel"
                       required
-                      placeholder="e.g. 0313-4487315"
-                      class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-[#C5A880] focus:ring-2 focus:ring-[#C5A880]/20 text-xs sm:text-sm transition-all font-medium shadow-sm"
+                      placeholder="e.g. 0313-4487315 (or Overseas with Country Code)"
+                      class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-[#C5A880] focus:ring-2 focus:ring-[#C5A880]/20 text-xs sm:text-sm transition-all font-semibold shadow-sm"
                     />
                   </div>
 
-                  <!-- Field 2: Email Address -->
+                  <!-- Field 2: 1-Click Plot Size Chips -->
                   <div>
-                    <label class="flex items-center gap-1.5 text-xs font-extrabold text-slate-800 dark:text-slate-200 mb-1.5">
-                      <i class="fa-solid fa-envelope text-[#C5A880] text-xs"></i>
-                      Email Address <span class="text-rose-500">*</span>
+                    <label class="block text-xs font-extrabold text-slate-800 dark:text-slate-200 mb-1.5">
+                      Select Plot Scale
                     </label>
+                    <div class="grid grid-cols-4 gap-1.5 text-xs font-bold">
+                      <button 
+                        v-for="size in ['5 Marla', '10 Marla', '1 Kanal', 'Commercial']" 
+                        :key="size"
+                        type="button"
+                        @click="form.plotSize = size"
+                        :class="[
+                          'py-2 px-1 rounded-xl border text-[11px] font-extrabold transition-all cursor-pointer text-center',
+                          form.plotSize === size 
+                            ? 'bg-[#C5A880] text-[#0B0E14] border-[#C5A880] shadow-sm' 
+                            : 'bg-slate-50 dark:bg-white/5 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-white/10 hover:border-[#C5A880]'
+                        ]"
+                      >
+                        {{ size }}
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Field 3: 1-Click Service Needed -->
+                  <div>
+                    <label class="block text-xs font-extrabold text-slate-800 dark:text-slate-200 mb-1.5">
+                      Service Required
+                    </label>
+                    <div class="grid grid-cols-2 gap-1.5 text-xs font-bold">
+                      <button 
+                        v-for="srv in ['Architectural Map & 3D', 'Turnkey Construction', 'Luxury Interior Design', 'House Renovation']" 
+                        :key="srv"
+                        type="button"
+                        @click="form.serviceType = srv"
+                        :class="[
+                          'py-2 px-2 rounded-xl border text-[11px] font-bold transition-all cursor-pointer text-center truncate',
+                          form.serviceType === srv 
+                            ? 'bg-[#088C7E] text-white border-[#088C7E] shadow-sm' 
+                            : 'bg-slate-50 dark:bg-white/5 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-white/10 hover:border-[#088C7E]'
+                        ]"
+                      >
+                        {{ srv }}
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Field 4: Location / City -->
+                  <div>
+                    <label class="block text-xs font-extrabold text-slate-800 dark:text-slate-200 mb-1.5">
+                      Plot Location / Society
+                    </label>
+                    <select 
+                      v-model="form.location"
+                      class="w-full px-4 py-2.5 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white text-xs font-semibold focus:outline-none focus:border-[#C5A880] cursor-pointer"
+                    >
+                      <option value="DHA Lahore">DHA Lahore</option>
+                      <option value="Bahria Town Lahore">Bahria Town Lahore</option>
+                      <option value="Gulberg / Model Town Lahore">Gulberg / Model Town Lahore</option>
+                      <option value="Lake City / Park View City">Lake City / Park View City</option>
+                      <option value="Islamabad / Rawalpindi">Islamabad / Rawalpindi</option>
+                      <option value="Karachi">Karachi</option>
+                      <option value="Overseas Pakistani (KSA / UAE / UK / USA)">Overseas Pakistani (KSA / UAE / UK / USA)</option>
+                    </select>
+                  </div>
+
+                  <!-- Optional Message -->
+                  <div>
                     <input 
-                      v-model="form.email"
-                      type="email"
-                      required
-                      placeholder="e.g. yourname@gmail.com"
-                      class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-[#C5A880] focus:ring-2 focus:ring-[#C5A880]/20 text-xs sm:text-sm transition-all font-medium shadow-sm"
-                    />
-                  </div>
-
-                  <!-- Field 3: Project Message / Query -->
-                  <div>
-                    <label class="flex items-center gap-1.5 text-xs font-extrabold text-slate-800 dark:text-slate-200 mb-1.5">
-                      <i class="fa-solid fa-message text-[#C5A880] text-xs"></i>
-                      Project Query / Requirements <span class="text-rose-500">*</span>
-                    </label>
-                    <textarea 
                       v-model="form.message"
-                      rows="3"
-                      required
-                      placeholder="Tell us about your plot size (e.g. 5 Marla, 10 Marla, 1 Kanal), location, or requirements (floor plan, 3D elevation, interior design, renovation)..."
-                      class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-[#121620] border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-[#C5A880] focus:ring-2 focus:ring-[#C5A880]/20 text-xs sm:text-sm transition-all font-medium resize-none shadow-sm"
-                    ></textarea>
+                      type="text"
+                      placeholder="Optional notes: e.g. Spanish style, basement required..."
+                      class="w-full px-4 py-2 rounded-xl bg-slate-50 dark:bg-[#121620] border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 text-xs focus:outline-none focus:border-[#C5A880]"
+                    />
                   </div>
 
                   <!-- Privacy & Trust Badges -->
                   <div class="py-2 px-3 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-between text-[11px] text-slate-700 dark:text-slate-300 font-bold">
                     <span class="flex items-center gap-1.5">
                       <i class="fa-solid fa-shield-halved text-emerald-500"></i>
-                      100% Privacy Protected
+                      100% Privacy Guaranteed
                     </span>
                     <span class="flex items-center gap-1.5">
                       <i class="fa-solid fa-bolt text-[#C5A880]"></i>
-                      Instant Reply &amp; Quotation
+                      Instant BOQ &amp; Blueprint Quote
                     </span>
                   </div>
 
@@ -152,14 +198,14 @@
                   >
                     <span v-if="loading" class="inline-block animate-spin mr-1">⟳</span>
                     <i v-else class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>{{ loading ? 'Sending Inquiry...' : 'Submit Query & Send to WhatsApp (0313-4487315)' }}</span>
+                    <span>{{ loading ? 'Preparing Consultation...' : 'Get Instant Blueprint & Quote on WhatsApp' }}</span>
                   </button>
 
-                  <div class="text-center pt-1">
+                  <div class="text-center pt-0.5">
                     <button 
                       type="button" 
                       @click="handleClose"
-                      class="text-xs text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors cursor-pointer"
+                      class="text-[11px] text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors cursor-pointer"
                     >
                       Maybe later, browse website first
                     </button>
@@ -218,6 +264,9 @@ const emit = defineEmits(['close', 'open'])
 
 const form = reactive({
   phone: '',
+  plotSize: '10 Marla',
+  serviceType: 'Architectural Map & 3D',
+  location: 'DHA Lahore',
   email: '',
   message: ''
 })
@@ -240,20 +289,51 @@ const handleKeyDown = (e) => {
   }
 }
 
+let autoTimer = null
+let scrollListener = null
+
 onMounted(() => {
   if (typeof window !== 'undefined') {
     window.addEventListener('keydown', handleKeyDown)
+
+    // Auto-trigger lead modal once per session after 18 seconds of browsing
+    try {
+      const alreadyTriggered = sessionStorage.getItem('hq_lead_auto_triggered')
+      if (!alreadyTriggered && !props.isOpen) {
+        autoTimer = setTimeout(() => {
+          if (!props.isOpen && !sessionStorage.getItem('hq_lead_auto_triggered')) {
+            sessionStorage.setItem('hq_lead_auto_triggered', 'true')
+            emit('open')
+          }
+        }, 18000)
+
+        // Or trigger when scrolling 45% of page content
+        scrollListener = () => {
+          const scrollPct = (window.scrollY + window.innerHeight) / (document.documentElement.scrollHeight || 1)
+          if (scrollPct >= 0.45 && !sessionStorage.getItem('hq_lead_auto_triggered')) {
+            sessionStorage.setItem('hq_lead_auto_triggered', 'true')
+            emit('open')
+            if (scrollListener) window.removeEventListener('scroll', scrollListener)
+          }
+        }
+        window.addEventListener('scroll', scrollListener, { passive: true })
+      }
+    } catch (e) {
+      console.warn('Session storage error:', e)
+    }
   }
 })
 
 onUnmounted(() => {
   if (typeof window !== 'undefined') {
     window.removeEventListener('keydown', handleKeyDown)
+    if (autoTimer) clearTimeout(autoTimer)
+    if (scrollListener) window.removeEventListener('scroll', scrollListener)
   }
 })
 
 const submitQuery = async () => {
-  if (!form.phone || !form.email || !form.message) return
+  if (!form.phone) return
 
   loading.value = true
 
@@ -265,11 +345,13 @@ const submitQuery = async () => {
   const waText = 
     `🏛️ *NEW ARCHITECTURAL INQUIRY (H&Q DESIGN SERVICES)*\n\n` +
     `📱 *Client Phone / WhatsApp:* ${form.phone}\n` +
-    `✉️ *Client Email:* ${form.email}\n` +
-    `💬 *Project Query & Details:*\n${form.message}\n\n` +
-    `📍 *Page Source:* ${pageTitle}\n` +
-    `🌐 *URL:* ${currentUrl}\n` +
-    `⚡ *Sent via Website Quick Consultation Form*`
+    `📐 *Plot Size:* ${form.plotSize}\n` +
+    `🏗️ *Service Required:* ${form.serviceType}\n` +
+    `📍 *Plot Society / City:* ${form.location}\n` +
+    (form.email ? `✉️ *Email:* ${form.email}\n` : '') +
+    (form.message ? `💬 *Notes:* ${form.message}\n` : '') +
+    `\n🌐 *Source Page:* ${pageTitle}\n` +
+    `⚡ *Sent via Website Quick Consultation Desk*`
 
   whatsappUrl.value = `https://wa.me/${studioNumber}?text=${encodeURIComponent(waText)}`
 
@@ -280,11 +362,11 @@ const submitQuery = async () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         name: `Website Client (${form.phone})`,
-        email: form.email,
+        email: form.email || `${form.phone.replace(/[^0-9]/g, '')}@lead.hqdesignservices.com`,
         phone: form.phone,
-        service: 'Quick Architectural Inquiry',
-        location: 'Lahore / Pakistan / Overseas',
-        message: form.message
+        service: `${form.serviceType} - ${form.plotSize}`,
+        location: form.location,
+        message: `Plot: ${form.plotSize} | Service: ${form.serviceType} | Location: ${form.location} | Notes: ${form.message || 'None'}`
       })
     }).catch(err => console.warn('Database logging warning:', err))
   } catch (err) {
@@ -300,10 +382,13 @@ const submitQuery = async () => {
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        _subject: `New Lead: ${form.phone} - Architectural Design Inquiry`,
+        _subject: `New Lead [${form.plotSize}]: ${form.phone} - ${form.serviceType}`,
         phone: form.phone,
-        email: form.email,
-        message: form.message,
+        plot_size: form.plotSize,
+        service_needed: form.serviceType,
+        location: form.location,
+        email: form.email || 'Not provided',
+        notes: form.message || 'No additional notes',
         source_page: currentUrl,
         sent_to: 'asadali28997@gmail.com & WhatsApp (0313-4487315)'
       })

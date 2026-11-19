@@ -15,7 +15,7 @@
             Our Architectural <span class="text-gradient-gold">Services &amp; Deliverables</span>
           </h1>
           <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-            From preliminary sketch drawings to turnkey interior execution, explore our comprehensive range of design solutions for luxury residences and commercial plazas in Lahore.
+            From preliminary sketch drawings to <router-link to="/case-studies" class="underline hover:text-[#DFC8A5]">turnkey interior execution</router-link>, explore our comprehensive range of <router-link to="/portfolio" class="underline hover:text-[#DFC8A5]">design solutions</router-link> for <router-link to="/keywords/5-marla-house-design" class="underline hover:text-[#DFC8A5]">luxury residences</router-link> and <router-link to="/keywords/commercial-plaza-design" class="underline hover:text-[#DFC8A5]">commercial plazas</router-link> in <router-link to="/properties?city=Lahore" class="underline hover:text-[#DFC8A5]">Lahore</router-link>.
           </p>
         </div>
       </div>
@@ -41,7 +41,7 @@
               {{ service.title }}
             </h3>
             
-            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{{ service.desc }}</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" v-html="service.desc"></p>
 
             <!-- Deliverables Pills -->
             <div class="space-y-2 pt-2 border-t border-slate-200 dark:border-white/10">
@@ -106,7 +106,7 @@
             Looking for Specific Plot Dimensions, DHA Bylaws or 3D Visualizations?
           </h3>
           <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-            Browse our comprehensive 10-cluster directory with technical specifications for 3 Marla to 4 Kanal villas, commercial plazas, and turnkey construction cost benchmarks.
+            Browse our comprehensive <router-link to="/keywords-directory" class="text-[#DFC8A5] underline font-bold">10-cluster directory</router-link> with technical specifications for <router-link to="/keywords/3-marla-house-design" class="text-[#DFC8A5] underline font-bold">3 Marla</router-link> to <router-link to="/keywords/2-kanal-house-design" class="text-[#DFC8A5] underline font-bold">2 Kanal</router-link> villas, <router-link to="/keywords/commercial-plaza-design" class="text-[#DFC8A5] underline font-bold">commercial plazas</router-link>, and <router-link to="/keywords/house-construction-cost-in-pakistan" class="text-[#DFC8A5] underline font-bold">turnkey construction cost benchmarks</router-link>.
           </p>
         </div>
         <div class="flex flex-wrap items-center gap-3 shrink-0">
@@ -151,7 +151,7 @@ const fullServices = ref([
     id: 'arch',
     title: 'Architectural Floor Planning & Municipal Approvals',
     icon: 'fa-solid fa-compass-drafting',
-    desc: 'Complete architectural layout design for 5 Marla, 10 Marla, 1 Kanal, and 2 Kanal villas, including municipal submission drawings compliant with DHA Lahore, LDA, and Bahria Town bylaws.',
+    desc: 'Complete architectural layout design for <a href="/keywords/5-marla-house-design" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">5 Marla</a>, <a href="/keywords/10-marla-house-design" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">10 Marla</a>, <a href="/keywords/1-kanal-house-plan" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">1 Kanal</a>, and <a href="/keywords/2-kanal-house-design" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">2 Kanal</a> villas, including municipal submission drawings compliant with <a href="/area-guides?society=dha-lahore" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">DHA Lahore</a>, <a href="/blog/lda-map-approval-process-guide" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">LDA</a>, and <a href="/area-guides?society=bahria-town-lahore" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">Bahria Town</a> bylaws.',
     timeframe: '2-3 Weeks',
     deliverables: ['2D Floor Plans & Sections', 'Front Elevation Design', 'Structural Calculations', 'DHA Submission Files']
   },
@@ -159,7 +159,7 @@ const fullServices = ref([
     id: 'interior',
     title: 'Luxury Residential Interior Design & Styling',
     icon: 'fa-solid fa-couch',
-    desc: 'Custom interior design concepts for living rooms, master bedrooms, kitchens, and dining spaces with curated lighting schemes, Italian marble selections, and bespoke joinery.',
+    desc: 'Custom interior design concepts for living rooms, master bedrooms, kitchens, and dining spaces with curated lighting schemes, Italian marble selections, and bespoke joinery. Explore our <a href="/keywords/interior-designers-in-lahore" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">interior designer services</a> and <a href="/portfolio" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">portfolio</a>.',
     timeframe: '3-4 Weeks',
     deliverables: ['3D Interior Renderings', 'Lighting & Ceiling Layout', 'Custom Wall Paneling', 'Furniture Specification']
   },
@@ -167,7 +167,7 @@ const fullServices = ref([
     id: 'commercial',
     title: 'Commercial & Office Interior Design',
     icon: 'fa-solid fa-building',
-    desc: 'Corporate office architecture, retail shop fitouts, executive showrooms, and restaurant/cafe interiors engineered for brand identity, ergonomic workflow, and customer engagement.',
+    desc: 'Corporate office architecture, retail shop fitouts, executive showrooms, and restaurant/cafe interiors engineered for brand identity, ergonomic workflow, and customer engagement. See our <a href="/keywords/commercial-plaza-design" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">commercial plaza plans</a> in <a href="/properties?society=Gulberg+Lahore" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">Gulberg Lahore</a>.',
     timeframe: '3-5 Weeks',
     deliverables: ['Corporate Workspace Layouts', 'Acoustic Wall Treatment', 'Retail Glass Facade & Display', 'Brand Themed Fitout']
   },
@@ -175,7 +175,7 @@ const fullServices = ref([
     id: '3d-render',
     title: 'Photorealistic 4K 3D Architectural Visualization & VR',
     icon: 'fa-solid fa-cube',
-    desc: 'Ultra HD 4K 3D visualizations and interactive VR video walkthroughs using Lumion and 3ds Max to preview daytime/nighttime lighting, material textures, and spatial flow before construction.',
+    desc: 'Ultra HD 4K 3D visualizations and interactive VR video walkthroughs using Lumion and 3ds Max to preview daytime/nighttime lighting, material textures, and spatial flow before construction. Inspect our <a href="/keywords/4k-photorealistic-renders" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">4K render visualizations</a>.',
     timeframe: '1-2 Weeks',
     deliverables: ['4K HD Rendered Views', '360° Panorama Views', 'Animation Walkthrough Video', 'Material Sample Palette']
   },
@@ -183,7 +183,7 @@ const fullServices = ref([
     id: 'renovation',
     title: 'Complete House Renovation & Remodeling',
     icon: 'fa-solid fa-hammer',
-    desc: 'Turnkey residential and commercial renovation in Lahore. Transform existing homes with modern front elevations, luxury kitchen/bathroom overhauls, structural retrofitting, and energy upgrades.',
+    desc: 'Turnkey residential and commercial renovation in Lahore. Transform existing homes with <a href="/keywords/modern-front-elevation" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">modern front elevations</a>, luxury kitchen/bathroom overhauls, structural retrofitting, and energy upgrades. Estimate your budget on our <a href="/tools?tab=cost-calc" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">cost calculator</a>.',
     timeframe: '4-8 Weeks',
     deliverables: ['Demolition & Civil Retrofit', 'Kitchen & Bath Remodeling', 'Front Elevation Redesign', 'Turnkey Handover']
   },
@@ -191,7 +191,7 @@ const fullServices = ref([
     id: 'furniture',
     title: 'Custom Furniture & Woodwork Crafting',
     icon: 'fa-solid fa-chair',
-    desc: 'Handcrafted luxury solid wood sofas, dining tables, media console units, and fitted walk-in wardrobes manufactured specifically for your room layout.',
+    desc: 'Handcrafted luxury solid wood sofas, dining tables, media console units, and fitted walk-in wardrobes manufactured specifically for your room layout. Inspected by our <a href="/agents" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">registered architects</a> and detailed in our <a href="/case-studies" class="underline text-[#8C6A38] dark:text-[#DFC8A5]">case studies</a>.',
     timeframe: '3-5 Weeks',
     deliverables: ['Bespoke Woodworking', 'Custom Upholstery', 'Built-in Closet Systems', 'On-Site Fitting']
   }

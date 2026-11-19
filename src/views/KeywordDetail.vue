@@ -52,7 +52,7 @@
           </h1>
 
           <p class="text-slate-300 text-sm sm:text-base font-medium leading-relaxed max-w-3xl">
-            Complete 2026 architectural blueprints, 3D elevation renderings, spatial floor planning, and turnkey construction cost benchmarks for <strong class="text-white">{{ activeKeyword }}</strong> in Lahore, Islamabad, and major cities of Pakistan.
+            Complete 2026 <router-link to="/services" class="underline text-[#DFC8A5] hover:text-white font-semibold">architectural blueprints</router-link>, <router-link to="/portfolio" class="underline text-[#DFC8A5] hover:text-white font-semibold">4K 3D elevation renderings</router-link>, spatial floor planning, and <router-link to="/tools?tab=cost-calc" class="underline text-[#DFC8A5] hover:text-white font-semibold">turnkey construction cost benchmarks</router-link> for <strong class="text-white">{{ activeKeyword }}</strong> in <router-link to="/properties?city=Lahore" class="underline text-[#DFC8A5] hover:text-white">Lahore</router-link>, <router-link to="/properties?city=Islamabad" class="underline text-[#DFC8A5] hover:text-white">Islamabad</router-link>, and nationwide.
           </p>
 
           <!-- Quick Consultation Action Bar -->
@@ -161,7 +161,7 @@
               <div class="space-y-1">
                 <div class="font-extrabold text-slate-900 dark:text-white">Municipal Submission &amp; NOC Guarantee</div>
                 <p class="text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
-                  All blueprints for <em>{{ activeKeyword }}</em> are drafted by licensed PCATP architects in strict alignment with DHA Lahore, LDA, CDA, SBCA, and Bahria Town town-planning bylaws to ensure immediate sanctioning.
+                  All blueprints for <em>{{ activeKeyword }}</em> are drafted by <router-link to="/agents" class="underline text-[#DFC8A5]">licensed PCATP architects</router-link> in strict alignment with <router-link to="/area-guides?society=dha-lahore" class="underline text-[#DFC8A5]">DHA Lahore</router-link>, <router-link to="/blog/lda-map-approval-process-guide" class="underline text-[#DFC8A5]">LDA</router-link>, <router-link to="/blog/cda-approved-societies-islamabad-2026" class="underline text-[#DFC8A5]">CDA</router-link>, <router-link to="/blog/sbca-approved-high-rise-projects-karachi" class="underline text-[#DFC8A5]">SBCA</router-link>, and <router-link to="/area-guides?society=bahria-town-lahore" class="underline text-[#DFC8A5]">Bahria Town</router-link> town-planning bylaws to ensure immediate sanctioning.
                 </p>
               </div>
             </div>
@@ -234,7 +234,7 @@
                   <span>How long does it take to prepare 2D floor plans and 3D elevations for {{ activeKeyword }}?</span>
                 </h4>
                 <p class="text-slate-600 dark:text-slate-300 leading-relaxed pl-6 font-medium">
-                  Standard 2D architectural drawings and municipal submission blueprints take 7 to 10 working days. A complete design package including 4K photorealistic 3D elevations, MEP engineering layouts, and structural vetting takes approximately 2 to 3 weeks.
+                  Standard 2D architectural drawings and municipal submission blueprints take 7 to 10 working days. A complete design package including 4K photorealistic 3D elevations, MEP engineering layouts, and structural vetting takes approximately 2 to 3 weeks. Browse our <router-link to="/portfolio" class="underline text-[#DFC8A5] font-semibold">completed 3D elevations</router-link> or calculate costs on our <router-link to="/tools?tab=cost-calc" class="underline text-[#DFC8A5] font-semibold">construction calculator</router-link>.
                 </p>
               </div>
 
@@ -244,7 +244,7 @@
                   <span>Does H&amp;Q Design Services provide on-site supervision in Lahore and DHA?</span>
                 </h4>
                 <p class="text-slate-600 dark:text-slate-300 leading-relaxed pl-6 font-medium">
-                  Yes. Our resident site engineers conduct rigorous phase-wise inspections during foundation excavation, steel rebar binding, slab casting, and plumbing pressure tests to ensure 100% adherence to architectural drawings.
+                  Yes. Our resident site engineers conduct rigorous phase-wise inspections during foundation excavation, steel rebar binding, slab casting, and plumbing pressure tests to ensure 100% adherence to architectural drawings. Review our <router-link to="/case-studies" class="underline text-[#DFC8A5] font-semibold">villa case studies</router-link> or visit our <router-link to="/contact" class="underline text-[#DFC8A5] font-semibold">Lahore studio</router-link>.
                 </p>
               </div>
 
@@ -254,7 +254,7 @@
                   <span>Can I request turnkey construction cost estimates with material brand specifications?</span>
                 </h4>
                 <p class="text-slate-600 dark:text-slate-300 leading-relaxed pl-6 font-medium">
-                  Certainly. We provide comprehensive Bill of Quantities (BOQ) with transparent line-item pricing covering Mughal/Amreli Grade 60 steel, Bestway cement, imported porcelain tiles, Chawla aluminum, and Grohe/Kohler bathroom fittings.
+                  Certainly. We provide comprehensive <router-link to="/tools?tab=cost-calc" class="underline text-[#DFC8A5] font-semibold">Bill of Quantities (BOQ)</router-link> with transparent line-item pricing covering <router-link to="/blog/steel-rate-in-pakistan-today-2026" class="underline text-[#DFC8A5]">Mughal/Amreli Grade 60 steel</router-link>, <router-link to="/blog/cement-bag-price-in-pakistan-today" class="underline text-[#DFC8A5]">Bestway cement</router-link>, imported porcelain tiles, Chawla aluminum, and Grohe/Kohler bathroom fittings.
                 </p>
               </div>
             </div>

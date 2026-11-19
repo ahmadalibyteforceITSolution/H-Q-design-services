@@ -15,7 +15,7 @@
             Crafting Timeless <span class="text-gradient-gold">Architectural Landmarks</span>
           </h1>
           <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-            Founded with a vision to redefine modern spatial design and luxury interior architecture, H&amp;Q Design Services is Pakistan's premier architecture and engineering studio based in Lahore, Pakistan.
+            Founded with a vision to redefine modern spatial design and <router-link to="/keywords/interior-designers-in-lahore" class="underline hover:text-[#DFC8A5]">luxury interior architecture</router-link>, <router-link to="/" class="underline hover:text-[#DFC8A5]">H&amp;Q Design Services</router-link> is Pakistan's premier <router-link to="/services" class="underline hover:text-[#DFC8A5]">architecture and engineering studio</router-link> based in <router-link to="/properties?city=Lahore" class="underline hover:text-[#DFC8A5]">Lahore, Pakistan</router-link>.
           </p>
         </div>
       </div>
@@ -34,10 +34,10 @@
             Where Precision Structural Engineering Meets Luxury Elegance
           </h2>
           <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-sm">
-            H&amp;Q Design Services has conceptualized and delivered over 500+ luxury villas, commercial plazas, and high-end residential interiors across DHA Lahore, Gulberg, and Bahria Town.
+            H&amp;Q Design Services has conceptualized and delivered over 500+ <router-link to="/case-studies" class="underline hover:text-[#8C6A38] dark:hover:text-[#DFC8A5]">luxury villas</router-link>, <router-link to="/keywords/commercial-plaza-design" class="underline hover:text-[#8C6A38] dark:hover:text-[#DFC8A5]">commercial plazas</router-link>, and high-end residential interiors across <router-link to="/area-guides?society=dha-lahore" class="underline hover:text-[#8C6A38] dark:hover:text-[#DFC8A5]">DHA Lahore</router-link>, <router-link to="/properties?society=Gulberg+Lahore" class="underline hover:text-[#8C6A38] dark:hover:text-[#DFC8A5]">Gulberg</router-link>, and <router-link to="/area-guides?society=bahria-town-lahore" class="underline hover:text-[#8C6A38] dark:hover:text-[#DFC8A5]">Bahria Town</router-link>.
           </p>
           <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-            We hold ourselves to the highest standards of structural integrity, municipal approval compliance (LDA, CDA, DHA), and aesthetic perfection.
+            We hold ourselves to the highest standards of structural integrity, municipal approval compliance (<router-link to="/blog/lda-map-approval-process-guide" class="underline hover:text-[#8C6A38] dark:hover:text-[#DFC8A5]">LDA</router-link>, <router-link to="/blog/cda-approved-societies-islamabad-2026" class="underline hover:text-[#8C6A38] dark:hover:text-[#DFC8A5]">CDA</router-link>, <router-link to="/blog/dha-lahore-building-bylaws-2026" class="underline hover:text-[#8C6A38] dark:hover:text-[#DFC8A5]">DHA</router-link>), and aesthetic perfection showcased in our <router-link to="/portfolio" class="underline hover:text-[#8C6A38] dark:hover:text-[#DFC8A5]">3D portfolio</router-link>.
           </p>
 
           <div class="pt-4 grid grid-cols-2 gap-4">
@@ -120,7 +120,7 @@
             <i class="fa-solid fa-ruler-combined"></i>
           </div>
           <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors">Precision Planning</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Exact dimensional accuracy matching society bylaws for DHA and Bahria Town.</p>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Exact dimensional accuracy matching society bylaws for <router-link to="/area-guides?society=dha-lahore" class="underline hover:text-[#8C6A38] dark:hover:text-[#DFC8A5]">DHA</router-link> and <router-link to="/area-guides?society=bahria-town-lahore" class="underline hover:text-[#8C6A38] dark:hover:text-[#DFC8A5]">Bahria Town</router-link>.</p>
         </div>
 
         <div class="p-8 rounded-3xl tecture-card space-y-4 group">
@@ -128,7 +128,7 @@
             <i class="fa-solid fa-cube"></i>
           </div>
           <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors">4K 3D Renderings</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Photorealistic walkthroughs so you see your building before laying a single brick.</p>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Photorealistic walkthroughs so you see your building before laying a single brick. Browse our <router-link to="/keywords/4k-photorealistic-renders" class="underline hover:text-[#8C6A38] dark:hover:text-[#DFC8A5]">4K render visualizations</router-link>.</p>
         </div>
 
         <div class="p-8 rounded-3xl tecture-card space-y-4 group">
@@ -136,7 +136,7 @@
             <i class="fa-solid fa-gem"></i>
           </div>
           <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors">Luxury Finishings</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Handpicked Italian marble, custom woodwork, and bespoke architectural illumination.</p>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Handpicked Italian marble, custom woodwork, and bespoke architectural illumination crafted with <router-link to="/keywords/interior-designers-in-lahore" class="underline hover:text-[#8C6A38] dark:hover:text-[#DFC8A5]">luxury interior standards</router-link>.</p>
         </div>
 
         <div class="p-8 rounded-3xl tecture-card space-y-4 group">
@@ -144,7 +144,7 @@
             <i class="fa-solid fa-award"></i>
           </div>
           <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-[#8C6A38] dark:group-hover:text-[#DFC8A5] transition-colors">Guaranteed Trust</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Registered PCATP architects ensuring transparent pricing and guaranteed delivery timelines.</p>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Registered <router-link to="/agents" class="underline hover:text-[#8C6A38] dark:hover:text-[#DFC8A5]">PCATP architects</router-link> ensuring transparent pricing via our <router-link to="/tools?tab=cost-calc" class="underline hover:text-[#8C6A38] dark:hover:text-[#DFC8A5]">2026 construction calculator</router-link> and guaranteed delivery timelines.</p>
         </div>
       </div>
     </section>
@@ -158,7 +158,7 @@
         <span class="tecture-tag text-[#C5A880] block">SCHEDULE A MEETING</span>
         <h3 class="text-2xl sm:text-4xl font-black">Visit Our Studio in Lahore</h3>
         <p class="text-slate-400 max-w-xl mx-auto text-sm">
-          Discuss your 5 Marla, 10 Marla, or 1 Kanal plot floor plans over tea with our chief architects in DHA Lahore or Park View City.
+          Discuss your <router-link to="/keywords/5-marla-house-design" class="underline text-[#DFC8A5]">5 Marla</router-link>, <router-link to="/keywords/10-marla-house-design" class="underline text-[#DFC8A5]">10 Marla</router-link>, or <router-link to="/keywords/1-kanal-house-plan" class="underline text-[#DFC8A5]">1 Kanal</router-link> plot floor plans over tea with our chief architects in <router-link to="/properties?society=DHA+Lahore" class="underline text-[#DFC8A5]">DHA Lahore</router-link> or <router-link to="/properties?society=Park+View+City" class="underline text-[#DFC8A5]">Park View City</router-link>.
         </p>
         <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
           <router-link 

@@ -300,7 +300,7 @@
           </div>
 
           <p class="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
-            <strong class="text-slate-900 dark:text-white">H&amp;Q Design Services (HANDQ)</strong> is an award-winning architecture and luxury interior design firm headquartered in Lahore, Pakistan. We guide private clients, developers, and corporate institutions through full-scope architectural design, municipal drawing approvals, photorealistic 3D visualization, and turnkey construction management.
+            <strong class="text-slate-900 dark:text-white"><router-link to="/about" class="underline hover:text-[#C5A880]">H&amp;Q Design Services (HANDQ)</router-link></strong> is an award-winning <router-link to="/services" class="underline font-semibold hover:text-[#C5A880]">architecture and luxury interior design firm</router-link> headquartered in Lahore, Pakistan. We guide private clients, developers, and corporate institutions through full-scope architectural design, <router-link to="/area-guides?society=dha-lahore" class="underline font-semibold hover:text-[#C5A880]">municipal drawing approvals</router-link>, photorealistic <router-link to="/portfolio" class="underline font-semibold hover:text-[#C5A880]">4K 3D visualization</router-link>, and <router-link to="/tools?tab=cost-calc" class="underline font-semibold hover:text-[#C5A880]">turnkey construction management</router-link>.
           </p>
 
           <!-- 4 Pillars of Our Service Excellence -->
@@ -310,7 +310,7 @@
                 <i class="fa-solid fa-stamp"></i>
               </div>
               <h4 class="text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white">100% LDA &amp; DHA Approval</h4>
-              <p class="text-[11px] text-slate-600 dark:text-slate-400">Complete municipal drawings conforming strictly to DHA and LDA bylaws.</p>
+              <p class="text-[11px] text-slate-600 dark:text-slate-400">Complete municipal drawings conforming strictly to <router-link to="/blog/dha-lahore-building-bylaws-2026" class="underline hover:text-[#C5A880]">DHA</router-link> and <router-link to="/blog/lda-map-approval-process-guide" class="underline hover:text-[#C5A880]">LDA bylaws</router-link>.</p>
             </div>
 
             <div class="p-3.5 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm space-y-1 hover:border-[#C5A880]/60 transition-colors">
@@ -318,7 +318,7 @@
                 <i class="fa-solid fa-cube"></i>
               </div>
               <h4 class="text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white">4K 3D Photorealism</h4>
-              <p class="text-[11px] text-slate-600 dark:text-slate-400">Lumion and 3ds Max VR renders showing exact exterior and interior textures.</p>
+              <p class="text-[11px] text-slate-600 dark:text-slate-400">Lumion and 3ds Max <router-link to="/keywords/4k-photorealistic-renders" class="underline hover:text-[#C5A880]">VR renders</router-link> showing exact exterior and interior textures.</p>
             </div>
 
             <div class="p-3.5 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm space-y-1 hover:border-[#C5A880]/60 transition-colors">
@@ -326,7 +326,7 @@
                 <i class="fa-solid fa-calculator"></i>
               </div>
               <h4 class="text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white">Turnkey Estimation</h4>
-              <p class="text-[11px] text-slate-600 dark:text-slate-400">Accurate bill of quantities (BOQ) with realistic Pakistan 2026 material costs.</p>
+              <p class="text-[11px] text-slate-600 dark:text-slate-400">Accurate bill of quantities with realistic Pakistan 2026 <router-link to="/tools?tab=cost-calc" class="underline hover:text-[#C5A880]">material costs</router-link> and <router-link to="/keywords/house-construction-cost-in-pakistan" class="underline hover:text-[#C5A880]">construction rates</router-link>.</p>
             </div>
 
             <div class="p-3.5 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm space-y-1 hover:border-[#C5A880]/60 transition-colors">
@@ -334,7 +334,7 @@
                 <i class="fa-solid fa-comments"></i>
               </div>
               <h4 class="text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white">Lead Architect Direct Desk</h4>
-              <p class="text-[11px] text-slate-600 dark:text-slate-400">1-on-1 consultations directly with licensed PCATP chief engineers.</p>
+              <p class="text-[11px] text-slate-600 dark:text-slate-400">1-on-1 consultations directly with <router-link to="/agents" class="underline hover:text-[#C5A880]">licensed PCATP chief engineers</router-link>.</p>
             </div>
           </div>
 
@@ -396,7 +396,7 @@
               Architectural Floor Planning
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Complete layout planning for 5 Marla, 10 Marla, 1 Kanal, and 2 Kanal residences. Includes 2D working floor plans, structural framing calculations, cross-sections, and certified submission files for DHA, LDA, and Bahria Town approvals.
+              Complete layout planning for <router-link to="/keywords/5-marla-house-design" class="text-[#DFC8A5] underline hover:text-white font-semibold">5 Marla</router-link>, <router-link to="/keywords/10-marla-house-design" class="text-[#DFC8A5] underline hover:text-white font-semibold">10 Marla</router-link>, <router-link to="/keywords/1-kanal-house-plan" class="text-[#DFC8A5] underline hover:text-white font-semibold">1 Kanal</router-link>, and <router-link to="/keywords/2-kanal-house-design" class="text-[#DFC8A5] underline hover:text-white font-semibold">2 Kanal</router-link> residences. Includes 2D working floor plans, structural framing calculations, cross-sections, and certified submission files for <router-link to="/area-guides?society=dha-lahore" class="text-[#DFC8A5] underline hover:text-white">DHA</router-link>, <router-link to="/blog/lda-map-approval-process-guide" class="text-[#DFC8A5] underline hover:text-white">LDA</router-link>, and <router-link to="/area-guides?society=bahria-town-lahore" class="text-[#DFC8A5] underline hover:text-white">Bahria Town</router-link> approvals.
             </p>
             <div class="space-y-1.5 pt-1 text-xs text-slate-700 dark:text-slate-300">
               <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#C5A880]"></i> 2D Blueprints &amp; Section Cuts</div>
@@ -425,7 +425,7 @@
               Luxury Interior Architecture
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Bespoke interior architecture for living lounges, executive drawing rooms, master bed suites, and kitchens. Curated Italian bookmatched Calacatta marble, fluted timber acoustic wall panels, false ceiling lighting layouts, and custom joinery.
+              Bespoke <router-link to="/keywords/interior-designers-in-lahore" class="text-[#DFC8A5] underline hover:text-white font-semibold">luxury interior architecture</router-link> for living lounges, executive drawing rooms, master bed suites, and kitchens. Curated Italian bookmatched Calacatta marble, fluted timber acoustic wall panels, false ceiling lighting layouts, and custom joinery showcased in our <router-link to="/portfolio" class="text-[#DFC8A5] underline hover:text-white">portfolio</router-link>.
             </p>
             <div class="space-y-1.5 pt-1 text-xs text-slate-700 dark:text-slate-300">
               <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#C5A880]"></i> 3D Photorealistic Interior Views</div>
@@ -454,7 +454,7 @@
               4K 3D Exterior Elevations &amp; VR
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Ultra-high-definition 4K 3D exterior elevations rendered in Lumion and 3ds Max. Preview daytime sunlight, atmospheric nighttime illumination, rockwall stone cladding, and 360° virtual reality walkthroughs before laying a single brick.
+              Ultra-high-definition <router-link to="/keywords/4k-photorealistic-renders" class="text-[#DFC8A5] underline hover:text-white font-semibold">4K 3D exterior elevations</router-link> rendered in Lumion and 3ds Max. Preview daytime sunlight, atmospheric nighttime illumination, rockwall stone cladding, and 360° virtual reality walkthroughs for <router-link to="/keywords/spanish-front-elevation" class="text-[#DFC8A5] underline hover:text-white">Spanish</router-link> and <router-link to="/keywords/modern-front-elevation" class="text-[#DFC8A5] underline hover:text-white">modern facades</router-link> before laying a single brick.
             </p>
             <div class="space-y-1.5 pt-1 text-xs text-slate-700 dark:text-slate-300">
               <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#C5A880]"></i> Spanish, Modern &amp; Classical Facades</div>
@@ -483,7 +483,7 @@
               Turnkey Construction Engineering
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Rigorous on-site engineering supervision and turnkey construction across Lahore. Grade-60 steel reinforcement, OPC cement standards, German sanitary fittings, and guaranteed delivery schedule.
+              Rigorous on-site engineering supervision and <router-link to="/keywords/house-construction-cost-in-pakistan" class="text-[#DFC8A5] underline hover:text-white font-semibold">turnkey construction across Lahore</router-link>. <router-link to="/blog/steel-rate-in-pakistan-today-2026" class="text-[#DFC8A5] underline hover:text-white">Grade-60 steel reinforcement</router-link>, OPC cement standards, German sanitary fittings, and guaranteed delivery schedule based on our <router-link to="/tools?tab=cost-calc" class="text-[#DFC8A5] underline hover:text-white">itemized BOQ calculator</router-link>.
             </p>
             <div class="space-y-1.5 pt-1 text-xs text-slate-700 dark:text-slate-300">
               <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#C5A880]"></i> Grey Structure &amp; Full A+ Luxury</div>
@@ -512,7 +512,7 @@
               House Renovation &amp; Remodeling
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Complete home transformation in Lahore. Revamp dated 10 Marla and 1 Kanal facades into sleek contemporary masterpieces, overhaul bathrooms and kitchens, and expand living areas with structural compliance.
+              Complete home transformation in Lahore. Revamp dated 10 Marla and 1 Kanal facades into sleek contemporary masterpieces with <router-link to="/keywords/modern-front-elevation" class="text-[#DFC8A5] underline hover:text-white font-semibold">modern elevation upgrades</router-link>, overhaul bathrooms and kitchens, and expand living areas with structural compliance as proven in our <router-link to="/case-studies" class="text-[#DFC8A5] underline hover:text-white">renovation case studies</router-link>.
             </p>
             <div class="space-y-1.5 pt-1 text-xs text-slate-700 dark:text-slate-300">
               <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#C5A880]"></i> Modern Facade Elevation Upgrades</div>
@@ -541,7 +541,7 @@
               Commercial Plaza &amp; Office Design
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              High-performance architectural engineering for commercial high-rises, shopping plazas, and corporate headquarters in Gulberg, DHA Phase 6, and Islamabad. Full curtain-wall structural detailing and parking layouts.
+              High-performance architectural engineering for commercial high-rises, <router-link to="/keywords/commercial-plaza-design" class="text-[#DFC8A5] underline hover:text-white font-semibold">commercial plaza designs</router-link>, and corporate headquarters in <router-link to="/properties?society=Gulberg+Lahore" class="text-[#DFC8A5] underline hover:text-white font-semibold">Gulberg</router-link>, <router-link to="/properties?society=DHA+Lahore" class="text-[#DFC8A5] underline hover:text-white font-semibold">DHA Phase 6</router-link>, and <router-link to="/properties?city=Islamabad" class="text-[#DFC8A5] underline hover:text-white font-semibold">Islamabad</router-link>. Full curtain-wall structural detailing and parking layouts.
             </p>
             <div class="space-y-1.5 pt-1 text-xs text-slate-700 dark:text-slate-300">
               <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#C5A880]"></i> Curtain-Wall Glass Facade Design</div>
@@ -574,25 +574,25 @@
         <div class="gsap-workflow-step p-6 sm:p-7 rounded-3xl tecture-card space-y-3 group">
           <span class="font-mono text-2xl sm:text-3xl font-black text-[#C5A880]">01</span>
           <h4 class="text-base sm:text-lg font-black text-slate-900 dark:text-white group-hover:text-[#946E3A] dark:group-hover:text-[#DFC8A5] transition-colors">Consultation &amp; Brief</h4>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">In-depth discussion on plot orientation, family space requirements, aesthetic preference, and budget targets.</p>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">In-depth discussion on plot orientation, family space requirements, aesthetic preference, and budget targets. Book a <router-link to="/contact" class="underline hover:text-[#C5A880] font-semibold">design consultation</router-link>.</p>
         </div>
 
         <div class="gsap-workflow-step p-6 sm:p-7 rounded-3xl tecture-card space-y-3 group">
           <span class="font-mono text-2xl sm:text-3xl font-black text-[#C5A880]">02</span>
           <h4 class="text-base sm:text-lg font-black text-slate-900 dark:text-white group-hover:text-[#946E3A] dark:group-hover:text-[#DFC8A5] transition-colors">2D Planning &amp; 3D Elevation</h4>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Developing optimized 2D floor plans, spatial zoning, and photorealistic 4K 3D exterior &amp; interior renderings.</p>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Developing optimized 2D floor plans, spatial zoning, and photorealistic <router-link to="/portfolio" class="underline hover:text-[#C5A880] font-semibold">4K 3D exterior &amp; interior renderings</router-link>.</p>
         </div>
 
         <div class="gsap-workflow-step p-6 sm:p-7 rounded-3xl tecture-card space-y-3 group">
           <span class="font-mono text-2xl sm:text-3xl font-black text-[#C5A880]">03</span>
           <h4 class="text-base sm:text-lg font-black text-slate-900 dark:text-white group-hover:text-[#946E3A] dark:group-hover:text-[#DFC8A5] transition-colors">Municipal Approvals &amp; BOQ</h4>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Filing complete structural blueprints with LDA, CDA, or DHA authorities along with itemized material cost breakdown.</p>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Filing complete structural blueprints with <router-link to="/blog/lda-map-approval-process-guide" class="underline hover:text-[#C5A880] font-semibold">LDA</router-link>, <router-link to="/blog/cda-approved-societies-islamabad-2026" class="underline hover:text-[#C5A880] font-semibold">CDA</router-link>, or <router-link to="/blog/dha-lahore-building-bylaws-2026" class="underline hover:text-[#C5A880] font-semibold">DHA</router-link> authorities along with itemized <router-link to="/tools?tab=cost-calc" class="underline hover:text-[#C5A880] font-semibold">material cost breakdown</router-link>.</p>
         </div>
 
         <div class="gsap-workflow-step p-6 sm:p-7 rounded-3xl tecture-card space-y-3 group">
           <span class="font-mono text-2xl sm:text-3xl font-black text-[#C5A880]">04</span>
           <h4 class="text-base sm:text-lg font-black text-slate-900 dark:text-white group-hover:text-[#946E3A] dark:group-hover:text-[#DFC8A5] transition-colors">Execution &amp; Handover</h4>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Rigorous turnkey construction execution with daily engineer supervision and milestone-based transparent delivery.</p>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Rigorous <router-link to="/services" class="underline hover:text-[#C5A880] font-semibold">turnkey construction execution</router-link> with daily engineer supervision and milestone-based transparent delivery.</p>
         </div>
 
       </div>
@@ -612,7 +612,7 @@
               Instant 2026 Architectural &amp; Construction Cost Estimator
             </h3>
             <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-              Calculate realistic Lahore &amp; Pakistan construction budgets based on 2026 market material rates.
+              Calculate realistic Lahore &amp; Pakistan construction budgets based on 2026 market material rates. Check <router-link to="/blog/steel-rate-in-pakistan-today-2026" class="underline hover:text-[#C5A880]">steel rates</router-link>, <router-link to="/blog/cement-bag-price-in-pakistan-today" class="underline hover:text-[#C5A880]">cement prices</router-link>, and <router-link to="/blog/red-bricks-rate-lahore-2026" class="underline hover:text-[#C5A880]">brick prices</router-link>.
             </p>
           </div>
 
@@ -738,7 +738,7 @@
               Modern Luxury Villa Architectural Elevation
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
-              Modern vertical volume villa design featuring warm architectural LED wash lighting, textured travertine boundary wall, rooftop louvered parapet, and manicured entryway greenery.
+              Modern vertical volume villa design featuring warm architectural LED wash lighting, textured travertine boundary wall, rooftop louvered parapet, and manicured entryway greenery in <router-link to="/properties?society=DHA+Lahore" class="underline hover:text-[#C5A880]">DHA Phase 7</router-link>. View our <router-link to="/keywords/10-marla-house-design" class="underline hover:text-[#C5A880]">10 Marla house designs</router-link>.
             </p>
             <div class="pt-2 flex items-center justify-between">
               <router-link to="/portfolio" class="text-xs font-bold text-[#8C6A38] dark:text-[#DFC8A5] flex items-center gap-1 hover:underline">
@@ -764,7 +764,7 @@
               Executive Club Lounge &amp; Cigar Salon
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
-              Sophisticated executive club lounge featuring tufted caramel Chesterfield leather banquettes, coffered grid ceiling with brass globe pendants, and dark navy wainscoting.
+              Sophisticated executive club lounge featuring tufted caramel Chesterfield leather banquettes, coffered grid ceiling with brass globe pendants, and dark navy wainscoting. Explore our <router-link to="/keywords/interior-designers-in-lahore" class="underline hover:text-[#C5A880]">interior design services</router-link> in <router-link to="/properties?society=DHA+Lahore" class="underline hover:text-[#C5A880]">DHA Phase 6</router-link>.
             </p>
             <div class="pt-2 flex items-center justify-between">
               <router-link to="/portfolio" class="text-xs font-bold text-[#8C6A38] dark:text-[#DFC8A5] flex items-center gap-1 hover:underline">
@@ -790,7 +790,7 @@
               Grand Master Suite &amp; Timber Slat Partitions
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
-              Expansive luxury master bedroom featuring vertical oak acoustic slat partition walls, diamond-coffered ceiling with recessed perimeter cove lighting, and black marble columns.
+              Expansive luxury master bedroom featuring vertical oak acoustic slat partition walls, diamond-coffered ceiling with recessed perimeter cove lighting, and black marble columns. See related <router-link to="/keywords/1-kanal-house-plan" class="underline hover:text-[#C5A880]">1 Kanal luxury layouts</router-link>.
             </p>
             <div class="pt-2 flex items-center justify-between">
               <router-link to="/portfolio" class="text-xs font-bold text-[#8C6A38] dark:text-[#DFC8A5] flex items-center gap-1 hover:underline">
@@ -817,7 +817,7 @@
             Experience <span class="text-gradient-gold">H&amp;Q Luxury Architecture</span> in Motion
           </h2>
           <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-2xl">
-            Watch our complete 60-second architectural showcase featuring luxury villas, master bedroom suites, open-concept living, and complete before-and-after space transformations.
+            Watch our complete 60-second architectural showcase featuring <router-link to="/case-studies" class="underline hover:text-[#C5A880]">luxury villas</router-link>, master bedroom suites, open-concept living, and complete space transformations in our <router-link to="/portfolio" class="underline hover:text-[#C5A880]">portfolio</router-link>.
           </p>
         </div>
         <router-link to="/portfolio" class="px-5 py-2.5 rounded-full tecture-btn-outline text-xs flex items-center gap-2 shrink-0">
@@ -871,7 +871,7 @@
           Ready to Craft Your Architectural Masterpiece?
         </h3>
         <p class="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-          Book an in-person design consultation with our Chief Architects in Lahore. Bring your plot dimensions or preliminary sketches, and let's craft a timeless living space.
+          Book an in-person design consultation with our Chief Architects in Lahore. Bring your plot dimensions or preliminary sketches, and let's craft a timeless living space. We serve clients across <router-link to="/area-guides?society=dha-lahore" class="underline hover:text-[#DFC8A5]">DHA Lahore</router-link>, <router-link to="/area-guides?society=bahria-town-lahore" class="underline hover:text-[#DFC8A5]">Bahria Town</router-link>, <router-link to="/properties?society=Gulberg+Lahore" class="underline hover:text-[#DFC8A5]">Gulberg</router-link>, and <router-link to="/properties?city=Islamabad" class="underline hover:text-[#DFC8A5]">Islamabad</router-link>.
         </p>
         <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
           <button 

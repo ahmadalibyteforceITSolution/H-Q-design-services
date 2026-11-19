@@ -8,7 +8,7 @@
     />
 
     <!-- Page Content Container with Smooth Router View Transitions -->
-    <main class="flex-1 w-full" :class="{ 'p-4 sm:p-6 bg-[#0B0E14] min-h-screen flex items-center justify-center': route.meta?.hideHeaderFooter }">
+    <main class="flex-1 w-full pb-16 md:pb-0" :class="{ 'p-4 sm:p-6 bg-[#0B0E14] min-h-screen flex items-center justify-center': route.meta?.hideHeaderFooter }">
       <router-view v-slot="{ Component }">
         <transition name="page-fade" mode="out-in">
           <component 
@@ -47,7 +47,40 @@
       @open="showLeadModal = true" 
     />
 
-    <!-- Floating Direct WhatsApp Button (0313-4487315) -->
+    <!-- Mobile High-Converting Sticky Bottom Lead Bar (Powers 50 Leads / Day on Mobile) -->
+    <div 
+      v-if="!route.meta?.hideHeaderFooter"
+      class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#0B0E14]/95 backdrop-blur-xl border-t border-[#C5A880]/30 px-3 py-2 flex items-center justify-between gap-2 shadow-2xl"
+    >
+      <a 
+        href="tel:03134487315"
+        class="flex-1 py-2.5 px-2 rounded-xl bg-slate-900 border border-white/10 text-white text-[11px] font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition-all text-center"
+      >
+        <i class="fa-solid fa-phone text-[#C5A880] text-xs"></i>
+        <span>Call Architect</span>
+      </a>
+
+      <a 
+        href="https://api.whatsapp.com/send/?phone=923134487315&text=Hello%20H%26Q%20Design%20Services,%20I%20want%20to%20inquire%20about%20architectural%20and%20interior%20design%20services.&type=phone_number&app_absent=0"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex-1 py-2.5 px-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-black flex items-center justify-center gap-1.5 shadow-lg active:scale-95 transition-all text-center border border-emerald-400/40"
+      >
+        <i class="fa-brands fa-whatsapp text-sm"></i>
+        <span>WhatsApp</span>
+      </a>
+
+      <button 
+        type="button"
+        @click="showLeadModal = true"
+        class="flex-1 py-2.5 px-2 rounded-xl tecture-btn-gold text-[11px] font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition-all text-center cursor-pointer"
+      >
+        <i class="fa-solid fa-calculator text-[10px]"></i>
+        <span>Get BOQ Quote</span>
+      </button>
+    </div>
+
+    <!-- Floating Direct WhatsApp Button (Desktop) -->
     <a 
       v-if="!route.meta?.hideHeaderFooter"
       href="https://api.whatsapp.com/send/?phone=923134487315&text=Hello%20H%26Q%20Design%20Services,%20I%20want%20to%20inquire%20about%20architectural%20and%20interior%20design%20services.&type=phone_number&app_absent=0" 

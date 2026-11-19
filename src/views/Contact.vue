@@ -11,7 +11,7 @@
         Connect with Our <span class="text-gradient-gold">Senior Architects</span>
       </h1>
       <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
-        Visit our studio in Lahore, Pakistan, or connect directly with our WhatsApp desk (0313-4487315) and Gmail team.
+        Visit our studio in <router-link to="/properties?city=Lahore" class="underline text-[#8C6A38] dark:text-[#DFC8A5] font-semibold">Lahore, Pakistan</router-link>, discuss your <router-link to="/keywords/5-marla-house-design" class="underline text-[#8C6A38] dark:text-[#DFC8A5] font-semibold">5 Marla</router-link>, <router-link to="/keywords/10-marla-house-design" class="underline text-[#8C6A38] dark:text-[#DFC8A5] font-semibold">10 Marla</router-link>, or <router-link to="/keywords/1-kanal-house-plan" class="underline text-[#8C6A38] dark:text-[#DFC8A5] font-semibold">1 Kanal</router-link> floor plans, review our <router-link to="/portfolio" class="underline text-[#8C6A38] dark:text-[#DFC8A5] font-semibold">3D elevations</router-link>, or calculate project budgets with our <router-link to="/tools?tab=cost-calc" class="underline text-[#8C6A38] dark:text-[#DFC8A5] font-semibold">2026 cost estimator</router-link>.
       </p>
     </div>
 

@@ -24,7 +24,7 @@
           </h1>
 
           <p class="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl">
-            Detailed technical breakdowns of how H&amp;Q Design Services solves complex spatial challenges, secures municipal NOC approvals, and executes turnkey luxury residences across Lahore, Islamabad, and Saudi Arabia.
+            Detailed technical breakdowns of how <router-link to="/about" class="text-[#DFC8A5] underline hover:text-white font-semibold">H&amp;Q Design Services</router-link> solves complex spatial challenges, secures <router-link to="/area-guides" class="text-[#DFC8A5] underline hover:text-white font-semibold">municipal NOC approvals</router-link>, and executes <router-link to="/services" class="text-[#DFC8A5] underline hover:text-white font-semibold">turnkey luxury residences</router-link> across <router-link to="/properties?city=Lahore" class="text-[#DFC8A5] underline hover:text-white font-semibold">Lahore</router-link>, <router-link to="/properties?city=Islamabad" class="text-[#DFC8A5] underline hover:text-white font-semibold">Islamabad</router-link>, and nationwide.
           </p>
 
           <!-- Quick Proof Counters -->

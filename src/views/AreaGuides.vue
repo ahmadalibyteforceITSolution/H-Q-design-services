@@ -19,7 +19,7 @@
             Comprehensive <span class="text-gradient-gold">Society &amp; Neighborhood</span> Guides
           </h1>
           <p class="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
-            In-depth analysis of Pakistan's premier housing societies: Lake City, DHA Lahore, Bahria Town, and Gulberg. Compare average plot rates, schools, hospitals, and municipal bylaws.
+            In-depth analysis of Pakistan's premier housing societies: <router-link to="/properties?society=Lake+City" class="text-[#DFC8A5] underline hover:text-white font-semibold">Lake City</router-link>, <router-link to="/properties?society=DHA+Lahore" class="text-[#DFC8A5] underline hover:text-white font-semibold">DHA Lahore</router-link>, <router-link to="/properties?society=Bahria+Town" class="text-[#DFC8A5] underline hover:text-white font-semibold">Bahria Town</router-link>, and <router-link to="/properties?society=Gulberg+Lahore" class="text-[#DFC8A5] underline hover:text-white font-semibold">Gulberg</router-link>. Compare average plot rates, calculate <router-link to="/tools?tab=cost-calc" class="text-[#DFC8A5] underline hover:text-white font-semibold">construction costs</router-link>, explore <router-link to="/portfolio" class="text-[#DFC8A5] underline hover:text-white font-semibold">3D elevations</router-link>, and verify <router-link to="/blog/dha-lahore-building-bylaws-2026" class="text-[#DFC8A5] underline hover:text-white font-semibold">municipal bylaws</router-link>.
           </p>
         </div>
 

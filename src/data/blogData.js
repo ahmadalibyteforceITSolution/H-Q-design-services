@@ -331,7 +331,7 @@ export const generateArticleContent = (topic, category, id) => {
           </span>
         </div>
         <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-          Planning and executing premium architecture and turnkey construction in Pakistan requires a synthesis of structural safety, climate-responsive ergonomics, and municipal bylaw compliance. At <strong>H&Q Design Services</strong> (Lahore, Pakistan), our team of licensed PCATP architects and structural engineers delivers tailor-made architectural blueprints, 4K 3D elevations, and complete turnkey execution for <em>${topic}</em>.
+          Planning and executing premium <a href="/services" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">architectural design and turnkey construction</a> in Pakistan requires a synthesis of structural safety, climate-responsive ergonomics, and <a href="/area-guides" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">municipal bylaw compliance</a>. At <a href="/about" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300"><strong>H&amp;Q Design Services</strong></a> (Lahore, Pakistan), our team of <a href="/agents" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">licensed PCATP architects</a> and structural engineers delivers tailor-made architectural blueprints, <a href="/portfolio" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">4K 3D elevations</a>, and complete turnkey execution for <em>${topic}</em>.
         </p>
         
         <!-- Technical Specifications Grid -->
@@ -358,10 +358,10 @@ export const generateArticleContent = (topic, category, id) => {
       <!-- Section 1: Spatial Planning & Blueprint Architecture -->
       <div class="space-y-4">
         <h3 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center gap-2">
-          <span class="text-[#088C7E]">1.</span> Spatial Layout & Blueprint Architecture
+          <span class="text-[#088C7E]">1.</span> Spatial Layout &amp; Blueprint Architecture
         </h3>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-          When designing around <strong>${topic}</strong>, architectural excellence begins with maximizing usable square footage without compromising natural cross-ventilation or privacy. We eliminate dark, cramped passageways by incorporating double-height lightwells, open transitional foyers, and smart acoustic separation between guest reception areas and private family suites.
+          When designing around <strong>${topic}</strong>, architectural excellence begins with maximizing usable square footage without compromising natural cross-ventilation or privacy. Explore our <a href="/case-studies" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">completed villa case studies</a> and verified <a href="/portfolio" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">3D elevation portfolio</a> to inspect how we eliminate dark, cramped passageways by incorporating double-height lightwells, open transitional foyers, and smart acoustic separation between guest reception areas and private family suites.
         </p>
         <div class="p-5 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3">
           <h4 class="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
@@ -369,9 +369,9 @@ export const generateArticleContent = (topic, category, id) => {
           </h4>
           <ul class="list-disc list-inside space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 pl-2">
             <li><strong>Sun-Path Solar Orientation:</strong> Primary living zones positioned to capture morning easterly daylight while deflecting severe southwest thermal solar gain.</li>
-            <li><strong>Compulsory Open Space (COS):</strong> Mandatory setbacks (${setbacks}) strictly observed to ensure legal authority clearance without demolition liabilities.</li>
-            <li><strong>Dual Kitchen Concept:</strong> Seamless transitional show kitchen paired with a fully equipped dirty grease kitchen with direct high-CFM exterior ducting.</li>
-            <li><strong>Smart Home Conduits:</strong> Pre-planned concealed shafts for inverter solar cabling, VRF air conditioning lines, and CAT-6 high-speed automation wiring.</li>
+            <li><strong>Compulsory Open Space (COS):</strong> Mandatory setbacks (${setbacks}) strictly observed under <a href="/area-guides" class="text-[#088C7E] dark:text-emerald-400 underline hover:text-emerald-300">housing society bylaws</a> to ensure legal authority clearance without demolition liabilities.</li>
+            <li><strong>Dual Kitchen Concept:</strong> Seamless transitional show kitchen paired with a fully equipped dirty grease kitchen with direct high-CFM exterior ducting, customized by our <a href="/keywords/interior-designers-in-lahore" class="text-[#088C7E] dark:text-emerald-400 underline hover:text-emerald-300">luxury interior design specialists</a>.</li>
+            <li><strong>Smart Home Conduits:</strong> Pre-planned concealed shafts for inverter solar cabling (<a href="/blog/solar-system-installation-cost-pakistan" class="text-[#088C7E] dark:text-emerald-400 underline hover:text-emerald-300">solar net-metering guide</a>), VRF air conditioning lines, and CAT-6 high-speed automation wiring.</li>
           </ul>
         </div>
       </div>
@@ -379,18 +379,18 @@ export const generateArticleContent = (topic, category, id) => {
       <!-- Section 2: Structural Engineering & Seismic Safety -->
       <div class="space-y-4">
         <h3 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center gap-2">
-          <span class="text-[#088C7E]">2.</span> Structural Engineering & Material Standards
+          <span class="text-[#088C7E]">2.</span> Structural Engineering &amp; Material Standards
         </h3>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-          Structural integrity is non-negotiable. For <strong>${topic}</strong>, our licensed structural engineers calibrate foundation footings based on laboratory soil-bearing reports:
+          Structural integrity is non-negotiable. For <strong>${topic}</strong>, our <a href="/agents" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">licensed structural engineers</a> calibrate foundation footings based on laboratory soil-bearing reports:
         </p>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1.5">
             <h4 class="font-bold text-[#088C7E] text-sm flex items-center gap-1.5">
-              <i class="fa-solid fa-cubes-stacked"></i> Concrete & Rebar Specs
+              <i class="fa-solid fa-cubes-stacked"></i> Concrete &amp; Rebar Specs
             </h4>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              ${concreteSpec}
+              ${concreteSpec} Verify current rates via our <a href="/blog/steel-rate-in-pakistan-today-2026" class="text-[#088C7E] dark:text-emerald-400 underline hover:text-emerald-300">Grade 60 steel price index</a> and <a href="/blog/cement-bag-price-in-pakistan-today" class="text-[#088C7E] dark:text-emerald-400 underline hover:text-emerald-300">cement rate updates</a>.
             </p>
           </div>
           <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1.5">
@@ -398,7 +398,7 @@ export const generateArticleContent = (topic, category, id) => {
               <i class="fa-solid fa-shield-halved"></i> Seismic Code Compliance
             </h4>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Engineered according to Uniform Building Code (UBC-97) and Building Code of Pakistan (BCP-2021) for Zone 2B seismic acceleration, preventing structural hair-cracking.
+              Engineered according to Uniform Building Code (UBC-97) and Building Code of Pakistan (BCP-2021) for Zone 2B seismic acceleration, preventing structural hair-cracking across all our <a href="/services" class="text-[#088C7E] dark:text-emerald-400 underline hover:text-emerald-300">turnkey construction packages</a>.
             </p>
           </div>
         </div>
@@ -407,23 +407,23 @@ export const generateArticleContent = (topic, category, id) => {
       <!-- Section 3: 4K 3D Facades & Exterior Material Curation -->
       <div class="space-y-4">
         <h3 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center gap-2">
-          <span class="text-[#088C7E]">3.</span> 4K Photorealistic Visualizations & Facade Materials
+          <span class="text-[#088C7E]">3.</span> 4K Photorealistic Visualizations &amp; Facade Materials
         </h3>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-          Before breaking ground on <strong>${topic}</strong>, our 3D visualization studio produces photorealistic 4K day and dusk architectural perspectives. This allows clients to inspect facade materials, lighting angles, and texture contrasts:
+          Before breaking ground on <strong>${topic}</strong>, our <a href="/portfolio" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">3D visualization studio</a> produces photorealistic <a href="/keywords/4k-photorealistic-renders" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">4K day and dusk architectural perspectives</a>. This allows clients to inspect facade materials, lighting angles, and texture contrasts:
         </p>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
             <h4 class="text-xs font-bold uppercase text-[#088C7E] mb-1">Stone Cladding</h4>
-            <p class="text-xs text-slate-600 dark:text-slate-400">Imported Travertine, Silver Sandstone, and CNC-cut marble panels anchored with stainless steel dry brackets.</p>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Imported Travertine, Silver Sandstone, and CNC-cut marble panels seen on our <a href="/keywords/modern-front-elevation" class="text-[#088C7E] dark:text-emerald-400 underline hover:text-emerald-300">modern front elevations</a> and <a href="/keywords/spanish-front-elevation" class="text-[#088C7E] dark:text-emerald-400 underline hover:text-emerald-300">Spanish elevations</a>.</p>
           </div>
           <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
-            <h4 class="text-xs font-bold uppercase text-[#088C7E] mb-1">Glazing & Aluminum</h4>
-            <p class="text-xs text-slate-600 dark:text-slate-400">Thermal-break Low-E double-glazed aluminum sections (1.6mm - 2.0mm) providing 65% thermal heat deflection.</p>
+            <h4 class="text-xs font-bold uppercase text-[#088C7E] mb-1">Glazing &amp; Aluminum</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Thermal-break Low-E double-glazed aluminum sections (1.6mm - 2.0mm) providing 65% thermal heat deflection for sustainable energy efficiency.</p>
           </div>
           <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
-            <h4 class="text-xs font-bold uppercase text-[#088C7E] mb-1">Accents & Louvers</h4>
-            <p class="text-xs text-slate-600 dark:text-slate-400">UV-resistant High-Pressure Laminate (HPL) panels, powder-coated aluminum louvers, and warm 3000K facade beam spotlights.</p>
+            <h4 class="text-xs font-bold uppercase text-[#088C7E] mb-1">Accents &amp; Louvers</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400">UV-resistant High-Pressure Laminate (HPL) panels, powder-coated aluminum louvers, and warm 3000K facade beam spotlights styled with <a href="/keywords/interior-designers-in-lahore" class="text-[#088C7E] dark:text-emerald-400 underline hover:text-emerald-300">luxury interior design coordination</a>.</p>
           </div>
         </div>
       </div>
@@ -431,17 +431,17 @@ export const generateArticleContent = (topic, category, id) => {
       <!-- Section 4: Tailored 2026 Turnkey BOQ Cost Breakdown -->
       <div class="space-y-4">
         <h3 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center gap-2">
-          <span class="text-[#088C7E]">4.</span> 2026 Construction & Turnkey Cost Estimates (BOQ)
+          <span class="text-[#088C7E]">4.</span> 2026 Construction &amp; Turnkey Cost Estimates (BOQ)
         </h3>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-          Transparent budgeting prevents unexpected expenses during construction. For projects centered on <strong>${topic}</strong> (${sizeType}), our quantity surveyors provide accurate milestone rates:
+          Transparent budgeting prevents unexpected expenses during construction. For projects centered on <strong>${topic}</strong> (${sizeType}), our quantity surveyors provide accurate milestone rates calculated through our <a href="/tools?tab=cost-calc" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">2026 Construction Cost Calculator</a> and <a href="/keywords/house-construction-cost-in-pakistan" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">Pakistan house construction cost index</a>:
         </p>
         <div class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
           <table class="min-w-full text-xs sm:text-sm text-left">
             <thead class="bg-slate-100 dark:bg-slate-800 font-bold text-slate-800 dark:text-slate-200">
               <tr>
                 <th class="p-3.5 border-b">Phase / Milestone</th>
-                <th class="p-3.5 border-b">Scope & Material Standards</th>
+                <th class="p-3.5 border-b">Scope &amp; Material Standards</th>
                 <th class="p-3.5 border-b">Rate per Sq. Ft.</th>
                 <th class="p-3.5 border-b">Estimated Total (${coveredArea})</th>
               </tr>
@@ -449,7 +449,7 @@ export const generateArticleContent = (topic, category, id) => {
             <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-900">
               <tr>
                 <td class="p-3.5 font-bold text-slate-900 dark:text-white">Grey Structure Construction</td>
-                <td class="p-3.5">Excavation, RCC columns/beams, Awal red bricks, Grade-60 steel, PPRC/UPVC pipes & electrical conduits</td>
+                <td class="p-3.5">Excavation, RCC columns/beams, Awal red bricks, Grade-60 steel, PPRC/UPVC pipes &amp; electrical conduits</td>
                 <td class="p-3.5 text-[#088C7E] font-extrabold">${greyRate}</td>
                 <td class="p-3.5 text-[#088C7E] font-black">${greyTotal}</td>
               </tr>
@@ -461,13 +461,13 @@ export const generateArticleContent = (topic, category, id) => {
               </tr>
               <tr>
                 <td class="p-3.5 font-bold text-slate-900 dark:text-white">A+ Ultra-Luxury Signature Finish</td>
-                <td class="p-3.5">Italian Statuario marble, smart automation, double-glazed Low-E facade, inverter VRF HVAC & bespoke joinery</td>
+                <td class="p-3.5">Italian Statuario marble, smart automation, double-glazed Low-E facade, inverter VRF HVAC &amp; bespoke joinery</td>
                 <td class="p-3.5 text-emerald-600 dark:text-emerald-400 font-extrabold">${luxuryRate}</td>
                 <td class="p-3.5 text-emerald-600 dark:text-emerald-400 font-black">${luxuryTotal}</td>
               </tr>
               <tr>
-                <td class="p-3.5 font-bold text-slate-900 dark:text-white">Architectural & 3D Design Package</td>
-                <td class="p-3.5">Complete 2D submission drawings, structural vetting, MEP diagrams, 4K Lumion renders & walkthrough video</td>
+                <td class="p-3.5 font-bold text-slate-900 dark:text-white">Architectural &amp; 3D Design Package</td>
+                <td class="p-3.5">Complete 2D submission drawings, structural vetting, MEP diagrams, 4K Lumion renders &amp; walkthrough video</td>
                 <td class="p-3.5 text-amber-500 font-extrabold">All-Inclusive</td>
                 <td class="p-3.5 text-amber-500 font-black">Fixed Guarantee</td>
               </tr>
@@ -475,17 +475,17 @@ export const generateArticleContent = (topic, category, id) => {
           </table>
         </div>
         <p class="text-xs text-slate-500 dark:text-slate-400 italic">
-          * Use our free <a href="/tools" class="text-[#088C7E] underline font-bold hover:text-teal-600">Online Construction Cost Calculator</a> for instant customization.
+          * Use our free <a href="/tools?tab=cost-calc" class="text-[#088C7E] underline font-bold hover:text-teal-600">Online Construction Cost Calculator</a>, check <a href="/blog/red-bricks-rate-lahore-2026" class="text-[#088C7E] underline font-bold hover:text-teal-600">Awal red clay brick rates</a>, or calculate <a href="/tools?tab=mortgage-calc" class="text-[#088C7E] underline font-bold hover:text-teal-600">bank Islamic mortgage EMIs</a> for instant customization.
         </p>
       </div>
 
       <!-- Section 5: Municipal Bylaws & Building Approval Checklist -->
       <div class="space-y-4">
         <h3 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center gap-2">
-          <span class="text-[#088C7E]">5.</span> Building Approvals & Bylaws: ${societyName}
+          <span class="text-[#088C7E]">5.</span> Building Approvals &amp; Bylaws: ${societyName}
         </h3>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-          Constructing without vetted municipal drawings risks construction halts and demolition penalties. For <strong>${topic}</strong>, our architectural drawings comply 100% with ${societyName} regulations:
+          Constructing without vetted municipal drawings risks construction halts and demolition penalties. For <strong>${topic}</strong>, our architectural drawings comply 100% with ${societyName} regulations. Review our comprehensive <a href="/area-guides" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">Pakistan society bylaws &amp; area guides</a>, <a href="/blog/dha-lahore-building-bylaws-2026" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">DHA Lahore 2026 bylaws</a>, or <a href="/blog/lda-map-approval-process-guide" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">LDA map approval procedures</a>:
         </p>
         <div class="p-5 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-2.5 text-xs sm:text-sm">
           <div class="flex items-start gap-2">
@@ -511,7 +511,7 @@ export const generateArticleContent = (topic, category, id) => {
               Verified Properties Matching This Guide
             </h3>
             <p class="text-xs text-slate-300 mt-1">
-              Explore hand-picked residential villas and plots reviewed by H&Q Senior Architects.
+              Explore hand-picked residential villas and plots reviewed by H&amp;Q Senior Architects across <a href="/properties?city=Lahore" class="text-[#088C7E] underline">Lahore</a>, <a href="/properties?city=Islamabad" class="text-[#088C7E] underline">Islamabad</a>, and <a href="/properties?city=Karachi" class="text-[#088C7E] underline">Karachi</a>.
             </p>
           </div>
           <a href="/properties" class="text-xs font-bold text-[#088C7E] hover:text-emerald-400 flex items-center gap-1.5 self-start sm:self-auto">
@@ -534,19 +534,19 @@ export const generateArticleContent = (topic, category, id) => {
           <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1.5 shadow-sm">
             <h4 class="font-extrabold text-slate-900 dark:text-white">How long does it take to complete architectural drawings for ${topic}?</h4>
             <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-              Standard 2D architectural blueprints and submission drawings take 7 to 10 working days. A complete turnkey package with 4K 3D elevations, structural vetting, and MEP layouts takes approximately 2 to 3 weeks.
+              Standard 2D architectural blueprints and submission drawings take 7 to 10 working days. A complete turnkey package with 4K 3D elevations, structural vetting, and MEP layouts takes approximately 2 to 3 weeks. Browse our <a href="/portfolio" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">completed 3D design portfolio</a> or schedule a meeting at our <a href="/contact" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">DHA Lahore architectural studio</a>.
             </p>
           </div>
           <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1.5 shadow-sm">
             <h4 class="font-extrabold text-slate-900 dark:text-white">What are the covered area and setback requirements for ${topic}?</h4>
             <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-              For ${sizeType}, the standard plot dimensions are ${plotDim} yielding approximately ${coveredArea} of covered area. The mandatory setbacks are ${setbacks} under ${societyName} bylaws.
+              For ${sizeType}, the standard plot dimensions are ${plotDim} yielding approximately ${coveredArea} of covered area. The mandatory setbacks are ${setbacks} under ${societyName} bylaws. Check the official <a href="/area-guides" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">society bylaws guide</a> or verify plot conversions with our <a href="/tools?tab=unit-converter" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">Marla &amp; Sq. Ft Converter</a>.
             </p>
           </div>
           <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1.5 shadow-sm">
-            <h4 class="font-extrabold text-slate-900 dark:text-white">Can H&Q Design Services manage the complete turnkey construction for ${topic}?</h4>
+            <h4 class="font-extrabold text-slate-900 dark:text-white">Can H&amp;Q Design Services manage the complete turnkey construction for ${topic}?</h4>
             <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-              Yes. We offer complete A+ turnkey construction contracts with fixed pricing benchmarks (${turnkeyRate}) that cover grey structure, imported finishes, custom woodwork, and full municipal approvals.
+              Yes. We offer complete A+ turnkey construction contracts with fixed pricing benchmarks (${turnkeyRate}) that cover grey structure, imported finishes, custom woodwork, and full municipal approvals. Read our verified <a href="/reviews" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">client reviews (5.0 ★)</a> or review past <a href="/case-studies" class="text-[#088C7E] dark:text-emerald-400 font-semibold underline hover:text-emerald-300">residential villa case studies</a>.
             </p>
           </div>
         </div>
@@ -560,7 +560,7 @@ export const generateArticleContent = (topic, category, id) => {
             Schedule a Design Review Session for: ${topic}
           </h4>
           <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-            Whether you are building in DHA Lahore, Bahria Town, Gulberg, Islamabad, or anywhere in Pakistan, consult directly with H&Q Senior Architects to review your plot blueprints and cost estimates.
+            Whether you are building in <a href="/area-guides?society=dha-lahore" class="text-[#DFC8A5] underline hover:text-white">DHA Lahore</a>, <a href="/area-guides?society=bahria-town-lahore" class="text-[#DFC8A5] underline hover:text-white">Bahria Town</a>, <a href="/properties?society=Gulberg+Lahore" class="text-[#DFC8A5] underline hover:text-white">Gulberg</a>, <a href="/properties?city=Islamabad" class="text-[#DFC8A5] underline hover:text-white">Islamabad</a>, or anywhere in Pakistan, consult directly with <a href="/about" class="text-[#DFC8A5] underline hover:text-white font-bold">H&amp;Q Senior Architects</a> to review your plot blueprints and cost estimates.
           </p>
         </div>
         <div class="flex flex-wrap items-center gap-3 pt-2">
@@ -645,15 +645,15 @@ export const generate2000Blogs = () => {
 
       <section class="space-y-4">
         <h2 class="text-2xl font-black text-slate-900 dark:text-white">
-          3. Direct Impact on Construction Materials, Freight & Real Estate
+          3. Direct Impact on Construction Materials, Freight &amp; Real Estate
         </h2>
         <p>
-          At <strong>H&Q Design Services</strong>, our cost-engineering consultants constantly track the interplay between fuel tariffs and building costs. Transportation accounts for approximately <strong>8% to 14% of gross residential construction expenses</strong> in Pakistan:
+          At <a href="/about" class="text-[#088C7E] dark:text-emerald-400 font-bold underline">H&amp;Q Design Services</a>, our cost-engineering consultants constantly track the interplay between fuel tariffs and building costs. Transportation accounts for approximately <strong>8% to 14% of gross residential construction expenses</strong> in Pakistan, as modeled in our <a href="/tools?tab=cost-calc" class="text-[#088C7E] dark:text-emerald-400 underline font-semibold">2026 Construction Cost Calculator</a>:
         </p>
         <ul class="list-disc pl-6 space-y-2 text-sm">
-          <li><strong>Red Brick Haulage:</strong> Transporting baked clay bricks from Raiwind kilns to DHA Lahore and Bahria Town relies entirely on commercial diesel trucks. Targeted fuel interventions help prevent cascading price hikes per 1,000 bricks.</li>
-          <li><strong>Ready-Mix Concrete & Cement:</strong> Transit mixer trucks and bulk cement tankers from Hattar and Dandot require predictable fuel pricing to stabilize per-bag retail quotations.</li>
-          <li><strong>ASTM Grade 60 Rebar Freight:</strong> Transporting steel billets and deformed rebar from Karachi and Islamabad mills to Lahore job sites is heavily influenced by national diesel price adjustments.</li>
+          <li><strong>Red Brick Haulage:</strong> Transporting baked clay bricks from Raiwind kilns to <a href="/area-guides?society=dha-lahore" class="text-[#088C7E] underline">DHA Lahore</a> and <a href="/area-guides?society=bahria-town-lahore" class="text-[#088C7E] underline">Bahria Town</a> relies entirely on commercial diesel trucks. Track current benchmarks on our <a href="/blog/red-bricks-rate-lahore-2026" class="text-[#088C7E] underline">Awal red bricks rate guide</a>.</li>
+          <li><strong>Ready-Mix Concrete &amp; Cement:</strong> Transit mixer trucks and bulk cement tankers from Hattar and Dandot require predictable fuel pricing. Check real-time quotes in our <a href="/blog/cement-bag-price-in-pakistan-today" class="text-[#088C7E] underline">cement bag price tracker</a>.</li>
+          <li><strong>ASTM Grade 60 Rebar Freight:</strong> Transporting steel billets and deformed rebar from Karachi and Islamabad mills to Lahore job sites is heavily influenced by national diesel price adjustments. View current rates on our <a href="/blog/steel-rate-in-pakistan-today-2026" class="text-[#088C7E] underline">Grade 60 steel market rates report</a>.</li>
         </ul>
       </section>
 
@@ -662,12 +662,12 @@ export const generate2000Blogs = () => {
           4. How Homeowners Can Lock in Turnkey Construction Rates
         </h2>
         <p>
-          To shield your construction budget against fuel-driven material fluctuations, H&Q Design Services offers fixed turnkey procurement agreements. By securing major supplies (cement, Grade 60 steel, sanitary ware, and electrical cabling) in milestone-based bulk contracts, homeowners in DHA, Park View City, and Gulberg can avoid unexpected budget overruns.
+          To shield your construction budget against fuel-driven material fluctuations, H&amp;Q Design Services offers fixed <a href="/services" class="text-[#088C7E] dark:text-emerald-400 font-bold underline">turnkey construction agreements</a>. By securing major supplies (cement, Grade 60 steel, sanitary ware, and electrical cabling) in milestone-based bulk contracts, homeowners in <a href="/properties?society=DHA+Lahore" class="text-[#088C7E] underline">DHA Lahore</a>, <a href="/properties?society=Park+View+City" class="text-[#088C7E] underline">Park View City</a>, and <a href="/properties?society=Gulberg+Lahore" class="text-[#088C7E] underline">Gulberg</a> can avoid unexpected budget overruns.
         </p>
         <div class="p-6 rounded-2xl bg-slate-100 dark:bg-slate-800 space-y-3">
           <h4 class="font-extrabold text-sm text-slate-900 dark:text-white">Need a Guaranteed Turnkey Construction Estimate?</h4>
           <p class="text-xs text-slate-600 dark:text-slate-300">
-            Consult with our registered PCATP architects and PEC structural engineers. Get an itemized Bill of Quantities (BOQ) with transparent logistics estimates for 2026.
+            Consult with our <a href="/agents" class="text-[#088C7E] underline font-bold">registered PCATP architects</a> and PEC structural engineers. Get an itemized <a href="/tools?tab=cost-calc" class="text-[#088C7E] underline font-bold">Bill of Quantities (BOQ)</a> or schedule a meeting at our <a href="/contact" class="text-[#088C7E] underline font-bold">Lahore Studio</a>.
           </p>
         </div>
       </section>
