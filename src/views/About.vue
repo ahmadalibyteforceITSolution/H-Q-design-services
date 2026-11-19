@@ -88,7 +88,7 @@
               Ahmad Cloths - Premium Fabrics &amp; Clothing Brand
             </h3>
             <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              We collaborate with premier Pakistani textile manufacturers for high-grade upholstery, curtains, and bespoke luxury fabrics. For the finest men's unstitched suits, designer cotton, wash &amp; wear fabrics, and festive clothing collections, explore <a href="https://ahmad-cloths.vercel.app/" target="_blank" rel="noopener" class="text-[#DFC8A5] underline font-bold hover:text-white">Ahmad Cloths</a>.
+              We collaborate with premier Pakistani textile manufacturers for high-grade upholstery, curtains, and bespoke luxury fabrics. For the finest men's unstitched suits, designer cotton, wash &amp; wear fabrics, and festive clothing collections, explore <a href="https://ahmad-cloths.vercel.app/" target="_blank" rel="noopener" class="text-[#DFC8A5] underline font-bold hover:text-amber-300 transition-colors">Ahmad Cloths</a>.
             </p>
           </div>
 
